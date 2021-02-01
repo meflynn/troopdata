@@ -44,33 +44,6 @@ its most basic this function returns a data frame of country-year troop
 deployment values for the selected time period, using the `startdate`
 and `enddate` parameters.
 
-    #> Loading required package: magrittr
-    #> Loading required package: dplyr
-    #> 
-    #> Attaching package: 'dplyr'
-    #> The following objects are masked from 'package:stats':
-    #> 
-    #>     filter, lag
-    #> The following objects are masked from 'package:base':
-    #> 
-    #>     intersect, setdiff, setequal, union
-    #> Loading required package: tibble
-    #> Loading required package: countrycode
-    #> Loading required package: tidyr
-    #> 
-    #> Attaching package: 'tidyr'
-    #> The following object is masked from 'package:magrittr':
-    #> 
-    #>     extract
-    #> Loading required package: stringr
-    #> Loading required package: readstata13
-    #> Loading required package: rlang
-    #> 
-    #> Attaching package: 'rlang'
-    #> The following object is masked from 'package:magrittr':
-    #> 
-    #>     set_names
-
 For users who want more refined data, the `host` argument and the
 `branch` arguments allow users to specify the set of host countries for
 which they would like data returned. This must be a single numerical

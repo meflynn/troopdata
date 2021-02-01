@@ -25,6 +25,8 @@ The goal of troopdata is to facilitate the distribution of military deployment d
 
 Please refer to the bottom of this page for citation information.
 
+
+
 ## Installation
 
 You can install the development version from [GitHub](https://github.com/) with:
@@ -34,6 +36,8 @@ You can install the development version from [GitHub](https://github.com/) with:
 devtools::install_github("meflynn/troopdata")
 ```
 
+
+
 ## Useage
 
 This package currently only has a single function:
@@ -41,11 +45,12 @@ This package currently only has a single function:
 `get_troopdata()`: returns a data frame containing country-year U.S. military deployment values. Depending on the arguments specified, either total troop deployments, or total deployments plus service branch-specific deployment values, are returned.
 
 
+
 ## Example
 
 The core function of this package is the `get_troopdata` function. At its most basic this function returns a data frame of country-year troop deployment values for the selected time period, using the `startdate` and `enddate` parameters.
 
-```{r example, warning=FALSE, echo = FALSE}
+```{r example, warning=FALSE, echo = FALSE, message=FALSE}
 library(troopdata)
 ## basic example code
 
