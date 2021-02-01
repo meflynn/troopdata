@@ -1,10 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# troopdata
+# `troopdata`: A package for analyzing cross-national military deployment data
 
 <!-- badges: start -->
 <!-- badges: end -->
+
+<img src="man/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
 The goal of troopdata is to facilitate the distribution of military
 deployment data for use in social science research and journalism. These
@@ -23,6 +25,15 @@ You can install the development version from
 # install.packages("devtools")
 devtools::install_github("meflynn/troopdata")
 ```
+
+## Useage
+
+This package currently only has a single function:
+
+`get_troopdata()`: returns a data frame containing country-year U.S.
+military deployment values. Depending on the arguments specified, either
+total troop deployments, or total deployments plus service
+branch-specific deployment values, are returned.
 
 ## Example
 
