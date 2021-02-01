@@ -2,10 +2,10 @@
 #'
 #'
 #' @param host The Correlates of War (COW) numeric country code for the host country or countries in the series
-#' @param branch (TRUE/FALSE) Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.
+#' @param branch Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.
 #' @param startyear the first year for the series
 #' @param endyear The last year for the series
-#' @return Returns a data frame containing country  year observations for troop deployments
+#' @return Returns a data frame containing country year observations for troop deployments
 #' @export
 
 get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
