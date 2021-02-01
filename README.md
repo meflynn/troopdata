@@ -120,6 +120,11 @@ head(example)
 When using the updated troop deployment data and/or the `troopdata`
 package please cite the following:
 
-Allen, Michael A., Michael E. Flynn, Carla Martinez Machain, and Andrew
-Stravers. 2021. “Global U.S. Military Deployment Data: 1950-2020.”
-*Working Paper*
+-   Allen, Michael A., Michael E. Flynn, Carla Martinez Machain, and
+    Andrew Stravers. 2021. “Global U.S. Military Deployment Data:
+    1950-2020.” *Working Paper*
+
+And for data collected from 1950-2005
+
+-   Kane, Tim. 2005. “Global U.S. troop deployment, 1950-2003.”
+    Technical Report. Heritage Foundation, Washington, D.C.
