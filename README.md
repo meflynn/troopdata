@@ -16,6 +16,9 @@ ended in 2005 and we have updated it to run through 2020. We have also
 assembled this R package to allow users to more easily access the data
 and use it in their own research.
 
+The package will be updated with additional features in the future, but
+for now please let me know if you find any errors.
+
 Please refer to the bottom of this page for citation information.
 
 ## Installation
