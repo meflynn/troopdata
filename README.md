@@ -114,3 +114,12 @@ head(example)
 #> 5   200 2010   8764  333  364      8004           63
 #> 6   200 2011   8673  328  316      7977           52
 ```
+
+## Citations and Reference
+
+When using the updated troop deployment data and/or the `troopdata`
+package please cite the following:
+
+Allen, Michael A., Michael E. Flynn, Carla Martinez Machain, and Andrew
+Stravers. 2021. “Global U.S. Military Deployment Data: 1950-2020.”
+*Working Paper*
