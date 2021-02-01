@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# troopdata
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of troopdata is to facilitate the distribution of military deployment data for use in social science research and journalism. These data were initially compiled by Tim Kane using data from the U.S. Department of Defense's Defense Manpower Data Center. The original data ended in 2005 and we have updated it to run through 2020. We have also assembled this R package to allow users to more easily access the data and use it in their own research.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("meflynn/troopdata")
+```
+## Example
+
+The core function of this package is the `get_troopdata` function. At its most basic this function returns a data frame of country-year troop deployment values for the selected time period, using the `startdate` and `enddate` parameters.
+
+```{r example, warning=FALSE, echo = FALSE}
+library(troopdata)
+## basic example code
+
+# This example uses the basic function to gather total troop figure
+example <- get_troopdata(startyear = 1990, endyear = 2020)
+
+```
+
+
+For users who want more refined data, the `host` argument and the `branch` arguments allow users to specify the set of host countries for which they would like data returned. This must be a single numerical value equal to a Correlates of War (COW) Project country code, or a vector of numerical COW country code values.
+
+```{r}
+
+hostlist <- c(200, 220)
+
+example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
+
+head(example)
+
+```
+
+Last, the `branch` argument mentioned above is a loglcal argument (i.e. `TRUE` or `FALSE`) that allows users to view data disaggregated by individual service branches. Note that these values are only available for the 2006 and later time period. The default value is FALSE and the function will automatically return the sum total of troop deployments to a country. 
+
+```{r}
+
+example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endyear = 2020)
+
+head(example)
+
+```
+

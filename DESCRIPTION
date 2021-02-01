@@ -8,8 +8,7 @@ Authors@R:
            email = "meflynn@ksu.edu",
            comment = c(ORCID = "0000-0002-6064-740X"))
 Description: This packages uses U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment data. Subsequent versions will hopefully include cross-national data on deployment countries, as well as data on particular service branches.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -21,4 +20,9 @@ Depends:
     tibble,
     countrycode,
     tidyr,
-    stringr
+    stringr,
+    readstata13,
+    rlang
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
