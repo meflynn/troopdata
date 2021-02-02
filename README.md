@@ -1,16 +1,3 @@
-Michael Flynn
-
--   [`troopdata`: A package for analyzing cross-national military
-    deployment and basing
-    data](#troopdata-a-package-for-analyzing-cross-national-military-deployment-and-basing-data)
-    -   [Installation](#installation)
-    -   [Useage](#useage)
-    -   [Example](#example)
-        -   [`get_troopdata`](#get_troopdata)
-        -   [`get_basedata`](#get_basedata)
-    -   [Applications](#applications)
-    -   [How to cite this package and
-        data?](#how-to-cite-this-package-and-data)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 

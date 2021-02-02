@@ -1,8 +1,6 @@
 ---
-author: Michael Flynn
 output: 
   github_document:
-    toc: true
 biblography: one.bib
 csl: apsr
 ---
