@@ -4,7 +4,7 @@
 \alias{get_basedata}
 \title{Load basing data}
 \usage{
-get_basedata(host, country_count = FALSE)
+get_basedata(host = NA, country_count = FALSE)
 }
 \arguments{
 \item{host}{The Correlates of War (COW) numeric country code for the host country or countries in the series}
