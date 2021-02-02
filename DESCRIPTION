@@ -22,7 +22,8 @@ Depends:
     tidyr,
     stringr,
     readstata13,
-    rlang
+    rlang,
+    haven
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
