@@ -172,6 +172,23 @@ things! The study of basing and military deployments has been picking up
 over the last few years and there are lots of cool studies you should
 check out. With these data you can do cool things like this!
 
+``` r
+library(ggplot2)
+
+map <- ggplot2::map_data("world")
+basepoints <- get_basedata(host = NA)
+
+
+basemap <- ggplot() +
+  geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = "gray80", color = "white", size = 0.1) +
+  geom_point(data = basepoints, aes(x = lon, y = lat), color = "purple", alpha = 0.8) +
+  theme_void() +
+  labs(title = "Locations of U.S. military facilities, 1950-2018")
+
+
+basemap
+```
+
 <img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ## How to cite this package and data?

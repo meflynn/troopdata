@@ -128,7 +128,7 @@ baseexample <- get_basedata(host = hostvector, country_count = TRUE)
 
 So what can you do with these super useful and cool data? Lots of things! The study of basing and military deployments has been picking up over the last few years and there are lots of cool studies you should check out. With these data you can do cool things like this!
 
-```{r, echo = FALSE, warning = FALSE, message=FALSE, dpi = 400}
+```{r, echo = TRUE, warning = FALSE, message=FALSE, dpi = 400}
 
 library(ggplot2)
 
