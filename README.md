@@ -8,9 +8,9 @@
 
 <img src="man/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
-The goal of troopdata is to facilitate the distribution of military
-deployment and basing data for use in social science research and
-journalism. The troop deployment data were initially compiled by Tim
+The goal of the troopdata package is to facilitate the distribution of
+military deployment and basing data for use in social science research
+and journalism. The troop deployment data were initially compiled by Tim
 Kane using data from the U.S. Department of Defense’s Defense Manpower
 Data Center. The original data ended in 2005 and we have updated it to
 run through 2020. Similarly, the basing data were initially compiled by
@@ -72,13 +72,15 @@ example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
 #> element will be used
 
 head(example)
-#>   ccode year troops
-#> 1   200 1990  25111
-#> 2   200 1991  23442
-#> 3   200 1992  20048
-#> 4   200 1993  16100
-#> 5   200 1994  13781
-#> 6   200 1995  12131
+#> # A tibble: 6 x 3
+#>   ccode  year troops
+#>   <dbl> <dbl>  <dbl>
+#> 1   200  1990  25111
+#> 2   200  1991  23442
+#> 3   200  1992  20048
+#> 4   200  1993  16100
+#> 5   200  1994  13781
+#> 6   200  1995  12131
 ```
 
 Last, the `branch` argument mentioned above is a loglcal argument
@@ -95,13 +97,15 @@ example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endye
 #> element will be used
 
 head(example)
-#>   ccode year troops army navy air_force marine_corps
-#> 1   200 2006  11331  397  584     10280           70
-#> 2   200 2007  10425  355  443      9552           75
-#> 3   200 2008   9042  315  489      8169           69
-#> 4   200 2009   8933  324  396      8143           70
-#> 5   200 2010   8764  333  364      8004           63
-#> 6   200 2011   8673  328  316      7977           52
+#> # A tibble: 6 x 7
+#>   ccode  year troops  army  navy air_force marine_corps
+#>   <dbl> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
+#> 1   200  2006  11331   397   584     10280           70
+#> 2   200  2007  10425   355   443      9552           75
+#> 3   200  2008   9042   315   489      8169           69
+#> 4   200  2009   8933   324   396      8143           70
+#> 5   200  2010   8764   333   364      8004           63
+#> 6   200  2011   8673   328   316      7977           52
 ```
 
 ### `get_basedata`
