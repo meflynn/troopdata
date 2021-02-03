@@ -11,13 +11,13 @@
 The goal of the troopdata package is to facilitate the distribution of
 military deployment and basing data for use in social science research
 and journalism. The troop deployment data were initially compiled by Tim
-Kane using data from the U.S. Department of Defense’s Defense Manpower
-Data Center. The original data ended in 2005 and we have updated it to
-run through 2020. Similarly, the basing data were initially compiled by
-David Vine, and we have updated the original data using open source
-information from the U.S. military and press reports through 2018. We
-have also assembled this R package to allow users to more easily access
-the data and use it in their own research.
+Kane using information obtained from the U.S. Department of Defense’s
+Defense Manpower Data Center. The original data ended in 2005 and we
+have updated it to run through 2020. Similarly, the basing data were
+initially compiled by David Vine, and we have updated the original data
+using open source information from the U.S. military and press reports
+through 2018. We have also assembled this R package to allow users to
+more easily access the data and use it in their own research.
 
 The package will be updated with additional features in the future, but
 for now please let me know if you find any errors.
@@ -112,7 +112,7 @@ head(example)
 
 The second function, `get_basedata` returns a data frame containing
 information on the United States’ overseas military bases going back to
-the beginning of the Cold War. At it’s most basic the function will
+the beginning of the Cold War. At its most basic the function will
 return a data frame containing country-base observations, along with the
 facility’s longitude and latitude (if available), and a series of binary
 variables indicating whether or not the facility is a full military
