@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `troopdata`: A package for analyzing cross-national military deployment and basing data
+# `troopdata`: Tools for Analyzing Cross-National Military Deployment and Basing Data
 
 <!-- badges: start -->
 <!-- badges: end -->

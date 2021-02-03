@@ -4,11 +4,11 @@
 \name{troopdata-package}
 \alias{troopdata-package}
 \alias{_PACKAGE}
-\title{troopdata: Generate a data frames containing country data on military deployments and U.S. military bases}
+\title{troopdata: Tools for Analyzing Cross-National Military Deployment and Basing Data}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-This packages uses U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and Vine (2015) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
+These functions generate data frames on troop deployments and military basing using U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and Vine (2015) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
 }
 \seealso{
 Useful links:

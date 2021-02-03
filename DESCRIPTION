@@ -1,5 +1,5 @@
 Package: troopdata
-Title: Generate a data frames containing country data on military deployments and U.S. military bases
+Title: Tools for Analyzing Cross-National Military Deployment and Basing Data
 Version: 1.0.0
 Authors@R: 
     person(given = "Michael",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "meflynn@ksu.edu",
            comment = c(ORCID = "0000-0002-6064-740X"))
-Description: This packages uses U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and Vine (2015) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
+Description: These functions generate data frames on troop deployments and military basing using U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and Vine (2015) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
