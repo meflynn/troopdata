@@ -13,8 +13,8 @@ A data frame with country year observations including the following variables:
 \item{\code{lat}}{The facility's latitude.}
 \item{\code{lon}}{The facility's longitude.}
 \item{\code{base}}{Binary indicator identifying the facility as a major base  or not.}
-\item{\code{lilypad}}{A binary indicator identifying the facility as a lilypad or not.}
-\item{\code{fundedsite}}{A binary variable indicating whether or not the facility is }
+\item{\code{lilypad}}{A binary indicator identifying the facility as a lilypad or not. Vine codes lilypads as less than 200 personnel or "other site" designation in Pentagon reports.}
+\item{\code{fundedsite}}{A binary variable indicating whether or not the facility is a host-state base funded by the US.}
 }
 }
 \source{
