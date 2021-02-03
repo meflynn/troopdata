@@ -1,6 +1,6 @@
 globalVariables(c('ccode', 'year', 'troops', 'army', 'navy', 'air_force', 'marine_corps'))
 
-#' Load Troop Data
+#' Load troop Data
 #'
 #'
 #' @param host The Correlates of War (COW) numeric country code for the host country or countries in the series
@@ -10,6 +10,27 @@ globalVariables(c('ccode', 'year', 'troops', 'army', 'navy', 'air_force', 'marin
 #' @importFrom rlang warn
 #' @return Returns a data frame containing country year observations for troop deployments
 #' @export
+#'
+#'
+#' @references Tim Kane. Global U.S. troop deployment, 1950-2003. Technical Report. Heritage Foundation, Washington, D.C.
+#' @references Michael A. Allen, Michael E. Flynn, Carla Martinez Machain, and Andrew Stravers. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
+#'
+#'
+#'@examples
+#'
+#'\dontrun{
+#'library(tidyverse)
+#'library(troopdata)
+#'
+#'example <- get_troopdata(host = NA, branch = TRUE, startyear = 1980, endyear = 2015)
+#'
+#'head(example)
+#'
+#'}
+#'
+
+
+
 
 get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
 

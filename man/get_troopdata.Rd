@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_troopdata.R
 \name{get_troopdata}
 \alias{get_troopdata}
-\title{Load Troop Data}
+\title{Load troop Data}
 \usage{
 get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 }
@@ -19,5 +19,23 @@ get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 Returns a data frame containing country year observations for troop deployments
 }
 \description{
-Load Troop Data
+Load troop Data
+}
+\examples{
+
+\dontrun{
+library(tidyverse)
+library(troopdata)
+
+example <- get_troopdata(host = NA, branch = TRUE, startyear = 1980, endyear = 2015)
+
+head(example)
+
+}
+
+}
+\references{
+Tim Kane. Global U.S. troop deployment, 1950-2003. Technical Report. Heritage Foundation, Washington, D.C.
+
+Michael A. Allen, Michael E. Flynn, Carla Martinez Machain, and Andrew Stravers. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
 }

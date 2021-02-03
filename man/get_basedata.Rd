@@ -17,3 +17,19 @@ Returns a data frame containing information on bases present within selected hos
 \description{
 Load basing data
 }
+\examples{
+
+\dontrun{
+library(tidyverse)
+library(troopdata)
+
+example <- get_basedata(host = NA)
+
+head(example)
+
+}
+
+}
+\references{
+David Vine. 2015. Base Nation. Metropolitan Books. New York, NY.
+}

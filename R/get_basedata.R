@@ -8,6 +8,20 @@ globalVariables(c('ccode', 'base', 'lilypad', 'fundedsite', 'basecount', 'lilypa
 #' @importFrom rlang warn
 #' @return Returns a data frame containing information on bases present within selected host countries
 #' @export
+#' @references David Vine. 2015. Base Nation. Metropolitan Books. New York, NY.
+#'
+#' @examples
+#'
+#' \dontrun{
+#' library(tidyverse)
+#' library(troopdata)
+#'
+#' example <- get_basedata(host = NA)
+#'
+#' head(example)
+#'
+#' }
+#'
 
 
 get_basedata <- function(host = NA, country_count = FALSE) {
