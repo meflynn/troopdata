@@ -1,8 +1,11 @@
+globalVariables(c('ccode', 'base', 'lilypad', 'fundedsite', 'basecount', 'lilypadcount', 'fundedsitecount'))
+
 #' Load basing data
 #'
 #'
 #' @param host The Correlates of War (COW) numeric country code for the host country or countries in the series
 #' @param country_count Logical. Should the function return a country-level count of the total number of bases or the country-site data
+#' @importFrom rlang warn
 #' @return Returns a data frame containing information on bases present within selected host countries
 #' @export
 
@@ -24,7 +27,7 @@ get_basedata <- function(host = NA, country_count = FALSE) {
     host <- c(host)
 
     basetemp <- basetemp %>%
-      filter(ccode %in% host)
+      dplyr::filter(ccode %in% host)
 
   }
 

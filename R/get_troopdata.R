@@ -1,3 +1,5 @@
+globalVariables(c('ccode', 'year', 'troops', 'army', 'navy', 'air_force', 'marine_corps'))
+
 #' Load Troop Data
 #'
 #'
@@ -5,6 +7,7 @@
 #' @param branch Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.
 #' @param startyear the first year for the series
 #' @param endyear The last year for the series
+#' @importFrom rlang warn
 #' @return Returns a data frame containing country year observations for troop deployments
 #' @export
 
@@ -18,7 +21,7 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
   }
 
   if(branch) {
-    warn("Branch data only available for 2006 forward.")
+    rlang::warn("Branch data only available for 2006 forward.")
   }
 
   if (is.na(host)) {

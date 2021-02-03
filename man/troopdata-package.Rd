@@ -4,11 +4,19 @@
 \name{troopdata-package}
 \alias{troopdata-package}
 \alias{_PACKAGE}
-\title{troopdata: Generate a data frames containing country data on military deployments and U.S. military bases.}
+\title{troopdata: Generate a data frames containing country data on military deployments and U.S. military bases}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
 This packages uses U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and Vine (2015) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/meflynn/troopdata}
+  \item Report bugs at \url{https://github.com/meflynn/troopdata/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Michael Flynn \email{meflynn@ksu.edu} (\href{https://orcid.org/0000-0002-6064-740X}{ORCID})
