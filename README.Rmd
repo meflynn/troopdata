@@ -120,6 +120,8 @@ Finally, users can also generate country-level counts of the number of U.S. mili
 
 baseexample <- get_basedata(host = hostvector, country_count = TRUE)
 
+head(baseexample)
+
 ```
 
 

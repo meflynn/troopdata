@@ -167,6 +167,15 @@ baseexample <- get_basedata(host = hostvector, country_count = TRUE)
 #> and only the first element will be used
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
+
+head(baseexample)
+#> # A tibble: 4 x 4
+#>   ccode basecount lilypadcount fundedsitecount
+#>   <dbl>     <dbl>        <dbl>           <dbl>
+#> 1    20         1            1               0
+#> 2   200        18            0               0
+#> 3   255        40            4               0
+#> 4   645         2            2               0
 ```
 
 ## Applications
