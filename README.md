@@ -34,7 +34,7 @@ You can install the development version from
 devtools::install_github("meflynn/troopdata")
 ```
 
-## Useage
+## Use
 
 This package currently has two functions:
 
@@ -83,7 +83,7 @@ head(example)
 #> 6   200  1995  12131
 ```
 
-Last, the `branch` argument mentioned above is a loglcal argument
+Last, the `branch` argument mentioned above is a logical argument
 (i.e. `TRUE` or `FALSE`) that allows users to view data disaggregated by
 individual service branches. Note that these values are only available
 for the 2006 and later time period. The default value is FALSE and the

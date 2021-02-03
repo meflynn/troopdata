@@ -42,8 +42,8 @@
 #' \item{\code{basename}}{Name of the facility.}
 #' \item{\code{lat}}{The facility's latitude.}
 #' \item{\code{lon}}{The facility's longitude.}
-#' \item{\code{base}}{Binary indicator identifying the faciltiy as a major base  or not.}
-#' \item{\code{lilypad}}{A binary indicator identifying the faciltiy as a lilypad or not.}
+#' \item{\code{base}}{Binary indicator identifying the facility as a major base  or not.}
+#' \item{\code{lilypad}}{A binary indicator identifying the facility as a lilypad or not.}
 #' \item{\code{fundedsite}}{A binary variable indicating whether or not the facility is }
 #' }
 #'
