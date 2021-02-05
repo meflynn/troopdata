@@ -1,0 +1,415 @@
+country,ccode,basename,lat,lon,base,lilypad,fundedsite
+Afghanistan,700,Bagram AB,34.946222,69.264639,1,0,0
+Afghanistan,700,Kandahar Airfield,31.506807,65.847511,1,0,0
+Afghanistan,700,Mazar-e-Sharif,36.707497,67.209892,1,0,0
+Afghanistan,700,Gardez,33.625017,69.23584,1,0,0
+Afghanistan,700,Kabul,34.534477,69.150352,1,0,0
+Afghanistan,700,Herat,34.345236,62.205234,1,0,0
+Afghanistan,700,Shindand,33.306995,62.136453,1,0,0
+Afghanistan,700,Sharab,31.537207,64.230651,1,0,0
+Afghanistan,700,Jalalabad,34.3983,70.500641,1,0,0
+American Samoa,2,American Samoa,-14.1646,-170.4202,0,1,0
+Antarctica,920,McMurdo Station,-77.85,166.666667,0,1,0
+Argentina,160,Chaco,-27.45139,-58.98667,0,0,1
+Aruba,210,Aruba,12.52111,-69.968338,0,1,0
+Ascension Island,200,Ascension Island,-7.946717,-14.355916,1,0,0
+Australia,900,"Naval Communication Station Harold E. Holt; Exmouth, Northwest Cape",-21.882527,114.1333,1,0,0
+Australia,900,"Joint Defence Facility Pine Gap, Alice Springs",-25.274398,133.77514,1,0,0
+Australia,900,"Darwin, Robertson Barracks",-12.445,130.974444,1,0,0
+Australia,900,"Kojarena, near Geraldton MUOS, ECHELON Intel and Communications Site",-28.695,114.842222,0,1,0
+"Bahamas, The",31,Andros Island,24.706381,-78.019539,1,0,0
+Bahrain,692,"Naval Support Activity Bahrain, Manama",26.216667,50.583333,1,0,0
+Bahrain,692,Al Jufayr,26.211111,50.601111,1,0,0
+Bahrain,692,Isa Air Base,25.918333,50.590556,1,0,0
+Bahrain,692,Mina Salman,26.201,50.607,1,0,0
+Belgium,211,USAG Benelux Brussels,50.85034,4.35171,1,0,0
+Belgium,211,Chievres Air Base,50.575833,3.831111,1,0,0
+Belgium,211,Florennes Air Base,50.243333,4.645833,1,0,0
+Belgium,211,Kleine-Brogel	 Air Base,51.168333,5.47,1,0,0
+Belgium,211,Mons/Shape,50.454241,3.956659,1,0,0
+Belgium,211,Zutendaal,50.9475,5.590556,0,1,0
+Belize,80,Hunting Caye,18.001593,-87.943283,0,0,1
+Belize,80,Hattieville,17.45,-88.383333,0,0,1
+Belize,80,Ladyville,17.5552,-88.3142,0,0,1
+Belize,80,Big Creek FOS,16.514228,-88.404336,0,0,1
+Belize,80,San Pedro Caye,17.921389,-87.961111,0,0,1
+Belize,80,Belize City,17.5046,-88.1962,0,0,1
+Belize,80,Ambergris Caye,18.013947,-87.931039,0,0,1
+Belize,80,OPS Price Barracks,17.554482,-88.30572,0,0,1
+Botswana,571,Gabrone,-24.602709,25.866962,0,1,0
+BR Indian Ocean Territory,200,Diego Garcia,-7.3195,72.4229,1,0,0
+Bulgaria,355,Novo Selo Training Area,42.720278,26.591944,1,0,0
+Bulgaria,355,Aitos (Aytos) Storage Facility,42.711389,27.232778,0,1,0
+Bulgaria,355,Bezmer Air Base,42.454722,26.352222,0,1,0
+Bulgaria,355,Graf Ignatievo Air Base,42.290278,24.713889000000002,0,1,0
+Burkina Faso,439,Ouagadougou International Airport,12.353056,-1.512222,0,1,0
+Burundi,516,Bujumbura,-3.383333,29.36667,0,1,0
+Cambodia,811,"Navy Med Research Unit 2, Pnom Pehn",11.5449,104.8922,0,1,0
+Cameroon,471,Contingency Location Garoua,9.3361,13.3756,0,1,0
+Cameroon,471,"Salak, Maroua",10.4535,14.2558,0,1,0
+Cameroon,471,Douala,NA,NA,0,1,0
+Canada,20,NA,56.130366,-106.34677,0,1,0
+Canada,20,"Argentia, Newfoundland",47.306111,-53.99,1,0,0
+Central African Republic,482,Bangui,4.366667,18.583333,0,1,0
+Central African Republic,482,Djema,6.05,25.316667,0,1,0
+Chad,483,N'Djamena,12.1396,15.04012,0,1,0
+Chile,155,"Fuerte Aguayo NB, Concón",-32.947314,-71.451656,0,0,1
+Colombia,100,Palanquero AB/Cpt German Olano Moreno AB,5.483611,-74.657222,0,1,0
+Colombia,100,Tolemaida AB,4.244722,-74.649722,0,1,0
+Colombia,100,Larandia,1.478889,-75.486667,0,1,0
+Colombia,100,Bahia de Malaga,4.1,-77.35,0,1,0
+Colombia,100,Tres Esquinas AB,0.745833,-75.233889,0,0,1
+"Congo, Democratic Republic",484,Dungu,3.62564,28.560977,0,1,0
+Costa Rica,94,NA,9.933333,-84.083333,0,1,0
+Costa Rica,94,Caldera,9.912169,-84.713904,0,0,1
+Costa Rica,94,Liberia,10.633333,-85.433333,0,0,1
+Costa Rica,94,Colorado,10.692328,-83.720075,0,0,1
+Costa Rica,94,Flamingo,10.433803,-85.792269,0,0,1
+Cuba,40,Guantanamo Bay	Cuba,20.0117,-75.1216,1,0,0
+Denmark,390,Karap Denmark,56.297914,9.099389,0,1,0
+Djibouti,522,Camp Lemonnier,11.543611,43.148611,1,0,0
+Djibouti,522,Chabelley,11.5163,43.0602,0,1,0
+Dominican Republic,42,Saona Island,18.155556,-68.699444,0,0,1
+Ecuador,130,"Lita, Carchi",0.833333,-78.466667,0,0,1
+Egypt,651,Cairo,30.04442,31.235712,0,1,0
+El Salvador,92,Comalapa,13.440833,-89.055556,1,0,0
+El Salvador,92,Miraflores,13.423247,-88.085408,0,0,1
+El Salvador,92,"CEOPAZ Base, Lourdes, Colon",13.716667,-89.366667,0,0,1
+El Salvador,92,La Union,13.336944,-87.843889,0,0,1
+El Salvador,92,Cuscatlan,13.673056,-89.240556,0,0,1
+Ethiopia,530,"Camp Gilbert, Dire Dawa",9.6,41.866667,0,1,0
+Gabon,481,Port Gentil,-0.714328,8.786359,0,1,0
+Georigia,372,"Krtsanisi Training Centre, nr. Tblisi",41.5824,44.9129,0,1,0
+Germany,255,Amberg,49.44032,11.863345,1,0,0
+Germany,255,USAG Ansbach,49.300425,10.571936000000001,1,0,0
+Germany,255,Bann,50.73743,7.098207,1,0,0
+Germany,255,"USAG Rheinland-Pflaz, Baumholder",49.613889,7.333333,1,0,0
+Germany,255,"Panzer Kaserne US AB, Boeblingen",48.681331,9.00883,1,0,0
+Germany,255,Buechel Air Base,50.172908,7.083462,1,0,0
+Germany,255,Darmstadt,49.877648,8.651762,1,0,0
+Germany,255,Dexheim US Army Base,49.845929,8.316098,1,0,0
+Germany,255,"USAFE Warrior Preparation Center, Einsiedlerhof",49.441063,7.665646,1,0,0
+Germany,255,"USAG Bavaria, Garmisch",47.491695,11.095498,1,0,0
+Germany,255,NATO Base Geilenkirchen,50.967168,6.117458,1,0,0
+Germany,255,US Army Depot Germersheim,49.214024,8.366815,1,0,0
+Germany,255,Giessen Army Depot,50.587142,8.690926,1,0,0
+Germany,255,USAG Grafenwohr,49.714147,11.905874,1,0,0
+Germany,255,US Army Depot Gruenstadt,49.563302,8.168394,1,0,0
+Germany,255,USAG Heidelberg,49.398752,8.672434,1,0,0
+Germany,255,Hof Germany,50.313539,11.912781,1,0,0
+Germany,255,USAG Hohenfels,49.203278,11.849022,1,0,0
+Germany,255,"Illesheim, Storck Barrakcs",49.475337,10.384905,1,0,0
+Germany,255,USAG Kaiserlautern,49.440066,7.749126,1,0,0
+Germany,255,Kornwestheim Barracks,48.862609,9.180971,1,0,0
+Germany,255,Lampertheim Training Area,49.599727,8.466599,1,0,0
+Germany,255,"Landshut, Seingberg Range",48.539225,12.145922,1,0,0
+Germany,255,Landstuhl Regional Medical Center,49.412222,7.572222,1,0,0
+Germany,255,"Egelsbach Transmitter Facility, Langen",49.991466,8.663401,1,0,0
+Germany,255,Mainz Kastel Army Base,49.992862,8.247253,1,0,0
+Germany,255,Mannheim Germany,49.487459,8.466039,0,1,0
+Germany,255,Miesau Army Depot,49.404947,7.436811,1,0,0
+Germany,255,Nahbollenbach Army Depot,49.717,7.367,1,0,0
+Germany,255,Pfeffelbach,49.539236,7.327302,1,0,0
+Germany,255,Pirmasens Army Depot,49.201555,7.600216,1,0,0
+Germany,255,Ramstein AFB,49.44,7.5971,1,0,0
+Germany,255,Schweinfurt,50.049205,10.219423,1,0,0
+Germany,255,Schwetzingen,49.385219,8.572245,1,0,0
+Germany,255,Seckenheim,49.463903,8.5592,1,0,0
+Germany,255,Sembach AB,49.511398,7.864983,1,0,0
+Germany,255,Spangdahlem AB,49.985679,6.684338,1,0,0
+Germany,255,USAG Stuttgart,48.775418,9.181759,1,0,0
+Germany,255,Trier,49.746883,6.634751,1,0,0
+Germany,255,"Vilseck, Rose Barracks",49.610007,11.806215,1,0,0
+Germany,255,US Army Base Wackernheim,49.973643,8.118423,1,0,0
+Germany,255,Weilerbach,49.481389,7.632222,0,1,0
+Germany,255,Weisskirchen,49.555611,6.818959,0,1,0
+Germany,255,USAG Wiesbaden,50.06308,8.243344,0,1,0
+Ghana,452,Takoradi/Sekondi,4.90297,-1.768277,0,1,0
+Greece,350,US NSA Soudha Bay,35.537632,24.153585,1,0,0
+Greece,350,"Marathi Pier Area, Chania",35.503625,24.173608,0,1,0
+Greenland,390,Thule Air Base,77.48262,-69.345131,1,0,0
+Guam,2,Anderson AFB,13.5761,144.9244,1,0,0
+Guam,2,Apra Harbor NS,13.4497222,144.65,1,0,0
+Guam,2,Andy South,13.448889,144.800278,1,0,0
+Guatemala,90,Puerto San Jose,13.920235,-90.810797,0,0,1
+Guatemala,90,Poptun,16.327633,-89.408154,0,0,1
+Guatemala,90,Champerico,14.293932,-91.913381,0,0,1
+Guatemala,90,Coban,15.47134,-90.404305,0,0,1
+Guatemala,90,Santa Ana de Berlin,14.7,-91.8833,0,0,1
+Guatemala,90,Tecun Uman,14.673286,-92.132206,0,0,1
+Guatemala,90,Puerto Barrios,15.719062,-88.601189,0,0,1
+Honduras,91,"US Southern Command Joint Force Bravo Soto Cano, Palmerola Honduran AFB",14.381902,-87.616722,1,0,0
+Honduras,91,Mocoron Tropics Region Testing Center,15.039154,-84.275469,0,1,0
+Honduras,91,Mocoron,15.038947,-84.277315,0,0,1
+Honduras,91,Guanaja,16.443976,-85.902367,0,0,1
+Honduras,91,Puerto Castilla,16.010554,-85.95134,0,0,1
+Honduras,91,La Venta,13.795229,-87.28952,0,0,1
+Honduras,91,El Aguacate,13.950329,-87.132217,0,0,1
+Honduras,91,Puerto Lempira,15.267511,-83.771347,0,0,1
+Honduras,91,La Brea,15.793265,-85.964799,0,0,1
+Hong Kong,710,Chek Lap Kok Airport,22.298513,113.932679,0,1,0
+Hungary,310,"Papa AB, Papa",47.362976,17.501107,0,1,0
+Iceland,395,Grindavik Naval Transmission Facility,63.846191,-22.44479,1,0,0
+Iceland,395,Keflavik Naval Air Station,63.9843294,-22.60333092,0,1,0
+Iraq,645,"Green Zone, Baghdad",33.307577,44.390259,1,0,0
+Iraq,645,Camp Taji (a.k.a. Camp Cooke),33.529444,44.2775,1,0,0
+Iraq,645,Al Asad AB,33.789367,42.444692,0,1,0
+Iraq,645,Al Taqaddum,33.33911,43.598341,0,1,0
+Ireland,205,Shannon Airport,52.701944,-8.924722,0,1,0
+Israel,666,Dimona Radar Base,30.967591,35.097121,0,1,0
+Israel,666,"Sdot Micha (aka Tal Shahar), Beit Shemesh",31.738611,34.919444,0,1,0
+Israel,666,Haifa (port facils for 6th fleet),32.816667,34.983333,0,1,0
+Israel,666,Site 51 [loc. Is random in Negev],30.77243,34.977783,0,1,0
+Israel,666,Site 53 [loc. Is random in Negev],30.77896,35.129283,0,1,0
+Israel,666,Site 54,NA,NA,0,1,0
+Italy,325,"Augusta Bay, Catania",37.508039,15.082851,1,0,0
+Italy,325,Aviano AB,46.069863,12.598471,1,0,0
+Italy,325,"Camp Darby, Tirrenia/Livorno",43.634506,10.291604,1,0,0
+Italy,325,"Camp Ederle, Vicenza",45.545479,11.535421,1,0,0
+Italy,325,Naval Support Activity Naples,40.851775,14.268124,1,0,0
+Italy,325,Naval Support Activity Gaeta,41.244724,13.55526,1,0,0
+Italy,325,Brescia Radio Relay Site,45.541188,10.219444,0,1,0
+Italy,325,Naval Support Activity Naples,40.851775,14.268124,1,0,0
+Italy,325,"Caserma Del Din, Vicenza",45.545479,11.535421,1,0,0
+Italy,325,"Dandolo MOUT facility, Maniago",46.165086,12.706567,1,0,0
+Italy,325,NAS 1 Support Area Catania,37.508039,15.082851,1,0,0
+Italy,325,NAS Sigonella,37.401667,14.922222,1,0,0
+Italy,325,Pisa Ammo Storage Area (Camp Darby),43.722839,10.401689,1,0,0
+Italy,325,San Vito Normanni,40.658316,17.706466,1,0,0
+Italy,325,"Naval Radio Transmitter Facility, Niscemi",37.117222,14.44,1,0,0
+Japan,740,"Yokota AB, Tokyo",35.689488,139.69171,1,0,0
+Japan,740,"US Fleet Activities, Sasebo",33.179915,129.71511,1,0,0
+Japan,740,Akizuki Ammunition Depot,33.469572,130.69098,1,0,0
+Japan,740,"Kadena AB, Okinawa",26.355556,127.7675,1,0,0
+Japan,740,NAF Atsugi,35.443082,139.36249,1,0,0
+Japan,740,"Camo Kinser, Makiminato",26.265937,127.72383,1,0,0
+Japan,740,CATC Camp Fuji,35.3556,138.8597,1,0,0
+Japan,740,"Camp Gonsalves, Henoko",26.523196,128.03242,1,0,0
+Japan,740,"Camp Kinser, Makiminato",26.265937,127.72383,1,0,0
+Japan,740,"Camp Lester, Chatan",26.320119,127.76378,1,0,0
+Japan,740,"Camp Schwab, Henoko",26.523196,128.03242,1,0,0
+Japan,740,Chitose Administration Annex,42.820958,141.65088,1,0,0
+Japan,740,"Itazuke Auxiliary Airfield, Fukuoka",33.590355,130.40172,1,0,0
+Japan,740,"Yokota Air Force Base, Fussa",35.738451,139.32693,1,0,0
+Japan,740,"Camp Fuji, Gotemba",35.308584,138.93451,1,0,0
+Japan,740,"POL dept, Hachinohe",40.512284,141.4884,1,0,0
+Japan,740,Higashi-Hiroshima,34.39548,132.48243,1,0,0
+Japan,740,"Housing area, Ikego",35.303808,139.59786,1,0,0
+Japan,740,MCAS Iwakuni,34.166562,132.21885,1,0,0
+Japan,740,Iwo Jima,24.774024,141.32728,1,0,0
+Japan,740,"Naval Suuport Facility, Kami Seya",35.638138,135.18724,1,0,0
+Japan,740,Kisarazu-JGSDF,35.375974,139.91683,1,0,0
+Japan,740,Koza,35.374167,139.39083,1,0,0
+Japan,740,Kure,34.249254,132.56581,1,0,0
+Japan,740,MCAS Futemma,26.273435,127.75666,1,0,0
+Japan,740,Misawa AFB,40.683134,141.36898,1,0,0
+Japan,740,Naha Port,26.22853,127.68911,1,0,0
+Japan,740,Okuma,26.25578,127.78181,1,0,0
+Japan,740,"Camp Hansen, Onna",26.4975,127.85356,1,0,0
+Japan,740,"Communications Station, Owada",35.815464,139.55704,1,0,0
+Japan,740,"Camp Zama, Sagamihara",35.571462,139.37318,1,0,0
+Japan,740,"Sobe Communications Site, Okinawa",26.38739,127.73654,1,0,0
+Japan,740,Tana,35.558519,139.33794,1,0,0
+Japan,740,"Camp Courtney, Tengan",26.388406,127.85693,1,0,0
+Japan,740,"Camp McTureous, Tengan",26.388406,127.85693,1,0,0
+Japan,740,"Tokorozawa Transmitter Sit , Tokorosana",35.799672,139.46861,1,0,0
+Japan,740,Totsuka,36.893331,140.41802,1,0,0
+Japan,740,Waco City,35.781208,139.60579,1,0,0
+Japan,740,Yokohama,35.443708,139.63803,1,0,0
+Japan,740,COMFLEACT Yokosuka,35.281341,139.6722,1,0,0
+Japan,740,"Camp Zama, Zama",35.488587,139.40767,1,0,0
+Japan,740,"Camp Foster, Zukeran",26.30762,127.77849,1,0,0
+Johnston Atoll,2,Johnston Atoll Airfield,16.734591000000002,-169.526091,1,0,0
+Jordan,663,"Muwaffaq Salti Air Base, Azraq",31.834167,36.787222,0,1,0
+Jordan,663,King Abdullah Sp Ops Trng Ctr Amman,32.032,35.975,0,0,1
+Kenya,501,Garissa,-0.456944,39.658333,0,1,0
+Kenya,501,"Manda Bay, Lamu",-2.280262,40.891285,0,1,0
+Kenya,501,Mombasa	Kenya,-4.043477,39.668207,1,0,0
+"Korea, South",732,"Camp Humphreys (High Point), Chechon",36.963982,127.039003,1,0,0
+"Korea, South",732,Chinhae Fleet Activities,35.133025,128.71004,1,0,0
+"Korea, South",732,"Camp Market, Inchon",37.456256,126.70521,1,0,0
+"Korea, South",732,Kimhae Storage Annex,35.228545,128.88935,1,0,0
+"Korea, South",732,Kunsan AB,35.967677,126.73663,1,0,0
+"Korea, South",732,Kwangju AB,35.159545,126.8526,1,0,0
+"Korea, South",732,Masan Ammunition Depot,35.213516,128.58143,1,0,0
+"Korea, South",732,Osan	South Korea,37.14981,127.07722,1,0,0
+"Korea, South",732,Paju	South Korea,37.759869,126.78018,1,0,0
+"Korea, South",732,Pochon	South Korea,37.894915,127.20036,1,0,0
+"Korea, South",732,Munsan	South Korea,37.889992,126.6987,1,0,0
+"Korea, South",732,Osan AFB,37.14981,127.07722,1,0,0
+"Korea, South",732,"Camp Red Cloud (Bullseye 02), Paju",37.759869,126.78018,1,0,0
+"Korea, South",732,Pochon,37.894915,127.20036,0,1,0
+"Korea, South",732,Pohang	(Camp Mujuk),36.019018,129.34348,1,0,0
+"Korea, South",732,Pusan,35.179554,129.07564,1,0,0
+"Korea, South",732,"Camp Humprehys, Pyeongtaek",36.992108,127.11294,1,0,0
+"Korea, South",732,"Tongsan Garrisoin, Seoul",37.566535,126.97797,1,0,0
+"Korea, South",732,"K 16 AB, Songnam",37.444917,127.13887,1,0,0
+"Korea, South",732,"Suwon AB, Suwon",37.263573,127.0286,1,0,0
+"Korea, South",732,"Camp Henry, Camp Walker, Teagu AB",35.871435,128.60145,1,0,0
+"Korea, South",732,"Camp Humphreys (Richmond), Taejon",36.350412,127.38455,1,0,0
+"Korea, South",732,Taepeak	South Korea,37.164065,128.98557,0,1,0
+"Korea, South",732,"Camp Casey, Camp Castle, Tong Du Chon",37.7333,127.05,1,0,0
+"Korea, South",732,"Camp Jackson, Camp Red Cloud, Camp Stanley, Redcloud Communications Center, Uijong Bu",37.738098,127.03368,1,0,0
+"Korea, South",732,"Camp Carroll, Waegwan",35.989043,128.39771,1,0,0
+"Korea, South",732,"Camp Eagle, Camp Long, Wonju",37.342219,127.92016,1,0,0
+"Korea, South",732,"Camp Carroll, Yechon",36.6577,128.45288,1,0,0
+"Korea, South",732,"Camp Red Cloud (Bullseye 01), Yongchon	South Korea",37.538427,126.96544,1,0,0
+"Korea, South",732,"Camp Kwangsa Ri , Yongju",37.785288,127.04584,1,0,0
+"Korea, South",732,Yongpyong,NA,NA,1,0,0
+"Korea, South",732,"Camp Henry (Brooklyn Hill), Yongsan Garrison, Yongsan",37.538427,126.96544,1,0,0
+Kosovo,347,Camp Bondsteel,42.366667,21.25,1,0,0
+Kuwait,690,Ali Al Salem AB,29.31166,47.481766,1,0,0
+Kuwait,690,Camp Buehring,29.696292,47.42476,1,0,0
+Kuwait,690,Ahmed Al Jaber AB,28.934917,47.791972,1,0,0
+Kuwait,690,Al Mubarak AB @ Kuwait City IAP,29.226667,47.98,1,0,0
+Kuwait,690,Camp Patriot/Kuwait Naval Base,28.8750135,48.2843467,1,0,0
+Kuwait,690,"Camp Arifjan, Al Ahmadi",29.696292,47.42476,1,0,0
+Kuwait,690,Khabari/Kheybari Military Crossing,30.100432,47.714498,1,0,0
+Kuwait,690,Shuaiba Naval Base,28.866761,48.280324,1,0,0
+Kuwait,690,Udairi Training Range,29.696292,47.42,1,0,0
+Liberia,450,Monrovia and surrounding,6.292412,-10.756391,0,1,0
+Libya,620,Al Wigh Airport,24.183868,14.543879,0,1,0
+Marshall Islands,983,"US Army Kwajalein Atoll, R.Reagan Test Site",8.72037,167.7334,1,0,0
+Marshall Islands,983,Meck Island,9.002452,167.726375,1,0,0
+Marshall Islands,983,Omeleck Island,9.047702,167.742876,1,0,0
+Marshall Islands,983,Roi-Namur Island,9.39775,167.472683,1,0,0
+Marshall Islands,983,Illeginni Island,9.086984,167.470858,1,0,0
+Marshall Islands,983,Ennylabegan Island,8.797108,167.620299,1,0,0
+Mauritania,435,Nuakchott (Air Force),18.100869,-15.95152,0,1,0
+Netherlands,210,Brunssum,50.948896,5.972166,1,0,0
+Netherlands,210,Schinnen,50.942118,5.861849,1,0,0
+Netherlands,210,Coevorden,52.643502,6.727593,0,1,0
+Netherlands,210,Eygelshoven,50.90139,6.073035,0,1,0
+Netherlands,210,Rotterdam,51.924216,4.481776,0,1,0
+Netherlands,210,Vriezenveen,52.371812,6.608841,0,1,0
+Netherlands Antilles,210,Curacao Forward Operating Base,12.186701,-68.96659,0,1,0
+Niger,436,Niamey airport,13.481667,2.170278,0,1,0
+NIger,436,Agadez,16.941423,8.003951,0,1,0
+Northern Mariana Islands,2,Tinian Navy Base,15,145.633333,1,0,0
+Northern Mariana Islands,2,Saipan,15.183333,145.75,1,0,0
+Northern Mariana Islands,2,Rota,14.153611,145.203056,0,1,0
+Northern Mariana Islands,2,Farallon de Medinilla,16.017222,146.058611,1,0,0
+Norway,385,Vaernes,63.463249,10.937779,1,0,0
+Norway,385,Bardufoss,69.064444,18.515,0,1,0
+Oman,698,Masirah AB,20.662694,58.889231,1,0,0
+Oman,698,"Salalah Port, Rasut",16.937528,54.01158,1,0,0
+Oman,698,Seeb,23.602918,58.281502,1,0,0
+Oman,698,Thumrait,17.666944,54.032778,1,0,0
+Oman,698,"Mina Qabus, Muscat",23.628056,58.567778,1,0,0
+Oman,698,Al Mussanah AB,23.6273006,57.4907601,1,0,0
+Pakistan,770,Shahbaz/Jacobabad,28.284538,68.457576,0,1,0
+Pakistan,770,Chaklala,33.616389,73.099167,0,1,0
+Pakistan,770,Tarbela,34.089311,72.699284,0,1,0
+Pakistan,770,Peshawar,34.014627,71.571293,0,1,0
+Pakistan,770,Pasni,25.29506,63.347172,0,1,0
+Pakistan,770,Islamabad,33.70346,73.083701,0,1,0
+Panama,95,Summit,9.0461965,-79.512991,0,0,1
+Panama,95,Puerto Obaldia,8.667103,-77.420606,0,0,1
+Panama,95,Puerto Pina,7.5832701,-78.1796112,0,0,1
+Panama,95,Isla Grande,9.630496,-79.565527,0,0,1
+Panama,95,Punta Coco,8.227555,-78.90509,0,0,1
+Panama,95,La Palma,8.286023,-78.182079,0,0,1
+Peru,135,Lima,-12.047816,-77.062203,0,1,0
+Peru,135,Tarapoto,-6.496591,-76.37249,0,0,1
+Peru,135,Puno,-15.84826,-70.019337,0,1,0
+Peru,135,"IMF Santa Rosa, Iquitos",-3.744344,-73.26131,0,1,1
+Peru,135,"Cecopaz, Ancon",-12.063471,-76.999831,0,0,1
+Philippines,840,"Camp Navarro, Zamboanga City , Mindanao (JSOTF-P)",6.952438,122.126041,0,1,0
+Philippines,840,Subic,14.822702,120.276508,0,1,0
+Philippines,840,Clark,15.186718,120.558402,0,1,0
+Philippines,840,"SF FOB Jolo, Sulu (CSL)",6.056479,121.012845,0,1,0
+Philippines,840,"Camp inside Camp Aguinaldo, Manila",14.607638,121.063244,0,1,0
+Philippines,840,Camp Malagutay,6.928294,122.022565,0,1,0
+Poland,290,Lask AB,51.559773,19.173033,0,1,0
+Poland,290,Redzikowo,54.473308,17.111021,0,1,0
+Portugal,235,Lajes field,38.7617,-27.095,1,0,0
+Puerto Rico,2,Fort Buchanan,18.412716,-66.121957,1,0,0
+Puerto Rico,2,"Roosevelt Roads Naval Station, Cieba",18.239406,-65.649776,1,0,0
+Puerto Rico,2,"Capt E. Rubio USARC, Puerto Nuevo",18.410489,-66.082924,1,0,0
+Puerto Rico,2,"Fort Allen, Juana Diaz",18.007621,-66.504189,1,0,0
+Puerto Rico,2,Isabela N00207-AB,18.462925,-67.066925,1,0,0
+Puerto Rico,2,Naval Radio Transmitter Facility Aguada,18.398611,-67.177222,1,0,0
+Puerto Rico,2,Salinas N00207-JA,18.004377,-66.278605,1,0,0
+Puerto Rico,2,Luis Munoz Marin IAP,18.439167,-66.001944,1,0,0
+Puerto Rico,2,"Mount Pirata, Vieques",NA,NA,1,0,0
+Puerto Rico,2,MTA Camp Santiago Rq,18.007111,-66.289646,1,0,0
+Puerto Rico,2,NSGA Sabana Seca,18.43004,-66.189007,1,0,0
+Puerto Rico,2,Pico Del Este - AFWTF,18.211485,-65.736512,1,0,0
+Puerto Rico,2,Pineros Island,18.252155,-65.591137,1,0,0
+Puerto Rico,2,Punta Borinquen Radar Site,18.485034,-67.148746,1,0,0
+Puerto Rico,2,Punta Salinas Radar Site,18.47483,-66.18242,1,0,0
+Puerto Rico,2,Ramey AF Solar Observatory Research Site,18.509421,-67.099153,1,0,0
+Puerto Rico,2,Ramey USARC/Aquadilla,18.41047,-67.154153,1,0,0
+Puerto Rico,2,Roosevelt Rds Nav Sta USARC,18.229103,-65.609241,1,0,0
+Puerto Rico,2,Vieques West,18.139258,-65.290145,1,0,0
+Qatar,694,Al Udeid AB,25.117222,51.314722,1,0,0
+Qatar,694,As Sayliyah AB,25.1878712,51.4122936,1,0,0
+Qatar,694,Umm Said,24.996466,51.548932,1,0,0
+Qatar,694,Camp Al Karana,25.1878712,51.4122936,1,0,0
+Qatar,694,Falcon-78 ammunition storage,25.25553,50.957647,1,0,0
+Romania,360,Mihail Kogalniceanu (MK) AB,44.362222,28.488333,1,0,0
+Romania,360,Deveselu,44.077708,24.416968,1,0,0
+Romania,360,Babadag Training Base,44.898056,28.741944,1,0,0
+Romania,360,Cincu Training Base,45.923644,24.796612,0,1,0
+Romania,360,Smardan Training base,45.518061,27.914086,0,1,0
+Saudi Arabia,670,Eskan Village,24.583807,46.862711,0,1,0
+Saudi Arabia,670,"Drone base in east, near Yemen",19.115124,50.127868,0,1,0
+Saudi Arabia,670,"Dammam, Saudi Arabia",26.283333,50.2,0,1,0
+Saudi Arabia,670,"Dhahran AB, Saudi Arabia",26.265278,50.151944,0,1,0
+Saudi Arabia,670,"Jubail, Saudi Arabia",27,49.666667,0,1,0
+Saudi Arabia,670,"Yanbu, Saudi Arabia",24.083333,38,0,1,0
+Saudi Arabia,670,Khamis,18.306944,42.809167,0,1,0
+Saudi Arabia,670,Taif,21.479308,40.551255,0,1,0
+Saudi Arabia,670,Tabuk,28.362467,36.579508,0,1,0
+Senegal,433,Dakar,14.728252,-17.457471,0,1,0
+Seychelles,591,Mahe International Airport,-4.674344,55.521853,0,1,0
+Singapore,830,Sembawang,1.460138,103.823108,1,0,0
+Singapore,830,Changi,1.320702,104.026958,0,1,0
+Somalia,520,Baledogle Airfield,2.670833,44.793056,0,1,0
+Somalia,520,Kismayo Airport,-0.375531,42.459912,0,1,0
+South Sudan,626,Nzara,4.633437,28.254596,0,1,0
+Spain,230,Moron AB,37.174999,-5.616,1,0,0
+Spain,230,Rota NB,36.639957,-6.339344,1,0,0
+Syria,652,Xerab Hisk/Harab Isk,36.553683,38.594818,1,0,0
+Syria,652,Rmelan Airport,36.898448,41.997539,1,0,0
+Syria,652,Tell Beydar/Tal Baydar,36.739067,40.581155,0,1,0
+Syria,652,Tall Tamr/Tal Tamir,36.656857,40.368727,0,1,0
+Syria,652,Ash Shaddadi,36.056365,40.730751,0,1,0
+Syria,652,Ayn Issah/Ain Issa,36.384842,38.867184,0,1,0
+Syria,652,Kobani/Ayn Al-Arab,36.891028,38.349996,0,1,0
+Syria,652,Sabt,NA,NA,0,1,0
+Syria,652,Ushariya,NA,NA,0,1,0
+Syria,652,Ayn Dadad,NA,NA,0,1,0
+Thailand,800,U-Tapao,12.68174,100.998486,0,1,0
+Tunisia,616,"CK: Mount Chaambi, Kasserine",35.217949,8.748524,1,0,0
+Turkey,640,Ankara Admin Office,39.92077,32.85411,1,0,0
+Turkey,640,Batman AB,37.915833,41.141944,1,0,0
+Turkey,640,Izmir AS,38.41885,27.12872,1,0,0
+Turkey,640,Incirlik AB,37.003237,35.425827,1,0,0
+Turkey,640,Cigli AB,38.512778,27.01,1,0,0
+Turkey,640,Yumurzalik Petroleum Storage,36.774681,35.788219,1,0,0
+Uganda,500,Entebbe,0.047072,32.445657,0,1,0
+Uganda,500,Singo Training School,-0.800173,31.498282,0,1,0
+United Arab Emirates,696,Al Dhafra,24.24,54.548333,1,0,0
+United Arab Emirates,696,Fujairah Aviation Unit,25.1,56.21,1,0,0
+United Arab Emirates,696,Jebel Ali,25.01126,55.06116,1,0,0
+United Kingdom,200,Barford St John Transmitter Annex,52.003944,-1.360415,1,0,0
+United Kingdom,200,Bicester,51.899603,-1.15359,1,0,0
+United Kingdom,200,Blenheim Crescent,51.569444,-0.433611,1,0,0
+United Kingdom,200,Alconbury,52.363333,-0.222778,1,0,0
+United Kingdom,200,Molesworth,52.3803,-0.408791,1,0,0
+United Kingdom,200,Molesworth Storage Annex,52.369653,-0.426457,1,0,0
+United Kingdom,200,Menwith Hill,54.008083,-1.688061,1,0,0
+United Kingdom,200,Lakenheath,52.406006,0.559223,1,0,0
+United Kingdom,200,"Eriswell FH Annex, Lakenheath",52.413917,0.521854,1,0,0
+United Kingdom,200,Croughton,51.987809,-1.186094,1,0,0
+United Kingdom,200,Ely Housing Complex,52.399539,0.262363,1,0,0
+United Kingdom,200,Fairford,51.685016,-1.780387,1,0,0
+United Kingdom,200,Feltwell,52.486378,0.519412,1,0,0
+United Kingdom,200,Mildenhall,52.361697,0.48558,1,0,0
+United Kingdom,200,Mildenhall Ammo Storage Annex,52.344421,0.510947,1,0,0
+United Kingdom,200,Welford Ammo Storage Annex,52.414995,-1.056133,1,0,0
+Uruguay,165,"14th Battalion, Toledo",-34.740542,-56.096084,0,0,1
+Virgin Islands,2,Fredricksted,17.712519,-64.880846,1,0,0
+Virgin Islands,2,Christiansted,17.74661,-64.702897,1,0,0
+Wake Island,2,Wake Island,19.280042,166.647717,0,1,0

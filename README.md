@@ -65,6 +65,7 @@ value equal to a Correlates of War (COW) Project country code, or a
 vector of numerical COW country code values.
 
 ``` r
+# Let's make the host selection more specific
 hostlist <- c(200, 220)
 
 example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
