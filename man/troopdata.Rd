@@ -7,7 +7,9 @@
 \format{
 A data frame with country year observations including the following variables:
 \describe{
+\item{\code{countryname}}{A character vector of countrynames.}
 \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
+\item{\code{iso3c}}{A character vector of ISO three character country codes.}
 \item{\code{year}}{The year of the observation.}
 \item{\code{troops}}{The total number of US military personnel deployed to the host country.}
 \item{\code{army}}{Total number of Army personnel deployed to the host country.}

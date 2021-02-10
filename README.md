@@ -53,7 +53,7 @@ be aggregated to generate country counts.
 
 ### `get_troopdata`
 
-The first function of this package is the `get_troopdata` function. At
+The first function of this package is the `get_troopdata()` function. At
 its most basic this function returns a data frame of country-year troop
 deployment values for the selected time period, using the `startdate`
 and `enddate` parameters.
@@ -61,27 +61,52 @@ and `enddate` parameters.
 For users who want more refined data, the `host` argument and the
 `branch` arguments allow users to specify the set of host countries for
 which they would like data returned. This must be a single numerical
-value equal to a Correlates of War (COW) Project country code, or a
-vector of numerical COW country code values.
+value equal to a Correlates of War (COW) Project country code, a single
+character value equal to an ISO3C country code, or a vector of similar
+values. Note they must be consistent (i.e. they must all be numeric COW
+codes or ISO3C character codes).
+
+For example, you can use a numeric vector of COW country codes:
 
 ``` r
 # Let's make the host selection more specific
 hostlist <- c(200, 220)
 
 example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
-#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
-#> element will be used
+#> Warning in if (is.na(host) & length(host) < 1) {: the condition has length > 1
+#> and only the first element will be used
 
 head(example)
-#> # A tibble: 6 x 3
-#>   ccode  year troops
-#>   <dbl> <dbl>  <dbl>
-#> 1   200  1990  25111
-#> 2   200  1991  23442
-#> 3   200  1992  20048
-#> 4   200  1993  16100
-#> 5   200  1994  13781
-#> 6   200  1995  12131
+#> # A tibble: 6 x 5
+#>   countryname    ccode iso3c  year troops
+#>   <chr>          <dbl> <chr> <dbl>  <dbl>
+#> 1 United Kingdom   200 GBR    1990  25111
+#> 2 United Kingdom   200 GBR    1991  23442
+#> 3 United Kingdom   200 GBR    1992  20048
+#> 4 United Kingdom   200 GBR    1993  16100
+#> 5 United Kingdom   200 GBR    1994  13781
+#> 6 United Kingdom   200 GBR    1995  12131
+```
+
+Or you can use a character vector of ISO3C codes.
+
+``` r
+hostlist.char <- c("CAN", "GBR")
+
+example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 2020)
+#> Warning in if (is.na(host) & length(host) < 1) {: the condition has length > 1
+#> and only the first element will be used
+
+head(example.char)
+#> # A tibble: 6 x 5
+#>   countryname ccode iso3c  year troops
+#>   <chr>       <dbl> <chr> <dbl>  <dbl>
+#> 1 Canada         20 CAN    1970   2643
+#> 2 Canada         20 CAN    1971   1835
+#> 3 Canada         20 CAN    1972   1742
+#> 4 Canada         20 CAN    1973   1362
+#> 5 Canada         20 CAN    1974   1580
+#> 6 Canada         20 CAN    1975   1301
 ```
 
 Last, the `branch` argument mentioned above is a logical argument
@@ -92,26 +117,28 @@ function will automatically return the sum total of troop deployments to
 a country.
 
 ``` r
+hostlist <- c(20, 200, 220)
+
 example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endyear = 2020)
 #> Warning: Branch data only available for 2006 forward.
-#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
-#> element will be used
+#> Warning in if (is.na(host) & length(host) < 1) {: the condition has length > 1
+#> and only the first element will be used
 
 head(example)
-#> # A tibble: 6 x 7
-#>   ccode  year troops  army  navy air_force marine_corps
-#>   <dbl> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
-#> 1   200  2006  11331   397   584     10280           70
-#> 2   200  2007  10425   355   443      9552           75
-#> 3   200  2008   9042   315   489      8169           69
-#> 4   200  2009   8933   324   396      8143           70
-#> 5   200  2010   8764   333   364      8004           63
-#> 6   200  2011   8673   328   316      7977           52
+#> # A tibble: 6 x 9
+#>   countryname ccode iso3c  year troops  army  navy air_force marine_corps
+#>   <chr>       <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
+#> 1 Canada         20 CAN    2006    133     7    35        81           10
+#> 2 Canada         20 CAN    2007    141     7    41        84            9
+#> 3 Canada         20 CAN    2008     92     8     0        82            2
+#> 4 Canada         20 CAN    2009     91     8     0        83            0
+#> 5 Canada         20 CAN    2010    129     3    28        98            0
+#> 6 Canada         20 CAN    2011    128     7    38        83            0
 ```
 
 ### `get_basedata`
 
-The second function, `get_basedata` returns a data frame containing
+The second function, `get_basedata()` returns a data frame containing
 information on the United States’ overseas military bases going back to
 the beginning of the Cold War. At its most basic the function will
 return a data frame containing country-base observations, along with the
@@ -123,49 +150,65 @@ base, a smaller lilypad, and if it is a currently funded site.
 baseexample <- get_basedata(host = NA, country_count = FALSE)
 
 head(baseexample)
-#> # A tibble: 6 x 8
-#>   country     ccode basename            lat   lon  base lilypad fundedsite
-#>   <chr>       <dbl> <chr>             <dbl> <dbl> <dbl>   <dbl>      <dbl>
-#> 1 Afghanistan   700 Bagram AB          34.9  69.3     1       0          0
-#> 2 Afghanistan   700 Kandahar Airfield  31.5  65.8     1       0          0
-#> 3 Afghanistan   700 Mazar-e-Sharif     36.7  67.2     1       0          0
-#> 4 Afghanistan   700 Gardez             33.6  69.2     1       0          0
-#> 5 Afghanistan   700 Kabul              34.5  69.2     1       0          0
-#> 6 Afghanistan   700 Herat              34.3  62.2     1       0          0
+#> # A tibble: 6 x 9
+#>   countryname ccode iso3c basename            lat   lon  base lilypad fundedsite
+#>   <chr>       <dbl> <chr> <chr>             <dbl> <dbl> <dbl>   <dbl>      <dbl>
+#> 1 Afghanistan   700 AFG   Bagram AB          34.9  69.3     1       0          0
+#> 2 Afghanistan   700 AFG   Kandahar Airfield  31.5  65.8     1       0          0
+#> 3 Afghanistan   700 AFG   Mazar-e-Sharif     36.7  67.2     1       0          0
+#> 4 Afghanistan   700 AFG   Gardez             33.6  69.2     1       0          0
+#> 5 Afghanistan   700 AFG   Kabul              34.5  69.2     1       0          0
+#> 6 Afghanistan   700 AFG   Herat              34.3  62.2     1       0          0
 ```
 
-As with the `get_troopdata` function, users can specify particular
-countries using the Correlates of War (COW) country code values. These
-can be single numeric values of a vector of values.
+As with the `get_troopdata()` function you can specify a numeric vector
+of COW country codes or a character vector of ISO3C codes to specify
+specific host countries.
+
+For example, using COW country codes:
 
 ``` r
-hostvector <- c(20, 200, 255, 645)
+hostlist <- c(20, 200, 255, 645)
 
-baseexample <- get_basedata(host = hostvector, country_count = FALSE)
-#> Warning in if (!is.numeric(host) & !is.na(host)) {: the condition has length > 1
-#> and only the first element will be used
+baseexample <- get_basedata(host = hostlist, country_count = FALSE)
+#> Warning in if (!is.numeric(host) & !is.character(host) & !is.na(host)) {: the
+#> condition has length > 1 and only the first element will be used
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
 
 head(baseexample)
-#> # A tibble: 6 x 8
-#>   country            ccode basename          lat    lon  base lilypad fundedsite
-#>   <chr>              <dbl> <chr>           <dbl>  <dbl> <dbl>   <dbl>      <dbl>
-#> 1 Ascension Island     200 Ascension Isla~ -7.95  -14.4     1       0          0
-#> 2 BR Indian Ocean T~   200 Diego Garcia    -7.32   72.4     1       0          0
-#> 3 Canada                20 <NA>            56.1  -106.      0       1          0
-#> 4 Canada                20 Argentia, Newf~ 47.3   -54.0     1       0          0
-#> 5 Germany              255 Amberg          49.4    11.9     1       0          0
-#> 6 Germany              255 USAG Ansbach    49.3    10.6     1       0          0
+#> # A tibble: 6 x 9
+#>   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite
+#>   <chr>           <dbl> <chr> <chr>        <dbl>  <dbl> <dbl>   <dbl>      <dbl>
+#> 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0
+#> 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0
+#> 3 Canada             20 CAN   <NA>         56.1  -106.      0       1          0
+#> 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0
+#> 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0
+#> 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0
+```
+
+And another using ISO3C codes:
+
+``` r
+hostlist.char <- c("CAN", "GBR", "PRI")
+
+baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
+#> Warning in if (!is.numeric(host) & !is.character(host) & !is.na(host)) {: the
+#> condition has length > 1 and only the first element will be used
+#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
+#> element will be used
 ```
 
 Finally, users can also generate country-level counts of the number of
 U.S. military bases by changing the `country_count` argument to `TRUE`.
 
 ``` r
-baseexample <- get_basedata(host = hostvector, country_count = TRUE)
-#> Warning in if (!is.numeric(host) & !is.na(host)) {: the condition has length > 1
-#> and only the first element will be used
+hostlist <- c(20, 200, 255, 645)
+
+baseexample <- get_basedata(host = hostlist, country_count = TRUE)
+#> Warning in if (!is.numeric(host) & !is.character(host) & !is.na(host)) {: the
+#> condition has length > 1 and only the first element will be used
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
 
@@ -203,7 +246,23 @@ basemap <- ggplot() +
 basemap
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+
+## A note on country codes
+
+The original DMDC data contain information on U.S. troop deployments to
+a a wide range of locations, including several non-state territories.
+One downside of using the COW country codes as the primary host ID
+variable is that there are often no country codes for smaller states and
+territories. In the case of the Vine basing data, some smaller
+territories have COW codes for the imperial power that controls a
+territory. For example, Puerto Rico and Guam both receive a COW country
+code of 2 as they are territorial possessions of the United States.
+Users may want to distinguish such cases where deployments are present
+in a territory versus the metropole. Using the ISO country codes
+provides some additional flexibility when calling the data. Worst case,
+you can pull the full data frame and look around at the specific
+observations and figure out what best suits your needs.
 
 ## How to cite this package and data?
 

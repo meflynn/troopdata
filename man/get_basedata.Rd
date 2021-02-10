@@ -7,7 +7,7 @@
 get_basedata(host = NA, country_count = FALSE)
 }
 \arguments{
-\item{host}{The Correlates of War (COW) numeric country code for the host country or countries in the series}
+\item{host}{The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series}
 
 \item{country_count}{Logical. Should the function return a country-level count of the total number of bases or the country-site data}
 }

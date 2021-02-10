@@ -56,7 +56,7 @@ This package currently has two functions:
 
 ### `get_troopdata`
 
-The first function of this package is the `get_troopdata` function. At its most basic this function returns a data frame of country-year troop deployment values for the selected time period, using the `startdate` and `enddate` parameters.
+The first function of this package is the `get_troopdata()` function. At its most basic this function returns a data frame of country-year troop deployment values for the selected time period, using the `startdate` and `enddate` parameters.
 
 ```{r example, warning=FALSE, echo = FALSE, message=FALSE}
 library(troopdata)
@@ -68,7 +68,9 @@ example <- get_troopdata(startyear = 1990, endyear = 2020)
 ```
 
 
-For users who want more refined data, the `host` argument and the `branch` arguments allow users to specify the set of host countries for which they would like data returned. This must be a single numerical value equal to a Correlates of War (COW) Project country code, or a vector of numerical COW country code values.
+For users who want more refined data, the `host` argument and the `branch` arguments allow users to specify the set of host countries for which they would like data returned. This must be a single numerical value equal to a Correlates of War (COW) Project country code, a single character value equal to an ISO3C country code, or a vector of similar values. Note they must be consistent (i.e. they must all be numeric COW codes or ISO3C character codes).
+
+For example, you can use a numeric vector of COW country codes:
 
 ```{r}
 
@@ -81,9 +83,23 @@ head(example)
 
 ```
 
+Or you can use a character vector of ISO3C codes.
+
+```{r}
+
+hostlist.char <- c("CAN", "GBR")
+
+example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 2020)
+
+head(example.char)
+
+```
+
 Last, the `branch` argument mentioned above is a logical argument (i.e. `TRUE` or `FALSE`) that allows users to view data disaggregated by individual service branches. Note that these values are only available for the 2006 and later time period. The default value is FALSE and the function will automatically return the sum total of troop deployments to a country. 
 
 ```{r}
+
+hostlist <- c(20, 200, 220)
 
 example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endyear = 2020)
 
@@ -93,7 +109,7 @@ head(example)
 
 ### `get_basedata`
 
-The second function, `get_basedata` returns a data frame containing information on the United States' overseas military bases going back to the beginning of the Cold War. At its most basic the function will return a data frame containing country-base observations, along with the facility's longitude and latitude (if available), and a series of binary variables indicating whether or not the facility is a full military base, a smaller lilypad, and if it is a currently funded site. 
+The second function, `get_basedata()` returns a data frame containing information on the United States' overseas military bases going back to the beginning of the Cold War. At its most basic the function will return a data frame containing country-base observations, along with the facility's longitude and latitude (if available), and a series of binary variables indicating whether or not the facility is a full military base, a smaller lilypad, and if it is a currently funded site.
 
 ```{r}
 
@@ -103,23 +119,38 @@ head(baseexample)
 
 ```
 
-As with the `get_troopdata` function, users can specify particular countries using the Correlates of War (COW) country code values. These can be single numeric values of a vector of values.
+As with the `get_troopdata()` function you can specify a numeric vector of COW country codes or a character vector of ISO3C codes to specify specific host countries. 
 
+For example, using COW country codes:
+ 
 ```{r}
 
-hostvector <- c(20, 200, 255, 645)
+hostlist <- c(20, 200, 255, 645)
 
-baseexample <- get_basedata(host = hostvector, country_count = FALSE)
+baseexample <- get_basedata(host = hostlist, country_count = FALSE)
 
 head(baseexample)
 
 ```
 
+And another using ISO3C codes:
+
+```{r}
+
+hostlist.char <- c("CAN", "GBR", "PRI")
+
+baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
+
+```
+
+
 Finally, users can also generate country-level counts of the number of U.S. military bases by changing the `country_count` argument to `TRUE`. 
 
 ```{r}
 
-baseexample <- get_basedata(host = hostvector, country_count = TRUE)
+hostlist <- c(20, 200, 255, 645)
+
+baseexample <- get_basedata(host = hostlist, country_count = TRUE)
 
 head(baseexample)
 
@@ -149,6 +180,12 @@ basemap <- ggplot() +
 basemap
 
 ```
+
+
+
+## A note on country codes
+
+The original DMDC data contain information on U.S. troop deployments to a a wide range of locations, including several non-state territories. One downside of using the COW country codes as the primary host ID variable is that there are often no country codes for smaller states and territories. In the case of the Vine basing data, some smaller territories have COW codes for the imperial power that controls a territory. For example, Puerto Rico and Guam both receive a COW country code of 2 as they are territorial possessions of the United States. Users may want to distinguish such cases where deployments are present in a territory versus the metropole. Using the ISO country codes provides some additional flexibility when calling the data. Worst case, you can pull the full data frame and look around at the specific observations and figure out what best suits your needs. 
 
 
 

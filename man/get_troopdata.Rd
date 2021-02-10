@@ -7,7 +7,7 @@
 get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 }
 \arguments{
-\item{host}{The Correlates of War (COW) numeric country code for the host country or countries in the series}
+\item{host}{The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series}
 
 \item{branch}{Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.}
 
