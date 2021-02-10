@@ -37,7 +37,7 @@
 #' also includes information on the type of military facility and the longitude and latitude of the facility. The second version presents
 #' a simple country-count data frame, where the count is the number of bases located in that country.
 #'
-#' @format A data frame with country year observations including the following variables:
+#' @format A data frame with country-base or country observations including the following variables:
 #' \describe{
 #' \item{\code{countryname}}{A character vector of countrynames.}
 #' \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
@@ -45,7 +45,7 @@
 #' \item{\code{basename}}{Name of the facility.}
 #' \item{\code{lat}}{The facility's latitude.}
 #' \item{\code{lon}}{The facility's longitude.}
-#' \item{\code{base}}{Binary indicator identifying the facility as a major base  or not.}
+#' \item{\code{base}}{Binary indicator identifying the facility as a major base or not.}
 #' \item{\code{lilypad}}{A binary indicator identifying the facility as a lilypad or not. Vine codes lilypads as less than 200 personnel or "other site" designation in Pentagon reports.}
 #' \item{\code{fundedsite}}{A binary variable indicating whether or not the facility is a host-state base funded by the US.}
 #' }
