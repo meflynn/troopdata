@@ -12,8 +12,8 @@ The goal of the troopdata package is to facilitate the distribution of
 military deployment and basing data for use in social science research
 and journalism. The troop deployment data were initially compiled by Tim
 Kane using information obtained from the U.S. Department of Defense’s
-Defense Manpower Data Center. The original data ended in 2005 and we
-have updated it to run through 2020. Similarly, the basing data were
+Defense Manpower Data Center (DMDC). The original data ended in 2005 and
+we have updated it to run through 2020. Similarly, the basing data were
 initially compiled by David Vine, and we have updated the original data
 using open source information from the U.S. military and press reports
 through 2018. We have also assembled this R package to allow users to
