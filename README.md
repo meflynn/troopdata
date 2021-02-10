@@ -73,8 +73,8 @@ For example, you can use a numeric vector of COW country codes:
 hostlist <- c(200, 220)
 
 example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
-#> Warning in if (is.na(host) & length(host) < 1) {: the condition has length > 1
-#> and only the first element will be used
+#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
+#> element will be used
 
 head(example)
 #> # A tibble: 6 x 5
@@ -94,8 +94,8 @@ Or you can use a character vector of ISO3C codes.
 hostlist.char <- c("CAN", "GBR")
 
 example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 2020)
-#> Warning in if (is.na(host) & length(host) < 1) {: the condition has length > 1
-#> and only the first element will be used
+#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
+#> element will be used
 
 head(example.char)
 #> # A tibble: 6 x 5
@@ -121,8 +121,8 @@ hostlist <- c(20, 200, 220)
 
 example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endyear = 2020)
 #> Warning: Branch data only available for 2006 forward.
-#> Warning in if (is.na(host) & length(host) < 1) {: the condition has length > 1
-#> and only the first element will be used
+#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
+#> element will be used
 
 head(example)
 #> # A tibble: 6 x 9
@@ -269,9 +269,9 @@ observations and figure out what best suits your needs.
 When using the updated troop deployment data and/or the `troopdata`
 package please cite the following:
 
--   Allen, Michael A., Michael E. Flynn, Carla Martinez Machain, and
-    Andrew Stravers. 2021. “Global U.S. military deployment data:
-    1950-2020.” *Working Paper*
+-   Allen, Michael A., Michael E. Flynn, and Carla Martinez
+    Machain. 2021. “Global U.S. military deployment data: 1950-2020.”
+    *Working Paper*
 
 Kane’s original troop deployment data collected from 1950-2005:
 
