@@ -1,3 +1,5 @@
+# troopdata 1.1.0
+
 # troopdata 1.0.0
 
 * troopdata version 1.0.0 release!
