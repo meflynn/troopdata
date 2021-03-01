@@ -27,14 +27,14 @@ globalVariables(c('countryname', 'ccode', 'iso3c', 'base', 'lilypad', 'fundedsit
 get_basedata <- function(host = NA, country_count = FALSE) {
 
   if (!is.numeric(host) & !is.character(host) & !is.na(host)) {
-    warn(message = "Host argument should be numeric value or a vector of numeric values corresponding to COW country codes.")
+    warn(message = "Host argument should be numeric value or a vector of numeric values corresponding to COW or ISO3C country codes.")
   }
 
   basetemp <- troopdata::basedata
 
   if (is.na(host)) {
 
-    basetemp
+    return(basetemp)
 
   } else if (is.numeric(host)) {
 
@@ -43,12 +43,16 @@ get_basedata <- function(host = NA, country_count = FALSE) {
     basetemp <- basetemp %>%
       dplyr::filter(ccode %in% host)
 
+    return(basetemp)
+
   } else {
 
     host <- c(host)
 
     basetemp <- basetemp %>%
       dplyr::filter(iso3c %in% host)
+
+    return(basetemp)
 
   }
 
@@ -60,9 +64,12 @@ get_basedata <- function(host = NA, country_count = FALSE) {
                        lilypadcount = sum(lilypad, na.rm = TRUE),
                        fundedsitecount = sum(fundedsite, na.rm = TRUE))
 
+    return(basetemp)
+
+
   } else {
 
-      basetemp
+    return(basetemp)
 
     }
 

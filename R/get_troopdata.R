@@ -46,6 +46,8 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(year >= startyear & year <= endyear)
 
+    return(tempdata)
+
   } else if (is.numeric(host)) {
 
     host <- c(host)
@@ -53,12 +55,16 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(ccode %in% host & year >= startyear & year <= endyear)
 
+    return(tempdata)
+
   } else {
 
     host <- c(host)
 
     tempdata <- tempdata %>%
       dplyr::filter(iso3c %in% host & year >= startyear & year <= endyear)
+
+    return(tempdata)
 
   }
 
@@ -68,10 +74,14 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::select(countryname, ccode, iso3c, year, troops, army, navy, air_force, marine_corps)
 
+    return(tempdata)
+
   } else {
 
     tempdata <- tempdata %>%
       dplyr::select(countryname, ccode, iso3c, year, troops)
+
+    return(tempdata)
 
   }
 
