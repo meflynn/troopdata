@@ -3,23 +3,20 @@
 \docType{package}
 \name{troopdata-package}
 \alias{troopdata-package}
-\alias{_PACKAGE}
-\title{troopdata: Tools for Analyzing Cross-National Military Deployment and Basing Data}
+\title{Tools for Analyzing Cross-National Military Deployment and Basing Data}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
-
-These functions generate data frames on troop deployments and military basing using U.S. Department of Defense data on overseas military deployments initially compiled by Kane (2012) and Vine (2015) and subsequently updated by Allen, Flynn, Martinez Machain, and Stravers (2020). This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
+Generate customized data frames containing U.S. military deployment data
 }
-\seealso{
-Useful links:
-\itemize{
-  \item \url{https://github.com/meflynn/troopdata}
-  \item Report bugs at \url{https://github.com/meflynn/troopdata/issues}
+\details{
+The \code{troopdata} package contains functions for generating customized data sets on U.S. military
+deployment data and U.S. overseas basing data. The data contain country identifiers that can be used to merge
+these data with other data to analyze trends in the United States' overseas military posture.
 }
-
+\references{
+\url{https://www.m-flynn.com/}
+\url{https://github.com/meflynn/troopdata}
 }
 \author{
-\strong{Maintainer}: Michael Flynn \email{meflynn@ksu.edu} (\href{https://orcid.org/0000-0002-6064-740X}{ORCID})
-
+Michael E. Flynn \email{meflynn@ksu.edu}
 }
-\keyword{internal}
+\keyword{package}

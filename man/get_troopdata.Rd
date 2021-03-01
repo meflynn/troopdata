@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_troopdata.R
 \name{get_troopdata}
 \alias{get_troopdata}
-\title{Load troop Data}
+\title{Function to retrieve U.S. troop deployment data}
 \usage{
 get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 }
@@ -16,10 +16,10 @@ get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 \item{endyear}{The last year for the series}
 }
 \value{
-Returns a data frame containing country year observations for troop deployments
+\code{get_troopdata()} returns a data frame containing country-year observations for U.S. troop deployments.
 }
 \description{
-Load troop Data
+\code{get_troopdata()} generates a customized data frame containing country-year observations of U.S. military deployments overseas.
 }
 \examples{
 
@@ -36,6 +36,8 @@ head(example)
 }
 \references{
 Tim Kane. Global U.S. troop deployment, 1950-2003. Technical Report. Heritage Foundation, Washington, D.C.
-
-Michael A. Allen, Michael E. Flynn, Carla Martinez Machain, and Andrew Stravers. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
+Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
+}
+\author{
+Michael E. Flynn
 }

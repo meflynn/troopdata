@@ -1,14 +1,22 @@
 globalVariables(c('countryname', 'ccode', 'iso3c', 'base', 'lilypad', 'fundedsite', 'basecount', 'lilypadcount', 'fundedsitecount'))
 
-#' Load basing data
+#' Function to retrieve U.S. basing data
 #'
+#' @description \code{get_basedata()} generates a customized data frame containing data obtained from David Vine's U.S. basing data.
+#'
+#' @return \code{get_basedata()} returns a data frame containing information on U.S. military bases present within selected host countries. This can be customized to include country-base observations or country-count observations.
+#'
+#' @details Our research team updated these data through 2018.
+#'
+#' @author Michael E. Flynn
 #'
 #' @param host The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series
 #' @param country_count Logical. Should the function return a country-level count of the total number of bases or the country-site data
 #' @importFrom rlang warn
-#' @return Returns a data frame containing information on bases present within selected host countries
 #' @export
-#' @references David Vine. 2015. Base Nation. Metropolitan Books. New York, NY.
+#' @references
+#'
+#' David Vine. 2015. Base Nation. Metropolitan Books. New York, NY.
 #'
 #' @examples
 #'

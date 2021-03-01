@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_basedata.R
 \name{get_basedata}
 \alias{get_basedata}
-\title{Load basing data}
+\title{Function to retrieve U.S. basing data}
 \usage{
 get_basedata(host = NA, country_count = FALSE)
 }
@@ -12,10 +12,13 @@ get_basedata(host = NA, country_count = FALSE)
 \item{country_count}{Logical. Should the function return a country-level count of the total number of bases or the country-site data}
 }
 \value{
-Returns a data frame containing information on bases present within selected host countries
+\code{get_basedata()} returns a data frame containing information on U.S. military bases present within selected host countries. This can be customized to include country-base observations or country-count observations.
 }
 \description{
-Load basing data
+\code{get_basedata()} generates a customized data frame containing data obtained from David Vine's U.S. basing data.
+}
+\details{
+Our research team updated these data through 2018.
 }
 \examples{
 
@@ -32,4 +35,7 @@ head(example)
 }
 \references{
 David Vine. 2015. Base Nation. Metropolitan Books. New York, NY.
+}
+\author{
+Michael E. Flynn
 }

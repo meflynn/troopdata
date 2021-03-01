@@ -1,19 +1,24 @@
 globalVariables(c('countryname', 'ccode', 'iso3c', 'year', 'troops', 'army', 'navy', 'air_force', 'marine_corps'))
 
-#' Load troop Data
+#' Function to retrieve U.S. troop deployment data
 #'
+#' @description \code{get_troopdata()} generates a customized data frame containing country-year observations of U.S. military deployments overseas.
+
+#' @return \code{get_troopdata()} returns a data frame containing country-year observations for U.S. troop deployments.
 #'
 #' @param host The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series
 #' @param branch Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.
 #' @param startyear the first year for the series
 #' @param endyear The last year for the series
 #' @importFrom rlang warn
-#' @return Returns a data frame containing country year observations for troop deployments
 #' @export
 #'
+#' @author Michael E. Flynn
 #'
-#' @references Tim Kane. Global U.S. troop deployment, 1950-2003. Technical Report. Heritage Foundation, Washington, D.C.
-#' @references Michael A. Allen, Michael E. Flynn, Carla Martinez Machain, and Andrew Stravers. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
+#' @references
+#'
+#' Tim Kane. Global U.S. troop deployment, 1950-2003. Technical Report. Heritage Foundation, Washington, D.C.
+#' Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
 #'
 #'
 #'@examples

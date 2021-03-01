@@ -26,7 +26,7 @@ Please refer to the bottom of this page for citation information.
 
 ## Installation
 
-You can install the development version from
+You can install the `troopdata` package from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -77,15 +77,15 @@ example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
 #> element will be used
 
 head(example)
-#> # A tibble: 6 x 5
-#>   countryname    ccode iso3c  year troops
-#>   <chr>          <dbl> <chr> <dbl>  <dbl>
-#> 1 United Kingdom   200 GBR    1990  25111
-#> 2 United Kingdom   200 GBR    1991  23442
-#> 3 United Kingdom   200 GBR    1992  20048
-#> 4 United Kingdom   200 GBR    1993  16100
-#> 5 United Kingdom   200 GBR    1994  13781
-#> 6 United Kingdom   200 GBR    1995  12131
+#> # A tibble: 6 x 9
+#>   countryname    ccode iso3c  year troops  army  navy air_force marine_corps
+#>   <chr>          <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
+#> 1 United Kingdom   200 GBR    1990  25111    NA    NA        NA           NA
+#> 2 United Kingdom   200 GBR    1991  23442    NA    NA        NA           NA
+#> 3 United Kingdom   200 GBR    1992  20048    NA    NA        NA           NA
+#> 4 United Kingdom   200 GBR    1993  16100    NA    NA        NA           NA
+#> 5 United Kingdom   200 GBR    1994  13781    NA    NA        NA           NA
+#> 6 United Kingdom   200 GBR    1995  12131    NA    NA        NA           NA
 ```
 
 Or you can use a character vector of ISO3C codes.
@@ -98,23 +98,16 @@ example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 
 #> element will be used
 
 head(example.char)
-#> # A tibble: 6 x 5
-#>   countryname ccode iso3c  year troops
-#>   <chr>       <dbl> <chr> <dbl>  <dbl>
-#> 1 Canada         20 CAN    1970   2643
-#> 2 Canada         20 CAN    1971   1835
-#> 3 Canada         20 CAN    1972   1742
-#> 4 Canada         20 CAN    1973   1362
-#> 5 Canada         20 CAN    1974   1580
-#> 6 Canada         20 CAN    1975   1301
+#> # A tibble: 6 x 9
+#>   countryname ccode iso3c  year troops  army  navy air_force marine_corps
+#>   <chr>       <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
+#> 1 Canada         20 CAN    1970   2643    NA    NA        NA           NA
+#> 2 Canada         20 CAN    1971   1835    NA    NA        NA           NA
+#> 3 Canada         20 CAN    1972   1742    NA    NA        NA           NA
+#> 4 Canada         20 CAN    1973   1362    NA    NA        NA           NA
+#> 5 Canada         20 CAN    1974   1580    NA    NA        NA           NA
+#> 6 Canada         20 CAN    1975   1301    NA    NA        NA           NA
 ```
-
-Last, the `branch` argument mentioned above is a logical argument
-(i.e. `TRUE` or `FALSE`) that allows users to view data disaggregated by
-individual service branches. Note that these values are only available
-for the 2006 and later time period. The default value is FALSE and the
-function will automatically return the sum total of troop deployments to
-a country.
 
 ``` r
 hostlist <- c(20, 200, 220)
@@ -213,13 +206,15 @@ baseexample <- get_basedata(host = hostlist, country_count = TRUE)
 #> element will be used
 
 head(baseexample)
-#> # A tibble: 4 x 4
-#>   ccode basecount lilypadcount fundedsitecount
-#>   <dbl>     <dbl>        <dbl>           <dbl>
-#> 1    20         1            1               0
-#> 2   200        18            0               0
-#> 3   255        40            4               0
-#> 4   645         2            2               0
+#> # A tibble: 6 x 9
+#>   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite
+#>   <chr>           <dbl> <chr> <chr>        <dbl>  <dbl> <dbl>   <dbl>      <dbl>
+#> 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0
+#> 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0
+#> 3 Canada             20 CAN   <NA>         56.1  -106.      0       1          0
+#> 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0
+#> 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0
+#> 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0
 ```
 
 ## Applications
@@ -238,8 +233,10 @@ basepoints <- get_basedata(host = NA)
 
 basemap <- ggplot() +
   geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = "gray80", color = "white", size = 0.1) +
-  geom_point(data = basepoints, aes(x = lon, y = lat), color = "purple", alpha = 0.8) +
+  geom_point(data = basepoints, aes(x = lon, y = lat), color = "purple", alpha = 0.6) +
+  coord_equal(ratio = 1.3) +
   theme_void() +
+  theme(plot.title = element_markdown(face = "bold", size = 15)) +
   labs(title = "Locations of U.S. military facilities, 1950-2018")
 
 

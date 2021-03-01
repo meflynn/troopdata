@@ -22,7 +22,7 @@
 #' \item{\code{marine_corps}}{Total number of Marine Corps personnel deployed to the host country.}
 #' }
 #'
-#'@source \url{https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2005}
+#' @source \url{https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2005}
 #'
 "troopdata"
 
@@ -50,6 +50,6 @@
 #' \item{\code{fundedsite}}{A binary variable indicating whether or not the facility is a host-state base funded by the US.}
 #' }
 #'
-#'@source \url{https://dra.american.edu/islandora/object/auislandora%3A81234}
+#' @source \url{https://dra.american.edu/islandora/object/auislandora%3A81234}
 #'
 "basedata"
