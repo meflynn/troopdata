@@ -6,6 +6,7 @@
 #' @rdname pipe
 #' @keywords internal
 #' @export
+#' @return No return value, called for side effects.
 #' @importFrom magrittr %>%
 #' @usage lhs \%>\% rhs
 NULL

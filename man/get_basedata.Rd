@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_basedata.R
 \name{get_basedata}
 \alias{get_basedata}
-\title{Function to retrieve U.S. basing data}
+\title{Function to retrieve customized U.S. basing data}
 \usage{
 get_basedata(host = NA, country_count = FALSE)
 }

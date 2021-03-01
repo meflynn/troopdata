@@ -1,6 +1,6 @@
 globalVariables(c('countryname', 'ccode', 'iso3c', 'base', 'lilypad', 'fundedsite', 'basecount', 'lilypadcount', 'fundedsitecount'))
 
-#' Function to retrieve U.S. basing data
+#' Function to retrieve customized U.S. basing data
 #'
 #' @description \code{get_basedata()} generates a customized data frame containing data obtained from David Vine's U.S. basing data.
 #'

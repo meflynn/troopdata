@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_troopdata.R
 \name{get_troopdata}
 \alias{get_troopdata}
-\title{Function to retrieve U.S. troop deployment data}
+\title{Function to retrieve customized U.S. troop deployment data}
 \usage{
 get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 }
@@ -11,7 +11,7 @@ get_troopdata(host = NA, branch = FALSE, startyear, endyear)
 
 \item{branch}{Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.}
 
-\item{startyear}{the first year for the series}
+\item{startyear}{The first year for the series}
 
 \item{endyear}{The last year for the series}
 }
@@ -36,6 +36,7 @@ head(example)
 }
 \references{
 Tim Kane. Global U.S. troop deployment, 1950-2003. Technical Report. Heritage Foundation, Washington, D.C.
+
 Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2021. "Global U.S. military deployment data: 1950-2020." Working Paper.
 }
 \author{

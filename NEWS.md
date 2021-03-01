@@ -1,5 +1,8 @@
 # troopdata 0.1.2
 
+* Modified version number down to better adhere to R package best practices.
+* Improved documentation for package and functions.
+
 # troopdata 1.1.0
 
 # troopdata 1.0.0

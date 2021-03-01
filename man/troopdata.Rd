@@ -3,11 +3,12 @@
 \docType{data}
 \name{troopdata}
 \alias{troopdata}
-\title{Troop Data}
+\title{U.S. overseas troop deployment data}
 \format{
 A data frame with country year observations including the following variables:
+
 \describe{
-\item{\code{countryname}}{A character vector of countrynames.}
+\item{\code{countryname}}{A character vector of country names.}
 \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
 \item{\code{iso3c}}{A character vector of ISO three character country codes.}
 \item{\code{year}}{The year of the observation.}
@@ -25,12 +26,9 @@ A data frame with country year observations including the following variables:
 troopdata
 }
 \value{
-Data on US military deployments to overseas locations (countries and territories) from 1950 through 2020. The data were originally
-compiled by Tim Kane of the Heritage Foundation using Defense Manpower Data Center quarterly reports on US troop deployments.
-These data originally ended in 2005 but we have updated them to run through 2020. We have also used news reports to update deployment
-figures for particular countries like Iraq where the DOD stopped reporting data.
+Returns the full data frame containing country-year observations of US military deployments to overseas locations (countries and territories) from 1950 through 2020.
 }
 \description{
-\code{get_troopdata()} returns a data frame containing information on US military deployments.
+\code{troopdata} returns a data frame containing information on US military deployments.
 }
 \keyword{datasets}

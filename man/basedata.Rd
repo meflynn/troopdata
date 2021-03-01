@@ -3,11 +3,11 @@
 \docType{data}
 \name{basedata}
 \alias{basedata}
-\title{Base data}
+\title{Vine's U.S. basing data}
 \format{
-A data frame with country-base or country observations including the following variables:
+A data frame with country-base observations including the following variables:
 \describe{
-\item{\code{countryname}}{A character vector of countrynames.}
+\item{\code{countryname}}{A character vector of country names.}
 \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
 \item{\code{iso3c}}{A character vector of ISO three character country codes.}
 \item{\code{basename}}{Name of the facility.}
@@ -25,12 +25,9 @@ A data frame with country-base or country observations including the following v
 basedata
 }
 \value{
-Data on US military bases from the Cold War period through the present. These data were initially collected by David Vine (2015). We
-updated the data through 2018 for inclusion in this package. The data include two versions. The first is the country-base data, which
-also includes information on the type of military facility and the longitude and latitude of the facility. The second version presents
-a simple country-count data frame, where the count is the number of bases located in that country.
+Returns the full data frame containing country observations of US military bases from the Cold War period through 2018.
 }
 \description{
-\code{get_basedata()} returns a data frame containing David Vine's US basing data.
+\code{basedata} returns a data frame containing David Vine's US basing data.
 }
 \keyword{datasets}
