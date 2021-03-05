@@ -8,6 +8,12 @@
 
 <img src="man/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
+[![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
+[![](https://img.shields.io/badge/devel%20version-0.1.2-green.svg)](https://github.com/meflynn/troopdata)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
+[![](http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red)](https://cran.r-project.org/package=troopdata)
+[![](http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow)](https://cran.r-project.org/package=troopdata)
+
 The goal of the troopdata package is to facilitate the distribution of
 military deployment and basing data for use in social science research
 and journalism. The troop deployment data were initially compiled by Tim
@@ -26,11 +32,14 @@ Please refer to the bottom of this page for citation information.
 
 ## Installation
 
-You can install the `troopdata` package from
+You can install the `troopdata` package from CRAN or
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
+
+or 
+
 devtools::install_github("meflynn/troopdata")
 ```
 
@@ -243,7 +252,7 @@ basemap <- ggplot() +
 basemap
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
 
 ## A note on country codes
 
