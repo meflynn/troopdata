@@ -36,7 +36,9 @@ You can install the `troopdata` package from CRAN or
 [GitHub](https://github.com/) with:
 
 ``` r
-install.packages("devtools")
+#install.packages("devtools")
+
+install.packages("troopdata")
 
 or 
 
