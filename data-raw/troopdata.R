@@ -60,14 +60,14 @@ troopdata <- haven::read_dta(here::here("../../Projects/Troops/troops 1950-2020.
 
 
 south.vietnam <- troopdata %>%
-  filter(ccode == 816 & year <= 1975) %>%
+  filter(ccode == 816 & year %in% c(1954:1975)) %>%
   mutate(ccode = 817,
          countryname = "Republic of Vietnam",
          iso3c = NA)
 
 troopdata <- troopdata %>%
   mutate(troops = case_when(
-    ccode == 816 & year <= 1975 ~ 0,
+    ccode == 816 & year %in% c(1954:1975) ~ 0,
     TRUE ~ troops
   )) %>%
   filter(!(ccode == 817 & year <= 1975)) %>%
