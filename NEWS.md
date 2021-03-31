@@ -1,3 +1,5 @@
+# troopdata 0.1.3
+
 # troopdata 0.1.2
 
 * Modified version number down to better adhere to R package best practices.
