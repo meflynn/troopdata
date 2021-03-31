@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
-[![](https://img.shields.io/badge/devel%20version-0.1.2-green.svg)](https://github.com/meflynn/troopdata)
+[![](https://img.shields.io/badge/devel%20version-0.1.3-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow)](https://cran.r-project.org/package=troopdata)
@@ -14,16 +14,17 @@
 
 <img src="man/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
-The goal of the troopdata package is to facilitate the distribution of
-military deployment and basing data for use in social science research
-and journalism. The troop deployment data were initially compiled by Tim
-Kane using information obtained from the U.S. Department of Defense’s
-Defense Manpower Data Center (DMDC). The original data ended in 2005 and
-we have updated it to run through 2020. Similarly, the basing data were
-initially compiled by David Vine, and we have updated the original data
-using open source information from the U.S. military and press reports
-through 2018. We have also assembled this R package to allow users to
-more easily access the data and use it in their own research.
+The goal of the `{troopdata}` package is to facilitate the distribution
+of military deployment and basing data for use in social science
+research and journalism. The troop deployment data were initially
+compiled by Tim Kane using information obtained from the U.S. Department
+of Defense’s Defense Manpower Data Center (DMDC). The original data
+ended in 2005 and we have updated it to run through 2020. Similarly, the
+basing data were initially compiled by David Vine, and we have updated
+the original data using open source information from the U.S. military
+and press reports through 2018. We have also assembled this R package to
+allow users to more easily access the data and use it in their own
+research.
 
 The package will be updated with additional features in the future, but
 for now please let me know if you find any errors.
