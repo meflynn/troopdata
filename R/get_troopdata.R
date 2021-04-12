@@ -60,7 +60,6 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(ccode %in% host & year >= startyear & year <= endyear)
 
-    return(tempdata)
 
   } else {
 
@@ -69,12 +68,11 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(iso3c %in% host & year >= startyear & year <= endyear)
 
-    return(tempdata)
 
   }
 
 
-  if (branch) {
+  if (branch==TRUE) {
 
     tempdata <- tempdata %>%
       dplyr::select(countryname, ccode, iso3c, year, troops, army, navy, air_force, marine_corps)

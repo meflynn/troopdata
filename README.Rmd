@@ -50,7 +50,7 @@ Please refer to the bottom of this page for citation information.
 
 ## Installation
 
-You can install the `troopdata` package from CRAN or [GitHub](https://github.com/) with:
+You can install the `troopdata` package from CRAN or [GitHub](https://github.com/) with: 
 
 ``` r
 #install.packages("devtools")

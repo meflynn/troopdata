@@ -89,15 +89,15 @@ example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
 #> element will be used
 
 head(example)
-#> # A tibble: 6 x 9
-#>   countryname    ccode iso3c  year troops  army  navy air_force marine_corps
-#>   <chr>          <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
-#> 1 United Kingdom   200 GBR    1990  25111    NA    NA        NA           NA
-#> 2 United Kingdom   200 GBR    1991  23442    NA    NA        NA           NA
-#> 3 United Kingdom   200 GBR    1992  20048    NA    NA        NA           NA
-#> 4 United Kingdom   200 GBR    1993  16100    NA    NA        NA           NA
-#> 5 United Kingdom   200 GBR    1994  13781    NA    NA        NA           NA
-#> 6 United Kingdom   200 GBR    1995  12131    NA    NA        NA           NA
+#> # A tibble: 6 x 5
+#>   countryname    ccode iso3c  year troops
+#>   <chr>          <dbl> <chr> <dbl>  <dbl>
+#> 1 United Kingdom   200 GBR    1990  25111
+#> 2 United Kingdom   200 GBR    1991  23442
+#> 3 United Kingdom   200 GBR    1992  20048
+#> 4 United Kingdom   200 GBR    1993  16100
+#> 5 United Kingdom   200 GBR    1994  13781
+#> 6 United Kingdom   200 GBR    1995  12131
 ```
 
 Or you can use a character vector of ISO3C codes.
@@ -110,15 +110,15 @@ example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 
 #> element will be used
 
 head(example.char)
-#> # A tibble: 6 x 9
-#>   countryname ccode iso3c  year troops  army  navy air_force marine_corps
-#>   <chr>       <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
-#> 1 Canada         20 CAN    1970   2643    NA    NA        NA           NA
-#> 2 Canada         20 CAN    1971   1835    NA    NA        NA           NA
-#> 3 Canada         20 CAN    1972   1742    NA    NA        NA           NA
-#> 4 Canada         20 CAN    1973   1362    NA    NA        NA           NA
-#> 5 Canada         20 CAN    1974   1580    NA    NA        NA           NA
-#> 6 Canada         20 CAN    1975   1301    NA    NA        NA           NA
+#> # A tibble: 6 x 5
+#>   countryname ccode iso3c  year troops
+#>   <chr>       <dbl> <chr> <dbl>  <dbl>
+#> 1 Canada         20 CAN    1970   2643
+#> 2 Canada         20 CAN    1971   1835
+#> 3 Canada         20 CAN    1972   1742
+#> 4 Canada         20 CAN    1973   1362
+#> 5 Canada         20 CAN    1974   1580
+#> 6 Canada         20 CAN    1975   1301
 ```
 
 ``` r
