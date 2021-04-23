@@ -2,8 +2,9 @@
 
 library(tidyverse)
 library(haven)
+library(here)
 
-troopdata <- haven::read_dta(here::here("../../Projects/Troops/troops 1950-2020.dta")) %>%
+troopdata <- haven::read_dta(here::here("../../Projects/Troops/data/", "troops 1950-2020.dta")) %>%
   dplyr::select(ccode, year, troops, army, navy, air_force, marine_corps) %>%
   dplyr::filter(year >= 1950) %>%
   mutate(countryname = countrycode::countrycode(ccode, "cown", "country.name"),
@@ -55,6 +56,11 @@ troopdata <- haven::read_dta(here::here("../../Projects/Troops/troops 1950-2020.
            ccode == 1039 ~ "Kashmir",
            ccode == 1099 ~ "UNKNOWN",
            TRUE ~ countryname),
+         troops = ifelse(ccode == 200 & year == 2014, 8495, troops),
+         army = ifelse(ccode == 200 & year == 2014, 216, army),
+         navy = ifelse(ccode == 200 & year == 2014, 300, navy),
+         air_force = ifelse(ccode == 200 & year == 2014, 7938, air_force),
+         marine_corps = ifelse(ccode == 200 & year == 2014, 40, marine_corps),
          iso3c = countrycode::countrycode(countryname, "country.name", "iso3c")) %>%
   dplyr::select(countryname, ccode, iso3c, year, troops, army, navy, air_force, marine_corps)
 
