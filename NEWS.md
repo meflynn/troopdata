@@ -1,3 +1,7 @@
+# troopdata 0.1.4
+
+* Fixed error with 2014 UK values that were missing from data.
+
 # troopdata 0.1.3
 
 * Fixed error where Kane data classifies troops as being present in Vietnam during the Vietnam War but COW recognizes South Vietnam as a separate country.
