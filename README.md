@@ -327,3 +327,10 @@ Vine’s original basing data:
 
 -   Vine, David. 2015. “Base nation: How U.S. military bases abroad harm
     America and the World.” Metropolitan Books, Washington, D.C.
+
+Construction data
+
+-   Michael A. Allen, Michael E. Flynn, and Carla Martinez
+    Machain. 2020. “Outside the wire: US military deployments and public
+    opinion in host states.” American Political Science Review. 114(2):
+    326-341.
