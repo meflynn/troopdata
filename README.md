@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
-[![](https://img.shields.io/badge/devel%20version-0.1.3-green.svg)](https://github.com/meflynn/troopdata)
+[![](https://img.shields.io/badge/devel%20version-0.1.3.9000-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow)](https://cran.r-project.org/package=troopdata)
@@ -60,6 +60,12 @@ military bases around the globe from the Cold War forward. Depending on
 the arguments specified the function will return the entire data set or
 data for a particular country. Observations can be site-specific or can
 be aggregated to generate country counts.
+
+`get_builddata()`: Returns a data frame containing geocoded
+location-year information on U.S. military overseas construction
+spending. Users can specify select countries and years, or call the
+entire data frame. Currently only select countries are included in the
+data
 
 ## Example
 
@@ -227,6 +233,36 @@ head(baseexample)
 #> 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0
 #> 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0
 #> 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0
+```
+
+### `get_builddata`
+
+Users can call on the `get_builddata()` returns a data frame containing
+geocoded location-project-year military construction data. The basic
+arguments function the same as compared to the previous functions. The
+primary difference is that the data are currently available only for all
+countries and years where the Department of Defense publicly discloses
+spending figures from 2008 through 2019. Note there are also many
+observations included that contain amounts, but do not disclose location
+names or other information.
+
+``` r
+hostlist <- c(200, 255, 211)
+
+buildexample <- get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
+#> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
+#> element will be used
+
+head(buildexample)
+#> # A tibble: 6 x 8
+#>   countryname    ccode iso3c  year location                     lat    lon   toa
+#>   <chr>          <dbl> <chr> <dbl> <chr>                      <dbl>  <dbl> <dbl>
+#> 1 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518  1800
+#> 2 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518 15500
+#> 3 United Kingdom   200 GBR    2008 Menwith Hill Station        54.8 -2.70  10000
+#> 4 United Kingdom   200 GBR    2008 Menwith Hill Station        54.8 -2.70  31000
+#> 5 United Kingdom   200 GBR    2009 Royal Air Force Lakenheath  52.4  0.518 71828
+#> 6 United Kingdom   200 GBR    2009 Royal Air Force Lakenheath  52.4  0.518  7400
 ```
 
 ## Applications

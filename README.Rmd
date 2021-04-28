@@ -72,6 +72,7 @@ This package currently has two functions:
 
 `get_basedata()`: Returns a data frame containing information on U.S. military bases around the globe from the Cold War forward. Depending on the arguments specified the function will return the entire data set or data for a particular country. Observations can be site-specific or can be aggregated to generate country counts.
 
+`get_builddata()`: Returns a data frame containing geocoded location-year information on U.S. military overseas construction spending. Users can specify select countries and years, or call the entire data frame. Currently only select countries are included in the data
 
 ## Example
 
@@ -175,6 +176,22 @@ hostlist <- c(20, 200, 255, 645)
 baseexample <- get_basedata(host = hostlist, country_count = TRUE)
 
 head(baseexample)
+
+```
+
+
+### `get_builddata`
+
+Users can call on the `get_builddata()` returns a data frame containing geocoded location-project-year military construction data. The basic arguments function the same as compared to the previous functions. The primary difference is that the data are currently available only for all countries and years where the Department of Defense publicly discloses spending figures from 2008 through 2019. Note there are also many observations included that contain amounts, but do not disclose location names or other information.
+
+```{r build example}
+
+hostlist <- c(200, 255, 211)
+
+buildexample <- get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
+
+head(buildexample)
+
 
 ```
 

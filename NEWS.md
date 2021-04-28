@@ -1,9 +1,9 @@
-# troopdata (development version)
+# troopdata 0.1.3.9000
 
-# troopdata 0.1.4
-
-* Introduces `get_builddata()` which returns a data frame containing location-year U.S. military construction spending at select overseas locations.
+* Introduces `get_builddata()` which returns a data frame containing location-project-year U.S. military construction spending a various locations. 
+* New construction data are geocoded to the nearest degree of accuracy available with the information publicly provided by Department of Defense.
 * Fixed error with `get_troopdata()` where 2014 UK values were missing from data.
+
 
 # troopdata 0.1.3
 
