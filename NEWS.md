@@ -1,6 +1,9 @@
+# troopdata (development version)
+
 # troopdata 0.1.4
 
-* Fixed error with 2014 UK values that were missing from data.
+* Introduces `get_builddata()` which returns a data frame containing location-year U.S. military construction spending at select overseas locations.
+* Fixed error with `get_troopdata()` where 2014 UK values were missing from data.
 
 # troopdata 0.1.3
 
