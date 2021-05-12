@@ -4,12 +4,14 @@
 \alias{get_basedata}
 \title{Function to retrieve customized U.S. basing data}
 \usage{
-get_basedata(host = NA, country_count = FALSE)
+get_basedata(host = NA, country_count = FALSE, groupvar = NULL)
 }
 \arguments{
 \item{host}{The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series}
 
 \item{country_count}{Logical. Should the function return a country-level count of the total number of bases or the country-site data}
+
+\item{groupvar}{A character string indicating how country count totals should be generated. Accepted values are 'countryname', 'ccode', or 'iso3c'. Can take on Required when using country_count argument.}
 }
 \value{
 \code{get_basedata()} returns a data frame containing information on U.S. military bases present within selected host countries. This can be customized to include country-base observations or country-count observations.

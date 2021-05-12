@@ -167,13 +167,13 @@ baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
 ```
 
 
-Finally, users can also generate country-level counts of the number of U.S. military bases by changing the `country_count` argument to `TRUE`. 
+Finally, users can also generate country-level counts of the number of U.S. military bases by changing the `country_count` argument to `TRUE`. Note that when using this argument you also need to specify the `groupvar` argument, which specifies which identifier will be used to generate country-level totals. Though this may sound obvious individual country codes may include multiple geographic territories that are more finely parsed using various identifiers. Accepted character strings include "countryname", "iso3c", and "ccode".
 
 ```{r}
 
 hostlist <- c(20, 200, 255, 645)
 
-baseexample <- get_basedata(host = hostlist, country_count = TRUE)
+baseexample <- get_basedata(host = hostlist, country_count = TRUE, groupvar = "ccode")
 
 head(baseexample)
 

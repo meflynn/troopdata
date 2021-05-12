@@ -182,8 +182,6 @@ For example, using COW country codes:
 hostlist <- c(20, 200, 255, 645)
 
 baseexample <- get_basedata(host = hostlist, country_count = FALSE)
-#> Warning in if (!is.numeric(host) & !is.character(host) & !is.na(host)) {: the
-#> condition has length > 1 and only the first element will be used
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
 
@@ -205,34 +203,39 @@ And another using ISO3C codes:
 hostlist.char <- c("CAN", "GBR", "PRI")
 
 baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
-#> Warning in if (!is.numeric(host) & !is.character(host) & !is.na(host)) {: the
-#> condition has length > 1 and only the first element will be used
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
 ```
 
 Finally, users can also generate country-level counts of the number of
 U.S. military bases by changing the `country_count` argument to `TRUE`.
+Note that when using this argument you also need to specify the
+`groupvar` argument, which specifies which identifier will be used to
+generate country-level totals. Though this may sound obvious individual
+country codes may include multiple geographic territories that are more
+finely parsed using various identifiers. Accepted character strings
+include “countryname”, “iso3c”, and “ccode”.
 
 ``` r
 hostlist <- c(20, 200, 255, 645)
 
-baseexample <- get_basedata(host = hostlist, country_count = TRUE)
-#> Warning in if (!is.numeric(host) & !is.character(host) & !is.na(host)) {: the
-#> condition has length > 1 and only the first element will be used
+baseexample <- get_basedata(host = hostlist, country_count = TRUE, groupvar = "ccode")
+#> Warning: Must specify grouping variable when using country_count.
+#> Warning: group var must equal 'countryname', 'ccode', or 'iso3c'.
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
+#> Warning: `group_by_()` was deprecated in dplyr 0.7.0.
+#> Please use `group_by()` instead.
+#> See vignette('programming') for more help
 
 head(baseexample)
-#> # A tibble: 6 x 9
-#>   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite
-#>   <chr>           <dbl> <chr> <chr>        <dbl>  <dbl> <dbl>   <dbl>      <dbl>
-#> 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0
-#> 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0
-#> 3 Canada             20 CAN   <NA>         56.1  -106.      0       1          0
-#> 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0
-#> 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0
-#> 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0
+#> # A tibble: 4 x 4
+#>   ccode basecount lilypadcount fundedsitecount
+#>   <dbl>     <dbl>        <dbl>           <dbl>
+#> 1    20         1            1               0
+#> 2   200        18            0               0
+#> 3   255        40            4               0
+#> 4   645         2            2               0
 ```
 
 ### `get_builddata`
