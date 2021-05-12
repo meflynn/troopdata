@@ -35,7 +35,7 @@ globalVariables(c('countryname', 'ccode', 'iso3c', 'base', 'lilypad', 'fundedsit
 get_basedata <- function(host = NA, country_count = FALSE) {
 
   if (!is.numeric(host) & !is.character(host) & !is.na(host)) {
-    warn(message = "Host argument should be numeric value or a vector of numeric values corresponding to COW or ISO3C country codes.")
+    warn(message = "Host argument should be numeric or character value, or a vector of numeric or character values, corresponding to COW or ISO3C country codes.")
   }
 
   basetemp <- troopdata::basedata
@@ -64,7 +64,7 @@ get_basedata <- function(host = NA, country_count = FALSE) {
 
   }
 
-  if (country_count) {
+  if (country_count==TRUE) {
 
     basetemp <- basetemp %>%
       dplyr::group_by(ccode) %>%
