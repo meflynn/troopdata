@@ -37,23 +37,18 @@ get_basedata <- function(host = NA, country_count = FALSE) {
 
   basetemp <- troopdata::basedata
 
+
   if (is.na(host)) {
 
     basetemp <- basetemp
 
-    return(basetemp)
-
   } else if (is.numeric(host)) {
-
-    host <- c(host)
 
     basetemp <- basetemp %>%
       dplyr::filter(ccode %in% host)
 
 
   } else {
-
-    host <- c(host)
 
     basetemp <- basetemp %>%
       dplyr::filter(iso3c %in% host)
@@ -62,8 +57,6 @@ get_basedata <- function(host = NA, country_count = FALSE) {
   }
 
   if (country_count==TRUE & is.numeric(host)) {
-
-    host <- c(host)
 
     basetemp <- basetemp %>%
       dplyr::group_by(ccode) %>%
@@ -76,13 +69,25 @@ get_basedata <- function(host = NA, country_count = FALSE) {
 
   } else if (country_count==TRUE & is.character(host)) {
 
-    host <- c(host)
-
     basetemp <- basetemp %>%
       dplyr::group_by(iso3c) %>%
       dplyr::summarise(basecount = sum(base, na.rm = TRUE),
                        lilypadcount = sum(lilypad, na.rm = TRUE),
                        fundedsitecount = sum(fundedsite, na.rm = TRUE))
+
+    return(basetemp)
+
+  } else if (country_count==TRUE & is.na(host)) {
+
+    basetemp <- basetemp %>%
+      dplyr::group_by(ccode) %>%
+      dplyr::summarise(basecount = sum(base, na.rm = TRUE),
+                       lilypadcount = sum(lilypad, na.rm = TRUE),
+                       fundedsitecount = sum(fundedsite, na.rm = TRUE))
+
+    return(basetemp)
+
+  } else {
 
     return(basetemp)
 
