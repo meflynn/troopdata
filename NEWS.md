@@ -3,6 +3,8 @@
 * Introduces `get_builddata()` which returns a data frame containing location-project-year U.S. military construction spending a various locations. 
 * New construction data are geocoded to the nearest degree of accuracy available with the information publicly provided by Department of Defense.
 * Fixed error with `get_troopdata()` where 2014 UK values were missing from data.
+* Fixed error with `get_basedata()` where `country_count` argument wasn't working.
+* Added `groupvar` argument to `get_basedata()` to allow greater flexibility when aggregating base counts across various territorial groupings.
 
 
 # troopdata 0.1.3
