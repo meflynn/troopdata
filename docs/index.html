@@ -85,6 +85,7 @@
 <p>The goal of the <a href="https://github.com/meflynn/troopdata">troopdata</a> package is to facilitate the distribution of military deployment and basing data for use in social science research and journalism. The troop deployment data were initially compiled by Tim Kane using information obtained from the U.S. Department of Defense’s Defense Manpower Data Center (DMDC). The original data ended in 2005 and we have updated it to run through 2020. Similarly, the basing data were initially compiled by David Vine, and we have updated the original data using open source information from the U.S. military and press reports through 2018. We have also assembled this R package to allow users to more easily access the data and use it in their own research.</p>
 <p>The package will be updated with additional features in the future, but for now please let me know if you find any errors.</p>
 <p>Please refer to the bottom of this page for citation information.</p>
+<p>You can also find more information on the package and changes corresponding to each update here: <a href="https://meflynn.github.io/troopdata/index.html" class="uri">https://meflynn.github.io/troopdata/index.html</a></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -123,17 +124,19 @@
 <span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, startyear <span class="op">=</span> <span class="fl">1990</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 <span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
 <span class="co">#&gt; element will be used</span>
+<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
+<span class="co">#&gt; first element will be used</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 × 5</span>
-<span class="co">#&gt;   countryname    ccode iso3c  year troops</span>
-<span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 United Kingdom   200 GBR    1990  25111</span>
-<span class="co">#&gt; 2 United Kingdom   200 GBR    1991  23442</span>
-<span class="co">#&gt; 3 United Kingdom   200 GBR    1992  20048</span>
-<span class="co">#&gt; 4 United Kingdom   200 GBR    1993  16100</span>
-<span class="co">#&gt; 5 United Kingdom   200 GBR    1994  13781</span>
-<span class="co">#&gt; 6 United Kingdom   200 GBR    1995  12131</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 6 x 6</span>
+<span class="co">#&gt;   countryname    ccode iso3c  year troops region               </span>
+<span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;                </span>
+<span class="co">#&gt; 1 United Kingdom   200 GBR    1990  25111 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 2 United Kingdom   200 GBR    1991  23442 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 3 United Kingdom   200 GBR    1992  20048 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 4 United Kingdom   200 GBR    1993  16100 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 5 United Kingdom   200 GBR    1994  13781 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 6 United Kingdom   200 GBR    1995  12131 Europe &amp; Central Asia</span></code></pre></div>
 <p>Or you can use a character vector of ISO3C codes.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hostlist.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CAN"</span>, <span class="st">"GBR"</span><span class="op">)</span>
@@ -141,17 +144,19 @@
 <span class="va">example.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist.char</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 <span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
 <span class="co">#&gt; element will be used</span>
+<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
+<span class="co">#&gt; first element will be used</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example.char</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 × 5</span>
-<span class="co">#&gt;   countryname ccode iso3c  year troops</span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Canada         20 CAN    1970   2643</span>
-<span class="co">#&gt; 2 Canada         20 CAN    1971   1835</span>
-<span class="co">#&gt; 3 Canada         20 CAN    1972   1742</span>
-<span class="co">#&gt; 4 Canada         20 CAN    1973   1362</span>
-<span class="co">#&gt; 5 Canada         20 CAN    1974   1580</span>
-<span class="co">#&gt; 6 Canada         20 CAN    1975   1301</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 6 x 6</span>
+<span class="co">#&gt;   countryname ccode iso3c  year troops region       </span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        </span>
+<span class="co">#&gt; 1 Canada         20 CAN    1970   2643 North America</span>
+<span class="co">#&gt; 2 Canada         20 CAN    1971   1835 North America</span>
+<span class="co">#&gt; 3 Canada         20 CAN    1972   1742 North America</span>
+<span class="co">#&gt; 4 Canada         20 CAN    1973   1362 North America</span>
+<span class="co">#&gt; 5 Canada         20 CAN    1974   1580 North America</span>
+<span class="co">#&gt; 6 Canada         20 CAN    1975   1301 North America</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">200</span>, <span class="fl">220</span><span class="op">)</span>
 
@@ -159,17 +164,19 @@
 <span class="co">#&gt; Warning: Branch data only available for 2006 forward.</span>
 <span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
 <span class="co">#&gt; element will be used</span>
+<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
+<span class="co">#&gt; first element will be used</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 × 9</span>
-<span class="co">#&gt;   countryname ccode iso3c  year troops  army  navy air_force marine_corps</span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Canada         20 CAN    2006    133     7    35        81           10</span>
-<span class="co">#&gt; 2 Canada         20 CAN    2007    141     7    41        84            9</span>
-<span class="co">#&gt; 3 Canada         20 CAN    2008     92     8     0        82            2</span>
-<span class="co">#&gt; 4 Canada         20 CAN    2009     91     8     0        83            0</span>
-<span class="co">#&gt; 5 Canada         20 CAN    2010    129     3    28        98            0</span>
-<span class="co">#&gt; 6 Canada         20 CAN    2011    128     7    38        83            0</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 6 x 10</span>
+<span class="co">#&gt;   countryname ccode iso3c  year troops  army  navy air_force marine_corps region</span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt; </span>
+<span class="co">#&gt; 1 Canada         20 CAN    2006    133     7    35        81           10 North~</span>
+<span class="co">#&gt; 2 Canada         20 CAN    2007    141     7    41        84            9 North~</span>
+<span class="co">#&gt; 3 Canada         20 CAN    2008     92     8     0        82            2 North~</span>
+<span class="co">#&gt; 4 Canada         20 CAN    2009     91     8     0        83            0 North~</span>
+<span class="co">#&gt; 5 Canada         20 CAN    2010    129     3    28        98            0 North~</span>
+<span class="co">#&gt; 6 Canada         20 CAN    2011    128     7    38        83            0 North~</span></code></pre></div>
 </div>
 <div id="get_basedata" class="section level3">
 <h3 class="hasAnchor">
@@ -180,7 +187,7 @@
 <code class="sourceCode R"><span class="va">baseexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_basedata.html">get_basedata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="cn">NA</span>, country_count <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">baseexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 × 9</span>
+<span class="co">#&gt; # A tibble: 6 x 9</span>
 <span class="co">#&gt;   countryname ccode iso3c basename            lat   lon  base lilypad fundedsite</span>
 <span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 Afghanistan   700 AFG   Bagram AB          34.9  69.3     1       0          0</span>
@@ -199,13 +206,13 @@
 <span class="co">#&gt; element will be used</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">baseexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 × 9</span>
+<span class="co">#&gt; # A tibble: 6 x 9</span>
 <span class="co">#&gt;   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite</span>
 <span class="co">#&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Ascension Isla…   200 GBR   Ascension I… -7.95  -14.4     1       0          0</span>
-<span class="co">#&gt; 2 BR Indian Ocea…   200 GBR   Diego Garcia -7.32   72.4     1       0          0</span>
+<span class="co">#&gt; 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0</span>
+<span class="co">#&gt; 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0</span>
 <span class="co">#&gt; 3 Canada             20 CAN   &lt;NA&gt;         56.1  -106.      0       1          0</span>
-<span class="co">#&gt; 4 Canada             20 CAN   Argentia, N… 47.3   -54.0     1       0          0</span>
+<span class="co">#&gt; 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0</span>
 <span class="co">#&gt; 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0</span>
 <span class="co">#&gt; 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0</span></code></pre></div>
 <p>And another using ISO3C codes:</p>
@@ -226,7 +233,7 @@
 <span class="co">#&gt; element will be used</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">baseexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 4 × 4</span>
+<span class="co">#&gt; # A tibble: 4 x 4</span>
 <span class="co">#&gt;   ccode basecount lilypadcount fundedsitecount</span>
 <span class="co">#&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;           &lt;dbl&gt;</span>
 <span class="co">#&gt; 1    20         1            1               0</span>
@@ -247,7 +254,7 @@
 <span class="co">#&gt; element will be used</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">buildexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 × 8</span>
+<span class="co">#&gt; # A tibble: 6 x 8</span>
 <span class="co">#&gt;   countryname    ccode iso3c  year location                     lat    lon   toa</span>
 <span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518  1800</span>

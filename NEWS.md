@@ -5,6 +5,7 @@
   * 2014 UK values were missing from data.
   * Fixes error with  `get_troopdata()` Kuwait 2006 troop values showing up as 0. Replaced with estimate derived from supplementary sources.
   * Provides updated estimated for Iraq (2006, 2007), Kuwait (2006, 2007), and Syria (2018, 2019, 2020)
+* Adds option to generate regional sums of military personnel by setting `host = "region"` when calling `get_troopdata()` function.
 
 * Iraq, Afghanistan, and Syria data for 2018-2020 were estimated from reports and we continue to update those numbers based on information we can get. Just Security has engaged in a legal process and sued the DOD to get precise counts of troops in Iraq, Afghanistan, and Syria, but the DOD has obfuscated the total counts by classifying the majority of deployments as temporary. Read through the whole saga here: https://www.justsecurity.org/75124/just-security-obtains-overseas-troop-counts-that-the-pentagon-concealed-from-the-public/. Thanks to Thomas Campbell at Boise State for pointing out this data. To reflect new public data, we have updated the stimates as follows:
 
