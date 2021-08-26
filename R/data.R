@@ -13,6 +13,7 @@
 #' \item{\code{countryname}}{A character vector of country names.}
 #' \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
 #' \item{\code{iso3c}}{A character vector of ISO three character country codes.}
+#' \item{\code{region}}{Correlates of War geographic region name.}
 #' \item{\code{year}}{The year of the observation.}
 #' \item{\code{troops}}{The total number of US military personnel deployed to the host country.}
 #' \item{\code{army}}{Total number of Army personnel deployed to the host country.}
@@ -69,6 +70,7 @@
 #' \describe{
 #' \item{\code{countryname}}{A character vector of country names.}
 #' \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
+#' \item{\code{year}}{Year of observed country-year spending.}
 #' \item{\code{iso3c}}{A character vector of ISO three character country codes.}
 #' \item{\code{location}}{Name of the facility where spending occurred, or host country where detailed facility information is unavailable.}
 #' \item{\code{toa}}{Total obligational authority associated with the observed location-year.}

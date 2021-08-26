@@ -9,6 +9,7 @@ A data frame with country-base observations including the following variables:
 \describe{
 \item{\code{countryname}}{A character vector of country names.}
 \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
+\item{\code{year}}{Year of observed country-year spending.}
 \item{\code{iso3c}}{A character vector of ISO three character country codes.}
 \item{\code{location}}{Name of the facility where spending occurred, or host country where detailed facility information is unavailable.}
 \item{\code{toa}}{Total obligational authority associated with the observed location-year.}

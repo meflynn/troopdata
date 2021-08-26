@@ -1,4 +1,4 @@
-globalVariables(c('countryname', 'ccode', 'iso3c', 'year', 'troops', 'army', 'navy', 'air_force', 'marine_corps'))
+globalVariables(c('countryname', 'ccode', 'iso3c', 'region', 'year', 'troops', 'army', 'navy', 'air_force', 'marine_corps'))
 
 #' Function to retrieve customized U.S. troop deployment data
 #'
@@ -56,7 +56,7 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(year >= startyear & year <= endyear) %>%
       dplyr::group_by(region, year) %>%
-      dplyr::summarise(across(c(troops, army, navy, air_force, marine_corps), ~ sum(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(c(troops, army, navy, air_force, marine_corps), ~ sum(.x, na.rm = TRUE)))
 
   } else if (is.numeric(host)) {
 

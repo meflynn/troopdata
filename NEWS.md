@@ -7,7 +7,7 @@
   * Provides updated estimated for Iraq (2006, 2007), Kuwait (2006, 2007), and Syria (2018, 2019, 2020)
 * Adds option to generate regional sums of military personnel by setting `host = "region"` when calling `get_troopdata()` function.
 
-* Iraq, Afghanistan, and Syria data for 2018-2020 were estimated from reports and we continue to update those numbers based on information we can get. Just Security has engaged in a legal process and sued the DOD to get precise counts of troops in Iraq, Afghanistan, and Syria, but the DOD has obfuscated the total counts by classifying the majority of deployments as temporary. Read through the whole saga here: https://www.justsecurity.org/75124/just-security-obtains-overseas-troop-counts-that-the-pentagon-concealed-from-the-public/. Thanks to Thomas Campbell at Boise State for pointing out this data. To reflect new public data, we have updated the stimates as follows:
+* Iraq, Afghanistan, and Syria data for 2018-2020 were estimated from reports and we continue to update those numbers based on information we can get. Just Security has engaged in a legal process and sued the DOD to get precise counts of troops in Iraq, Afghanistan, and Syria, but the DOD has obfuscated the total counts by classifying the majority of deployments as temporary. Read through the whole saga here: https://www.justsecurity.org/75124/just-security-obtains-overseas-troop-counts-that-the-pentagon-concealed-from-the-public/. Thanks to Thomas Campbell at Boise State for pointing out this data. To reflect new public data, we have updated the estimates as follows:
 
 * Changes:
   * Iraq: stays the same.
@@ -22,7 +22,7 @@
   * Iraq 2006: Updated to 141100 from 185500, using 2006 average from here: https://fas.org/sgp/crs/natsec/R40682.pdf
   * Iraq 2007: Updated to 170000 from 218500, source for the first number is: https://www.reuters.com/article/us-iraq-usa-pullout/timeline-invasion-surge-withdrawal-u-s-forces-in-iraq-idUSTRE7BE0EL20111215
   * Iraq 2006 and 2007: Individual force counts changed to NA.
-  * Kuwait 2006: Updated to 44,400 from 0. We got this number from 185,500 total OIF and substracting the average from 2006 reported in the above document.
+  * Kuwait 2006: Updated to 44,400 from 0. We got this number from 185,500 total OIF and subtracting the average from 2006 reported in the above document.
   * Kuwait 2007: Update to 48500 from 0.
 
 These numbers continue to be estimates in a few cases, so we will continue to update these numbers as we get more reliable figures.

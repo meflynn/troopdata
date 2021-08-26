@@ -107,6 +107,21 @@ troopdata <- troopdata %>%
            countryname == "Yemen People's Republic" ~ "Middle East & North Africa",
            countryname == "Republic of Vietnam" ~ "East Asia & Pacific",
            countryname == "Diego Garcia" ~ "South Asia",
+           countryname == "Kashmir" ~ "South Asia",
+           countryname == "Easter Island" ~ "East Asia & Pacific",
+           countryname == "Western Sahara" ~ "East Asia & Pacific",
+           countryname == "Sarawak" ~ "East Asia & Pacific",
+           countryname == "British West Indies Federation" ~ "Latin America & Caribbean",
+           countryname == "Line Islands" ~ "East Asia & Pacific",
+           countryname == "Aden" ~ "Middle East & North Africa",
+           countryname == "Fiji and Tonga" ~ "East Asia & Pacific",
+           countryname == "Svalbard" ~ "Europe & Central Asia",
+           countryname == "Coral Sea Islands" ~ "East Asia & Pacific",
+           countryname == "Akrotiri" ~ "Europe & Central Asia",
+           countryname == "Spratly Islands" ~ "East Asia & Pacific",
+           countryname == "Netherlands Antilles" ~ "Latin America & Caribbean",
+           countryname == "Wake Island" ~ "East Asia & Pacific",
+           countryname == "St. Helena" ~ "Sub-Saharan Africa",
            TRUE ~ region
            ))
 
