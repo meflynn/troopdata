@@ -1,11 +1,10 @@
-# troopdata 0.1.3.9000
+# troopdata 0.1.4
 
-* Introduces `get_builddata()` which returns a data frame containing location-project-year U.S. military construction spending a various locations. 
-* New construction data are geocoded to the nearest degree of accuracy available with the information publicly provided by Department of Defense.
-* Fixed error with `get_troopdata()` where 2014 UK values were missing from data.
-* Fixed error with `get_basedata()` where `country_count` argument wasn't working.
-* Added `groupvar` argument to `get_basedata()` to allow greater flexibility when aggregating base counts across various territorial groupings.
-
+* Introduces `get_builddata()` which returns a data frame containing location-year U.S. military construction spending at select overseas locations.
+* Fixed multiple errors with `get_troopdata()`:
+  * 2014 UK values were missing from data.
+  * Fixes error with  `get_troopdata()` Kuwait 2006 troop values showing up as 0. Replaced with estimate derived from supplementary sources.
+  * Provides updated estimated for Iraq (2006, 2007), Kuwait (2006, 2007), and Syria (2018, 2019, 2020)
 
 # troopdata 0.1.3
 
