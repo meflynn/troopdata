@@ -51,7 +51,12 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(year >= startyear & year <= endyear)
 
-    return(tempdata)
+  } else if (host=="region") {
+
+    tempdata <- tempdata %>%
+      dplyr::filter(year >= startyear & year <= endyear) %>%
+      dplyr::group_by(region, year) %>%
+      dplyr::summarise(across(c(troops, army, navy, air_force, marine_corps), ~ sum(.x, na.rm = TRUE)))
 
   } else if (is.numeric(host)) {
 
@@ -68,25 +73,22 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
     tempdata <- tempdata %>%
       dplyr::filter(iso3c %in% host & year >= startyear & year <= endyear)
 
-
   }
 
-
+  # Allow users to look at branch specific values
   if (branch==TRUE) {
-
-    tempdata <- tempdata %>%
-      dplyr::select(countryname, ccode, iso3c, year, troops, army, navy, air_force, marine_corps)
 
     return(tempdata)
 
   } else {
 
     tempdata <- tempdata %>%
-      dplyr::select(countryname, ccode, iso3c, year, troops)
-
-    return(tempdata)
+      dplyr::select(-c(army, navy, air_force, marine_corps))
 
   }
+
+
+  return(tempdata)
 
 }
 

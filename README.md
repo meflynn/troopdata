@@ -31,6 +31,10 @@ for now please let me know if you find any errors.
 
 Please refer to the bottom of this page for citation information.
 
+You can also find more information on the package and changes
+corresponding to each update here:
+<https://meflynn.github.io/troopdata/index.html>
+
 ## Installation
 
 You can install the `troopdata` package from CRAN or
@@ -93,17 +97,19 @@ hostlist <- c(200, 220)
 example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
+#> Warning in if (host == "region") {: the condition has length > 1 and only the
+#> first element will be used
 
 head(example)
-#> # A tibble: 6 × 5
-#>   countryname    ccode iso3c  year troops
-#>   <chr>          <dbl> <chr> <dbl>  <dbl>
-#> 1 United Kingdom   200 GBR    1990  25111
-#> 2 United Kingdom   200 GBR    1991  23442
-#> 3 United Kingdom   200 GBR    1992  20048
-#> 4 United Kingdom   200 GBR    1993  16100
-#> 5 United Kingdom   200 GBR    1994  13781
-#> 6 United Kingdom   200 GBR    1995  12131
+#> # A tibble: 6 x 6
+#>   countryname    ccode iso3c  year troops region               
+#>   <chr>          <dbl> <chr> <dbl>  <dbl> <chr>                
+#> 1 United Kingdom   200 GBR    1990  25111 Europe & Central Asia
+#> 2 United Kingdom   200 GBR    1991  23442 Europe & Central Asia
+#> 3 United Kingdom   200 GBR    1992  20048 Europe & Central Asia
+#> 4 United Kingdom   200 GBR    1993  16100 Europe & Central Asia
+#> 5 United Kingdom   200 GBR    1994  13781 Europe & Central Asia
+#> 6 United Kingdom   200 GBR    1995  12131 Europe & Central Asia
 ```
 
 Or you can use a character vector of ISO3C codes.
@@ -114,17 +120,19 @@ hostlist.char <- c("CAN", "GBR")
 example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 2020)
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
+#> Warning in if (host == "region") {: the condition has length > 1 and only the
+#> first element will be used
 
 head(example.char)
-#> # A tibble: 6 × 5
-#>   countryname ccode iso3c  year troops
-#>   <chr>       <dbl> <chr> <dbl>  <dbl>
-#> 1 Canada         20 CAN    1970   2643
-#> 2 Canada         20 CAN    1971   1835
-#> 3 Canada         20 CAN    1972   1742
-#> 4 Canada         20 CAN    1973   1362
-#> 5 Canada         20 CAN    1974   1580
-#> 6 Canada         20 CAN    1975   1301
+#> # A tibble: 6 x 6
+#>   countryname ccode iso3c  year troops region       
+#>   <chr>       <dbl> <chr> <dbl>  <dbl> <chr>        
+#> 1 Canada         20 CAN    1970   2643 North America
+#> 2 Canada         20 CAN    1971   1835 North America
+#> 3 Canada         20 CAN    1972   1742 North America
+#> 4 Canada         20 CAN    1973   1362 North America
+#> 5 Canada         20 CAN    1974   1580 North America
+#> 6 Canada         20 CAN    1975   1301 North America
 ```
 
 ``` r
@@ -134,17 +142,19 @@ example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endye
 #> Warning: Branch data only available for 2006 forward.
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
+#> Warning in if (host == "region") {: the condition has length > 1 and only the
+#> first element will be used
 
 head(example)
-#> # A tibble: 6 × 9
-#>   countryname ccode iso3c  year troops  army  navy air_force marine_corps
-#>   <chr>       <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
-#> 1 Canada         20 CAN    2006    133     7    35        81           10
-#> 2 Canada         20 CAN    2007    141     7    41        84            9
-#> 3 Canada         20 CAN    2008     92     8     0        82            2
-#> 4 Canada         20 CAN    2009     91     8     0        83            0
-#> 5 Canada         20 CAN    2010    129     3    28        98            0
-#> 6 Canada         20 CAN    2011    128     7    38        83            0
+#> # A tibble: 6 x 10
+#>   countryname ccode iso3c  year troops  army  navy air_force marine_corps region
+#>   <chr>       <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl> <chr> 
+#> 1 Canada         20 CAN    2006    133     7    35        81           10 North~
+#> 2 Canada         20 CAN    2007    141     7    41        84            9 North~
+#> 3 Canada         20 CAN    2008     92     8     0        82            2 North~
+#> 4 Canada         20 CAN    2009     91     8     0        83            0 North~
+#> 5 Canada         20 CAN    2010    129     3    28        98            0 North~
+#> 6 Canada         20 CAN    2011    128     7    38        83            0 North~
 ```
 
 ### `get_basedata`
@@ -161,7 +171,7 @@ base, a smaller lilypad, and if it is a currently funded site.
 baseexample <- get_basedata(host = NA, country_count = FALSE)
 
 head(baseexample)
-#> # A tibble: 6 × 9
+#> # A tibble: 6 x 9
 #>   countryname ccode iso3c basename            lat   lon  base lilypad fundedsite
 #>   <chr>       <dbl> <chr> <chr>             <dbl> <dbl> <dbl>   <dbl>      <dbl>
 #> 1 Afghanistan   700 AFG   Bagram AB          34.9  69.3     1       0          0
@@ -186,13 +196,13 @@ baseexample <- get_basedata(host = hostlist, country_count = FALSE)
 #> element will be used
 
 head(baseexample)
-#> # A tibble: 6 × 9
+#> # A tibble: 6 x 9
 #>   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite
 #>   <chr>           <dbl> <chr> <chr>        <dbl>  <dbl> <dbl>   <dbl>      <dbl>
-#> 1 Ascension Isla…   200 GBR   Ascension I… -7.95  -14.4     1       0          0
-#> 2 BR Indian Ocea…   200 GBR   Diego Garcia -7.32   72.4     1       0          0
+#> 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0
+#> 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0
 #> 3 Canada             20 CAN   <NA>         56.1  -106.      0       1          0
-#> 4 Canada             20 CAN   Argentia, N… 47.3   -54.0     1       0          0
+#> 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0
 #> 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0
 #> 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0
 ```
@@ -229,7 +239,7 @@ baseexample <- get_basedata(host = hostlist, country_count = TRUE, groupvar = "c
 #> element will be used
 
 head(baseexample)
-#> # A tibble: 4 × 4
+#> # A tibble: 4 x 4
 #>   ccode basecount lilypadcount fundedsitecount
 #>   <dbl>     <dbl>        <dbl>           <dbl>
 #> 1    20         1            1               0
@@ -257,7 +267,7 @@ buildexample <- get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
 #> element will be used
 
 head(buildexample)
-#> # A tibble: 6 × 8
+#> # A tibble: 6 x 8
 #>   countryname    ccode iso3c  year location                     lat    lon   toa
 #>   <chr>          <dbl> <chr> <dbl> <chr>                      <dbl>  <dbl> <dbl>
 #> 1 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518  1800

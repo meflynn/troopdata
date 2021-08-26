@@ -46,6 +46,8 @@ The package will be updated with additional features in the future, but for now 
 
 Please refer to the bottom of this page for citation information.
 
+You can also find more information on the package and changes corresponding to each update here: https://meflynn.github.io/troopdata/index.html
+
 
 
 ## Installation

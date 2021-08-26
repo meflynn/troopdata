@@ -94,7 +94,21 @@ troopdata <- troopdata %>%
   filter(!(ccode == 817 & year <= 1975)) %>%
   bind_rows(south.vietnam) %>%
   arrange(ccode, year) %>%
-  mutate(across(c(army, navy, marine_corps, air_force), ~ ifelse(ccode == 645 & year %in% c(2006, 2007), NA, .)))
+  mutate(across(c(army, navy, marine_corps, air_force), ~ ifelse(ccode == 645 & year %in% c(2006, 2007), NA, .)),
+         across(c(army, navy, marine_corps, air_force), ~ ifelse(year < 2006, NA, .)),
+         region = countrycode::countrycode(iso3c, "iso3c", "region"),
+         region = case_when(
+           countryname == "German Democratic Republic" ~ "Europe & Central Asia",
+           countryname == "Czechoslovakia" ~ "Europe & Central Asia",
+           countryname == "Yugoslavia" ~ "Europe & Central Asia",
+           countryname == "Kosovo" ~ "Europe & Central Asia",
+           countryname == "Zanzibar" ~ "Sub-Saharan Africa",
+           countryname == "Yemen Arab Republic" ~ "Middle East & North Africa",
+           countryname == "Yemen People's Republic" ~ "Middle East & North Africa",
+           countryname == "Republic of Vietnam" ~ "East Asia & Pacific",
+           countryname == "Diego Garcia" ~ "South Asia",
+           TRUE ~ region
+           ))
 
 
 
