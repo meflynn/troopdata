@@ -56,11 +56,26 @@ troopdata <- haven::read_dta(here::here("../../Projects/Troops/data/", "troops 1
            ccode == 1039 ~ "Kashmir",
            ccode == 1099 ~ "UNKNOWN",
            TRUE ~ countryname),
-         troops = ifelse(ccode == 200 & year == 2014, 8495, troops),
-         army = ifelse(ccode == 200 & year == 2014, 216, army),
-         navy = ifelse(ccode == 200 & year == 2014, 300, navy),
-         air_force = ifelse(ccode == 200 & year == 2014, 7938, air_force),
-         marine_corps = ifelse(ccode == 200 & year == 2014, 40, marine_corps),
+         troops = case_when(
+           ccode == 200 & year == 2014 ~ 8495,
+           ccode == 700 & year == 2020 ~ 8600, # Afghanistan update from just security
+           ccode == 700 & year == 2019 ~ 13000, # Afghanistan update
+           ccode == 652 & year == 2018 ~ 1700, # Syria update from just security
+           ccode == 652 & year == 2019 ~ 1000,
+           ccode == 652 & year == 2020 ~ 900,
+           ccode == 645 & year == 2006 ~ 141100, # FAS update for Iraq
+           ccode == 645 & year == 2007 ~ 170000, # Reuters update for Iraq
+           ccode == 690 & year == 2006 ~ 44400, # Reverse engineered from OIF totals
+           ccode == 690 & year == 2007 ~ 48500, # Reverse engineered from OIF totals
+           TRUE ~ troops),
+         army = case_when(ccode == 200 & year == 2014 ~ 216,
+                          TRUE ~ army),
+         navy = case_when(ccode == 200 & year == 2014 ~ 300,
+                          TRUE ~ navy),
+         air_force = case_when(ccode == 200 & year == 2014 ~ 7938,
+                               TRUE ~ air_force),
+         marine_corps = case_when(ccode == 200 & year == 2014 ~ 40,
+                                  TRUE ~ marine_corps),
          iso3c = countrycode::countrycode(countryname, "country.name", "iso3c")) %>%
   dplyr::select(countryname, ccode, iso3c, year, troops, army, navy, air_force, marine_corps)
 
@@ -78,7 +93,9 @@ troopdata <- troopdata %>%
   )) %>%
   filter(!(ccode == 817 & year <= 1975)) %>%
   bind_rows(south.vietnam) %>%
-  arrange(ccode, year)
+  arrange(ccode, year) %>%
+  mutate(across(c(army, navy, marine_corps, air_force), ~ ifelse(ccode == 645 & year %in% c(2006, 2007), NA, .)))
+
 
 
 readr::write_csv(troopdata, "data-raw/troopdata.csv")

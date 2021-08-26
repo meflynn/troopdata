@@ -95,7 +95,7 @@ example <- get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
 #> element will be used
 
 head(example)
-#> # A tibble: 6 x 5
+#> # A tibble: 6 × 5
 #>   countryname    ccode iso3c  year troops
 #>   <chr>          <dbl> <chr> <dbl>  <dbl>
 #> 1 United Kingdom   200 GBR    1990  25111
@@ -116,7 +116,7 @@ example.char <- get_troopdata(host = hostlist.char, startyear = 1970, endyear = 
 #> element will be used
 
 head(example.char)
-#> # A tibble: 6 x 5
+#> # A tibble: 6 × 5
 #>   countryname ccode iso3c  year troops
 #>   <chr>       <dbl> <chr> <dbl>  <dbl>
 #> 1 Canada         20 CAN    1970   2643
@@ -136,7 +136,7 @@ example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endye
 #> element will be used
 
 head(example)
-#> # A tibble: 6 x 9
+#> # A tibble: 6 × 9
 #>   countryname ccode iso3c  year troops  army  navy air_force marine_corps
 #>   <chr>       <dbl> <chr> <dbl>  <dbl> <dbl> <dbl>     <dbl>        <dbl>
 #> 1 Canada         20 CAN    2006    133     7    35        81           10
@@ -161,7 +161,7 @@ base, a smaller lilypad, and if it is a currently funded site.
 baseexample <- get_basedata(host = NA, country_count = FALSE)
 
 head(baseexample)
-#> # A tibble: 6 x 9
+#> # A tibble: 6 × 9
 #>   countryname ccode iso3c basename            lat   lon  base lilypad fundedsite
 #>   <chr>       <dbl> <chr> <chr>             <dbl> <dbl> <dbl>   <dbl>      <dbl>
 #> 1 Afghanistan   700 AFG   Bagram AB          34.9  69.3     1       0          0
@@ -186,13 +186,13 @@ baseexample <- get_basedata(host = hostlist, country_count = FALSE)
 #> element will be used
 
 head(baseexample)
-#> # A tibble: 6 x 9
+#> # A tibble: 6 × 9
 #>   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite
 #>   <chr>           <dbl> <chr> <chr>        <dbl>  <dbl> <dbl>   <dbl>      <dbl>
-#> 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0
-#> 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0
+#> 1 Ascension Isla…   200 GBR   Ascension I… -7.95  -14.4     1       0          0
+#> 2 BR Indian Ocea…   200 GBR   Diego Garcia -7.32   72.4     1       0          0
 #> 3 Canada             20 CAN   <NA>         56.1  -106.      0       1          0
-#> 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0
+#> 4 Canada             20 CAN   Argentia, N… 47.3   -54.0     1       0          0
 #> 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0
 #> 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0
 ```
@@ -214,7 +214,10 @@ Note that when using this argument you also need to specify the
 generate country-level totals. Though this may sound obvious individual
 country codes may include multiple geographic territories that are more
 finely parsed using various identifiers. Accepted character strings
-include “countryname”, “iso3c”, and “ccode”.
+include “countryname”, “iso3c”, and “ccode”. And while this may seem
+redundant given the host argument, it should provide flexibility for
+users who may be more familiar with country codes and do not want to
+spend time trying to identify long-form country names.
 
 ``` r
 hostlist <- c(20, 200, 255, 645)
@@ -224,12 +227,9 @@ baseexample <- get_basedata(host = hostlist, country_count = TRUE, groupvar = "c
 #> Warning: group var must equal 'countryname', 'ccode', or 'iso3c'.
 #> Warning in if (is.na(host)) {: the condition has length > 1 and only the first
 #> element will be used
-#> Warning: `group_by_()` was deprecated in dplyr 0.7.0.
-#> Please use `group_by()` instead.
-#> See vignette('programming') for more help
 
 head(baseexample)
-#> # A tibble: 4 x 4
+#> # A tibble: 4 × 4
 #>   ccode basecount lilypadcount fundedsitecount
 #>   <dbl>     <dbl>        <dbl>           <dbl>
 #> 1    20         1            1               0
@@ -257,7 +257,7 @@ buildexample <- get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
 #> element will be used
 
 head(buildexample)
-#> # A tibble: 6 x 8
+#> # A tibble: 6 × 8
 #>   countryname    ccode iso3c  year location                     lat    lon   toa
 #>   <chr>          <dbl> <chr> <dbl> <chr>                      <dbl>  <dbl> <dbl>
 #> 1 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518  1800
@@ -319,7 +319,7 @@ package please cite the following:
 
 -   Allen, Michael A., Michael E. Flynn, and Carla Martinez
     Machain. 2021. “Global U.S. military deployment data: 1950-2020.”
-    *Working Paper*
+    Conflict Management and Peace Science. TBD.
 
 Kane’s original troop deployment data collected from 1950-2005:
 

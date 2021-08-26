@@ -167,7 +167,7 @@ baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
 ```
 
 
-Finally, users can also generate country-level counts of the number of U.S. military bases by changing the `country_count` argument to `TRUE`. Note that when using this argument you also need to specify the `groupvar` argument, which specifies which identifier will be used to generate country-level totals. Though this may sound obvious individual country codes may include multiple geographic territories that are more finely parsed using various identifiers. Accepted character strings include "countryname", "iso3c", and "ccode".
+Finally, users can also generate country-level counts of the number of U.S. military bases by changing the `country_count` argument to `TRUE`. Note that when using this argument you also need to specify the `groupvar` argument, which specifies which identifier will be used to generate country-level totals. Though this may sound obvious individual country codes may include multiple geographic territories that are more finely parsed using various identifiers. Accepted character strings include "countryname", "iso3c", and "ccode". And while this may seem redundant given the host argument, it should provide flexibility for users who may be more familiar with country codes and do not want to spend time trying to identify long-form country names.
 
 ```{r}
 
@@ -234,7 +234,7 @@ The original DMDC data contain information on U.S. troop deployments to a a wide
 
 When using the updated troop deployment data and/or the `troopdata` package please cite the following:
 
-- Allen, Michael A., Michael E. Flynn, and Carla Martinez Machain. 2021. "Global U.S. military deployment data: 1950-2020." *Working Paper*
+- Allen, Michael A., Michael E. Flynn, and Carla Martinez Machain. 2021. "Global U.S. military deployment data: 1950-2020." Conflict Management and Peace Science. TBD.
 
 Kane's original troop deployment data collected from 1950-2005:
 
