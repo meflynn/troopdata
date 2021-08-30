@@ -9,8 +9,6 @@
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Michael Flynn <meflynn@ksu.edu>’
 
-Package has a VignetteBuilder field but no prebuilt vignette index.
-
 Found the following (possibly) invalid URLs:
   URL: https://www.m-flynn.com/ (moved to https://m-flynn.com/)
     From: man/troopdata-package.Rd
@@ -28,6 +26,7 @@ Found the following (possibly) invalid URLs:
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
+* checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... NOTE
 Non-standard file/directory found at top level:
@@ -65,22 +64,18 @@ Undefined global functions or variables:
 * checking LazyData ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking R/sysdata.rda ... OK
-* checking files in ‘vignettes’ ... WARNING
-Files in the 'vignettes' directory but no files in 'inst/doc':
-  ‘basedata-vignette.Rmd’, ‘builddata-vignette.Rmd’,
-    ‘troopdata-vignette.Rmd’
+* checking installed files from ‘inst/doc’ ... OK
+* checking files in ‘vignettes’ ... OK
 * checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ... OK
   Running ‘spelling.R’
-* checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in ‘inst/doc’ ... WARNING
-dir.exists(dir) is not TRUEdir.exists(dir) is not TRUEdir.exists(dir) is not TRUE
-Package vignettes without corresponding single PDF/HTML:
-   ‘basedata-vignette.Rmd’
-   ‘builddata-vignette.Rmd’
-   ‘troopdata-vignette.Rmd’
-
+* checking for unstated dependencies in vignettes ... NOTE
+'::' or ':::' imports not declared from:
+  ‘ggplot2’ ‘viridis’
+'library' or 'require' calls not declared from:
+  ‘ggplot2’ ‘ggtext’
+* checking package vignettes in ‘inst/doc’ ... OK
 * checking re-building of vignette outputs ... WARNING
 Error(s) in re-building vignettes:
 --- re-building ‘basedata-vignette.Rmd’ using rmarkdown
@@ -166,7 +161,7 @@ where 26: tryCatch({
         file, conditionMessage(e)))
 })
 where 27: tools:::.buildOneVignette("basedata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
-    TRUE, FALSE, "basedata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf64086ab74.rds")
+    TRUE, FALSE, "basedata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmpwrzc9L/working_dir/RtmpgdNkIj/file13a9263ad1d3f.rds")
 
  --- value of length: 4 type: logical ---
 [1] FALSE FALSE FALSE FALSE
@@ -198,7 +193,7 @@ function (host = NA, country_count = FALSE, groupvar = NULL)
         return(basetemp)
     }
 }
-<bytecode: 0x104f88b58>
+<bytecode: 0x106b5f758>
 <environment: namespace:troopdata>
  --- function search by body ---
 Function get_basedata in namespace troopdata has this body.
@@ -299,7 +294,7 @@ where 26: tryCatch({
         file, conditionMessage(e)))
 })
 where 27: tools:::.buildOneVignette("builddata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
-    TRUE, FALSE, "builddata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf66e06dd96.rds")
+    TRUE, FALSE, "builddata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmpwrzc9L/working_dir/RtmpgdNkIj/file13a9220bdfc70.rds")
 
  --- value of length: 3 type: logical ---
 [1] FALSE FALSE FALSE
@@ -329,7 +324,7 @@ function (host = NA, startyear, endyear)
         return(tempdata)
     }
 }
-<bytecode: 0x13a34b150>
+<bytecode: 0x127bed950>
 <environment: namespace:troopdata>
  --- function search by body ---
 Function get_builddata in namespace troopdata has this body.
@@ -433,7 +428,7 @@ where 26: tryCatch({
         file, conditionMessage(e)))
 })
 where 27: tools:::.buildOneVignette("troopdata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
-    TRUE, FALSE, "troopdata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf65a0fa4bb.rds")
+    TRUE, FALSE, "troopdata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmpwrzc9L/working_dir/RtmpgdNkIj/file13a927373b419.rds")
 
  --- value of length: 2 type: logical ---
 [1] FALSE FALSE
@@ -475,7 +470,7 @@ function (host = NA, branch = FALSE, startyear, endyear)
     }
     return(tempdata)
 }
-<bytecode: 0x1245418b0>
+<bytecode: 0x12f851308>
 <environment: namespace:troopdata>
  --- function search by body ---
 Function get_troopdata in namespace troopdata has this body.
@@ -496,4 +491,4 @@ Execution halted
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 3 WARNINGs, 3 NOTEs
+Status: 1 WARNING, 4 NOTEs

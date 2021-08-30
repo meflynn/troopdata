@@ -25,5 +25,5 @@ Suggests: testthat (>= 3.0.0), spelling, knitr, rmarkdown
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2021-08-30 16:44:59 UTC; michaelflynn
+Packaged: 2021-08-30 16:52:54 UTC; michaelflynn
 Author: Michael Flynn [aut, cre] (<https://orcid.org/0000-0002-6064-740X>)

@@ -81,7 +81,7 @@ where 26: tryCatch({
         file, conditionMessage(e)))
 })
 where 27: tools:::.buildOneVignette("basedata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
-    TRUE, FALSE, "basedata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf64086ab74.rds")
+    TRUE, FALSE, "basedata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmpwrzc9L/working_dir/RtmpgdNkIj/file13a9263ad1d3f.rds")
 
  --- value of length: 4 type: logical ---
 [1] FALSE FALSE FALSE FALSE
@@ -113,7 +113,7 @@ function (host = NA, country_count = FALSE, groupvar = NULL)
         return(basetemp)
     }
 }
-<bytecode: 0x104f88b58>
+<bytecode: 0x106b5f758>
 <environment: namespace:troopdata>
  --- function search by body ---
 Function get_basedata in namespace troopdata has this body.
@@ -214,7 +214,7 @@ where 26: tryCatch({
         file, conditionMessage(e)))
 })
 where 27: tools:::.buildOneVignette("builddata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
-    TRUE, FALSE, "builddata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf66e06dd96.rds")
+    TRUE, FALSE, "builddata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmpwrzc9L/working_dir/RtmpgdNkIj/file13a9220bdfc70.rds")
 
  --- value of length: 3 type: logical ---
 [1] FALSE FALSE FALSE
@@ -244,7 +244,7 @@ function (host = NA, startyear, endyear)
         return(tempdata)
     }
 }
-<bytecode: 0x13a34b150>
+<bytecode: 0x127bed950>
 <environment: namespace:troopdata>
  --- function search by body ---
 Function get_builddata in namespace troopdata has this body.
@@ -348,7 +348,7 @@ where 26: tryCatch({
         file, conditionMessage(e)))
 })
 where 27: tools:::.buildOneVignette("troopdata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
-    TRUE, FALSE, "troopdata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf65a0fa4bb.rds")
+    TRUE, FALSE, "troopdata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmpwrzc9L/working_dir/RtmpgdNkIj/file13a927373b419.rds")
 
  --- value of length: 2 type: logical ---
 [1] FALSE FALSE
@@ -390,7 +390,7 @@ function (host = NA, branch = FALSE, startyear, endyear)
     }
     return(tempdata)
 }
-<bytecode: 0x1245418b0>
+<bytecode: 0x12f851308>
 <environment: namespace:troopdata>
  --- function search by body ---
 Function get_troopdata in namespace troopdata has this body.
