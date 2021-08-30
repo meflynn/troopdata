@@ -2,6 +2,7 @@
 
 export("%>%")
 export(get_basedata)
+export(get_builddata)
 export(get_troopdata)
 importFrom(magrittr,"%>%")
 importFrom(rlang,warn)

@@ -1,7 +1,7 @@
 
-R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
 Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+Platform: aarch64-apple-darwin20 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -20,7 +20,6 @@ Type 'q()' to quit R.
 > pkgname <- "troopdata"
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
-> options(pager = "console")
 > base::assign(".ExTimings", "troopdata-Ex.timings", pos = 'CheckExEnv')
 > base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
 > base::assign(".format_ptime",
@@ -67,6 +66,37 @@ Type 'q()' to quit R.
 > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 > base::cat("get_basedata", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
+> nameEx("get_builddata")
+> ### * get_builddata
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: get_builddata
+> ### Title: Function to retrieve customized U.S. construction spending data.
+> ### Aliases: get_builddata
+> 
+> ### ** Examples
+> 
+> 
+> ## Not run: 
+> ##D library(tidyverse)
+> ##D library(troopdata)
+> ##D 
+> ##D example <- get_builddata(host = NA, startyear = 2008, endyear = 2019)
+> ##D 
+> ##D head(example)
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("get_builddata", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
 > nameEx("get_troopdata")
 > ### * get_troopdata
 > 
@@ -100,7 +130,7 @@ Type 'q()' to quit R.
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.19 0 0.19 NA NA 
+Time elapsed:  0.093 0.005 0.1 0 0 
 > grDevices::dev.off()
 null device 
           1 

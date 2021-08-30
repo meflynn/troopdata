@@ -1,13 +1,21 @@
-* using log directory 'C:/Users/flynn/Dropbox/R/troopdata/troopdata.Rcheck'
-* using R version 4.0.4 (2021-02-15)
-* using platform: x86_64-w64-mingw32 (64-bit)
-* using session charset: ISO8859-1
-* using option '--as-cran'
-* checking for file 'troopdata/DESCRIPTION' ... OK
-* this is package 'troopdata' version '0.1.3'
+* using log directory ‘/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck’
+* using R version 4.1.0 (2021-05-18)
+* using platform: aarch64-apple-darwin20 (64-bit)
+* using session charset: UTF-8
+* using option ‘--as-cran’
+* checking for file ‘troopdata/DESCRIPTION’ ... OK
+* this is package ‘troopdata’ version ‘0.1.4’
 * package encoding: UTF-8
-* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
-Maintainer: 'Michael Flynn <meflynn@ksu.edu>'
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Michael Flynn <meflynn@ksu.edu>’
+
+Package has a VignetteBuilder field but no prebuilt vignette index.
+
+Found the following (possibly) invalid URLs:
+  URL: https://www.m-flynn.com/ (moved to https://m-flynn.com/)
+    From: man/troopdata-package.Rd
+    Status: 200
+    Message: OK
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -15,12 +23,15 @@ Maintainer: 'Michael Flynn <meflynn@ksu.edu>'
 * checking for executable files ... OK
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
-* checking whether package 'troopdata' can be installed ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘troopdata’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... OK
-* checking top-level files ... OK
+* checking top-level files ... NOTE
+Non-standard file/directory found at top level:
+  ‘pkgdown’
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -31,13 +42,15 @@ Maintainer: 'Michael Flynn <meflynn@ksu.edu>'
 * checking whether the package can be unloaded cleanly ... OK
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
-* checking loading without being on the library search path ... OK
 * checking use of S3 registration ... OK
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... OK
+* checking R code for possible problems ... NOTE
+get_basedata: no visible binding for global variable ‘.data’
+Undefined global functions or variables:
+  .data
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -47,13 +60,440 @@ Maintainer: 'Michael Flynn <meflynn@ksu.edu>'
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking contents of 'data' directory ... OK
+* checking contents of ‘data’ directory ... OK
 * checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking R/sysdata.rda ... OK
+* checking files in ‘vignettes’ ... WARNING
+Files in the 'vignettes' directory but no files in 'inst/doc':
+  ‘basedata-vignette.Rmd’, ‘builddata-vignette.Rmd’,
+    ‘troopdata-vignette.Rmd’
 * checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... OK
+  Running ‘spelling.R’
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in ‘inst/doc’ ... WARNING
+dir.exists(dir) is not TRUEdir.exists(dir) is not TRUEdir.exists(dir) is not TRUE
+Package vignettes without corresponding single PDF/HTML:
+   ‘basedata-vignette.Rmd’
+   ‘builddata-vignette.Rmd’
+   ‘troopdata-vignette.Rmd’
+
+* checking re-building of vignette outputs ... WARNING
+Error(s) in re-building vignettes:
+--- re-building ‘basedata-vignette.Rmd’ using rmarkdown
+ ----------- FAILURE REPORT -------------- 
+ --- failure: the condition has length > 1 ---
+ --- srcref --- 
+: 
+ --- package (from environment) --- 
+troopdata
+ --- call from context --- 
+get_basedata(host = hostlist, country_count = FALSE)
+ --- call from argument --- 
+if (is.na(host)) {
+    basetemp <- basetemp
+} else if (is.numeric(host)) {
+    basetemp <- basetemp %>% dplyr::filter(ccode %in% host)
+} else {
+    basetemp <- basetemp %>% dplyr::filter(iso3c %in% host)
+}
+ --- R stacktrace ---
+where 1: get_basedata(host = hostlist, country_count = FALSE)
+where 2: eval(expr, envir, enclos)
+where 3: eval(expr, envir, enclos)
+where 4: withVisible(eval(expr, envir, enclos))
+where 5: withCallingHandlers(withVisible(eval(expr, envir, enclos)), warning = wHandler, 
+    error = eHandler, message = mHandler)
+where 6: handle(ev <- withCallingHandlers(withVisible(eval(expr, envir, 
+    enclos)), warning = wHandler, error = eHandler, message = mHandler))
+where 7: timing_fn(handle(ev <- withCallingHandlers(withVisible(eval(expr, 
+    envir, enclos)), warning = wHandler, error = eHandler, message = mHandler)))
+where 8: evaluate_call(expr, parsed$src[[i]], envir = envir, enclos = enclos, 
+    debug = debug, last = i == length(out), use_try = stop_on_error != 
+        2L, keep_warning = keep_warning, keep_message = keep_message, 
+    output_handler = output_handler, include_timing = include_timing)
+where 9: evaluate::evaluate(...)
+where 10: evaluate(code, envir = env, new_device = FALSE, keep_warning = !isFALSE(options$warning), 
+    keep_message = !isFALSE(options$message), stop_on_error = if (is.numeric(options$error)) options$error else {
+        if (options$error && options$include) 
+            0L
+        else 2L
+    }, output_handler = knit_handlers(options$render, options))
+where 11: in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE, 
+    keep_warning = !isFALSE(options$warning), keep_message = !isFALSE(options$message), 
+    stop_on_error = if (is.numeric(options$error)) options$error else {
+        if (options$error && options$include) 
+            0L
+        else 2L
+    }, output_handler = knit_handlers(options$render, options)))
+where 12: eng_r(options)
+where 13: block_exec(params)
+where 14: call_block(x)
+where 15: process_group.block(group)
+where 16: process_group(group)
+where 17: withCallingHandlers(if (tangle) process_tangle(group) else process_group(group), 
+    error = function(e) {
+        setwd(wd)
+        cat(res, sep = "\n", file = output %n% "")
+        message("Quitting from lines ", paste(current_lines(i), 
+            collapse = "-"), " (", knit_concord$get("infile"), 
+            ") ")
+    })
+where 18: process_file(text, output)
+where 19: knitr::knit(knit_input, knit_output, envir = envir, quiet = quiet)
+where 20: rmarkdown::render(file, encoding = encoding, quiet = quiet, envir = globalenv(), 
+    output_dir = getwd(), ...)
+where 21: vweave_rmarkdown(...)
+where 22: engine$weave(file, quiet = quiet, encoding = enc)
+where 23: doTryCatch(return(expr), name, parentenv, handler)
+where 24: tryCatchOne(expr, names, parentenv, handlers[[1L]])
+where 25: tryCatchList(expr, classes, parentenv, handlers)
+where 26: tryCatch({
+    engine$weave(file, quiet = quiet, encoding = enc)
+    setwd(startdir)
+    output <- find_vignette_product(name, by = "weave", engine = engine)
+    if (!have.makefile && vignette_is_tex(output)) {
+        texi2pdf(file = output, clean = FALSE, quiet = quiet)
+        output <- find_vignette_product(name, by = "texi2pdf", 
+            engine = engine)
+    }
+}, error = function(e) {
+    OK <<- FALSE
+    message(gettextf("Error: processing vignette '%s' failed with diagnostics:\n%s", 
+        file, conditionMessage(e)))
+})
+where 27: tools:::.buildOneVignette("basedata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
+    TRUE, FALSE, "basedata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf64086ab74.rds")
+
+ --- value of length: 4 type: logical ---
+[1] FALSE FALSE FALSE FALSE
+ --- function from context --- 
+function (host = NA, country_count = FALSE, groupvar = NULL) 
+{
+    if (country_count == TRUE) 
+        rlang::warn("Must specify grouping variable when using country_count.")
+    if (!is.null(groupvar)) 
+        rlang::warn("group var must equal 'countryname', 'ccode', or 'iso3c'.")
+    basetemp <- troopdata::basedata
+    if (is.na(host)) {
+        basetemp <- basetemp
+    }
+    else if (is.numeric(host)) {
+        basetemp <- basetemp %>% dplyr::filter(ccode %in% host)
+    }
+    else {
+        basetemp <- basetemp %>% dplyr::filter(iso3c %in% host)
+    }
+    if (country_count == TRUE) {
+        basetemp <- basetemp %>% dplyr::group_by(.data[[groupvar]]) %>% 
+            dplyr::summarise(basecount = sum(base, na.rm = TRUE), 
+                lilypadcount = sum(lilypad, na.rm = TRUE), fundedsitecount = sum(fundedsite, 
+                  na.rm = TRUE))
+        return(basetemp)
+    }
+    else {
+        return(basetemp)
+    }
+}
+<bytecode: 0x104f88b58>
+<environment: namespace:troopdata>
+ --- function search by body ---
+Function get_basedata in namespace troopdata has this body.
+ ----------- END OF FAILURE REPORT -------------- 
+Quitting from lines 48-55 (basedata-vignette.Rmd) 
+Error: processing vignette 'basedata-vignette.Rmd' failed with diagnostics:
+the condition has length > 1
+--- failed re-building ‘basedata-vignette.Rmd’
+
+--- re-building ‘builddata-vignette.Rmd’ using rmarkdown
+ ----------- FAILURE REPORT -------------- 
+ --- failure: the condition has length > 1 ---
+ --- srcref --- 
+: 
+ --- package (from environment) --- 
+troopdata
+ --- call from context --- 
+get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
+ --- call from argument --- 
+if (is.na(host)) {
+    tempdata <- tempdata %>% dplyr::filter(year >= startyear & 
+        year <= endyear)
+    return(tempdata)
+} else if (is.numeric(host)) {
+    host <- c(host)
+    tempdata <- tempdata %>% dplyr::filter(ccode %in% host & 
+        year >= startyear & year <= endyear)
+    return(tempdata)
+} else {
+    host <- c(host)
+    tempdata <- tempdata %>% dplyr::filter(ccode %in% host & 
+        year >= startyear & year <= endyear)
+    return(tempdata)
+}
+ --- R stacktrace ---
+where 1: get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
+where 2: eval(expr, envir, enclos)
+where 3: eval(expr, envir, enclos)
+where 4: withVisible(eval(expr, envir, enclos))
+where 5: withCallingHandlers(withVisible(eval(expr, envir, enclos)), warning = wHandler, 
+    error = eHandler, message = mHandler)
+where 6: handle(ev <- withCallingHandlers(withVisible(eval(expr, envir, 
+    enclos)), warning = wHandler, error = eHandler, message = mHandler))
+where 7: timing_fn(handle(ev <- withCallingHandlers(withVisible(eval(expr, 
+    envir, enclos)), warning = wHandler, error = eHandler, message = mHandler)))
+where 8: evaluate_call(expr, parsed$src[[i]], envir = envir, enclos = enclos, 
+    debug = debug, last = i == length(out), use_try = stop_on_error != 
+        2L, keep_warning = keep_warning, keep_message = keep_message, 
+    output_handler = output_handler, include_timing = include_timing)
+where 9: evaluate::evaluate(...)
+where 10: evaluate(code, envir = env, new_device = FALSE, keep_warning = !isFALSE(options$warning), 
+    keep_message = !isFALSE(options$message), stop_on_error = if (is.numeric(options$error)) options$error else {
+        if (options$error && options$include) 
+            0L
+        else 2L
+    }, output_handler = knit_handlers(options$render, options))
+where 11: in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE, 
+    keep_warning = !isFALSE(options$warning), keep_message = !isFALSE(options$message), 
+    stop_on_error = if (is.numeric(options$error)) options$error else {
+        if (options$error && options$include) 
+            0L
+        else 2L
+    }, output_handler = knit_handlers(options$render, options)))
+where 12: eng_r(options)
+where 13: block_exec(params)
+where 14: call_block(x)
+where 15: process_group.block(group)
+where 16: process_group(group)
+where 17: withCallingHandlers(if (tangle) process_tangle(group) else process_group(group), 
+    error = function(e) {
+        setwd(wd)
+        cat(res, sep = "\n", file = output %n% "")
+        message("Quitting from lines ", paste(current_lines(i), 
+            collapse = "-"), " (", knit_concord$get("infile"), 
+            ") ")
+    })
+where 18: process_file(text, output)
+where 19: knitr::knit(knit_input, knit_output, envir = envir, quiet = quiet)
+where 20: rmarkdown::render(file, encoding = encoding, quiet = quiet, envir = globalenv(), 
+    output_dir = getwd(), ...)
+where 21: vweave_rmarkdown(...)
+where 22: engine$weave(file, quiet = quiet, encoding = enc)
+where 23: doTryCatch(return(expr), name, parentenv, handler)
+where 24: tryCatchOne(expr, names, parentenv, handlers[[1L]])
+where 25: tryCatchList(expr, classes, parentenv, handlers)
+where 26: tryCatch({
+    engine$weave(file, quiet = quiet, encoding = enc)
+    setwd(startdir)
+    output <- find_vignette_product(name, by = "weave", engine = engine)
+    if (!have.makefile && vignette_is_tex(output)) {
+        texi2pdf(file = output, clean = FALSE, quiet = quiet)
+        output <- find_vignette_product(name, by = "texi2pdf", 
+            engine = engine)
+    }
+}, error = function(e) {
+    OK <<- FALSE
+    message(gettextf("Error: processing vignette '%s' failed with diagnostics:\n%s", 
+        file, conditionMessage(e)))
+})
+where 27: tools:::.buildOneVignette("builddata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
+    TRUE, FALSE, "builddata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf66e06dd96.rds")
+
+ --- value of length: 3 type: logical ---
+[1] FALSE FALSE FALSE
+ --- function from context --- 
+function (host = NA, startyear, endyear) 
+{
+    tempdata <- troopdata::builddata
+    if (startyear < min(tempdata$year) | endyear > max(tempdata$year)) 
+        stop("Specified year is out of range. Available range includes 2008 through 2019")
+    warn("Be advised that the data include unspecified locations, as well as 0 or negative spending values.")
+    warn("Spending values are in thousands of current US dollars.")
+    if (is.na(host)) {
+        tempdata <- tempdata %>% dplyr::filter(year >= startyear & 
+            year <= endyear)
+        return(tempdata)
+    }
+    else if (is.numeric(host)) {
+        host <- c(host)
+        tempdata <- tempdata %>% dplyr::filter(ccode %in% host & 
+            year >= startyear & year <= endyear)
+        return(tempdata)
+    }
+    else {
+        host <- c(host)
+        tempdata <- tempdata %>% dplyr::filter(ccode %in% host & 
+            year >= startyear & year <= endyear)
+        return(tempdata)
+    }
+}
+<bytecode: 0x13a34b150>
+<environment: namespace:troopdata>
+ --- function search by body ---
+Function get_builddata in namespace troopdata has this body.
+ ----------- END OF FAILURE REPORT -------------- 
+Quitting from lines 40-48 (builddata-vignette.Rmd) 
+Error: processing vignette 'builddata-vignette.Rmd' failed with diagnostics:
+the condition has length > 1
+--- failed re-building ‘builddata-vignette.Rmd’
+
+--- re-building ‘troopdata-vignette.Rmd’ using rmarkdown
+Warning: Data include troop values for unknown locations and personnel listed as 'afloat'.
+ ----------- FAILURE REPORT -------------- 
+ --- failure: the condition has length > 1 ---
+ --- srcref --- 
+: 
+ --- package (from environment) --- 
+troopdata
+ --- call from context --- 
+get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
+ --- call from argument --- 
+if (is.na(host)) {
+    tempdata <- tempdata %>% dplyr::filter(year >= startyear & 
+        year <= endyear)
+} else if (host == "region") {
+    tempdata <- tempdata %>% dplyr::filter(year >= startyear & 
+        year <= endyear) %>% dplyr::group_by(region, year) %>% 
+        dplyr::summarise(dplyr::across(c(troops, army, navy, 
+            air_force, marine_corps), ~sum(.x, na.rm = TRUE)))
+} else if (is.numeric(host)) {
+    host <- c(host)
+    tempdata <- tempdata %>% dplyr::filter(ccode %in% host & 
+        year >= startyear & year <= endyear)
+} else {
+    host <- c(host)
+    tempdata <- tempdata %>% dplyr::filter(iso3c %in% host & 
+        year >= startyear & year <= endyear)
+}
+ --- R stacktrace ---
+where 1: get_troopdata(host = hostlist, startyear = 1990, endyear = 2020)
+where 2: eval(expr, envir, enclos)
+where 3: eval(expr, envir, enclos)
+where 4: withVisible(eval(expr, envir, enclos))
+where 5: withCallingHandlers(withVisible(eval(expr, envir, enclos)), warning = wHandler, 
+    error = eHandler, message = mHandler)
+where 6: handle(ev <- withCallingHandlers(withVisible(eval(expr, envir, 
+    enclos)), warning = wHandler, error = eHandler, message = mHandler))
+where 7: timing_fn(handle(ev <- withCallingHandlers(withVisible(eval(expr, 
+    envir, enclos)), warning = wHandler, error = eHandler, message = mHandler)))
+where 8: evaluate_call(expr, parsed$src[[i]], envir = envir, enclos = enclos, 
+    debug = debug, last = i == length(out), use_try = stop_on_error != 
+        2L, keep_warning = keep_warning, keep_message = keep_message, 
+    output_handler = output_handler, include_timing = include_timing)
+where 9: evaluate::evaluate(...)
+where 10: evaluate(code, envir = env, new_device = FALSE, keep_warning = !isFALSE(options$warning), 
+    keep_message = !isFALSE(options$message), stop_on_error = if (is.numeric(options$error)) options$error else {
+        if (options$error && options$include) 
+            0L
+        else 2L
+    }, output_handler = knit_handlers(options$render, options))
+where 11: in_dir(input_dir(), evaluate(code, envir = env, new_device = FALSE, 
+    keep_warning = !isFALSE(options$warning), keep_message = !isFALSE(options$message), 
+    stop_on_error = if (is.numeric(options$error)) options$error else {
+        if (options$error && options$include) 
+            0L
+        else 2L
+    }, output_handler = knit_handlers(options$render, options)))
+where 12: eng_r(options)
+where 13: block_exec(params)
+where 14: call_block(x)
+where 15: process_group.block(group)
+where 16: process_group(group)
+where 17: withCallingHandlers(if (tangle) process_tangle(group) else process_group(group), 
+    error = function(e) {
+        setwd(wd)
+        cat(res, sep = "\n", file = output %n% "")
+        message("Quitting from lines ", paste(current_lines(i), 
+            collapse = "-"), " (", knit_concord$get("infile"), 
+            ") ")
+    })
+where 18: process_file(text, output)
+where 19: knitr::knit(knit_input, knit_output, envir = envir, quiet = quiet)
+where 20: rmarkdown::render(file, encoding = encoding, quiet = quiet, envir = globalenv(), 
+    output_dir = getwd(), ...)
+where 21: vweave_rmarkdown(...)
+where 22: engine$weave(file, quiet = quiet, encoding = enc)
+where 23: doTryCatch(return(expr), name, parentenv, handler)
+where 24: tryCatchOne(expr, names, parentenv, handlers[[1L]])
+where 25: tryCatchList(expr, classes, parentenv, handlers)
+where 26: tryCatch({
+    engine$weave(file, quiet = quiet, encoding = enc)
+    setwd(startdir)
+    output <- find_vignette_product(name, by = "weave", engine = engine)
+    if (!have.makefile && vignette_is_tex(output)) {
+        texi2pdf(file = output, clean = FALSE, quiet = quiet)
+        output <- find_vignette_product(name, by = "texi2pdf", 
+            engine = engine)
+    }
+}, error = function(e) {
+    OK <<- FALSE
+    message(gettextf("Error: processing vignette '%s' failed with diagnostics:\n%s", 
+        file, conditionMessage(e)))
+})
+where 27: tools:::.buildOneVignette("troopdata-vignette.Rmd", "/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck/vign_test/troopdata", 
+    TRUE, FALSE, "troopdata-vignette", "UTF-8", "/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T//Rtmp0Zit8F/working_dir/RtmpPIQzQL/file12cf65a0fa4bb.rds")
+
+ --- value of length: 2 type: logical ---
+[1] FALSE FALSE
+ --- function from context --- 
+function (host = NA, branch = FALSE, startyear, endyear) 
+{
+    tempdata <- troopdata::troopdata
+    if (startyear < 1950 | endyear > max(tempdata$year)) 
+        stop("Specified year is out of range. Available range includes 1950 through 2020.")
+    if (branch) 
+        rlang::warn("Branch data only available for 2006 forward.")
+    warn("Data include troop values for unknown locations and personnel listed as 'afloat'.")
+    if (is.na(host)) {
+        tempdata <- tempdata %>% dplyr::filter(year >= startyear & 
+            year <= endyear)
+    }
+    else if (host == "region") {
+        tempdata <- tempdata %>% dplyr::filter(year >= startyear & 
+            year <= endyear) %>% dplyr::group_by(region, year) %>% 
+            dplyr::summarise(dplyr::across(c(troops, army, navy, 
+                air_force, marine_corps), ~sum(.x, na.rm = TRUE)))
+    }
+    else if (is.numeric(host)) {
+        host <- c(host)
+        tempdata <- tempdata %>% dplyr::filter(ccode %in% host & 
+            year >= startyear & year <= endyear)
+    }
+    else {
+        host <- c(host)
+        tempdata <- tempdata %>% dplyr::filter(iso3c %in% host & 
+            year >= startyear & year <= endyear)
+    }
+    if (branch == TRUE) {
+        return(tempdata)
+    }
+    else {
+        tempdata <- tempdata %>% dplyr::select(-c(army, navy, 
+            air_force, marine_corps))
+    }
+    return(tempdata)
+}
+<bytecode: 0x1245418b0>
+<environment: namespace:troopdata>
+ --- function search by body ---
+Function get_troopdata in namespace troopdata has this body.
+ ----------- END OF FAILURE REPORT -------------- 
+Quitting from lines 50-58 (troopdata-vignette.Rmd) 
+Error: processing vignette 'troopdata-vignette.Rmd' failed with diagnostics:
+the condition has length > 1
+--- failed re-building ‘troopdata-vignette.Rmd’
+
+SUMMARY: processing the following files failed:
+  ‘basedata-vignette.Rmd’ ‘builddata-vignette.Rmd’
+  ‘troopdata-vignette.Rmd’
+
+Error: Vignette re-building failed.
+Execution halted
+
 * checking PDF version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: OK
+Status: 3 WARNINGs, 3 NOTEs

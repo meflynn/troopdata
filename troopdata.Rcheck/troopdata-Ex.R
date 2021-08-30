@@ -1,7 +1,6 @@
 pkgname <- "troopdata"
 source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
-options(pager = "console")
 base::assign(".ExTimings", "troopdata-Ex.timings", pos = 'CheckExEnv')
 base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
 base::assign(".format_ptime",
@@ -47,6 +46,37 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("get_basedata", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("get_builddata")
+### * get_builddata
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: get_builddata
+### Title: Function to retrieve customized U.S. construction spending data.
+### Aliases: get_builddata
+
+### ** Examples
+
+
+## Not run: 
+##D library(tidyverse)
+##D library(troopdata)
+##D 
+##D example <- get_builddata(host = NA, startyear = 2008, endyear = 2019)
+##D 
+##D head(example)
+##D 
+## End(Not run)
+
+
+
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("get_builddata", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("get_troopdata")
 ### * get_troopdata

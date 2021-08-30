@@ -1,6 +1,10 @@
 basedata                Vine's U.S. basing data
+builddata               U.S. Military overseas construction spending
+                        data
 get_basedata            Function to retrieve customized U.S. basing
                         data
+get_builddata           Function to retrieve customized U.S.
+                        construction spending data.
 get_troopdata           Function to retrieve customized U.S. troop
                         deployment data
 troopdata               U.S. overseas troop deployment data

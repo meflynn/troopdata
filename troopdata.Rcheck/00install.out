@@ -1,4 +1,4 @@
-* installing *source* package 'troopdata' ...
+* installing *source* package ‘troopdata’ ...
 ** using staged installation
 ** R
 ** data
@@ -9,11 +9,8 @@
 *** installing help indices
 *** copying figures
 ** building package indices
+** installing vignettes
 ** testing if installed package can be loaded from temporary location
-*** arch - i386
-*** arch - x64
 ** testing if installed package can be loaded from final location
-*** arch - i386
-*** arch - x64
 ** testing if installed package keeps a record of temporary installation path
 * DONE (troopdata)
