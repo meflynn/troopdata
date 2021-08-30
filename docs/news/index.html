@@ -145,31 +145,28 @@
 <a href="#troopdata-014" class="anchor"></a>troopdata 0.1.4<small> Unreleased </small>
 </h1>
 <ul>
-<li>Introduces <code><a href="../reference/get_builddata.html">get_builddata()</a></code> which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.</li>
-<li>Adds option to generate regional sums of military personnel by setting <code>host = "region"</code> when calling <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> function.</li>
-<li>Fixed multiple errors with <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code>:
+<li>Introduces get_builddata() which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.</li>
+<li>Adds option to generate regional sums of military personnel by setting host = “region” when calling get_troopdata() function.</li>
+<li>Fixed multiple errors with get_troopdata():
 <ul>
 <li><p>2014 UK values were missing from data.</p></li>
-<li><p>Fixes error with <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> Kuwait 2006 troop values showing up as 0. Replaced with estimate derived from supplementary sources.</p></li>
+<li><p>Fixes error with get_troopdata() Kuwait 2006 troop values showing up as 0. Replaced with estimate derived from supplementary sources. See notes below.</p></li>
 <li><p>Provides updated estimated for Iraq (2006, 2007), Kuwait (2006, 2007), and Syria (2018, 2019, 2020)</p></li>
 <li><p>Iraq, Afghanistan, and Syria data for 2018-2020 were estimated from reports and we continue to update those numbers based on information we can get. Just Security has engaged in a legal process and sued the DOD to get precise counts of troops in Iraq, Afghanistan, and Syria, but the DOD has obfuscated the total counts by classifying the majority of deployments as temporary. Read through the whole saga here: <a href="https://www.justsecurity.org/75124/just-security-obtains-overseas-troop-counts-that-the-pentagon-concealed-from-the-public/" class="uri">https://www.justsecurity.org/75124/just-security-obtains-overseas-troop-counts-that-the-pentagon-concealed-from-the-public/</a>. Thanks to Thomas Campbell at Boise State for pointing out this data. To reflect new public data, we have updated the estimates as follows:</p></li>
 <li>
 <p>Changes:</p>
 <ul>
-<li><p>Iraq: stays the same.</p></li>
 <li><p>Afghanistan 2020: Updated to 8600 from 4500.</p></li>
 <li><p>Afghanistan 2019: Updated to 13000 from 14500</p></li>
 <li><p>Syria 2018: Updated to 1700 from 2000</p></li>
 <li><p>Syria 2019: Updated to 1000 from 400</p></li>
 <li><p>Syria 2020: Updated to 900 from 600</p></li>
-<li><p>Kuwait 2006 and 2007 numbers didn’t make sense as it goes from 42600 troops in 2005 to 0 for two years and then back up to 42285 in 2008. For 2006 and 2007, these numbers were rolled into a total “Operation Iraqi Freedom” count that included all nearby countries. We have reverse-engineered this a bit and have new numbers for Kuwait:</p></li>
-</ul>
-</li>
+<li><p>Kuwait 2006 and 2007 numbers didn’t make sense as it goes from 42600 troops in 2005 to 0 for two years and then back up to 42285 in 2008. For 2006 and 2007, these numbers were rolled into a total “Operation Iraqi Freedom” count that included all nearby countries. We have reverse-engineered this a bit and have new numbers for Kuwait. Kuwait 2006 updated to 44,400 from 0. We got this number from 185,500 total OIF and subtracting the average from 2006 reported in the above document. Kuwait 2007 updated to 48500 from 0.</p></li>
 <li><p>Iraq 2006: Updated to 141100 from 185500, using 2006 average from here: <a href="https://fas.org/sgp/crs/natsec/R40682.pdf" class="uri">https://fas.org/sgp/crs/natsec/R40682.pdf</a></p></li>
 <li><p>Iraq 2007: Updated to 170000 from 218500, source for the first number is: <a href="https://www.reuters.com/article/us-iraq-usa-pullout/timeline-invasion-surge-withdrawal-u-s-forces-in-iraq-idUSTRE7BE0EL20111215" class="uri">https://www.reuters.com/article/us-iraq-usa-pullout/timeline-invasion-surge-withdrawal-u-s-forces-in-iraq-idUSTRE7BE0EL20111215</a></p></li>
 <li><p>Iraq 2006 and 2007: Individual force counts changed to NA.</p></li>
-<li><p>Kuwait 2006: Updated to 44,400 from 0. We got this number from 185,500 total OIF and subtracting the average from 2006 reported in the above document.</p></li>
-<li><p>Kuwait 2007: Update to 48500 from 0.</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
