@@ -1,0 +1,8 @@
+basedata                Vine's U.S. basing data
+get_basedata            Function to retrieve customized U.S. basing
+                        data
+get_troopdata           Function to retrieve customized U.S. troop
+                        deployment data
+troopdata               U.S. overseas troop deployment data
+troopdata-package       Tools for Analyzing Cross-National Military
+                        Deployment and Basing Data

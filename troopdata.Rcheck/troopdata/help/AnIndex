@@ -1,0 +1,6 @@
+troopdata-package	troopdata-package
+%>%	pipe
+basedata	basedata
+get_basedata	get_basedata
+get_troopdata	get_troopdata
+troopdata	troopdata

@@ -1,0 +1,65 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2021.2.3)  12 APR 2021 12:40
+entering extended mode
+**C:/Users/flynn/AppData/Local/Temp/RtmpaKYmme/Rd2pdfb5e020943be6/Rd2.tex
+(C:/Users/flynn/AppData/Local/Temp/RtmpaKYmme/Rd2pdfb5e020943be6/Rd2.tex
+LaTeX2e <2019-10-01> patch level 3
+
+("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\book.cls"
+Document Class: book 2019/10/25 v1.4k Standard LaTeX document class
+("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\bk10.clo"
+File: bk10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:/PROGRA~1/R/R-40~1.4/share/texmf/tex/latex\Rd.sty
+Package: Rd 
+
+("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
+y"
+Package: longtable 2019/02/06 v4.12 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count89
+\LTcapwidth=\dimen103
+\LT@head=\box27
+\LT@firsthead=\box28
+\LT@foot=\box29
+\LT@lastfoot=\box30
+\LT@cols=\count90
+\LT@rows=\count91
+\c@LT@tables=\count92
+\c@LT@chunks=\count93
+\LT@p@ftn=\toks14
+) ("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+) ("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+("C:\Users\flynn\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\verbatim.sty
+"
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)

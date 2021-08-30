@@ -1,0 +1,6 @@
+Hmm ... looks like a package
+Warning in system(paste(shQuote(texi2dvi), if (quiet) "--quiet" else "",  :
+  running command '"C:\Users\flynn\AppData\Local\Programs\MIKTEX~1.9\miktex\bin\x64\texify.exe"  --pdf "Rd2.tex" --max-iterations=20 -I "C:/PROGRA~1/R/R-40~1.4/share/texmf/tex/latex" -I "C:/PROGRA~1/R/R-40~1.4/share/texmf/bibtex/bst"' had status 1
+Saving output to 'troopdata-manual.pdf' ...
+Done
+You may want to clean up by 'rm -Rf C:/Users/flynn/AppData/Local/Temp/RtmpaKYmme/Rd2pdfb5e020943be6'
