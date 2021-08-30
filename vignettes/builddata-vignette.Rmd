@@ -1,5 +1,5 @@
 ---
-title: "`get_builddata`"
+title: "get_builddata"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{builddata-vignette}
@@ -48,7 +48,7 @@ head(buildexample)
 ```
 
 
-As with the base data you can build cool maps using the constructiond data.
+As with the base data you can build cool maps using the construction data.
 
 ```{r buildmap, echo = TRUE, warning = FALSE, message=FALSE, dpi = 400}
 

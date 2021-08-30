@@ -1,5 +1,5 @@
 ---
-title: "`get_troopdata`"
+title: "get_troopdata"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{troopdata-vignette}

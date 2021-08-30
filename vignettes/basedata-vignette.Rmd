@@ -1,5 +1,5 @@
 ---
-title: "`get_basedata`"
+title: "get_basedata"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{basedata-vignette}
