@@ -32,7 +32,7 @@ The troopdata package provides multiple functions to generate customizable datas
 
 
 
-### `get_builddata`
+## Basic Use
 
 Users can call on the `get_builddata()` returns a data frame containing geocoded location-project-year military construction data. The basic arguments function the same as compared to the previous functions. The primary difference is that the data are currently available only for all countries and years where the Department of Defense publicly discloses spending figures from 2008 through 2019. Note there are also many observations included that contain amounts, but do not disclose location names or other information.
 
@@ -48,7 +48,7 @@ head(buildexample)
 ```
 
 
-As with the base data you can build cool maps using the construction data.
+As with the base data you can build cool maps using the construction data. You can also size the points according to the amount of spending associated with a particular location, adding some additional details to maps and other figures.
 
 ```{r buildmap, echo = TRUE, warning = FALSE, message=FALSE, dpi = 400}
 
@@ -59,12 +59,13 @@ basepoints <- get_builddata(host = NA, startyear = 2009, endyear = 2019)
 
 
 buildmap <- ggplot() +
-  geom_polygon(data = map, aes(x = long, y = lat, group = group, size = spend_construction), fill = "gray80", color = "white", size = 0.1) +
-  geom_point(data = basepoints, aes(x = lon, y = lat), color = "purple", alpha = 0.4) +
+  geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = "gray80", color = "white", size = 0.1) +
+  geom_point(data = basepoints, aes(x = lon, y = lat, size = spend_construction), color = "purple", alpha = 0.4) +
   coord_equal(ratio = 1.3) +
   theme_void() +
   theme(plot.title = element_markdown(face = "bold", size = 15)) +
-  labs(title = "Locations of U.S. military construction spending, 2009-2019")
+  labs(title = "Locations of U.S. military construction spending, 2009-2019",
+       size = "Spending Amount")
 
 
 buildmap
