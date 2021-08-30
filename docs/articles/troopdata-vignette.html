@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>get_troopdata • troopdata</title>
+<title>`get_troopdata` • troopdata</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="get_troopdata">
+<script src="../pkgdown.js"></script><meta property="og:title" content="`get_troopdata`">
 <meta property="og:description" content="troopdata">
 <meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -61,7 +61,13 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/troopdata-vignette.html">get_troopdata</a>
+      <a href="../articles/basedata-vignette.html">`get_basedata`</a>
+    </li>
+    <li>
+      <a href="../articles/builddata-vignette.html">`get_builddata`</a>
+    </li>
+    <li>
+      <a href="../articles/troopdata-vignette.html">`get_troopdata`</a>
     </li>
   </ul>
 </li>
@@ -89,7 +95,7 @@
       </header><script src="troopdata-vignette_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>get_troopdata</h1>
+      <h1 data-toc-skip><code>get_troopdata</code></h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/meflynn/troopdata/blob/master/vignettes/troopdata-vignette.Rmd"><code>vignettes/troopdata-vignette.Rmd</code></a></small>
@@ -99,14 +105,114 @@
 
     
     
+<p>This page provides an overview for the <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> function, highlighting some of its potential uses.</p>
+<p>First things first—let’s load the <a href="https://github.com/meflynn/troopdata">troopdata</a> package</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/meflynn/troopdata">troopdata</a></span><span class="op">)</span></code></pre></div>
-<p>This page provides an overview for the <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> function, highlighting some of its potential uses.</p>
+<p>The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> function represents the core of this package, providing customized data on US overseas troop deployments, specifically.</p>
+<div id="country-year-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#country-year-data" class="anchor"></a>Country-year data</h2>
+<p>The first function of this package is the <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> function. At its most basic this function returns a data frame of country-year troop deployment values for the selected time period, using the <code>startdate</code> and <code>enddate</code> parameters.</p>
+<p>For users who want more refined data, the <code>host</code> argument and the <code>branch</code> arguments allow users to specify the set of host countries for which they would like data returned. This must be a single numerical value equal to a Correlates of War (COW) Project country code, a single character value equal to an ISO3C country code, or a vector of similar values. Note they must be consistent (i.e. they must all be numeric COW codes or ISO3C character codes).</p>
+<p>For example, you can use a numeric vector of COW country codes:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="co"># Let's make the host selection more specific</span>
+<span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">220</span><span class="op">)</span>
+
+<span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, startyear <span class="op">=</span> <span class="fl">1990</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
+<span class="co">#&gt; Warning: Data include troop values for unknown locations and personnel listed as</span>
+<span class="co">#&gt; 'afloat'.</span>
+<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
+<span class="co">#&gt; element will be used</span>
+<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
+<span class="co">#&gt; first element will be used</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 6 × 6</span>
+<span class="co">#&gt;   countryname    ccode iso3c  year troops region               </span>
+<span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;                </span>
+<span class="co">#&gt; 1 United Kingdom   200 GBR    1990  25111 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 2 United Kingdom   200 GBR    1991  23442 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 3 United Kingdom   200 GBR    1992  20048 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 4 United Kingdom   200 GBR    1993  16100 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 5 United Kingdom   200 GBR    1994  13781 Europe &amp; Central Asia</span>
+<span class="co">#&gt; 6 United Kingdom   200 GBR    1995  12131 Europe &amp; Central Asia</span></code></pre></div>
+<p>Or you can use a character vector of ISO3C codes.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">hostlist.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CAN"</span>, <span class="st">"GBR"</span><span class="op">)</span>
+
+<span class="va">example.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist.char</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
+<span class="co">#&gt; Warning: Data include troop values for unknown locations and personnel listed as</span>
+<span class="co">#&gt; 'afloat'.</span>
+<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
+<span class="co">#&gt; element will be used</span>
+<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
+<span class="co">#&gt; first element will be used</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example.char</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 6 × 6</span>
+<span class="co">#&gt;   countryname ccode iso3c  year troops region       </span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        </span>
+<span class="co">#&gt; 1 Canada         20 CAN    1970   2643 North America</span>
+<span class="co">#&gt; 2 Canada         20 CAN    1971   1835 North America</span>
+<span class="co">#&gt; 3 Canada         20 CAN    1972   1742 North America</span>
+<span class="co">#&gt; 4 Canada         20 CAN    1973   1362 North America</span>
+<span class="co">#&gt; 5 Canada         20 CAN    1974   1580 North America</span>
+<span class="co">#&gt; 6 Canada         20 CAN    1975   1301 North America</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">200</span>, <span class="fl">220</span><span class="op">)</span>
+
+<span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">2006</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
+<span class="co">#&gt; Warning: Branch data only available for 2006 forward.</span>
+<span class="co">#&gt; Warning: Data include troop values for unknown locations and personnel listed as</span>
+<span class="co">#&gt; 'afloat'.</span>
+<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
+<span class="co">#&gt; element will be used</span>
+<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
+<span class="co">#&gt; first element will be used</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 6 × 10</span>
+<span class="co">#&gt;   countryname ccode iso3c  year troops  army  navy air_force marine_corps region</span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt; </span>
+<span class="co">#&gt; 1 Canada         20 CAN    2006    133     7    35        81           10 North…</span>
+<span class="co">#&gt; 2 Canada         20 CAN    2007    141     7    41        84            9 North…</span>
+<span class="co">#&gt; 3 Canada         20 CAN    2008     92     8     0        82            2 North…</span>
+<span class="co">#&gt; 4 Canada         20 CAN    2009     91     8     0        83            0 North…</span>
+<span class="co">#&gt; 5 Canada         20 CAN    2010    129     3    28        98            0 North…</span>
+<span class="co">#&gt; 6 Canada         20 CAN    2011    128     7    38        83            0 North…</span></code></pre></div>
+</div>
+<div id="regional-summaries" class="section level2">
+<h2 class="hasAnchor">
+<a href="#regional-summaries" class="anchor"></a>Regional Summaries</h2>
+<p>Sometimes users are also interested in obtaining data on regional patterns in U.S. deployments. Now users can enter <code>host = "region"</code> to obtain regional sums of U.S. deployments. The <code>year</code> and <code>branch</code> arguments work as in the previous examples, allowing users to generate summed values for aggregate troop deployments or branch-specific deployment sums by region. These values can be plotted as in previous examples, too.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">regional.sum</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="st">"region"</span>, startyear <span class="op">=</span> <span class="fl">1990</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span> 
+<span class="co">#&gt; Warning: Data include troop values for unknown locations and personnel listed as</span>
+<span class="co">#&gt; 'afloat'.</span>
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">regional.sum</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">troops</span>, color <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">viridis</span><span class="fu">::</span><span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">scale_color_viridis</a></span><span class="op">(</span>discrete <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>,
+       y <span class="op">=</span> <span class="st">"Count"</span>,
+       title <span class="op">=</span> <span class="st">"Troop deployments by region"</span>,
+       color <span class="op">=</span> <span class="st">"Region"</span><span class="op">)</span>
+<span class="co">#&gt; Warning: Removed 13 row(s) containing missing values (geom_path).</span></code></pre></div>
+<p><img src="troopdata-vignette_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

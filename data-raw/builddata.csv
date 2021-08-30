@@ -1,4 +1,4 @@
-countryname,ccode,iso3c,year,location,lat,lon,toa
+countryname,ccode,iso3c,year,location,lat,lon,spend_construction
 United States,2,USA,2008,Camp Bullis,29.6888855,-98.5597725,1600
 United States,2,USA,2008,Fort Hood,31.2014388,-97.7717578,47000
 United States,2,USA,2008,Anniston Army Depot,33.6476162,-85.9696755,26000

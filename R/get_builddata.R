@@ -1,10 +1,10 @@
-globalVariables(c('countryname', 'ccode', 'iso3c', 'year', 'toa', 'lon', 'lat'))
+globalVariables(c('countryname', 'ccode', 'iso3c', 'year', 'spend_construction', 'lon', 'lat'))
 
 #' Function to retrieve customized U.S. construction spending data.
 #'
-#' @description \code{get_builddata()} generates a customized data frame containing location-project-year observations of U.S. military construction spending.
+#' @description \code{get_builddata()} generates a customized data frame containing location-project-year observations of U.S. military construction and housing spending in thousands of current dollars.
 
-#' @return \code{get_builddata()} returns a data frame containing location-project-year observations of U.S. military construction spending.
+#' @return \code{get_builddata()} returns a data frame containing location-project-year observations of U.S. military construction and housing spending in thousands of current dollars.
 #'
 #' @param host The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series
 #' @param startyear The first year for the series
@@ -41,6 +41,10 @@ get_builddata <- function(host = NA, startyear, endyear) {
 
   # Set warning for year
   if(startyear < min(tempdata$year) | endyear > max(tempdata$year)) stop("Specified year is out of range. Available range includes 2008 through 2019")
+
+  warn("Be advised that the data include unspecified locations, as well as 0 or negative spending values.")
+
+  warn("Spending values are in thousands of current US dollars.")
 
   if(is.na(host)) {
 

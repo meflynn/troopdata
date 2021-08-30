@@ -46,6 +46,8 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
 
   if(branch)  rlang::warn("Branch data only available for 2006 forward.")
 
+  warn("Data include troop values for unknown locations and personnel listed as 'afloat'.")
+
   if (is.na(host)) {
 
     tempdata <- tempdata %>%

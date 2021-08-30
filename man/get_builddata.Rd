@@ -14,10 +14,10 @@ get_builddata(host = NA, startyear, endyear)
 \item{endyear}{The last year for the series}
 }
 \value{
-\code{get_builddata()} returns a data frame containing location-project-year observations of U.S. military construction spending.
+\code{get_builddata()} returns a data frame containing location-project-year observations of U.S. military construction and housing spending in thousands of current dollars.
 }
 \description{
-\code{get_builddata()} generates a customized data frame containing location-project-year observations of U.S. military construction spending.
+\code{get_builddata()} generates a customized data frame containing location-project-year observations of U.S. military construction and housing spending in thousands of current dollars.
 }
 \examples{
 

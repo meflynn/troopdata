@@ -122,6 +122,7 @@ troopdata <- troopdata %>%
            countryname == "Netherlands Antilles" ~ "Latin America & Caribbean",
            countryname == "Wake Island" ~ "East Asia & Pacific",
            countryname == "St. Helena" ~ "Sub-Saharan Africa",
+           countryname == "Afloat" ~ "Afloat",
            TRUE ~ region
            ))
 

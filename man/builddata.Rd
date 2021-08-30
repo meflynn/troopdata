@@ -12,7 +12,7 @@ A data frame with country-base observations including the following variables:
 \item{\code{year}}{Year of observed country-year spending.}
 \item{\code{iso3c}}{A character vector of ISO three character country codes.}
 \item{\code{location}}{Name of the facility where spending occurred, or host country where detailed facility information is unavailable.}
-\item{\code{toa}}{Total obligational authority associated with the observed location-year.}
+\item{\code{spend_construction}}{Total obligational authority associated with the observed location-year in thousands of current US dollars.}
 \item{\code{lat}}{The facility's latitude.}
 \item{\code{lon}}{The facility's longitude.}
 }

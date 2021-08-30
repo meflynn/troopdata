@@ -61,7 +61,13 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/troopdata-vignette.html">get_troopdata</a>
+      <a href="articles/basedata-vignette.html">`get_basedata`</a>
+    </li>
+    <li>
+      <a href="articles/builddata-vignette.html">`get_builddata`</a>
+    </li>
+    <li>
+      <a href="articles/troopdata-vignette.html">`get_troopdata`</a>
     </li>
   </ul>
 </li>
@@ -119,186 +125,15 @@
 <p><code><a href="reference/get_basedata.html">get_basedata()</a></code>: Returns a data frame containing information on U.S. military bases around the globe from the Cold War forward. Depending on the arguments specified the function will return the entire data set or data for a particular country. Observations can be site-specific or can be aggregated to generate country counts.</p>
 <p><code><a href="reference/get_builddata.html">get_builddata()</a></code>: Returns a data frame containing geocoded location-year information on U.S. military overseas construction spending. Users can specify select countries and years, or call the entire data frame. Currently only select countries are included in the data</p>
 </div>
-<div id="example" class="section level2">
+<div id="examples" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<div id="get_troopdata" class="section level3">
-<h3 class="hasAnchor">
-<a href="#get_troopdata" class="anchor"></a><code>get_troopdata</code>
-</h3>
-<p>The first function of this package is the <code><a href="reference/get_troopdata.html">get_troopdata()</a></code> function. At its most basic this function returns a data frame of country-year troop deployment values for the selected time period, using the <code>startdate</code> and <code>enddate</code> parameters.</p>
-<p>For users who want more refined data, the <code>host</code> argument and the <code>branch</code> arguments allow users to specify the set of host countries for which they would like data returned. This must be a single numerical value equal to a Correlates of War (COW) Project country code, a single character value equal to an ISO3C country code, or a vector of similar values. Note they must be consistent (i.e. they must all be numeric COW codes or ISO3C character codes).</p>
-<p>For example, you can use a numeric vector of COW country codes:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Let's make the host selection more specific</span>
-<span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">220</span><span class="op">)</span>
-
-<span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, startyear <span class="op">=</span> <span class="fl">1990</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span>
-<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
-<span class="co">#&gt; first element will be used</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 x 6</span>
-<span class="co">#&gt;   countryname    ccode iso3c  year troops region               </span>
-<span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;                </span>
-<span class="co">#&gt; 1 United Kingdom   200 GBR    1990  25111 Europe &amp; Central Asia</span>
-<span class="co">#&gt; 2 United Kingdom   200 GBR    1991  23442 Europe &amp; Central Asia</span>
-<span class="co">#&gt; 3 United Kingdom   200 GBR    1992  20048 Europe &amp; Central Asia</span>
-<span class="co">#&gt; 4 United Kingdom   200 GBR    1993  16100 Europe &amp; Central Asia</span>
-<span class="co">#&gt; 5 United Kingdom   200 GBR    1994  13781 Europe &amp; Central Asia</span>
-<span class="co">#&gt; 6 United Kingdom   200 GBR    1995  12131 Europe &amp; Central Asia</span></code></pre></div>
-<p>Or you can use a character vector of ISO3C codes.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hostlist.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CAN"</span>, <span class="st">"GBR"</span><span class="op">)</span>
-
-<span class="va">example.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist.char</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span>
-<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
-<span class="co">#&gt; first element will be used</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example.char</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 x 6</span>
-<span class="co">#&gt;   countryname ccode iso3c  year troops region       </span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        </span>
-<span class="co">#&gt; 1 Canada         20 CAN    1970   2643 North America</span>
-<span class="co">#&gt; 2 Canada         20 CAN    1971   1835 North America</span>
-<span class="co">#&gt; 3 Canada         20 CAN    1972   1742 North America</span>
-<span class="co">#&gt; 4 Canada         20 CAN    1973   1362 North America</span>
-<span class="co">#&gt; 5 Canada         20 CAN    1974   1580 North America</span>
-<span class="co">#&gt; 6 Canada         20 CAN    1975   1301 North America</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">200</span>, <span class="fl">220</span><span class="op">)</span>
-
-<span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">2006</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-<span class="co">#&gt; Warning: Branch data only available for 2006 forward.</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span>
-<span class="co">#&gt; Warning in if (host == "region") {: the condition has length &gt; 1 and only the</span>
-<span class="co">#&gt; first element will be used</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 x 10</span>
-<span class="co">#&gt;   countryname ccode iso3c  year troops  army  navy air_force marine_corps region</span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt; </span>
-<span class="co">#&gt; 1 Canada         20 CAN    2006    133     7    35        81           10 North~</span>
-<span class="co">#&gt; 2 Canada         20 CAN    2007    141     7    41        84            9 North~</span>
-<span class="co">#&gt; 3 Canada         20 CAN    2008     92     8     0        82            2 North~</span>
-<span class="co">#&gt; 4 Canada         20 CAN    2009     91     8     0        83            0 North~</span>
-<span class="co">#&gt; 5 Canada         20 CAN    2010    129     3    28        98            0 North~</span>
-<span class="co">#&gt; 6 Canada         20 CAN    2011    128     7    38        83            0 North~</span></code></pre></div>
-</div>
-<div id="get_basedata" class="section level3">
-<h3 class="hasAnchor">
-<a href="#get_basedata" class="anchor"></a><code>get_basedata</code>
-</h3>
-<p>The second function, <code><a href="reference/get_basedata.html">get_basedata()</a></code> returns a data frame containing information on the United States’ overseas military bases going back to the beginning of the Cold War. At its most basic the function will return a data frame containing country-base observations, along with the facility’s longitude and latitude (if available), and a series of binary variables indicating whether or not the facility is a full military base, a smaller lilypad, and if it is a currently funded site.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">baseexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_basedata.html">get_basedata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="cn">NA</span>, country_count <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">baseexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 x 9</span>
-<span class="co">#&gt;   countryname ccode iso3c basename            lat   lon  base lilypad fundedsite</span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Afghanistan   700 AFG   Bagram AB          34.9  69.3     1       0          0</span>
-<span class="co">#&gt; 2 Afghanistan   700 AFG   Kandahar Airfield  31.5  65.8     1       0          0</span>
-<span class="co">#&gt; 3 Afghanistan   700 AFG   Mazar-e-Sharif     36.7  67.2     1       0          0</span>
-<span class="co">#&gt; 4 Afghanistan   700 AFG   Gardez             33.6  69.2     1       0          0</span>
-<span class="co">#&gt; 5 Afghanistan   700 AFG   Kabul              34.5  69.2     1       0          0</span>
-<span class="co">#&gt; 6 Afghanistan   700 AFG   Herat              34.3  62.2     1       0          0</span></code></pre></div>
-<p>As with the <code><a href="reference/get_troopdata.html">get_troopdata()</a></code> function you can specify a numeric vector of COW country codes or a character vector of ISO3C codes to specify specific host countries.</p>
-<p>For example, using COW country codes:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">200</span>, <span class="fl">255</span>, <span class="fl">645</span><span class="op">)</span>
-
-<span class="va">baseexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_basedata.html">get_basedata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, country_count <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">baseexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 x 9</span>
-<span class="co">#&gt;   countryname     ccode iso3c basename       lat    lon  base lilypad fundedsite</span>
-<span class="co">#&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Ascension Isla~   200 GBR   Ascension I~ -7.95  -14.4     1       0          0</span>
-<span class="co">#&gt; 2 BR Indian Ocea~   200 GBR   Diego Garcia -7.32   72.4     1       0          0</span>
-<span class="co">#&gt; 3 Canada             20 CAN   &lt;NA&gt;         56.1  -106.      0       1          0</span>
-<span class="co">#&gt; 4 Canada             20 CAN   Argentia, N~ 47.3   -54.0     1       0          0</span>
-<span class="co">#&gt; 5 Germany           255 DEU   Amberg       49.4    11.9     1       0          0</span>
-<span class="co">#&gt; 6 Germany           255 DEU   USAG Ansbach 49.3    10.6     1       0          0</span></code></pre></div>
-<p>And another using ISO3C codes:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hostlist.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CAN"</span>, <span class="st">"GBR"</span>, <span class="st">"PRI"</span><span class="op">)</span>
-
-<span class="va">baseexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_basedata.html">get_basedata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist.char</span>, country_count <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span></code></pre></div>
-<p>Finally, users can also generate country-level counts of the number of U.S. military bases by changing the <code>country_count</code> argument to <code>TRUE</code>. Note that when using this argument you also need to specify the <code>groupvar</code> argument, which specifies which identifier will be used to generate country-level totals. Though this may sound obvious individual country codes may include multiple geographic territories that are more finely parsed using various identifiers. Accepted character strings include “countryname”, “iso3c”, and “ccode”. And while this may seem redundant given the host argument, it should provide flexibility for users who may be more familiar with country codes and do not want to spend time trying to identify long-form country names.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">200</span>, <span class="fl">255</span>, <span class="fl">645</span><span class="op">)</span>
-
-<span class="va">baseexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_basedata.html">get_basedata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, country_count <span class="op">=</span> <span class="cn">TRUE</span>, groupvar <span class="op">=</span> <span class="st">"ccode"</span><span class="op">)</span>
-<span class="co">#&gt; Warning: Must specify grouping variable when using country_count.</span>
-<span class="co">#&gt; Warning: group var must equal 'countryname', 'ccode', or 'iso3c'.</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">baseexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 4 x 4</span>
-<span class="co">#&gt;   ccode basecount lilypadcount fundedsitecount</span>
-<span class="co">#&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;           &lt;dbl&gt;</span>
-<span class="co">#&gt; 1    20         1            1               0</span>
-<span class="co">#&gt; 2   200        18            0               0</span>
-<span class="co">#&gt; 3   255        40            4               0</span>
-<span class="co">#&gt; 4   645         2            2               0</span></code></pre></div>
-</div>
-<div id="get_builddata" class="section level3">
-<h3 class="hasAnchor">
-<a href="#get_builddata" class="anchor"></a><code>get_builddata</code>
-</h3>
-<p>Users can call on the <code><a href="reference/get_builddata.html">get_builddata()</a></code> returns a data frame containing geocoded location-project-year military construction data. The basic arguments function the same as compared to the previous functions. The primary difference is that the data are currently available only for all countries and years where the Department of Defense publicly discloses spending figures from 2008 through 2019. Note there are also many observations included that contain amounts, but do not disclose location names or other information.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">255</span>, <span class="fl">211</span><span class="op">)</span>
-
-<span class="va">buildexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_builddata.html">get_builddata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, startyear <span class="op">=</span> <span class="fl">2008</span>, endyear <span class="op">=</span> <span class="fl">2019</span><span class="op">)</span>
-<span class="co">#&gt; Warning in if (is.na(host)) {: the condition has length &gt; 1 and only the first</span>
-<span class="co">#&gt; element will be used</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">buildexample</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 6 x 8</span>
-<span class="co">#&gt;   countryname    ccode iso3c  year location                     lat    lon   toa</span>
-<span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518  1800</span>
-<span class="co">#&gt; 2 United Kingdom   200 GBR    2008 Royal Air Force Lakenheath  52.4  0.518 15500</span>
-<span class="co">#&gt; 3 United Kingdom   200 GBR    2008 Menwith Hill Station        54.8 -2.70  10000</span>
-<span class="co">#&gt; 4 United Kingdom   200 GBR    2008 Menwith Hill Station        54.8 -2.70  31000</span>
-<span class="co">#&gt; 5 United Kingdom   200 GBR    2009 Royal Air Force Lakenheath  52.4  0.518 71828</span>
-<span class="co">#&gt; 6 United Kingdom   200 GBR    2009 Royal Air Force Lakenheath  52.4  0.518  7400</span></code></pre></div>
-</div>
-</div>
-<div id="applications" class="section level2">
-<h2 class="hasAnchor">
-<a href="#applications" class="anchor"></a>Applications</h2>
-<p>So what can you do with these super useful and cool data? Lots of things! The study of basing and military deployments has been picking up over the last few years and there are lots of cool studies you should check out. With these data you can do cool things like this!</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-
-<span class="va">map</span> <span class="op">&lt;-</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data</a></span><span class="op">(</span><span class="st">"world"</span><span class="op">)</span>
-<span class="va">basepoints</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_basedata.html">get_basedata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>
-
-
-<span class="va">basemap</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html">geom_polygon</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">map</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span><span class="op">)</span>, fill <span class="op">=</span> <span class="st">"gray80"</span>, color <span class="op">=</span> <span class="st">"white"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">basepoints</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">lon</span>, y <span class="op">=</span> <span class="va">lat</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"purple"</span>, alpha <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_equal</a></span><span class="op">(</span>ratio <span class="op">=</span> <span class="fl">1.3</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_markdown</span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span>, size <span class="op">=</span> <span class="fl">15</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Locations of U.S. military facilities, 1950-2018"</span><span class="op">)</span>
-
-
-<span class="va">basemap</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="100%"></p>
+<a href="#examples" class="anchor"></a>Examples</h2>
+<p>You can find more detailed vignettes on these functions below:</p>
+<ol>
+<li><a href="https://meflynn.github.io/troopdata/articles/troopdata-vignette.html"><code>get_troopdata</code></a></li>
+<li><a href="https://meflynn.github.io/troopdata/articles/basedata-vignette.html"><code>get_basedata</code></a></li>
+<li><a href="https://meflynn.github.io/troopdata/articles/builddata-vignette.html"><code>get_builddata</code></a></li>
+</ol>
 </div>
 <div id="a-note-on-country-codes" class="section level2">
 <h2 class="hasAnchor">
