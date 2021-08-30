@@ -31,5 +31,8 @@ Imports:
     haven
 Suggests: 
     testthat (>= 3.0.0),
-    spelling
+    spelling,
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
+VignetteBuilder: knitr

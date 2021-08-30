@@ -1,0 +1,31 @@
+---
+title: "`get_troopdata()`: Customized US troop deployment data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{troopdata-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This page provides an overview for the `get_troopdata()` function, highlighting some of its potential uses.
+
+First things first—let's load the `{troopdata}` package
+
+
+```{r setup}
+library(troopdata)
+```
+
+The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The `get_troopdata()` function represents the core of this package, providing customized data on US overseas troop deployments, specifically.
+
+
+# Host Identifiers
+
+One of the nice things about the `{troopdata}` package is the ability to select exactly those host countries on which you want to focus.
