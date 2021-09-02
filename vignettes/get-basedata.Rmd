@@ -2,7 +2,7 @@
 title: "get_basedata"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{get_basedata}
+  %\VignetteIndexEntry{get-basedata}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
