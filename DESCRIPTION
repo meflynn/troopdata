@@ -38,4 +38,3 @@ Suggests:
     haven,
     maps
 Config/testthat/edition: 3
-VignetteBuilder: knitr
