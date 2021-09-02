@@ -12,61 +12,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-
 ```
-
-This page provides an overview for the `get_basedata()` function, highlighting some of its potential uses.
-
-First things first—let's load the `{troopdata}` package
-
 
 ```{r setup}
 library(troopdata)
-library(ggplot2)
-```
-
-The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The `get_basedata()` function represents the core of this package, providing customized data on US overseas troop deployments, specifically.
-
-
-
-
-
-## Basic Use
-
-Users can call on the `get_builddata()` returns a data frame containing geocoded location-project-year military construction data. The basic arguments function the same as compared to the previous functions. The primary difference is that the data are currently available only for all countries and years where the Department of Defense publicly discloses spending figures from 2008 through 2019. Note there are also many observations included that contain amounts, but do not disclose location names or other information.
-
-```{r build example}
-
-hostlist <- c(200, 255, 211)
-
-buildexample <- get_builddata(host = hostlist, startyear = 2008, endyear = 2019)
-
-head(buildexample)
-
-
-```
-
-
-As with the base data you can build cool maps using the construction data. You can also size the points according to the amount of spending associated with a particular location, adding some additional details to maps and other figures.
-
-```{r buildmap, echo = TRUE, warning = FALSE, message=FALSE, dpi = 400}
-
-library(ggplot2)
-
-map <- ggplot2::map_data("world")
-basepoints <- troopdata::get_builddata(host = NA, startyear = 2009, endyear = 2019)
-
-
-buildmap <- ggplot() +
-  geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = "gray80", color = "white", size = 0.1) +
-  geom_point(data = basepoints, aes(x = lon, y = lat, size = spend_construction), color = "purple", alpha = 0.4) +
-  coord_equal(ratio = 1.3) +
-  theme_void() +
-  theme(plot.title = element_text(face = "bold", size = 15)) +
-  labs(title = "Locations of U.S. military construction spending, 2009-2019",
-       size = "Spending Amount")
-
-
-buildmap
-
 ```
