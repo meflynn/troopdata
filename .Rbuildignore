@@ -5,7 +5,7 @@
 ^README\.Rmd$
 ^cran-comments\.md$
 ^_pkgdown\.yml$
-^pkgdown$
-^pkgdown/
-^\.github$
-
+docs/
+doc/
+vignettes/
+vignettes
