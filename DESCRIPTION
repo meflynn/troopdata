@@ -23,16 +23,18 @@ Imports:
     magrittr,
     dplyr,
     tibble,
-    countrycode,
-    tidyr,
-    stringr,
-    readstata13,
-    rlang,
-    haven
+    rlang
 Suggests: 
     testthat (>= 3.0.0),
     spelling,
     knitr,
-    rmarkdown
+    rmarkdown,
+    viridis,
+    ggplot2,
+    countrycode,
+    tidyr,
+    stringr,
+    readstata13,
+    haven,
+    maps
 Config/testthat/edition: 3
-VignetteBuilder: knitr

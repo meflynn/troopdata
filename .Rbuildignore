@@ -6,3 +6,10 @@
 ^cran-comments\.md$
 ^_pkgdown\.yml$
 ^docs$
+^pkgdown$
+^pkgdown/
+^\.github$
+docs/
+doc/
+vignettes/
+vignettes

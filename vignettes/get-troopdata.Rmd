@@ -2,7 +2,7 @@
 title: "get_troopdata"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{troopdata-vignette}
+  %\VignetteIndexEntry{get_troopdata}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,8 +12,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-
-library(ggplot2)
 ```
 
 This page provides an overview for the `get_troopdata()` function, highlighting some of its potential uses.
@@ -23,6 +21,8 @@ First things first—let's load the `{troopdata}` package
 
 ```{r setup}
 library(troopdata)
+library(ggplot2)
+library(viridis)
 ```
 
 The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The `get_troopdata()` function represents the core of this package, providing customized data on US overseas troop deployments, specifically.
@@ -93,7 +93,7 @@ regional.sum <- get_troopdata(host = "region", startyear = 1990, endyear = 2020)
 
 ggplot(regional.sum, aes(x = year, y = troops, color = region)) + 
   geom_line() +
-  viridis::scale_color_viridis(discrete = TRUE) +
+  scale_color_viridis(discrete = TRUE) +
   labs(x = "Year",
        y = "Count",
        title = "Troop deployments by region",

@@ -13,7 +13,7 @@ deployment data and U.S. overseas basing data. The data contain country identifi
 these data with other data to analyze trends in the United States' overseas military posture.
 }
 \references{
-\url{https://www.m-flynn.com/}
+\url{https://m-flynn.com/}
 \url{https://github.com/meflynn/troopdata}
 }
 \author{

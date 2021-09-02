@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.11)  30 AUG 2021 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.11)  2 SEP 2021 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -272,8 +272,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count271
 \l__pdf_internal_box=\box51
 )
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/Rtmpwrzc9L/Rd2pdf138a
-4479a78cd/Rd2.aux)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpdHptUs/Rd2pdf17f8
+e3c259b5/Rd2.aux)
 \openout1 = `Rd2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -326,10 +326,10 @@ LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
 
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/Rtmpwrzc9L/Rd2pdf138a
-4479a78cd/Rd2.out)
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/Rtmpwrzc9L/Rd2pdf138a
-4479a78cd/Rd2.out)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpdHptUs/Rd2pdf17f8
+e3c259b5/Rd2.out)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpdHptUs/Rd2pdf17f8
+e3c259b5/Rd2.out)
 \@outlinefile=\write4
 \openout4 = `Rd2.out'.
 
@@ -345,37 +345,37 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 28.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 39
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 38
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/Rtmpwrzc9L/Rd2pdf138a
-4479a78cd/Rd2.toc [1
-
-
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpdHptUs/Rd2pdf17f8
+e3c259b5/Rd2.toc)
 \tf@toc=\write5
 \openout5 = `Rd2.toc'.
 
- [2] [3]
+ [1
+
+
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 175.
+(Font)              scaled to size 9.0pt on input line 174.
  [4] [5] [6]
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/Rtmpwrzc9L/Rd2pdf138a
-4479a78cd/Rd2.ind [7] [8
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpdHptUs/Rd2pdf17f8
+e3c259b5/Rd2.ind [7] [8
 
 
 ])
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/Rtmpwrzc9L/Rd2pdf138a
-4479a78cd/Rd2.aux)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpdHptUs/Rd2pdf17f8
+e3c259b5/Rd2.aux)
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: 58E25F92B6F329A4879A6CE7CE9D7152;859.
  ) 
 Here is how much of TeX's memory you used:
  8639 strings out of 478994
- 126970 string characters out of 5858184
+ 126957 string characters out of 5858184
  426547 words of memory out of 5000000
  25921 multiletter control sequences out of 15000+600000
  437679 words of font info for 60 fonts, out of 8000000 for 9000
@@ -390,7 +390,7 @@ live/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/
 texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (8 pages, 94584 bytes).
+Output written on Rd2.pdf (8 pages, 94564 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  176 compressed objects within 2 object streams

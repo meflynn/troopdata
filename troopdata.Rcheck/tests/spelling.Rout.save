@@ -1,7 +1,7 @@
 
-R version 4.1.1 (2021-08-10) -- "Kick Things"
-Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin17.0 (64-bit)
+R version 3.4.1 (2017-06-30) -- "Single Candle"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -18,8 +18,8 @@ Type 'q()' to quit R.
 > if(requireNamespace('spelling', quietly = TRUE))
 +   spelling::spell_check_test(vignettes = TRUE, error = FALSE,
 +                              skip_on_cran = TRUE)
-NULL
-> 
+All Done!
+>
 > proc.time()
-   user  system elapsed 
-  0.152   0.044   0.228 
+   user  system elapsed
+  0.372   0.039   0.408

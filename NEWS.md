@@ -1,6 +1,6 @@
 # troopdata 0.1.4
 
-* Introduces get_builddata() which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.
+* Introduces get_builddata() function which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.
 * Adds option to generate regional sums of military personnel by setting host = "region" when calling get_troopdata() function.
 * Fixed multiple errors with get_troopdata():
   * 2014 UK values were missing from data.

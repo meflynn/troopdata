@@ -8,13 +8,6 @@
 
 <title>Changelog • troopdata</title>
 
-<!-- favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -47,7 +40,6 @@
 
 
 <meta property="og:title" content="Changelog" />
-<meta property="og:image" content="/logo.png" />
 
 
 
@@ -102,13 +94,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/basedata-vignette.html">get_basedata</a>
-    </li>
-    <li>
-      <a href="../articles/builddata-vignette.html">get_builddata</a>
-    </li>
-    <li>
-      <a href="../articles/troopdata-vignette.html">get_troopdata</a>
+      <a href="../articles/get-troopdata.html">get_troopdata</a>
     </li>
   </ul>
 </li>
@@ -145,7 +131,7 @@
 <a href="#troopdata-014" class="anchor"></a>troopdata 0.1.4<small> Unreleased </small>
 </h1>
 <ul>
-<li>Introduces get_builddata() which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.</li>
+<li>Introduces get_builddata() function which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.</li>
 <li>Adds option to generate regional sums of military personnel by setting host = “region” when calling get_troopdata() function.</li>
 <li>Fixed multiple errors with get_troopdata():
 <ul>
