@@ -2,7 +2,7 @@
 title: "get_troopdata"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{get_troopdata}
+  %\VignetteIndexEntry{troopdata-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
 ```
 
 This page provides an overview for the `get_troopdata()` function, highlighting some of its potential uses.
