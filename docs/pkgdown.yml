@@ -2,8 +2,8 @@ pandoc: '2.13'
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  get-basedata: get-basedata.html
-  get-builddata: get-builddata.html
-  get-troopdata: get-troopdata.html
+  get_basedata: get_basedata.html
+  get_builddata: get_builddata.html
+  get_troopdata: get_troopdata.html
 last_built: 2021-09-02T20:27Z
 
