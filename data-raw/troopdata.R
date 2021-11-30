@@ -1,8 +1,12 @@
 ## code to prepare `DATASET` dataset goes here
 
 library(tidyverse)
+library(data.table)
 library(haven)
 library(here)
+
+troopdata.2021 <- fread(here::here("../../Projects/Troops/data/", "troops-1950-2021.txt"), fill = TRUE) %>%
+  dplyr::filter(year == 2021)
 
 troopdata <- haven::read_dta(here::here("../../Projects/Troops/data/", "troops 1950-2020.dta")) %>%
   dplyr::select(ccode, year, troops, army, navy, air_force, marine_corps) %>%
@@ -125,6 +129,8 @@ troopdata <- troopdata %>%
            countryname == "Afloat" ~ "Afloat",
            TRUE ~ region
            ))
+
+troodata <- bind_rows(troopdata, troopdata.2021)
 
 
 
