@@ -130,7 +130,7 @@ troopdata <- troopdata %>%
            TRUE ~ region
            ))
 
-troodata <- bind_rows(troopdata, troopdata.2021)
+troopdata <- bind_rows(troopdata, troopdata.2021)
 
 
 
