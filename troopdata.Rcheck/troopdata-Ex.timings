@@ -1,4 +1,4 @@
 name	user	system	elapsed
-get_basedata	0	0	0	
+get_basedata	0.000	0.000	0.001	
 get_builddata	0.000	0.000	0.001	
-get_troopdata	0	0	0	
+get_troopdata	0.000	0.000	0.001	

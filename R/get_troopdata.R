@@ -42,7 +42,9 @@ get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
   tempdata <- troopdata::troopdata
 
   # Set warning for year range
-  if(startyear < 1950 | endyear > max(tempdata$year)) stop("Specified year is out of range. Available range includes 1950 through 2020.")
+  if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2021")
+  if(startyear < 1950 | endyear > max(tempdata$year)) startyear <- 2021
+
 
   if(branch)  rlang::warn("Branch data only available for 2006 forward.")
 
