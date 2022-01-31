@@ -1,4 +1,6 @@
-# troopdata 0.2.0
+# troopdata 0.1.5
+
+* Addresses a coding error producing false 0 values for some earlier deployments.
 
 # troopdata 0.1.4 Data Update
 

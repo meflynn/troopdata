@@ -133,8 +133,14 @@ troopdata <- troopdata %>%
 troopdata <- bind_rows(troopdata, troopdata.2021) %>%
   arrange(ccode, year)
 
-
-troopdata <- data.table::fread("https://raw.githubusercontent.com/Michael-A-Allen/troopdata/master/data-raw/troopdata.csv")
+# This is probably the last time we're going to use this workflow to update the data so I'm just using this line to overwrite
+# using Michael Allen's most recent csv file. Subsequent versions will use a totally new build structure.
+troopdata <- data.table::fread("https://raw.githubusercontent.com/Michael-A-Allen/troopdata/master/data-raw/troopdata.csv") %>%
+  mutate(countryname = case_when(
+    ccode == 403 ~ "Sao Tome and Principe",
+    ccode == 437 ~ "Cote d'Ivoire",
+    TRUE ~ countryname
+  ))
 
 
 readr::write_csv(troopdata, "data-raw/troopdata.csv")
