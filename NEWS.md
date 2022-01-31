@@ -1,3 +1,5 @@
+# troopdata 0.2.0
+
 # troopdata 0.1.4 Data Update
 
 * September 2021 Counts for Total Troops, Army, Navy, Air Force, and Marine Corps added

@@ -1,6 +1,6 @@
 Package: troopdata
 Title: Tools for Analyzing Cross-National Military Deployment and Basing Data
-Version: 0.1.4
+Version: 0.2.0
 Authors@R: 
     person(given = "Michael",
            family = "Flynn",
