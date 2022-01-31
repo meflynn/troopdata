@@ -134,6 +134,8 @@ troopdata <- bind_rows(troopdata, troopdata.2021) %>%
   arrange(ccode, year)
 
 
+troopdata <- data.table::fread("https://raw.githubusercontent.com/Michael-A-Allen/troopdata/master/data-raw/troopdata.csv")
+
 
 readr::write_csv(troopdata, "data-raw/troopdata.csv")
 usethis::use_data(troopdata, overwrite = TRUE, internal = FALSE)

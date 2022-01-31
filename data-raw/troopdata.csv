@@ -55,21 +55,21 @@ United States,2,USA,2002,969215,NA,NA,NA,NA,North America
 United States,2,USA,2003,974571,NA,NA,NA,NA,North America
 United States,2,USA,2004,924310,NA,NA,NA,NA,North America
 United States,2,USA,2005,894430,NA,NA,NA,NA,North America
-United States,2,USA,2006,1100001,NA,NA,NA,NA,North America
-United States,2,USA,2007,1084548,NA,NA,NA,NA,North America
-United States,2,USA,2008,1058587,NA,NA,NA,NA,North America
-United States,2,USA,2009,1095001,NA,NA,NA,NA,North America
-United States,2,USA,2010,1119341,NA,NA,NA,NA,North America
-United States,2,USA,2011,1116792,NA,NA,NA,NA,North America
-United States,2,USA,2012,1157255,NA,NA,NA,NA,North America
-United States,2,USA,2013,1159012,NA,NA,NA,NA,North America
-United States,2,USA,2014,1132938,NA,NA,NA,NA,North America
-United States,2,USA,2015,1127466,NA,NA,NA,NA,North America
-United States,2,USA,2016,1129637,NA,NA,NA,NA,North America
-United States,2,USA,2017,1119873,NA,NA,NA,NA,North America
-United States,2,USA,2018,1172367,NA,NA,NA,NA,North America
-United States,2,USA,2019,1192404,NA,NA,NA,NA,North America
-United States,2,USA,2020,1205253,NA,NA,NA,NA,North America
+United States,2,USA,2006,1100001,426496,251873,288090,133542,North America
+United States,2,USA,2007,1084548,449563,226551,273735,134699,North America
+United States,2,USA,2008,1018233,361823,260824,247261,148325,North America
+United States,2,USA,2009,1053625,374482,263860,251479,163804,North America
+United States,2,USA,2010,1079067,400526,267684,252528,158329,North America
+United States,2,USA,2011,1075863,402640,262399,251190,159634,North America
+United States,2,USA,2012,1116520,435836,257884,258548,164252,North America
+United States,2,USA,2013,1119720,430013,272173,259810,157724,North America
+United States,2,USA,2014,1094592,422404,271449,249095,151644,North America
+United States,2,USA,2015,1089579,417337,278123,243711,150408,North America
+United States,2,USA,2016,1091037,403902,282609,252538,151988,North America
+United States,2,USA,2017,1080410,400876,280161,251250,148123,North America
+United States,2,USA,2018,1132448,422646,288356,268362,153084,North America
+United States,2,USA,2019,1152806,430358,295132,273891,153425,North America
+United States,2,USA,2020,1166007,432297,305955,275504,152251,North America
 United States,2,USA,2021,1162186,432769,306272,275298,147847,North America
 Puerto Rico,6,PRI,2008,110,44,30,26,10,Latin America & Caribbean
 Puerto Rico,6,PRI,2009,144,84,25,25,10,Latin America & Caribbean
@@ -1684,10 +1684,10 @@ Venezuela,101,VEN,2010,9,3,2,4,0,Latin America & Caribbean
 Venezuela,101,VEN,2011,7,2,2,3,0,Latin America & Caribbean
 Venezuela,101,VEN,2012,15,2,2,2,9,Latin America & Caribbean
 Venezuela,101,VEN,2013,10,0,0,1,9,Latin America & Caribbean
-Venezuela,101,VEN,2014,0,NA,NA,NA,NA,Latin America & Caribbean
-Venezuela,101,VEN,2015,0,NA,NA,NA,NA,Latin America & Caribbean
-Venezuela,101,VEN,2016,0,NA,NA,NA,NA,Latin America & Caribbean
-Venezuela,101,VEN,2017,0,NA,NA,NA,NA,Latin America & Caribbean
+Venezuela,101,VEN,2014,10,1,0,2,7,Latin America & Caribbean
+Venezuela,101,VEN,2015,14,2,1,0,11,Latin America & Caribbean
+Venezuela,101,VEN,2016,12,0,1,1,10,Latin America & Caribbean
+Venezuela,101,VEN,2017,11,0,0,1,10,Latin America & Caribbean
 Venezuela,101,VEN,2018,10,0,0,0,10,Latin America & Caribbean
 Venezuela,101,VEN,2019,0,NA,NA,NA,NA,Latin America & Caribbean
 Venezuela,101,VEN,2020,0,NA,NA,NA,NA,Latin America & Caribbean
@@ -2404,13 +2404,13 @@ Uruguay,165,URY,2010,10,3,2,5,0,Latin America & Caribbean
 Uruguay,165,URY,2011,10,4,3,3,0,Latin America & Caribbean
 Uruguay,165,URY,2012,12,3,2,1,6,Latin America & Caribbean
 Uruguay,165,URY,2013,16,3,3,2,8,Latin America & Caribbean
-Uruguay,165,URY,2014,0,NA,NA,NA,NA,Latin America & Caribbean
-Uruguay,165,URY,2015,0,NA,NA,NA,NA,Latin America & Caribbean
-Uruguay,165,URY,2016,0,NA,NA,NA,NA,Latin America & Caribbean
+Uruguay,165,URY,2014,14,2,3,2,7,Latin America & Caribbean
+Uruguay,165,URY,2015,15,2,4,2,7,Latin America & Caribbean
+Uruguay,165,URY,2016,14,2,4,2,6,Latin America & Caribbean
 Uruguay,165,URY,2017,19,2,5,2,10,Latin America & Caribbean
 Uruguay,165,URY,2018,15,2,4,2,7,Latin America & Caribbean
 Uruguay,165,URY,2019,16,2,6,1,7,Latin America & Caribbean
-Uruguay,165,URY,2020,0,NA,NA,NA,NA,Latin America & Caribbean
+Uruguay,165,URY,2020,12,0,4,1,7,Latin America & Caribbean
 Uruguay,165,URY,2021,15,1,4,2,8,Latin America & Caribbean
 United Kingdom,200,GBR,1950,5208,NA,NA,NA,NA,Europe & Central Asia
 United Kingdom,200,GBR,1951,26313,NA,NA,NA,NA,Europe & Central Asia
@@ -2476,7 +2476,7 @@ United Kingdom,200,GBR,2010,8764,333,364,8004,63,Europe & Central Asia
 United Kingdom,200,GBR,2011,8673,328,316,7977,52,Europe & Central Asia
 United Kingdom,200,GBR,2012,8516,315,320,7823,58,Europe & Central Asia
 United Kingdom,200,GBR,2013,9044,259,313,8428,44,Europe & Central Asia
-United Kingdom,200,GBR,2014,8495,216,300,7938,40,Europe & Central Asia
+United Kingdom,200,GBR,2014,8494,216,300,7938,40,Europe & Central Asia
 United Kingdom,200,GBR,2015,8038,188,264,7543,43,Europe & Central Asia
 United Kingdom,200,GBR,2016,8365,171,203,7983,8,Europe & Central Asia
 United Kingdom,200,GBR,2017,8299,185,194,7909,11,Europe & Central Asia
@@ -5746,52 +5746,52 @@ Cape Verde,402,CPV,2018,0,NA,NA,NA,NA,Sub-Saharan Africa
 Cape Verde,402,CPV,2019,0,NA,NA,NA,NA,Sub-Saharan Africa
 Cape Verde,402,CPV,2020,0,NA,NA,NA,NA,Sub-Saharan Africa
 Cape Verde,402,CPV,2021,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1975,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1976,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1977,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1978,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1979,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1980,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1981,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1982,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1983,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1984,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1985,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1986,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1987,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1988,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1989,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1990,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1991,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1992,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1993,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1994,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1995,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1996,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1997,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1998,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,1999,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2000,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2001,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2002,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2003,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2004,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2005,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2006,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2007,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2008,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2009,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2010,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2011,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2012,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2013,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2014,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2015,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2016,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2017,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2018,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2019,0,NA,NA,NA,NA,Sub-Saharan Africa
-São Tomé & Príncipe,403,STP,2020,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1975,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1976,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1977,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1978,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1979,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1980,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1981,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1982,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1983,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1984,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1985,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1986,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1987,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1988,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1989,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1990,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1991,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1992,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1993,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1994,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1995,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1996,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1997,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1998,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,1999,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2000,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2001,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2002,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2003,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2004,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2005,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2006,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2007,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2008,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2009,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2010,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2011,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2012,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2013,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2014,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2015,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2016,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2017,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2018,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2019,0,NA,NA,NA,NA,Sub-Saharan Africa
+SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2020,0,NA,NA,NA,NA,Sub-Saharan Africa
 SÃ£o TomÃ© and PrÃ­ncipe,403,STP,2021,0,NA,NA,NA,NA,Sub-Saharan Africa
 Guinea-Bissau,404,GNB,1950,0,NA,NA,NA,NA,Sub-Saharan Africa
 Guinea-Bissau,404,GNB,1951,0,NA,NA,NA,NA,Sub-Saharan Africa
@@ -6341,77 +6341,77 @@ Niger,436,NER,2018,8,4,0,3,1,Sub-Saharan Africa
 Niger,436,NER,2019,13,3,0,4,6,Sub-Saharan Africa
 Niger,436,NER,2020,16,2,0,3,11,Sub-Saharan Africa
 Niger,436,NER,2021,30,4,0,4,22,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1950,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1951,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1952,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1953,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1954,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1955,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1956,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1957,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1958,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1959,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1960,0,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1961,3,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1962,9,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1963,14,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1964,14,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1965,11,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1966,13,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1967,12,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1968,13,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1969,8,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1970,7,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1971,12,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1972,9,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1973,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1974,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1975,11,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1976,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1977,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1978,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1979,11,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1980,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1981,9,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1982,12,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1983,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1984,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1985,15,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1986,12,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1987,15,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1988,13,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1989,16,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1990,19,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1991,19,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1992,21,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1993,18,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1994,28,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1995,33,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1996,19,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1997,19,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1998,23,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,1999,26,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2000,27,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2001,22,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2002,18,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2003,20,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2004,10,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2005,15,NA,NA,NA,NA,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2006,31,3,0,0,28,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2007,10,3,0,0,7,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2008,2,2,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2009,3,3,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2010,1,1,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2011,3,3,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2012,8,3,0,0,5,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2013,8,2,1,0,5,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2014,10,2,1,0,7,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2015,12,3,1,0,8,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2016,4,4,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2017,4,3,0,0,1,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2018,3,3,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2019,3,3,0,0,0,Sub-Saharan Africa
-Côte d’Ivoire,437,CIV,2020,9,3,1,0,5,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1950,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1951,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1952,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1953,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1954,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1955,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1956,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1957,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1958,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1959,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1960,0,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1961,3,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1962,9,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1963,14,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1964,14,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1965,11,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1966,13,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1967,12,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1968,13,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1969,8,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1970,7,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1971,12,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1972,9,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1973,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1974,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1975,11,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1976,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1977,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1978,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1979,11,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1980,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1981,9,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1982,12,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1983,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1984,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1985,15,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1986,12,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1987,15,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1988,13,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1989,16,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1990,19,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1991,19,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1992,21,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1993,18,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1994,28,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1995,33,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1996,19,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1997,19,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1998,23,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,1999,26,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2000,27,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2001,22,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2002,18,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2003,20,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2004,10,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2005,15,NA,NA,NA,NA,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2006,31,3,0,0,28,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2007,10,3,0,0,7,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2008,2,2,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2009,3,3,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2010,1,1,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2011,3,3,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2012,8,3,0,0,5,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2013,8,2,1,0,5,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2014,10,2,1,0,7,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2015,12,3,1,0,8,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2016,4,4,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2017,4,3,0,0,1,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2018,3,3,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2019,3,3,0,0,0,Sub-Saharan Africa
+CÃ´teÂ d'Ivoire,437,CIV,2020,9,3,1,0,5,Sub-Saharan Africa
 CÃ´teÂ d'Ivoire,437,CIV,2021,11,3,1,0,7,Sub-Saharan Africa
 Guinea,438,GIN,1950,0,NA,NA,NA,NA,Sub-Saharan Africa
 Guinea,438,GIN,1951,0,NA,NA,NA,NA,Sub-Saharan Africa
@@ -8202,18 +8202,18 @@ Zambia,551,ZMB,2005,9,NA,NA,NA,NA,Sub-Saharan Africa
 Zambia,551,ZMB,2006,7,1,0,0,6,Sub-Saharan Africa
 Zambia,551,ZMB,2007,8,1,0,0,7,Sub-Saharan Africa
 Zambia,551,ZMB,2008,3,1,0,2,0,Sub-Saharan Africa
-Zambia,551,ZMB,2009,0,NA,NA,NA,NA,Sub-Saharan Africa
+Zambia,551,ZMB,2009,4,2,0,2,0,Sub-Saharan Africa
 Zambia,551,ZMB,2010,4,1,0,3,0,Sub-Saharan Africa
 Zambia,551,ZMB,2011,3,1,0,2,0,Sub-Saharan Africa
-Zambia,551,ZMB,2012,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zambia,551,ZMB,2013,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zambia,551,ZMB,2014,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zambia,551,ZMB,2015,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zambia,551,ZMB,2016,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zambia,551,ZMB,2017,0,NA,NA,NA,NA,Sub-Saharan Africa
+Zambia,551,ZMB,2012,9,2,0,2,5,Sub-Saharan Africa
+Zambia,551,ZMB,2013,8,1,0,2,5,Sub-Saharan Africa
+Zambia,551,ZMB,2014,11,1,0,2,8,Sub-Saharan Africa
+Zambia,551,ZMB,2015,11,1,0,2,8,Sub-Saharan Africa
+Zambia,551,ZMB,2016,37,1,0,2,34,Sub-Saharan Africa
+Zambia,551,ZMB,2017,11,1,0,2,8,Sub-Saharan Africa
 Zambia,551,ZMB,2018,11,1,0,2,8,Sub-Saharan Africa
-Zambia,551,ZMB,2019,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zambia,551,ZMB,2020,0,NA,NA,NA,NA,Sub-Saharan Africa
+Zambia,551,ZMB,2019,8,1,0,1,6,Sub-Saharan Africa
+Zambia,551,ZMB,2020,8,0,0,1,7,Sub-Saharan Africa
 Zambia,551,ZMB,2021,9,0,0,1,8,Sub-Saharan Africa
 Zimbabwe,552,ZWE,1950,0,NA,NA,NA,NA,Sub-Saharan Africa
 Zimbabwe,552,ZWE,1951,0,NA,NA,NA,NA,Sub-Saharan Africa
@@ -8274,18 +8274,18 @@ Zimbabwe,552,ZWE,2005,7,NA,NA,NA,NA,Sub-Saharan Africa
 Zimbabwe,552,ZWE,2006,8,3,0,0,5,Sub-Saharan Africa
 Zimbabwe,552,ZWE,2007,10,4,0,0,6,Sub-Saharan Africa
 Zimbabwe,552,ZWE,2008,3,3,0,0,0,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2009,0,NA,NA,NA,NA,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2009,3,3,0,0,0,Sub-Saharan Africa
 Zimbabwe,552,ZWE,2010,1,1,0,0,0,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2011,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2012,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2013,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2014,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2015,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2016,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2017,0,NA,NA,NA,NA,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2011,2,2,0,0,0,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2012,8,4,0,0,4,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2013,8,1,0,0,7,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2014,12,4,0,0,8,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2015,11,3,0,0,8,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2016,3,3,0,0,0,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2017,11,4,0,0,7,Sub-Saharan Africa
 Zimbabwe,552,ZWE,2018,11,3,0,0,8,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2019,0,NA,NA,NA,NA,Sub-Saharan Africa
-Zimbabwe,552,ZWE,2020,0,NA,NA,NA,NA,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2019,13,5,0,0,8,Sub-Saharan Africa
+Zimbabwe,552,ZWE,2020,10,2,0,0,8,Sub-Saharan Africa
 Zimbabwe,552,ZWE,2021,12,3,0,0,9,Sub-Saharan Africa
 Malawi,553,MWI,1950,0,NA,NA,NA,NA,Sub-Saharan Africa
 Malawi,553,MWI,1951,0,NA,NA,NA,NA,Sub-Saharan Africa
@@ -10020,15 +10020,15 @@ Yemen,679,YEM,2008,10,9,0,1,0,Middle East & North Africa
 Yemen,679,YEM,2009,34,10,8,16,0,Middle East & North Africa
 Yemen,679,YEM,2010,104,68,19,17,0,Middle East & North Africa
 Yemen,679,YEM,2011,30,13,14,2,1,Middle East & North Africa
-Yemen,679,YEM,2012,0,NA,NA,NA,NA,Middle East & North Africa
-Yemen,679,YEM,2013,0,NA,NA,NA,NA,Middle East & North Africa
-Yemen,679,YEM,2014,0,NA,NA,NA,NA,Middle East & North Africa
-Yemen,679,YEM,2015,0,NA,NA,NA,NA,Middle East & North Africa
-Yemen,679,YEM,2016,0,NA,NA,NA,NA,Middle East & North Africa
-Yemen,679,YEM,2017,0,NA,NA,NA,NA,Middle East & North Africa
+Yemen,679,YEM,2012,115,15,46,5,49,Middle East & North Africa
+Yemen,679,YEM,2013,248,15,26,6,201,Middle East & North Africa
+Yemen,679,YEM,2014,161,25,10,8,118,Middle East & North Africa
+Yemen,679,YEM,2015,8,5,1,2,0,Middle East & North Africa
+Yemen,679,YEM,2016,7,6,1,0,0,Middle East & North Africa
+Yemen,679,YEM,2017,14,11,2,1,0,Middle East & North Africa
 Yemen,679,YEM,2018,4,4,0,0,0,Middle East & North Africa
 Yemen,679,YEM,2019,7,3,0,0,4,Middle East & North Africa
-Yemen,679,YEM,2020,0,NA,NA,NA,NA,Middle East & North Africa
+Yemen,679,YEM,2020,4,4,0,0,0,Middle East & North Africa
 Yemen,679,YEM,2021,5,3,0,0,2,Middle East & North Africa
 Yemen People's Republic,680,NA,1967,0,NA,NA,NA,NA,Middle East & North Africa
 Yemen People's Republic,680,NA,1968,0,NA,NA,NA,NA,Middle East & North Africa
@@ -10766,13 +10766,13 @@ Uzbekistan,704,UZB,2010,5,2,1,2,0,Europe & Central Asia
 Uzbekistan,704,UZB,2011,5,3,0,2,0,Europe & Central Asia
 Uzbekistan,704,UZB,2012,13,4,0,2,7,Europe & Central Asia
 Uzbekistan,704,UZB,2013,15,5,0,3,7,Europe & Central Asia
-Uzbekistan,704,UZB,2014,0,NA,NA,NA,NA,Europe & Central Asia
-Uzbekistan,704,UZB,2015,0,NA,NA,NA,NA,Europe & Central Asia
-Uzbekistan,704,UZB,2016,0,NA,NA,NA,NA,Europe & Central Asia
+Uzbekistan,704,UZB,2014,10,3,0,1,6,Europe & Central Asia
+Uzbekistan,704,UZB,2015,12,3,0,1,8,Europe & Central Asia
+Uzbekistan,704,UZB,2016,5,3,0,2,0,Europe & Central Asia
 Uzbekistan,704,UZB,2017,5,3,0,2,0,Europe & Central Asia
 Uzbekistan,704,UZB,2018,5,3,0,1,1,Europe & Central Asia
 Uzbekistan,704,UZB,2019,5,3,0,2,0,Europe & Central Asia
-Uzbekistan,704,UZB,2020,0,NA,NA,NA,NA,Europe & Central Asia
+Uzbekistan,704,UZB,2020,10,2,0,2,6,Europe & Central Asia
 Uzbekistan,704,UZB,2021,12,2,0,1,9,Europe & Central Asia
 Kazakhstan,705,KAZ,1950,0,NA,NA,NA,NA,Europe & Central Asia
 Kazakhstan,705,KAZ,1951,0,NA,NA,NA,NA,Europe & Central Asia
@@ -11048,19 +11048,19 @@ Taiwan,713,TWN,2004,0,NA,NA,NA,NA,East Asia & Pacific
 Taiwan,713,TWN,2005,0,NA,NA,NA,NA,East Asia & Pacific
 Taiwan,713,TWN,2006,0,NA,NA,NA,NA,East Asia & Pacific
 Taiwan,713,TWN,2007,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2008,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2009,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2010,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2011,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2012,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2013,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2014,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2015,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2016,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2017,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2018,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2019,0,NA,NA,NA,NA,East Asia & Pacific
-Taiwan,713,TWN,2020,0,NA,NA,NA,NA,East Asia & Pacific
+Taiwan,713,TWN,2008,7,0,3,4,0,East Asia & Pacific
+Taiwan,713,TWN,2009,6,0,2,4,0,East Asia & Pacific
+Taiwan,713,TWN,2010,8,0,2,5,1,East Asia & Pacific
+Taiwan,713,TWN,2011,8,0,2,5,1,East Asia & Pacific
+Taiwan,713,TWN,2012,10,0,3,6,1,East Asia & Pacific
+Taiwan,713,TWN,2013,7,0,3,3,1,East Asia & Pacific
+Taiwan,713,TWN,2014,8,0,3,4,1,East Asia & Pacific
+Taiwan,713,TWN,2015,15,9,2,3,1,East Asia & Pacific
+Taiwan,713,TWN,2016,9,0,2,6,1,East Asia & Pacific
+Taiwan,713,TWN,2017,10,0,2,7,1,East Asia & Pacific
+Taiwan,713,TWN,2018,7,0,2,4,1,East Asia & Pacific
+Taiwan,713,TWN,2019,8,0,2,4,2,East Asia & Pacific
+Taiwan,713,TWN,2020,18,1,2,5,10,East Asia & Pacific
 Taiwan,713,TWN,2021,0,NA,NA,NA,NA,East Asia & Pacific
 North Korea,731,PRK,1950,0,NA,NA,NA,NA,East Asia & Pacific
 North Korea,731,PRK,1951,0,NA,NA,NA,NA,East Asia & Pacific
@@ -12096,15 +12096,15 @@ Vietnam,816,VNM,2008,8,5,0,1,2,East Asia & Pacific
 Vietnam,816,VNM,2009,7,4,0,2,1,East Asia & Pacific
 Vietnam,816,VNM,2010,3,1,0,1,1,East Asia & Pacific
 Vietnam,816,VNM,2011,10,6,1,2,1,East Asia & Pacific
-Vietnam,816,VNM,2012,0,NA,NA,NA,NA,East Asia & Pacific
+Vietnam,816,VNM,2012,19,6,3,2,8,East Asia & Pacific
 Vietnam,816,VNM,2013,22,6,5,2,9,East Asia & Pacific
-Vietnam,816,VNM,2014,0,NA,NA,NA,NA,East Asia & Pacific
-Vietnam,816,VNM,2015,0,NA,NA,NA,NA,East Asia & Pacific
-Vietnam,816,VNM,2016,0,NA,NA,NA,NA,East Asia & Pacific
-Vietnam,816,VNM,2017,0,NA,NA,NA,NA,East Asia & Pacific
+Vietnam,816,VNM,2014,31,7,5,1,18,East Asia & Pacific
+Vietnam,816,VNM,2015,35,7,7,2,19,East Asia & Pacific
+Vietnam,816,VNM,2016,3,0,3,0,0,East Asia & Pacific
+Vietnam,816,VNM,2017,4,0,3,0,1,East Asia & Pacific
 Vietnam,816,VNM,2018,5,0,3,0,2,East Asia & Pacific
 Vietnam,816,VNM,2019,3,0,2,0,1,East Asia & Pacific
-Vietnam,816,VNM,2020,0,NA,NA,NA,NA,East Asia & Pacific
+Vietnam,816,VNM,2020,25,4,3,1,17,East Asia & Pacific
 Vietnam,816,VNM,2021,29,4,4,2,19,East Asia & Pacific
 Republic of Vietnam,817,NA,1954,4628,NA,NA,NA,NA,East Asia & Pacific
 Republic of Vietnam,817,NA,1955,427,NA,NA,NA,NA,East Asia & Pacific
@@ -13682,33 +13682,34 @@ Northern Mariana Islands,1011,MNP,2018,1,0,0,0,1,East Asia & Pacific
 Northern Mariana Islands,1011,MNP,2019,2,1,0,0,1,East Asia & Pacific
 Northern Mariana Islands,1011,MNP,2020,3,1,0,0,2,East Asia & Pacific
 Northern Mariana Islands,1011,MNP,2021,22,1,0,0,21,East Asia & Pacific
-Taiwan,1012,TWN,2008,7,0,3,4,0,East Asia & Pacific
-Taiwan,1012,TWN,2009,6,0,2,4,0,East Asia & Pacific
-Taiwan,1012,TWN,2010,8,0,2,5,1,East Asia & Pacific
-Taiwan,1012,TWN,2011,8,0,2,5,1,East Asia & Pacific
-Taiwan,1012,TWN,2012,10,0,3,6,1,East Asia & Pacific
-Taiwan,1012,TWN,2013,7,0,3,3,1,East Asia & Pacific
-Taiwan,1012,TWN,2014,8,0,3,4,1,East Asia & Pacific
-Taiwan,1012,TWN,2015,15,9,2,3,1,East Asia & Pacific
-Taiwan,1012,TWN,2016,9,0,2,6,1,East Asia & Pacific
-Taiwan,1012,TWN,2017,10,0,2,7,1,East Asia & Pacific
-Taiwan,1012,TWN,2018,7,0,2,4,1,East Asia & Pacific
-Taiwan,1012,TWN,2019,8,0,2,4,2,East Asia & Pacific
-Taiwan,1012,TWN,2020,18,1,2,5,10,East Asia & Pacific
 Taiwan,1012,TWN,2021,39,2,3,5,29,East Asia & Pacific
 U.S. Virgin Islands,1013,VIR,2008,4,1,2,1,0,Latin America & Caribbean
 U.S. Virgin Islands,1013,VIR,2009,1,0,1,0,0,Latin America & Caribbean
 U.S. Virgin Islands,1013,VIR,2010,2,0,2,0,0,Latin America & Caribbean
 U.S. Virgin Islands,1013,VIR,2011,1,0,1,0,0,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2012,2,0,1,0,1,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2013,3,0,1,0,2,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2014,2,0,1,0,1,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2015,3,0,1,0,2,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2016,1,0,1,0,0,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2017,5,3,1,0,1,Latin America & Caribbean
 U.S. Virgin Islands,1013,VIR,2018,5,5,0,0,0,Latin America & Caribbean
 U.S. Virgin Islands,1013,VIR,2019,7,4,1,1,1,Latin America & Caribbean
+U.S. Virgin Islands,1013,VIR,2020,10,6,2,1,1,Latin America & Caribbean
 U.S. Virgin Islands,1013,VIR,2021,12,8,2,1,1,Latin America & Caribbean
 Wake Island,1014,NA,2008,2,0,0,2,0,East Asia & Pacific
 Wake Island,1014,NA,2009,4,0,0,4,0,East Asia & Pacific
 Wake Island,1014,NA,2010,4,0,0,4,0,East Asia & Pacific
 Wake Island,1014,NA,2011,4,0,0,4,0,East Asia & Pacific
+Wake Island,1014,NA,2012,4,0,0,4,0,East Asia & Pacific
+Wake Island,1014,NA,2013,5,0,0,5,0,East Asia & Pacific
+Wake Island,1014,NA,2014,5,0,0,5,0,East Asia & Pacific
+Wake Island,1014,NA,2015,6,0,0,6,0,East Asia & Pacific
+Wake Island,1014,NA,2016,5,0,0,5,0,East Asia & Pacific
+Wake Island,1014,NA,2017,5,0,0,5,0,East Asia & Pacific
 Wake Island,1014,NA,2018,4,0,0,4,0,East Asia & Pacific
 Wake Island,1014,NA,2019,4,0,0,4,0,East Asia & Pacific
+Wake Island,1014,NA,2020,3,0,0,3,0,East Asia & Pacific
 Wake Island,1014,NA,2021,3,0,0,3,0,East Asia & Pacific
 Netherlands Antilles,1016,NA,2008,8,0,0,8,0,Latin America & Caribbean
 Netherlands Antilles,1016,NA,2009,11,0,0,11,0,Latin America & Caribbean
@@ -14194,6 +14195,7 @@ British Virgin Islands,1035,VGB,2002,0,NA,NA,NA,NA,Latin America & Caribbean
 British Virgin Islands,1035,VGB,2003,0,NA,NA,NA,NA,Latin America & Caribbean
 British Virgin Islands,1035,VGB,2004,0,NA,NA,NA,NA,Latin America & Caribbean
 British Virgin Islands,1035,VGB,2005,0,NA,NA,NA,NA,Latin America & Caribbean
+British Virgin Islands,1035,VGB,2016,2,0,0,0,2,Latin America & Caribbean
 Easter Island,1036,NA,1950,0,NA,NA,NA,NA,East Asia & Pacific
 Easter Island,1036,NA,1951,0,NA,NA,NA,NA,East Asia & Pacific
 Easter Island,1036,NA,1952,0,NA,NA,NA,NA,East Asia & Pacific
@@ -14419,16 +14421,16 @@ Kashmir,1039,NA,2003,0,NA,NA,NA,NA,South Asia
 Kashmir,1039,NA,2004,0,NA,NA,NA,NA,South Asia
 Kashmir,1039,NA,2005,0,NA,NA,NA,NA,South Asia
 UNKNOWN,1099,NA,2008,32831,3673,18093,1554,9511,NA
-UNKNOWN,1099,NA,2009,1018,10,0,1008,0,NA
+UNKNOWN,1099,NA,2009,23026,266,18453,460,3844,NA
 UNKNOWN,1099,NA,2010,23856,4578,13572,1615,4091,NA
-UNKNOWN,1099,NA,2011,1035,13,0,1022,0,NA
-UNKNOWN,1099,NA,2012,1009,19,0,990,0,NA
-UNKNOWN,1099,NA,2013,21,21,0,0,0,NA
-UNKNOWN,1099,NA,2014,257,257,0,0,0,NA
-UNKNOWN,1099,NA,2015,5951,5951,0,0,0,NA
-UNKNOWN,1099,NA,2016,5916,5916,0,0,0,NA
-UNKNOWN,1099,NA,2017,5490,5490,0,0,0,NA
-UNKNOWN,1099,NA,2018,11027,5833,6,1155,4033,NA
-UNKNOWN,1099,NA,2019,5749,5749,0,0,0,NA
-UNKNOWN,1099,NA,2020,6064,6064,0,0,0,NA
+UNKNOWN,1099,NA,2011,21669,211,16897,482,4079,NA
+UNKNOWN,1099,NA,2012,18703,83,17975,555,90,NA
+UNKNOWN,1099,NA,2013,13652,45,9489,1466,2652,NA
+UNKNOWN,1099,NA,2014,18341,851,13811,2185,1494,NA
+UNKNOWN,1099,NA,2015,13964,3429,5661,2446,2428,NA
+UNKNOWN,1099,NA,2016,27276,5398,9233,4215,8430,NA
+UNKNOWN,1099,NA,2017,16517,2760,7024,3264,3469,NA
+UNKNOWN,1099,NA,2018,5295,101,6,1155,4033,NA
+UNKNOWN,1099,NA,2019,5188,125,3,1112,3948,NA
+UNKNOWN,1099,NA,2020,4267,296,13,1156,2802,NA
 UNKNOWN,1099,NA,2021,10897,6364,12,1173,3348,NA
