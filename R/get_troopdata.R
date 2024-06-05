@@ -6,10 +6,15 @@ globalVariables(c('countryname', 'ccode', 'iso3c', 'region', 'year', 'troops', '
 
 #' @return \code{get_troopdata()} returns a data frame containing country-year observations for U.S. troop deployments.
 #'
-#' @param host The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series
+#' @param host The Correlates of War (COW) numeric country code, ISO3C code, or country name, for the host country or countries in the series
 #' @param branch Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.
+#' @param region Logical. Should the function return aggregate regional totals for the series? Default is FALSE.
+#' @param guard_reserve Logical. Should the function return values for the National Guard and Reserve? Default is FALSE.
+#' @param civilians Logical. Should the function return values for civilian DoD personnel? Default is FALSE.
+#' @param reports Logical. Should the function return reports for the specified countries and years? Default is FALSE.
 #' @param startyear The first year for the series
 #' @param endyear The last year for the series
+#' @param quarters Logical. Should the function return quarterly data? Default is FALSE.
 #'
 #'
 #' @importFrom rlang warn
@@ -37,12 +42,20 @@ globalVariables(c('countryname', 'ccode', 'iso3c', 'region', 'year', 'troops', '
 
 
 
-get_troopdata <- function(host = NA, branch = FALSE, startyear, endyear) {
+get_troopdata <- function(host = NA,
+                          branch = FALSE,
+                          startyear,
+                          endyear,
+                          quarters = FALSE,
+                          region = FALSE,
+                          guard_reserve = FALSE,
+                          civilians = FALSE,
+                          reports = FALSE) {
 
   tempdata <- troopdata::troopdata
 
   # Set warning for year range
-  if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2021")
+  if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2024")
   if(startyear < 1950 | endyear > max(tempdata$year)) startyear <- 2021
 
 
