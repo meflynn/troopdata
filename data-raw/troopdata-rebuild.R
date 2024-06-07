@@ -69,9 +69,9 @@ data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troop_data_1950
                 ),
                 source = "Kane 2006"
                 ) |>
-  dplyr::rename(troops_total = troops) |>
+  dplyr::rename(troops_ad = troops) |>
   dplyr::filter(ccode != 2) |>
-  dplyr::select(statenme, ccode, iso3c, year, month, quarter, source, troops_total)
+  dplyr::select(statenme, ccode, iso3c, year, month, quarter, source, troops_ad)
 
 
 #### Base Dataframe ####
@@ -203,7 +203,7 @@ data.clean.1968.1976 <- data.clean.1950.1977[c(17:25)]
 data.clean.September.2008.June.2023 <- data.clean.2008.2023[c(1:45)]
 
 # This is where space force comes into the data
-data.clean.September.2023.December.2023 <- data.clean.2008.2023[c(46:47)]
+data.clean.September.2023.December.2023 <- data.clean.2008.2023[c(46:48)]
 
 
 # Create names to match the column orderings from the four lists of data frames.
@@ -649,31 +649,31 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
     ),
     `Navy Other` = abs(`Navy Other`)) |>
   rowwise() |>
-  dplyr::mutate(troops_total = case_when(
+  dplyr::mutate(troops_ad = case_when(
     !is.na(`Total`) ~ as.numeric(`Total`),
     !is.na(`Total Ashore`) ~ as.numeric(`Total Ashore`),
     #!is.na(troops) ~ as.numeric(troops),
     TRUE ~ as.numeric(`Total Active Duty`) + as.numeric(`Total Selected Reserve`)
   ),
-  army_total = case_when(
+  army_ad = case_when(
     !is.na(`Army Total`) ~ as.numeric(`Army Total`),
     TRUE ~ sum(`Army Active Duty`, `Army National Guard`, `Army Reserve`,
                na.rm = TRUE)),
-  navy_total = case_when(
+  navy_ad = case_when(
     !is.na(`Navy Total`) ~ as.numeric(`Navy Total`),
     TRUE ~ sum(`Navy Ashore`, `Navy Afloat`, `Navy Temporary Ashore`, `Navy Other`, `Navy Reserve`,
                na.rm = TRUE)),
-  air_force_total = case_when(
+  air_force_ad = case_when(
     !is.na(`Air Force Total`) ~ as.numeric(`Air Force Total`),
     TRUE ~ sum(`Air Force Active Duty`, `Air National Guard`, `Air Force Reserve`,
                na.rm = TRUE)),
-  marine_corps_total = case_when(
+  marine_corps_ad = case_when(
     !is.na(`Marine Corps Total`) ~ as.numeric(`Marine Corps Total`),
     TRUE ~ sum(`Marine Corps Active Duty`, `Marine Corps Reserve`, `Marine Corps Afloat`, `Marine Corps Ashore`,
                na.rm = TRUE)),
-  coast_guard_total = sum(`Coast Guard Active Duty`, `Coast Guard Reserve`,
+  coast_guard_ad = sum(`Coast Guard Active Duty`, `Coast Guard Reserve`,
                na.rm = TRUE),
-  space_force_total = sum(`Space Force Active Duty`,
+  space_force_ad = sum(`Space Force Active Duty`,
                na.rm = TRUE)) |>
   mutate(countryname = countrycode::countrycode(ccode, "cown", "country.name"),
          countryname = case_when(
@@ -750,20 +750,29 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
   dplyr::summarize(across(everything(), ~ max(., na.rm = TRUE))) |>
   dplyr::mutate(source = as.character(source),
                 month = as.character(month)) |>
+  dplyr::mutate(across(everything(), ~ case_when(
+    is.infinite(.) ~ NA,
+    TRUE ~ .
+  ))) |>
+  dplyr::mutate(across(`Total`: `Marine Corps Total`, ~ case_when(
+    . == 0 ~ NA,
+    TRUE ~ .
+  ))) |>
   rowwise() |>
-  dplyr::mutate(troops_total = case_when(
+  dplyr::mutate(troops_ad = case_when(
     is.infinite(`Total`) ~ `Total Ashore`,
     TRUE ~ `Total`
   ),
-                army_total = `Army Total`,
-                navy_total = case_when(
-                  !is.na(`Navy Total`) ~ `Navy Total`,
-                  TRUE ~ sum(`Navy Ashore`, `Navy Temporary Ashore`, `Navy Other`, na.rm = TRUE)),
-                air_force_total = `Air Force Total`,
-                marine_corps_total = case_when(
-                  `Marine Corps Ashore` > 0 ~ `Marine Corps Ashore`,
-                  TRUE ~ `Marine Corps Total`)
-                )
+  army_ad = `Army Total`,
+  navy_ad = case_when(
+    !is.na(`Navy Total`) ~ `Navy Total`,
+    TRUE ~ sum(`Navy Ashore`, `Navy Temporary Ashore`, `Navy Other`, na.rm = TRUE)
+    ),
+  air_force_ad = `Air Force Total`,
+  marine_corps_ad = case_when(
+    `Marine Corps Ashore` > 0 ~ `Marine Corps Ashore`,
+    TRUE ~ `Marine Corps Total`)
+  )
 
 
 # Repeat the basic procedure from the previous code chunk but extract the US states
@@ -798,15 +807,15 @@ data.clean.combined.us.2008.2023 <- data.table::rbindlist(data.clean.2008.2023[c
   dplyr::mutate(source = as.character(source),
                 month = as.character(month)) |>
   rowwise() |>
-  dplyr::mutate(troops_total = case_when(
+  dplyr::mutate(troops_ad = case_when(
     !is.na(`Total Active Duty`) ~ as.numeric(`Total Active Duty`),
-    TRUE ~ `Army Active Duty` + `Navy Active Duty` + `Marine Corps Active Duty` + `Air Force Active Duty` + `Coast Guard Active Duty`
+    TRUE ~ sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE)
   ),
-  army_total = `Army Active Duty`,
-  navy_total = `Navy Active Duty`,
-  air_force_total = `Air Force Active Duty`,
-  marine_corps_total = `Marine Corps Active Duty`,
-  coast_guard_total = `Coast Guard Active Duty`)
+  army_ad = `Army Active Duty`,
+  navy_ad = `Navy Active Duty`,
+  air_force_ad = `Air Force Active Duty`,
+  marine_corps_ad = `Marine Corps Active Duty`,
+  coast_guard_ad = `Coast Guard Active Duty`)
 
 
 
@@ -814,7 +823,7 @@ data.clean.combined.us.2008.2023 <- data.table::rbindlist(data.clean.2008.2023[c
 
 # This second pass covers newer reports from 2023 through 2024 and includes Space Force
 # deployment numbers
-data.clean.combined.us.2023.2024 <- data.table::rbindlist(data.clean.2008.2023[c(46:47)], # Select only recent data frames with space force
+data.clean.combined.us.2023.2024 <- data.table::rbindlist(data.clean.2008.2023[c(46:48)], # Select only recent data frames with space force
                                                           idcol = "source",
                                                           fill = TRUE) |>
   dplyr::select(1:25) |> # Only keep the columns that are relevant to the US data
@@ -843,16 +852,16 @@ data.clean.combined.us.2023.2024 <- data.table::rbindlist(data.clean.2008.2023[c
   dplyr::mutate(source = as.character(source),
                 month = as.character(month)) |>
   rowwise() |>
-  dplyr::mutate(troops_total = case_when(
+  dplyr::mutate(troops_ad = case_when(
     !is.na(`Total Active Duty`) ~ as.numeric(`Total Active Duty`),
     TRUE ~ `Army Active Duty` + `Navy Active Duty` + `Marine Corps Active Duty` + `Air Force Active Duty` + `Coast Guard Active Duty`
   ),
-  army_total = `Army Active Duty`,
-  navy_total = `Navy Active Duty`,
-  air_force_total = `Air Force Active Duty`,
-  marine_corps_total = `Marine Corps Active Duty`,
-  coast_guard_total = `Coast Guard Active Duty`,
-  space_force_total = `Space Force Active Duty`)
+  army_ad = `Army Active Duty`,
+  navy_ad = `Navy Active Duty`,
+  air_force_ad = `Air Force Active Duty`,
+  marine_corps_ad = `Marine Corps Active Duty`,
+  coast_guard_ad = `Coast Guard Active Duty`,
+  space_force_ad = `Space Force Active Duty`)
 
 
 data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
@@ -862,15 +871,15 @@ data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
                 ccode = 2,
                 iso3c = "USA",
                 Location = "United States",
-                troops_total = case_when(
+                troops_ad = case_when(
                   year %in% c(1951, 1952) ~ NA,
-                  TRUE ~ troops_total
+                  TRUE ~ troops_ad
                 )) |>
   dplyr::select(ccode, countryname, year, month, quarter, everything())
 
 
 # Combine the US and international data into a single data frame
-data.combined.all.final <- bind_rows(data.clean.combined.international,
+troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
                                      data.us.combined.all) |>
   dplyr::arrange(ccode, countryname, year, month, quarter) |>
   dplyr::select(ccode, countryname, year, month, quarter, everything(), -c(grouping, grouping_num)) |>
@@ -882,15 +891,15 @@ data.combined.all.final <- bind_rows(data.clean.combined.international,
     is.na(source) & ccode == 2 ~ "Not Reported", # Fill in missing source values for unreported US data.
     TRUE ~ source
   )) |>
+  dplyr::mutate(region = countrycode(ccode, "cown", "region")) |>
+  dplyr::select(ccode, countryname, region, year, month, quarter, everything()) |>
   ungroup() # Remove grouping
 
-readr::write_csv(data.combined.all.final,
-                 here::here("data-raw/troopdata-rebuild-reports.csv"))
 
 
 
-data.full.country.list <- country.year.list |>
-  full_join(data.combined.all.final, by = c("ccode", "year", "month", "quarter")) |>
+troopdata_rebuild_long <- country.year.list |>
+  full_join(troopdata_rebuild_reports, by = c("ccode", "year", "month", "quarter")) |>
   dplyr::filter(month == "June" & year %in% c(1950:1956) | # All reports are from June between 1950 and 1956
                   month == "September" & year >= 1957 | # All reports are from September between 1957 and 2012
                   month == "December" & year >= 2013 |
@@ -902,8 +911,8 @@ data.full.country.list <- country.year.list |>
   )) |>
   ungroup() |>
   janitor::clean_names() |>
-  dplyr::select(ccode, countryname, year, month, quarter, source, location, troops_total, army_total, navy_total, air_force_total, marine_corps_total, coast_guard_total, space_force_total, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
-  dplyr::mutate(troops_total = case_when( # Add values from reports to fill in missing data for Iraq and Afghanistan
+  dplyr::select(ccode, countryname, year, month, quarter, source, location, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
+  dplyr::mutate(troops_ad = case_when( # Add values from reports to fill in missing data for Iraq and Afghanistan
       ccode == 200 & year == 2014 ~ 8495,
       ccode == 700 & year == 2020 ~ 8600, # Afghanistan update from just security
       ccode == 700 & year == 2019 ~ 13000, # Afghanistan update
@@ -914,7 +923,7 @@ data.full.country.list <- country.year.list |>
       ccode == 645 & year == 2007 ~ 170000, # Reuters update for Iraq
       ccode == 690 & year == 2006 ~ 44400, # Reverse engineered from OIF totals
       ccode == 690 & year == 2007 ~ 48500, # Reverse engineered from OIF totals
-      TRUE ~ troops_total)
+      TRUE ~ troops_ad)
   ) |>
   plyr::rbind.fill(data.gaps) |>
   dplyr::select(-statenme) |>
@@ -929,10 +938,30 @@ data.full.country.list <- country.year.list |>
     )
   ) |> # Fill in missing country names
   dplyr::filter(!(ccode == 817 & year > 1975)) |>
-  dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, location, troops_total, army_total, navy_total, air_force_total, marine_corps_total, coast_guard_total, space_force_total, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
-  arrange(ccode, iso3c, year, month, quarter)
+  dplyr::mutate(across(everything(), ~ case_when( # Replace infinite values with NA
+    is.infinite(.) ~ NA,
+    TRUE ~ .
+  ))) |> # Replace infinite values with NA
+  dplyr::group_by(ccode, year, month, quarter) |>
+  dplyr::summarise(across(matches("_ad|civilian|guard|reserve"), ~ sum(., na.rm = TRUE)),
+                   countryname = first(countryname),
+                   iso3c = first(iso3c),
+                   region = first(region),
+                   source = first(source)) |>
+  dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
+  arrange(ccode, iso3c, year, month, quarter) |>
+  ungroup()
+
+# Export reports to csv
+readr::write_csv(troopdata_rebuild_reports,
+                 here::here("data-raw/troopdata-rebuild-reports.csv"))
 
 
-
-readr::write_csv(data.full.country.list,
+# Export full country year quarter list data
+readr::write_csv(troopdata_rebuild_long,
                  here::here("data-raw/troopdata-rebuild-country-year-quarter-format.csv"))
+
+usethis::use_data(troopdata_rebuild_long,
+                  troopdata_rebuild_reports,
+                  overwrite = TRUE,
+                  internal = FALSE)

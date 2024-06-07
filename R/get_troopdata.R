@@ -50,15 +50,6 @@ get_troopdata <- function(host = NA,
                           civilians = FALSE,
                           reports = FALSE) {
 
-  if(reports == TRUE) {
-
-    tempdata <- troopdata::troopdata_rebuild_reports
-
-  } else {
-
-    tempdata <- troopdata::troopdata_rebuild_long
-
-
   # Set warning for year range and assign default values to allow the function complete
   if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2024")
   if(startyear < 1950) startyear <- 1950
@@ -69,84 +60,133 @@ get_troopdata <- function(host = NA,
   if(guard_reserve) rlang::warn("Guard and Reserve data only available for 2006 forward.")
   if(quarters) rlang::warn("Some service branches do not report data for all quarters. See the following note from December, 2022, June 2023, and March 2023 DMDC reports: 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so the Army did not provide military personnel data for end-of-June 2023.'")
 
+  # Allow the function to return all of the compiled reports if no host is specified.
+  if(reports == TRUE && is.null(host) ||
+     reports == TRUE && is.na(host)) {
 
-  if (is.na(host)) {
+    return(tempdata)
 
-    tempdata <- tempdata %>%
-      dplyr::filter(year %in% c(startyear:endyear))
+    # If host is specified then let it filter the reports using the same procedure as the long data.
+  } else if (reports == TRUE && !is.null(host) ||
+            reports == TRUE && !is.na(host)) {
 
-  } else if (is.numeric(host)) {
+    tempdata <- troopdata::troopdata_rebuild_reports
 
-    host <- c(host)
+    # Try to determine host type match. What are they searching for?
+    invisible(host.type <- case_when(
+      is.numeric(host) ~ "ccode",
+      is.character(host) && nchar(host[1]) == 3 ~ "iso3c",
+      is.character(host) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) == 0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0 ~ "region",
+      is.character(host) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) > 0 ~ "countryname"
+    )
+    )
 
     tempdata <- tempdata |>
-      dplyr::filter(ccode %in% host)
-
-  } else if (is.character(host)) {
-
-    host <- c(host)
-
-    tempdata <- tempdata |>
+      dplyr::filter(year %in% c(startyear:endyear)) |>
       dplyr::filter(case_when(
-        nchar(host[1]) == 3 ~ iso3c %in% host,
-        nchar(host[1]) > 3 ~ grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE),
-        !grepl(paste(".*", host, ".*", collapse = "|"), countryname, ignore.case = TRUE) ~ grepl(paste(".*", host, ".*", collapse = "|"), region, ignore.case = TRUE)
+        host.type == "ccode" ~ ccode %in% host,
+        host.type == "iso3c" ~ iso3c %in% host,
+        host.type == "region" ~ grepl(paste(".*", host, ".*", collapse = "|", sep = ""), region, ignore.case = TRUE),
+        host.type == "countryname" ~ grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE)
+      ))
+
+    return(tempdata)
+
+   # If reports is not set to active then use the long format data
+  } else {
+
+    tempdata <- troopdata::troopdata_rebuild_long
+
+    # Try to determine host type match. What are they searching for?
+    invisible(host.type <- case_when(
+      is.numeric(host) ~ "ccode",
+      is.character(host) && nchar(host[1]) == 3 ~ "iso3c",
+      is.character(host) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) ==
+        0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0 ~ "region",
+      is.character(host) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) >
+        0 ~ "countryname"
+    )
+    )
+
+    tempdata <- tempdata |>
+      dplyr::filter(year %in% c(startyear:endyear)) |>
+      dplyr::filter(case_when(
+        host.type == "ccode" ~ ccode %in% host,
+        host.type == "iso3c" ~ iso3c %in% host,
+        host.type == "region" ~ grepl(paste(".*", host, ".*", collapse = "|", sep = ""), region, ignore.case = TRUE),
+        host.type == "countryname" ~ grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE)
       ))
 
   }
 
-  # Allow users to look at branch specific values
-  if (branch==FALSE) {
 
-    tempdata <- tempdata |>
-      dplyr::select(ccode, iso3c, countryname, year, month, quarter,
-                    !contains("army_ad|navy_ad|air_force_ad|marine_corps_ad|coast_guard_ad|space_force_ad"))
+  if (branch==FALSE ) {
 
-  } else if (branch==TRUE) {
+    branch.select <- NULL
 
-    tempdata <- tempdata |>
-      dplyr::select(ccode, iso3c, countryname, year, month, quarter,
-                    contains("army_ad|navy_ad|air_force_ad|marine_corps_ad|coast_guard_ad|space_force_ad"))
+    } else  {
 
-  } else if (guard_reserve == FALSE) {
+      branch.select <- c("army_ad", "navy_ad", "air_force_ad", "marine_corps_ad", "coast_guard_ad", "space_force_ad")
 
-    tempdata <- tempdata %>%
-      dplyr::select(ccode, iso3c, countryname, year, month, quarter,,
-                    !contains("guard|reserve"))
+    }
 
-  } else if (civilians == FALSE) {
+  if (guard_reserve==FALSE ) {
 
-    tempdata <- tempdata %>%
-      dplyr::select(ccode, iso3c, countryname, year, month, quarter,
-                    !contains("civilian"))
+    guard_reserve.select <- NULL
 
-  } else if (civilians == TRUE) {
+    } else  {
 
-    tempdata <- tempdata %>%
-      dplyr::select(ccode, iso3c, countryname, year, month, quarter,
-                    contains("civilian"))
+      guard_reserve.select <- c("army_national_guard", "air_national_guard", "army_reserve", "navy_reserve", "marine_corps_reserve", "air_force_reserve", "coast_guard_reserve", "total_selected_reserve")
 
-  }
+    }
 
-  # Aggregate time periods
+  if (civilians==FALSE ) {
 
-  if(quarters == TRUE) {
-
-    tempdata <- tempdata %>%
-      dplyr::group_by(ccode, year, month, quarter) %>%
-      dplyr::summarise(dplyr::across(contains("troops|_ad|civilians|guard|reserve"), ~ sum(.x, na.rm = TRUE)))
+    civilians.select <- NULL
 
   } else {
 
-    tempdata <- tempdata %>%
-      dplyr::group_by(ccode, year) %>%
-      dplyr::summarise(dplyr::across(contains("troops|_ad|civilians|guard|reserve"), ~ sum(.x, na.rm = TRUE)))
+    civilians.select <- c("army_civilian", "navy_civilian", "marine_corps_civilian", "air_force_civilian", "dod_civilian", "total_civilian")
 
   }
 
+  tempdata <- tempdata |>
+    dplyr::select(ccode, year, iso3c, countryname, region, troops_ad, branch.select, guard_reserve.select, civilians.select) |>
+    ungroup()
+
+  # Aggregate time periods
+
+  # The function will drop the unused grouping variables but this should be ok.
+  # There are lots of different situations where a given space has multiple grouping variables.
+  if (quarters == TRUE && host.type %in% c("ccode", "iso3c", "countryname")) {
+
+    tempdata <- tempdata |>
+      dplyr::group_by(!!sym(host.type), year, month, quarter) |>
+      dplyr::summarise(dplyr::across(matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+
+  } else if (quarters == FALSE && host.type %in% c("ccode", "iso3c", "countryname")) {
+
+    tempdata <- tempdata |>
+      dplyr::group_by(!!sym(host.type), year) |>
+      dplyr::summarise(dplyr::across(matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+
+  } else if (quarters == TRUE && host.type == "region") {
+
+    tempdata <- tempdata |>
+      dplyr::group_by(region, year, month, quarter) |>
+      dplyr::summarise(dplyr::across(matches("_ad|civilian|guard|reserve"), ~ sum(.x, na.rm = TRUE)))
+
+  } else if (quarters == FALSE && host.type == "region") {
+
+    tempdata <- tempdata |>
+      dplyr::group_by(region, year) |>
+      dplyr::summarise(dplyr::across(matches("_ad|civilian|guard|reserve"), ~ sum(.x, na.rm = TRUE)))
+
+  }
+
+  tempdata <- ungroup(tempdata)
 
   return(tempdata)
 
-  }
 }
 
