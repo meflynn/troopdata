@@ -5,12 +5,27 @@ library(data.table)
 library(haven)
 library(here)
 
-troopdata.2021 <- fread(here::here("../../Projects/Troops/data/", "troops-1950-2021.txt"), fill = TRUE) %>%
+temp <- setDT(readxl::read_xls(here("../../Projects/Troop Data/Data Files/M05 Military Only/hst0650.xls")))
+
+names(temp) <- c("countryname", "dod_total", "dod_shore", "dod_afloat", "army_ashore", "army_shore", "navy_shore", "navy_shore", "marines_shore", "marines_afloat", "airforce_shore")
+
+temp <- temp[
+  !is.na(countryname)
+]
+
+
+
+troopdata.2021 <- fread(here::here("../../Projects/Troops/data/", "troops-1950-2021.txt"), fill = TRUE) |>
   dplyr::filter(year == 2021)
 
-troopdata <- haven::read_dta(here::here("../../Projects/Troops/data/", "troops 1950-2020.dta")) %>%
-  dplyr::select(ccode, year, troops, army, navy, air_force, marine_corps) %>%
-  dplyr::filter(year >= 1950) %>%
+troopdata.2022.2023 <- fread(here::here("../../Projects/Troop Data/Data Files/troops_2022_2023.csv")) |>
+  dplyr::rename("troops" = "total") |>
+  dplyr::rename("countryname" = "country")
+
+
+troopdata <- haven::read_dta(here::here("../../Projects/Troops/data/", "troops 1950-2020.dta")) |>
+  dplyr::select(ccode, year, troops, army, navy, air_force, marine_corps) |>
+  dplyr::filter(year >= 1950) |>
   mutate(countryname = countrycode::countrycode(ccode, "cown", "country.name"),
          countryname = case_when(
            ccode == 260 ~ "West Germany",
@@ -80,24 +95,24 @@ troopdata <- haven::read_dta(here::here("../../Projects/Troops/data/", "troops 1
                                TRUE ~ air_force),
          marine_corps = case_when(ccode == 200 & year == 2014 ~ 40,
                                   TRUE ~ marine_corps),
-         iso3c = countrycode::countrycode(countryname, "country.name", "iso3c")) %>%
+         iso3c = countrycode::countrycode(countryname, "country.name", "iso3c")) |>
   dplyr::select(countryname, ccode, iso3c, year, troops, army, navy, air_force, marine_corps)
 
 
-south.vietnam <- troopdata %>%
-  filter(ccode == 816 & year %in% c(1954:1975)) %>%
+south.vietnam <- troopdata |>
+  filter(ccode == 816 & year %in% c(1954:1975)) |>
   mutate(ccode = 817,
          countryname = "Republic of Vietnam",
          iso3c = NA)
 
-troopdata <- troopdata %>%
+troopdata <- troopdata |>
   mutate(troops = case_when(
     ccode == 816 & year %in% c(1954:1975) ~ 0,
     TRUE ~ troops
-  )) %>%
-  filter(!(ccode == 817 & year <= 1975)) %>%
-  bind_rows(south.vietnam) %>%
-  arrange(ccode, year) %>%
+  )) |>
+  filter(!(ccode == 817 & year <= 1975)) |>
+  bind_rows(south.vietnam) |>
+  arrange(ccode, year) |>
   mutate(across(c(army, navy, marine_corps, air_force), ~ ifelse(ccode == 645 & year %in% c(2006, 2007), NA, .)),
          across(c(army, navy, marine_corps, air_force), ~ ifelse(year < 2006, NA, .)),
          region = countrycode::countrycode(iso3c, "iso3c", "region"),
@@ -130,17 +145,19 @@ troopdata <- troopdata %>%
            TRUE ~ region
            ))
 
-troopdata <- bind_rows(troopdata, troopdata.2021) %>%
+troopdata <- bind_rows(troopdata, troopdata.2021) |>
   arrange(ccode, year)
 
 # This is probably the last time we're going to use this workflow to update the data so I'm just using this line to overwrite
 # using Michael Allen's most recent csv file. Subsequent versions will use a totally new build structure.
-troopdata <- data.table::fread("https://raw.githubusercontent.com/Michael-A-Allen/troopdata/master/data-raw/troopdata.csv") %>%
+troopdata <- data.table::fread("https://raw.githubusercontent.com/Michael-A-Allen/troopdata/master/data-raw/troopdata.csv") |>
   mutate(countryname = case_when(
     ccode == 403 ~ "Sao Tome and Principe",
     ccode == 437 ~ "Cote d'Ivoire",
     TRUE ~ countryname
-  ))
+  )) |>
+  bind_rows(troopdata.2022.2023) |>
+  arrange(ccode, year)
 
 
 readr::write_csv(troopdata, "data-raw/troopdata.csv")

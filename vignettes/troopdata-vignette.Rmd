@@ -37,13 +37,17 @@ The first function of this package is the `get_troopdata()` function. At its mos
 library(troopdata)
 ## basic example code
 
-# This example uses the basic function to gather total troop figure
+# This example uses the basic function to gather total troop figures for all countries from 1990 to 2020
 example <- get_troopdata(startyear = 1990, endyear = 2020)
+
+head(example)
 
 ```
 
 
-For users who want more refined data, the `host` argument and the `branch` arguments allow users to specify the set of host countries for which they would like data returned. This must be a single numerical value equal to a Correlates of War (COW) Project country code, a single character value equal to an ISO3C country code, or a vector of similar values. Note they must be consistent (i.e. they must all be numeric COW codes or ISO3C character codes).
+For users who want more refined data, the there are a number of arguments that allow the user to further tailor the output to their needs.
+
+The `host` argument allows users to specify the set of host countries for which they would like data returned. This can be a vector of numerical values equal to a Correlates of War (COW) Project country code, a vector of character values equal to an ISO3C country code, or a vector of character values corresponding to full country names. Note that when supplying a vector of values they must be consistent and correspond to a single type of identifer at a time (i.e. they must all be numeric COW codes, ISO3C character codes, country names, or region names).
 
 For example, you can use a numeric vector of COW country codes:
 
@@ -70,35 +74,102 @@ head(example.char)
 
 ```
 
+Similarly, we can search for full country names:
+
+```{r}
+hostlist.names <- c("Canada", "United Kingdom")
+
+example.names <- get_troopdata(host = hostlist.names, startyear = 1970, endyear = 2020)
+
+head(example.names)
+
+```
+
+When searching for country names, the function will do its best to identify the correct country based on the character string that's included. This can include cases where fragments of country names are included and the function will try to return the correct country. 
+
+```{r}
+
+example.frag <- get_troopdata(host = "South Ko", startyear = 1970, endyear = 2020)
+
+head(example.frag)
+
+```
+
+
+Finally, we can also search by region. Instead of inserting a country name or code into the host argument you can simply include character strings that represent regions. In these cases the function returns the aggregate sum of all deployments within that region for the specified time period
+
+```{r}
+
+region.list <- c("Europe", "Asia")
+
+example.region <- get_troopdata(host = region.list, startyear = 1970, endyear = 2020)
+
+head(example.region)
+
+```
+
+
+
+## Disaggregated Data
+
+By default the `get_troopdata()` function returns the aggregate sum of active duty military personnel. But the original DMDC reports often include disaggregated figures, with separate counts for each branch of the military. The `branch` argument allows users to specify whether they would like to receive the aggregate sum of all branches or the disaggregated figures for each branch. This argument can take on three values: `TRUE`, `FALSE`, or a vector of branch names. 
+
+```{r}
+
+# Let's get the disaggregated data for the US deployments to Canada and the UK
+hostlist <- c("Canada", "United Kingdom")
+
+example.branch <- get_troopdata(host = example.list, branch = TRUE, startyear = 1970, endyear = 2020)
+
+head(example.branch)
+
+
+```
+
+In each case the `_ad` suffix on the variable name indicates "Active Duty" numbers for the given branch.
+
+Note that the total does not necessarily equal the sum of the individual branches. The function returns the maximum annual value for each branch. In cases where there are quarterly values reported, the sum total may come from one quarter and the individual branch values may come from another quarter.
+
+We can also include disaggregated data national guard and reserve personnel, as well as DoD civilians. These numbers are generally only reported for more recent years, and are not available for all countries and time periods. Later updates will include more observations for earlier time periods where they are available.
+
+```{r}
+
+hostlist <- c("Canada", "United Kingdom")
+
+example.branch <- get_troopdata(host = example.list, branch = TRUE, startyear = 1970, endyear = 2020, guard_reserve = TRUE, civilians = TRUE)
+
+head(example.branch)
+
+```
+
+
+## Time Periods
+
+The most recent update also allows users to specify more fine grained temporal coverage. DMDC reports have historically been released on an annual basis, but in more recent years they have been released twice annually or even quarterly, and the `get_troopdata()` function allows users to specify whether they would like to receive the quarterly data or the annual data. The `quarters` argument allows users to specify whether they would like to receive the quarterly data or the annual data. This argument can take on two values: `TRUE` or `FALSE` with the default being `FALSE`. 
+
+If the user opts to return quarterly data, the function will return the month and quarter columns in addition to the year. Note that not every quarter corresponds to a quarterly report for every country. In some cases the quarterly value may be a 0 rather than `NA`. Additionally, the Army has not reported branch data for several recent quarters between 2022 and 2023 due to internal personnel management changes. Accordingly the aggregate totals for these quarters may be lower than expected or not available. 
 
 
 
 ```{r}
 
-hostlist <- c(20, 200, 220)
+# Let's get the quarterly data for the US deployments to Canada and the UK
+hostlist <- c("Canada", "United Kingdom")
 
-example <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2006, endyear = 2020)
+example.quarters <- get_troopdata(host = example.list, branch = TRUE, startyear = 2015, endyear = 2022, quarters = TRUE)
 
-head(example)
-
-```
-
-
-## Regional Summaries
-
-Sometimes users are also interested in obtaining data on regional patterns in U.S. deployments. Now users can enter `host = "region"` to obtain regional sums of U.S. deployments. The `year` and `branch` arguments work as in the previous examples, allowing users to generate summed values for aggregate troop deployments or branch-specific deployment sums by region. These values can be plotted as in previous examples, too.
-
-```{r}
-
-regional.sum <- get_troopdata(host = "region", startyear = 1990, endyear = 2020) 
-
-ggplot(regional.sum, aes(x = year, y = troops, color = region)) + 
-  geom_line() +
-  scale_color_viridis(discrete = TRUE) +
-  labs(x = "Year",
-       y = "Count",
-       title = "Troop deployments by region",
-       color = "Region")
-  
+head(example.quarters)
 
 ```
+
+
+## Reports
+
+Finally, users may want to view the original DMDC reports that the data is drawn from. The `reports` argument allows users to specify whether they would like to receive the original DMDC reports that the data is drawn from. This argument can take on two values: `TRUE` or `FALSE` with the default being `FALSE`.
+
+Users can specify the `host`, `startyear`, and `endyear` arguments as they would for the main function. The function will return data frame single data frame containing all of the original columns found in the DMDC reports upon which the data are based. The formatting and column names will be roughly consistent with the original reports, but the data will be filtered to only include the specified host countries and time period. 
+
+The `source` column in the data frame provides the month and the year that the data was drawn from. This allows the user to more easily track down the original DMDC report that the data was drawn from. The current and archived reports can be found here: ![DMDC Reports](https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports)
+
+Also note that if `reports` is set to `TRUE` then the user must also set the `quarters` argument to `TRUE`. 
+

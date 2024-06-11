@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.11)  2 SEP 2021 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.11)  31 JAN 2022 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -272,8 +272,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count271
 \l__pdf_internal_box=\box51
 )
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpBAHW9Y/Rd2pdf305e
-1c97d96f/Rd2.aux)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpVimBnw/Rd2pdfbbb3
+2e94cab5/Rd2.aux)
 \openout1 = `Rd2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -326,10 +326,10 @@ LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
 
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpBAHW9Y/Rd2pdf305e
-1c97d96f/Rd2.out)
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpBAHW9Y/Rd2pdf305e
-1c97d96f/Rd2.out)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpVimBnw/Rd2pdfbbb3
+2e94cab5/Rd2.out)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpVimBnw/Rd2pdfbbb3
+2e94cab5/Rd2.out)
 \@outlinefile=\write4
 \openout4 = `Rd2.out'.
 
@@ -351,8 +351,8 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 38
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpBAHW9Y/Rd2pdf305e
-1c97d96f/Rd2.toc)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpVimBnw/Rd2pdfbbb3
+2e94cab5/Rd2.toc)
 \tf@toc=\write5
 \openout5 = `Rd2.toc'.
 
@@ -363,13 +363,13 @@ File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 9.0pt on input line 174.
  [4] [5] [6]
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpBAHW9Y/Rd2pdf305e
-1c97d96f/Rd2.ind [7] [8
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpVimBnw/Rd2pdfbbb3
+2e94cab5/Rd2.ind [7] [8
 
 
 ])
-(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpBAHW9Y/Rd2pdf305e
-1c97d96f/Rd2.aux)
+(/private/var/folders/db/w5kn5g8n3r3f7m1rmld_sjm80000gn/T/RtmpVimBnw/Rd2pdfbbb3
+2e94cab5/Rd2.aux)
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: 58E25F92B6F329A4879A6CE7CE9D7152;859.
  ) 
@@ -390,7 +390,7 @@ live/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/
 texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (8 pages, 94564 bytes).
+Output written on Rd2.pdf (8 pages, 94662 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  176 compressed objects within 2 object streams

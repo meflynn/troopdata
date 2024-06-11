@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
-[![](https://img.shields.io/badge/devel%20version-0.1.4-green.svg)](https://github.com/meflynn/troopdata)
+[![](https://img.shields.io/badge/devel%20version-0.1.5-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow)](https://cran.r-project.org/package=troopdata)

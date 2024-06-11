@@ -47,12 +47,14 @@ datalist.2008.2023 <- datalist.2008.2023.names |>
 
 
 # Add previously cleaned data for 1951, 1952, 2003, and 2004.
+# # Also use back values for Iraq and Afghanistan to fill in missing time periods not reported in DoD reports.
 # Filter only relevant years
-data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troop_data_1950_2016.csv")) |>
+data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troopdata_1950_2021.csv")) |>
   janitor::clean_names() |>
   janitor::remove_empty("rows") |>
   janitor::remove_empty("cols") |>
-  dplyr::filter(year %in% c(1951, 1952, 2003, 2004)) |>
+  dplyr::filter(year %in% c(1951, 1952, 2003, 2004) |
+                  ccode %in% c(645, 700)) |>
   dplyr::mutate(ccode = ifelse(ccode == 260, 255, ccode),
                 statenme = countrycode::countrycode(sourcevar = ccode,
                                                    origin = "cown",
@@ -630,6 +632,10 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                   month == "December" ~ 4
                 )
                 ) |>
+  dplyr::mutate(ccode = case_when(
+    grepl(".*Ryukyu.*", Location) ~ 740,
+    TRUE ~ ccode
+  )) |> # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that.
   #bind_rows(data.gaps) |>
   dplyr::select(source, Location, ccode, iso3c, year, month, quarter, everything()) |>
   dplyr::arrange(ccode, year, month, quarter) |>
@@ -887,7 +893,7 @@ troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
     is.infinite(.) ~ NA,
     TRUE ~ .
   ))) |>
-  dplyr::mutate(case_when(
+  dplyr::mutate(source = case_when(
     is.na(source) & ccode == 2 ~ "Not Reported", # Fill in missing source values for unreported US data.
     TRUE ~ source
   )) |>

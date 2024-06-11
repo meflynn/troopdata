@@ -19,12 +19,13 @@ of military deployment and basing data for use in social science
 research and journalism. The troop deployment data were initially
 compiled by Tim Kane using information obtained from the U.S. Department
 of Defense’s Defense Manpower Data Center (DMDC). The original data
-ended in 2005 and we have updated it to run through 2020. Similarly, the
-basing data were initially compiled by David Vine, and we have updated
-the original data using open source information from the U.S. military
-and press reports through 2018. We have also assembled this R package to
-allow users to more easily access the data and use it in their own
-research.
+ended in 2005 and we have updated it to run through 2024.
+
+Similarly, the basing data were initially compiled by David Vine, and we
+have updated the original data using open source information from the
+U.S. military and press reports through 2018. We have also assembled
+this R package to allow users to more easily access the data and use it
+in their own research.
 
 The package will be updated with additional features in the future, but
 for now please let me know if you find any errors.
@@ -54,10 +55,12 @@ devtools::install_github("meflynn/troopdata")
 
 This package currently has two functions:
 
-`get_troopdata()`: Returns a data frame containing country-year U.S.
-military deployment values. Depending on the arguments specified, either
-total troop deployments, or total deployments plus service
-branch-specific deployment values, are returned.
+`get_troopdata()`: Returns a data frame containing U.S. military
+deployment values. Depending on the arguments specified the function
+returns total troop deployments, or total deployments plus service
+branch-specific deployment values, guard and reserve values, and DoD
+civilian values. Users can specify select countries and years, or call
+the entire data frame.
 
 `get_basedata()`: Returns a data frame containing information on U.S.
 military bases around the globe from the Cold War forward. Depending on
@@ -82,41 +85,40 @@ You can find more detailed vignettes on these functions below:
 ## A note on country codes
 
 The original DMDC data contain information on U.S. troop deployments to
-a a wide range of locations, including several non-state territories.
-One downside of using the COW country codes as the primary host ID
-variable is that there are often no country codes for smaller states and
-territories. In the case of the Vine basing data, some smaller
-territories have COW codes for the imperial power that controls a
-territory. For example, Puerto Rico and Guam both receive a COW country
-code of 2 as they are territorial possessions of the United States.
-Users may want to distinguish such cases where deployments are present
-in a territory versus the metropole. Using the ISO country codes
-provides some additional flexibility when calling the data. Worst case,
-you can pull the full data frame and look around at the specific
-observations and figure out what best suits your needs.
+a a wide range of locations, including several non-state territories and
+subnational units (e.g. Okinawa). One downside of using the COW country
+codes as the primary host ID variable is that there are often no country
+codes for smaller states and territories. In the case of the Vine basing
+data, some smaller territories have COW codes for the imperial power
+that controls a territory. For example, Puerto Rico and Guam both
+receive a COW country code of 2 as they are territorial possessions of
+the United States. Users may want to distinguish such cases where
+deployments are present in a territory versus the metropole. Using the
+ISO country codes provides some additional flexibility when calling the
+data. Worst case, you can pull the full data frame and look around at
+the specific observations and figure out what best suits your needs.
 
 ## How to cite this package and data?
 
 When using the updated troop deployment data and/or the `troopdata`
 package please cite the following:
 
--   Allen, Michael A., Michael E. Flynn, and Carla Martinez
-    Machain. 2021. “Global U.S. military deployment data: 1950-2020.”
-    Conflict Management and Peace Science. TBD.
+- Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2022.
+  “Global U.S. military deployment data: 1950-2020.” Conflict Management
+  and Peace Science. 39(3): 351-370.
 
 Kane’s original troop deployment data collected from 1950-2005:
 
--   Kane, Tim. 2005. “Global U.S. troop deployment, 1950-2003.”
-    Technical Report. Heritage Foundation, Washington, D.C.
+- Kane, Tim. 2005. “Global U.S. troop deployment, 1950-2003.” Technical
+  Report. Heritage Foundation, Washington, D.C.
 
 Vine’s original basing data:
 
--   Vine, David. 2015. “Base nation: How U.S. military bases abroad harm
-    America and the World.” Metropolitan Books, Washington, D.C.
+- Vine, David. 2015. “Base nation: How U.S. military bases abroad harm
+  America and the World.” Metropolitan Books, Washington, D.C.
 
 Construction data
 
--   Michael A. Allen, Michael E. Flynn, and Carla Martinez
-    Machain. 2020. “Outside the wire: US military deployments and public
-    opinion in host states.” American Political Science Review. 114(2):
-    326-341.
+- Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2020.
+  “Outside the wire: US military deployments and public opinion in host
+  states.” American Political Science Review. 114(2): 326-341.

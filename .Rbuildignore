@@ -13,3 +13,4 @@ docs/
 doc/
 vignettes/
 vignettes
+^CRAN-RELEASE$

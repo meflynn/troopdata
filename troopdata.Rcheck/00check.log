@@ -1,10 +1,10 @@
 * using log directory ‘/Users/michaelflynn/Dropbox/R/troopdata/troopdata.Rcheck’
-* using R version 4.1.1 (2021-08-10)
-* using platform: x86_64-apple-darwin17.0 (64-bit)
+* using R version 4.1.2 (2021-11-01)
+* using platform: aarch64-apple-darwin20 (64-bit)
 * using session charset: UTF-8
 * using option ‘--as-cran’
 * checking for file ‘troopdata/DESCRIPTION’ ... OK
-* this is package ‘troopdata’ version ‘0.1.4’
+* this is package ‘troopdata’ version ‘0.1.5’
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: ‘Michael Flynn <meflynn@ksu.edu>’

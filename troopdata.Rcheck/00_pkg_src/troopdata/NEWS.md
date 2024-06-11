@@ -1,3 +1,39 @@
+# troopdata 0.1.5
+
+* Addresses a coding error producing false 0 values for some earlier deployments.
+
+# troopdata 0.1.4 Data Update
+
+* September 2021 Counts for Total Troops, Army, Navy, Air Force, and Marine Corps added
+
+* Syria, Iraq, and Afghanistan include estimated totals from news reports due to DMDC not providing estimates.
+* Afghanistan estimated at 0 for all categories due to withdrawal finishing on August 31st.
+* Syria estimated at 900, no estimates for branches: https://www.politico.com/news/2021/07/27/troops-to-stay-in-syria-biden-500848
+* Iraq estimated at 2500, no estimates for branches: https://www.nytimes.com/2021/09/20/us/troops-deploy-iraq.html
+  * ccode 1012 Taiwan deleted for 2008-2020
+  * ccode 713 Taiwan now properly holds troop counts for 2008-2021
+  * Côte d'Ivoire country name reformatted to hopefully cause fewer issues
+  * São Tomé and Príncipe name reformatted to hopefully cause fewer issues
+
+* Updated numbers:
+
+ * British Virigin Islands 2016
+ * Uruguay 2014-2016, 2020
+ * Uzbekistan 2014-2016, 2020
+ * Venezuela 2015-2017
+ * Vietnam 2012, 2014-2017, 2020
+ * US Virgin Islands 2012-2017, 2020
+ * Wake Island 2011-2017, 2020
+ * Yemen 2009, 2011-2017, 2019-2020
+ * Zambia 2009, 2012-2017, 2019-2020
+ * Zimbabwe 2009, 2011-2017, 2019-2020
+ * Unknown 2009, 2011-2020
+ * United States counts updated for Army, Navy, Air Force, and Marine Corps, 2006-2021
+ * United States total no longer counts Coast Guard deployments for 2008-2020 to be consistent with other countries
+
+* Note: We plan to include Coast Guard counts for all countries from 2008-2020 in a future update and a second total count
+
+
 # troopdata 0.1.4
 
 * Introduces get_builddata() function which returns a data frame containing location-year U.S. military construction spending in thousands of current US dollars.
