@@ -44,7 +44,7 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'q
 get_troopdata <- function(host = NA,
                           branch = FALSE,
                           startyear = 1950,
-                          endyear = max(troopdata::troopdata_rebuild_long$year),
+                          endyear = 2024,
                           quarters = FALSE,
                           guard_reserve = FALSE,
                           civilians = FALSE,
@@ -82,7 +82,7 @@ get_troopdata <- function(host = NA,
 
 
     # Try to determine host type match. What are they searching for?
-    invisible(host.type <- case_when(
+    invisible(host.type <- dplyr::case_when(
       is.numeric(host[1]) ~ "ccode",
       is.character(host[1]) && nchar(host[1]) == 3 ~ "iso3c",
       is.character(host[1]) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) == 0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0 ~ "region",
@@ -93,7 +93,7 @@ get_troopdata <- function(host = NA,
     tempdata <- tempdata |>
       dplyr::filter(year %in% c(startyear:endyear)) |>
       dplyr::filter(
-        case_when(
+        dplyr::case_when(
           host.type == "ccode" ~ grepl(paste(host, collapse = "|"), ccode),
           host.type == "iso3c" ~ grepl(paste(host, collapse = "|"), iso3c, ignore.case = TRUE),
           host.type == "region" ~ grepl(paste(".*", host, ".*", collapse = "|", sep = ""), region, ignore.case = TRUE),
@@ -148,7 +148,7 @@ get_troopdata <- function(host = NA,
 
   tempdata <- tempdata |>
     dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, branch.select, guard_reserve.select, civilians.select) |>
-    ungroup()
+    dplyr::ungroup()
 
   # Aggregate time periods
   #
@@ -190,7 +190,7 @@ get_troopdata <- function(host = NA,
 
   }
 
-  tempdata <- ungroup(tempdata)
+  tempdata <- dplyr::ungroup(tempdata)
 
   return(tempdata)
 

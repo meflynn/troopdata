@@ -11,6 +11,6 @@
 #' @references
 #'    \url{https://m-flynn.com/}
 #'    \url{https://github.com/meflynn/troopdata}
-#' @docType package
+#' @docType "_PACKAGE"
 #' @keywords package
 NULL
