@@ -5,5 +5,8 @@ articles:
   basedata-vignette: basedata-vignette.html
   builddata-vignette: builddata-vignette.html
   troopdata-vignette: troopdata-vignette.html
-last_built: 2024-06-13T20:47Z
+last_built: 2024-06-13T20:53Z
+urls:
+  reference: https://meflynn.github.io/troopdata/reference
+  article: https://meflynn.github.io/troopdata/articles
 
