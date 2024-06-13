@@ -171,27 +171,27 @@ get_troopdata <- function(host = NA,
 
     tempdata <- tempdata |>
       dplyr::group_by(!!sym(host.type), year, month, quarter) |>
-      dplyr::summarise(dplyr::across(.cols = host.terms, ~ first(.x)),
-                       dplyr::across(matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(.cols = host.terms, ~ dplyr::first(.x)),
+                       dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == FALSE && host.type %in% c("ccode", "iso3c", "countryname")) {
 
     tempdata <- tempdata |>
       dplyr::group_by(!!sym(host.type), year) |>
-      dplyr::summarise(dplyr::across(.cols = host.terms, ~ first(.x)),
-                       dplyr::across(matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(.cols = host.terms, ~ dplyr::first(.x)),
+                       dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == TRUE && host.type == "region") {
 
     tempdata <- tempdata |>
       dplyr::group_by(region, year, month, quarter) |>
-      dplyr::summarise(dplyr::across(matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == FALSE && host.type == "region") {
 
     tempdata <- tempdata |>
       dplyr::group_by(region, year) |>
-      dplyr::summarise(dplyr::across(matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   }
 

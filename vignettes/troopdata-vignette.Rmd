@@ -118,7 +118,7 @@ By default the `get_troopdata()` function returns the aggregate sum of active du
 # Let's get the disaggregated data for the US deployments to Canada and the UK
 hostlist <- c("Canada", "United Kingdom")
 
-example.branch <- get_troopdata(host = example.list, branch = TRUE, startyear = 1970, endyear = 2020)
+example.branch <- get_troopdata(host = hostlist, branch = TRUE, startyear = 1970, endyear = 2020)
 
 head(example.branch)
 
@@ -135,7 +135,7 @@ We can also include disaggregated data national guard and reserve personnel, as 
 
 hostlist <- c("Canada", "United Kingdom")
 
-example.branch <- get_troopdata(host = example.list, branch = TRUE, startyear = 1970, endyear = 2020, guard_reserve = TRUE, civilians = TRUE)
+example.branch <- get_troopdata(host = hostlist, branch = TRUE, startyear = 1970, endyear = 2020, guard_reserve = TRUE, civilians = TRUE)
 
 head(example.branch)
 
@@ -155,7 +155,7 @@ If the user opts to return quarterly data, the function will return the month an
 # Let's get the quarterly data for the US deployments to Canada and the UK
 hostlist <- c("Canada", "United Kingdom")
 
-example.quarters <- get_troopdata(host = example.list, branch = TRUE, startyear = 2015, endyear = 2022, quarters = TRUE)
+example.quarters <- get_troopdata(host = hostlist, branch = TRUE, startyear = 2015, endyear = 2022, quarters = TRUE)
 
 head(example.quarters)
 

@@ -42,20 +42,20 @@ get_basedata <- function(host = NA, country_count = FALSE, groupvar = NULL) {
   basetemp <- troopdata::basedata
 
 
-  if (is.na(host)) {
-
-    basetemp <- basetemp
-
-  } else if (is.numeric(host)) {
+  if (is.numeric(host)) {
 
     basetemp <- basetemp %>%
       dplyr::filter(ccode %in% host)
 
 
-  } else {
+  } else if (is.character(host)) {
 
     basetemp <- basetemp %>%
       dplyr::filter(iso3c %in% host)
+
+  } else {
+
+    basetemp <- basetemp
 
   }
 

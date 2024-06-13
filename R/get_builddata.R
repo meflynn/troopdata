@@ -46,14 +46,16 @@ get_builddata <- function(host = NA, startyear, endyear) {
 
   warn("Spending values are in thousands of current US dollars.")
 
-  if(is.na(host)) {
+  if(is.numeric(host)) {
+
+     host <- c(host)
 
     tempdata <- tempdata %>%
-      dplyr::filter(year >= startyear & year <= endyear)
+      dplyr::filter(ccode %in% host & year >= startyear & year <= endyear)
 
     return(tempdata)
 
-  } else if (is.numeric(host)) {
+  } else if (is.character(host)) {
 
     host <- c(host)
 
@@ -64,10 +66,8 @@ get_builddata <- function(host = NA, startyear, endyear) {
 
   } else {
 
-    host <- c(host)
-
     tempdata <- tempdata %>%
-      dplyr::filter(ccode %in% host & year >= startyear & year <= endyear)
+      dplyr::filter(year >= startyear & year <= endyear)
 
     return(tempdata)
 
