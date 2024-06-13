@@ -44,7 +44,7 @@ As with the `get_troopdata()` function you can specify a numeric vector of COW c
 
 For example, using COW country codes:
  
-```{r}
+```{r ccode-example}
 
 hostlist <- c(20, 200, 255, 645)
 
