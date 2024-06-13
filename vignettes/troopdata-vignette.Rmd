@@ -148,7 +148,7 @@ The most recent update also allows users to specify more fine grained temporal c
 
 If the user opts to return quarterly data, the function will return the month and quarter columns in addition to the year. Note that not every quarter corresponds to a quarterly report for every country. In some cases the quarterly value may be a 0 rather than `NA`. Additionally, the Army has not reported branch data for several recent quarters between 2022 and 2023 due to internal personnel management changes. Accordingly the aggregate totals for these quarters may be lower than expected or not available. 
 
-Here we use full country names. See!
+Here we use full country names. See! Neat!
 
 
 ```{r}

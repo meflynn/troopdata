@@ -11,6 +11,7 @@
 * More flexible host search field. Search by Correlates of War country code, ISO3C country code, country name, or region.
 * Now includes additional deployment data on territories not included in the original deployment data (e.g. Antarctica).
 * Users can now use the `get_troopdata()` function to retrieve the original DMDC reports on which the aggregate data is based.
+* Fixes error when selecting multiple countries in base and build data functions.
 
 
 
