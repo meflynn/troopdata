@@ -2,7 +2,7 @@
 title: "get_troopdata"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{troopdata-vignette}
+  %\VignetteIndexEntry{get_troopdata}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -37,7 +37,7 @@ The first function of this package is the `get_troopdata()` function. At its mos
 ## basic example code
 library(troopdata)
 # This example uses the basic function to gather total troop figures for all countries from 1990 to 2020
-example <- get_troopdata(host = NA, startyear = 1990, endyear = 2020)
+example <- get_troopdata(host = "USA", startyear = 1990, endyear = 2020)
 
 head(example)
 

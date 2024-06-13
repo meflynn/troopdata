@@ -2,7 +2,7 @@
 title: "get_basedata"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{basedata-vignette}
+  %\VignetteIndexEntry{get_basedata}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -32,7 +32,7 @@ The troopdata package provides multiple functions to generate customizable datas
 
 The second function, `get_basedata()` returns a data frame containing information on the United States' overseas military bases going back to the beginning of the Cold War. At its most basic the function will return a data frame containing country-base observations, along with the facility's longitude and latitude (if available), and a series of binary variables indicating whether or not the facility is a full military base, a smaller lilypad, and if it is a currently funded site.
 
-```{r}
+```{r example-1}
 
 baseexample <- get_basedata(host = NA, country_count = FALSE)
 
@@ -44,7 +44,7 @@ As with the `get_troopdata()` function you can specify a numeric vector of COW c
 
 For example, using COW country codes:
  
-```{r ccode-example}
+```{r example-2}
 
 hostlist <- c(20, 200, 255, 645)
 
@@ -56,7 +56,7 @@ head(baseexample)
 
 And another using ISO3C codes:
 
-```{r}
+```{r example-3}
 
 hostlist.char <- c("CAN", "GBR", "PRI")
 
@@ -67,7 +67,7 @@ baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
 
 Finally, users can also generate country-level counts of the number of U.S. military bases by changing the `country_count` argument to `TRUE`. Note that when using this argument you also need to specify the `groupvar` argument, which specifies which identifier will be used to generate country-level totals. Though this may sound obvious individual country codes may include multiple geographic territories that are more finely parsed using various identifiers. Accepted character strings include "countryname", "iso3c", and "ccode". And while this may seem redundant given the host argument, it should provide flexibility for users who may be more familiar with country codes and do not want to spend time trying to identify long-form country names.
 
-```{r}
+```{r example-4}
 
 hostlist <- c(20, 200, 255, 645)
 
@@ -81,7 +81,7 @@ head(baseexample)
 
 So what can you do with these super useful and cool data? Lots of things! The study of basing and military deployments has been picking up over the last few years and there are lots of cool studies you should check out. With these data you can do cool things like this!
 
-```{r, echo = TRUE, warning = FALSE, message=FALSE, dpi = 400}
+```{r example-map, echo = TRUE, warning = FALSE, message=FALSE, dpi = 400}
 
 library(ggplot2)
 

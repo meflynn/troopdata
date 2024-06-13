@@ -2,7 +2,7 @@
 title: "get_builddata"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{builddata-vignette}
+  %\VignetteIndexEntry{get_builddata}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
