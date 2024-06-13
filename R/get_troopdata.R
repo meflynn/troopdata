@@ -31,7 +31,10 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'q
 #'library(tidyverse)
 #'library(troopdata)
 #'
-#'example <- get_troopdata(host = NA, branch = TRUE, startyear = 1980, endyear = 2015)
+#'example <- get_troopdata(host = "United States",
+#'                         branch = TRUE,
+#'                         startyear = 1980,
+#'                         endyear = 2015)
 #'
 #'head(example)
 #'

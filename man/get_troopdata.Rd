@@ -44,7 +44,10 @@ get_troopdata(
 library(tidyverse)
 library(troopdata)
 
-example <- get_troopdata(host = NA, branch = TRUE, startyear = 1980, endyear = 2015)
+example <- get_troopdata(host = "United States",
+                        branch = TRUE,
+                        startyear = 1980,
+                        endyear = 2015)
 
 head(example)
 
