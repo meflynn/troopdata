@@ -169,7 +169,7 @@ Finally, users may want to view the original DMDC reports that the data is drawn
 
 Users can specify the `host`, `startyear`, and `endyear` arguments as they would for the main function. The function will return data frame single data frame containing all of the original columns found in the DMDC reports upon which the data are based. The formatting and column names will be roughly consistent with the original reports, but the data will be filtered to only include the specified host countries and time period. 
 
-The `source` column in the data frame provides the month and the year that the data was drawn from. This allows the user to more easily track down the original DMDC report that the data was drawn from. The current and archived reports can be found here: ![DMDC Reports](https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports)
+The `source` column in the data frame provides the month and the year that the data was drawn from. This allows the user to more easily track down the original DMDC report that the data was drawn from. The current and archived reports can be found here: [DMDC Reports](https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports)
 
 Also note that if `reports` is set to `TRUE` then the user must also set the `quarters` argument to `TRUE`. 
 
