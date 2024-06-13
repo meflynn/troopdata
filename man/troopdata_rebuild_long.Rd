@@ -8,9 +8,9 @@
 A data frame with country year observations including the following variables:
 
 \describe{
-\item{\code{countryname}}{A character vector of country names.}
 \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
 \item{\code{iso3c}}{A character vector of ISO three character country codes.}
+\item{\code{countryname}}{A character vector of country names.}
 \item{\code{region}}{Correlates of War geographic region name.}
 \item{\code{year}}{The year of the observation.}
 \item{\code{month}}{The month of the observation.}
@@ -19,9 +19,9 @@ A data frame with country year observations including the following variables:
 \item{\code{troops_ad}}{The total number of active duty US military personnel deployed to the host country.}
 \item{\code{army_ad}}{Total number of active duty Army personnel deployed to the host country.}
 \item{\code{navy_ad}}{Total number of active duty Navy personnel deployed to the host country.}
+\item{\code{air_force_ad}}{Total number of active duty Air Force personnel deployed to the host country.}
 \item{\code{space_force_ad}}{Total number of active duty Space Force personnel deployed to the host country.}
-\item{\code{air_force_active_duty}}{Total number of active duty Air Force personnel deployed to the host country.}
-\item{\code{marine_corps_active_duty}}{Total number of Marine Corps personnel deployed to the host country.}
+\item{\code{marine_corps_ad}}{Total number of Marine Corps personnel deployed to the host country.}
 \item{\code{coast_guard_ad}}{Total number of Coast Guard personnel deployed to the host country.}
 \item{\code{total_selected_reserve}}{Total number of reserve US military personnel deployed to the host country.}
 \item{\code{army_reserve}}{Total number of reserve Army personnel deployed to the host country.}
@@ -51,6 +51,6 @@ troopdata_rebuild_long
 Returns the full data frame containing observations of US military deployments to overseas locations (countries and territories) from 1950 through 2024.
 }
 \description{
-\code{troopdata}{Returns a data frame containing information on US military deployments.}
+\code{troopdata} returns a data frame containing information on US military deployments.
 }
 \keyword{datasets}

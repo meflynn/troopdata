@@ -1,3 +1,19 @@
+# troopdata 1.0.0
+
+* Major rebuild of the troopdata package!
+* Complete rebuild of the `get_troopdata()` function to allow for more flexible data retrieval. The new data are based on a fresh scraping of the DMDC reports from 1950 through 2024.
+* Deployment data updated through 2024.
+* Branch data now available from 1950 through 2024.
+* Quarterly report values can be retrived from 2008 through 2024.
+* National Guard and Reserve deployment data now available from 2008 through 2024.
+* Civilian assignment data now available from 2008 through 2024.
+* More flexible host search field. Search by Correlates of War country code, ISO3C country code, country name, or region.
+* Now includes additional deployment data on territories not included in the original deployment data (e.g. Antarctica).
+* Users can now use the `get_troopdata()` function to retrieve the original DMDC reports on which the aggregate data is based.
+
+
+
+
 # troopdata 0.1.5
 
 * Addresses a coding error producing false 0 values for some earlier deployments.

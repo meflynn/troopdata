@@ -28,6 +28,6 @@ basedata
 Returns the full data frame containing country observations of US military bases from the Cold War period through 2018.
 }
 \description{
-\code{basedata} Returns a data frame containing David Vine's US basing data.
+\code{basedata} returns a data frame containing David Vine's US basing data.
 }
 \keyword{datasets}

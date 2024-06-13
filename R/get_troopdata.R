@@ -17,6 +17,8 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'q
 #'
 #'
 #' @importFrom rlang warn
+#' @importFrom dplyr sym
+#' @importFrom dplyr matches
 #' @export
 #'
 #' @author Michael E. Flynn
