@@ -49,7 +49,7 @@ For users who want more refined data, the there are a number of arguments that a
 
 The `host` argument allows users to specify the set of host countries for which they would like data returned. This can be a vector of numerical values equal to a Correlates of War (COW) Project country code, a vector of character values equal to an ISO3C country code, or a vector of character values corresponding to full country names. Note that when supplying a vector of values they must be consistent and correspond to a single type of identifier at a time (i.e. they must all be numeric COW codes, ISO3C character codes, country names, or region names).
 
-For example, you can use a numeric vector of COW country codes:
+For example, you can use a numeric vector of COW country codes like this:
 
 ```{r}
 
