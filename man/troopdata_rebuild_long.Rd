@@ -42,7 +42,7 @@ A data frame with country year observations including the following variables:
 \source{
 \url{https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2005}
 
-\url{https://doi.org/10.1177/07388942211030885}
+\doi{10.1177/07388942211030885}
 }
 \usage{
 troopdata_rebuild_long

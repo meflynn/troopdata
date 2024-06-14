@@ -19,7 +19,7 @@ A data frame with country-base observations including the following variables:
 }
 }
 \source{
-\url{https://dra.american.edu/islandora/object/auislandora\%3A81234}
+\url{https://aura.american.edu/articles/online_resource/Lists_of_U_S_Military_Bases_Abroad_1776-2020/23856486}
 }
 \usage{
 basedata

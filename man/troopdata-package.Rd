@@ -14,13 +14,14 @@ deployment data and U.S. overseas basing data. The data contain country identifi
 these data with other data to analyze trends in the United States' overseas military posture.
 }
 \references{
-\url{https://m-flynn.com/}
+\url{https://www.m-flynn.com/}
 \url{https://github.com/meflynn/troopdata}
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/meflynn/troopdata}
+  \item \url{https://meflynn.github.io/troopdata/}
   \item Report bugs at \url{https://github.com/meflynn/troopdata/issues}
 }
 

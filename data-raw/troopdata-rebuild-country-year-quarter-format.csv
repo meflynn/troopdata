@@ -15415,65 +15415,65 @@ ccode,iso3c,countryname,region,year,month,quarter,source,troops_ad,army_ad,navy_
 705,KAZ,Kazakhstan,Europe & Central Asia,2024,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 705,KAZ,Kazakhstan,Europe & Central Asia,2024,March,1,March 2024,28,8,0,3,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 705,KAZ,Kazakhstan,Europe & Central Asia,2024,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1950,June,2,June 1950,21,15,2,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1950,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,1951,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,1952,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1953,June,2,June 1953,13,8,1068,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1954,June,2,June 1954,7109,116,6919,54,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1955,June,2,June 1955,2593,305,2191,61,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1956,June,2,June 1956,1753,6,1686,7,54,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1957,September,3,September 1957,4539,6,4517,6,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1958,September,3,September 1958,290,8,265,9,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1959,September,3,September 1959,26,8,187,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1960,September,3,September 1960,20,9,3726,3,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1961,September,3,September 1961,25,5,1639,12,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1962,September,3,September 1962,26,7,5603,11,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1963,September,3,September 1963,30,9,1113,12,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1964,September,3,September 1964,735,7,4474,2,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1965,September,3,September 1965,17,0,252,4,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1966,September,3,September 1966,18,0,933,3,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1967,September,3,September 1967,22,0,566,4,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1968,September,3,September 1968,25,0,14,2,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1969,September,3,September 1969,26,0,13,4,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1970,September,3,September 1970,28,0,12,6,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1971,September,3,September 1971,37,7,8,7,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1972,September,3,September 1972,46,7,11,7,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1973,September,3,September 1973,99,7,12,6,74,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1974,September,3,September 1974,984,7,962,6,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1975,September,3,September 1975,363,6,337,6,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1976,September,3,September 1976,38,6,12,6,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1977,September,3,September 1977,309,6,282,6,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1978,September,3,September 1978,38,6,13,6,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1979,September,3,September 1979,44,8,14,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1980,September,3,September 1980,52,9,12,9,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1981,September,3,September 1981,51,11,14,7,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1982,September,3,September 1982,60,17,16,7,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1983,September,3,September 1983,61,15,17,9,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1984,September,3,September 1984,65,16,18,8,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1985,September,3,September 1985,65,19,17,8,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1986,September,3,September 1986,61,16,15,8,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1987,September,3,September 1987,54,13,14,8,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1988,September,3,September 1988,54,13,14,9,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1989,September,3,September 1989,67,17,11,8,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1990,September,3,September 1990,64,13,15,9,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1991,September,3,September 1991,64,13,13,9,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1992,September,3,September 1992,75,24,15,8,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1993,September,3,September 1993,72,13,13,10,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1994,September,3,September 1994,56,9,10,8,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1995,September,3,September 1995,58,9,13,7,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,1996,September,3,September 1996,61,13,11,6,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1953,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1954,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1955,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1956,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1957,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1958,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1959,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1960,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1961,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1962,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1963,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1964,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1965,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1966,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1967,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1968,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1969,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1970,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1971,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1972,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1973,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1974,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1975,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1976,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1977,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1978,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1979,September,3,September 1979,10,2,0,2,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1980,September,3,September 1980,13,3,0,4,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1981,September,3,September 1981,11,4,2,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1982,September,3,September 1982,19,4,2,3,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1983,September,3,September 1983,21,5,2,4,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1984,September,3,September 1984,23,5,3,3,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1985,September,3,September 1985,22,5,3,3,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1986,September,3,September 1986,27,11,2,3,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1987,September,3,September 1987,22,6,2,3,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1988,September,3,September 1988,24,7,2,4,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1989,September,3,September 1989,32,7,1,3,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1990,September,3,September 1990,30,6,2,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1991,September,3,September 1991,33,6,2,4,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1992,September,3,September 1992,32,6,2,4,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1993,September,3,September 1993,38,5,2,4,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1994,September,3,September 1994,29,3,1,3,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1995,September,3,September 1995,30,5,0,3,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,1996,September,3,September 1996,32,6,2,3,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,1997,September,3,September 1997,58,10,10,5,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,1998,September,3,September 1998,53,9,10,5,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,1999,September,3,September 1999,57,8,11,6,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2000,September,3,September 2000,74,12,17,7,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2001,September,3,September 2001,57,10,12,6,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2002,September,3,September 2002,61,13,15,7,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2003,September,3,Kane 2006,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2004,September,3,Kane 2006,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2005,September,3,September 2005,67,10,14,12,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2006,September,3,September 2006,71,11,16,11,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2007,September,3,September 2007,61,10,6,13,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-710,CHN,China,East Asia & Pacific,2008,September,3,September 2008,91,19,8,19,41,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+710,CHN,China,East Asia & Pacific,2000,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2001,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2002,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2003,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2004,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2005,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2006,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2007,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+710,CHN,China,East Asia & Pacific,2008,September,3,September 2008,22,8,0,8,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
 710,CHN,China,East Asia & Pacific,2009,September,3,September 2009,20,7,0,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,2010,September,3,September 2010,16,2,0,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 710,CHN,China,East Asia & Pacific,2011,September,3,September 2011,20,6,0,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -17320,8 +17320,8 @@ ccode,iso3c,countryname,region,year,month,quarter,source,troops_ad,army_ad,navy_
 816,VNM,Vietnam,East Asia & Pacific,2024,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 817,NA,Republic Of Vietnam,East Asia & Pacific,1950,June,2,June 1950,9,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 817,NA,Republic Of Vietnam,East Asia & Pacific,1953,June,2,June 1953,138,80,24,34,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-817,NA,Republic of Vietnam,East Asia & Pacific,1954,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-817,NA,Republic of Vietnam,East Asia & Pacific,1955,June,2,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+817,NA,Republic Of Vietnam,East Asia & Pacific,1954,June,2,June 1954,4628,110,4452,52,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+817,NA,Republic Of Vietnam,East Asia & Pacific,1955,June,2,June 1955,427,299,45,58,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 817,NA,Republic Of Vietnam,East Asia & Pacific,1956,June,2,June 1956,752,576,73,85,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 817,NA,Republic Of Vietnam,East Asia & Pacific,1957,September,3,September 1957,751,549,81,100,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 817,NA,Republic Of Vietnam,East Asia & Pacific,1958,September,3,September 1958,846,588,81,158,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -18708,8 +18708,6 @@ ccode,iso3c,countryname,region,year,month,quarter,source,troops_ad,army_ad,navy_
 970,NRU,Nauru,East Asia & Pacific,2024,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 983,MHL,Marshall Islands,East Asia & Pacific,1950,June,2,June 1950,2794,1389,1112,293,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 983,MHL,Marshall Islands,East Asia & Pacific,1953,June,2,June 1953,3290,876,1990,710,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-983,MHL,Marshall Islands,East Asia & Pacific,1954,June,2,June 1954,2162,0,1625,482,55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-983,MHL,Marshall Islands,East Asia & Pacific,1955,June,2,June 1955,1989,0,1363,567,59,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 983,MHL,Marshall Islands,East Asia & Pacific,1956,June,2,June 1956,3451,771,1819,803,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 983,MHL,Marshall Islands,East Asia & Pacific,1957,September,3,September 1957,2288,543,1128,564,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 983,MHL,Marshall Islands,East Asia & Pacific,1958,September,3,September 1958,2472,743,868,861,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -19467,55 +19465,110 @@ ccode,iso3c,countryname,region,year,month,quarter,source,troops_ad,army_ad,navy_
 1008,NA,Guam,NA,2023,March,1,March 2023,0,0,177,2898,150,0,0,0,404,0,177,0,244,0,0,188,1353,9,435,738,2723
 1008,NA,Guam,NA,2023,September,3,September 2023,7245,16,173,2817,142,325,4,9,416,6,173,0,239,33,876,150,1431,7,452,733,2773
 1008,NA,Guam,NA,2024,March,1,March 2024,7540,97,183,2878,267,326,1,4,378,93,183,0,240,34,932,216,1487,7,503,795,3008
+1009,NA,Hong Kong,East Asia & Pacific,1950,June,2,June 1950,21,15,2,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 1009,NA,NA,NA,1951,June,2,Kane 2006,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 1009,NA,NA,NA,1952,June,2,Kane 2006,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2008,September,3,September 2008,20,3,0,3,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2009,September,3,September 2009,19,3,0,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2010,September,3,September 2010,15,1,0,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2011,September,3,September 2011,18,3,0,4,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2012,September,3,September 2012,16,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2013,September,3,September 2013,13,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2014,December,4,December 2014,20,2,0,4,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2014,June,2,June 2014,20,1,0,4,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2014,March,1,March 2014,20,2,0,3,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2014,September,3,September 2014,19,1,0,4,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2015,December,4,December 2015,23,3,0,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2015,June,2,June 2015,19,3,0,3,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2015,March,1,March 2015,20,3,0,3,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2015,September,3,September 2015,20,2,0,3,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2016,December,4,December 2016,28,3,0,12,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2016,June,2,June 2016,24,3,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2016,March,1,March 2016,27,3,0,9,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2016,September,3,September 2016,22,3,0,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2017,December,4,December 2017,26,3,0,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2017,June,2,June 2017,33,3,0,13,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2017,March,1,March 2017,22,3,0,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2017,September,3,September 2017,26,3,0,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2018,December,4,December 2018,27,3,0,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2018,June,2,June 2018,23,2,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2018,March,1,March 2018,24,2,0,12,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2018,September,3,September 2018,25,3,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2019,December,4,December 2019,16,2,0,1,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2019,June,2,June 2019,25,2,0,10,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2019,March,1,March 2019,25,2,0,9,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2019,September,3,September 2019,23,2,0,9,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2020,December,4,December 2020,15,3,0,2,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2020,June,2,June 2020,17,2,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2020,March,1,March 2020,17,2,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2020,September,3,September 2020,19,3,0,2,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2021,December,4,December 2021,14,2,0,2,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2021,June,2,June 2021,14,2,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2021,March,1,March 2021,16,3,0,2,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2021,September,3,September 2021,15,2,0,2,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2022,December,4,December 2022,0,0,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2022,June,2,June 2022,13,2,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2022,March,1,March 2022,13,2,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2022,September,3,September 2022,18,2,0,2,10,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2023,December,4,December 2023,16,2,0,1,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2023,June,2,June 2023,0,0,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2023,March,1,March 2023,0,0,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2023,September,3,September 2023,15,2,0,1,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1009,NA,Hong Kong,NA,2024,March,1,March 2024,16,2,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1953,June,2,June 1953,13,8,1068,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1954,June,2,June 1954,2481,6,2467,2,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1955,June,2,June 1955,2166,6,2146,3,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1956,June,2,June 1956,1753,6,1686,7,54,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1957,September,3,September 1957,4539,6,4517,6,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1958,September,3,September 1958,290,8,265,9,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1959,September,3,September 1959,26,8,187,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1960,September,3,September 1960,20,9,3726,3,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1961,September,3,September 1961,25,5,1639,12,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1962,September,3,September 1962,26,7,5603,11,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1963,September,3,September 1963,30,9,1113,12,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1964,September,3,September 1964,735,7,4474,2,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1965,September,3,September 1965,17,0,252,4,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1966,September,3,September 1966,18,0,933,3,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1967,September,3,September 1967,22,0,566,4,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1968,September,3,September 1968,25,0,14,2,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1969,September,3,September 1969,26,0,13,4,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1970,September,3,September 1970,28,0,12,6,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1971,September,3,September 1971,37,7,8,7,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1972,September,3,September 1972,46,7,11,7,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1973,September,3,September 1973,99,7,12,6,74,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1974,September,3,September 1974,984,7,962,6,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1975,September,3,September 1975,363,6,337,6,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1976,September,3,September 1976,38,6,12,6,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1977,September,3,September 1977,309,6,282,6,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1978,September,3,September 1978,38,6,13,6,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1979,September,3,September 1979,34,6,14,0,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1980,September,3,September 1980,39,6,12,5,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1981,September,3,September 1981,40,7,12,6,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1982,September,3,September 1982,41,13,14,4,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1983,September,3,September 1983,40,10,15,5,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1984,September,3,September 1984,42,11,15,5,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1985,September,3,September 1985,43,14,14,5,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1986,September,3,September 1986,34,5,13,5,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1987,September,3,September 1987,32,7,12,5,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1988,September,3,September 1988,30,6,12,5,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1989,September,3,September 1989,35,10,10,5,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1990,September,3,September 1990,34,7,13,5,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1991,September,3,September 1991,31,7,11,5,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1992,September,3,September 1992,43,18,13,4,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1993,September,3,September 1993,34,8,11,6,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1994,September,3,September 1994,27,6,9,5,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1995,September,3,September 1995,28,4,13,4,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,1996,September,3,September 1996,29,7,9,3,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2000,September,3,September 2000,74,12,17,7,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2001,September,3,September 2001,57,10,12,6,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2002,September,3,September 2002,61,13,15,7,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2003,September,3,Kane 2006,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2004,September,3,Kane 2006,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2005,September,3,September 2005,67,10,14,12,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2006,September,3,September 2006,71,11,16,11,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2007,September,3,September 2007,61,10,6,13,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2008,September,3,September 2008,89,14,8,14,39,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2009,September,3,September 2009,19,3,0,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2010,September,3,September 2010,15,1,0,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2011,September,3,September 2011,18,3,0,4,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2012,September,3,September 2012,16,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2013,September,3,September 2013,13,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2014,December,4,December 2014,20,2,0,4,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2014,June,2,June 2014,20,1,0,4,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2014,March,1,March 2014,20,2,0,3,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2014,September,3,September 2014,19,1,0,4,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2015,December,4,December 2015,23,3,0,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2015,June,2,June 2015,19,3,0,3,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2015,March,1,March 2015,20,3,0,3,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2015,September,3,September 2015,20,2,0,3,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2016,December,4,December 2016,28,3,0,12,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2016,June,2,June 2016,24,3,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2016,March,1,March 2016,27,3,0,9,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2016,September,3,September 2016,22,3,0,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2017,December,4,December 2017,26,3,0,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2017,June,2,June 2017,33,3,0,13,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2017,March,1,March 2017,22,3,0,9,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2017,September,3,September 2017,26,3,0,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2018,December,4,December 2018,27,3,0,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2018,June,2,June 2018,23,2,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2018,March,1,March 2018,24,2,0,12,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2018,September,3,September 2018,25,3,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2019,December,4,December 2019,16,2,0,1,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2019,June,2,June 2019,25,2,0,10,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2019,March,1,March 2019,25,2,0,9,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2019,September,3,September 2019,23,2,0,9,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2020,December,4,December 2020,15,3,0,2,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2020,June,2,June 2020,17,2,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2020,March,1,March 2020,17,2,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2020,September,3,September 2020,19,3,0,2,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2021,December,4,December 2021,14,2,0,2,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2021,June,2,June 2021,14,2,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2021,March,1,March 2021,16,3,0,2,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2021,September,3,September 2021,15,2,0,2,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2022,December,4,December 2022,0,0,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2022,June,2,June 2022,13,2,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2022,March,1,March 2022,13,2,0,2,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2022,September,3,September 2022,18,2,0,2,10,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2023,December,4,December 2023,16,2,0,1,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2023,June,2,June 2023,0,0,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2023,March,1,March 2023,0,0,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2023,September,3,September 2023,15,2,0,1,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1009,NA,Hong Kong,East Asia & Pacific,2024,March,1,March 2024,16,2,0,2,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1011,NA,Marshall Islands (Kwajelein),NA,1954,June,2,June 1954,2162,0,1625,482,55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1011,NA,Marshall Islands (Kwajelein),NA,1955,June,2,June 1955,1989,0,1363,567,59,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 1011,NA,Northern Mariana Islands,NA,1988,September,3,September 1988,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 1011,NA,Northern Mariana Islands,NA,2008,September,3,September 2008,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 1012,NA,Midway,NA,1950,June,2,June 1950,10,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

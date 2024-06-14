@@ -342,6 +342,8 @@ custom.cown <- c("Alaska" = 2,
                  "States of Malaya" = 820,
                  "Caroline Islands" = 987,
                  "Taiwan" = 713,
+                 "Formosa (& Pescadores)" = 713,
+                 "Indo-China" = 817,
                  "Gibraltar" = 1001,
                  "Gibralter" = 1001,
                  "Gilbraltar" = 1001,
@@ -362,9 +364,12 @@ custom.cown <- c("Alaska" = 2,
                  "NORTHERN MARIANA ISLANDS" = 1008,
                  "Guam" = 1008,
                  "GUAM" = 1008,
+                 "Mariana Islands (Guam)" = 1008,
                  "Hong Kong" = 1009,
                  "HONG KONG" = 1009,
+                 "Hong Kong (& China)" = 1009,
                  "Mariana Islands" = 1011,
+                 "Marshall Islands (Kwajelein)" = 1011,
                  "Northern Mariana Islands" = 1011,
                  "Midway Island" = 1012,
                  "Midway" = 1012,
@@ -691,8 +696,10 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                 ) |>
   dplyr::mutate(ccode = case_when(
     grepl(".*Ryukyu.*", Location) ~ 740,
+    grepl(".*Hong Kong.*", Location, ignore.case = TRUE) ~ 1009,
+    grepl(".*Indo-China.*", Location, ignore.case = TRUE) ~ 817,
     TRUE ~ ccode
-  )) |> # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that.
+  )) |> # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that. Also asign Hong Kong its own country code because countrycode is lumping it in with China. Also make sure Indo-China is recoded as Vietnam.
   #bind_rows(data.gaps) |>
   dplyr::select(source, Location, ccode, iso3c, year, month, quarter, everything()) |>
   dplyr::arrange(ccode, year, month, quarter) |>
@@ -1007,8 +1014,15 @@ troopdata_rebuild_long <- country.year.list |>
     is.na(countryname) ~ countrycode(ccode, "cown", "country.name"),
     TRUE ~ countryname),
     region = countrycode(ccode, "cown", "region"),
+    region = case_when(
+      grepl(".*Ryukyu.*", countryname) ~ "East Asia & Pacific",
+      grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) ~ "East Asia & Pacific",
+      grepl(".*Indo-China.*", countryname, ignore.case = TRUE) ~ "East Asia & Pacific",
+      TRUE ~ region
+    ),
     countryname = case_when(
-      countryname == "United States of America" ~ "United States",
+      countryname == "United States of America" ~ "United States", # Help standardize country names.
+      grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) ~ "Hong Kong",
       TRUE ~ countryname
     )
   ) |> # Fill in missing country names
@@ -1044,3 +1058,4 @@ usethis::use_data(troopdata_rebuild_long,
                   troopdata_rebuild_reports,
                   overwrite = TRUE,
                   internal = FALSE)
+

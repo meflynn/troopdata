@@ -9,7 +9,7 @@
 #' @title Tools for Analyzing Cross-National Military Deployment and Basing Data
 #' @author Michael E. Flynn \email{meflynn@ksu.edu}
 #' @references
-#'    \url{https://m-flynn.com/}
+#'    \url{https://www.m-flynn.com/}
 #'    \url{https://github.com/meflynn/troopdata}
 #' @docType package
 #' @keywords package

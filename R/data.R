@@ -44,7 +44,7 @@
 #' @keywords datasets
 #' @name troopdata_rebuild_long
 #' @source \url{https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2005}
-#' @source \url{https://doi.org/10.1177/07388942211030885}
+#' @source \doi{10.1177/07388942211030885}
 #'
 "troopdata_rebuild_long"
 
@@ -119,7 +119,7 @@
 #' @keywords datasets
 #' @name troopdata_rebuild_reports
 #' @source \url{https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2005}
-#' @source \url{https://doi.org/10.1177/07388942211030885}
+#' @source \doi{10.1177/07388942211030885}
 #'
 "troopdata_rebuild_reports"
 
@@ -149,7 +149,7 @@
 #' @keywords datasets
 #' @name basedata
 #'
-#' @source \url{https://dra.american.edu/islandora/object/auislandora%3A81234}
+#' @source \url{https://aura.american.edu/articles/online_resource/Lists_of_U_S_Military_Bases_Abroad_1776-2020/23856486}
 #'
 "basedata"
 
