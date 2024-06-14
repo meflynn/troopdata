@@ -1013,20 +1013,71 @@ troopdata_rebuild_long <- country.year.list |>
   dplyr::mutate(countryname = case_when(
     is.na(countryname) ~ countrycode(ccode, "cown", "country.name"),
     TRUE ~ countryname),
-    region = countrycode(ccode, "cown", "region"),
-    region = case_when(
-      grepl(".*Ryukyu.*", countryname) ~ "East Asia & Pacific",
-      grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) ~ "East Asia & Pacific",
-      grepl(".*Indo-China.*", countryname, ignore.case = TRUE) ~ "East Asia & Pacific",
-      TRUE ~ region
-    ),
     countryname = case_when(
       countryname == "United States of America" ~ "United States", # Help standardize country names.
       grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) ~ "Hong Kong",
+      ccode == 1001 ~ "Gibraltar",
+      ccode == 1002 ~ "Greenland",
+      ccode == 1004 ~ "Diego Garcia",
+      ccode == 1009 ~ "Hong Kong",
+      ccode == 817 ~ "Vietnam",
+      ccode == 1005 ~ "St. Helena",
+      ccode == 1006 ~ "Antigua",
+      ccode == 1007 ~ "Bermuda",
+      ccode == 1008 ~ "Guam",
+      ccode == 1011 ~ "Mariana Islands",
+      ccode == 1012 ~ "Midway Islands",
+      ccode == 1013 ~ "US Virgin Islands",
+      ccode == 1014 ~ "Wake Island",
+      ccode == 1015 ~ "Scabo Verde",
+      ccode == 1016 ~ "Netherlands Antilles",
+      ccode == 1017 ~ "Spraatly Islands",
+      ccode == 1018 ~ "Trucial States",
+      ccode == 1019 ~ "Aruba",
+      ccode == 1021 ~ "Akrotiri",
+      ccode == 1022 ~ "Coral Sea Islands",
+      ccode == 1023 ~ "Svalbard",
+      ccode == 1024 ~ "Bassas Da India",
+      ccode == 1025 ~ "Curacao",
+      ccode == 1026 ~ "Martinique",
+      ccode == 1027 ~ "Sint Maarten",
+      ccode == 1028 ~ "Fiji and Tonga",
+      ccode == 1029 ~ "Aden",
+      ccode == 1030 ~ "Line Islands",
+      ccode == 1031 ~ "Easter Island",
+      ccode == 1032 ~ "British West Indies",
+      ccode == 1033 ~ "Sarawak",
+      ccode == 1034 ~ "Western Sahara",
+      ccode == 1035 ~ "British Virgin Islands",
+      ccode == 1036 ~ "Seychelles",
+      ccode == 1037 ~ "Turks and Caicos Islands",
+      ccode == 1038 ~ "Kashmir",
+      ccode == 1040 ~ "Azores",
+      ccode == 1041 ~ "American Samoa",
+      ccode == 1042 ~ "Ascension Island",
+      ccode == 10000 ~ "Antarctica",
+      ccode == 10100 ~ "Johnston Island",
+      ccode == 10101 ~ "Eniwetok (J.T.F. 7",
       TRUE ~ countryname
+    ),
+    region = countrycode(ccode, "cown", "region"),
+    region = case_when(
+      grepl(".*Ryukyu.*|.*Indo-China.*|.*Hong Kong.*|.*Wake.*|.*Virgin.*|.*Samoa.*|.*Midway.*|.*Marshall.*|.*Mariana.*|.*Johnston.*|.*Guam.*|.*Sarawak.*|.*Line Islands.*|.*Atoll.*|.*Fiji.*|.*Eniwetok.*|.*Leward.*", countryname) ~ "East Asia & Pacific",
+      grepl(".*Antar.*", countryname) ~ "Antarctica",
+      grepl(".*Sahara.*|.*Helena.*|.*Aden.*", countryname) ~ "Middle East & North Africa",
+      grepl(".*Caicos.*|.*Turks Island.*|.*Puerto Rico.*|.*Antilles.*|.*Leeward.*|.*Easter.*|.*Bermuda.*|.*British West.*|.*British Virgin.*|.*Aruba.*|.*Antigua.*", countryname) ~ "Latin America & Caribbean",
+      grepl(".*Kashmir.*|.*Diego.*|.*Seychelles.*", countryname) ~ "South Asia",
+      ccode == 1004 ~ "South Asia",
+      grepl(".*Gibraltar.*|.*Azore.*|.*Gilbral.*", countryname) ~ "Europe & Central Asia",
+      ccode == 1001 ~ "Europe & Central Asia", # Gibraltar missing country name
+      grepl(".*Ascension.*", countryname) ~ "Sub-Saharan Africa",
+      grepl(".*Greenland.*", countryname) ~ "North America",
+      ccode == 1002 ~ "Europe & Central Asia", # Greenland missing country name
+      TRUE ~ region
     )
   ) |> # Fill in missing country names
   dplyr::filter(!(ccode == 817 & year > 1975)) |>
+  dplyr::filter(!is.na(countryname)) |>
   dplyr::mutate(across(everything(), ~ case_when( # Replace infinite values with NA
     is.infinite(.) ~ NA,
     TRUE ~ .

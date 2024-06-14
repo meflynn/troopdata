@@ -5,7 +5,7 @@
 \title{Function to retrieve customized U.S. troop deployment data}
 \usage{
 get_troopdata(
-  host = NA,
+  host = NULL,
   branch = FALSE,
   startyear = 1950,
   endyear = 2024,

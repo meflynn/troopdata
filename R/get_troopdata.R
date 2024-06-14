@@ -46,7 +46,7 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'q
 
 
 
-get_troopdata <- function(host = NA,
+get_troopdata <- function(host = NULL,
                           branch = FALSE,
                           startyear = 1950,
                           endyear = 2024,
@@ -68,6 +68,9 @@ get_troopdata <- function(host = NA,
 
   }
 
+
+
+
   # Set warning for year range and assign default values to allow the function complete
   if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2024")
   if(startyear < 1950) startyear <- 1950
@@ -77,7 +80,6 @@ get_troopdata <- function(host = NA,
   if(branch)  rlang::warn("Branch data only includes active duty by default. This preserves continuity across time periods as guard and reserve data are not reported prior to 2000s.")
   if(guard_reserve) rlang::warn("Guard and Reserve data only available for 2006 forward.")
   if(quarters) rlang::warn("Some service branches do not report data for all quarters. See the following note from December, 2022, June 2023, and March 2023 DMDC reports: 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so the Army did not provide military personnel data for end-of-June 2023.'")
-
   # Many of the reports are in quarterly format in more recent years. Make user set
   if(reports == TRUE && quarters == FALSE)  stop("Reports are only available in quarterly format. Please set quarters = TRUE.")
 
@@ -159,11 +161,27 @@ get_troopdata <- function(host = NA,
   #
   # We also want to preserve various grouping identifiers. This means we need to decide which groupings are not included in host.type and create a character vector with the other groupings.
 
+  if (is.null(host)) {
+
+    # If no host specified then set countryname as default host type.
+    host.type <- "countryname"
+
+    # Create character vector of all possible grouping variables.
+    host.terms <- c("ccode", "iso3c", "countryname", "region")
+
+    # Remove the host.type from the character vector.
+    host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
+
+  } else {
+
   # Create character vector of all possible grouping variables.
   host.terms <- c("ccode", "iso3c", "countryname", "region")
 
   # Remove the host.type from the character vector.
   host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
+
+  }
+
 
   # The function will drop the unused grouping variables but this should be ok.
   # There are lots of different situations where a given space has multiple grouping variables.
