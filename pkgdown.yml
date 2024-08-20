@@ -1,12 +1,11 @@
 pandoc: 3.1.11
-pkgdown: 2.0.9
+pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   basedata-vignette: basedata-vignette.html
   builddata-vignette: builddata-vignette.html
   troopdata-vignette: troopdata-vignette.html
-last_built: 2024-06-18T17:11Z
+last_built: 2024-08-20T19:35Z
 urls:
   reference: https://meflynn.github.io/troopdata/reference
   article: https://meflynn.github.io/troopdata/articles
-
