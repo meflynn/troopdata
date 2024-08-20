@@ -1001,8 +1001,8 @@ troopdata_rebuild_long <- country.year.list |>
       ccode == 652 & year == 2018 ~ 1700, # Syria update from just security
       ccode == 652 & year == 2019 ~ 1000,
       ccode == 652 & year == 2020 ~ 900,
-      ccode == 645 & year == 2006 ~ 141100, # FAS update for Iraq
-      ccode == 645 & year == 2007 ~ 170000, # Reuters update for Iraq
+      ccode == 645 & year == 2006 & !is.na(troops_ad) ~ 141100, # FAS update for Iraq
+      ccode == 645 & year == 2007 & !is.na(troops_ad) ~ 170000, # Reuters update for Iraq
       ccode == 690 & year == 2006 ~ 44400, # Reverse engineered from OIF totals
       ccode == 690 & year == 2007 ~ 48500, # Reverse engineered from OIF totals
       TRUE ~ troops_ad)
@@ -1095,6 +1095,9 @@ troopdata_rebuild_long <- country.year.list |>
   dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
   arrange(ccode, iso3c, year, month, quarter) |>
   ungroup()
+
+
+
 
 # Export reports to csv
 readr::write_csv(troopdata_rebuild_reports,

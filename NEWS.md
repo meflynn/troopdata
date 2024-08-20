@@ -1,4 +1,9 @@
 
+# troopdata 1.0.1
+
+* Fixed error in Iraq troop deployment values for 2006 and 2007. The estimated values for the entire year were being used as quarterly values and summed up to create incorrect annual values.
+
+
 # troopdata 1.0.0
 
 * Major rebuild of the troopdata package!
