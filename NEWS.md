@@ -1,5 +1,3 @@
-# troopdata 1.0.2
-
 
 # troopdata 1.0.1
 
