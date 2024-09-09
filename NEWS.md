@@ -1,5 +1,7 @@
 # troopdata 1.0.2
 
+* Fixes error in package build. Not related to data accuracy.
+
 
 # troopdata 1.0.1
 
