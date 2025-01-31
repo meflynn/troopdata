@@ -3,8 +3,7 @@
 
 # `troopdata`: Tools for Analyzing Cross-National Military Deployment and Basing Data
 
-<!-- badges: start -->
-
+Test <!-- badges: start -->
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
 [![](https://img.shields.io/badge/devel%20version-1.0.2-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
