@@ -14,8 +14,6 @@
 
 <img src="man/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
-Let’s test this!
-
 The goal of the `{troopdata}` package is to facilitate the distribution
 of military deployment and basing data for use in social science
 research and journalism. The troop deployment data were initially

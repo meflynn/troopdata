@@ -28,16 +28,14 @@ knitr::opts_chunk$set(
 cat(
 	badge_cran_release("troopdata", "blue"),
 	badge_github_version("meflynn/troopdata", "green"),
-	badge_cran_download("troopdata", "grand-total", "orange"),
-	badge_cran_download("troopdata", "last-month", "red"),
-	badge_cran_download("troopdata", "last-week", "yellow")
+	badge_cran_download(pkg = "troopdata", type = "grand-total", "orange"),
+	badge_cran_download(pkg = "troopdata", type = "last-month", "red"),
+	badge_cran_download(pkg = "troopdata", type = "last-week", "yellow")
 )
 ```
 <!-- badges: end -->
 
 <img src="man/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"/>
-
-Let's test this!
 
 
 The goal of the `{troopdata}` package is to facilitate the distribution of military deployment and basing data for use in social science research and journalism. The troop deployment data were initially compiled by Tim Kane using information obtained from the U.S. Department of Defense's Defense Manpower Data Center (DMDC). The original data ended in 2005 and we have updated it to run through 2024. 
