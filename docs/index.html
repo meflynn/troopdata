@@ -61,76 +61,8 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="troopdata-tools-for-analyzing-cross-national-military-deployment-and-basing-data">
-<code>troopdata</code>: Tools for Analyzing Cross-National Military Deployment and Basing Data<a class="anchor" aria-label="anchor" href="#troopdata-tools-for-analyzing-cross-national-military-deployment-and-basing-data"></a>
-</h1>
-</div>
-<p>Test <!-- badges: start --> <a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="https://www.r-pkg.org/badges/version/troopdata?color=blue"></a> <a href="https://github.com/meflynn/troopdata" class="external-link"><img src="https://img.shields.io/badge/devel%20version-1.0.2-green.svg"></a> <a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange"></a> <a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red"></a> <a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow"></a> <!-- badges: end --></p>
-<p><img src="reference/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"></p>
-<p>The goal of the <a href="https://github.com/meflynn/troopdata" class="external-link">troopdata</a> package is to facilitate the distribution of military deployment and basing data for use in social science research and journalism. The troop deployment data were initially compiled by Tim Kane using information obtained from the U.S. Department of Defense’s Defense Manpower Data Center (DMDC). The original data ended in 2005 and we have updated it to run through 2024.</p>
-<p>Similarly, the basing data were initially compiled by David Vine, and we have updated the original data using open source information from the U.S. military and press reports through 2018. We have also assembled this R package to allow users to more easily access the data and use it in their own research.</p>
-<p>The package will be updated with additional features in the future, but for now please let me know if you find any errors.</p>
-<p>Please refer to the bottom of this page for citation information.</p>
-<p>You can also find more information on the package and changes corresponding to each update here: <a href="https://meflynn.github.io/troopdata/index.html" class="uri">https://meflynn.github.io/troopdata/index.html</a></p>
-<div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
-</h2>
-<p>You can install the <code>troopdata</code> package from CRAN or <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#install.packages("devtools")</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"troopdata"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">or</span> </span>
-<span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"meflynn/troopdata"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="use">Use<a class="anchor" aria-label="anchor" href="#use"></a>
-</h2>
-<p>This package currently has two functions:</p>
-<p><code><a href="reference/get_troopdata.html">get_troopdata()</a></code>: Returns a data frame containing U.S. military deployment values. Depending on the arguments specified the function returns total troop deployments, or total deployments plus service branch-specific deployment values, guard and reserve values, and DoD civilian values. Users can specify select countries and years, or call the entire data frame.</p>
-<p><code><a href="reference/get_basedata.html">get_basedata()</a></code>: Returns a data frame containing information on U.S. military bases around the globe from the Cold War forward. Depending on the arguments specified the function will return the entire data set or data for a particular country. Observations can be site-specific or can be aggregated to generate country counts.</p>
-<p><code><a href="reference/get_builddata.html">get_builddata()</a></code>: Returns a data frame containing geocoded location-year information on U.S. military overseas construction spending. Users can specify select countries and years, or call the entire data frame. Currently only select countries are included in the data</p>
-</div>
-<div class="section level2">
-<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
-</h2>
-<p>You can find more detailed vignettes on these functions below:</p>
-<ol style="list-style-type: decimal">
-<li><a href="https://meflynn.github.io/troopdata/articles/troopdata-vignette.html"><code>get_troopdata</code></a></li>
-<li><a href="https://meflynn.github.io/troopdata/articles/basedata-vignette.html"><code>get_basedata</code></a></li>
-<li><a href="https://meflynn.github.io/troopdata/articles/builddata-vignette.html"><code>get_builddata</code></a></li>
-</ol>
-</div>
-<div class="section level2">
-<h2 id="a-note-on-country-codes">A note on country codes<a class="anchor" aria-label="anchor" href="#a-note-on-country-codes"></a>
-</h2>
-<p>The original DMDC data contain information on U.S. troop deployments to a a wide range of locations, including several non-state territories and subnational units (e.g. Okinawa). One downside of using the COW country codes as the primary host ID variable is that there are often no country codes for smaller states and territories. In the case of the Vine basing data, some smaller territories have COW codes for the imperial power that controls a territory. For example, Puerto Rico and Guam both receive a COW country code of 2 as they are territorial possessions of the United States. Users may want to distinguish such cases where deployments are present in a territory versus the metropole. Using the ISO country codes provides some additional flexibility when calling the data. Worst case, you can pull the full data frame and look around at the specific observations and figure out what best suits your needs.</p>
-</div>
-<div class="section level2">
-<h2 id="how-to-cite-this-package-and-data">How to cite this package and data?<a class="anchor" aria-label="anchor" href="#how-to-cite-this-package-and-data"></a>
-</h2>
-<p>When using the updated troop deployment data and/or the <code>troopdata</code> package please cite the following:</p>
-<ul>
-<li>Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2022. “Global U.S. military deployment data: 1950-2020.” Conflict Management and Peace Science. 39(3): 351-370.</li>
-</ul>
-<p>Kane’s original troop deployment data collected from 1950-2005:</p>
-<ul>
-<li>Kane, Tim. 2005. “Global U.S. troop deployment, 1950-2003.” Technical Report. Heritage Foundation, Washington, D.C.</li>
-</ul>
-<p>Vine’s original basing data:</p>
-<ul>
-<li>Vine, David. 2015. “Base nation: How U.S. military bases abroad harm America and the World.” Metropolitan Books, Washington, D.C.</li>
-</ul>
-<p>Construction data</p>
-<ul>
-<li>Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2020. “Outside the wire: US military deployments and public opinion in host states.” American Political Science Review. 114(2): 326-341.</li>
-</ul>
-</div>
-</div>
+  <main id="main" class="col-md-9">
+These functions generate data frames on troop deployments and military basing using U.S. Department of Defense data on overseas military deployments. This package provides functions for pulling country-year troop deployment and basing data. Subsequent versions will hopefully include cross-national data on deploying countries.
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
