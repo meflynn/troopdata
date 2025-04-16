@@ -123,6 +123,10 @@ this:</p>
 <span><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">220</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">example</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, startyear <span class="op">=</span> <span class="fl">1990</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = hostlist, startyear = 1990, endyear = 2020):</span></span>
+<span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
+<span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
@@ -140,6 +144,10 @@ this:</p>
 <span><span class="va">hostlist.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CAN"</span>, <span class="st">"GBR"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">example.char</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist.char</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = hostlist.char, startyear = 1970, endyear =</span></span>
+<span><span class="co">#&gt; 2020): total_ad value shows the total number of active duty personnel only and</span></span>
+<span><span class="co">#&gt; does not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.char</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
@@ -156,6 +164,10 @@ this:</p>
 <code class="sourceCode R"><span><span class="va">hostlist.names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Canada"</span>, <span class="st">"United Kingdom"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">example.names</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist.names</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = hostlist.names, startyear = 1970, endyear =</span></span>
+<span><span class="co">#&gt; 2020): total_ad value shows the total number of active duty personnel only and</span></span>
+<span><span class="co">#&gt; does not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.names</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
@@ -174,6 +186,10 @@ included and the function will try to return the correct country.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">example.frag</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="st">"South Ko"</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = "South Ko", startyear = 1970, endyear = 2020):</span></span>
+<span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
+<span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.frag</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
@@ -195,6 +211,10 @@ time period</p>
 <span><span class="va">region.list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Europe"</span>, <span class="st">"Asia"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">example.region</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">region.list</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = region.list, startyear = 1970, endyear = 2020):</span></span>
+<span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
+<span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.region</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
@@ -203,7 +223,7 @@ time period</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>970    <span style="text-decoration: underline;">410</span>878</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>971    <span style="text-decoration: underline;">223</span>025</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>972     <span style="text-decoration: underline;">69</span>242</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>973     <span style="text-decoration: underline;">56</span>240</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>973     <span style="text-decoration: underline;">41</span>864</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>974     <span style="text-decoration: underline;">54</span>946</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>975     <span style="text-decoration: underline;">55</span>739</span></span></code></pre></div>
 </div>
@@ -227,6 +247,10 @@ vector of branch names.</p>
 <span><span class="co">#&gt; Warning: Branch data only includes active duty by default. This preserves</span></span>
 <span><span class="co">#&gt; continuity across time periods as guard and reserve data are not reported prior</span></span>
 <span><span class="co">#&gt; to 2000s.</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = hostlist, branch = TRUE, startyear = 1970, :</span></span>
+<span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
+<span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.branch</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 12</span></span></span>
@@ -263,7 +287,7 @@ earlier time periods where they are available.</p>
 <span><span class="co">#&gt; Warning: Guard and Reserve data only available for 2006 forward.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.branch</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 26</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 27</span></span></span>
 <span><span class="co">#&gt;   countryname  year ccode iso3c region    troops_ad army_ad navy_ad air_force_ad</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Canada       <span style="text-decoration: underline;">1</span>970    20 CAN   North Am…      <span style="text-decoration: underline;">2</span>643      12     413         <span style="text-decoration: underline;">2</span>218</span></span>
@@ -272,13 +296,13 @@ earlier time periods where they are available.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Canada       <span style="text-decoration: underline;">1</span>973    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>362      12     390          951</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>690      11     703          969</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North Am…      <span style="text-decoration: underline;">2</span>607      11    <span style="text-decoration: underline;">1</span>839          757</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 17 more variables: marine_corps_ad &lt;dbl&gt;, coast_guard_ad &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 18 more variables: marine_corps_ad &lt;dbl&gt;, coast_guard_ad &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   space_force_ad &lt;dbl&gt;, army_national_guard &lt;dbl&gt;, air_national_guard &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   army_reserve &lt;dbl&gt;, navy_reserve &lt;dbl&gt;, marine_corps_reserve &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   air_force_reserve &lt;dbl&gt;, coast_guard_reserve &lt;dbl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   total_selected_reserve &lt;dbl&gt;, army_civilian &lt;dbl&gt;, navy_civilian &lt;dbl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   marine_corps_civilian &lt;dbl&gt;, air_force_civilian &lt;dbl&gt;, dod_civilian &lt;dbl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   total_civilian &lt;dbl&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;">#   total_selected_reserve &lt;dbl&gt;, troops_all &lt;dbl&gt;, army_civilian &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   navy_civilian &lt;dbl&gt;, marine_corps_civilian &lt;dbl&gt;, air_force_civilian &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   dod_civilian &lt;dbl&gt;, total_civilian &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="time-periods">Time Periods<a class="anchor" aria-label="anchor" href="#time-periods"></a>
@@ -315,6 +339,10 @@ lower than expected or not available.</p>
 <span><span class="co">#&gt; following note from December, 2022, June 2023, and March 2023 DMDC reports:</span></span>
 <span><span class="co">#&gt; 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so</span></span>
 <span><span class="co">#&gt; the Army did not provide military personnel data for end-of-June 2023.'</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(host = hostlist, branch = TRUE, startyear = 2015, :</span></span>
+<span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
+<span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.quarters</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
