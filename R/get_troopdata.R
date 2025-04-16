@@ -82,7 +82,7 @@ get_troopdata <- function(host = NULL,
   if(quarters) rlang::warn("Some service branches do not report data for all quarters. See the following note from December, 2022, June 2023, and March 2023 DMDC reports: 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so the Army did not provide military personnel data for end-of-June 2023.'")
   # Many of the reports are in quarterly format in more recent years. Make user set
   if(reports == TRUE && quarters == FALSE)  stop("Reports are only available in quarterly format. Please set quarters = TRUE.")
-
+  if(guard_reserve == FALSE) warning("total_ad value shows the total number of active duty personnel only and does not include any guard or reserve troops that may be present. For the total number of uniformed personnel please choose guard_reserve = TRUE.")
 
   # Next, if reports is true we want to know if we need to filter by host and year, or include all hosts.
     if (is.numeric(host) || is.character(host)) {
@@ -139,7 +139,7 @@ get_troopdata <- function(host = NULL,
 
     } else  {
 
-      guard_reserve.select <- c("army_national_guard", "air_national_guard", "army_reserve", "navy_reserve", "marine_corps_reserve", "air_force_reserve", "coast_guard_reserve", "total_selected_reserve")
+      guard_reserve.select <- c("army_national_guard", "air_national_guard", "army_reserve", "navy_reserve", "marine_corps_reserve", "air_force_reserve", "coast_guard_reserve", "total_selected_reserve", "troops_all")
 
     }
 
@@ -190,26 +190,26 @@ get_troopdata <- function(host = NULL,
     tempdata <- tempdata |>
       dplyr::group_by(!!sym(host.type), year, month, quarter) |>
       dplyr::summarise(dplyr::across(.cols = host.terms, ~ dplyr::first(.x)),
-                       dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+                       dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == FALSE && host.type %in% c("ccode", "iso3c", "countryname")) {
 
     tempdata <- tempdata |>
       dplyr::group_by(!!sym(host.type), year) |>
       dplyr::summarise(dplyr::across(.cols = host.terms, ~ dplyr::first(.x)),
-                       dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+                       dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == TRUE && host.type == "region") {
 
     tempdata <- tempdata |>
       dplyr::group_by(region, year, month, quarter) |>
-      dplyr::summarise(dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == FALSE && host.type == "region") {
 
     tempdata <- tempdata |>
       dplyr::group_by(region, year) |>
-      dplyr::summarise(dplyr::across(dplyr::matches("_ad|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
+      dplyr::summarise(dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   }
 

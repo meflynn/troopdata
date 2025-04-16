@@ -34,7 +34,6 @@ Suggests:
     countrycode,
     tidyr,
     stringr,
-    readstata13,
     haven,
     maps,
     pdftools

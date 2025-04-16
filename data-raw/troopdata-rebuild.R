@@ -267,7 +267,7 @@ data.clean.1977.2010 <- data.clean.1977.2010 |>
                setNames(names.1977.2010) |>
                slice(-c(1:2)) |>
                filter(!is.na(Location)) |>
-               slice_head(n = 196) # Remove the last rows that show OIF and OEF totals for select countries. These values represent the portion of the total deployed force that is dedicated to Iraq and Afghanistan.
+               slice_head(n = 196) # Remove the last rows that show OIF and OEF totals for select countries. These values represent the portion of the total deployed force that is dedicated to Iraq and Afghanistan. We don't need to add these in.
              )
 
 data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 |>
@@ -724,25 +724,25 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
     !is.na(`Total`) ~ as.numeric(`Total`),
     !is.na(`Total Ashore`) ~ as.numeric(`Total Ashore`),
     #!is.na(troops) ~ as.numeric(troops),
-    TRUE ~ as.numeric(`Total Active Duty`) + as.numeric(`Total Selected Reserve`)
+    TRUE ~ as.numeric(`Total Active Duty`)
   ),
   army_ad = case_when(
     !is.na(`Army Total`) & is.na(army_ad) ~ as.numeric(`Army Total`),
-    TRUE ~ sum(`Army Active Duty`, `Army National Guard`, `Army Reserve`,
+    TRUE ~ sum(`Army Active Duty`,
                na.rm = TRUE)),
   navy_ad = case_when(
     !is.na(`Navy Total`) & is.na(navy_ad) ~ as.numeric(`Navy Total`),
-    TRUE ~ sum(`Navy Ashore`, `Navy Afloat`, `Navy Temporary Ashore`, `Navy Other`, `Navy Reserve`,
+    TRUE ~ sum(`Navy Ashore`, `Navy Afloat`, `Navy Temporary Ashore`, `Navy Other`,
                na.rm = TRUE)),
   air_force_ad = case_when(
     !is.na(`Air Force Total`) & is.na(air_force_ad) ~ as.numeric(`Air Force Total`),
-    TRUE ~ sum(`Air Force Active Duty`, `Air National Guard`, `Air Force Reserve`,
+    TRUE ~ sum(`Air Force Active Duty`,
                na.rm = TRUE)),
   marine_corps_ad = case_when(
     !is.na(`Marine Corps Total`) & is.na(marine_corps_ad) ~ as.numeric(`Marine Corps Total`),
-    TRUE ~ sum(`Marine Corps Active Duty`, `Marine Corps Reserve`, `Marine Corps Afloat`, `Marine Corps Ashore`,
+    TRUE ~ sum(`Marine Corps Active Duty`, `Marine Corps Ashore`,
                na.rm = TRUE)),
-  coast_guard_ad = sum(`Coast Guard Active Duty`, `Coast Guard Reserve`,
+  coast_guard_ad = sum(`Coast Guard Active Duty`,
                na.rm = TRUE),
   space_force_ad = sum(`Space Force Active Duty`,
                na.rm = TRUE)
@@ -762,7 +762,10 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
            TRUE ~ source
          )) |>
   dplyr::arrange(ccode, countryname, year, month, quarter) |>
-  dplyr::select(ccode, countryname, year, month, quarter, everything())
+  dplyr::select(ccode, countryname, year, month, quarter, everything()) |>
+  group_by(ccode, countryname, year, month, quarter) |>
+  dplyr::filter(troops_ad == max(troops_ad, na.rm = TRUE))
+
 
 
 # Repeat the basic procedure from the previous code chunk but extract the US
@@ -1092,7 +1095,9 @@ troopdata_rebuild_long <- country.year.list |>
                    iso3c = first(iso3c),
                    region = first(region),
                    source = first(source)) |>
-  dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
+  rowwise() |>
+  dplyr::mutate(troops_all = sum(troops_ad + army_national_guard + air_national_guard + army_reserve + navy_reserve + marine_corps_reserve + air_force_reserve + coast_guard_reserve)) |> # This adds active duty with reserves separately.
+  dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, troops_all, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
   arrange(ccode, iso3c, year, month, quarter) |>
   ungroup()
 
