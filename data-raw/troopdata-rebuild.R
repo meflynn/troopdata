@@ -266,8 +266,8 @@ data.clean.1977.2010 <- data.clean.1977.2010 |>
   furrr::future_map(.f = ~ .x |>
                setNames(names.1977.2010) |>
                slice(-c(1:2)) |>
-               filter(!is.na(Location))
-
+               filter(!is.na(Location)) |>
+               slice_head(n = 196) # Remove the last rows that show OIF and OEF totals for select countries. These values represent the portion of the total deployed force that is dedicated to Iraq and Afghanistan.
              )
 
 data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 |>
