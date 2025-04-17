@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">troopdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,12 @@
       <small>Source: <a href="https://github.com/meflynn/troopdata/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.3" id="troopdata-103">troopdata 1.0.3<a class="anchor" aria-label="anchor" href="#troopdata-103"></a></h2>
+<ul><li>Fixes error where some 2008 values were double counted. Germany for example.</li>
+<li>Adjusts count for some states like Germany and UK to better reflect troop counts assigned to those states between 2001 and 2011. This adjustment relies on the baseline data from the DMDC reports for a select group of countries and removes the added values the DMDC reports show as affiliated with those countries that are on deployment to other countries as a part of OIF or OEF operations.</li>
+<li>Adds the <code>troops_all</code> variable to reflect the sum of all active duty, guard, and reserve, personnel assigned to host country and removes some guard and reserve personnel that were mistakenly included in the overall total in the <code>troops_ad</code> variable, which should just reflect active duty personnel.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.0.2" id="troopdata-102">troopdata 1.0.2<a class="anchor" aria-label="anchor" href="#troopdata-102"></a></h2><p class="text-muted">CRAN release: 2024-09-10</p>
 <ul><li>Fixes error in package build. Not related to data accuracy.</li>
