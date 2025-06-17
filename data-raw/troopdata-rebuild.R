@@ -1033,6 +1033,18 @@ troopdata_rebuild_long <- country.year.list %>%
     TRUE ~ countryname),
     countryname = case_when(
       countryname == "United States of America" ~ "United States", # Help standardize country names.
+      ccode == 52 ~ "Trinidad and Tobago",
+      ccode == 60 ~ "St. Kitts and Nevis",
+      ccode == 343 ~ "Macedonia",
+      ccode == 346 ~ "Bosnia and Herzegovina",
+      ccode == 484 ~ "Congo",
+      ccode == 490 ~ "Democratic Republic of the Congo",
+      ccode == 316 ~ "Czech Republic",
+      ccode == 437 ~ "Ivory Coast",
+      ccode == 860 ~ "East Timor",
+      ccode == 987 ~ "Micronesia",
+      ccode == 775 ~ "Myanmar",
+      ccode == 571 ~ "Swaziland",
       grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) ~ "Hong Kong",
       ccode == 1001 ~ "Gibraltar",
       ccode == 1002 ~ "Greenland",
