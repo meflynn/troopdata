@@ -22,7 +22,7 @@ library(pdftools)
 #
 
 # Load data files from 1950 to 1976
-datalist.1950.1977 <- list.files(here("../../Projects/Troop Data/Data Files/M05 Military Only"), pattern = "xls", full.names = TRUE) |>
+datalist.1950.1977 <- list.files(here("../../Projects/Troop Data/Data Files/M05 Military Only"), pattern = "xls", full.names = TRUE) %>%
   furrr::future_map(.f = readxl::read_xls)
 
 # Read file names into list for 1977 to 2010.
@@ -30,15 +30,15 @@ datalist.1950.1977 <- list.files(here("../../Projects/Troop Data/Data Files/M05 
 datalist.1977.2010.names <- list.files(here("../../Projects/Troop Data/Data Files/309A_Reports_1977-2011"), pattern = "\\.xls$", full.names = TRUE)
 
 # Read in actual files from the list
-datalist.1977.2010 <- datalist.1977.2010.names |>
+datalist.1977.2010 <- datalist.1977.2010.names %>%
   furrr::future_map(.f = readxl::read_xls)
 
 
 # Read in file names for 2011 to 2023
-datalist.2008.2023.names <- list.files(here("../../Projects/Troop Data/Data Files/2008-Present"), pattern = "\\.xlsx$", full.names = TRUE)
+datalist.2008.Present.names <- list.files(here("../../Projects/Troop Data/Data Files/2008-Present"), pattern = "\\.xlsx$", full.names = TRUE)
 
 # Read in data files for 2011 to 2023 from the list of file names.
-datalist.2008.2023 <- datalist.2008.2023.names |>
+datalist.2008.Present <- datalist.2008.Present.names %>%
   furrr::future_map(.f = readxl::read_xlsx)
 
 
@@ -54,12 +54,12 @@ datalist.2004.names <- here::here("../../Projects/Troop Data/Data Files/M05 Mili
 # Add previously cleaned data for 1951, 1952, 2003, and 2004.
 # # Also use back values for Iraq and Afghanistan to fill in missing time periods not reported in DoD reports.
 # Filter only relevant years
-data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troopdata_1950_2021.csv")) |>
-  janitor::clean_names() |>
-  janitor::remove_empty("rows") |>
-  janitor::remove_empty("cols") |>
+data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troopdata_1950_2021.csv")) %>%
+  janitor::clean_names() %>%
+  janitor::remove_empty("rows") %>%
+  janitor::remove_empty("cols") %>%
   dplyr::filter(year %in% c(1951, 1952) |
-                  ccode %in% c(645, 700)) |>
+                  ccode %in% c(645, 700)) %>%
   dplyr::mutate(ccode = ifelse(ccode == 260, 255, ccode),
                 statenme = countrycode::countrycode(sourcevar = ccode,
                                                    origin = "cown",
@@ -72,21 +72,21 @@ data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troopdata_1950_
                 quarter = 2,
                 month =  "June",
                 source = "Kane 2006"
-                ) |>
-  dplyr::rename(troops_ad = troops) |>
-  dplyr::filter(ccode != 2) |>
+                ) %>%
+  dplyr::rename(troops_ad = troops) %>%
+  dplyr::filter(ccode != 2) %>%
   dplyr::select(statenme, ccode, iso3c, year, month, quarter, source, troops_ad)
 
 
 #### Base Dataframe ####
 # Add base country-year data frame using COW country codes for 1950 through the present.
-year.position <- as.numeric(length(datalist.2008.2023.names))
-current.end.year <- str_extract(datalist.2008.2023.names[[year.position]], pattern = "[0-9]{4}.xlsx")
+year.position <- as.numeric(length(datalist.2008.Present.names))
+current.end.year <- str_extract(datalist.2008.Present.names[[year.position]], pattern = "[0-9]{4}.xlsx")
 current.end.year <- 2000 + as.numeric(str_extract(current.end.year, pattern = "^[0-9]{2}"))
 
 
-country.year.list <- read_csv(here("../../Data Files/COW Data/System/states2016.csv")) |>
-  rowwise() |> # Rowwise operation to create a list of years for each country.
+country.year.list <- read_csv(here("../../Data Files/COW Data/System/states2016.csv")) %>%
+  rowwise() %>% # Rowwise operation to create a list of years for each country.
   dplyr::mutate(endyear = case_when(
     endyear == 2016 ~ current.end.year,
     TRUE ~ endyear
@@ -96,38 +96,38 @@ country.year.list <- read_csv(here("../../Data Files/COW Data/System/states2016.
     TRUE ~ ccode
   ),
   year = list(seq(styear, endyear))
-  ) |>
-  unnest(year) |> # Expand to full country-year data frame
-  dplyr::filter(year >= 1950) |># Only keep values from 1950 forward
-  dplyr::select(ccode, statenme, year) |>
-  dplyr::group_by(ccode, statenme, year) |>
-  tidyr::expand(month = c("March", "June", "September", "December")) |>
+  ) %>%
+  unnest(year) %>% # Expand to full country-year data frame
+  dplyr::filter(year >= 1950) %>%# Only keep values from 1950 forward
+  dplyr::select(ccode, statenme, year) %>%
+  dplyr::group_by(ccode, statenme, year) %>%
+  tidyr::expand(month = c("March", "June", "September", "December")) %>%
   dplyr::mutate(quarter = case_when(
     month == "March" ~ 1,
     month == "June" ~ 2,
     month == "September" ~ 3,
     month == "December" ~ 4
     )
-    ) |>
+    ) %>%
   dplyr::filter(!(statenme == "German Federal Republic" & year == 1990)) # Remove duplicate Germany observation for 1990
 
 
 # Pull names from the data frames and use them to generate names for each data frame in the list.
 names.1950.1977 <- future_map(.x = seq_along(datalist.1950.1977),
              .f = ~ str_extract(datalist.1950.1977[[.x]][[1]],
-                                pattern = "September\\s{1}([0-9]{4})|June\\s{1}([0-9]{4})") |>
+                                pattern = "September\\s{1}([0-9]{4})|June\\s{1}([0-9]{4})") %>%
                as.data.frame()
-             ) |>
-  bind_rows() |>
+             ) %>%
+  bind_rows() %>%
   drop_na()
 
 listnames.1950.1977 <- as.vector(names.1950.1977[[1]])
 
 # Basic data cleaning for 1950 to 1977
-data.clean.1950.1977 <- datalist.1950.1977 |>
-  furrr::future_map(.f = ~ .x |>
-               janitor::clean_names() |>
-               janitor::remove_empty("rows") |>
+data.clean.1950.1977 <- datalist.1950.1977 %>%
+  furrr::future_map(.f = ~ .x %>%
+               janitor::clean_names() %>%
+               janitor::remove_empty("rows") %>%
                janitor::remove_empty("cols")
   )
 
@@ -137,24 +137,24 @@ names(data.clean.1950.1977) <- listnames.1950.1977
 
 
 # Basic data cleaning for 1977 to 2011
-data.clean.1977.2010 <- datalist.1977.2010 |>
-  furrr::future_map(.f = ~ .x |>
-               janitor::clean_names() |>
-               janitor::remove_empty("rows") |>
+data.clean.1977.2010 <- datalist.1977.2010 %>%
+  furrr::future_map(.f = ~ .x %>%
+               janitor::clean_names() %>%
+               janitor::remove_empty("rows") %>%
                janitor::remove_empty("cols")
   )
 
 # Pull years from file list for the 1976 to 2011 data.
 listnames.1977.2010 <- future_map(.x = seq_along(datalist.1977.2010.names),
              .f = ~ str_extract(datalist.1977.2010.names[[.x]],
-                                pattern = "September_([0-9]{4})|June_([0-9]{4})") |>
+                                pattern = "September_([0-9]{4})|June_([0-9]{4})") %>%
                as.data.frame()
-             ) |>
-  bind_rows() |>
+             ) %>%
+  bind_rows() %>%
   drop_na()
 
 # Create an actual list of the months and years for naming list
-listnames.1977.2010 <- as.vector(listnames.1977.2010[[1]]) |>
+listnames.1977.2010 <- as.vector(listnames.1977.2010[[1]]) %>%
   str_replace_all(pattern = "_", replacement = " ")
 
 names(data.clean.1977.2010) <- listnames.1977.2010
@@ -163,22 +163,22 @@ names(data.clean.1977.2010) <- listnames.1977.2010
 
 # Basic data cleaning for 2008 to 2023
 
-data.clean.2008.2023 <- datalist.2008.2023 |>
-  furrr::future_map(.f = ~ .x |>
-               janitor::clean_names() |>
-               janitor::remove_empty("rows") |>
+data.clean.2008.Present <- datalist.2008.Present %>%
+  furrr::future_map(.f = ~ .x %>%
+               janitor::clean_names() %>%
+               janitor::remove_empty("rows") %>%
                janitor::remove_empty("cols")
   )
 
 # Pull years and months from the file list for the 2008 to Present Data
-listnames.2008.2023 <- future_map(.x = seq_along(datalist.2008.2023.names),
-             .f = ~ str_extract(datalist.2008.2023.names[[.x]],
-                                pattern = "_([0-9]{4})") |>
+listnames.2008.2023 <- future_map(.x = seq_along(datalist.2008.Present.names),
+             .f = ~ str_extract(datalist.2008.Present.names[[.x]],
+                                pattern = "_([0-9]{4})") %>%
                as.data.frame()
-             ) |>
-  bind_rows() |>
-  drop_na() |>
-  dplyr::rename("Date" = 1) |>
+             ) %>%
+  bind_rows() %>%
+  drop_na() %>%
+  dplyr::rename("Date" = 1) %>%
   dplyr::mutate(Date = str_replace_all(Date, pattern = "_", replacement = "20"),
                 Year = str_extract(Date, pattern = "^[0-9]{4}"),
                 Month = str_extract(Date, pattern = "[0-9]{2}$"),
@@ -187,7 +187,7 @@ listnames.2008.2023 <- future_map(.x = seq_along(datalist.2008.2023.names),
 
 listnames.2008.2023 <- as.vector(listnames.2008.2023[[1]])
 
-names(data.clean.2008.2023) <- listnames.2008.2023
+names(data.clean.2008.Present) <- listnames.2008.2023
 
 
 
@@ -206,10 +206,10 @@ data.clean.1957.1967 <- data.clean.1950.1977[c(6:16)]
 data.clean.1968.1976 <- data.clean.1950.1977[c(17:25)]
 
 # Subset the data for 2008 to 2023 to only include data from September 2008 to June 2023. This is all of the pre-Space Force data.
-data.clean.September.2008.June.2023 <- data.clean.2008.2023[c(1:45)]
+data.clean.September.2008.June.2023 <- data.clean.2008.Present[c(1:45)]
 
 # This is where space force comes into the data
-data.clean.September.2023.December.2023 <- data.clean.2008.2023[c(46:48)]
+data.clean.September.2023.Present <- data.clean.2008.Present[c(46:length(data.clean.2008.Present))]
 
 
 # Create names to match the column orderings from the four lists of data frames.
@@ -229,59 +229,59 @@ names.1977.2010 <- c("Location", "Total", "Army Total", "Navy Total", "Marine Co
 
 names.2008.2023 <- c("Macro Location", "Location", "Army Active Duty", "Navy Active Duty", "Marine Corps Active Duty", "Air Force Active Duty", "Coast Guard Active Duty", "Total Active Duty", "Army National Guard", "Army Reserve", "Navy Reserve", "Marine Corps Reserve", "Air National Guard", "Air Force Reserve", "Coast Guard Reserve", "Total Selected Reserve", "Army Civilian", "Navy Civilian", "Marine Corps Civilian", "Air Force Civilian", "DOD Civilian", "Total Civilian", "Grand Total")
 
-names.2023.2024 <- c("Macro Location", "Location", "Army Active Duty", "Navy Active Duty", "Marine Corps Active Duty", "Air Force Active Duty", "Space Force Active Duty", "Coast Guard Active Duty", "Total Active Duty", "Army National Guard", "Army Reserve", "Navy Reserve", "Marine Corps Reserve", "Air National Guard", "Air Force Reserve", "Coast Guard Reserve", "Total Selected Reserve", "Army Civilian", "Navy Civilian", "Marine Corps Civilian", "Air Force Civilian", "DOD Civilian", "Total Civilian", "Grand Total")
+names.2023.Present <- c("Macro Location", "Location", "Army Active Duty", "Navy Active Duty", "Marine Corps Active Duty", "Air Force Active Duty", "Space Force Active Duty", "Coast Guard Active Duty", "Total Active Duty", "Army National Guard", "Army Reserve", "Navy Reserve", "Marine Corps Reserve", "Air National Guard", "Air Force Reserve", "Coast Guard Reserve", "Total Selected Reserve", "Army Civilian", "Navy Civilian", "Marine Corps Civilian", "Air Force Civilian", "DOD Civilian", "Total Civilian", "Grand Total")
 
 
 
 # Apply names and remove uninformative or rows
-data.clean.1950.1953 <- data.clean.1950.1953 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.1950.1953) |>
-               slice(-c(1:2)) |>
+data.clean.1950.1953 <- data.clean.1950.1953 %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.1950.1953) %>%
+               slice(-c(1:2)) %>%
                filter(!is.na(Location))
              )
 
-data.clean.1954.1956 <- data.clean.1954.1956 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.1954.1956) |>
-               slice(-c(1:2)) |>
+data.clean.1954.1956 <- data.clean.1954.1956 %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.1954.1956) %>%
+               slice(-c(1:2)) %>%
                filter(!is.na(Location))
              )
 
-data.clean.1957.1967 <- data.clean.1957.1967 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.1957.1967) |>
-               slice(-c(1:2)) |>
+data.clean.1957.1967 <- data.clean.1957.1967 %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.1957.1967) %>%
+               slice(-c(1:2)) %>%
                filter(!is.na(Location))
              )
 
-data.clean.1968.1976 <- data.clean.1968.1976 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.1968.1976) |>
-               slice(-c(1:2)) |>
+data.clean.1968.1976 <- data.clean.1968.1976 %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.1968.1976) %>%
+               slice(-c(1:2)) %>%
                filter(!is.na(Location))
              )
 
-data.clean.1977.2010 <- data.clean.1977.2010 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.1977.2010) |>
-               slice(-c(1:2)) |>
-               filter(!is.na(Location)) |>
+data.clean.1977.2010 <- data.clean.1977.2010 %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.1977.2010) %>%
+               slice(-c(1:2)) %>%
+               filter(!is.na(Location)) %>%
                slice_head(n = 196) # Remove the last rows that show OIF and OEF totals for select countries. These values represent the portion of the total deployed force that is dedicated to Iraq and Afghanistan. We don't need to add these in.
              )
 
-data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.2008.2023) |>
-               slice(-c(1:5)) |>
+data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.2008.2023) %>%
+               slice(-c(1:5)) %>%
                filter(!is.na(Location))
              )
 
 
-data.clean.September.2023.December.2023 <- data.clean.September.2023.December.2023 |>
-  furrr::future_map(.f = ~ .x |>
-               setNames(names.2023.2024) |>
-               slice(-c(1:5)) |>
+data.clean.September.2023.Present <- data.clean.September.2023.Present %>%
+  furrr::future_map(.f = ~ .x %>%
+               setNames(names.2023.Present) %>%
+               slice(-c(1:5)) %>%
                filter(!is.na(Location))
              )
 
@@ -431,8 +431,8 @@ custom.cown <- c("Alaska" = 2,
 
 
 # Generate country codes for 1950 to 1953
-data.clean.1950.1953 <- data.clean.1950.1953 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.1950.1953 <- data.clean.1950.1953 %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
                                                      destination = "cown",
@@ -450,15 +450,15 @@ data.clean.1950.1953 <- data.clean.1950.1953 |>
              )
 
 # Check for missing country codes
-filtered.1950.1053 <- data.clean.1950.1953 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.1950.1053 <- data.clean.1950.1953 %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
 
 # Generate country codes for 1954 to 1956
-data.clean.1954.1956 <- data.clean.1954.1956 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.1954.1956 <- data.clean.1954.1956 %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
                                                      destination = "cown",
@@ -476,15 +476,15 @@ data.clean.1954.1956 <- data.clean.1954.1956 |>
              )
 
 # Check for missing country codes
-filtered.1954.1956 <- data.clean.1954.1956 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.1954.1956 <- data.clean.1954.1956 %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
 
 # Generate country codes for 1957 to 1967
-data.clean.1957.1967 <- data.clean.1957.1967 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.1957.1967 <- data.clean.1957.1967 %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
                                                      destination = "cown",
@@ -502,16 +502,16 @@ data.clean.1957.1967 <- data.clean.1957.1967 |>
              )
 
 # Check for missing country codes
-filtered.1957.1967 <- data.clean.1957.1967 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.1957.1967 <- data.clean.1957.1967 %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
 
 
 # Generate country codes for 1968 to 1976
-data.clean.1968.1976 <- data.clean.1968.1976 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.1968.1976 <- data.clean.1968.1976 %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
                                                      destination = "cown",
@@ -529,16 +529,16 @@ data.clean.1968.1976 <- data.clean.1968.1976 |>
              )
 
 # Check for missing country codes
-filtered.1968.1976 <- data.clean.1968.1976 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.1968.1976 <- data.clean.1968.1976 %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
 
 # Generate country codes for 1977 to 2010
 # Note that these data overlap with newer DMDC reports, so we'll drop 2009 and 2010 from this sequence and use the newer data for those years.
-data.clean.1977.2010 <- data.clean.1977.2010 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.1977.2010 <- data.clean.1977.2010 %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
                                                      destination = "cown",
@@ -552,8 +552,8 @@ data.clean.1977.2010 <- data.clean.1977.2010 |>
              )
 
 # Check for missing country codes
-filtered.1977.2010 <- data.clean.1977.2010 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.1977.2010 <- data.clean.1977.2010 %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
@@ -563,8 +563,8 @@ filtered.1977.2010 <- data.clean.1977.2010 |>
 data.clean.1977.2010 <- data.clean.1977.2010[c(1:30)]
 
 # Generate country codes for 2008 to 2023
-data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = case_when(
                 row_number() > 53 ~ countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
@@ -585,14 +585,14 @@ data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 |>
              )
 
 # Check for missing country codes
-filtered.September.2008.June.2023 <- data.clean.September.2008.June.2023 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.September.2008.June.2023 <- data.clean.September.2008.June.2023 %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
 # Generate country codes for September 2023 to December 2023
-data.clean.September.2023.December.2023 <- data.clean.September.2023.December.2023 |>
-  furrr::future_map(.f = ~ .x |>
+data.clean.September.2023.Present <- data.clean.September.2023.Present %>%
+  furrr::future_map(.f = ~ .x %>%
                mutate(ccode = case_when(
                 row_number() > 54 ~ countrycode::countrycode(sourcevar = Location,
                                                      origin = "country.name",
@@ -613,23 +613,23 @@ data.clean.September.2023.December.2023 <- data.clean.September.2023.December.20
              )
 
 # Check for missing country codes
-filtered.September.2023.December.2023 <- data.clean.September.2023.December.2023 |>
-  furrr::future_map(.f = ~ .x |>
+filtered.September.2023.Present <- data.clean.September.2023.Present %>%
+  furrr::future_map(.f = ~ .x %>%
                filter(is.na(ccode))
              )
 
 
 # Basic cleaning and organization of 2003 data
-data.clean.2003 <- pdftools::pdf_text(datalist.2003.names) |>
-  stringr::str_split(pattern = "\n") |>
-  unlist() |>
-  stringr::str_trim() |>
-  as.data.frame() |>
-  dplyr::slice(548:908) |>
+data.clean.2003 <- pdftools::pdf_text(datalist.2003.names) %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist() %>%
+  stringr::str_trim() %>%
+  as.data.frame() %>%
+  dplyr::slice(548:908) %>%
   tidyr::separate(col = 1,
                   into = c("Location", "troops_ad", "army_ad", "navy_ad", "marine_corps_ad", "air_force_ad"),
-                  sep = " {2,}") |>
-  dplyr::filter(Location != "") |> # Remove empty rows
+                  sep = " {2,}") %>%
+  dplyr::filter(Location != "") %>% # Remove empty rows
   dplyr::mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                  origin = "country.name",
                                                  destination = "cown",
@@ -643,16 +643,16 @@ data.clean.2003 <- pdftools::pdf_text(datalist.2003.names) |>
 
 
 # Basic cleaning and organization of 2004 data
-data.clean.2004 <- pdftools::pdf_text(datalist.2004.names) |>
-  stringr::str_split(pattern = "\n") |>
-  unlist() |>
-  stringr::str_trim() |>
-  as.data.frame() |>
-  dplyr::slice(555:927) |>
+data.clean.2004 <- pdftools::pdf_text(datalist.2004.names) %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist() %>%
+  stringr::str_trim() %>%
+  as.data.frame() %>%
+  dplyr::slice(555:927) %>%
   tidyr::separate(col = 1,
                   into = c("Location", "troops_ad", "army_ad", "navy_ad", "marine_corps_ad", "air_force_ad"),
-                  sep = " {2,}") |>
-  dplyr::filter(Location != "") |> # Remove empty rows
+                  sep = " {2,}") %>%
+  dplyr::filter(Location != "") %>% # Remove empty rows
   dplyr::mutate(ccode = countrycode::countrycode(sourcevar = Location,
                                                  origin = "country.name",
                                                  destination = "cown",
@@ -682,9 +682,9 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                                                    data.clean.1977.2010,
                                                    data.clean.2003.2004,
                                                    data.clean.September.2008.June.2023,
-                                                   data.clean.September.2023.December.2023),
-                                         .f = ~ data.table::rbindlist(.x, fill = TRUE, idcol = "source")) |>
-  dplyr::bind_rows() |>
+                                                   data.clean.September.2023.Present),
+                                         .f = ~ data.table::rbindlist(.x, fill = TRUE, idcol = "source")) %>%
+  dplyr::bind_rows() %>%
   dplyr::mutate(year = as.numeric(str_extract(source, pattern = "[0-9]{4}")),
                 month = str_extract(source, pattern = "[A-Za-z]+"),
                 quarter = case_when(
@@ -693,32 +693,32 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                   month == "September" ~ 3,
                   month == "December" ~ 4
                 )
-                ) |>
+                ) %>%
   dplyr::mutate(ccode = case_when(
     grepl(".*Ryukyu.*", Location) ~ 740,
     grepl(".*Hong Kong.*", Location, ignore.case = TRUE) ~ 1009,
     grepl(".*Indo-China.*", Location, ignore.case = TRUE) ~ 817,
     TRUE ~ ccode
-  )) |> # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that. Also asign Hong Kong its own country code because countrycode is lumping it in with China. Also make sure Indo-China is recoded as Vietnam.
-  #bind_rows(data.gaps) |>
-  dplyr::select(source, Location, ccode, iso3c, year, month, quarter, everything()) |>
-  dplyr::arrange(ccode, year, month, quarter) |>
+  )) %>% # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that. Also asign Hong Kong its own country code because countrycode is lumping it in with China. Also make sure Indo-China is recoded as Vietnam.
+  #bind_rows(data.gaps) %>%
+  dplyr::select(source, Location, ccode, iso3c, year, month, quarter, everything()) %>%
+  dplyr::arrange(ccode, year, month, quarter) %>%
   dplyr::filter(case_when(
     year <= 1956 ~ month == "June",
     year >= 1957 & year <= 1976 ~ month == "September",
     year >= 1977 & year <= 2013 ~ month == "September",
     TRUE ~ TRUE
-  )) |>
-  dplyr::filter(ccode != 2) |> # Remove US and total US values separately
+  )) %>%
+  dplyr::filter(ccode != 2) %>% # Remove US and total US values separately
   dplyr::mutate(across(`Total`:`Space Force Active Duty`,
-                       ~ str_replace_all(., pattern = ",", replacement = ""))) |> # Remove commas from numbers
+                       ~ str_replace_all(., pattern = ",", replacement = ""))) %>% # Remove commas from numbers
   dplyr::mutate(across(quarter:`Space Force Active Duty`, ~ case_when(
     . == "N/A" ~ NA,
     TRUE ~ as.numeric(.)  # Convert all values to numeric
     )
     ),
-    `Navy Other` = abs(`Navy Other`)) |>
-  rowwise() |>
+    `Navy Other` = abs(`Navy Other`)) %>%
+  rowwise() %>%
   dplyr::mutate(troops_ad = case_when(
     !is.na(troops_ad) ~ as.numeric(troops_ad),
     !is.na(`Total`) ~ as.numeric(`Total`),
@@ -746,7 +746,7 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                na.rm = TRUE),
   space_force_ad = sum(`Space Force Active Duty`,
                na.rm = TRUE)
-  ) |>
+  ) %>%
   mutate(countryname = countrycode::countrycode(ccode, "cown", "country.name"),
          countryname = case_when(
            is.na(countryname) ~ Location,
@@ -760,10 +760,10 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
          source = case_when(
            year %in% c(1951, 1952, 2003, 2004) ~ "Kane 2006",
            TRUE ~ source
-         )) |>
-  dplyr::arrange(ccode, countryname, year, month, quarter) |>
-  dplyr::select(ccode, countryname, year, month, quarter, everything()) |>
-  group_by(ccode, countryname, year, month, quarter) |>
+         )) %>%
+  dplyr::arrange(ccode, countryname, year, month, quarter) %>%
+  dplyr::select(ccode, countryname, year, month, quarter, everything()) %>%
+  group_by(ccode, countryname, year, month, quarter) %>%
   dplyr::filter(troops_ad == max(troops_ad, na.rm = TRUE))
 
 
@@ -781,8 +781,8 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
                                                                  data.clean.1977.2010),
                                                        .f = ~ data.table::rbindlist(.x,
                                                                                     fill = TRUE,
-                                                                                    idcol = "source")) |>
-  dplyr::bind_rows() |>
+                                                                                    idcol = "source")) %>%
+  dplyr::bind_rows() %>%
   dplyr::mutate(year = as.numeric(str_extract(source, pattern = "[0-9]{4}")),
                 month = str_extract(source, pattern = "[A-Za-z]+"),
                 quarter = case_when(
@@ -791,50 +791,50 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
                   month == "September" ~ 3,
                   month == "December" ~ 4
                 )
-  ) |>
-  #bind_rows(data.gaps) |>
-  dplyr::select(source, Location, ccode, iso3c, year, month, quarter, everything()) |>
-  dplyr::arrange(ccode, year, month, quarter) |>
+  ) %>%
+  #bind_rows(data.gaps) %>%
+  dplyr::select(source, Location, ccode, iso3c, year, month, quarter, everything()) %>%
+  dplyr::arrange(ccode, year, month, quarter) %>%
   dplyr::filter(case_when( # Filter out the quarters that are not used in the data
     year <= 1956 ~ month == "June",
     year >= 1957 & year <= 1976 ~ month == "September",
     year >= 1977 & year <= 2013 ~ month == "September",
     TRUE ~ TRUE
-  )) |>
-  dplyr::filter(ccode == 2) |> # Only keep US data
-  #dplyr::filter(!is.na(`Total`)) |> # Remove rows with no data for the Total column
-  dplyr::filter(year < 2008) |> # Remove 2008 since that will be aggregated separately.
-  dplyr::group_by(year, month, quarter) |> # Group by year, month, and quarter
+  )) %>%
+  dplyr::filter(ccode == 2) %>% # Only keep US data
+  #dplyr::filter(!is.na(`Total`)) %>% # Remove rows with no data for the Total column
+  dplyr::filter(year < 2008) %>% # Remove 2008 since that will be aggregated separately.
+  dplyr::group_by(year, month, quarter) %>% # Group by year, month, and quarter
   dplyr::mutate(grouping = case_when( # Create grouping variable to identify reports where total is given vs broken out by continental US, Alaska, and Hawaii
     grepl("^UNITED STATES$", Location) ~ "Total Given",
     #!is.na(statenme) ~ "Total Given",
     grepl(".*ontinental.*", Location, ignore.case = TRUE) ~ "Disaggregated",
     grepl(".*laska.*", Location, ignore.case = TRUE) ~ "Disaggregated",
     grepl(".*awaii.*", Location, ignore.case = TRUE) ~ "Disaggregated",
-  )) |>
-  dplyr::filter(!grepl(".*territor.*", Location, ignore.case = TRUE)) |>
+  )) %>%
+  dplyr::filter(!grepl(".*territor.*", Location, ignore.case = TRUE)) %>%
   dplyr::mutate(grouping_num = factor(grouping,
-                                      levels = c("Disaggregated", "Total Given"))) |> # Create a factor for ordering
+                                      levels = c("Disaggregated", "Total Given"))) %>% # Create a factor for ordering
   dplyr::mutate(across(`Total`:`air_force_ad`,
-                       ~ str_replace(., ",", ""))) |>
-  dplyr::slice(which.max(grouping_num)) |>
-  select(source, Location, grouping, grouping_num, everything()) |>
-  dplyr::group_by(source, year, month, quarter) |>
+                       ~ str_replace(., ",", ""))) %>%
+  dplyr::slice(which.max(grouping_num)) %>%
+  select(source, Location, grouping, grouping_num, everything()) %>%
+  dplyr::group_by(source, year, month, quarter) %>%
   dplyr::summarise(across(everything(), ~ case_when(
     grouping == "Total Given" ~ max(as.numeric(.), na.rm = TRUE),
-    grouping == "Disaggregated" ~ sum(as.numeric(.), na.rm = TRUE)))) |>
-  dplyr::summarize(across(everything(), ~ max(., na.rm = TRUE))) |>
+    grouping == "Disaggregated" ~ sum(as.numeric(.), na.rm = TRUE)))) %>%
+  dplyr::summarize(across(everything(), ~ max(., na.rm = TRUE))) %>%
   dplyr::mutate(source = as.character(source),
-                month = as.character(month)) |>
+                month = as.character(month)) %>%
   dplyr::mutate(across(everything(), ~ case_when(
     is.infinite(.) ~ NA,
     TRUE ~ .
-  ))) |>
+  ))) %>%
   dplyr::mutate(across(`Total`: `air_force_ad`, ~ case_when(
     . == 0 ~ NA,
     TRUE ~ .
-  ))) |>
-  rowwise() |>
+  ))) %>%
+  rowwise() %>%
   dplyr::mutate(troops_ad = case_when(
     !is.na(troops_ad) ~ as.numeric(troops_ad),
     is.infinite(`Total`) ~ `Total Ashore`,
@@ -863,13 +863,14 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
 # Repeat the basic procedure from the previous code chunk but extract the US states
 # and generate aggregate US totals using these data.
 # This first pass covers the pre-Space Force deployment figures.
-data.clean.combined.us.2008.2023 <- data.table::rbindlist(data.clean.2008.2023[c(1:45)],
+# Keep this suffix as 2023 and NOT present because the Space Force data is not included in this pass.
+data.clean.combined.us.2008.2023 <- data.table::rbindlist(data.clean.2008.Present[c(1:45)],
                                                           idcol = "source",
-                                                          fill = TRUE) |>
-  dplyr::select(1:24) |> # Only keep the columns that are relevant to the US data
-  setNames(c("source", names.2008.2023)) |>
-  dplyr::mutate(fips = usmap::fips(Location)) |> # Generate FIPS codes for US states
-  dplyr::filter(!is.na(fips)) |>
+                                                          fill = TRUE) %>%
+  dplyr::select(1:24) %>% # Only keep the columns that are relevant to the US data
+  setNames(c("source", names.2008.2023)) %>%
+  dplyr::mutate(fips = usmap::fips(Location)) %>% # Generate FIPS codes for US states
+  dplyr::filter(!is.na(fips)) %>%
   dplyr::mutate(year = as.numeric(str_extract(source, pattern = "[0-9]{4}")),
                 month = str_extract(source, pattern = "[A-Za-z]+"),
                 quarter = case_when(
@@ -878,20 +879,34 @@ data.clean.combined.us.2008.2023 <- data.table::rbindlist(data.clean.2008.2023[c
                   month == "September" ~ 3,
                   month == "December" ~ 4
                 )
-  ) |>
-  dplyr::mutate(across(everything(), ~ str_replace(., ",", ""))) |> # Remove commas from numbers
-  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ str_replace(., "N/A", ""))) |> # Replace N/A with no value
-  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ as.numeric(.))) |> # Convert all values to numeric
+  ) %>%
+  dplyr::mutate(across(everything(), ~ str_replace(., ",", ""))) %>% # Remove commas from numbers
+  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ str_replace(., "N/A", ""))) %>% # Replace N/A with no value
+  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ as.numeric(.))) %>% # Convert all values to numeric
   dplyr::mutate(year = as.numeric(year),
-                quarter = as.numeric(quarter)) |>
-  rowwise() |>
-  dplyr::mutate(`Total Active Duty` = sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE)) |>
-  group_by(year, month, quarter, source) |>
-  dplyr::select(-c(`Location`, `Macro Location`, fips)) |>
-  dplyr::summarise(across(everything(), ~ sum(., na.rm = TRUE))) |>
+                quarter = as.numeric(quarter)) %>%
+  rowwise() %>%
+  dplyr::mutate(`Total Active Duty` = sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE)) %>%
+  group_by(year, month, quarter, source) %>%
+  dplyr::select(-c(`Location`, `Macro Location`, fips)) %>%
+  dplyr::summarise(across(everything(), ~ sum(., na.rm = TRUE))) %>%
   dplyr::mutate(source = as.character(source),
-                month = as.character(month)) |>
-  rowwise() |>
+                month = as.character(month)) %>%
+  # This line is intended to fill in missing values for the army because they didn't report numbers while transitioning to a new personnel system. Instead we'll use the most recent available values from September 2022.
+  dplyr::mutate(`Army Active Duty` = case_when(
+    `Army Active Duty` == 0 & year == 2022 & month == "December" ~ 404114,
+    `Army Active Duty` == 0 & year == 2023 & month == "March" ~ 404114,
+    `Army Active Duty` == 0 & year == 2023 & month == "June" ~ 404114,
+    TRUE ~ `Army Active Duty`
+  )) %>%
+  # Now we need to update total active duty numbers to reflect the new values for the Army.
+  dplyr::mutate(`Total Active Duty` = case_when(
+    year == 2022 & month == "December" ~ sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE),
+    year == 2023 & month == "March" ~ sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE),
+    year == 2023 & month == "June" ~ sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE),
+    TRUE ~ `Total Active Duty`
+  )) %>%
+  rowwise() %>%
   dplyr::mutate(troops_ad = case_when(
     !is.na(`Total Active Duty`) ~ as.numeric(`Total Active Duty`),
     TRUE ~ sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE)
@@ -908,13 +923,13 @@ data.clean.combined.us.2008.2023 <- data.table::rbindlist(data.clean.2008.2023[c
 
 # This second pass covers newer reports from 2023 through 2024 and includes Space Force
 # deployment numbers
-data.clean.combined.us.2023.2024 <- data.table::rbindlist(data.clean.2008.2023[c(46:48)], # Select only recent data frames with space force
+data.clean.combined.us.2023.Present <- data.table::rbindlist(data.clean.2008.Present[c(46:length(data.clean.2008.Present))], # Select only recent data frames with space force
                                                           idcol = "source",
-                                                          fill = TRUE) |>
-  dplyr::select(1:25) |> # Only keep the columns that are relevant to the US data
-  setNames(c("source", names.2023.2024)) |>
-  dplyr::mutate(fips = usmap::fips(Location)) |> # Generate FIPS codes for US states
-  dplyr::filter(!is.na(fips)) |>
+                                                          fill = TRUE) %>%
+  dplyr::select(1:25) %>% # Only keep the columns that are relevant to the US data
+  setNames(c("source", names.2023.Present)) %>%
+  dplyr::mutate(fips = usmap::fips(Location)) %>% # Generate FIPS codes for US states
+  dplyr::filter(!is.na(fips)) %>%
   dplyr::mutate(year = as.numeric(str_extract(source, pattern = "[0-9]{4}")),
                 month = str_extract(source, pattern = "[A-Za-z]+"),
                 quarter = case_when(
@@ -923,20 +938,20 @@ data.clean.combined.us.2023.2024 <- data.table::rbindlist(data.clean.2008.2023[c
                   month == "September" ~ 3,
                   month == "December" ~ 4
                 )
-  ) |>
-  dplyr::mutate(across(everything(), ~ str_replace(., ",", ""))) |> # Remove commas from numbers
-  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ str_replace(., "N/A", ""))) |> # Replace N/A with no value
-  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ as.numeric(.))) |> # Convert all values to numeric
+  ) %>%
+  dplyr::mutate(across(everything(), ~ str_replace(., ",", ""))) %>% # Remove commas from numbers
+  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ str_replace(., "N/A", ""))) %>% # Replace N/A with no value
+  dplyr::mutate(across(`Army Active Duty`:`Grand Total`, ~ as.numeric(.))) %>% # Convert all values to numeric
   dplyr::mutate(year = as.numeric(year),
-                quarter = as.numeric(quarter)) |>
-  rowwise() |>
-  dplyr::mutate(`Total Active Duty` = sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE)) |>
-  group_by(year, month, quarter, source) |>
-  dplyr::select(-c(`Location`, `Macro Location`, fips)) |>
-  dplyr::summarise(across(everything(), ~ sum(., na.rm = TRUE))) |>
+                quarter = as.numeric(quarter)) %>%
+  rowwise() %>%
+  dplyr::mutate(`Total Active Duty` = sum(`Army Active Duty`, `Navy Active Duty`, `Marine Corps Active Duty`, `Air Force Active Duty`, `Coast Guard Active Duty`, na.rm = TRUE)) %>%
+  group_by(year, month, quarter, source) %>%
+  dplyr::select(-c(`Location`, `Macro Location`, fips)) %>%
+  dplyr::summarise(across(everything(), ~ sum(., na.rm = TRUE))) %>%
   dplyr::mutate(source = as.character(source),
-                month = as.character(month)) |>
-  rowwise() |>
+                month = as.character(month)) %>%
+  rowwise() %>%
   dplyr::mutate(troops_ad = case_when(
     !is.na(`Total Active Duty`) ~ as.numeric(`Total Active Duty`),
     TRUE ~ `Army Active Duty` + `Navy Active Duty` + `Marine Corps Active Duty` + `Air Force Active Duty` + `Coast Guard Active Duty`
@@ -951,7 +966,7 @@ data.clean.combined.us.2023.2024 <- data.table::rbindlist(data.clean.2008.2023[c
 
 data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
                                   data.clean.combined.us.2008.2023,
-                                  data.clean.combined.us.2023.2024) |>
+                                  data.clean.combined.us.2023.Present) %>%
   dplyr::mutate(countryname = "United States",
                 ccode = 2,
                 iso3c = "USA",
@@ -959,44 +974,44 @@ data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
                 troops_ad = case_when(
                   year %in% c(1951, 1952) ~ NA,
                   TRUE ~ troops_ad
-                )) |>
+                )) %>%
   dplyr::select(ccode, countryname, year, month, quarter, everything())
 
 
 # Combine the US and international data into a single data frame
 troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
-                                     data.us.combined.all) |>
-  dplyr::arrange(ccode, countryname, year, month, quarter) |>
-  dplyr::select(ccode, countryname, year, month, quarter, everything(), -c(grouping, grouping_num)) |>
+                                     data.us.combined.all) %>%
+  dplyr::arrange(ccode, countryname, year, month, quarter) %>%
+  dplyr::select(ccode, countryname, year, month, quarter, everything(), -c(grouping, grouping_num)) %>%
   dplyr::mutate(across(everything(), ~ case_when( # Replace infinite values with NA
     is.infinite(.) ~ NA,
     TRUE ~ .
-  ))) |>
+  ))) %>%
   dplyr::mutate(source = case_when(
     is.na(source) & ccode == 2 ~ "Not Reported", # Fill in missing source values for unreported US data.
     TRUE ~ source
-  )) |>
-  dplyr::mutate(region = countrycode(ccode, "cown", "region")) |>
-  dplyr::select(ccode, countryname, region, year, month, quarter, everything(), -fips) |>
+  )) %>%
+  dplyr::mutate(region = countrycode(ccode, "cown", "region")) %>%
+  dplyr::select(ccode, countryname, region, year, month, quarter, everything(), -fips) %>%
   ungroup() # Remove grouping
 
 
 
 
-troopdata_rebuild_long <- country.year.list |>
-  full_join(troopdata_rebuild_reports, by = c("ccode", "year", "month", "quarter")) |>
+troopdata_rebuild_long <- country.year.list %>%
+  full_join(troopdata_rebuild_reports, by = c("ccode", "year", "month", "quarter")) %>%
   dplyr::filter(month == "June" & year %in% c(1950:1956) | # All reports are from June between 1950 and 1956
                   month == "September" & year >= 1957 | # All reports are from September between 1957 and 2012
                   month == "December" & year >= 2013 |
                   month == "June" & year >= 2014 |
-                  month == "March" & year >= 2014) |>
+                  month == "March" & year >= 2014) %>%
   dplyr::mutate(countryname = case_when(
     is.na(countryname) ~ statenme,
     TRUE ~ countryname
-  )) |>
-  ungroup() |>
-  janitor::clean_names() |>
-  dplyr::select(ccode, countryname, year, month, quarter, source, location, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
+  )) %>%
+  ungroup() %>%
+  janitor::clean_names() %>%
+  dplyr::select(ccode, countryname, year, month, quarter, source, location, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
   dplyr::mutate(troops_ad = case_when( # Add values from reports to fill in missing data for Iraq and Afghanistan
       ccode == 200 & year == 2014 ~ 8495,
       ccode == 700 & year == 2020 ~ 8600, # Afghanistan update from just security
@@ -1009,10 +1024,10 @@ troopdata_rebuild_long <- country.year.list |>
       ccode == 690 & year == 2006 ~ 44400, # Reverse engineered from OIF totals
       ccode == 690 & year == 2007 ~ 48500, # Reverse engineered from OIF totals
       TRUE ~ troops_ad)
-  ) |>
-  plyr::rbind.fill(data.gaps) |>
-  dplyr::select(-statenme) |>
-  dplyr::mutate(iso3c = countrycode(ccode, "cown", "iso3c")) |>
+  ) %>%
+  plyr::rbind.fill(data.gaps) %>%
+  dplyr::select(-statenme) %>%
+  dplyr::mutate(iso3c = countrycode(ccode, "cown", "iso3c")) %>%
   dplyr::mutate(countryname = case_when(
     is.na(countryname) ~ countrycode(ccode, "cown", "country.name"),
     TRUE ~ countryname),
@@ -1078,27 +1093,27 @@ troopdata_rebuild_long <- country.year.list |>
       ccode == 1002 ~ "Europe & Central Asia", # Greenland missing country name
       TRUE ~ region
     )
-  ) |> # Fill in missing country names
-  dplyr::filter(!(ccode == 817 & year > 1975)) |>
-  dplyr::filter(!is.na(countryname)) |>
+  ) %>% # Fill in missing country names
+  dplyr::filter(!(ccode == 817 & year > 1975)) %>%
+  dplyr::filter(!is.na(countryname)) %>%
   dplyr::mutate(across(everything(), ~ case_when( # Replace infinite values with NA
     is.infinite(.) ~ NA,
     TRUE ~ .
-  ))) |> # Replace infinite values with NA
+  ))) %>% # Replace infinite values with NA
   dplyr::mutate(across(everything(), ~ case_when( # 0 values in US with NA
     ccode == 2 & . == 0 ~ NA,
     TRUE ~ .
-  ))) |> # Replace infinite values with NA
-  dplyr::group_by(ccode, year, month, quarter) |>
+  ))) %>% # Replace infinite values with NA
+  dplyr::group_by(ccode, year, month, quarter) %>%
   dplyr::summarise(across(matches("_ad|civilian|guard|reserve"), ~ sum(., na.rm = TRUE)),
                    countryname = first(countryname),
                    iso3c = first(iso3c),
                    region = first(region),
-                   source = first(source)) |>
-  rowwise() |>
-  dplyr::mutate(troops_all = sum(troops_ad + army_national_guard + air_national_guard + army_reserve + navy_reserve + marine_corps_reserve + air_force_reserve + coast_guard_reserve)) |> # This adds active duty with reserves separately.
-  dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, troops_all, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) |>  # select only variables to be exported to package
-  arrange(ccode, iso3c, year, month, quarter) |>
+                   source = first(source)) %>%
+  rowwise() %>%
+  dplyr::mutate(troops_all = sum(troops_ad + army_national_guard + air_national_guard + army_reserve + navy_reserve + marine_corps_reserve + air_force_reserve + coast_guard_reserve)) %>% # This adds active duty with reserves separately.
+  dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, troops_all, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
+  arrange(ccode, iso3c, year, month, quarter) %>%
   ungroup()
 
 
