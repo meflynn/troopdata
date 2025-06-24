@@ -97,8 +97,8 @@ get_troopdata <- function(host = NULL,
     )
     )
 
-    tempdata <- tempdata |>
-      dplyr::filter(year %in% c(startyear:endyear)) |>
+    tempdata <- tempdata %>%
+      dplyr::filter(year %in% c(startyear:endyear)) %>%
       dplyr::filter(
         dplyr::case_when(
           host.type == "ccode" ~ grepl(paste(host, collapse = "|"), ccode),
@@ -115,7 +115,7 @@ get_troopdata <- function(host = NULL,
 
     } else {
 
-      tempdata <- tempdata |>
+      tempdata <- tempdata %>%
         dplyr::filter(year %in% c(startyear:endyear))
 
     }
@@ -153,8 +153,8 @@ get_troopdata <- function(host = NULL,
 
   }
 
-  tempdata <- tempdata |>
-    dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard_reserve.select), tidyselect::all_of(civilians.select)) |>
+  tempdata <- tempdata %>%
+    dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard_reserve.select), tidyselect::all_of(civilians.select)) %>%
     dplyr::ungroup()
 
   # Aggregate time periods
@@ -187,28 +187,28 @@ get_troopdata <- function(host = NULL,
   # There are lots of different situations where a given space has multiple grouping variables.
   if (quarters == TRUE && host.type %in% c("ccode", "iso3c", "countryname")) {
 
-    tempdata <- tempdata |>
-      dplyr::group_by(!!sym(host.type), year, month, quarter) |>
+    tempdata <- tempdata %>%
+      dplyr::group_by(!!sym(host.type), year, month, quarter) %>%
       dplyr::summarise(dplyr::across(.cols = tidyselect::all_of(host.terms), ~ dplyr::first(.x)),
                        dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == FALSE && host.type %in% c("ccode", "iso3c", "countryname")) {
 
-    tempdata <- tempdata |>
-      dplyr::group_by(!!sym(host.type), year) |>
+    tempdata <- tempdata %>%
+      dplyr::group_by(!!sym(host.type), year) %>%
       dplyr::summarise(dplyr::across(.cols = tidyselect::all_of(host.terms), ~ dplyr::first(.x)),
                        dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == TRUE && host.type == "region") {
 
-    tempdata <- tempdata |>
-      dplyr::group_by(region, year, month, quarter) |>
+    tempdata <- tempdata %>%
+      dplyr::group_by(region, year, month, quarter) %>%
       dplyr::summarise(dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   } else if (quarters == FALSE && host.type == "region") {
 
-    tempdata <- tempdata |>
-      dplyr::group_by(region, year) |>
+    tempdata <- tempdata %>%
+      dplyr::group_by(region, year) %>%
       dplyr::summarise(dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
   }
