@@ -1,8 +1,12 @@
 # troopdata 1.0.3
 
+* Added most recent deployment data through December 2024.
 * Fixes error where some 2008 values were double counted. Germany for example.
 * Adjusts count for some states like Germany and UK to better reflect troop counts assigned to those states between 2001 and 2011. This adjustment relies on the baseline data from the DMDC reports for a select group of countries and removes the added values the DMDC reports show as affiliated with those countries that are on deployment to other countries as a part of OIF or OEF operations.
 * Adds the `troops_all` variable to reflect the sum of all active duty, guard, and reserve, personnel assigned to host country and removes some guard and reserve personnel that were mistakenly included in the overall total in the `troops_ad` variable, which should just reflect active duty personnel. 
+* Fixed some errors where some countries were appearing twice in the data. These were primarily countries with small deployments.
+* Added tests to check for duplicate entries in the data.
+
 
 # troopdata 1.0.2
 
