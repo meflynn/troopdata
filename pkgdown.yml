@@ -4,8 +4,9 @@ pkgdown_sha: ~
 articles:
   basedata-vignette: basedata-vignette.html
   builddata-vignette: builddata-vignette.html
+  rebuild-notes-vignette: rebuild-notes-vignette.html
   troopdata-vignette: troopdata-vignette.html
-last_built: 2025-06-30T19:36Z
+last_built: 2025-06-30T20:11Z
 urls:
   reference: https://meflynn.github.io/troopdata/reference
   article: https://meflynn.github.io/troopdata/articles
