@@ -1,3 +1,6 @@
+# troopdata 1.0.4
+
+
 # troopdata 1.0.3
 
 * Added most recent deployment data through December 2024.
