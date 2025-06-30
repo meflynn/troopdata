@@ -265,7 +265,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 20,Canada,North America,2005,September,3,September 2005,Canada,CAN,150,NA,NA,7,NA,NA,NA,NA,NA,89,NA,47,7,150,7,47,7,89,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 20,Canada,North America,2006,September,3,September 2006,Canada,CAN,133,NA,NA,7,NA,NA,NA,NA,NA,81,NA,35,10,133,7,35,10,81,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 20,Canada,North America,2007,September,3,September 2007,Canada,CAN,141,NA,NA,7,NA,NA,NA,NA,NA,84,NA,41,9,141,7,41,9,84,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-20,Canada,North America,2008,September,3,September 2008,Canada,CAN,134,NA,NA,9,NA,NA,NA,NA,NA,83,NA,34,8,134,9,34,8,83,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+20,Canada,North America,2008,September,3,September 2008,CANADA,CAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,93,8,0,2,82,NA,8,0,2,82,1,93,0,0,0,0,0,0,1,1,1,5,0,2,19,27,121,NA,1,0
 20,Canada,North America,2009,September,3,September 2009,CANADA,CAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,93,8,0,0,83,NA,8,0,0,83,2,93,0,0,0,0,0,0,0,0,1,5,0,2,15,23,116,NA,2,0
 20,Canada,North America,2010,September,3,September 2010,CANADA,CAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,131,3,0,0,98,NA,3,28,0,98,2,131,0,0,0,0,0,0,0,0,0,2,0,3,19,24,155,NA,2,0
 20,Canada,North America,2011,September,3,September 2011,CANADA,CAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,130,7,0,0,83,NA,7,38,0,83,2,130,0,0,0,0,0,0,0,0,0,4,0,3,23,30,160,NA,2,0
@@ -367,7 +367,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 31,Bahamas,Latin America & Caribbean,2005,September,3,September 2005,"Bahamas, The",BHS,41,NA,NA,0,NA,NA,NA,NA,NA,0,NA,35,6,41,0,35,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 31,Bahamas,Latin America & Caribbean,2006,September,3,September 2006,"Bahamas, The",BHS,36,NA,NA,0,NA,NA,NA,NA,NA,0,NA,30,6,36,0,30,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 31,Bahamas,Latin America & Caribbean,2007,September,3,September 2007,"Bahamas, The",BHS,36,NA,NA,1,NA,NA,NA,NA,NA,0,NA,29,6,36,1,29,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-31,Bahamas,Latin America & Caribbean,2008,September,3,September 2008,"Bahamas, The",BHS,41,NA,NA,1,NA,NA,NA,NA,NA,0,NA,34,6,41,1,34,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+31,Bahamas,Latin America & Caribbean,2008,September,3,September 2008,"BAHAMAS, THE",BHS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,35,1,0,0,0,NA,1,34,0,0,0,35,0,0,0,0,0,0,0,0,1,4,0,0,0,5,40,NA,0,0
 31,Bahamas,Latin America & Caribbean,2009,September,3,September 2009,"BAHAMAS, THE",BHS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,40,1,0,0,0,NA,1,39,0,0,0,40,0,0,0,0,0,0,0,0,0,2,0,0,0,2,42,NA,0,0
 31,Bahamas,Latin America & Caribbean,2010,September,3,September 2010,"BAHAMAS, THE",BHS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,41,1,0,0,0,NA,1,40,0,0,0,41,0,0,0,0,0,0,0,0,0,3,0,0,0,3,44,NA,0,0
 31,Bahamas,Latin America & Caribbean,2011,September,3,September 2011,"BAHAMAS, THE",BHS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,41,1,0,0,0,NA,1,40,0,0,0,41,0,0,0,0,0,0,0,0,0,4,0,0,0,4,45,NA,0,0
@@ -676,7 +676,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 42,Dominican Republic,Latin America & Caribbean,2005,September,3,September 2005,Dominican Republic,DOM,11,NA,NA,2,NA,NA,NA,NA,NA,2,NA,0,7,11,2,0,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 42,Dominican Republic,Latin America & Caribbean,2006,September,3,September 2006,Dominican Republic,DOM,13,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,10,13,1,0,10,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 42,Dominican Republic,Latin America & Caribbean,2007,September,3,September 2007,Dominican Republic,DOM,11,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,8,11,2,0,8,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-42,Dominican Republic,Latin America & Caribbean,2008,September,3,September 2008,Dominican Republic,DOM,20,NA,NA,3,NA,NA,NA,NA,NA,3,NA,0,14,20,3,0,14,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+42,Dominican Republic,Latin America & Caribbean,2008,September,3,September 2008,DOMINICAN REPUBLIC,DOM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,13,3,0,3,3,NA,3,2,3,3,2,13,0,0,0,0,0,0,0,0,2,0,0,0,0,2,15,NA,2,0
 42,Dominican Republic,Latin America & Caribbean,2009,September,3,September 2009,DOMINICAN REPUBLIC,DOM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,3,0,3,2,NA,3,1,3,2,2,11,0,0,0,0,0,0,0,0,2,0,0,0,0,2,13,NA,2,0
 42,Dominican Republic,Latin America & Caribbean,2010,September,3,September 2010,DOMINICAN REPUBLIC,DOM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,2,0,2,2,NA,2,1,2,2,2,9,0,0,0,0,0,0,0,0,2,0,0,0,0,2,11,NA,2,0
 42,Dominican Republic,Latin America & Caribbean,2011,September,3,September 2011,DOMINICAN REPUBLIC,DOM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,2,0,2,2,NA,2,1,2,2,2,9,0,0,0,0,0,0,0,0,4,0,0,0,0,4,13,NA,2,0
@@ -770,7 +770,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 51,Jamaica,Latin America & Caribbean,2005,September,3,September 2005,Jamaica,JAM,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,3,5,9,1,3,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 51,Jamaica,Latin America & Caribbean,2006,September,3,September 2006,Jamaica,JAM,11,NA,NA,1,NA,NA,NA,NA,NA,0,NA,3,7,11,1,3,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 51,Jamaica,Latin America & Caribbean,2007,September,3,September 2007,Jamaica,JAM,11,NA,NA,1,NA,NA,NA,NA,NA,0,NA,3,7,11,1,3,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-51,Jamaica,Latin America & Caribbean,2008,September,3,September 2008,Jamaica,JAM,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,2,6,9,1,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+51,Jamaica,Latin America & Caribbean,2008,September,3,September 2008,JAMAICA,JAM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,1,0,0,0,NA,1,2,0,0,3,6,0,0,0,0,0,0,0,0,2,0,0,0,0,2,8,NA,3,0
 51,Jamaica,Latin America & Caribbean,2009,September,3,September 2009,JAMAICA,JAM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,1,0,1,0,NA,1,3,1,0,2,7,0,0,0,0,0,0,0,0,1,0,0,0,0,1,8,NA,2,0
 51,Jamaica,Latin America & Caribbean,2010,September,3,September 2010,JAMAICA,JAM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,0,0,1,0,NA,0,1,1,0,2,4,0,0,0,0,0,0,0,0,2,0,0,0,0,2,6,NA,2,0
 51,Jamaica,Latin America & Caribbean,2011,September,3,September 2011,JAMAICA,JAM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,1,0,1,0,NA,1,1,1,0,2,5,0,0,0,0,0,0,0,0,2,0,0,0,0,2,7,NA,2,0
@@ -847,7 +847,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 52,Trinidad & Tobago,Latin America & Caribbean,2005,September,3,September 2005,Trinidad and Tobago,TTO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 52,Trinidad & Tobago,Latin America & Caribbean,2006,September,3,September 2006,Trinidad and Tobago,TTO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 52,Trinidad & Tobago,Latin America & Caribbean,2007,September,3,September 2007,Trinidad and Tobago,TTO,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-52,Trinidad & Tobago,Latin America & Caribbean,2008,September,3,September 2008,Trinidad and Tobago,TTO,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 52,Trinidad & Tobago,Latin America & Caribbean,2009,September,3,September 2009,TRINIDAD AND TOBAGO,TTO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,0,NA,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 52,Trinidad & Tobago,Latin America & Caribbean,2010,September,3,September 2010,TRINIDAD AND TOBAGO,TTO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,0,NA,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 52,Trinidad & Tobago,Latin America & Caribbean,2011,September,3,September 2011,TRINIDAD AND TOBAGO,TTO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,0,NA,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
@@ -935,7 +934,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 53,Barbados,Latin America & Caribbean,2005,September,3,September 2005,Barbados,BRB,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 53,Barbados,Latin America & Caribbean,2006,September,3,September 2006,Barbados,BRB,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 53,Barbados,Latin America & Caribbean,2007,September,3,September 2007,Barbados,BRB,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-53,Barbados,Latin America & Caribbean,2008,September,3,September 2008,Barbados,BRB,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+53,Barbados,Latin America & Caribbean,2008,September,3,September 2008,BARBADOS,BRB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,1,0
 53,Barbados,Latin America & Caribbean,2009,September,3,September 2009,BARBADOS,BRB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,0,0,0,1,4,NA,1,0
 53,Barbados,Latin America & Caribbean,2010,September,3,September 2010,BARBADOS,BRB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,0,0,0,1,4,NA,1,0
 53,Barbados,Latin America & Caribbean,2011,September,3,September 2011,BARBADOS,BRB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,1,NA,2,0,0,1,3,6,0,0,0,0,0,0,0,0,0,1,0,0,0,1,7,NA,3,0
@@ -1075,7 +1074,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 70,Mexico,Latin America & Caribbean,2005,September,3,September 2005,Mexico,MEX,30,NA,NA,9,NA,NA,NA,NA,NA,6,NA,3,12,30,9,3,12,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 70,Mexico,Latin America & Caribbean,2006,September,3,September 2006,Mexico,MEX,29,NA,NA,8,NA,NA,NA,NA,NA,6,NA,3,12,29,8,3,12,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 70,Mexico,Latin America & Caribbean,2007,September,3,September 2007,Mexico,MEX,23,NA,NA,6,NA,NA,NA,NA,NA,4,NA,2,11,23,6,2,11,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-70,Mexico,Latin America & Caribbean,2008,September,3,September 2008,Mexico,MEX,28,NA,NA,7,NA,NA,NA,NA,NA,5,NA,3,13,28,7,3,13,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+70,Mexico,Latin America & Caribbean,2008,September,3,September 2008,MEXICO,MEX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,18,7,0,0,5,NA,7,4,0,5,2,18,0,0,0,0,0,0,0,0,3,0,0,4,0,7,25,NA,2,0
 70,Mexico,Latin America & Caribbean,2009,September,3,September 2009,MEXICO,MEX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,18,8,0,1,4,NA,8,3,1,4,2,18,0,0,0,0,0,0,0,0,3,0,0,3,0,6,24,NA,2,0
 70,Mexico,Latin America & Caribbean,2010,September,3,September 2010,MEXICO,MEX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,2,0,1,4,NA,2,3,1,4,2,12,0,0,0,0,0,0,0,0,1,0,0,5,0,6,18,NA,2,0
 70,Mexico,Latin America & Caribbean,2011,September,3,September 2011,MEXICO,MEX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,18,9,0,1,3,NA,9,3,1,3,2,18,0,0,0,0,0,0,0,0,6,0,0,4,0,10,28,NA,2,0
@@ -1148,7 +1147,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 80,Belize,Latin America & Caribbean,2005,September,3,September 2005,Belize,BLZ,2,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,0,2,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 80,Belize,Latin America & Caribbean,2006,September,3,September 2006,Belize,BLZ,2,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,0,2,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 80,Belize,Latin America & Caribbean,2007,September,3,September 2007,Belize,BLZ,2,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,0,2,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-80,Belize,Latin America & Caribbean,2008,September,3,September 2008,Belize,BLZ,2,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,0,2,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 80,Belize,Latin America & Caribbean,2008,September,3,September 2008,BELIZE,BLZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 80,Belize,Latin America & Caribbean,2009,September,3,September 2009,BELIZE,BLZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 80,Belize,Latin America & Caribbean,2010,September,3,September 2010,BELIZE,BLZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -1252,7 +1250,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 90,Guatemala,Latin America & Caribbean,2005,September,3,September 2005,Guatemala,GTM,12,NA,NA,6,NA,NA,NA,NA,NA,1,NA,0,5,12,6,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 90,Guatemala,Latin America & Caribbean,2006,September,3,September 2006,Guatemala,GTM,14,NA,NA,6,NA,NA,NA,NA,NA,1,NA,0,7,14,6,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 90,Guatemala,Latin America & Caribbean,2007,September,3,September 2007,Guatemala,GTM,13,NA,NA,7,NA,NA,NA,NA,NA,0,NA,0,6,13,7,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-90,Guatemala,Latin America & Caribbean,2008,September,3,September 2008,Guatemala,GTM,14,NA,NA,6,NA,NA,NA,NA,NA,1,NA,0,7,14,6,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+90,Guatemala,Latin America & Caribbean,2008,September,3,September 2008,GUATEMALA,GTM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,6,0,0,1,NA,6,0,0,1,0,7,0,0,0,0,0,0,0,0,2,1,0,0,0,3,10,NA,0,0
 90,Guatemala,Latin America & Caribbean,2009,September,3,September 2009,GUATEMALA,GTM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,6,0,0,1,NA,6,1,0,1,0,8,0,0,0,0,0,0,0,0,2,1,0,0,0,3,11,NA,0,0
 90,Guatemala,Latin America & Caribbean,2010,September,3,September 2010,GUATEMALA,GTM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,5,0,0,0,NA,5,1,0,0,0,6,0,0,0,0,0,0,0,0,2,1,0,0,0,3,9,NA,0,0
 90,Guatemala,Latin America & Caribbean,2011,September,3,September 2011,GUATEMALA,GTM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,6,0,0,1,NA,6,1,0,1,0,8,0,0,0,0,0,0,0,0,1,1,0,0,0,2,10,NA,0,0
@@ -1355,7 +1353,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 91,Honduras,Latin America & Caribbean,2005,September,3,September 2005,Honduras,HND,438,NA,NA,221,NA,NA,NA,NA,NA,207,NA,2,8,438,221,2,8,207,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 91,Honduras,Latin America & Caribbean,2006,September,3,September 2006,Honduras,HND,414,NA,NA,209,NA,NA,NA,NA,NA,195,NA,2,8,414,209,2,8,195,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 91,Honduras,Latin America & Caribbean,2007,September,3,September 2007,Honduras,HND,403,NA,NA,184,NA,NA,NA,NA,NA,208,NA,2,9,403,184,2,9,208,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-91,Honduras,Latin America & Caribbean,2008,September,3,September 2008,Honduras,HND,429,NA,NA,233,NA,NA,NA,NA,NA,186,NA,3,7,429,233,3,7,186,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+91,Honduras,Latin America & Caribbean,2008,September,3,September 2008,HONDURAS,HND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,412,212,0,0,197,NA,212,3,0,197,0,412,0,0,0,0,0,0,0,0,20,0,0,0,0,20,432,NA,0,0
 91,Honduras,Latin America & Caribbean,2009,September,3,September 2009,HONDURAS,HND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,425,235,0,0,188,NA,235,2,0,188,0,425,0,0,0,0,0,0,0,0,20,0,0,0,0,20,445,NA,0,0
 91,Honduras,Latin America & Caribbean,2010,September,3,September 2010,HONDURAS,HND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,391,205,0,0,185,NA,205,1,0,185,0,391,0,0,1,0,0,0,0,1,23,0,0,0,0,23,415,NA,0,0
 91,Honduras,Latin America & Caribbean,2011,September,3,September 2011,HONDURAS,HND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,356,204,0,0,150,NA,204,2,0,150,0,356,0,0,0,0,0,0,0,0,25,0,0,0,0,25,381,NA,0,0
@@ -1561,7 +1559,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 93,Nicaragua,Latin America & Caribbean,2005,September,3,September 2005,Nicaragua,NIC,13,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,8,13,5,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 93,Nicaragua,Latin America & Caribbean,2006,September,3,September 2006,Nicaragua,NIC,12,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,8,12,4,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 93,Nicaragua,Latin America & Caribbean,2007,September,3,September 2007,Nicaragua,NIC,16,NA,NA,8,NA,NA,NA,NA,NA,0,NA,0,8,16,8,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-93,Nicaragua,Latin America & Caribbean,2008,September,3,September 2008,Nicaragua,NIC,16,NA,NA,8,NA,NA,NA,NA,NA,1,NA,0,7,16,8,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+93,Nicaragua,Latin America & Caribbean,2008,September,3,September 2008,NICARAGUA,NIC,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,8,0,1,1,NA,8,0,1,1,0,10,0,0,0,0,0,0,0,0,8,0,1,2,0,11,21,NA,0,0
 93,Nicaragua,Latin America & Caribbean,2009,September,3,September 2009,NICARAGUA,NIC,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,933,10,0,785,1,NA,10,137,785,1,0,933,0,0,15,32,0,0,0,47,11,4,0,2,2,19,999,NA,0,0
 93,Nicaragua,Latin America & Caribbean,2010,September,3,September 2010,NICARAGUA,NIC,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,209,8,0,189,0,NA,8,12,189,0,0,209,0,0,4,21,0,0,0,25,13,0,1,3,0,17,251,NA,0,0
 93,Nicaragua,Latin America & Caribbean,2011,September,3,September 2011,NICARAGUA,NIC,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,8,0,1,1,NA,8,0,1,1,0,10,0,0,0,0,0,0,0,0,15,0,1,4,2,22,32,NA,0,0
@@ -1664,7 +1662,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 94,Costa Rica,Latin America & Caribbean,2005,September,3,September 2005,Costa Rica,CRI,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 94,Costa Rica,Latin America & Caribbean,2006,September,3,September 2006,Costa Rica,CRI,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 94,Costa Rica,Latin America & Caribbean,2007,September,3,September 2007,Costa Rica,CRI,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-94,Costa Rica,Latin America & Caribbean,2008,September,3,September 2008,Costa Rica,CRI,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+94,Costa Rica,Latin America & Caribbean,2008,September,3,September 2008,COSTA RICA,CRI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,0,0,0,1,2,0,0,0,0,0,0,0,0,2,0,0,0,0,2,4,NA,1,0
 94,Costa Rica,Latin America & Caribbean,2009,September,3,September 2009,COSTA RICA,CRI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,0,0,0,1,2,0,0,0,0,0,0,0,0,2,0,0,0,0,2,4,NA,1,0
 94,Costa Rica,Latin America & Caribbean,2010,September,3,September 2010,COSTA RICA,CRI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,0,NA,2,0,0,0,1,3,0,0,0,0,0,0,0,0,3,0,0,0,0,3,6,NA,1,0
 94,Costa Rica,Latin America & Caribbean,2011,September,3,September 2011,COSTA RICA,CRI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,0,NA,1,1,0,0,1,3,0,0,0,0,0,0,0,0,3,0,0,0,0,3,6,NA,1,0
@@ -1765,7 +1763,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 95,Panama,Latin America & Caribbean,2005,September,3,September 2005,Panama,PAN,12,NA,NA,6,NA,NA,NA,NA,NA,0,NA,1,5,12,6,1,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 95,Panama,Latin America & Caribbean,2006,September,3,September 2006,Panama,PAN,18,NA,NA,7,NA,NA,NA,NA,NA,1,NA,3,7,18,7,3,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 95,Panama,Latin America & Caribbean,2007,September,3,September 2007,Panama,PAN,17,NA,NA,6,NA,NA,NA,NA,NA,1,NA,3,7,17,6,3,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-95,Panama,Latin America & Caribbean,2008,September,3,September 2008,Panama,PAN,16,NA,NA,5,NA,NA,NA,NA,NA,0,NA,5,6,16,5,5,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+95,Panama,Latin America & Caribbean,2008,September,3,September 2008,PANAMA (1980 - PRESENT),PAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,5,0,0,0,NA,5,5,0,0,1,11,0,0,0,0,0,0,0,0,5,1,0,1,0,7,18,NA,1,0
 95,Panama,Latin America & Caribbean,2009,September,3,September 2009,PANAMA (1980 - PRESENT),PAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,20,11,0,0,0,NA,11,8,0,0,1,20,0,0,0,0,0,0,0,0,5,1,0,0,0,6,26,NA,1,0
 95,Panama,Latin America & Caribbean,2010,September,3,September 2010,PANAMA (1980 - PRESENT),PAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,14,5,0,0,0,NA,5,8,0,0,1,14,0,0,0,0,0,0,0,0,5,1,0,1,0,7,21,NA,1,0
 95,Panama,Latin America & Caribbean,2011,September,3,September 2011,PANAMA (1980 - PRESENT),PAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,11,0,0,1,NA,11,8,0,1,1,21,0,0,0,0,0,1,0,1,3,1,0,1,0,5,27,NA,1,0
@@ -1868,7 +1866,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 100,Colombia,Latin America & Caribbean,2005,September,3,September 2005,Colombia,COL,52,NA,NA,17,NA,NA,NA,NA,NA,7,NA,4,24,52,17,4,24,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 100,Colombia,Latin America & Caribbean,2006,September,3,September 2006,Colombia,COL,104,NA,NA,57,NA,NA,NA,NA,NA,7,NA,4,36,104,57,4,36,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 100,Colombia,Latin America & Caribbean,2007,September,3,September 2007,Colombia,COL,123,NA,NA,74,NA,NA,NA,NA,NA,6,NA,4,39,123,74,4,39,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-100,Colombia,Latin America & Caribbean,2008,September,3,September 2008,Colombia,COL,114,NA,NA,69,NA,NA,NA,NA,NA,9,NA,4,32,114,69,4,32,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+100,Colombia,Latin America & Caribbean,2008,September,3,September 2008,COLOMBIA,COL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,88,70,0,4,9,NA,70,0,4,9,5,88,0,0,0,0,0,0,0,0,18,1,0,1,0,20,108,NA,5,0
 100,Colombia,Latin America & Caribbean,2009,September,3,September 2009,COLOMBIA,COL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68,51,0,4,9,NA,51,0,4,9,4,68,0,0,0,0,0,0,0,0,19,2,0,1,0,22,90,NA,4,0
 100,Colombia,Latin America & Caribbean,2010,September,3,September 2010,COLOMBIA,COL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,50,27,0,3,10,NA,27,5,3,10,5,50,0,0,0,0,0,0,0,0,18,2,0,2,0,22,72,NA,5,0
 100,Colombia,Latin America & Caribbean,2011,September,3,September 2011,COLOMBIA,COL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,58,34,0,3,13,NA,34,4,3,13,4,58,0,0,0,0,0,0,0,0,21,2,0,1,0,24,82,NA,4,0
@@ -1971,7 +1969,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 101,Venezuela,Latin America & Caribbean,2005,September,3,September 2005,Venezuela,VEN,21,NA,NA,6,NA,NA,NA,NA,NA,5,NA,2,8,21,6,2,8,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 101,Venezuela,Latin America & Caribbean,2006,September,3,September 2006,Venezuela,VEN,21,NA,NA,4,NA,NA,NA,NA,NA,6,NA,2,9,21,4,2,9,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 101,Venezuela,Latin America & Caribbean,2007,September,3,September 2007,Venezuela,VEN,17,NA,NA,3,NA,NA,NA,NA,NA,4,NA,2,8,17,3,2,8,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-101,Venezuela,Latin America & Caribbean,2008,September,3,September 2008,Venezuela,VEN,14,NA,NA,2,NA,NA,NA,NA,NA,3,NA,2,7,14,2,2,7,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+101,Venezuela,Latin America & Caribbean,2008,September,3,September 2008,VENEZUELA,VEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,2,0,0,3,NA,2,2,0,3,1,8,0,0,0,0,0,0,0,0,1,0,0,0,0,1,9,NA,1,0
 101,Venezuela,Latin America & Caribbean,2009,September,3,September 2009,VENEZUELA,VEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,3,0,0,4,NA,3,1,0,4,1,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,NA,1,0
 101,Venezuela,Latin America & Caribbean,2010,September,3,September 2010,VENEZUELA,VEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,3,0,0,4,NA,3,2,0,4,1,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,NA,1,0
 101,Venezuela,Latin America & Caribbean,2011,September,3,September 2011,VENEZUELA,VEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,2,0,0,3,NA,2,2,0,3,1,8,0,0,0,0,0,0,0,0,1,0,0,0,0,1,9,NA,1,0
@@ -2026,7 +2024,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 110,Guyana,Latin America & Caribbean,2005,September,3,September 2005,Guyana,GUY,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 110,Guyana,Latin America & Caribbean,2006,September,3,September 2006,Guyana,GUY,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 110,Guyana,Latin America & Caribbean,2007,September,3,September 2007,Guyana,GUY,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-110,Guyana,Latin America & Caribbean,2008,September,3,September 2008,Guyana,GUY,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 110,Guyana,Latin America & Caribbean,2008,September,3,September 2008,GUYANA,GUY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 110,Guyana,Latin America & Caribbean,2009,September,3,September 2009,GUYANA,GUY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 110,Guyana,Latin America & Caribbean,2010,September,3,September 2010,GUYANA,GUY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -2210,7 +2207,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 130,Ecuador,Latin America & Caribbean,2005,September,3,September 2005,Ecuador,ECU,32,NA,NA,6,NA,NA,NA,NA,NA,18,NA,2,6,32,6,2,6,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 130,Ecuador,Latin America & Caribbean,2006,September,3,September 2006,Ecuador,ECU,35,NA,NA,7,NA,NA,NA,NA,NA,20,NA,2,6,35,7,2,6,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 130,Ecuador,Latin America & Caribbean,2007,September,3,September 2007,Ecuador,ECU,36,NA,NA,11,NA,NA,NA,NA,NA,17,NA,2,6,36,11,2,6,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-130,Ecuador,Latin America & Caribbean,2008,September,3,September 2008,Ecuador,ECU,38,NA,NA,10,NA,NA,NA,NA,NA,20,NA,2,6,38,10,2,6,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+130,Ecuador,Latin America & Caribbean,2008,September,3,September 2008,ECUADOR,ECU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,33,10,0,0,21,NA,10,2,0,21,0,33,0,0,1,0,0,0,0,1,4,1,0,1,0,6,40,NA,0,0
 130,Ecuador,Latin America & Caribbean,2009,September,3,September 2009,ECUADOR,ECU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,23,9,0,1,11,NA,9,2,1,11,0,23,0,0,1,0,0,0,0,1,4,1,0,1,0,6,30,NA,0,0
 130,Ecuador,Latin America & Caribbean,2010,September,3,September 2010,ECUADOR,ECU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,15,8,0,1,4,NA,8,2,1,4,0,15,0,0,1,0,0,0,0,1,4,1,0,1,0,6,22,NA,0,0
 130,Ecuador,Latin America & Caribbean,2011,September,3,September 2011,ECUADOR,ECU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,17,10,0,1,4,NA,10,2,1,4,0,17,0,0,0,0,0,0,0,0,4,1,0,1,0,6,23,NA,0,0
@@ -2313,7 +2310,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 135,Peru,Latin America & Caribbean,2005,September,3,September 2005,Peru,PER,37,NA,NA,8,NA,NA,NA,NA,NA,3,NA,12,14,37,8,12,14,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 135,Peru,Latin America & Caribbean,2006,September,3,September 2006,Peru,PER,45,NA,NA,8,NA,NA,NA,NA,NA,5,NA,13,19,45,8,13,19,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 135,Peru,Latin America & Caribbean,2007,September,3,September 2007,Peru,PER,48,NA,NA,13,NA,NA,NA,NA,NA,4,NA,15,16,48,13,15,16,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-135,Peru,Latin America & Caribbean,2008,September,3,September 2008,Peru,PER,42,NA,NA,12,NA,NA,NA,NA,NA,4,NA,11,15,42,12,11,15,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+135,Peru,Latin America & Caribbean,2008,September,3,September 2008,PERU,PER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,33,12,0,3,4,NA,12,14,3,4,0,33,0,0,0,0,0,0,0,0,5,0,0,0,0,5,38,NA,0,0
 135,Peru,Latin America & Caribbean,2009,September,3,September 2009,PERU,PER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,38,13,0,3,6,NA,13,16,3,6,0,38,0,0,2,0,0,0,0,2,4,2,0,1,0,7,47,NA,0,0
 135,Peru,Latin America & Caribbean,2010,September,3,September 2010,PERU,PER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,30,8,0,2,6,NA,8,14,2,6,0,30,0,0,0,0,0,0,0,0,4,3,0,1,0,8,38,NA,0,0
 135,Peru,Latin America & Caribbean,2011,September,3,September 2011,PERU,PER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,34,11,0,2,5,NA,11,16,2,5,0,34,0,0,3,0,0,0,0,3,4,3,0,1,0,8,45,NA,0,0
@@ -2416,7 +2413,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 140,Brazil,Latin America & Caribbean,2005,September,3,September 2005,Brazil,BRA,39,NA,NA,10,NA,NA,NA,NA,NA,5,NA,5,19,39,10,5,19,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 140,Brazil,Latin America & Caribbean,2006,September,3,September 2006,Brazil,BRA,38,NA,NA,7,NA,NA,NA,NA,NA,5,NA,5,21,38,7,5,21,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 140,Brazil,Latin America & Caribbean,2007,September,3,September 2007,Brazil,BRA,37,NA,NA,8,NA,NA,NA,NA,NA,5,NA,3,21,37,8,3,21,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-140,Brazil,Latin America & Caribbean,2008,September,3,September 2008,Brazil,BRA,37,NA,NA,8,NA,NA,NA,NA,NA,5,NA,4,20,37,8,4,20,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+140,Brazil,Latin America & Caribbean,2008,September,3,September 2008,BRAZIL,BRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,19,6,0,2,5,NA,6,6,2,5,0,19,0,0,0,0,0,0,0,0,4,1,0,1,0,6,25,NA,0,0
 140,Brazil,Latin America & Caribbean,2009,September,3,September 2009,BRAZIL,BRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,22,7,0,1,6,NA,7,8,1,6,0,22,0,0,0,0,0,0,0,0,4,1,0,0,0,5,27,NA,0,0
 140,Brazil,Latin America & Caribbean,2010,September,3,September 2010,BRAZIL,BRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,23,6,0,2,6,NA,6,9,2,6,0,23,0,0,0,0,0,0,0,0,4,1,0,0,0,5,28,NA,0,0
 140,Brazil,Latin America & Caribbean,2011,September,3,September 2011,BRAZIL,BRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,23,8,0,0,8,NA,8,7,0,8,0,23,0,0,1,0,0,0,0,1,7,1,0,0,0,8,32,NA,0,0
@@ -2519,7 +2516,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 145,Bolivia,Latin America & Caribbean,2005,September,3,September 2005,Bolivia,BOL,18,NA,NA,7,NA,NA,NA,NA,NA,5,NA,1,5,18,7,1,5,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 145,Bolivia,Latin America & Caribbean,2006,September,3,September 2006,Bolivia,BOL,21,NA,NA,7,NA,NA,NA,NA,NA,6,NA,1,7,21,7,1,7,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 145,Bolivia,Latin America & Caribbean,2007,September,3,September 2007,Bolivia,BOL,16,NA,NA,6,NA,NA,NA,NA,NA,3,NA,1,6,16,6,1,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-145,Bolivia,Latin America & Caribbean,2008,September,3,September 2008,Bolivia,BOL,18,NA,NA,6,NA,NA,NA,NA,NA,3,NA,2,7,18,6,2,7,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+145,Bolivia,Latin America & Caribbean,2008,September,3,September 2008,BOLIVIA,BOL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,6,0,0,3,NA,6,0,0,3,0,9,0,0,0,0,0,0,0,0,2,0,0,1,0,3,12,NA,0,0
 145,Bolivia,Latin America & Caribbean,2009,September,3,September 2009,BOLIVIA,BOL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,5,0,0,2,NA,5,0,0,2,0,7,0,0,0,0,0,0,0,0,1,0,0,0,0,1,8,NA,0,0
 145,Bolivia,Latin America & Caribbean,2010,September,3,September 2010,BOLIVIA,BOL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,6,0,0,3,NA,6,0,0,3,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,NA,0,0
 145,Bolivia,Latin America & Caribbean,2011,September,3,September 2011,BOLIVIA,BOL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,5,0,0,2,NA,5,0,0,2,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
@@ -2622,7 +2619,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 150,Paraguay,Latin America & Caribbean,2005,September,3,September 2005,Paraguay,PRY,10,NA,NA,4,NA,NA,NA,NA,NA,1,NA,0,5,10,4,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 150,Paraguay,Latin America & Caribbean,2006,September,3,September 2006,Paraguay,PRY,11,NA,NA,4,NA,NA,NA,NA,NA,1,NA,0,6,11,4,0,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 150,Paraguay,Latin America & Caribbean,2007,September,3,September 2007,Paraguay,PRY,12,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,8,12,4,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-150,Paraguay,Latin America & Caribbean,2008,September,3,September 2008,Paraguay,PRY,10,NA,NA,4,NA,NA,NA,NA,NA,1,NA,0,5,10,4,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+150,Paraguay,Latin America & Caribbean,2008,September,3,September 2008,PARAGUAY,PRY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,4,0,0,1,NA,4,0,0,1,0,5,0,0,0,0,0,0,0,0,1,0,0,0,0,1,6,NA,0,0
 150,Paraguay,Latin America & Caribbean,2009,September,3,September 2009,PARAGUAY,PRY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,5,0,0,1,NA,5,0,0,1,0,6,0,0,0,0,0,0,0,0,1,0,0,0,0,1,7,NA,0,0
 150,Paraguay,Latin America & Caribbean,2010,September,3,September 2010,PARAGUAY,PRY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,5,0,0,1,NA,5,0,0,1,0,6,0,0,0,0,0,0,0,0,1,0,0,0,0,1,7,NA,0,0
 150,Paraguay,Latin America & Caribbean,2011,September,3,September 2011,PARAGUAY,PRY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,5,0,1,1,NA,5,0,1,1,0,7,0,0,0,0,0,0,0,0,2,0,0,0,0,2,9,NA,0,0
@@ -2725,7 +2722,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 155,Chile,Latin America & Caribbean,2005,September,3,September 2005,Chile,CHL,29,NA,NA,6,NA,NA,NA,NA,NA,7,NA,5,11,29,6,5,11,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 155,Chile,Latin America & Caribbean,2006,September,3,September 2006,Chile,CHL,29,NA,NA,7,NA,NA,NA,NA,NA,8,NA,4,10,29,7,4,10,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 155,Chile,Latin America & Caribbean,2007,September,3,September 2007,Chile,CHL,29,NA,NA,7,NA,NA,NA,NA,NA,9,NA,3,10,29,7,3,10,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-155,Chile,Latin America & Caribbean,2008,September,3,September 2008,Chile,CHL,35,NA,NA,7,NA,NA,NA,NA,NA,12,NA,3,13,35,7,3,13,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+155,Chile,Latin America & Caribbean,2008,September,3,September 2008,CHILE,CHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,25,7,0,0,12,NA,7,6,0,12,0,25,0,0,0,0,0,0,0,0,1,3,0,1,0,5,30,NA,0,0
 155,Chile,Latin America & Caribbean,2009,September,3,September 2009,CHILE,CHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,22,7,0,0,9,NA,7,6,0,9,0,22,0,0,0,0,0,0,0,0,4,2,0,1,0,7,29,NA,0,0
 155,Chile,Latin America & Caribbean,2010,September,3,September 2010,CHILE,CHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,26,8,0,0,11,NA,8,7,0,11,0,26,0,0,1,0,0,0,0,1,4,2,0,1,0,7,34,NA,0,0
 155,Chile,Latin America & Caribbean,2011,September,3,September 2011,CHILE,CHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,24,6,0,0,9,NA,6,9,0,9,0,24,0,0,0,0,0,0,0,0,4,3,0,3,0,10,34,NA,0,0
@@ -2828,7 +2825,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 160,Argentina,Latin America & Caribbean,2005,September,3,September 2005,Argentina,ARG,28,NA,NA,5,NA,NA,NA,NA,NA,10,NA,4,9,28,5,4,9,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 160,Argentina,Latin America & Caribbean,2006,September,3,September 2006,Argentina,ARG,26,NA,NA,4,NA,NA,NA,NA,NA,11,NA,5,6,26,4,5,6,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 160,Argentina,Latin America & Caribbean,2007,September,3,September 2007,Argentina,ARG,31,NA,NA,5,NA,NA,NA,NA,NA,14,NA,3,9,31,5,3,9,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-160,Argentina,Latin America & Caribbean,2008,September,3,September 2008,Argentina,ARG,30,NA,NA,6,NA,NA,NA,NA,NA,12,NA,4,8,30,6,4,8,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+160,Argentina,Latin America & Caribbean,2008,September,3,September 2008,ARGENTINA,ARG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,16,5,0,2,9,NA,5,0,2,9,0,16,0,0,0,0,0,0,0,0,3,0,0,0,0,3,19,NA,0,0
 160,Argentina,Latin America & Caribbean,2009,September,3,September 2009,ARGENTINA,ARG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,15,3,0,2,10,NA,3,0,2,10,0,15,0,0,0,0,0,0,0,0,3,0,0,0,0,3,18,NA,0,0
 160,Argentina,Latin America & Caribbean,2010,September,3,September 2010,ARGENTINA,ARG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,19,2,0,1,9,NA,2,7,1,9,0,19,0,0,0,0,0,0,0,0,3,0,0,0,0,3,22,NA,0,0
 160,Argentina,Latin America & Caribbean,2011,September,3,September 2011,ARGENTINA,ARG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,22,4,0,2,10,NA,4,6,2,10,0,22,0,0,0,0,0,0,0,0,3,0,0,0,0,3,25,NA,0,0
@@ -2931,7 +2928,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 165,Uruguay,Latin America & Caribbean,2005,September,3,September 2005,Uruguay,URY,13,NA,NA,3,NA,NA,NA,NA,NA,1,NA,3,6,13,3,3,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 165,Uruguay,Latin America & Caribbean,2006,September,3,September 2006,Uruguay,URY,11,NA,NA,3,NA,NA,NA,NA,NA,2,NA,0,6,11,3,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 165,Uruguay,Latin America & Caribbean,2007,September,3,September 2007,Uruguay,URY,14,NA,NA,4,NA,NA,NA,NA,NA,2,NA,1,7,14,4,1,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-165,Uruguay,Latin America & Caribbean,2008,September,3,September 2008,Uruguay,URY,14,NA,NA,4,NA,NA,NA,NA,NA,2,NA,2,6,14,4,2,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+165,Uruguay,Latin America & Caribbean,2008,September,3,September 2008,URUGUAY,URY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,4,0,0,2,NA,4,2,0,2,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 165,Uruguay,Latin America & Caribbean,2009,September,3,September 2009,URUGUAY,URY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,3,0,0,2,NA,3,3,0,2,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 165,Uruguay,Latin America & Caribbean,2010,September,3,September 2010,URUGUAY,URY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,3,0,0,5,NA,3,2,0,5,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,NA,0,0
 165,Uruguay,Latin America & Caribbean,2011,September,3,September 2011,URUGUAY,URY,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,4,0,0,3,NA,4,3,0,3,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,NA,0,0
@@ -3034,7 +3031,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 200,United Kingdom,Europe & Central Asia,2005,September,3,September 2005,United Kingdom *,GBR,10752,NA,NA,406,NA,NA,NA,NA,NA,9477,NA,791,78,10752,406,791,78,9477,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 200,United Kingdom,Europe & Central Asia,2006,September,3,September 2006,United Kingdom,GBR,10331,NA,NA,397,NA,NA,NA,NA,NA,9280,NA,584,70,10331,397,584,70,9280,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 200,United Kingdom,Europe & Central Asia,2007,September,3,September 2007,United Kingdom,GBR,9825,NA,NA,355,NA,NA,NA,NA,NA,8952,NA,443,75,9825,355,443,75,8952,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-200,United Kingdom,Europe & Central Asia,2008,September,3,September 2008,United Kingdom *,GBR,9426,NA,NA,340,NA,NA,NA,NA,NA,8625,NA,386,75,9426,340,386,75,8625,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+200,United Kingdom,Europe & Central Asia,2008,September,3,September 2008,UNITED KINGDOM,GBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9042,315,0,69,8169,NA,315,489,69,8169,0,9042,0,0,5,0,8,50,0,63,171,46,0,539,876,1632,10737,NA,0,0
 200,United Kingdom,Europe & Central Asia,2009,September,3,September 2009,UNITED KINGDOM,GBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8933,324,0,70,8143,NA,324,396,70,8143,0,8933,0,0,11,0,2,76,0,89,30,29,0,529,878,1466,10488,NA,0,0
 200,United Kingdom,Europe & Central Asia,2010,September,3,September 2010,UNITED KINGDOM,GBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8764,333,0,63,8004,NA,333,364,63,8004,0,8764,0,0,17,0,3,87,0,107,31,27,0,577,880,1515,10386,NA,0,0
 200,United Kingdom,Europe & Central Asia,2011,September,3,September 2011,UNITED KINGDOM,GBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8673,328,0,52,7977,NA,328,316,52,7977,0,8673,0,0,20,0,1,90,0,111,31,27,0,581,875,1514,10298,NA,0,0
@@ -3137,7 +3134,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 205,Ireland,Europe & Central Asia,2005,September,3,September 2005,Ireland,IRL,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 205,Ireland,Europe & Central Asia,2006,September,3,September 2006,Ireland,IRL,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 205,Ireland,Europe & Central Asia,2007,September,3,September 2007,Ireland,IRL,7,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,5,7,2,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-205,Ireland,Europe & Central Asia,2008,September,3,September 2008,Ireland,IRL,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+205,Ireland,Europe & Central Asia,2008,September,3,September 2008,IRELAND,IRL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 205,Ireland,Europe & Central Asia,2009,September,3,September 2009,IRELAND,IRL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,1,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 205,Ireland,Europe & Central Asia,2010,September,3,September 2010,IRELAND,IRL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,1,0,1,0,3,0,0,0,0,0,0,0,0,0,1,0,0,0,1,4,NA,0,0
 205,Ireland,Europe & Central Asia,2011,September,3,September 2011,IRELAND,IRL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -3443,7 +3440,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 212,Luxembourg,Europe & Central Asia,2005,September,3,September 2005,Luxembourg,LUX,12,NA,NA,7,NA,NA,NA,NA,NA,0,NA,0,5,12,7,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 212,Luxembourg,Europe & Central Asia,2006,September,3,September 2006,Luxembourg,LUX,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 212,Luxembourg,Europe & Central Asia,2007,September,3,September 2007,Luxembourg,LUX,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-212,Luxembourg,Europe & Central Asia,2008,September,3,September 2008,Luxembourg,LUX,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+212,Luxembourg,Europe & Central Asia,2008,September,3,September 2008,LUXEMBOURG,LUX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,0,0,0,0,16,16,NA,0,0
 212,Luxembourg,Europe & Central Asia,2009,September,3,September 2009,LUXEMBOURG,LUX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,18,18,NA,0,0
 212,Luxembourg,Europe & Central Asia,2010,September,3,September 2010,LUXEMBOURG,LUX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,17,17,NA,0,0
 212,Luxembourg,Europe & Central Asia,2011,September,3,September 2011,LUXEMBOURG,LUX,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,0,0,0,0,19,19,NA,0,0
@@ -3546,7 +3543,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 220,France,Europe & Central Asia,2005,September,3,September 2005,France,FRA,58,NA,NA,10,NA,NA,NA,NA,NA,19,NA,11,18,58,10,11,18,19,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 220,France,Europe & Central Asia,2006,September,3,September 2006,France,FRA,60,NA,NA,10,NA,NA,NA,NA,NA,17,NA,12,21,60,10,12,21,17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 220,France,Europe & Central Asia,2007,September,3,September 2007,France,FRA,55,NA,NA,16,NA,NA,NA,NA,NA,15,NA,6,18,55,16,6,18,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-220,France,Europe & Central Asia,2008,September,3,September 2008,France,FRA,56,NA,NA,17,NA,NA,NA,NA,NA,18,NA,7,14,56,17,7,14,18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+220,France,Europe & Central Asia,2008,September,3,September 2008,FRANCE,FRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,45,13,0,3,18,NA,13,11,3,18,0,45,0,0,0,0,0,0,0,0,4,2,0,3,0,9,54,NA,0,0
 220,France,Europe & Central Asia,2009,September,3,September 2009,FRANCE,FRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,58,23,0,2,18,NA,23,15,2,18,0,58,0,0,0,0,0,0,0,0,4,4,0,2,0,10,68,NA,0,0
 220,France,Europe & Central Asia,2010,September,3,September 2010,FRANCE,FRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,48,9,0,2,22,NA,9,15,2,22,0,48,0,0,0,0,0,0,0,0,3,4,0,1,0,8,56,NA,0,0
 220,France,Europe & Central Asia,2011,September,3,September 2011,FRANCE,FRA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,58,19,0,2,24,NA,19,13,2,24,0,58,0,0,0,0,0,0,0,0,4,3,0,1,0,8,66,NA,0,0
@@ -3650,7 +3647,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 225,Switzerland,Europe & Central Asia,2005,September,3,September 2005,Switzerland,CHE,17,NA,NA,1,NA,NA,NA,NA,NA,4,NA,0,12,17,1,0,12,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 225,Switzerland,Europe & Central Asia,2006,September,3,September 2006,Switzerland,CHE,17,NA,NA,1,NA,NA,NA,NA,NA,4,NA,1,11,17,1,1,11,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 225,Switzerland,Europe & Central Asia,2007,September,3,September 2007,Switzerland,CHE,20,NA,NA,1,NA,NA,NA,NA,NA,5,NA,1,13,20,1,1,13,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-225,Switzerland,Europe & Central Asia,2008,September,3,September 2008,Switzerland,CHE,18,NA,NA,1,NA,NA,NA,NA,NA,5,NA,1,11,18,1,1,11,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+225,Switzerland,Europe & Central Asia,2008,September,3,September 2008,SWITZERLAND,CHE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,1,0,0,5,NA,1,2,0,5,0,8,0,0,0,0,0,0,0,0,0,1,0,0,0,1,9,NA,0,0
 225,Switzerland,Europe & Central Asia,2009,September,3,September 2009,SWITZERLAND,CHE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,1,0,0,5,NA,1,2,0,5,0,8,0,0,0,0,0,0,0,0,0,1,0,0,0,1,9,NA,0,0
 225,Switzerland,Europe & Central Asia,2010,September,3,September 2010,SWITZERLAND,CHE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,0,0,0,5,NA,0,2,0,5,0,7,0,0,0,0,0,0,0,0,0,1,0,0,0,1,8,NA,0,0
 225,Switzerland,Europe & Central Asia,2011,September,3,September 2011,SWITZERLAND,CHE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,2,0,0,3,NA,2,2,0,3,0,7,0,0,0,0,0,0,0,0,0,1,0,0,0,1,8,NA,0,0
@@ -3959,7 +3956,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 255,Germany,Europe & Central Asia,2005,September,3,September 2005,Germany *,DEU,66418,NA,NA,50377,NA,NA,NA,NA,NA,15460,NA,286,295,66418,50377,286,295,15460,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 255,Germany,Europe & Central Asia,2006,September,3,September 2006,Germany,DEU,64319,NA,NA,48583,NA,NA,NA,NA,NA,15185,NA,282,269,64319,48583,282,269,15185,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 255,Germany,Europe & Central Asia,2007,September,3,September 2007,Germany,DEU,57080,NA,NA,41926,NA,NA,NA,NA,NA,14583,NA,281,290,57080,41926,281,290,14583,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-255,Germany,Europe & Central Asia,2008,September,3,September 2008,Germany *,DEU,55140,NA,NA,40039,NA,NA,NA,NA,NA,14562,NA,264,275,55140,40039,264,275,14562,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+255,Germany,Europe & Central Asia,2008,September,3,September 2008,GERMANY,DEU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,38791,23469,0,703,14151,NA,23469,465,703,14151,3,38791,95,37,447,4,30,311,0,924,6837,47,11,1020,5473,13388,53103,NA,3,0
 255,Germany,Europe & Central Asia,2009,September,3,September 2009,GERMANY,DEU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,45654,30601,0,747,13820,NA,30601,481,747,13820,5,45654,97,38,290,6,51,274,0,756,7023,53,17,1015,5362,13470,59880,NA,5,0
 255,Germany,Europe & Central Asia,2010,September,3,September 2010,GERMANY,DEU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,43911,28661,0,828,13925,NA,28661,489,828,13925,8,43911,88,31,174,5,52,357,0,707,7357,68,20,1169,5552,14166,58784,NA,8,0
 255,Germany,Europe & Central Asia,2011,September,3,September 2011,GERMANY,DEU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,43393,28933,0,808,13139,NA,28933,504,808,13139,9,43393,48,14,142,6,49,394,0,653,7565,78,19,1275,5570,14507,58553,NA,9,0
@@ -4075,7 +4072,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 290,Poland,Europe & Central Asia,2005,September,3,September 2005,Poland,POL,21,NA,NA,6,NA,NA,NA,NA,NA,5,NA,1,9,21,6,1,9,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 290,Poland,Europe & Central Asia,2006,September,3,September 2006,Poland,POL,26,NA,NA,10,NA,NA,NA,NA,NA,4,NA,0,12,26,10,0,12,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 290,Poland,Europe & Central Asia,2007,September,3,September 2007,Poland,POL,30,NA,NA,12,NA,NA,NA,NA,NA,8,NA,1,9,30,12,1,9,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-290,Poland,Europe & Central Asia,2008,September,3,September 2008,Poland,POL,32,NA,NA,13,NA,NA,NA,NA,NA,10,NA,1,8,32,13,1,8,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+290,Poland,Europe & Central Asia,2008,September,3,September 2008,POLAND,POL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,30,11,0,2,15,NA,11,2,2,15,0,30,0,0,0,0,1,0,0,1,2,0,0,2,0,4,35,NA,0,0
 290,Poland,Europe & Central Asia,2009,September,3,September 2009,POLAND,POL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,30,12,0,2,15,NA,12,1,2,15,0,30,0,0,0,0,2,1,0,3,3,0,0,1,0,4,37,NA,0,0
 290,Poland,Europe & Central Asia,2010,September,3,September 2010,POLAND,POL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,18,4,0,2,10,NA,4,2,2,10,0,18,0,0,0,0,1,0,0,1,2,0,0,1,0,3,22,NA,0,0
 290,Poland,Europe & Central Asia,2011,September,3,September 2011,POLAND,POL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,33,13,0,2,16,NA,13,2,2,16,0,33,0,0,0,0,1,0,0,1,4,0,0,1,0,5,39,NA,0,0
@@ -4178,7 +4175,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 305,Austria,Europe & Central Asia,2005,September,3,September 2005,Austria,AUT,23,NA,NA,5,NA,NA,NA,NA,NA,4,NA,0,14,23,5,0,14,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 305,Austria,Europe & Central Asia,2006,September,3,September 2006,Austria,AUT,25,NA,NA,5,NA,NA,NA,NA,NA,4,NA,0,16,25,5,0,16,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 305,Austria,Europe & Central Asia,2007,September,3,September 2007,Austria,AUT,20,NA,NA,6,NA,NA,NA,NA,NA,3,NA,0,11,20,6,0,11,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-305,Austria,Europe & Central Asia,2008,September,3,September 2008,Austria,AUT,20,NA,NA,5,NA,NA,NA,NA,NA,4,NA,0,11,20,5,0,11,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+305,Austria,Europe & Central Asia,2008,September,3,September 2008,AUSTRIA,AUT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,6,0,0,4,NA,6,0,0,4,0,10,0,0,0,0,0,0,0,0,0,0,0,0,1,1,11,NA,0,0
 305,Austria,Europe & Central Asia,2009,September,3,September 2009,AUSTRIA,AUT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,3,0,0,4,NA,3,0,0,4,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
 305,Austria,Europe & Central Asia,2010,September,3,September 2010,AUSTRIA,AUT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,1,0,0,4,NA,1,0,0,4,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 305,Austria,Europe & Central Asia,2011,September,3,September 2011,AUSTRIA,AUT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,3,0,0,3,NA,3,0,0,3,0,6,0,0,0,0,0,0,0,0,0,1,0,0,0,1,7,NA,0,0
@@ -4281,7 +4278,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 310,Hungary,Europe & Central Asia,2005,September,3,September 2005,Hungary,HUN,16,NA,NA,5,NA,NA,NA,NA,NA,5,NA,0,6,16,5,0,6,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 310,Hungary,Europe & Central Asia,2006,September,3,September 2006,Hungary,HUN,19,NA,NA,6,NA,NA,NA,NA,NA,7,NA,0,6,19,6,0,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 310,Hungary,Europe & Central Asia,2007,September,3,September 2007,Hungary,HUN,19,NA,NA,7,NA,NA,NA,NA,NA,5,NA,0,7,19,7,0,7,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-310,Hungary,Europe & Central Asia,2008,September,3,September 2008,Hungary,HUN,16,NA,NA,6,NA,NA,NA,NA,NA,5,NA,0,5,16,6,0,5,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+310,Hungary,Europe & Central Asia,2008,September,3,September 2008,HUNGARY,HUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,6,0,0,5,NA,6,0,0,5,0,11,0,0,0,0,0,0,0,0,1,0,0,0,0,1,12,NA,0,0
 310,Hungary,Europe & Central Asia,2009,September,3,September 2009,HUNGARY,HUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,54,6,0,0,48,NA,6,0,0,48,0,54,0,0,0,0,0,0,0,0,2,0,0,0,0,2,56,NA,0,0
 310,Hungary,Europe & Central Asia,2010,September,3,September 2010,HUNGARY,HUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,50,2,0,0,48,NA,2,0,0,48,0,50,0,0,0,0,0,0,0,0,2,0,0,1,0,3,53,NA,0,0
 310,Hungary,Europe & Central Asia,2011,September,3,September 2011,HUNGARY,HUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,57,5,0,0,52,NA,5,0,0,52,0,57,0,0,0,0,0,0,0,0,2,0,0,1,0,3,60,NA,0,0
@@ -4384,7 +4381,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 316,Czechia,Europe & Central Asia,2005,September,3,September 2005,Czech Republic,CZE,14,NA,NA,3,NA,NA,NA,NA,NA,3,NA,0,8,14,3,0,8,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 316,Czechia,Europe & Central Asia,2006,September,3,September 2006,Czech Republic,CZE,15,NA,NA,3,NA,NA,NA,NA,NA,2,NA,0,10,15,3,0,10,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 316,Czechia,Europe & Central Asia,2007,September,3,September 2007,Czech Republic,CZE,11,NA,NA,3,NA,NA,NA,NA,NA,2,NA,0,6,11,3,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-316,Czechia,Europe & Central Asia,2008,September,3,September 2008,Czech Republic,CZE,11,NA,NA,3,NA,NA,NA,NA,NA,2,NA,0,6,11,3,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+316,Czechia,Europe & Central Asia,2008,September,3,September 2008,CZECH REPUBLIC,CZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,4,0,0,2,NA,4,0,0,2,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 316,Czechia,Europe & Central Asia,2009,September,3,September 2009,CZECH REPUBLIC,CZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,4,0,0,2,NA,4,0,0,2,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 316,Czechia,Europe & Central Asia,2010,September,3,September 2010,CZECH REPUBLIC,CZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,6,0,0,3,NA,6,0,0,3,0,9,0,0,0,0,0,0,0,0,0,1,0,0,0,1,10,NA,0,0
 316,Czechia,Europe & Central Asia,2011,September,3,September 2011,CZECH REPUBLIC,CZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,4,0,0,4,NA,4,0,0,4,0,8,0,0,0,0,0,0,0,0,0,2,0,0,0,2,10,NA,0,0
@@ -4439,7 +4436,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 317,Slovakia,Europe & Central Asia,2005,September,3,September 2005,Slovakia,SVK,9,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,7,9,0,0,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 317,Slovakia,Europe & Central Asia,2006,September,3,September 2006,Slovakia,SVK,9,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,7,9,0,0,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 317,Slovakia,Europe & Central Asia,2007,September,3,September 2007,Slovakia,SVK,9,NA,NA,0,NA,NA,NA,NA,NA,3,NA,0,6,9,0,0,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-317,Slovakia,Europe & Central Asia,2008,September,3,September 2008,Slovakia,SVK,10,NA,NA,1,NA,NA,NA,NA,NA,3,NA,0,6,10,1,0,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+317,Slovakia,Europe & Central Asia,2008,September,3,September 2008,SLOVAKIA,SVK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,3,NA,1,0,0,3,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 317,Slovakia,Europe & Central Asia,2009,September,3,September 2009,SLOVAKIA,SVK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 317,Slovakia,Europe & Central Asia,2010,September,3,September 2010,SLOVAKIA,SVK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,0,0,0,3,NA,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 317,Slovakia,Europe & Central Asia,2011,September,3,September 2011,SLOVAKIA,SVK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,3,NA,1,0,0,3,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -4654,7 +4651,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 338,Malta,Middle East & North Africa,2005,September,3,September 2005,Malta,MLT,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,2,6,9,1,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 338,Malta,Middle East & North Africa,2006,September,3,September 2006,Malta,MLT,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,2,6,9,1,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 338,Malta,Middle East & North Africa,2007,September,3,September 2007,Malta,MLT,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,2,6,9,1,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-338,Malta,Middle East & North Africa,2008,September,3,September 2008,Malta,MLT,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,2,6,9,1,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+338,Malta,Middle East & North Africa,2008,September,3,September 2008,MALTA,MLT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,2,NA,1,0,0,2,1,4,0,0,0,0,0,0,0,0,0,1,0,0,0,1,5,NA,1,0
 338,Malta,Middle East & North Africa,2009,September,3,September 2009,MALTA,MLT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,0,0,0,1,4,NA,1,0
 338,Malta,Middle East & North Africa,2010,September,3,September 2010,MALTA,MLT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,1,0,0,1,NA,1,2,0,1,1,5,0,0,0,0,0,0,0,0,0,1,0,0,0,1,6,NA,1,0
 338,Malta,Middle East & North Africa,2011,September,3,September 2011,MALTA,MLT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,1,NA,1,1,0,1,1,4,0,0,0,0,0,0,0,0,0,1,0,0,0,1,5,NA,1,0
@@ -4714,7 +4711,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 339,Albania,Europe & Central Asia,2005,September,3,September 2005,Albania,ALB,9,NA,NA,1,NA,NA,NA,NA,NA,1,NA,1,6,9,1,1,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 339,Albania,Europe & Central Asia,2006,September,3,September 2006,Albania,ALB,9,NA,NA,1,NA,NA,NA,NA,NA,1,NA,1,6,9,1,1,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 339,Albania,Europe & Central Asia,2007,September,3,September 2007,Albania,ALB,9,NA,NA,1,NA,NA,NA,NA,NA,1,NA,1,6,9,1,1,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-339,Albania,Europe & Central Asia,2008,September,3,September 2008,Albania,ALB,10,NA,NA,2,NA,NA,NA,NA,NA,1,NA,1,6,10,2,1,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+339,Albania,Europe & Central Asia,2008,September,3,September 2008,ALBANIA,ALB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,1,0,NA,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 339,Albania,Europe & Central Asia,2009,September,3,September 2009,ALBANIA,ALB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,1,0,NA,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 339,Albania,Europe & Central Asia,2010,September,3,September 2010,ALBANIA,ALB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,1,0,NA,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 339,Albania,Europe & Central Asia,2012,September,3,September 2012,ALBANIA,ALB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,0,0,5,0,NA,0,0,5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
@@ -4812,7 +4809,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 343,North Macedonia,Europe & Central Asia,2005,September,3,September 2005,"Macedonia, The Former Yugoslav Republic of",MKD,37,NA,NA,3,NA,NA,NA,NA,NA,6,NA,0,28,37,3,0,28,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 343,North Macedonia,Europe & Central Asia,2006,September,3,September 2006,"Macedonia, The Former Yugoslav",MKD,43,NA,NA,3,NA,NA,NA,NA,NA,6,NA,0,34,43,3,0,34,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 343,North Macedonia,Europe & Central Asia,2007,September,3,September 2007,"Macedonia, The Former Yugoslav",MKD,28,NA,NA,4,NA,NA,NA,NA,NA,8,NA,0,16,28,4,0,16,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-343,North Macedonia,Europe & Central Asia,2008,September,3,September 2008,"Macedonia, The Former Yugoslav",MKD,16,NA,NA,3,NA,NA,NA,NA,NA,8,NA,0,5,16,3,0,5,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+343,North Macedonia,Europe & Central Asia,2008,September,3,September 2008,MACEDONIA,MKD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,2,NA,2,0,0,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 343,North Macedonia,Europe & Central Asia,2009,September,3,September 2009,MACEDONIA,MKD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,4,0,0,2,NA,4,0,0,2,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 343,North Macedonia,Europe & Central Asia,2010,September,3,September 2010,MACEDONIA,MKD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,2,0,0,3,NA,2,0,0,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 343,North Macedonia,Europe & Central Asia,2011,September,3,September 2011,MACEDONIA,MKD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,4,0,0,2,NA,4,0,0,2,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
@@ -4869,7 +4866,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 344,Croatia,Europe & Central Asia,2000,September,3,September 2000,Croatia,HRV,138,NA,NA,130,NA,NA,NA,NA,NA,1,NA,0,7,138,130,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 344,Croatia,Europe & Central Asia,2001,September,3,September 2001,Croatia,HRV,1,NA,NA,0,NA,NA,NA,NA,NA,1,NA,0,0,1,0,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 344,Croatia,Europe & Central Asia,2007,September,3,September 2007,Croatia,HRV,3,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,0,3,3,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-344,Croatia,Europe & Central Asia,2008,September,3,September 2008,Croatia,HRV,13,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,9,13,4,0,9,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+344,Croatia,Europe & Central Asia,2008,September,3,September 2008,CROATIA,HRV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,3,0,0,1,NA,3,2,0,1,0,6,0,0,0,0,0,0,0,0,1,0,0,0,0,1,7,NA,0,0
 344,Croatia,Europe & Central Asia,2009,September,3,September 2009,CROATIA,HRV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,4,0,1,2,NA,4,2,1,2,0,9,0,0,0,0,0,0,0,0,1,0,0,0,0,1,10,NA,0,0
 344,Croatia,Europe & Central Asia,2010,September,3,September 2010,CROATIA,HRV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,3,0,1,1,NA,3,1,1,1,0,6,0,0,0,0,0,0,0,0,1,0,0,0,0,1,7,NA,0,0
 344,Croatia,Europe & Central Asia,2011,September,3,September 2011,CROATIA,HRV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,3,0,1,1,NA,3,1,1,1,0,6,0,0,0,0,0,0,0,0,1,0,0,0,0,1,7,NA,0,0
@@ -5009,7 +5006,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 346,Bosnia & Herzegovina,Europe & Central Asia,2005,September,3,September 2005,Bosnia and Herzegovina,BIH,263,NA,NA,206,NA,NA,NA,NA,NA,25,NA,21,11,263,206,21,11,25,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 346,Bosnia & Herzegovina,Europe & Central Asia,2006,September,3,September 2006,Bosnia and Herzegovina,BIH,232,NA,NA,190,NA,NA,NA,NA,NA,20,NA,15,7,232,190,15,7,20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 346,Bosnia & Herzegovina,Europe & Central Asia,2007,September,3,September 2007,Bosnia and Herzegovina,BIH,209,NA,NA,176,NA,NA,NA,NA,NA,12,NA,14,7,209,176,14,7,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-346,Bosnia & Herzegovina,Europe & Central Asia,2008,September,3,September 2008,Bosnia and Herzegovina,BIH,14,NA,NA,1,NA,NA,NA,NA,NA,1,NA,6,6,14,1,6,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+346,Bosnia & Herzegovina,Europe & Central Asia,2008,September,3,September 2008,BOSNIA AND HERZEGOVINA,BIH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,1,0,0,0,0,1,4,NA,0,0
 346,Bosnia & Herzegovina,Europe & Central Asia,2009,September,3,September 2009,BOSNIA AND HERZEGOVINA,BIH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,1,0,0,0,0,1,4,NA,0,0
 346,Bosnia & Herzegovina,Europe & Central Asia,2010,September,3,September 2010,BOSNIA AND HERZEGOVINA,BIH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,2,0,0,0,0,2,4,NA,0,0
 346,Bosnia & Herzegovina,Europe & Central Asia,2011,September,3,September 2011,BOSNIA AND HERZEGOVINA,BIH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,1,0,0,0,0,1,4,NA,0,0
@@ -5065,7 +5062,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 347,Kosovo,Europe & Central Asia,2005,September,3,September 2005,Serbia (includes Kosovo),SRB,1801,NA,NA,1765,NA,NA,NA,NA,NA,36,NA,0,0,1801,1765,0,0,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 347,Kosovo,Europe & Central Asia,2006,September,3,September 2006,Serbia (includes Kosovo),SRB,1721,NA,NA,1655,NA,NA,NA,NA,NA,65,NA,0,1,1721,1655,0,1,65,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 347,Kosovo,Europe & Central Asia,2007,September,3,September 2007,Serbia (includes Kosovo),SRB,1397,NA,NA,1350,NA,NA,NA,NA,NA,42,NA,0,5,1397,1350,0,5,42,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-347,Kosovo,Europe & Central Asia,2008,September,3,September 2008,Serbia (includes Kosovo),SRB,1237,NA,NA,1200,NA,NA,NA,NA,NA,36,NA,0,1,1237,1200,0,1,36,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+347,Kosovo,Europe & Central Asia,2008,September,3,September 2008,KOSOVO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,0,NA,0,1,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,2,NA,0,0
 347,Kosovo,Europe & Central Asia,2009,September,3,September 2009,KOSOVO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,28,10,0,0,12,NA,10,6,0,12,0,28,67,26,0,0,1,0,0,94,5,1,0,0,0,6,128,NA,0,0
 347,Kosovo,Europe & Central Asia,2010,September,3,September 2010,KOSOVO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,52,29,0,0,19,NA,29,4,0,19,0,52,735,57,0,0,4,22,0,818,6,1,0,0,2,9,879,NA,0,0
 347,Kosovo,Europe & Central Asia,2011,September,3,September 2011,KOSOVO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68,33,0,1,26,NA,33,8,1,26,0,68,675,63,0,0,0,1,0,739,5,1,0,0,3,9,816,NA,0,0
@@ -5119,7 +5116,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 349,Slovenia,Europe & Central Asia,2005,September,3,September 2005,Slovenia,SVN,8,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,6,8,0,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 349,Slovenia,Europe & Central Asia,2006,September,3,September 2006,Slovenia,SVN,7,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,5,7,0,0,5,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 349,Slovenia,Europe & Central Asia,2007,September,3,September 2007,Slovenia,SVN,8,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,6,8,0,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-349,Slovenia,Europe & Central Asia,2008,September,3,September 2008,Slovenia,SVN,7,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,5,7,0,0,5,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+349,Slovenia,Europe & Central Asia,2008,September,3,September 2008,SLOVENIA,SVN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,2,NA,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 349,Slovenia,Europe & Central Asia,2009,September,3,September 2009,SLOVENIA,SVN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,0,0,0,3,NA,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 349,Slovenia,Europe & Central Asia,2010,September,3,September 2010,SLOVENIA,SVN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,2,NA,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 349,Slovenia,Europe & Central Asia,2011,September,3,September 2011,SLOVENIA,SVN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,0,0,0,3,NA,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -5325,7 +5322,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 352,Cyprus,Europe & Central Asia,2005,September,3,September 2005,Cyprus,CYP,43,NA,NA,3,NA,NA,NA,NA,NA,24,NA,0,16,43,3,0,16,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 352,Cyprus,Europe & Central Asia,2006,September,3,September 2006,Cyprus,CYP,37,NA,NA,4,NA,NA,NA,NA,NA,21,NA,0,12,37,4,0,12,21,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 352,Cyprus,Europe & Central Asia,2007,September,3,September 2007,Cyprus,CYP,19,NA,NA,2,NA,NA,NA,NA,NA,7,NA,0,10,19,2,0,10,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-352,Cyprus,Europe & Central Asia,2008,September,3,September 2008,Cyprus,CYP,16,NA,NA,3,NA,NA,NA,NA,NA,7,NA,0,6,16,3,0,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+352,Cyprus,Europe & Central Asia,2008,September,3,September 2008,CYPRUS,CYP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,4,0,0,5,NA,4,0,0,5,0,9,1,0,0,0,0,0,0,1,0,0,0,0,0,0,10,NA,0,0
 352,Cyprus,Europe & Central Asia,2009,September,3,September 2009,CYPRUS,CYP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,3,0,0,7,NA,3,0,0,7,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,NA,0,0
 352,Cyprus,Europe & Central Asia,2010,September,3,September 2010,CYPRUS,CYP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,1,0,0,8,NA,1,0,0,8,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,NA,0,0
 352,Cyprus,Europe & Central Asia,2011,September,3,September 2011,CYPRUS,CYP,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,13,2,0,0,11,NA,2,0,0,11,0,13,0,0,0,0,0,0,0,0,2,0,0,0,0,2,15,NA,0,0
@@ -5421,7 +5418,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 355,Bulgaria,Europe & Central Asia,2005,September,3,September 2005,Bulgaria,BGR,13,NA,NA,3,NA,NA,NA,NA,NA,3,NA,1,6,13,3,1,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 355,Bulgaria,Europe & Central Asia,2006,September,3,September 2006,Bulgaria,BGR,14,NA,NA,4,NA,NA,NA,NA,NA,3,NA,1,6,14,4,1,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 355,Bulgaria,Europe & Central Asia,2007,September,3,September 2007,Bulgaria,BGR,15,NA,NA,2,NA,NA,NA,NA,NA,4,NA,2,7,15,2,2,7,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-355,Bulgaria,Europe & Central Asia,2008,September,3,September 2008,Bulgaria,BGR,11,NA,NA,2,NA,NA,NA,NA,NA,3,NA,1,5,11,2,1,5,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+355,Bulgaria,Europe & Central Asia,2008,September,3,September 2008,BULGARIA,BGR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,2,0,0,6,NA,2,2,0,6,0,10,0,0,0,0,0,0,0,0,0,0,0,1,0,1,11,NA,0,0
 355,Bulgaria,Europe & Central Asia,2009,September,3,September 2009,BULGARIA,BGR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,4,0,0,4,NA,4,2,0,4,0,10,0,0,0,0,0,0,0,0,1,0,0,1,0,2,12,NA,0,0
 355,Bulgaria,Europe & Central Asia,2010,September,3,September 2010,BULGARIA,BGR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,3,0,0,4,NA,3,3,0,4,0,10,0,0,0,0,0,0,0,0,1,0,0,1,0,2,12,NA,0,0
 355,Bulgaria,Europe & Central Asia,2011,September,3,September 2011,BULGARIA,BGR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,3,0,0,4,NA,3,2,0,4,0,9,0,0,0,0,0,0,0,0,3,0,0,1,0,4,13,NA,0,0
@@ -5477,7 +5474,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 359,Moldova,Europe & Central Asia,2005,September,3,September 2005,Moldova,MDA,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 359,Moldova,Europe & Central Asia,2006,September,3,September 2006,Moldova,MDA,4,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,2,4,2,0,2,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 359,Moldova,Europe & Central Asia,2007,September,3,September 2007,Moldova,MDA,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-359,Moldova,Europe & Central Asia,2008,September,3,September 2008,Moldova,MDA,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+359,Moldova,Europe & Central Asia,2008,September,3,September 2008,MOLDOVA,MDA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 359,Moldova,Europe & Central Asia,2010,September,3,September 2010,MOLDOVA,MDA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 359,Moldova,Europe & Central Asia,2011,September,3,September 2011,MOLDOVA,MDA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 359,Moldova,Europe & Central Asia,2012,September,3,September 2012,MOLDOVA,MDA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,0,0,4,1,NA,0,0,4,1,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
@@ -5578,7 +5575,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 360,Romania,Europe & Central Asia,2005,September,3,September 2005,Romania,ROU,18,NA,NA,4,NA,NA,NA,NA,NA,5,NA,1,8,18,4,1,8,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 360,Romania,Europe & Central Asia,2006,September,3,September 2006,Romania,ROU,20,NA,NA,4,NA,NA,NA,NA,NA,5,NA,1,10,20,4,1,10,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 360,Romania,Europe & Central Asia,2007,September,3,September 2007,Romania,ROU,26,NA,NA,5,NA,NA,NA,NA,NA,7,NA,1,13,26,5,1,13,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-360,Romania,Europe & Central Asia,2008,September,3,September 2008,Romania,ROU,19,NA,NA,3,NA,NA,NA,NA,NA,10,NA,1,5,19,3,1,5,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+360,Romania,Europe & Central Asia,2008,September,3,September 2008,ROMANIA,ROU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,13,3,0,0,9,NA,3,1,0,9,0,13,0,0,0,0,0,0,0,0,3,0,0,1,0,4,17,NA,0,0
 360,Romania,Europe & Central Asia,2009,September,3,September 2009,ROMANIA,ROU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,4,0,0,4,NA,4,2,0,4,0,10,0,0,0,0,0,0,0,0,4,0,0,1,0,5,15,NA,0,0
 360,Romania,Europe & Central Asia,2010,September,3,September 2010,ROMANIA,ROU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,1,0,0,5,NA,1,1,0,5,0,7,0,0,0,0,0,0,0,0,22,0,0,1,0,23,30,NA,0,0
 360,Romania,Europe & Central Asia,2011,September,3,September 2011,ROMANIA,ROU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,4,0,0,6,NA,4,1,0,6,0,11,0,0,0,0,0,0,0,0,14,0,0,1,0,15,26,NA,0,0
@@ -5683,7 +5680,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 365,Russia,Europe & Central Asia,2005,September,3,September 2005,Total - Former Soviet Union,RUS,125,NA,NA,37,NA,NA,NA,NA,NA,15,NA,4,69,125,37,4,69,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 365,Russia,Europe & Central Asia,2006,September,3,September 2006,Total - Former Soviet Union,RUS,108,NA,NA,40,NA,NA,NA,NA,NA,15,NA,5,48,108,40,5,48,15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 365,Russia,Europe & Central Asia,2007,September,3,September 2007,Total - Former Soviet Union,RUS,144,NA,NA,40,NA,NA,NA,NA,NA,13,NA,4,87,144,40,4,87,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-365,Russia,Europe & Central Asia,2008,September,3,September 2008,Total - Former Soviet Union,RUS,147,NA,NA,43,NA,NA,NA,NA,NA,13,NA,3,88,147,43,3,88,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+365,Russia,Europe & Central Asia,2008,September,3,September 2008,RUSSIA,RUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,27,17,0,0,8,NA,17,2,0,8,0,27,0,0,0,0,0,1,0,1,0,0,0,0,4,4,32,NA,0,0
 365,Russia,Europe & Central Asia,2009,September,3,September 2009,RUSSIA,RUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,26,12,0,0,9,NA,12,5,0,9,0,26,0,0,0,0,0,1,0,1,0,0,0,0,3,3,30,NA,0,0
 365,Russia,Europe & Central Asia,2010,September,3,September 2010,RUSSIA,RUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,19,5,0,0,8,NA,5,6,0,8,0,19,0,0,0,0,0,1,0,1,0,0,0,0,4,4,24,NA,0,0
 365,Russia,Europe & Central Asia,2011,September,3,September 2011,RUSSIA,RUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,24,10,0,0,6,NA,10,8,0,6,0,24,0,0,0,0,0,1,0,1,0,0,0,0,2,2,27,NA,0,0
@@ -5743,7 +5740,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 366,Estonia,Europe & Central Asia,2005,September,3,September 2005,Estonia,EST,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,1,4,5,0,1,4,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 366,Estonia,Europe & Central Asia,2006,September,3,September 2006,Estonia,EST,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,6,8,1,1,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 366,Estonia,Europe & Central Asia,2007,September,3,September 2007,Estonia,EST,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,6,8,1,1,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-366,Estonia,Europe & Central Asia,2008,September,3,September 2008,Estonia,EST,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,6,8,1,1,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+366,Estonia,Europe & Central Asia,2008,September,3,September 2008,ESTONIA,EST,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,1,3,NA,0,0
 366,Estonia,Europe & Central Asia,2009,September,3,September 2009,ESTONIA,EST,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,0,NA,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,2,NA,0,0
 366,Estonia,Europe & Central Asia,2010,September,3,September 2010,ESTONIA,EST,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,0,NA,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,1,3,NA,0,0
 366,Estonia,Europe & Central Asia,2011,September,3,September 2011,ESTONIA,EST,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,0,NA,1,2,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -5798,7 +5795,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 367,Latvia,Europe & Central Asia,2005,September,3,September 2005,Latvia,LVA,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 367,Latvia,Europe & Central Asia,2006,September,3,September 2006,Latvia,LVA,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 367,Latvia,Europe & Central Asia,2007,September,3,September 2007,Latvia,LVA,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-367,Latvia,Europe & Central Asia,2008,September,3,September 2008,Latvia,LVA,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+367,Latvia,Europe & Central Asia,2008,September,3,September 2008,LATVIA,LVA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,1,0,NA,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 367,Latvia,Europe & Central Asia,2009,September,3,September 2009,LATVIA,LVA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,1,0,NA,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 367,Latvia,Europe & Central Asia,2010,September,3,September 2010,LATVIA,LVA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,1,0,NA,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 367,Latvia,Europe & Central Asia,2011,September,3,September 2011,LATVIA,LVA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,0,0,1,2,NA,0,0,1,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -5859,7 +5856,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 368,Lithuania,Europe & Central Asia,2005,September,3,September 2005,Lithuania,LTU,8,NA,NA,0,NA,NA,NA,NA,NA,0,NA,2,6,8,0,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 368,Lithuania,Europe & Central Asia,2006,September,3,September 2006,Lithuania,LTU,8,NA,NA,0,NA,NA,NA,NA,NA,0,NA,2,6,8,0,2,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 368,Lithuania,Europe & Central Asia,2007,September,3,September 2007,Lithuania,LTU,9,NA,NA,1,NA,NA,NA,NA,NA,0,NA,3,5,9,1,3,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-368,Lithuania,Europe & Central Asia,2008,September,3,September 2008,Lithuania,LTU,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,2,5,9,2,2,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+368,Lithuania,Europe & Central Asia,2008,September,3,September 2008,LITHUANIA,LTU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,0,NA,2,2,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 368,Lithuania,Europe & Central Asia,2009,September,3,September 2009,LITHUANIA,LTU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,0,NA,2,4,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 368,Lithuania,Europe & Central Asia,2010,September,3,September 2010,LITHUANIA,LTU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,0,NA,1,3,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 368,Lithuania,Europe & Central Asia,2011,September,3,September 2011,LITHUANIA,LTU,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,0,NA,1,2,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -5916,7 +5913,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 369,Ukraine,Europe & Central Asia,2005,September,3,September 2005,Ukraine,UKR,11,NA,NA,7,NA,NA,NA,NA,NA,4,NA,0,0,11,7,0,0,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 369,Ukraine,Europe & Central Asia,2006,September,3,September 2006,Ukraine,UKR,12,NA,NA,7,NA,NA,NA,NA,NA,4,NA,1,0,12,7,1,0,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 369,Ukraine,Europe & Central Asia,2007,September,3,September 2007,Ukraine,UKR,11,NA,NA,7,NA,NA,NA,NA,NA,3,NA,1,0,11,7,1,0,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-369,Ukraine,Europe & Central Asia,2008,September,3,September 2008,Ukraine,UKR,12,NA,NA,7,NA,NA,NA,NA,NA,4,NA,1,0,12,7,1,0,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+369,Ukraine,Europe & Central Asia,2008,September,3,September 2008,UKRAINE,UKR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,5,0,0,4,NA,5,1,0,4,0,10,0,0,0,0,0,0,0,0,0,0,0,0,1,1,11,NA,0,0
 369,Ukraine,Europe & Central Asia,2009,September,3,September 2009,UKRAINE,UKR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,7,0,0,4,NA,7,1,0,4,0,12,0,0,0,0,0,0,0,0,0,0,0,0,1,1,13,NA,0,0
 369,Ukraine,Europe & Central Asia,2010,September,3,September 2010,UKRAINE,UKR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,4,NA,2,0,0,4,0,6,0,0,1,0,0,0,0,1,0,0,0,1,1,2,9,NA,0,0
 369,Ukraine,Europe & Central Asia,2011,September,3,September 2011,UKRAINE,UKR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,16,9,0,0,6,NA,9,1,0,6,0,16,0,0,1,0,0,0,0,1,0,0,0,1,1,2,19,NA,0,0
@@ -5995,7 +5992,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 371,Armenia,Europe & Central Asia,2005,September,3,September 2005,Armenia,ARM,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 371,Armenia,Europe & Central Asia,2006,September,3,September 2006,Armenia,ARM,8,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,8,8,0,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 371,Armenia,Europe & Central Asia,2007,September,3,September 2007,Armenia,ARM,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-371,Armenia,Europe & Central Asia,2008,September,3,September 2008,Armenia,ARM,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+371,Armenia,Europe & Central Asia,2008,September,3,September 2008,ARMENIA,ARM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 371,Armenia,Europe & Central Asia,2009,September,3,September 2009,ARMENIA,ARM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,1,1,NA,1,0,1,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 371,Armenia,Europe & Central Asia,2010,September,3,September 2010,ARMENIA,ARM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,1,1,NA,0,0,1,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 371,Armenia,Europe & Central Asia,2011,September,3,September 2011,ARMENIA,ARM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,1,1,NA,2,0,1,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -6056,7 +6053,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 372,Georgia,Europe & Central Asia,2005,September,3,September 2005,Georgia,GEO,42,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,42,42,0,0,42,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 372,Georgia,Europe & Central Asia,2006,September,3,September 2006,Georgia,GEO,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 372,Georgia,Europe & Central Asia,2007,September,3,September 2007,Georgia,GEO,12,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,7,12,5,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-372,Georgia,Europe & Central Asia,2008,September,3,September 2008,Georgia,GEO,18,NA,NA,6,NA,NA,NA,NA,NA,0,NA,0,12,18,6,0,12,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+372,Georgia,Europe & Central Asia,2008,September,3,September 2008,GEORGIA,GEO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,4,0,1,0,NA,4,0,1,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 372,Georgia,Europe & Central Asia,2009,September,3,September 2009,GEORGIA,GEO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,6,0,1,2,NA,6,0,1,2,0,9,0,0,0,0,0,0,0,0,1,0,0,0,1,2,11,NA,0,0
 372,Georgia,Europe & Central Asia,2010,September,3,September 2010,GEORGIA,GEO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,3,0,1,5,NA,3,0,1,5,0,9,0,0,0,0,0,0,0,0,1,0,0,0,1,2,11,NA,0,0
 372,Georgia,Europe & Central Asia,2011,September,3,September 2011,GEORGIA,GEO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,5,0,1,0,NA,5,0,1,0,0,6,0,0,0,0,0,0,0,0,3,0,0,1,0,4,10,NA,0,0
@@ -6116,7 +6113,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 373,Azerbaijan,Europe & Central Asia,2005,September,3,September 2005,Azerbaijan,AZE,4,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,4,4,0,0,4,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 373,Azerbaijan,Europe & Central Asia,2006,September,3,September 2006,Azerbaijan,AZE,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 373,Azerbaijan,Europe & Central Asia,2007,September,3,September 2007,Azerbaijan,AZE,6,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,5,6,1,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-373,Azerbaijan,Europe & Central Asia,2008,September,3,September 2008,Azerbaijan,AZE,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+373,Azerbaijan,Europe & Central Asia,2008,September,3,September 2008,AZERBAIJAN,AZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,2,0,0,3,NA,2,2,0,3,0,7,0,0,0,0,0,0,0,0,1,0,0,0,1,2,9,NA,0,0
 373,Azerbaijan,Europe & Central Asia,2009,September,3,September 2009,AZERBAIJAN,AZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,3,0,1,3,NA,3,2,1,3,0,9,0,0,0,0,0,0,0,0,0,0,0,0,1,1,10,NA,0,0
 373,Azerbaijan,Europe & Central Asia,2010,September,3,September 2010,AZERBAIJAN,AZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,0,0,1,3,NA,0,1,1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,1,1,2,7,NA,0,0
 373,Azerbaijan,Europe & Central Asia,2011,September,3,September 2011,AZERBAIJAN,AZE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,3,0,1,3,NA,3,1,1,3,0,8,0,0,0,0,0,0,0,0,0,0,0,1,0,1,9,NA,0,0
@@ -6219,7 +6216,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 375,Finland,Europe & Central Asia,2005,September,3,September 2005,Finland,FIN,16,NA,NA,2,NA,NA,NA,NA,NA,3,NA,2,9,16,2,2,9,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 375,Finland,Europe & Central Asia,2006,September,3,September 2006,Finland,FIN,18,NA,NA,2,NA,NA,NA,NA,NA,3,NA,2,11,18,2,2,11,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 375,Finland,Europe & Central Asia,2007,September,3,September 2007,Finland,FIN,14,NA,NA,2,NA,NA,NA,NA,NA,3,NA,2,7,14,2,2,7,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-375,Finland,Europe & Central Asia,2008,September,3,September 2008,Finland,FIN,17,NA,NA,1,NA,NA,NA,NA,NA,3,NA,2,11,17,1,2,11,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+375,Finland,Europe & Central Asia,2008,September,3,September 2008,FINLAND,FIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,1,0,0,3,NA,1,2,0,3,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 375,Finland,Europe & Central Asia,2009,September,3,September 2009,FINLAND,FIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,1,0,0,4,NA,1,2,0,4,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
 375,Finland,Europe & Central Asia,2010,September,3,September 2010,FINLAND,FIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,2,0,0,4,NA,2,2,0,4,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 375,Finland,Europe & Central Asia,2011,September,3,September 2011,FINLAND,FIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,2,0,0,3,NA,2,2,0,3,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
@@ -6322,7 +6319,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 380,Sweden,Europe & Central Asia,2005,September,3,September 2005,Sweden,SWE,13,NA,NA,1,NA,NA,NA,NA,NA,4,NA,2,6,13,1,2,6,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 380,Sweden,Europe & Central Asia,2006,September,3,September 2006,Sweden,SWE,12,NA,NA,1,NA,NA,NA,NA,NA,4,NA,1,6,12,1,1,6,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 380,Sweden,Europe & Central Asia,2007,September,3,September 2007,Sweden,SWE,12,NA,NA,1,NA,NA,NA,NA,NA,4,NA,1,6,12,1,1,6,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-380,Sweden,Europe & Central Asia,2008,September,3,September 2008,Sweden,SWE,13,NA,NA,1,NA,NA,NA,NA,NA,4,NA,1,7,13,1,1,7,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+380,Sweden,Europe & Central Asia,2008,September,3,September 2008,SWEDEN,SWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,1,0,0,4,NA,1,1,0,4,1,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,1,0
 380,Sweden,Europe & Central Asia,2009,September,3,September 2009,SWEDEN,SWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,1,0,0,4,NA,1,1,0,4,2,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,2,0
 380,Sweden,Europe & Central Asia,2010,September,3,September 2010,SWEDEN,SWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,0,0,0,5,NA,0,1,0,5,1,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,1,0
 380,Sweden,Europe & Central Asia,2011,September,3,September 2011,SWEDEN,SWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,0,0,0,3,NA,0,1,0,3,2,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,2,0
@@ -6528,7 +6525,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 390,Denmark,Europe & Central Asia,2005,September,3,September 2005,Denmark,DNK,19,NA,NA,2,NA,NA,NA,NA,NA,7,NA,4,6,19,2,4,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 390,Denmark,Europe & Central Asia,2006,September,3,September 2006,Denmark,DNK,16,NA,NA,2,NA,NA,NA,NA,NA,4,NA,4,6,16,2,4,6,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 390,Denmark,Europe & Central Asia,2007,September,3,September 2007,Denmark,DNK,18,NA,NA,0,NA,NA,NA,NA,NA,7,NA,5,6,18,0,5,6,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-390,Denmark,Europe & Central Asia,2008,September,3,September 2008,Denmark,DNK,17,NA,NA,2,NA,NA,NA,NA,NA,5,NA,4,6,17,2,4,6,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 390,Denmark,Europe & Central Asia,2008,September,3,September 2008,DENMARK,DNK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,17,2,0,0,11,NA,2,4,0,11,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,NA,0,0
 390,Denmark,Europe & Central Asia,2009,September,3,September 2009,DENMARK,DNK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,2,0,0,4,NA,2,5,0,4,0,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,NA,0,0
 390,Denmark,Europe & Central Asia,2010,September,3,September 2010,DENMARK,DNK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,2,0,0,4,NA,2,4,0,4,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,NA,0,0
@@ -6632,7 +6628,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 395,Iceland,Europe & Central Asia,2005,September,3,September 2005,Iceland,ISL,1270,NA,NA,1,NA,NA,NA,NA,NA,672,NA,597,0,1270,1,597,0,672,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 395,Iceland,Europe & Central Asia,2006,September,3,September 2006,Iceland,ISL,133,NA,NA,0,NA,NA,NA,NA,NA,14,NA,119,0,133,0,119,0,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 395,Iceland,Europe & Central Asia,2007,September,3,September 2007,Iceland,ISL,20,NA,NA,0,NA,NA,NA,NA,NA,0,NA,20,0,20,0,20,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-395,Iceland,Europe & Central Asia,2008,September,3,September 2008,Iceland,ISL,1,NA,NA,0,NA,NA,NA,NA,NA,0,NA,1,0,1,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 395,Iceland,Europe & Central Asia,2008,September,3,September 2008,ICELAND,ISL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,0,NA,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,2,NA,0,0
 395,Iceland,Europe & Central Asia,2009,September,3,September 2009,ICELAND,ISL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,2,2,NA,0,0
 395,Iceland,Europe & Central Asia,2010,September,3,September 2010,ICELAND,ISL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,NA,0,0
@@ -6769,7 +6764,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 432,Mali,Sub-Saharan Africa,2005,September,3,September 2005,Mali,MLI,6,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,5,6,1,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 432,Mali,Sub-Saharan Africa,2006,September,3,September 2006,Mali,MLI,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 432,Mali,Sub-Saharan Africa,2007,September,3,September 2007,Mali,MLI,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-432,Mali,Sub-Saharan Africa,2008,September,3,September 2008,Mali,MLI,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+432,Mali,Sub-Saharan Africa,2008,September,3,September 2008,MALI,MLI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 432,Mali,Sub-Saharan Africa,2009,September,3,September 2009,MALI,MLI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 432,Mali,Sub-Saharan Africa,2010,September,3,September 2010,MALI,MLI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,2,NA,2,0,0,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 432,Mali,Sub-Saharan Africa,2011,September,3,September 2011,MALI,MLI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,1,0,0,1,0,0,0,0,0,0,4,NA,0,0
@@ -6861,7 +6856,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 433,Senegal,Sub-Saharan Africa,2005,September,3,September 2005,Senegal,SEN,42,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,40,42,2,0,40,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 433,Senegal,Sub-Saharan Africa,2006,September,3,September 2006,Senegal,SEN,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 433,Senegal,Sub-Saharan Africa,2007,September,3,September 2007,Senegal,SEN,11,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,8,11,2,1,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-433,Senegal,Sub-Saharan Africa,2008,September,3,September 2008,Senegal,SEN,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,1,5,7,1,1,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+433,Senegal,Sub-Saharan Africa,2008,September,3,September 2008,SENEGAL,SEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,NA,0,0
 433,Senegal,Sub-Saharan Africa,2009,September,3,September 2009,SENEGAL,SEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,3,0,1,0,NA,3,2,1,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,2,2,8,NA,0,0
 433,Senegal,Sub-Saharan Africa,2010,September,3,September 2010,SENEGAL,SEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,0,NA,1,3,0,0,0,4,0,0,0,0,0,0,0,0,0,1,0,0,2,3,7,NA,0,0
 433,Senegal,Sub-Saharan Africa,2011,September,3,September 2011,SENEGAL,SEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,1,0,NA,2,3,1,0,0,6,0,0,0,0,0,0,0,0,0,1,0,0,2,3,9,NA,0,0
@@ -6945,7 +6940,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 435,Mauritania,Sub-Saharan Africa,1992,September,3,September 1992,Mauritania,MRT,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 435,Mauritania,Sub-Saharan Africa,1993,September,3,September 1993,Mauritania,MRT,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 435,Mauritania,Sub-Saharan Africa,1994,September,3,September 1994,Mauritania,MRT,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-435,Mauritania,Sub-Saharan Africa,2008,September,3,September 2008,Mauritania,MRT,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+435,Mauritania,Sub-Saharan Africa,2008,September,3,September 2008,MAURITANIA,MRT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 435,Mauritania,Sub-Saharan Africa,2012,September,3,September 2012,MAURITANIA,MRT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,0,0,8,0,NA,0,0,8,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 435,Mauritania,Sub-Saharan Africa,2013,September,3,September 2013,MAURITANIA,MRT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,0,0,10,2,NA,0,0,10,2,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,NA,0,0
 435,Mauritania,Sub-Saharan Africa,2014,December,4,December 2014,MAURITANIA,MRT,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,15,0,0,14,1,NA,0,0,14,1,0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,NA,0,0
@@ -7019,7 +7014,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 436,Niger,Sub-Saharan Africa,2005,September,3,September 2005,Niger,NER,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 436,Niger,Sub-Saharan Africa,2006,September,3,September 2006,Niger,NER,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 436,Niger,Sub-Saharan Africa,2007,September,3,September 2007,Niger,NER,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-436,Niger,Sub-Saharan Africa,2008,September,3,September 2008,Niger,NER,6,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,5,6,1,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+436,Niger,Sub-Saharan Africa,2008,September,3,September 2008,NIGER,NER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 436,Niger,Sub-Saharan Africa,2009,September,3,September 2009,NIGER,NER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 436,Niger,Sub-Saharan Africa,2010,September,3,September 2010,NIGER,NER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 436,Niger,Sub-Saharan Africa,2011,September,3,September 2011,NIGER,NER,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -7113,7 +7108,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 437,Côte D’ivoire,Sub-Saharan Africa,2005,September,3,September 2005,Cote D'Ivoire,CIV,15,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,10,15,5,0,10,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 437,Côte D’ivoire,Sub-Saharan Africa,2006,September,3,September 2006,Cote D'Ivoire,CIV,31,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,28,31,3,0,28,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 437,Côte D’ivoire,Sub-Saharan Africa,2007,September,3,September 2007,Cote D'Ivoire,CIV,10,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,7,10,3,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-437,Côte D’ivoire,Sub-Saharan Africa,2008,September,3,September 2008,Cote D'Ivoire,CIV,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+437,Côte D’ivoire,Sub-Saharan Africa,2008,September,3,September 2008,COTE DIVOIRE,CIV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 437,Côte D’ivoire,Sub-Saharan Africa,2009,September,3,September 2009,COTE DIVOIRE,CIV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 437,Côte D’ivoire,Sub-Saharan Africa,2010,September,3,September 2010,COTE DIVOIRE,CIV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 437,Côte D’ivoire,Sub-Saharan Africa,2011,September,3,September 2011,COTE DIVOIRE,CIV,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -7184,7 +7179,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 438,Guinea,Sub-Saharan Africa,2005,September,3,September 2005,Guinea,GIN,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 438,Guinea,Sub-Saharan Africa,2006,September,3,September 2006,Guinea,GIN,11,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,8,11,2,1,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 438,Guinea,Sub-Saharan Africa,2007,September,3,September 2007,Guinea,GIN,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,6,9,2,1,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-438,Guinea,Sub-Saharan Africa,2008,September,3,September 2008,Guinea,GIN,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+438,Guinea,Sub-Saharan Africa,2008,September,3,September 2008,GUINEA,GIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 438,Guinea,Sub-Saharan Africa,2009,September,3,September 2009,GUINEA,GIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 438,Guinea,Sub-Saharan Africa,2010,September,3,September 2010,GUINEA,GIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 438,Guinea,Sub-Saharan Africa,2011,September,3,September 2011,GUINEA,GIN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -7349,7 +7344,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 450,Liberia,Sub-Saharan Africa,2005,September,3,September 2005,Liberia,LBR,11,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,8,11,2,0,8,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 450,Liberia,Sub-Saharan Africa,2006,September,3,September 2006,Liberia,LBR,12,NA,NA,1,NA,NA,NA,NA,NA,1,NA,0,10,12,1,0,10,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 450,Liberia,Sub-Saharan Africa,2007,September,3,September 2007,Liberia,LBR,15,NA,NA,3,NA,NA,NA,NA,NA,1,NA,0,11,15,3,0,11,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-450,Liberia,Sub-Saharan Africa,2008,September,3,September 2008,Liberia,LBR,13,NA,NA,5,NA,NA,NA,NA,NA,2,NA,0,6,13,5,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+450,Liberia,Sub-Saharan Africa,2008,September,3,September 2008,LIBERIA,LBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,5,0,0,2,NA,5,1,0,2,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 450,Liberia,Sub-Saharan Africa,2009,September,3,September 2009,LIBERIA,LBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,3,NA,2,1,0,3,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 450,Liberia,Sub-Saharan Africa,2010,September,3,September 2010,LIBERIA,LBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,1,0,1,3,NA,1,0,1,3,1,6,9,0,0,0,0,0,0,9,0,0,0,0,0,0,15,NA,1,0
 450,Liberia,Sub-Saharan Africa,2011,September,3,September 2011,LIBERIA,LBR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,5,0,1,1,NA,5,0,1,1,1,8,9,0,0,0,0,0,0,9,0,0,0,0,0,0,17,NA,1,0
@@ -7414,7 +7409,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 451,Sierra Leone,Sub-Saharan Africa,2005,September,3,September 2005,Sierra Leone,SLE,1,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,1,1,0,0,1,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 451,Sierra Leone,Sub-Saharan Africa,2006,September,3,September 2006,Sierra Leone,SLE,1,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,1,1,0,0,1,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 451,Sierra Leone,Sub-Saharan Africa,2007,September,3,September 2007,Sierra Leone,SLE,1,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,1,1,0,0,1,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-451,Sierra Leone,Sub-Saharan Africa,2008,September,3,September 2008,Sierra Leone,SLE,3,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,2,3,1,0,2,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 451,Sierra Leone,Sub-Saharan Africa,2008,September,3,September 2008,SIERRA LEONE,SLE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 451,Sierra Leone,Sub-Saharan Africa,2009,September,3,September 2009,SIERRA LEONE,SLE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 451,Sierra Leone,Sub-Saharan Africa,2010,September,3,September 2010,SIERRA LEONE,SLE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,2,NA,2,0,0,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -7512,7 +7506,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 452,Ghana,Sub-Saharan Africa,2005,September,3,September 2005,Ghana,GHA,14,NA,NA,6,NA,NA,NA,NA,NA,0,NA,0,8,14,6,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 452,Ghana,Sub-Saharan Africa,2006,September,3,September 2006,Ghana,GHA,14,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,10,14,4,0,10,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 452,Ghana,Sub-Saharan Africa,2007,September,3,September 2007,Ghana,GHA,12,NA,NA,3,NA,NA,NA,NA,NA,0,NA,1,8,12,3,1,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-452,Ghana,Sub-Saharan Africa,2008,September,3,September 2008,Ghana,GHA,13,NA,NA,3,NA,NA,NA,NA,NA,0,NA,1,9,13,3,1,9,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+452,Ghana,Sub-Saharan Africa,2008,September,3,September 2008,GHANA,GHA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,3,0,3,2,NA,3,2,3,2,0,10,0,0,0,0,0,0,0,0,0,1,0,0,0,1,11,NA,0,0
 452,Ghana,Sub-Saharan Africa,2009,September,3,September 2009,GHANA,GHA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,3,0,4,3,NA,3,2,4,3,0,12,0,0,0,0,0,0,0,0,0,1,0,0,0,1,13,NA,0,0
 452,Ghana,Sub-Saharan Africa,2010,September,3,September 2010,GHANA,GHA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,1,0,3,3,NA,1,1,3,3,0,8,0,0,0,0,0,0,0,0,0,1,0,0,0,1,9,NA,0,0
 452,Ghana,Sub-Saharan Africa,2011,September,3,September 2011,GHANA,GHA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,2,0,3,2,NA,2,3,3,2,0,10,0,0,0,0,0,0,0,0,0,1,0,0,0,1,11,NA,0,0
@@ -7581,7 +7575,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 461,Togo,Sub-Saharan Africa,2005,September,3,September 2005,Togo,TGO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 461,Togo,Sub-Saharan Africa,2006,September,3,September 2006,Togo,TGO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 461,Togo,Sub-Saharan Africa,2007,September,3,September 2007,Togo,TGO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-461,Togo,Sub-Saharan Africa,2008,September,3,September 2008,Togo,TGO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 461,Togo,Sub-Saharan Africa,2012,September,3,September 2012,TOGO,TGO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,0,0,6,0,NA,0,0,6,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 461,Togo,Sub-Saharan Africa,2013,September,3,September 2013,TOGO,TGO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,0,0,4,0,NA,0,0,4,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 461,Togo,Sub-Saharan Africa,2014,December,4,December 2014,TOGO,TGO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,0,0,5,0,NA,0,0,5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
@@ -7654,7 +7647,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 471,Cameroon,Sub-Saharan Africa,2005,September,3,September 2005,Cameroon,CMR,9,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,6,9,2,0,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 471,Cameroon,Sub-Saharan Africa,2006,September,3,September 2006,Cameroon,CMR,9,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,6,9,2,0,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 471,Cameroon,Sub-Saharan Africa,2007,September,3,September 2007,Cameroon,CMR,8,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,5,8,2,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-471,Cameroon,Sub-Saharan Africa,2008,September,3,September 2008,Cameroon,CMR,8,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,5,8,2,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+471,Cameroon,Sub-Saharan Africa,2008,September,3,September 2008,CAMEROON,CMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 471,Cameroon,Sub-Saharan Africa,2009,September,3,September 2009,CAMEROON,CMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 471,Cameroon,Sub-Saharan Africa,2010,September,3,September 2010,CAMEROON,CMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 471,Cameroon,Sub-Saharan Africa,2011,September,3,September 2011,CAMEROON,CMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,0,NA,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,1,3,NA,0,0
@@ -7748,7 +7741,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 475,Nigeria,Sub-Saharan Africa,2005,September,3,September 2005,Nigeria,NGA,21,NA,NA,4,NA,NA,NA,NA,NA,2,NA,0,15,21,4,0,15,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 475,Nigeria,Sub-Saharan Africa,2006,September,3,September 2006,Nigeria,NGA,24,NA,NA,4,NA,NA,NA,NA,NA,3,NA,0,17,24,4,0,17,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 475,Nigeria,Sub-Saharan Africa,2007,September,3,September 2007,Nigeria,NGA,23,NA,NA,4,NA,NA,NA,NA,NA,3,NA,0,16,23,4,0,16,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-475,Nigeria,Sub-Saharan Africa,2008,September,3,September 2008,Nigeria,NGA,19,NA,NA,3,NA,NA,NA,NA,NA,3,NA,0,13,19,3,0,13,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+475,Nigeria,Sub-Saharan Africa,2008,September,3,September 2008,NIGERIA,NGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,3,0,0,3,NA,3,0,0,3,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 475,Nigeria,Sub-Saharan Africa,2009,September,3,September 2009,NIGERIA,NGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,3,0,0,2,NA,3,0,0,2,0,5,0,0,0,0,0,0,0,0,0,1,0,0,0,1,6,NA,0,0
 475,Nigeria,Sub-Saharan Africa,2010,September,3,September 2010,NIGERIA,NGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,1,0,1,4,NA,1,0,1,4,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
 475,Nigeria,Sub-Saharan Africa,2011,September,3,September 2011,NIGERIA,NGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,4,0,0,2,NA,4,0,0,2,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
@@ -7949,7 +7942,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 483,Chad,Sub-Saharan Africa,2005,September,3,September 2005,Chad,TCD,8,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,5,8,3,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 483,Chad,Sub-Saharan Africa,2006,September,3,September 2006,Chad,TCD,13,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,10,13,3,0,10,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 483,Chad,Sub-Saharan Africa,2007,September,3,September 2007,Chad,TCD,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-483,Chad,Sub-Saharan Africa,2008,September,3,September 2008,Chad,TCD,9,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,5,9,4,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+483,Chad,Sub-Saharan Africa,2008,September,3,September 2008,CHAD,TCD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,4,0,0,0,NA,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 483,Chad,Sub-Saharan Africa,2009,September,3,September 2009,CHAD,TCD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 483,Chad,Sub-Saharan Africa,2010,September,3,September 2010,CHAD,TCD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 483,Chad,Sub-Saharan Africa,2011,September,3,September 2011,CHAD,TCD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,5,0,0,0,NA,5,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
@@ -8114,7 +8107,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 490,Congo - Kinshasa,Sub-Saharan Africa,2005,September,3,September 2005,Congo (Kinshasa),COD,7,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,5,7,2,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 490,Congo - Kinshasa,Sub-Saharan Africa,2006,September,3,September 2006,Congo (Kinshasa),COD,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 490,Congo - Kinshasa,Sub-Saharan Africa,2007,September,3,September 2007,Congo (Kinshasa),COD,10,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,7,10,3,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-490,Congo - Kinshasa,Sub-Saharan Africa,2008,September,3,September 2008,Congo (Kinshasa),COD,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+490,Congo - Kinshasa,Sub-Saharan Africa,2008,September,3,September 2008,CONGO (KINSHASA),COD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 490,Congo - Kinshasa,Sub-Saharan Africa,2009,September,3,September 2009,CONGO (KINSHASA),COD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 490,Congo - Kinshasa,Sub-Saharan Africa,2010,September,3,September 2010,CONGO (KINSHASA),COD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,2,NA,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 490,Congo - Kinshasa,Sub-Saharan Africa,2011,September,3,September 2011,CONGO (KINSHASA),COD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -8183,7 +8176,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 500,Uganda,Sub-Saharan Africa,2005,September,3,September 2005,Uganda,UGA,11,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,9,11,2,0,9,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 500,Uganda,Sub-Saharan Africa,2006,September,3,September 2006,Uganda,UGA,10,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,8,10,2,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 500,Uganda,Sub-Saharan Africa,2007,September,3,September 2007,Uganda,UGA,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-500,Uganda,Sub-Saharan Africa,2008,September,3,September 2008,Uganda,UGA,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+500,Uganda,Sub-Saharan Africa,2008,September,3,September 2008,UGANDA,UGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,3,0,0,1,NA,3,1,0,1,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 500,Uganda,Sub-Saharan Africa,2009,September,3,September 2009,UGANDA,UGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,38,4,0,0,1,NA,4,33,0,1,0,38,0,10,2,0,0,0,0,12,0,1,0,0,0,1,51,NA,0,0
 500,Uganda,Sub-Saharan Africa,2010,September,3,September 2010,UGANDA,UGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,1,NA,1,2,0,1,0,4,0,3,0,1,0,0,0,4,0,0,0,0,0,0,8,NA,0,0
 500,Uganda,Sub-Saharan Africa,2011,September,3,September 2011,UGANDA,UGA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,23,9,0,0,8,NA,9,6,0,8,0,23,10,9,2,0,0,0,0,21,0,0,0,0,0,0,44,NA,0,0
@@ -8265,7 +8258,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 501,Kenya,Sub-Saharan Africa,2005,September,3,September 2005,Kenya,KEN,32,NA,NA,13,NA,NA,NA,NA,NA,4,NA,1,14,32,13,1,14,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 501,Kenya,Sub-Saharan Africa,2006,September,3,September 2006,Kenya,KEN,29,NA,NA,12,NA,NA,NA,NA,NA,5,NA,1,11,29,12,1,11,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 501,Kenya,Sub-Saharan Africa,2007,September,3,September 2007,Kenya,KEN,42,NA,NA,14,NA,NA,NA,NA,NA,5,NA,2,21,42,14,2,21,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-501,Kenya,Sub-Saharan Africa,2008,September,3,September 2008,Kenya,KEN,50,NA,NA,14,NA,NA,NA,NA,NA,7,NA,3,26,50,14,3,26,7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+501,Kenya,Sub-Saharan Africa,2008,September,3,September 2008,KENYA,KEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,23,14,0,1,7,NA,14,1,1,7,0,23,0,0,0,0,0,0,0,0,3,0,0,0,0,3,26,NA,0,0
 501,Kenya,Sub-Saharan Africa,2009,September,3,September 2009,KENYA,KEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,43,20,0,9,6,NA,20,8,9,6,0,43,3,21,1,0,0,0,0,25,4,1,0,0,0,5,73,NA,0,0
 501,Kenya,Sub-Saharan Africa,2010,September,3,September 2010,KENYA,KEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,23,4,0,1,4,NA,4,14,1,4,0,23,1,0,1,0,0,0,0,2,2,1,0,0,0,3,28,NA,0,0
 501,Kenya,Sub-Saharan Africa,2011,September,3,September 2011,KENYA,KEN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,62,12,0,1,8,NA,12,41,1,8,0,62,34,11,8,0,0,0,0,53,2,3,0,0,0,5,120,NA,0,0
@@ -8343,7 +8336,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 510,Tanzania,Sub-Saharan Africa,2005,September,3,September 2005,"Tanzania, United Republic of",TZA,11,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,8,11,2,1,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 510,Tanzania,Sub-Saharan Africa,2006,September,3,September 2006,"Tanzania, United Republic of",TZA,13,NA,NA,3,NA,NA,NA,NA,NA,0,NA,1,9,13,3,1,9,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 510,Tanzania,Sub-Saharan Africa,2007,September,3,September 2007,"Tanzania, United Republic of",TZA,10,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,7,10,2,1,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-510,Tanzania,Sub-Saharan Africa,2008,September,3,September 2008,"Tanzania, United Republic of",TZA,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,6,9,2,1,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+510,Tanzania,Sub-Saharan Africa,2008,September,3,September 2008,TANZANIA,TZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,0,NA,2,1,0,0,0,3,0,0,0,0,0,0,0,0,1,0,0,0,0,1,4,NA,0,0
 510,Tanzania,Sub-Saharan Africa,2009,September,3,September 2009,TANZANIA,TZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,4,0,0,0,NA,4,2,0,0,0,6,1,3,2,0,0,0,0,6,1,0,0,0,0,1,13,NA,0,0
 510,Tanzania,Sub-Saharan Africa,2010,September,3,September 2010,TANZANIA,TZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,0,NA,1,2,0,0,0,3,0,0,1,0,0,0,0,1,1,0,0,0,0,1,5,NA,0,0
 510,Tanzania,Sub-Saharan Africa,2011,September,3,September 2011,TANZANIA,TZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,5,0,0,0,NA,5,4,0,0,0,9,0,0,3,0,0,0,0,3,1,0,0,0,0,1,13,NA,0,0
@@ -8415,7 +8408,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 516,Burundi,Sub-Saharan Africa,2005,September,3,September 2005,Burundi,BDI,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 516,Burundi,Sub-Saharan Africa,2006,September,3,September 2006,Burundi,BDI,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 516,Burundi,Sub-Saharan Africa,2007,September,3,September 2007,Burundi,BDI,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-516,Burundi,Sub-Saharan Africa,2008,September,3,September 2008,Burundi,BDI,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+516,Burundi,Sub-Saharan Africa,2008,September,3,September 2008,BURUNDI,BDI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 516,Burundi,Sub-Saharan Africa,2009,September,3,September 2009,BURUNDI,BDI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 516,Burundi,Sub-Saharan Africa,2010,September,3,September 2010,BURUNDI,BDI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,2,NA,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 516,Burundi,Sub-Saharan Africa,2011,September,3,September 2011,BURUNDI,BDI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,2,NA,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -8468,7 +8461,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 517,Rwanda,Sub-Saharan Africa,2005,September,3,September 2005,Rwanda,RWA,1,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,1,1,0,0,1,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 517,Rwanda,Sub-Saharan Africa,2006,September,3,September 2006,Rwanda,RWA,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 517,Rwanda,Sub-Saharan Africa,2007,September,3,September 2007,Rwanda,RWA,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-517,Rwanda,Sub-Saharan Africa,2008,September,3,September 2008,Rwanda,RWA,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 517,Rwanda,Sub-Saharan Africa,2009,September,3,September 2009,RWANDA,RWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,NA,0,0
 517,Rwanda,Sub-Saharan Africa,2011,September,3,September 2011,RWANDA,RWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,2,0,0,0,0,0,0,2,0,0,0,0,0,0,3,NA,0,0
 517,Rwanda,Sub-Saharan Africa,2012,September,3,September 2012,RWANDA,RWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,1,0,5,0,NA,1,0,5,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,NA,0,0
@@ -8624,7 +8616,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 522,Djibouti,Middle East & North Africa,2005,September,3,September 2005,Djibouti,DJI,622,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,621,622,1,0,621,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 522,Djibouti,Middle East & North Africa,2006,September,3,September 2006,Djibouti,DJI,1375,NA,NA,465,NA,NA,NA,NA,NA,120,NA,265,525,1375,465,265,525,120,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 522,Djibouti,Middle East & North Africa,2007,September,3,September 2007,Djibouti,DJI,2100,NA,NA,430,NA,NA,NA,NA,NA,350,NA,860,460,2100,430,860,460,350,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-522,Djibouti,Middle East & North Africa,2008,September,3,September 2008,Djibouti,DJI,1780,NA,NA,440,NA,NA,NA,NA,NA,210,NA,730,400,1780,440,730,400,210,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+522,Djibouti,Middle East & North Africa,2008,September,3,September 2008,DJIBOUTI,DJI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1031,337,0,73,158,NA,337,463,73,158,0,1031,83,100,99,523,3,28,0,836,2,2,0,1,0,5,1872,NA,0,0
 522,Djibouti,Middle East & North Africa,2009,September,3,September 2009,DJIBOUTI,DJI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,955,44,0,114,213,NA,44,584,114,213,0,955,638,77,84,5,14,6,0,824,4,15,0,0,0,19,1798,NA,0,0
 522,Djibouti,Middle East & North Africa,2010,September,3,September 2010,DJIBOUTI,DJI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,990,48,0,107,283,NA,48,552,107,283,0,990,469,43,135,9,48,79,0,783,4,7,0,7,0,18,1791,NA,0,0
 522,Djibouti,Middle East & North Africa,2011,September,3,September 2011,DJIBOUTI,DJI,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1417,98,0,12,622,NA,98,677,12,622,8,1417,539,92,108,0,16,12,0,767,6,19,0,6,0,31,2215,NA,8,0
@@ -8713,7 +8705,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 530,Ethiopia,Sub-Saharan Africa,2005,September,3,September 2005,Ethiopia,ETH,13,NA,NA,7,NA,NA,NA,NA,NA,0,NA,0,6,13,7,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 530,Ethiopia,Sub-Saharan Africa,2006,September,3,September 2006,Ethiopia,ETH,13,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,9,13,4,0,9,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 530,Ethiopia,Sub-Saharan Africa,2007,September,3,September 2007,Ethiopia,ETH,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-530,Ethiopia,Sub-Saharan Africa,2008,September,3,September 2008,Ethiopia,ETH,8,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,5,8,3,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+530,Ethiopia,Sub-Saharan Africa,2008,September,3,September 2008,ETHIOPIA,ETH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,5,0,0,2,NA,5,0,0,2,0,7,0,1,0,0,0,0,0,1,0,0,0,0,2,2,10,NA,0,0
 530,Ethiopia,Sub-Saharan Africa,2009,September,3,September 2009,ETHIOPIA,ETH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,4,0,1,1,NA,4,3,1,1,0,9,0,5,0,1,0,1,0,7,0,0,0,0,2,2,18,NA,0,0
 530,Ethiopia,Sub-Saharan Africa,2010,September,3,September 2010,ETHIOPIA,ETH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,28,2,0,1,18,NA,2,7,1,18,0,28,24,4,0,0,0,0,0,28,0,0,0,0,2,2,58,NA,0,0
 530,Ethiopia,Sub-Saharan Africa,2011,September,3,September 2011,ETHIOPIA,ETH,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,98,3,0,1,59,NA,3,35,1,59,0,98,24,14,1,0,2,1,0,42,1,0,0,1,1,3,143,NA,0,0
@@ -8805,7 +8797,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 540,Angola,Sub-Saharan Africa,2005,September,3,September 2005,Angola,AGO,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 540,Angola,Sub-Saharan Africa,2006,September,3,September 2006,Angola,AGO,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 540,Angola,Sub-Saharan Africa,2007,September,3,September 2007,Angola,AGO,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-540,Angola,Sub-Saharan Africa,2008,September,3,September 2008,Angola,AGO,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 540,Angola,Sub-Saharan Africa,2012,September,3,September 2012,ANGOLA,AGO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,0,0,6,0,NA,0,1,6,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
 540,Angola,Sub-Saharan Africa,2013,September,3,September 2013,ANGOLA,AGO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,0,0,6,0,NA,0,1,6,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
 540,Angola,Sub-Saharan Africa,2014,December,4,December 2014,ANGOLA,AGO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,2,0,7,1,NA,2,1,7,1,0,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,NA,0,0
@@ -8870,7 +8861,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 541,Mozambique,Sub-Saharan Africa,2005,September,3,September 2005,Mozambique,MOZ,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 541,Mozambique,Sub-Saharan Africa,2006,September,3,September 2006,Mozambique,MOZ,6,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,6,6,0,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 541,Mozambique,Sub-Saharan Africa,2007,September,3,September 2007,Mozambique,MOZ,7,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,7,7,0,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-541,Mozambique,Sub-Saharan Africa,2008,September,3,September 2008,Mozambique,MOZ,4,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,4,4,0,0,4,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+541,Mozambique,Sub-Saharan Africa,2008,September,3,September 2008,MOZAMBIQUE,MOZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 541,Mozambique,Sub-Saharan Africa,2009,September,3,September 2009,MOZAMBIQUE,MOZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 541,Mozambique,Sub-Saharan Africa,2010,September,3,September 2010,MOZAMBIQUE,MOZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 541,Mozambique,Sub-Saharan Africa,2011,September,3,September 2011,MOZAMBIQUE,MOZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
@@ -8946,7 +8937,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 551,Zambia,Sub-Saharan Africa,2005,September,3,September 2005,Zambia,ZMB,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 551,Zambia,Sub-Saharan Africa,2006,September,3,September 2006,Zambia,ZMB,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 551,Zambia,Sub-Saharan Africa,2007,September,3,September 2007,Zambia,ZMB,8,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,7,8,1,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-551,Zambia,Sub-Saharan Africa,2008,September,3,September 2008,Zambia,ZMB,6,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,5,6,1,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+551,Zambia,Sub-Saharan Africa,2008,September,3,September 2008,ZAMBIA,ZMB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 551,Zambia,Sub-Saharan Africa,2009,September,3,September 2009,ZAMBIA,ZMB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,2,NA,2,0,0,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 551,Zambia,Sub-Saharan Africa,2010,September,3,September 2010,ZAMBIA,ZMB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,3,NA,1,0,0,3,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 551,Zambia,Sub-Saharan Africa,2011,September,3,September 2011,ZAMBIA,ZMB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -9018,7 +9009,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 552,Zimbabwe,Sub-Saharan Africa,2005,September,3,September 2005,Zimbabwe,ZWE,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 552,Zimbabwe,Sub-Saharan Africa,2006,September,3,September 2006,Zimbabwe,ZWE,8,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,5,8,3,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 552,Zimbabwe,Sub-Saharan Africa,2007,September,3,September 2007,Zimbabwe,ZWE,10,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,6,10,4,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-552,Zimbabwe,Sub-Saharan Africa,2008,September,3,September 2008,Zimbabwe,ZWE,8,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,5,8,3,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+552,Zimbabwe,Sub-Saharan Africa,2008,September,3,September 2008,ZIMBABWE,ZWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 552,Zimbabwe,Sub-Saharan Africa,2009,September,3,September 2009,ZIMBABWE,ZWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 552,Zimbabwe,Sub-Saharan Africa,2010,September,3,September 2010,ZIMBABWE,ZWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 552,Zimbabwe,Sub-Saharan Africa,2011,September,3,September 2011,ZIMBABWE,ZWE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -9297,7 +9288,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 571,Botswana,Sub-Saharan Africa,2005,September,3,September 2005,Botswana,BWA,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 571,Botswana,Sub-Saharan Africa,2006,September,3,September 2006,Botswana,BWA,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 571,Botswana,Sub-Saharan Africa,2007,September,3,September 2007,Botswana,BWA,10,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,6,10,4,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-571,Botswana,Sub-Saharan Africa,2008,September,3,September 2008,Botswana,BWA,6,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,5,6,1,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+571,Botswana,Sub-Saharan Africa,2008,September,3,September 2008,BOTSWANA,BWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 571,Botswana,Sub-Saharan Africa,2009,September,3,September 2009,BOTSWANA,BWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 571,Botswana,Sub-Saharan Africa,2010,September,3,September 2010,BOTSWANA,BWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 571,Botswana,Sub-Saharan Africa,2011,September,3,September 2011,BOTSWANA,BWA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -9414,7 +9405,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 580,Madagascar,Sub-Saharan Africa,2005,September,3,September 2005,Madagascar,MDG,2,NA,NA,0,NA,NA,NA,NA,NA,0,NA,2,0,2,0,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 580,Madagascar,Sub-Saharan Africa,2006,September,3,September 2006,Madagascar,MDG,2,NA,NA,0,NA,NA,NA,NA,NA,0,NA,2,0,2,0,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 580,Madagascar,Sub-Saharan Africa,2007,September,3,September 2007,Madagascar,MDG,2,NA,NA,0,NA,NA,NA,NA,NA,0,NA,2,0,2,0,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-580,Madagascar,Sub-Saharan Africa,2008,September,3,September 2008,Madagascar,MDG,3,NA,NA,0,NA,NA,NA,NA,NA,0,NA,3,0,3,0,3,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+580,Madagascar,Sub-Saharan Africa,2008,September,3,September 2008,MADAGASCAR,MDG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 580,Madagascar,Sub-Saharan Africa,2010,September,3,September 2010,MADAGASCAR,MDG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,0,0,0,1,NA,0,2,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 580,Madagascar,Sub-Saharan Africa,2011,September,3,September 2011,MADAGASCAR,MDG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,0,0,0,1,NA,0,2,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 580,Madagascar,Sub-Saharan Africa,2012,September,3,September 2012,MADAGASCAR,MDG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,0,0,6,1,NA,0,2,6,1,0,9,0,0,1,0,0,0,0,1,0,0,0,0,0,0,10,NA,0,0
@@ -9605,7 +9596,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 600,Morocco,Middle East & North Africa,2005,September,3,September 2005,Morocco,MAR,15,NA,NA,3,NA,NA,NA,NA,NA,3,NA,3,6,15,3,3,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 600,Morocco,Middle East & North Africa,2006,September,3,September 2006,Morocco,MAR,14,NA,NA,2,NA,NA,NA,NA,NA,3,NA,3,6,14,2,3,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 600,Morocco,Middle East & North Africa,2007,September,3,September 2007,Morocco,MAR,15,NA,NA,2,NA,NA,NA,NA,NA,3,NA,3,7,15,2,3,7,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-600,Morocco,Middle East & North Africa,2008,September,3,September 2008,Morocco,MAR,13,NA,NA,2,NA,NA,NA,NA,NA,3,NA,3,5,13,2,3,5,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+600,Morocco,Middle East & North Africa,2008,September,3,September 2008,MOROCCO,MAR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,2,0,6,3,NA,2,0,6,3,0,11,0,0,0,0,0,0,0,0,1,1,0,0,0,2,13,NA,0,0
 600,Morocco,Middle East & North Africa,2009,September,3,September 2009,MOROCCO,MAR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,2,0,7,3,NA,2,0,7,3,0,12,0,0,0,0,0,0,0,0,1,1,0,1,0,3,15,NA,0,0
 600,Morocco,Middle East & North Africa,2010,September,3,September 2010,MOROCCO,MAR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,13,0,0,6,4,NA,0,3,6,4,0,13,0,0,0,0,0,0,0,0,1,1,0,1,0,3,16,NA,0,0
 600,Morocco,Middle East & North Africa,2011,September,3,September 2011,MOROCCO,MAR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,14,1,0,7,4,NA,1,2,7,4,0,14,0,0,0,0,2,0,0,2,1,1,0,1,0,3,19,NA,0,0
@@ -9690,7 +9681,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 615,Algeria,Middle East & North Africa,2005,September,3,September 2005,Algeria,DZA,10,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,7,10,1,0,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 615,Algeria,Middle East & North Africa,2006,September,3,September 2006,Algeria,DZA,9,NA,NA,1,NA,NA,NA,NA,NA,1,NA,0,7,9,1,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 615,Algeria,Middle East & North Africa,2007,September,3,September 2007,Algeria,DZA,10,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,7,10,1,0,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-615,Algeria,Middle East & North Africa,2008,September,3,September 2008,Algeria,DZA,10,NA,NA,2,NA,NA,NA,NA,NA,2,NA,0,6,10,2,0,6,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+615,Algeria,Middle East & North Africa,2008,September,3,September 2008,ALGERIA,DZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,2,NA,2,0,0,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 615,Algeria,Middle East & North Africa,2009,September,3,September 2009,ALGERIA,DZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,3,0,0,2,NA,3,0,0,2,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 615,Algeria,Middle East & North Africa,2010,September,3,September 2010,ALGERIA,DZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 615,Algeria,Middle East & North Africa,2011,September,3,September 2011,ALGERIA,DZA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,3,0,0,2,NA,3,0,0,2,0,5,0,0,0,0,0,0,0,0,0,0,0,0,1,1,6,NA,0,0
@@ -9788,7 +9779,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 616,Tunisia,Middle East & North Africa,2005,September,3,September 2005,Tunisia,TUN,14,NA,NA,4,NA,NA,NA,NA,NA,1,NA,2,7,14,4,2,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 616,Tunisia,Middle East & North Africa,2006,September,3,September 2006,Tunisia,TUN,14,NA,NA,4,NA,NA,NA,NA,NA,1,NA,2,7,14,4,2,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 616,Tunisia,Middle East & North Africa,2007,September,3,September 2007,Tunisia,TUN,15,NA,NA,4,NA,NA,NA,NA,NA,2,NA,2,7,15,4,2,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-616,Tunisia,Middle East & North Africa,2008,September,3,September 2008,Tunisia,TUN,15,NA,NA,5,NA,NA,NA,NA,NA,2,NA,3,5,15,5,3,5,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+616,Tunisia,Middle East & North Africa,2008,September,3,September 2008,TUNISIA,TUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,5,0,0,2,NA,5,3,0,2,0,10,0,0,0,0,0,0,0,0,1,0,0,0,0,1,11,NA,0,0
 616,Tunisia,Middle East & North Africa,2009,September,3,September 2009,TUNISIA,TUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,11,4,0,2,2,NA,4,3,2,2,0,11,0,0,0,0,0,0,0,0,1,0,0,0,0,1,12,NA,0,0
 616,Tunisia,Middle East & North Africa,2010,September,3,September 2010,TUNISIA,TUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,2,0,1,1,NA,2,1,1,1,0,5,0,0,1,0,0,0,0,1,1,0,0,0,0,1,7,NA,0,0
 616,Tunisia,Middle East & North Africa,2011,September,3,September 2011,TUNISIA,TUN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,4,0,1,1,NA,4,1,1,1,0,7,0,0,1,0,0,0,0,1,1,0,0,0,0,1,9,NA,0,0
@@ -9918,7 +9909,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 625,Sudan,Sub-Saharan Africa,2005,September,3,September 2005,Sudan,SDN,3,NA,NA,2,NA,NA,NA,NA,NA,1,NA,0,0,3,2,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 625,Sudan,Sub-Saharan Africa,2006,September,3,September 2006,Sudan,SDN,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 625,Sudan,Sub-Saharan Africa,2007,September,3,September 2007,Sudan,SDN,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-625,Sudan,Sub-Saharan Africa,2008,September,3,September 2008,Sudan,SDN,4,NA,NA,3,NA,NA,NA,NA,NA,1,NA,0,0,4,3,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+625,Sudan,Sub-Saharan Africa,2008,September,3,September 2008,SUDAN,SDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 625,Sudan,Sub-Saharan Africa,2009,September,3,September 2009,SUDAN,SDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 625,Sudan,Sub-Saharan Africa,2010,September,3,September 2010,SUDAN,SDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 625,Sudan,Sub-Saharan Africa,2011,September,3,September 2011,SUDAN,SDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,0,0,0,1,NA,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
@@ -10028,7 +10019,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 630,Iran,Middle East & North Africa,1979,September,3,September 1979,Iran,IRN,32,NA,NA,7,NA,NA,NA,NA,NA,4,NA,8,13,32,7,8,13,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 630,Iran,Middle East & North Africa,1980,September,3,September 1980,Iran,IRN,21,NA,NA,6,NA,NA,NA,NA,NA,3,NA,3,9,21,6,3,9,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 630,Iran,Middle East & North Africa,2005,September,3,September 2005,Iran,IRN,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-630,Iran,Middle East & North Africa,2008,September,3,September 2008,Iran,IRN,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 630,Iran,Middle East & North Africa,2008,September,3,September 2008,IRAN,IRN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,NA,0,0
 630,Iran,Middle East & North Africa,2009,September,3,September 2009,IRAN,IRN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,1,1,0,0,0,2,4,NA,0,0
 630,Iran,Middle East & North Africa,2010,September,3,September 2010,IRAN,IRN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,0,0,0,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,2,2,NA,0,0
@@ -10356,7 +10346,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 652,Syria,Middle East & North Africa,2005,September,3,September 2005,Syria,SYR,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 652,Syria,Middle East & North Africa,2006,September,3,September 2006,Syria,SYR,8,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,5,8,3,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 652,Syria,Middle East & North Africa,2007,September,3,September 2007,Syria,SYR,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-652,Syria,Middle East & North Africa,2008,September,3,September 2008,Syria,SYR,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+652,Syria,Middle East & North Africa,2008,September,3,September 2008,SYRIA,SYR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 652,Syria,Middle East & North Africa,2009,September,3,September 2009,SYRIA,SYR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,4,0,0,0,NA,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 652,Syria,Middle East & North Africa,2010,September,3,September 2010,SYRIA,SYR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 652,Syria,Middle East & North Africa,2011,September,3,September 2011,SYRIA,SYR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,3,0,0,0,NA,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
@@ -10431,7 +10421,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 660,Lebanon,Middle East & North Africa,2005,September,3,September 2005,Lebanon,LBN,4,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,0,4,4,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 660,Lebanon,Middle East & North Africa,2006,September,3,September 2006,Lebanon,LBN,4,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,0,4,4,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 660,Lebanon,Middle East & North Africa,2007,September,3,September 2007,Lebanon,LBN,3,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,0,3,3,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-660,Lebanon,Middle East & North Africa,2008,September,3,September 2008,Lebanon,LBN,3,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,0,3,3,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+660,Lebanon,Middle East & North Africa,2008,September,3,September 2008,LEBANON,LBN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 660,Lebanon,Middle East & North Africa,2009,September,3,September 2009,LEBANON,LBN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,4,0,0,1,NA,4,0,0,1,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 660,Lebanon,Middle East & North Africa,2010,September,3,September 2010,LEBANON,LBN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,6,0,0,2,NA,6,0,0,2,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 660,Lebanon,Middle East & North Africa,2011,September,3,September 2011,LEBANON,LBN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,5,0,0,2,NA,5,0,0,2,0,7,0,2,0,0,0,0,0,2,0,0,0,0,0,0,9,NA,0,0
@@ -10636,7 +10626,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 666,Israel,Middle East & North Africa,2005,September,3,September 2005,Israel,ISR,42,NA,NA,9,NA,NA,NA,NA,NA,11,NA,3,19,42,9,3,19,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 666,Israel,Middle East & North Africa,2006,September,3,September 2006,Israel,ISR,48,NA,NA,7,NA,NA,NA,NA,NA,14,NA,4,23,48,7,4,23,14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 666,Israel,Middle East & North Africa,2007,September,3,September 2007,Israel,ISR,43,NA,NA,6,NA,NA,NA,NA,NA,12,NA,4,21,43,6,4,21,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-666,Israel,Middle East & North Africa,2008,September,3,September 2008,Israel,ISR,44,NA,NA,5,NA,NA,NA,NA,NA,13,NA,4,22,44,5,4,22,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+666,Israel,Middle East & North Africa,2008,September,3,September 2008,ISRAEL,ISR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,27,5,0,3,13,NA,5,6,3,13,0,27,0,0,0,0,0,0,0,0,6,1,0,0,6,13,40,NA,0,0
 666,Israel,Middle East & North Africa,2009,September,3,September 2009,ISRAEL,ISR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,24,5,0,2,14,NA,5,3,2,14,0,24,0,0,0,0,0,0,0,0,7,1,0,2,7,17,41,NA,0,0
 666,Israel,Middle East & North Africa,2010,September,3,September 2010,ISRAEL,ISR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,21,3,0,2,12,NA,3,4,2,12,0,21,0,0,0,0,0,0,0,0,11,0,0,1,10,22,43,NA,0,0
 666,Israel,Middle East & North Africa,2011,September,3,September 2011,ISRAEL,ISR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,28,6,0,2,17,NA,6,3,2,17,0,28,0,0,0,0,0,0,0,0,9,0,0,1,9,19,47,NA,0,0
@@ -10818,7 +10808,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 679,Yemen,Middle East & North Africa,2005,September,3,September 2005,Yemen,YEM,14,NA,NA,6,NA,NA,NA,NA,NA,0,NA,0,8,14,6,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 679,Yemen,Middle East & North Africa,2006,September,3,September 2006,Yemen,YEM,12,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,7,12,5,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 679,Yemen,Middle East & North Africa,2007,September,3,September 2007,Yemen,YEM,30,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,25,30,5,0,25,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-679,Yemen,Middle East & North Africa,2008,September,3,September 2008,Yemen,YEM,10,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,6,10,4,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 679,Yemen,Middle East & North Africa,2008,September,3,September 2008,YEMEN,YEM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,9,0,0,1,NA,9,0,0,1,0,10,0,0,1,0,0,0,0,1,0,0,0,2,0,2,13,NA,0,0
 679,Yemen,Middle East & North Africa,2009,September,3,September 2009,YEMEN,YEM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,34,10,0,0,16,NA,10,8,0,16,0,34,0,0,0,0,0,0,0,0,0,0,0,3,0,3,37,NA,0,0
 679,Yemen,Middle East & North Africa,2010,September,3,September 2010,YEMEN,YEM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,104,68,0,0,17,NA,68,19,0,17,0,104,0,1,0,0,0,1,0,2,0,0,0,2,0,2,108,NA,0,0
@@ -11386,7 +11375,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 702,Tajikistan,Europe & Central Asia,2000,September,3,September 2000,Tajikistan,TJK,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 702,Tajikistan,Europe & Central Asia,2001,September,3,September 2001,Tajikistan,TJK,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 702,Tajikistan,Europe & Central Asia,2007,September,3,September 2007,Tajikistan,TJK,2,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,0,2,2,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-702,Tajikistan,Europe & Central Asia,2008,September,3,September 2008,Tajikistan,TJK,7,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,5,7,2,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 702,Tajikistan,Europe & Central Asia,2008,September,3,September 2008,TAJIKISTAN,TJK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,4,0,0,2,NA,4,1,0,2,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,NA,0,0
 702,Tajikistan,Europe & Central Asia,2009,September,3,September 2009,TAJIKISTAN,TJK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,2,0,0,2,NA,2,1,0,2,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 702,Tajikistan,Europe & Central Asia,2010,September,3,September 2010,TAJIKISTAN,TJK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,25,21,0,0,4,NA,21,0,0,4,0,25,0,0,0,0,0,0,0,0,0,0,0,1,0,1,26,NA,0,0
@@ -11503,7 +11491,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 704,Uzbekistan,Europe & Central Asia,2005,September,3,September 2005,Uzbekistan,UZB,1,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,0,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 704,Uzbekistan,Europe & Central Asia,2006,September,3,September 2006,Uzbekistan,UZB,6,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,5,6,1,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 704,Uzbekistan,Europe & Central Asia,2007,September,3,September 2007,Uzbekistan,UZB,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-704,Uzbekistan,Europe & Central Asia,2008,September,3,September 2008,Uzbekistan,UZB,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,5,5,0,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+704,Uzbekistan,Europe & Central Asia,2008,September,3,September 2008,UZBEKISTAN,UZB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,1,1,NA,2,0,1,1,0,4,1,0,0,0,1,0,0,2,0,0,0,0,1,1,7,NA,0,0
 704,Uzbekistan,Europe & Central Asia,2009,September,3,September 2009,UZBEKISTAN,UZB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,1,1,NA,2,0,1,1,0,4,0,0,0,0,0,1,0,1,0,0,0,0,1,1,6,NA,0,0
 704,Uzbekistan,Europe & Central Asia,2010,September,3,September 2010,UZBEKISTAN,UZB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,2,0,0,2,NA,2,1,0,2,0,5,0,1,0,0,0,1,0,2,0,0,0,0,1,1,8,NA,0,0
 704,Uzbekistan,Europe & Central Asia,2011,September,3,September 2011,UZBEKISTAN,UZB,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,3,0,0,2,NA,3,0,0,2,0,5,0,0,0,0,0,1,0,1,0,0,0,0,0,0,6,NA,0,0
@@ -11564,7 +11552,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 705,Kazakhstan,Europe & Central Asia,2005,September,3,September 2005,Kazakhstan,KAZ,6,NA,NA,0,NA,NA,NA,NA,NA,1,NA,0,5,6,0,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 705,Kazakhstan,Europe & Central Asia,2006,September,3,September 2006,Kazakhstan,KAZ,7,NA,NA,0,NA,NA,NA,NA,NA,1,NA,0,6,7,0,0,6,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 705,Kazakhstan,Europe & Central Asia,2007,September,3,September 2007,Kazakhstan,KAZ,12,NA,NA,5,NA,NA,NA,NA,NA,2,NA,0,5,12,5,0,5,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-705,Kazakhstan,Europe & Central Asia,2008,September,3,September 2008,Kazakhstan,KAZ,14,NA,NA,6,NA,NA,NA,NA,NA,1,NA,0,7,14,6,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+705,Kazakhstan,Europe & Central Asia,2008,September,3,September 2008,KAZAKHSTAN,KAZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,6,0,0,1,NA,6,0,0,1,0,7,0,0,0,0,1,0,0,1,0,0,0,0,1,1,9,NA,0,0
 705,Kazakhstan,Europe & Central Asia,2009,September,3,September 2009,KAZAKHSTAN,KAZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,4,0,52,11,NA,4,2,52,11,0,69,0,0,0,0,0,1,0,1,0,0,0,1,1,2,72,NA,0,0
 705,Kazakhstan,Europe & Central Asia,2010,September,3,September 2010,KAZAKHSTAN,KAZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,311,3,0,288,9,NA,3,11,288,9,0,311,0,0,0,1,1,0,0,2,0,0,0,0,1,1,314,NA,0,0
 705,Kazakhstan,Europe & Central Asia,2011,September,3,September 2011,KAZAKHSTAN,KAZ,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,5,0,0,4,NA,5,0,0,4,0,9,0,0,0,0,0,0,0,0,0,0,0,0,1,1,10,NA,0,0
@@ -11685,7 +11673,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 712,Mongolia,East Asia & Pacific,2005,September,3,September 2005,Mongolia,MNG,5,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,3,5,2,0,3,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 712,Mongolia,East Asia & Pacific,2006,September,3,September 2006,Mongolia,MNG,4,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,2,4,2,0,2,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 712,Mongolia,East Asia & Pacific,2007,September,3,September 2007,Mongolia,MNG,6,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,4,6,2,0,4,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-712,Mongolia,East Asia & Pacific,2008,September,3,September 2008,Mongolia,MNG,4,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,2,4,2,0,2,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+712,Mongolia,East Asia & Pacific,2008,September,3,September 2008,MONGOLIA,MNG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,2,0,0,1,NA,2,0,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 712,Mongolia,East Asia & Pacific,2009,September,3,September 2009,MONGOLIA,MNG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,0,1,NA,3,0,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 712,Mongolia,East Asia & Pacific,2010,September,3,September 2010,MONGOLIA,MNG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 712,Mongolia,East Asia & Pacific,2011,September,3,September 2011,MONGOLIA,MNG,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,0,1,NA,3,0,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -12073,7 +12061,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 750,India,South Asia,2005,September,3,September 2005,India,IND,31,NA,NA,8,NA,NA,NA,NA,NA,6,NA,7,10,31,8,7,10,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 750,India,South Asia,2006,September,3,September 2006,India,IND,33,NA,NA,6,NA,NA,NA,NA,NA,9,NA,6,12,33,6,6,12,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 750,India,South Asia,2007,September,3,September 2007,India,IND,28,NA,NA,7,NA,NA,NA,NA,NA,6,NA,5,10,28,7,5,10,6,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-750,India,South Asia,2008,September,3,September 2008,India,IND,27,NA,NA,7,NA,NA,NA,NA,NA,8,NA,4,8,27,7,4,8,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+750,India,South Asia,2008,September,3,September 2008,INDIA,IND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,14,7,0,2,5,NA,7,0,2,5,0,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,NA,0,0
 750,India,South Asia,2009,September,3,September 2009,INDIA,IND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,12,4,0,1,7,NA,4,0,1,7,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,NA,0,0
 750,India,South Asia,2010,September,3,September 2010,INDIA,IND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,17,0,0,1,10,NA,0,6,1,10,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,NA,0,0
 750,India,South Asia,2011,September,3,September 2011,INDIA,IND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,20,5,0,1,7,NA,5,7,1,7,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,NA,0,0
@@ -12253,7 +12241,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 771,Bangladesh,South Asia,2005,September,3,September 2005,Bangladesh,BGD,7,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,5,7,2,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 771,Bangladesh,South Asia,2006,September,3,September 2006,Bangladesh,BGD,9,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,7,9,2,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 771,Bangladesh,South Asia,2007,September,3,September 2007,Bangladesh,BGD,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-771,Bangladesh,South Asia,2008,September,3,September 2008,Bangladesh,BGD,7,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,5,7,2,0,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+771,Bangladesh,South Asia,2008,September,3,September 2008,BANGLADESH,BGD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 771,Bangladesh,South Asia,2009,September,3,September 2009,BANGLADESH,BGD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,4,0,0,5,NA,4,0,0,5,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,NA,0,0
 771,Bangladesh,South Asia,2010,September,3,September 2010,BANGLADESH,BGD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,1,0,0,0,NA,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NA,0,0
 771,Bangladesh,South Asia,2011,September,3,September 2011,BANGLADESH,BGD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
@@ -12356,7 +12344,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 775,Myanmar (Burma),East Asia & Pacific,2005,September,3,September 2005,Burma,MMR,9,NA,NA,3,NA,NA,NA,NA,NA,1,NA,0,5,9,3,0,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 775,Myanmar (Burma),East Asia & Pacific,2006,September,3,September 2006,Burma,MMR,11,NA,NA,3,NA,NA,NA,NA,NA,1,NA,0,7,11,3,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 775,Myanmar (Burma),East Asia & Pacific,2007,September,3,September 2007,Burma,MMR,10,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,7,10,3,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-775,Myanmar (Burma),East Asia & Pacific,2008,September,3,September 2008,Burma,MMR,11,NA,NA,3,NA,NA,NA,NA,NA,1,NA,0,7,11,3,0,7,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+775,Myanmar (Burma),East Asia & Pacific,2008,September,3,September 2008,BURMA,MMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,0,1,NA,3,0,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 775,Myanmar (Burma),East Asia & Pacific,2009,September,3,September 2009,BURMA,MMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,0,1,NA,3,0,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 775,Myanmar (Burma),East Asia & Pacific,2010,September,3,September 2010,BURMA,MMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 775,Myanmar (Burma),East Asia & Pacific,2011,September,3,September 2011,BURMA,MMR,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,0,1,NA,3,0,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -12459,7 +12447,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 780,Sri Lanka,South Asia,2005,September,3,September 2005,Sri Lanka,LKA,13,NA,NA,2,NA,NA,NA,NA,NA,0,NA,1,10,13,2,1,10,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 780,Sri Lanka,South Asia,2006,September,3,September 2006,Sri Lanka,LKA,10,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,8,10,2,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 780,Sri Lanka,South Asia,2007,September,3,September 2007,Sri Lanka,LKA,10,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,8,10,2,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-780,Sri Lanka,South Asia,2008,September,3,September 2008,Sri Lanka,LKA,7,NA,NA,1,NA,NA,NA,NA,NA,0,NA,0,6,7,1,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+780,Sri Lanka,South Asia,2008,September,3,September 2008,SRI LANKA,LKA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,0,1,NA,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 780,Sri Lanka,South Asia,2009,September,3,September 2009,SRI LANKA,LKA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,1,NA,2,1,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 780,Sri Lanka,South Asia,2010,September,3,September 2010,SRI LANKA,LKA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,1,NA,1,1,0,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,NA,0,0
 780,Sri Lanka,South Asia,2011,September,3,September 2011,SRI LANKA,LKA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,0,0,NA,3,1,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -12555,7 +12543,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 790,Nepal,South Asia,2005,September,3,September 2005,Nepal,NPL,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 790,Nepal,South Asia,2006,September,3,September 2006,Nepal,NPL,10,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,6,10,4,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 790,Nepal,South Asia,2007,September,3,September 2007,Nepal,NPL,9,NA,NA,3,NA,NA,NA,NA,NA,0,NA,0,6,9,3,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-790,Nepal,South Asia,2008,September,3,September 2008,Nepal,NPL,8,NA,NA,2,NA,NA,NA,NA,NA,0,NA,0,6,8,2,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+790,Nepal,South Asia,2008,September,3,September 2008,NEPAL,NPL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,2,0,0,0,NA,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 790,Nepal,South Asia,2009,September,3,September 2009,NEPAL,NPL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,1,0,NA,3,0,1,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 790,Nepal,South Asia,2010,September,3,September 2010,NEPAL,NPL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,1,0,1,0,NA,1,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 790,Nepal,South Asia,2011,September,3,September 2011,NEPAL,NPL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,3,0,1,0,NA,3,0,1,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
@@ -12732,7 +12720,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 811,Cambodia,East Asia & Pacific,2005,September,3,September 2005,Cambodia,KHM,5,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,0,5,5,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 811,Cambodia,East Asia & Pacific,2006,September,3,September 2006,Cambodia,KHM,13,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,8,13,5,0,8,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 811,Cambodia,East Asia & Pacific,2007,September,3,September 2007,Cambodia,KHM,10,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,6,10,4,0,6,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-811,Cambodia,East Asia & Pacific,2008,September,3,September 2008,Cambodia,KHM,12,NA,NA,5,NA,NA,NA,NA,NA,0,NA,0,7,12,5,0,7,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+811,Cambodia,East Asia & Pacific,2008,September,3,September 2008,CAMBODIA,KHM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,5,0,0,0,NA,5,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,NA,0,0
 811,Cambodia,East Asia & Pacific,2009,September,3,September 2009,CAMBODIA,KHM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,7,0,0,0,NA,7,1,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 811,Cambodia,East Asia & Pacific,2010,September,3,September 2010,CAMBODIA,KHM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,0,NA,1,2,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,1,0,1,4,NA,0,0
 811,Cambodia,East Asia & Pacific,2011,September,3,September 2011,CAMBODIA,KHM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,7,0,0,0,NA,7,3,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,1,0,1,11,NA,0,0
@@ -12814,7 +12802,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 812,Laos,East Asia & Pacific,2005,September,3,September 2005,Laos,LAO,3,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,0,3,1,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 812,Laos,East Asia & Pacific,2006,September,3,September 2006,Laos,LAO,3,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,0,3,1,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 812,Laos,East Asia & Pacific,2007,September,3,September 2007,Laos,LAO,3,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,0,3,1,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-812,Laos,East Asia & Pacific,2008,September,3,September 2008,Laos,LAO,3,NA,NA,1,NA,NA,NA,NA,NA,2,NA,0,0,3,1,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 812,Laos,East Asia & Pacific,2008,September,3,September 2008,LAOS,LAO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,2,NA,1,0,0,2,0,3,0,0,0,0,0,0,0,0,0,2,0,0,0,2,5,NA,0,0
 812,Laos,East Asia & Pacific,2009,September,3,September 2009,LAOS,LAO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,1,0,0,3,NA,1,0,0,3,0,4,0,0,0,0,0,0,0,0,0,2,0,0,0,2,6,NA,0,0
 812,Laos,East Asia & Pacific,2010,September,3,September 2010,LAOS,LAO,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,3,NA,2,1,0,3,0,6,0,0,0,0,0,0,0,0,0,2,0,0,0,2,8,NA,0,0
@@ -12878,7 +12865,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 816,Vietnam,East Asia & Pacific,2005,September,3,September 2005,Vietnam,VNM,13,NA,NA,4,NA,NA,NA,NA,NA,0,NA,0,9,13,4,0,9,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 816,Vietnam,East Asia & Pacific,2006,September,3,September 2006,Vietnam,VNM,15,NA,NA,5,NA,NA,NA,NA,NA,1,NA,0,9,15,5,0,9,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 816,Vietnam,East Asia & Pacific,2007,September,3,September 2007,Vietnam,VNM,14,NA,NA,5,NA,NA,NA,NA,NA,1,NA,0,8,14,5,0,8,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-816,Vietnam,East Asia & Pacific,2008,September,3,September 2008,Vietnam,VNM,14,NA,NA,4,NA,NA,NA,NA,NA,1,NA,0,9,14,4,0,9,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+816,Vietnam,East Asia & Pacific,2008,September,3,September 2008,VIETNAM,VNM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,5,0,2,1,NA,5,0,2,1,0,8,0,0,0,0,0,0,0,0,0,3,0,0,0,3,11,NA,0,0
 816,Vietnam,East Asia & Pacific,2009,September,3,September 2009,VIETNAM,VNM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,4,0,1,2,NA,4,0,1,2,0,7,0,0,0,0,0,0,0,0,0,3,0,0,0,3,10,NA,0,0
 816,Vietnam,East Asia & Pacific,2010,September,3,September 2010,VIETNAM,VNM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,1,1,NA,1,0,1,1,0,3,0,0,0,0,0,0,0,0,0,4,0,0,0,4,7,NA,0,0
 816,Vietnam,East Asia & Pacific,2011,September,3,September 2011,VIETNAM,VNM,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,6,0,1,2,NA,6,1,1,2,0,10,0,0,0,0,0,0,0,0,0,4,0,0,0,4,14,NA,0,0
@@ -13002,7 +12989,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 820,Malaysia,East Asia & Pacific,2005,September,3,September 2005,Malaysia,MYS,16,NA,NA,3,NA,NA,NA,NA,NA,4,NA,3,6,16,3,3,6,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 820,Malaysia,East Asia & Pacific,2006,September,3,September 2006,Malaysia,MYS,15,NA,NA,3,NA,NA,NA,NA,NA,2,NA,3,7,15,3,3,7,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 820,Malaysia,East Asia & Pacific,2007,September,3,September 2007,Malaysia,MYS,15,NA,NA,3,NA,NA,NA,NA,NA,3,NA,3,6,15,3,3,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-820,Malaysia,East Asia & Pacific,2008,September,3,September 2008,Malaysia,MYS,13,NA,NA,3,NA,NA,NA,NA,NA,3,NA,1,6,13,3,1,6,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+820,Malaysia,East Asia & Pacific,2008,September,3,September 2008,MALAYSIA,MYS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,8,3,0,0,3,NA,3,2,0,3,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,NA,0,0
 820,Malaysia,East Asia & Pacific,2009,September,3,September 2009,MALAYSIA,MYS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,10,3,0,0,3,NA,3,4,0,3,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,NA,0,0
 820,Malaysia,East Asia & Pacific,2010,September,3,September 2010,MALAYSIA,MYS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,7,1,0,0,2,NA,1,4,0,2,0,7,0,0,0,0,0,0,0,0,0,1,0,0,0,1,8,NA,0,0
 820,Malaysia,East Asia & Pacific,2011,September,3,September 2011,MALAYSIA,MYS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,9,3,0,0,3,NA,3,3,0,3,0,9,0,0,0,0,0,0,0,0,0,1,0,0,0,1,10,NA,0,0
@@ -13347,7 +13334,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 850,Indonesia,East Asia & Pacific,2005,September,3,September 2005,Indonesia (Includes Timor),IDN,23,NA,NA,8,NA,NA,NA,NA,NA,2,NA,2,11,23,8,2,11,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 850,Indonesia,East Asia & Pacific,2006,September,3,September 2006,Indonesia (Includes Timor),IDN,23,NA,NA,8,NA,NA,NA,NA,NA,2,NA,3,10,23,8,3,10,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 850,Indonesia,East Asia & Pacific,2007,September,3,September 2007,Indonesia (Includes Timor),IDN,27,NA,NA,11,NA,NA,NA,NA,NA,3,NA,2,11,27,11,2,11,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-850,Indonesia,East Asia & Pacific,2008,September,3,September 2008,Indonesia (Includes Timor),IDN,26,NA,NA,12,NA,NA,NA,NA,NA,4,NA,2,8,26,12,2,8,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+850,Indonesia,East Asia & Pacific,2008,September,3,September 2008,INDONESIA,IDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,17,12,0,1,4,NA,12,0,1,4,0,17,0,0,0,0,0,0,0,0,0,1,0,0,0,1,18,NA,0,0
 850,Indonesia,East Asia & Pacific,2009,September,3,September 2009,INDONESIA,IDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,16,10,0,1,5,NA,10,0,1,5,0,16,0,0,0,0,0,0,0,0,0,2,0,0,0,2,18,NA,0,0
 850,Indonesia,East Asia & Pacific,2010,September,3,September 2010,INDONESIA,IDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,14,4,0,1,4,NA,4,5,1,4,0,14,0,0,0,0,0,0,0,0,0,1,0,0,0,1,15,NA,0,0
 850,Indonesia,East Asia & Pacific,2011,September,3,September 2011,INDONESIA,IDN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,17,7,0,1,4,NA,7,5,1,4,0,17,0,0,0,0,0,0,1,1,1,0,0,0,0,1,19,NA,0,0
@@ -13479,7 +13466,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 900,Australia,East Asia & Pacific,2005,September,3,September 2005,Australia,AUS,196,NA,NA,26,NA,NA,NA,NA,NA,68,NA,62,40,196,26,62,40,68,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 900,Australia,East Asia & Pacific,2006,September,3,September 2006,Australia,AUS,347,NA,NA,18,NA,NA,NA,NA,NA,67,NA,29,233,347,18,29,233,67,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 900,Australia,East Asia & Pacific,2007,September,3,September 2007,Australia,AUS,140,NA,NA,24,NA,NA,NA,NA,NA,66,NA,28,22,140,24,28,22,66,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-900,Australia,East Asia & Pacific,2008,September,3,September 2008,Australia,AUS,140,NA,NA,28,NA,NA,NA,NA,NA,61,NA,29,22,140,28,29,22,61,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+900,Australia,East Asia & Pacific,2008,September,3,September 2008,AUSTRALIA,AUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,99,28,0,12,59,NA,28,0,12,59,0,99,0,0,0,0,0,0,0,0,2,5,0,6,4,17,116,NA,0,0
 900,Australia,East Asia & Pacific,2009,September,3,September 2009,AUSTRALIA,AUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,101,31,0,10,60,NA,31,0,10,60,0,101,0,0,0,0,0,0,0,0,3,3,0,4,4,14,115,NA,0,0
 900,Australia,East Asia & Pacific,2010,September,3,September 2010,AUSTRALIA,AUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,163,29,0,11,57,NA,29,66,11,57,0,163,0,0,0,0,0,0,0,0,5,2,0,4,4,15,178,NA,0,0
 900,Australia,East Asia & Pacific,2011,September,3,September 2011,AUSTRALIA,AUS,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,176,27,0,13,61,NA,27,75,13,61,0,176,0,0,0,0,0,0,0,0,5,2,0,4,3,14,190,NA,0,0
@@ -13610,7 +13597,7 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 920,New Zealand,East Asia & Pacific,2005,September,3,September 2005,New Zealand,NZL,7,NA,NA,2,NA,NA,NA,NA,NA,3,NA,2,0,7,2,2,0,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 920,New Zealand,East Asia & Pacific,2006,September,3,September 2006,New Zealand,NZL,6,NA,NA,2,NA,NA,NA,NA,NA,2,NA,2,0,6,2,2,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 920,New Zealand,East Asia & Pacific,2007,September,3,September 2007,New Zealand,NZL,5,NA,NA,2,NA,NA,NA,NA,NA,1,NA,2,0,5,2,2,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-920,New Zealand,East Asia & Pacific,2008,September,3,September 2008,New Zealand,NZL,10,NA,NA,2,NA,NA,NA,NA,NA,1,NA,2,5,10,2,2,5,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
+920,New Zealand,East Asia & Pacific,2008,September,3,September 2008,NEW ZEALAND,NZL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,1,NA,2,3,0,1,0,6,0,0,0,0,0,0,0,0,0,0,0,1,2,3,9,NA,0,0
 920,New Zealand,East Asia & Pacific,2009,September,3,September 2009,NEW ZEALAND,NZL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,2,0,0,1,NA,2,3,0,1,0,6,0,0,0,0,0,0,0,0,0,0,0,1,2,3,9,NA,0,0
 920,New Zealand,East Asia & Pacific,2010,September,3,September 2010,NEW ZEALAND,NZL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,1,0,0,0,NA,1,2,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,1,2,3,6,NA,0,0
 920,New Zealand,East Asia & Pacific,2011,September,3,September 2011,NEW ZEALAND,NZL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,2,0,0,1,NA,2,1,0,1,0,4,0,0,0,0,0,0,0,0,0,0,0,1,2,3,7,NA,0,0
@@ -13751,7 +13738,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 983,Marshall Islands,East Asia & Pacific,1998,September,3,September 1998,Marshall Islands,MHL,27,NA,NA,27,NA,NA,NA,NA,NA,0,NA,0,0,27,27,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 983,Marshall Islands,East Asia & Pacific,2002,September,3,September 2002,Marshall Islands,MHL,2,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,0,2,0,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 983,Marshall Islands,East Asia & Pacific,2007,September,3,September 2007,Marshall Islands,MHL,17,NA,NA,17,NA,NA,NA,NA,NA,0,NA,0,0,17,17,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-983,Marshall Islands,East Asia & Pacific,2008,September,3,September 2008,Marshall Islands,MHL,14,NA,NA,14,NA,NA,NA,NA,NA,0,NA,0,0,14,14,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 983,Marshall Islands,East Asia & Pacific,2008,September,3,September 2008,MARSHALL ISLANDS,MHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,14,14,0,0,0,NA,14,0,0,0,0,14,0,0,0,0,0,0,0,0,48,0,0,0,0,48,62,NA,0,0
 983,Marshall Islands,East Asia & Pacific,2009,September,3,September 2009,MARSHALL ISLANDS,MHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,18,18,0,0,0,NA,18,0,0,0,0,18,0,0,0,0,0,0,0,0,41,0,0,0,0,41,59,NA,0,0
 983,Marshall Islands,East Asia & Pacific,2010,September,3,September 2010,MARSHALL ISLANDS,MHL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,6,6,0,0,0,NA,6,0,0,0,0,6,0,0,0,0,0,0,0,0,45,0,0,0,0,45,51,NA,0,0
@@ -14066,7 +14052,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1004,Diego Garcia,NA,2005,September,3,September 2005,Diego Garcia,NA,683,NA,NA,3,NA,NA,NA,NA,NA,373,NA,307,0,683,3,307,0,373,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1004,Diego Garcia,NA,2006,September,3,September 2006,Diego Garcia,NA,157,NA,NA,2,NA,NA,NA,NA,NA,53,NA,102,0,157,2,102,0,53,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1004,Diego Garcia,NA,2007,September,3,September 2007,Diego Garcia,NA,260,NA,NA,0,NA,NA,NA,NA,NA,38,NA,222,0,260,0,222,0,38,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1004,Diego Garcia,NA,2008,September,3,September 2008,Diego Garcia,NA,244,NA,NA,0,NA,NA,NA,NA,NA,38,NA,206,0,244,0,206,0,38,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1005,St Helena (Incl. Ascension Is.),NA,1974,September,3,September 1974,St Helena (Incl. Ascension Is.),SHN,8,8,NA,0,0,NA,NA,0,NA,8,NA,0,0,8,0,0,0,8,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1005,St Helena (Incl. Ascension Is.),NA,1975,September,3,September 1975,St Helena (Incl. Ascension Is.),SHN,12,12,NA,0,0,NA,NA,0,NA,12,NA,0,0,12,0,0,0,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1005,St Helena (Incl. Ascension Is.),NA,1976,September,3,September 1976,St Helena (Incl. Ascension Is.),SHN,1,1,NA,0,0,NA,NA,0,NA,1,NA,0,0,1,0,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14105,7 +14090,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1005,St. Helena (Includes Ascension Island),NA,2004,September,3,Kane 2006,St. Helena (Includes Ascension Island),SHN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1005,St. Helena (Includes Ascension Island),NA,2005,September,3,September 2005,St. Helena (Includes Ascension Island),SHN,3,NA,NA,0,NA,NA,NA,NA,NA,3,NA,0,0,3,0,0,0,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1005,St. Helena (Includes Ascension Island),NA,2006,September,3,September 2006,St. Helena (Includes Ascension Island),SHN,4,NA,NA,0,NA,NA,NA,NA,NA,4,NA,0,0,4,0,0,0,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1005,St. Helena (Includes Ascension Island),NA,2008,September,3,September 2008,St. Helena (Includes Ascension Island),SHN,4,NA,NA,0,NA,NA,NA,NA,NA,4,NA,0,0,4,0,0,0,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1006,Antigua,NA,1955,June,2,June 1955,Antigua,ATG,538,0,538,NA,NA,NA,NA,NA,NA,NA,538,NA,NA,538,0,538,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1006,Antigua,NA,1956,June,2,June 1956,Antigua,ATG,100,100,0,NA,100,NA,NA,NA,NA,NA,0,NA,NA,100,0,100,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1006,Antigua,NA,1977,September,3,September 1977,Antigua,ATG,120,NA,NA,0,NA,NA,NA,NA,NA,1,NA,118,1,120,0,118,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14135,7 +14119,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1006,Antigua,NA,2005,September,3,September 2005,Antigua,ATG,1,NA,NA,0,NA,NA,NA,NA,NA,1,NA,0,0,1,0,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1006,Antigua,NA,2006,September,3,September 2006,Antigua,ATG,2,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,0,2,0,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1006,Antigua,NA,2007,September,3,September 2007,Antigua,ATG,2,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,0,2,0,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1006,Antigua,NA,2008,September,3,September 2008,Antigua,ATG,2,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,0,2,0,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1007,Bermuda,NA,1950,June,2,June 1950,Bermuda,BMU,NA,1618,NA,NA,125,NA,NA,29,NA,1464,NA,NA,NA,1618,0,125,29,1464,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1007,Bermuda,NA,1953,June,2,June 1953,Bermuda,BMU,3236,2520,716,2,425,716,208,38,NA,2055,NA,NA,NA,3236,2,1349,38,2055,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1007,Bermuda,NA,1954,June,2,June 1954,Bermuda,BMU,3200,2406,794,1,454,NA,NA,47,NA,1904,794,NA,NA,3200,1,1248,47,1904,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14180,7 +14163,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1007,Bermuda,NA,1993,September,3,September 1993,Bermuda,BMU,527,NA,NA,1,NA,NA,NA,NA,NA,0,NA,521,5,527,1,521,5,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1007,Bermuda,NA,1994,September,3,September 1994,Bermuda,BMU,466,NA,NA,1,NA,NA,NA,NA,NA,0,NA,462,3,466,1,462,3,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1007,Bermuda,NA,2007,September,3,September 2007,Bermuda,BMU,4,NA,NA,0,NA,NA,NA,NA,NA,0,NA,4,0,4,0,4,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1007,Bermuda,NA,2008,September,3,September 2008,Bermuda,BMU,5,NA,NA,0,NA,NA,NA,NA,NA,0,NA,5,0,5,0,5,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1008,Guam,NA,1963,September,3,September 1963,Guam,GUM,7731,5985,1746,67,2441,1746,1443,304,NA,3173,NA,NA,NA,7731,67,5630,304,3173,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1008,Guam,NA,1964,September,3,September 1964,Guam,GUM,7023,5981,1042,69,2542,1042,506,292,NA,3078,NA,NA,NA,7023,69,4090,292,3078,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1008,Guam,NA,1965,September,3,September 1965,Guam,GUM,7010,5906,1104,36,2632,1104,1767,288,NA,2950,NA,NA,NA,7010,36,5503,288,2950,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14339,7 +14321,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1009,China (Includes Hong Kong),NA,2005,September,3,September 2005,China (Includes Hong Kong),HKG,67,NA,NA,10,NA,NA,NA,NA,NA,12,NA,14,31,67,10,14,31,12,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1009,China (Includes Hong Kong),NA,2006,September,3,September 2006,China (Includes Hong Kong),HKG,71,NA,NA,11,NA,NA,NA,NA,NA,11,NA,16,33,71,11,16,33,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1009,China (Includes Hong Kong),NA,2007,September,3,September 2007,China (Includes Hong Kong),HKG,61,NA,NA,10,NA,NA,NA,NA,NA,13,NA,6,32,61,10,6,32,13,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1009,China (Includes Hong Kong),NA,2008,September,3,September 2008,China (Includes Hong Kong),HKG,69,NA,NA,11,NA,NA,NA,NA,NA,11,NA,8,39,69,11,8,39,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1009,Hong Kong,NA,1950,June,2,June 1950,Hong Kong,HKG,NA,21,NA,15,2,NA,NA,NA,NA,4,NA,NA,NA,21,15,2,0,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1009,Hong Kong,NA,1953,June,2,June 1953,Hong Kong,HKG,13,13,0,8,4,NA,1064,NA,NA,1,NA,NA,NA,13,8,1068,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1009,Hong Kong,NA,1958,September,3,September 1958,Hong Kong,HKG,290,27,263,8,4,NA,261,6,2,9,NA,NA,NA,290,8,265,6,9,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14435,7 +14416,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1011,Marshall Islands (Kwajelein),NA,1954,June,2,June 1954,Marshall Islands (Kwajelein),MHL,2162,1661,501,0,1124,NA,NA,55,NA,482,501,NA,NA,2162,0,1625,55,482,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1011,Marshall Islands (Kwajelein),NA,1955,June,2,June 1955,Marshall Islands (Kwajelein),MHL,1989,1793,196,0,1167,NA,NA,59,NA,567,196,NA,NA,1989,0,1363,59,567,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1011,Northern Mariana Islands,NA,1988,September,3,September 1988,Northern Mariana Islands,MNP,1,NA,NA,0,NA,NA,NA,NA,NA,0,NA,1,0,1,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1011,Northern Mariana Islands,NA,2008,September,3,September 2008,Northern Mariana Islands,MNP,2,NA,NA,0,NA,NA,NA,NA,NA,0,NA,0,2,2,0,0,2,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1012,Midway,NA,1950,June,2,June 1950,Midway,NA,NA,10,NA,NA,NA,NA,NA,10,NA,NA,NA,NA,NA,10,0,0,10,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1012,Midway,NA,1953,June,2,June 1953,Midway,NA,648,603,45,NA,588,45,NA,15,NA,NA,NA,NA,NA,648,0,633,15,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1012,Midway,NA,1954,June,2,June 1954,Midway,NA,1887,582,1305,NA,582,NA,NA,0,NA,0,1305,NA,NA,1887,0,1887,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14513,7 +14493,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1013,U. S. Virgin Islands,NA,2005,September,3,September 2005,U. S. Virgin Islands,VIR,7,NA,NA,0,NA,NA,NA,NA,NA,2,NA,4,1,7,0,4,1,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1013,U. S. Virgin Islands,NA,2006,September,3,September 2006,U. S. Virgin Islands,VIR,6,NA,NA,1,NA,NA,NA,NA,NA,1,NA,3,1,6,1,3,1,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1013,U. S. Virgin Islands,NA,2007,September,3,September 2007,U. S. Virgin Islands,VIR,4,NA,NA,1,NA,NA,NA,NA,NA,1,NA,0,2,4,1,0,2,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1013,U. S. Virgin Islands,NA,2008,September,3,September 2008,U. S. Virgin Islands,VIR,2,NA,NA,1,NA,NA,NA,NA,NA,1,NA,0,0,2,1,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1013,Virgin Islands,NA,1950,June,2,June 1950,Virgin Islands,NA,NA,70,NA,70,NA,NA,NA,NA,NA,NA,NA,NA,NA,70,70,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1013,Virgin Islands,NA,1960,September,3,September 1960,Virgin Islands,NA,164,164,0,0,2,0,0,162,0,0,NA,NA,NA,164,0,2,162,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1013,Virgin Islands,NA,1964,September,3,September 1964,Virgin Islands,NA,152,1,151,NA,NA,151,272,NA,NA,1,NA,NA,NA,152,0,423,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
@@ -14611,7 +14590,6 @@ ccode,countryname,region,year,month,quarter,source,Location,iso3c,Total,Total As
 1014,Wake Island,NA,2005,September,3,September 2005,Wake Island,NA,1,NA,NA,0,NA,NA,NA,NA,NA,1,NA,0,0,1,0,0,0,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1014,Wake Island,NA,2006,September,3,September 2006,Wake Island,NA,5,NA,NA,0,NA,NA,NA,NA,NA,5,NA,0,0,5,0,0,0,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1014,Wake Island,NA,2007,September,3,September 2007,Wake Island,NA,5,NA,NA,0,NA,NA,NA,NA,NA,5,NA,0,0,5,0,0,0,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
-1014,Wake Island,NA,2008,September,3,September 2008,Wake Island,NA,2,NA,NA,0,NA,NA,NA,NA,NA,2,NA,0,0,2,0,0,0,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0
 1014,Wake Island,NA,2008,September,3,September 2008,WAKE ISLAND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,0,0,0,2,NA,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,NA,0,0
 1014,Wake Island,NA,2009,September,3,September 2009,WAKE ISLAND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,0,0,0,4,NA,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0
 1014,Wake Island,NA,2010,September,3,September 2010,WAKE ISLAND,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,0,0,0,4,NA,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,NA,0,0

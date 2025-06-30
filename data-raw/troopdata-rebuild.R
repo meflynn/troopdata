@@ -365,7 +365,7 @@ custom.cown <- c("Alaska" = 2,
                  "Guam" = 1008,
                  "GUAM" = 1008,
                  "Mariana Islands (Guam)" = 1008,
-                 "Hong Kong" = 1009,
+                 "Hong Kong" = 1009, # Note this conflicts with the entry above. Address this below by making values after 1997 go to China.
                  "HONG KONG" = 1009,
                  "Hong Kong (& China)" = 1009,
                  "Mariana Islands" = 1011,
@@ -558,9 +558,10 @@ filtered.1977.2010 <- data.clean.1977.2010 %>%
              )
 
 # Remove last two elements from this list as they overlap with the newer data.
-# Drop 2009 and 2010 from this list.
+# Drop 2008, 2009, and 2010 from this list. 2008 is double counted in another
+# chunk of code leading to inflated values.
 
-data.clean.1977.2010 <- data.clean.1977.2010[c(1:30)]
+data.clean.1977.2010 <- data.clean.1977.2010[c(1:29)]
 
 # Generate country codes for 2008 to 2023
 data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 %>%
@@ -1021,6 +1022,9 @@ troopdata_rebuild_long <- country.year.list %>%
       ccode == 652 & year == 2020 ~ 900,
       ccode == 645 & year == 2006 & !is.na(troops_ad) ~ 141100, # FAS update for Iraq
       ccode == 645 & year == 2007 & !is.na(troops_ad) ~ 170000, # Reuters update for Iraq
+      ccode == 690 & year == 2003 ~ 47000, # Kuwait values from Kane's original data
+      ccode == 690 & year == 2004 ~ 36647, # Kuwait values from Kane's original data
+      ccode == 690 & year == 2005 ~ 42600, # Kuwait values from Kane's original data
       ccode == 690 & year == 2006 ~ 44400, # Reverse engineered from OIF totals
       ccode == 690 & year == 2007 ~ 48500, # Reverse engineered from OIF totals
       TRUE ~ troops_ad)
@@ -1045,11 +1049,12 @@ troopdata_rebuild_long <- country.year.list %>%
       ccode == 987 ~ "Micronesia",
       ccode == 775 ~ "Myanmar",
       ccode == 571 ~ "Swaziland",
-      grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) ~ "Hong Kong",
+      grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) & year < 1997 ~ "Hong Kong",
+      grepl(".*Hong Kong.*", countryname, ignore.case = TRUE) & year >= 1997 ~ "China",
+      ccode == 1009 ~ "Hong Kong",
       ccode == 1001 ~ "Gibraltar",
       ccode == 1002 ~ "Greenland",
       ccode == 1004 ~ "Diego Garcia",
-      ccode == 1009 ~ "Hong Kong",
       ccode == 817 ~ "Vietnam",
       ccode == 1005 ~ "St. Helena",
       ccode == 1006 ~ "Antigua",
@@ -1089,6 +1094,16 @@ troopdata_rebuild_long <- country.year.list %>%
       ccode == 10100 ~ "Johnston Island",
       ccode == 10101 ~ "Eniwetok (J.T.F. 7",
       TRUE ~ countryname
+    ),
+    ccode = case_when(
+      ccode == 1009 & year < 1997 ~ 1009, # Hong Kong before 1997
+      ccode == 1009 & year >= 1997 ~ 710, # Hong Kong ceded to China in 1997
+      TRUE ~ ccode
+    ),
+    iso3c = case_when(
+      ccode == 1009 & year < 1997 ~ "HKG", # Hong Kong before 1997
+      ccode == 1009 & year >= 1997 ~ "CHN", # Hong Kong ceded to China in 1997
+      TRUE ~ iso3c
     ),
     region = countrycode(ccode, "cown", "region"),
     region = case_when(
