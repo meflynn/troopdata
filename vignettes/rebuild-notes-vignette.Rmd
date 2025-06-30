@@ -1,0 +1,29 @@
+---
+title: "Rebuild Notes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Rebuild Notes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+## A Note on version 1.0.0 and later
+
+The bulk of the data included in `troopdata` versions under v1.0.0 were drawn from the original Kane data, which was collected from 1950-2005. The data were then updated through 2020 by Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. The data were then further updated through 2022 by Michael Flynn. Version 1.0.0 marked a total rebuild of the `troopdata` package and so many values may not match up exactly with the original Kane data. Here are a few key points to note regarding the updates made since v1.0.0:
+
+- The older DoD reports differentiate between forces ashore and forces afloat, but often have certain afloat forces assigned to a particular country. In the rebuild the numbers in the data reflect the total number provided by the DoD—both ashore and afloat—where both are reported for a given country. Omitting afloat forces attached to a particular country can severely underestimates the number of personnel present. In Greece in 1974, for example, we see 3,800 personnel ashore and a total of 5,437 reported by the DoD as assigned to Greece, including afloat. We find the same issue in the other countries where the older data used only ashore and the new data include afloat where they are permanently assigned to a given country. 
+
+- The original reports also contain a category for “other afloat” that are **not** assigned to particular countries. These are not aggregated into any country totals in the rebuild. In more recent years DoD reports list an afloat category for Europe, but don’t disaggregate those totals by individual country. These values are often fairly small compared to older values and this may reflect some changes in accounting for where troops are deployed by the DoD.
+
+- For more recent years some discrepancies between versions might be the result of the fact that the DoD issued multiple reports with different figures, even for the same monthly release. For example, There are multiple reports issued for September 2008 with each reporting different country-specific values.
+
+- There are also some smaller territorial units that appear in the DoD reports that did not appear in Kane’s original data or our package. We create ad hoc country codes to deal with them. Hong Kong, for example, is treated separately in rebuilt data. This can also factor into higher regional totals whre Kane's data may have omitted some of these smaller territorial units.
+
+- In general we try to assign country codes to deployments that correspond to their actual physical geographic location. For example, deployments to Greenland could be assigned to Denmark, but we assign them to Greenland with an ad hoc country code. Similarly, deployments to Puerto Rico are assigned to Puerto Rico rather than the United States. This is a change from the original Kane data, which assigned all deployments to the United States. These values may be aggregated by users for analysis if they wish to do so.
+
+- In more recent years the DoD has issued multiple quarterly reports in a given year. When reporting annual values the `get_troopdata()` function will return the highest value from the quarterly reports for a given year where those are available. This should only affect more recent years, but it’s a different approach than Kane’s original method which involved just using the September reports. 
+
+- In some cases the physical location of a deployment may remain constant but the polity associated with that deployment may change. For example, deployments to Yugoslavia change to Kosovo in 1999.
+
+- The DoD often lists China and Hong Kong as a single entity. Prior to 1997 deployments to Hong Kong were usually listed separately, but following 1997 they are often grouped together. We adopt an ad hoc country code for Hong Kong and assign deployments to that code where they are listed as such in the DoD reports. After 1997 we treat any deployment references to Hong Kong as deployments to China. 

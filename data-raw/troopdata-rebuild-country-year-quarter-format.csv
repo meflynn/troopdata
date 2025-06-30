@@ -11185,20 +11185,20 @@ ccode,iso3c,countryname,region,year,month,quarter,source,troops_ad,troops_all,ar
 530,ETH,Ethiopia,Sub-Saharan Africa,1959,September,3,September 1959,82,82,55,4,15,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 530,ETH,Ethiopia,Sub-Saharan Africa,1960,September,3,September 1960,91,91,57,5,21,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 530,ETH,Ethiopia,Sub-Saharan Africa,1961,September,3,September 1961,106,106,64,4,31,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1962,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1963,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1964,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1965,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1966,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1967,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1968,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1969,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1970,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1971,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1972,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1973,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1974,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,ETH,Ethiopia,Sub-Saharan Africa,1975,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1962,September,3,September 1962,1391,1391,1217,138,31,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1963,September,3,September 1963,1608,1608,1412,156,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1964,September,3,September 1964,1660,1660,1415,205,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1965,September,3,September 1965,1682,1682,1412,206,59,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1966,September,3,September 1966,1791,1791,1484,225,76,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1967,September,3,September 1967,1761,1761,1457,468,71,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1968,September,3,September 1968,1779,1779,1507,207,59,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1969,September,3,September 1969,1797,1797,1498,230,61,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1970,September,3,September 1970,1778,1778,1426,279,67,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1971,September,3,September 1971,1396,1396,1062,260,68,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1972,September,3,September 1972,1009,1009,686,253,63,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1973,September,3,September 1973,737,737,225,463,39,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1974,September,3,September 1974,125,125,47,29,32,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+530,ETH,Ethiopia,Sub-Saharan Africa,1975,September,3,September 1975,93,93,30,22,22,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 530,ETH,Ethiopia,Sub-Saharan Africa,1976,September,3,September 1976,111,111,31,33,21,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 530,ETH,Ethiopia,Sub-Saharan Africa,1977,September,3,September 1977,24,24,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 530,ETH,Ethiopia,Sub-Saharan Africa,1978,September,3,September 1978,6,6,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -11294,20 +11294,6 @@ ccode,iso3c,countryname,region,year,month,quarter,source,troops_ad,troops_all,ar
 531,ERI,Eritrea,Sub-Saharan Africa,1959,September,3,September 1959,1120,1120,1023,95,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 531,ERI,Eritrea,Sub-Saharan Africa,1960,September,3,September 1960,1145,1145,1039,104,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 531,ERI,Eritrea,Sub-Saharan Africa,1961,September,3,September 1961,1231,1231,1115,114,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1962,September,3,September 1962,1391,1391,1217,138,31,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1963,September,3,September 1963,1608,1608,1412,156,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1964,September,3,September 1964,1660,1660,1415,205,35,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1965,September,3,September 1965,1682,1682,1412,206,59,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1966,September,3,September 1966,1791,1791,1484,225,76,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1967,September,3,September 1967,1761,1761,1457,468,71,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1968,September,3,September 1968,1779,1779,1507,207,59,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1969,September,3,September 1969,1797,1797,1498,230,61,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1970,September,3,September 1970,1778,1778,1426,279,67,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1971,September,3,September 1971,1396,1396,1062,260,68,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1972,September,3,September 1972,1009,1009,686,253,63,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1973,September,3,September 1973,737,737,225,463,39,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1974,September,3,September 1974,125,125,47,29,32,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-531,ERI,Eritrea,Sub-Saharan Africa,1975,September,3,September 1975,93,93,30,22,22,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 531,ERI,Eritrea,Sub-Saharan Africa,1993,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 531,ERI,Eritrea,Sub-Saharan Africa,1994,September,3,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 531,ERI,Eritrea,Sub-Saharan Africa,1995,September,3,September 1995,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
