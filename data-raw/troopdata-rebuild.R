@@ -161,7 +161,7 @@ names(data.clean.1977.2010) <- listnames.1977.2010
 
 
 
-# Basic data cleaning for 2008 to 2023
+# Basic data cleaning for 2008 to Present
 
 data.clean.2008.Present <- datalist.2008.Present %>%
   furrr::future_map(.f = ~ .x %>%
@@ -171,7 +171,7 @@ data.clean.2008.Present <- datalist.2008.Present %>%
   )
 
 # Pull years and months from the file list for the 2008 to Present Data
-listnames.2008.2023 <- future_map(.x = seq_along(datalist.2008.Present.names),
+listnames.2008.Present <- future_map(.x = seq_along(datalist.2008.Present.names),
              .f = ~ str_extract(datalist.2008.Present.names[[.x]],
                                 pattern = "_([0-9]{4})") %>%
                as.data.frame()
@@ -185,9 +185,9 @@ listnames.2008.2023 <- future_map(.x = seq_along(datalist.2008.Present.names),
                 Month = month.name[as.numeric(Month)],
                 Date = glue::glue("{Month} {Year}"))
 
-listnames.2008.2023 <- as.vector(listnames.2008.2023[[1]])
+listnames.2008.Present <- as.vector(listnames.2008.Present[[1]])
 
-names(data.clean.2008.Present) <- listnames.2008.2023
+names(data.clean.2008.Present) <- listnames.2008.Present
 
 
 

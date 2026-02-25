@@ -72,7 +72,7 @@ get_troopdata <- function(host = NULL,
 
 
   # Set warning for year range and assign default values to allow the function complete
-  if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2024")
+  if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2025")
   if(startyear < 1950) startyear <- 1950
   if(endyear > max(tempdata$year)) endyear <- max(tempdata$year)
 
