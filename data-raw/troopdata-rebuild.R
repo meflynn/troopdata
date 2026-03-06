@@ -357,7 +357,7 @@ custom.cown <- c("Alaska" = 2,
                  "St Helena (Incl. Ascension Is.)" = 1005,
                  "St. Helena (Incl. Ascension Is.)" = 1005,
                  "St. Helena (Includes Ascension Island)" = 1005,
-                 "Antigua" = 1006,
+                 "Antigua" = 58,
                  "Bermuda" = 1007,
                  "Mariana Islands (Including Guam)" = 1008,
                  "Mariana Islands (Guam)" = 1008,
@@ -672,6 +672,8 @@ data.clean.2003.2004 <- list("September 2003" = data.clean.2003,
 
 
 
+#### Consolidate individual data frames ####
+
 # Join all of the lists together into a single list object.
 # Filter out the unused quarters for each year.
 # Summarize values for the United States so they all include the continental US
@@ -707,7 +709,7 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
   dplyr::filter(case_when(
     year <= 1956 ~ month == "June",
     year >= 1957 & year <= 1976 ~ month == "September",
-    year >= 1977 & year <= 2013 ~ month == "September",
+    year >= 1977 & year <= 2012 ~ month == "September",
     TRUE ~ TRUE
   )) %>%
   dplyr::filter(ccode != 2) %>% # Remove US and total US values separately
@@ -799,7 +801,7 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
   dplyr::filter(case_when( # Filter out the quarters that are not used in the data
     year <= 1956 ~ month == "June",
     year >= 1957 & year <= 1976 ~ month == "September",
-    year >= 1977 & year <= 2013 ~ month == "September",
+    year >= 1977 & year <= 2012 ~ month == "September",
     TRUE ~ TRUE
   )) %>%
   dplyr::filter(ccode == 2) %>% # Only keep US data
@@ -839,6 +841,7 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
   dplyr::mutate(troops_ad = case_when(
     !is.na(troops_ad) ~ as.numeric(troops_ad),
     is.infinite(`Total`) ~ `Total Ashore`,
+    year == 1950 ~ `Total Ashore`,
     TRUE ~ `Total`
   ),
   army_ad = case_when(
@@ -859,6 +862,7 @@ data.clean.combined.us.1953.2007 <- furrr::future_map(.x = list(data.clean.1950.
     `Marine Corps Ashore` > 0 ~ `Marine Corps Ashore`,
     TRUE ~ `Marine Corps Total`)
   )
+
 
 
 # Repeat the basic procedure from the previous code chunk but extract the US states
@@ -971,11 +975,7 @@ data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
   dplyr::mutate(countryname = "United States",
                 ccode = 2,
                 iso3c = "USA",
-                Location = "United States",
-                troops_ad = case_when(
-                  year %in% c(1951, 1952) ~ NA,
-                  TRUE ~ troops_ad
-                )) %>%
+                Location = "United States") %>%
   dplyr::select(ccode, countryname, year, month, quarter, everything())
 
 
@@ -1013,7 +1013,7 @@ troopdata_rebuild_long <- country.year.list %>%
   ungroup() %>%
   janitor::clean_names() %>%
   dplyr::select(ccode, countryname, year, month, quarter, source, location, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
-  dplyr::mutate(troops_ad = case_when( # Add values from reports to fill in missing data for Iraq and Afghanistan
+  dplyr::mutate(troops_ad = case_when( # Add values from reports to fill in missing data for Iraq and Afghanistan and other estimated values for US and other cases as needed.
       ccode == 200 & year == 2014 ~ 8495,
       ccode == 700 & year == 2020 ~ 8600, # Afghanistan update from just security
       ccode == 700 & year == 2019 ~ 13000, # Afghanistan update
@@ -1057,7 +1057,7 @@ troopdata_rebuild_long <- country.year.list %>%
       ccode == 1004 ~ "Diego Garcia",
       ccode == 817 ~ "Vietnam",
       ccode == 1005 ~ "St. Helena",
-      ccode == 1006 ~ "Antigua",
+      ccode == 58 ~ "Antigua",
       ccode == 1007 ~ "Bermuda",
       ccode == 1008 ~ "Guam",
       ccode == 1011 ~ "Mariana Islands",
@@ -1141,6 +1141,16 @@ troopdata_rebuild_long <- country.year.list %>%
   dplyr::mutate(troops_all = sum(troops_ad + army_national_guard + air_national_guard + army_reserve + navy_reserve + marine_corps_reserve + air_force_reserve + coast_guard_reserve)) %>% # This adds active duty with reserves separately.
   dplyr::select(ccode, iso3c, countryname, region, year, month, quarter, source, troops_ad, troops_all, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
   arrange(ccode, iso3c, year, month, quarter) %>%
+  dplyr::group_by(ccode) %>% # Start to fill in 1951 and 1952 estimates using stepwise increases.
+  dplyr::mutate(troops_ad_1950 = ifelse(year %in% c(1950:1953), troops_ad[year==1950], NA),
+                troops_ad_1953 = ifelse(year %in% c(1950:1953), troops_ad[year==1953], NA),
+                troops_ad_incremental_difference = round((troops_ad_1953 - troops_ad_1950) / 3, 0) ) %>%
+  dplyr::mutate(troops_ad = case_when(
+    year == 1951 ~ troops_ad_1950 + troops_ad_incremental_difference,
+    year == 1952 ~ troops_ad_1950 + 2 * troops_ad_incremental_difference,
+    TRUE ~ troops_ad
+  )) %>%
+  dplyr::select(-c(troops_ad_1950, troops_ad_1953, troops_ad_incremental_difference)) %>%
   ungroup()
 
 

@@ -49,7 +49,7 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'q
 get_troopdata <- function(host = NULL,
                           branch = FALSE,
                           startyear = 1950,
-                          endyear = 2024,
+                          endyear = 2025,            # Update year to present
                           quarters = FALSE,
                           guard_reserve = FALSE,
                           civilians = FALSE,
@@ -77,14 +77,14 @@ get_troopdata <- function(host = NULL,
   if(endyear > max(tempdata$year)) endyear <- max(tempdata$year)
 
   # Set warning for branch and guard_reserve values.
-  if(branch)  rlang::warn("Branch data only includes active duty by default. This preserves continuity across time periods as guard and reserve data are not reported prior to 2000s.")
+  if(branch)  rlang::warn("Branch data only includes active duty by default. This preserves continuity across time periods as guard and reserve data are not reported prior to 2000s. Also note that disaggregated data are not available for 2003 and 2004 as the DMDC did not issue reports for those years.")
   if(guard_reserve) rlang::warn("Guard and Reserve data only available for 2006 forward.")
   if(quarters) rlang::warn("Some service branches do not report data for all quarters. See the following note from December, 2022, June 2023, and March 2023 DMDC reports: 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so the Army did not provide military personnel data for end-of-June 2023.'")
   # Many of the reports are in quarterly format in more recent years. Make user set
   if(reports == TRUE && quarters == FALSE)  stop("Reports are only available in quarterly format. Please set quarters = TRUE.")
   if(guard_reserve == FALSE) warning("total_ad value shows the total number of active duty personnel only and does not include any guard or reserve troops that may be present. For the total number of uniformed personnel please choose guard_reserve = TRUE.")
 
-  # Next, if reports is true we want to know if we need to filter by host and year, or include all hosts.
+  # Next, if reports is TRUE we want to know if we need to filter by host and year, or include all hosts.
     if (is.numeric(host) || is.character(host)) {
 
 
