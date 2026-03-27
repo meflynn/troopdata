@@ -407,6 +407,7 @@ custom.gwn <- c("Alaska" = 2,
                 "Sri Lanka" = 780,
                 "Cambodia (Kampuchea)" = 811,
                 "Cambodia" = 811,
+                "South Viet-Nam" = 817,
                 "Malaya" = 820,
                 "Malaya, States of" = 820,
                 "States of Malaya" = 820,
@@ -773,7 +774,7 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                 ccode = case_when(
     grepl(".*Ryukyu.*", Location) ~ 740,
     grepl(".*Hong Kong.*", Location, ignore.case = TRUE) ~ 1009,
-    grepl(".*Indo-China.*", Location, ignore.case = TRUE) ~ 817,
+    grepl(".*Indo-China.*|.*Viet-Nam.*|.*South Vietnam.*", Location, ignore.case = TRUE) ~ 817,
     TRUE ~ ccode
   )) %>% # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that. Also assign Hong Kong its own country code because countrycode is lumping it in with China. Also make sure Indo-China is recoded as Vietnam for 817 south vietnam code.
   dplyr::mutate(troops_ad = as.numeric(troops_ad)) %>% # Make sure combined and data.gaps formats match.
