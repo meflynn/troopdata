@@ -745,7 +745,7 @@ data.clean.2003.2004 <- list("September 2003" = data.clean.2003,
 
 
 
-#### Consolidate individual data frames ####
+#### Consolidate International Frames ####
 
 # Join all of the lists together into a single list object.
 # Filter out the unused quarters for each year.
@@ -845,6 +845,9 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
   group_by(ccode, countryname, year, month, quarter) %>%
   dplyr::filter(troops_ad == max(troops_ad, na.rm = TRUE))
 
+
+
+#### Consolidate US Frames ####
 
 
 # Repeat the basic procedure from the previous code chunk but extract the US
@@ -1059,6 +1062,11 @@ data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
 
 
 
+
+
+
+#### Build Reports Frame ####
+
 # Combine the US and international data into a single data frame
 troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
                                        data.us.combined.all) %>%
@@ -1085,7 +1093,10 @@ troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
 
 
 
-#### Build long form data frame
+
+
+#### Build Long Form Frame ####
+####
 troopdata_rebuild_long <- country.year.list %>%
   full_join(troopdata_rebuild_reports, by = c("ccode", "year", "month", "quarter")) %>%
   dplyr::filter(month == "June" & year %in% c(1950:1956) | # All reports are from June between 1950 and 1956
@@ -1112,6 +1123,7 @@ troopdata_rebuild_long <- country.year.list %>%
     ccode == 345 & year <= 2006 ~ "Yugoslavia",
     ccode == 345 & year > 2006 ~ "Serbia",
     ccode == 346 ~ "Bosnia and Herzegovina",
+    ccode == 396 ~ "Abkhazia",
     ccode == 402 ~ "Cabo Verde",              # G&W 402 = Cape Verde (was custom 1015 "Scabo Verde")
     ccode == 403 ~ "Sao Tome and Principe",
     ccode == 437 ~ "Ivory Coast",
@@ -1300,7 +1312,26 @@ troopdata_rebuild_long <- country.year.list %>%
                          year %in% c(1951:1952) ~ NA,
                          TRUE ~ .x
                        )
-  ))
+  )
+  ) %>%
+  # This next mutate chunk addresses true NA from false NA values and
+  # should preserve observations for country years that aren't showing up in the
+  # final data frame because they get dropped.
+  dplyr::mutate(across(army_national_guard:total_civilian,
+                       ~ case_when(
+                         is.na(.x) & year >= 2015 ~ 0,
+                         TRUE ~ .x
+                       )),
+                across(coast_guard_ad:coast_guard_reserve,
+                       ~ case_when(
+                         is.na(.x) & year >= 2008 ~ 0,
+                         is.na(.x) & year < 2008 ~ NA
+                       )),
+                space_force_ad = case_when(
+                  is.na(space_force_ad) & year >= 2023 ~ 0,
+                  TRUE ~ space_force_ad
+                )
+                )
 
 
 
