@@ -77,12 +77,12 @@ get_troopdata <- function(host = NULL,
   if(endyear > max(tempdata$year)) endyear <- max(tempdata$year)
 
   # Set warning for branch and guard_reserve values.
-  if(branch)  rlang::warn("Branch data only includes active duty by default. This preserves continuity across time periods as guard and reserve data are not reported prior to 2000s. Also note that disaggregated data are not available for 2003 and 2004 as the DMDC did not issue reports for those years.")
-  if(guard_reserve) rlang::warn("Guard and Reserve data only available for 2006 forward.")
-  if(quarters) rlang::warn("Some service branches do not report data for all quarters. See the following note from December, 2022, June 2023, and March 2023 DMDC reports: 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so the Army did not provide military personnel data for end-of-June 2023.'")
+  if(branch)  rlang::warn("Branch data only includes active duty by default. This preserves continuity across time periods as guard and reserve data are not reported prior to 2008 Also note that disaggregated data are not available for 2003 and 2004 as the DMDC did not issue reports for those years. Also note that Iraq does not have branch data for 2003-2007 and troops_ad value is estimated using alternative sources.")
+  if(guard_reserve) rlang::warn("Guard and Reserve data only available for 2008 forward. Values will display as NA for earlier time periods.")
+  if(quarters) rlang::warn("Some service branches do not report data for all quarters. See the following note from December, 2022, June 2023, and March 2023 DMDC reports: 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so the Army did not provide military personnel data for end-of-June 2023.' We use a stepwise imputation process to fill in the gaps between September 2022 and September 2023, taking the difference between the values for these two periods and incrementally adjusting totals for the missing periods between.")
   # Many of the reports are in quarterly format in more recent years. Make user set
   if(reports == TRUE && quarters == FALSE)  stop("Reports are only available in quarterly format. Please set quarters = TRUE.")
-  if(guard_reserve == FALSE) warning("total_ad value shows the total number of active duty personnel only and does not include any guard or reserve troops that may be present. For the total number of uniformed personnel please choose guard_reserve = TRUE.")
+  if(guard_reserve == FALSE) warning("total_ad value shows the total number of active duty personnel only and does not include any guard or reserve troops that may be present. For the total number of uniformed personnel please choose guard_reserve = TRUE. Note that guard and reserve data are not included in DMDC reports prior to 2008 so troops_all should be equal to troops_ad for earlier time periods.")
 
   # Next, if reports is TRUE we want to know if we need to filter by host and year, or include all hosts.
     if (is.numeric(host) || is.character(host)) {
@@ -213,7 +213,14 @@ get_troopdata <- function(host = NULL,
 
   }
 
-  tempdata <- dplyr::ungroup(tempdata)
+  # Make sure to remove any lingering -Inf values and replace with NA.
+  # They're introduced when NA values are summarised.
+  tempdata <- dplyr::ungroup(tempdata) %>%
+    dplyr::mutate(across(everything(),
+                         ~ dplyr::case_when(
+                           is.infinite(.x) ~ NA,
+                           TRUE ~ .x
+                         )))
 
   return(tempdata)
 

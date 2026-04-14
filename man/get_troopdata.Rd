@@ -8,7 +8,7 @@ get_troopdata(
   host = NULL,
   branch = FALSE,
   startyear = 1950,
-  endyear = 2024,
+  endyear = 2025,
   quarters = FALSE,
   guard_reserve = FALSE,
   civilians = FALSE,
