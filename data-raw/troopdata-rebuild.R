@@ -1061,6 +1061,180 @@ data.us.combined.all <- bind_rows(data.clean.combined.us.1953.2007,
 
 
 
+#### US States Data ####
+
+# Do first batch.
+# Space force screws up later observations from September 2021 forward
+data.us.states.2008.September.2021 <- purrr::map(
+  .x = data.clean.2008.Present[1:38],
+  .f = ~ .x %>%
+    dplyr::slice(5:58) %>%
+    janitor::row_to_names(1) %>%
+    janitor::clean_names() %>%
+    dplyr::rename("state" = "na_2",
+                  "army_ad" = "army",
+                  "navy_ad" = "navy",
+                  "air_force_ad" = "air_force",
+                  "marine_corps_ad" = "marine_corps",
+                  "coast_guard_ad" = "coast_guard",
+                  "troops_ad" = "total",
+                  "army_civilian" = "army_2",
+                  "navy_civilian" = "navy_2",
+                  "marine_corps_civilian" = "marine_corps_2",
+                  "air_force_civilian" = "air_force_2",
+                  "dod_civilian" = "x4th_estate_dod",
+                  "total_selected_reserve" = "total_2",
+                  "total_civilian" = "total_3")
+) %>%
+  dplyr::bind_rows(.id = "year") %>%
+  dplyr::mutate(state = stringr::str_to_lower(state)) %>%
+  dplyr::mutate(fipscode = usmap::fips(state = state)) %>%
+  dplyr::filter(!is.na(fipscode)) %>%
+  dplyr::select(-c("na", "na_3"))
+
+
+# Do second batch from December 2021 Forward
+
+data.us.states.December.2021.March.2022 <- purrr::map(
+  .x = data.clean.2008.Present[39:40],
+  .f = ~ .x %>%
+    dplyr::slice(5:58) %>%
+    janitor::row_to_names(1) %>%
+    janitor::clean_names() %>%
+    dplyr::rename("state" = "na_2",
+                  "army_ad" = "army",
+                  "navy_ad" = "navy",
+                  "air_force_ad" = "air_force_space_force",
+                  "marine_corps_ad" = "marine_corps",
+                  "coast_guard_ad" = "coast_guard",
+                  "troops_ad" = "total",
+                  "army_civilian" = "army_2",
+                  "navy_civilian" = "navy_2",
+                  "marine_corps_civilian" = "marine_corps_2",
+                  "air_force_civilian" = "air_force",
+                  "dod_civilian" = "x4th_estate_dod",
+                  "total_selected_reserve" = "total_2",
+                  "total_civilian" = "total_3")
+) %>%
+  dplyr::bind_rows(.id = "year") %>%
+  dplyr::mutate(state = stringr::str_to_lower(state)) %>%
+  dplyr::mutate(fipscode = usmap::fips(state = state)) %>%
+  dplyr::filter(!is.na(fipscode)) %>%
+  dplyr::select(-c("na", "na_3"))
+
+
+# Do batch 3 from June 2022 to June 2023
+data.us.states.June.2022.June.2023 <- purrr::map(
+  .x = data.clean.2008.Present[41:45],
+  .f = ~ .x %>%
+    dplyr::slice(8:58) %>%
+    janitor::row_to_names(1) %>%
+    janitor::clean_names() %>%
+    dplyr::rename("state" = "na_2",
+                  "army_ad" = "army",
+                  "navy_ad" = "navy",
+                  "air_force_ad" = "air_force_space_force",
+                  "marine_corps_ad" = "marine_corps",
+                  "coast_guard_ad" = "coast_guard",
+                  "troops_ad" = "total",
+                  "army_civilian" = "army_2",
+                  "navy_civilian" = "navy_2",
+                  "marine_corps_civilian" = "marine_corps_2",
+                  "air_force_civilian" = "air_force",
+                  "dod_civilian" = "x4th_estate_dod",
+                  "total_selected_reserve" = "total_2",
+                  "total_civilian" = "total_3")
+) %>%
+  dplyr::bind_rows(.id = "year") %>%
+  dplyr::mutate(state = stringr::str_to_lower(state)) %>%
+  dplyr::mutate(fipscode = usmap::fips(state = state)) %>%
+  dplyr::filter(!is.na(fipscode)) %>%
+  dplyr::select(-c("na", "na_3"))
+
+
+# Do batch 3 from September 2023 June 2024
+data.us.states.September.2023.June.2024 <- purrr::map(
+  .x = data.clean.2008.Present[46:49],
+  .f = ~ .x %>%
+    dplyr::slice(8:58) %>%
+    janitor::row_to_names(1) %>%
+    janitor::clean_names() %>%
+    dplyr::rename("state" = "na_2",
+                  "army_ad" = "army",
+                  "navy_ad" = "navy",
+                  "air_force_ad" = "air_force",
+                  "space_force_ad" = "space_force",
+                  "marine_corps_ad" = "marine_corps",
+                  "coast_guard_ad" = "coast_guard",
+                  "troops_ad" = "total",
+                  "army_civilian" = "army_2",
+                  "navy_civilian" = "navy_2",
+                  "air_force_civilian" = "air_force_2",
+                  "marine_corps_civilian" = "marine_corps_2",
+                  "dod_civilian" = "x4th_estate_dod",
+                  "total_selected_reserve" = "total_2",
+                  "total_civilian" = "total_3")
+) %>%
+  dplyr::bind_rows(.id = "year") %>%
+  dplyr::mutate(state = stringr::str_to_lower(state)) %>%
+  dplyr::mutate(fipscode = usmap::fips(state = state)) %>%
+  dplyr::filter(!is.na(fipscode)) %>%
+  dplyr::select(-c("na", "na_3"))
+
+
+# Do batch 4 From September 2024 to ...
+data.us.states.Setember.2024.Present <- purrr::map(
+  .x = data.clean.2008.Present[50:length(data.clean.2008.Present)],
+  .f = ~ .x %>%
+    dplyr::slice(5:58) %>%
+    janitor::row_to_names(1) %>%
+    janitor::clean_names() %>%
+    dplyr::rename("state" = "na_2",
+                  "army_ad" = "army",
+                  "navy_ad" = "navy",
+                  "air_force_ad" = "air_force",
+                  "space_force_ad" = "space_force",
+                  "marine_corps_ad" = "marine_corps",
+                  "coast_guard_ad" = "coast_guard",
+                  "troops_ad" = "total",
+                  "army_civilian" = "army_2",
+                  "navy_civilian" = "navy_2",
+                  "marine_corps_civilian" = "marine_corps_2",
+                  "air_force_civilian" = "air_force_2",
+                  "dod_civilian" = "x4th_estate_dod",
+                  "total_selected_reserve" = "total_2",
+                  "total_civilian" = "total_3")
+) %>%
+  dplyr::bind_rows(.id = "year") %>%
+  dplyr::mutate(state = stringr::str_to_lower(state)) %>%
+  dplyr::mutate(fipscode = usmap::fips(state = state)) %>%
+  dplyr::filter(!is.na(fipscode)) %>%
+  dplyr::select(-c("na", "na_3"))
+
+
+# Combine data for US States
+troopdata_rebuild_us_states <- dplyr::bind_rows(data.us.states.2008.September.2021,
+                                                data.us.states.December.2021.March.2022,
+                                                data.us.states.June.2022.June.2023,
+                                                data.us.states.September.2023.June.2024,
+                                                data.us.states.Setember.2024.Present) %>%
+  dplyr::mutate(month = stringr::str_extract(year,
+                                             "[a-zA-Z]*"),
+                year = stringr::str_extract(year,
+                                            "\\d.*"),
+                quarter = dplyr::case_when(
+                  month == "September" ~ 3,
+                  month == "December" ~ 4,
+                  month == "March" ~ 1,
+                  month == "June" ~ 2
+                ),
+                state = stringr::str_to_title(state)) %>%
+  dplyr::select(year, month, quarter, state, fipscode, dplyr::everything())
+
+
+
+
+
 
 
 
@@ -1347,8 +1521,12 @@ readr::write_csv(troopdata_rebuild_reports,
 readr::write_csv(troopdata_rebuild_long,
                  here::here("data-raw/troopdata-rebuild-country-year-quarter-format.csv"))
 
+readr::write_csv(troopdata_rebuild_us_states,
+                 here::here("data-raw/troopdata-rebuild-us-state-data.csv"))
+
 usethis::use_data(troopdata_rebuild_long,
                   troopdata_rebuild_reports,
+                  troopdata_rebuild_us_states,
                   overwrite = TRUE,
                   internal = FALSE)
 

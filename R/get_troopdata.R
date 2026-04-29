@@ -1,4 +1,4 @@
-globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'quarter', 'source', 'location', 'troops_ad', 'army_ad', 'army', 'navy_ad', 'air_force_ad', 'marine_corps_ad', 'coast_guard_ad', 'space_force_ad', 'army_national_guard', 'air_national_guard', 'army_reserve', 'navy_reserve', 'marine_corps_reserve', 'air_force_reserve', 'coast_guard_reserve', 'total_selected_reserve', 'army_civilian', 'navy_civilian', 'marine_corps_civilian', 'air_force_civilian' , 'dod_civilian', 'total_civilian', 'Total', 'Total Ashore', 'Total Afloat', 'Army Total', 'Navy Total', 'Marine Corps Total', 'Air Force Total', 'Coast Guard Total', 'Space Force Total', 'Army National Guard Total', 'Air National Guard Total', 'Army Reserve Total', 'Navy Reserve Total', 'Marine Corps Reserve Total', 'Air Force Reserve Total', 'Coast Guard Reserve Total', 'Total Selected Reserve Total', 'Army Civilian Total', 'Navy Civilian Total', 'Marine Corps Civilian Total', 'Air Force Civilian Total', 'DoD Civilian Total', 'Total Civilian Total', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian'))
+globalVariables(c('ccode', 'iso3c', 'countryname', 'fipscode', 'region', 'year', 'month', 'quarter', 'source', 'location', 'troops_ad', 'army_ad', 'army', 'navy_ad', 'air_force_ad', 'marine_corps_ad', 'coast_guard_ad', 'space_force_ad', 'army_national_guard', 'air_national_guard', 'army_reserve', 'navy_reserve', 'marine_corps_reserve', 'air_force_reserve', 'coast_guard_reserve', 'total_selected_reserve', 'army_civilian', 'navy_civilian', 'marine_corps_civilian', 'air_force_civilian' , 'dod_civilian', 'total_civilian', 'Total', 'Total Ashore', 'Total Afloat', 'Army Total', 'Navy Total', 'Marine Corps Total', 'Air Force Total', 'Coast Guard Total', 'Space Force Total', 'Army National Guard Total', 'Air National Guard Total', 'Army Reserve Total', 'Navy Reserve Total', 'Marine Corps Reserve Total', 'Air Force Reserve Total', 'Coast Guard Reserve Total', 'Total Selected Reserve Total', 'Army Civilian Total', 'Navy Civilian Total', 'Marine Corps Civilian Total', 'Air Force Civilian Total', 'DoD Civilian Total', 'Total Civilian Total', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian', 'Marine Corps Civilian', 'Air Force Civilian', 'DoD Civilian', 'Total Civilian', 'Total Selected Reserve', 'Army National Guard', 'Air National Guard', 'Army Reserve', 'Navy Reserve', 'Marine Corps Reserve', 'Air Force Reserve', 'Coast Guard Reserve', 'Total Selected Reserve', 'Army Civilian', 'Navy Civilian'))
 
 #' Function to retrieve customized U.S. troop deployment data
 #'
@@ -14,6 +14,7 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'region', 'year', 'month', 'q
 #' @param civilians Logical. Should the function return values for civilian DoD personnel? Default is FALSE.
 #' @param quarters Logical. Should the function return quarterly data? Default is FALSE.
 #' @param reports Logical. Should the function return reports for the specified countries and years? Default is FALSE.
+#' @param state_data Logical. Should the function return disaggregated data on US States? Default is FALSE.
 #'
 #'
 #' @importFrom rlang warn
@@ -53,6 +54,7 @@ get_troopdata <- function(host = NULL,
                           quarters = FALSE,
                           guard_reserve = FALSE,
                           civilians = FALSE,
+                          state_data = FALSE,
                           reports = FALSE) {
 
 
@@ -62,11 +64,16 @@ get_troopdata <- function(host = NULL,
 
     tempdata <- troopdata::troopdata_rebuild_reports
 
-  } else {
+  } else if (state_data == TRUE) {
+
+    tempdata <- troopdata::troopdata_rebuild_us_states
+
+  }  else {
 
     tempdata <- troopdata::troopdata_rebuild_long
 
-  }
+    }
+
 
 
 
@@ -89,14 +96,19 @@ get_troopdata <- function(host = NULL,
 
 
     # Try to determine host type match. What are they searching for?
-    invisible(host.type <- if(is.numeric(host[1])) {
+    invisible(host.type <- if(is.numeric(host[1]) && state_data == FALSE) {
       "ccode"
-    } else if (is.character(host[1]) && nchar(host[1]) == 3) {
+    } else if (is.character(host[1]) && nchar(host[1]) == 3 && state_data == FALSE) {
       "iso3c"
-    } else if (is.character(host[1]) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) == 0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0) {
+    } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) == 0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0) {
       "region"
-    } else if (is.character(host[1]) && nchar(host[1]) != 3 && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) > 0) {
-      "countryname"}
+    } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE &&  sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) > 0) {
+      "countryname"
+    } else if (is.numeric(host[1]) && state_data == TRUE) {
+      "fipscode"
+    } else if (is.character(host[1]) && state_data == TRUE) {
+      "state"
+    }
     )
 
     # Filter by host type using if/else instead of case_when
@@ -116,6 +128,14 @@ get_troopdata <- function(host = NULL,
       tempdata <- tempdata %>%
         dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE))
+    } else if (host.type == "fipscode") {
+      tempdata <- tempdata %>%
+        dplyr::filter(year %in% c(startyear:endyear)) %>%
+        dplyr::filter(grepl(paste(host, collapse = "|"), fipscode))
+    } else if (host.type == "state") {
+      tempdata <- tempdata %>%
+        dplyr::filter(year %in% c(startyear:endyear)) %>%
+        dplyr::filter(grepl(paste(host, collapse = "|"), state))
     }
 
     if (reports == TRUE) {
@@ -172,7 +192,7 @@ get_troopdata <- function(host = NULL,
   #
   # We also want to preserve various grouping identifiers. This means we need to decide which groupings are not included in host.type and create a character vector with the other groupings.
 
-  if (is.null(host)) {
+  if (is.null(host) && state_data == FALSE) {
 
     # If no host specified then set countryname as default host type.
     host.type <- "countryname"
@@ -183,13 +203,17 @@ get_troopdata <- function(host = NULL,
     # Remove the host.type from the character vector.
     host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
 
-  } else {
+  } else if (!is.null(host) && state_data == FALSE) {
 
     # Create character vector of all possible grouping variables.
     host.terms <- c("ccode", "iso3c", "countryname", "region")
 
     # Remove the host.type from the character vector.
     host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
+
+  } else if (is.null(host) && state_data == TRUE) {
+
+    host.type <- "state"
 
   }
 
