@@ -75,9 +75,6 @@ get_troopdata <- function(host = NULL,
     }
 
 
-
-
-
   # Set warning for year range and assign default values to allow the function complete
   if(startyear < 1950 | endyear > max(tempdata$year)) warn("Specified year is out of range. Available range includes 1950 through 2025")
   if(startyear < 1950) startyear <- 1950
@@ -113,7 +110,7 @@ get_troopdata <- function(host = NULL,
     # Filter by host type using if/else instead of case_when
     if (host.type == "ccode") {
       tempdata <- tempdata %>%
-        dplyr::filter(grepl(paste(host, collapse = "|"), ccode))
+        dplyr::filter(ccode %in% host)
     } else if (host.type == "iso3c") {
       tempdata <- tempdata %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), iso3c, ignore.case = TRUE))
@@ -125,23 +122,28 @@ get_troopdata <- function(host = NULL,
         dplyr::filter(grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE))
     } else if (host.type == "fipscode") {
       tempdata <- tempdata %>%
-        dplyr::filter(grepl(paste(host, collapse = "|"), fipscode))
+        dplyr::filter(fipscode %in% host)
     } else if (host.type == "state") {
       tempdata <- tempdata %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), state))
     }
 
+  }
 
-    if (reports == TRUE) {
 
-      return(tempdata)
-
-    }
-
-  } else {
+  # Filter years if reports is TRUE we'll return the entire report.
+  # If reports is not TRUE then we'll keep processing.
+  if (reports == TRUE) {
 
     tempdata <- tempdata %>%
       dplyr::filter(year %in% c(startyear:endyear))
+
+    return(tempdata)
+
+  } else {
+
+  tempdata <- tempdata %>%
+    dplyr::filter(year %in% c(startyear:endyear))
 
   }
 
@@ -168,7 +170,7 @@ get_troopdata <- function(host = NULL,
 
   }
 
-  if (civilians==FALSE ) {
+  if (civilians==FALSE) {
 
     civilians.select <- NULL
 
@@ -181,17 +183,17 @@ get_troopdata <- function(host = NULL,
 
   # Separate US states data and international data
 
-  if (state_data == TRUE) {
+  if (state_data == FALSE) {
+
+    tempdata <- tempdata %>%
+      dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard.reserve.select), tidyselect::all_of(civilians.select)) %>%
+      dplyr::ungroup()
+
+  } else if (state_data == TRUE) {
 
     tempdata <- tempdata %>%
       dplyr::select(fipscode, state, year, month, quarter, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard.reserve.select), tidyselect::all_of(civilians.select)) %>%
       dplyr::ungroup()
-
-  } else {
-
-  tempdata <- tempdata %>%
-    dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard.reserve.select), tidyselect::all_of(civilians.select)) %>%
-    dplyr::ungroup()
 
   }
 
@@ -212,7 +214,7 @@ get_troopdata <- function(host = NULL,
 
   } else if (is.null(host) && state_data==TRUE) {
 
-    # If no host specificed for state data make state name default host type.
+    # If no host specified for state data make state name default host type.
     host.type <- "state"
 
     # Create character vector of all possible grouping variables.
