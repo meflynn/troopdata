@@ -58,7 +58,7 @@ get_troopdata <- function(host = NULL,
                           reports = FALSE) {
 
 
-  # First determine if we're using reports or long data format. This depends on reports argument being TRUE or FALSE.
+  # First determine if we're using reports, state_data, or long data format. This depends on reports argument being TRUE or FALSE.
   # Have to include this chunk first so the following if statements can evaluate the temp data object.
   if(reports == TRUE) {
 
@@ -91,9 +91,8 @@ get_troopdata <- function(host = NULL,
   if(reports == TRUE && quarters == FALSE)  stop("Reports are only available in quarterly format. Please set quarters = TRUE.")
   if(guard_reserve == FALSE) warning("total_ad value shows the total number of active duty personnel only and does not include any guard or reserve troops that may be present. For the total number of uniformed personnel please choose guard_reserve = TRUE. Note that guard and reserve data are not included in DMDC reports prior to 2008 so troops_all should be equal to troops_ad for earlier time periods.")
 
-  # Next, if reports is TRUE we want to know if we need to filter by host and year, or include all hosts.
+  # Next we want to know if we need to filter by host and year, or include all hosts.
   if (is.numeric(host) || is.character(host)) {
-
 
     # Try to determine host type match. What are they searching for?
     invisible(host.type <- if(is.numeric(host[1]) && state_data == FALSE) {
@@ -102,11 +101,11 @@ get_troopdata <- function(host = NULL,
       "iso3c"
     } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) == 0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0) {
       "region"
-    } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE &&  sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) > 0) {
+    } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) > 0) {
       "countryname"
     } else if (is.numeric(host[1]) && state_data == TRUE) {
       "fipscode"
-    } else if (is.character(host[1]) && state_data == TRUE) {
+    } else if (is.character(host[1]) && state_data == TRUE && sum(grepl(paste(host, collapse = "|"), tempdata$state, ignore.case = TRUE)) > 0) {
       "state"
     }
     )
@@ -114,29 +113,24 @@ get_troopdata <- function(host = NULL,
     # Filter by host type using if/else instead of case_when
     if (host.type == "ccode") {
       tempdata <- tempdata %>%
-        dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), ccode))
     } else if (host.type == "iso3c") {
       tempdata <- tempdata %>%
-        dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), iso3c, ignore.case = TRUE))
     } else if (host.type == "region") {
       tempdata <- tempdata %>%
-        dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(".*", host, ".*", collapse = "|", sep = ""), region, ignore.case = TRUE))
     } else if (host.type == "countryname") {
       tempdata <- tempdata %>%
-        dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE))
     } else if (host.type == "fipscode") {
       tempdata <- tempdata %>%
-        dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), fipscode))
     } else if (host.type == "state") {
       tempdata <- tempdata %>%
-        dplyr::filter(year %in% c(startyear:endyear)) %>%
         dplyr::filter(grepl(paste(host, collapse = "|"), state))
     }
+
 
     if (reports == TRUE) {
 
@@ -154,7 +148,7 @@ get_troopdata <- function(host = NULL,
 
   # Select columns based on user input.
 
-  if (branch==FALSE ) {
+  if (branch==FALSE) {
 
     branch.select <- NULL
 
@@ -164,13 +158,13 @@ get_troopdata <- function(host = NULL,
 
   }
 
-  if (guard_reserve==FALSE ) {
+  if (guard_reserve==FALSE) {
 
-    guard_reserve.select <- NULL
+    guard.reserve.select <- NULL
 
   } else  {
 
-    guard_reserve.select <- c("army_national_guard", "air_national_guard", "army_reserve", "navy_reserve", "marine_corps_reserve", "air_force_reserve", "coast_guard_reserve", "total_selected_reserve", "troops_all")
+    guard.reserve.select <- c("army_national_guard", "air_national_guard", "army_reserve", "navy_reserve", "marine_corps_reserve", "air_force_reserve", "coast_guard_reserve", "total_selected_reserve", "troops_all")
 
   }
 
@@ -184,21 +178,45 @@ get_troopdata <- function(host = NULL,
 
   }
 
+
+  # Separate US states data and international data
+
+  if (state_data == TRUE) {
+
+    tempdata <- tempdata %>%
+      dplyr::select(fipscode, state, year, month, quarter, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard.reserve.select), tidyselect::all_of(civilians.select)) %>%
+      dplyr::ungroup()
+
+  } else {
+
   tempdata <- tempdata %>%
-    dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard_reserve.select), tidyselect::all_of(civilians.select)) %>%
+    dplyr::select(ccode, year, month, quarter, iso3c, countryname, region, troops_ad, tidyselect::all_of(branch.select), tidyselect::all_of(guard.reserve.select), tidyselect::all_of(civilians.select)) %>%
     dplyr::ungroup()
+
+  }
 
   # Aggregate time periods
   #
   # We also want to preserve various grouping identifiers. This means we need to decide which groupings are not included in host.type and create a character vector with the other groupings.
 
-  if (is.null(host) && state_data == FALSE) {
+  if (is.null(host) && state_data==FALSE) {
 
     # If no host specified then set countryname as default host type.
     host.type <- "countryname"
 
     # Create character vector of all possible grouping variables.
     host.terms <- c("ccode", "iso3c", "countryname", "region")
+
+    # Remove the host.type from the character vector.
+    host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
+
+  } else if (is.null(host) && state_data==TRUE) {
+
+    # If no host specificed for state data make state name default host type.
+    host.type <- "state"
+
+    # Create character vector of all possible grouping variables.
+    host.terms <- c("state", "fipscode")
 
     # Remove the host.type from the character vector.
     host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
@@ -211,23 +229,27 @@ get_troopdata <- function(host = NULL,
     # Remove the host.type from the character vector.
     host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
 
-  } else if (is.null(host) && state_data == TRUE) {
+    } else if (!is.null(host) && state_data == TRUE) {
 
-    host.type <- "state"
+    # Create character vector of all possible grouping variables.
+    host.terms <- c("state", "fipscode")
+
+    # Remove the host.type from the character vector.
+    host.terms <- host.terms[!grepl(paste(host.type, collapse = "|"), host.terms)]
 
   }
 
 
   # The function will drop the unused grouping variables but this should be ok.
   # There are lots of different situations where a given space has multiple grouping variables.
-  if (quarters == TRUE && host.type %in% c("ccode", "iso3c", "countryname")) {
+  if (quarters == TRUE && host.type %in% c("ccode", "iso3c", "countryname", "state", "fipscode")) {
 
     tempdata <- tempdata %>%
       dplyr::group_by(!!sym(host.type), year, month, quarter) %>%
       dplyr::summarise(dplyr::across(.cols = tidyselect::all_of(host.terms), ~ dplyr::first(.x)),
                        dplyr::across(dplyr::matches("_ad|_all|civilian|guard|reserve"), ~ max(.x, na.rm = TRUE)))
 
-  } else if (quarters == FALSE && host.type %in% c("ccode", "iso3c", "countryname")) {
+  } else if (quarters == FALSE && host.type %in% c("ccode", "iso3c", "countryname", "state", "fipscode")) {
 
     tempdata <- tempdata %>%
       dplyr::group_by(!!sym(host.type), year) %>%

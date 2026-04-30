@@ -1228,7 +1228,9 @@ troopdata_rebuild_us_states <- dplyr::bind_rows(data.us.states.2008.September.20
                   month == "March" ~ 1,
                   month == "June" ~ 2
                 ),
-                state = stringr::str_to_title(state)) %>%
+                state = stringr::str_to_title(state),
+                across(!state & !month,
+                         ~ as.numeric(.x))) %>%
   dplyr::select(year, month, quarter, state, fipscode, dplyr::everything())
 
 
