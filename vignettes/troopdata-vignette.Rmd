@@ -23,6 +23,7 @@ First things first—let's load the `{troopdata}` package
 ```{r setup}
 library(troopdata)
 library(ggplot2)
+library(tidyverse)
 library(viridis)
 ```
 

@@ -2,7 +2,7 @@
 title: "get_exercises"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{gget_exercises}
+  %\VignetteIndexEntry{get_exercises}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,4 +16,211 @@ knitr::opts_chunk$set(
 
 ```
 
-This page provides an overview for the `get_exercises()` function, highlighting some of its potential uses. This is the latest addition to the `troopdata` package.
+This page provides an overview for the `get_exercises()` function, the latest addition to the `{troopdata}` package. The function returns a customized data frame of exercise-country-year observations drawn from the Multinational Military Exercises (MME) dataset (D'Orazio and Galambos 2021), reshaped into long format so each row represents a single participating country in a single year of a single exercise.
+
+First things first—let's load the `{troopdata}` package along with a few helpers we'll use for plotting and wrangling.
+
+```{r setup, warning=FALSE, message=FALSE}
+library(troopdata)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(viridis)
+```
+
+The underlying data object is `mme_long`, and `get_exercises()` exposes a series of filter arguments that let users subset the data by participating country, year, exercise duration, geographic location, exercise name, the domain of the exercise (e.g., air, land, sea), the mission focus (warfighting, humanitarian, peacekeeping), and the number of participating countries.
+
+
+## Basic usage
+
+Called with no arguments, `get_exercises()` returns the full long-format exercise-country-year dataset across the entire temporal coverage of the underlying MME data.
+
+```{r basic, warning=FALSE, message=FALSE}
+
+example <- get_exercises()
+
+head(example)
+
+```
+
+Each row identifies a single participating country in a single year of a single exercise. The `MMEID` column uniquely identifies each exercise, `Ex_Name` gives the name of the individual exercise, and `Series_Name` identifies the broader series the exercise belongs to (e.g., "Cobra Gold 23" is part of the "Cobra Gold" series).
+
+## Filtering by country
+
+The `country` argument accepts either a numeric vector of Gleditsch and Ward (G&W) country codes or a character vector of country names. Numeric input is matched exactly against the `gwcode` column; character input is matched against the `country` column using a case-insensitive `grepl` fuzzy match, so partial names are accepted.
+
+For example, using a numeric vector of G&W codes:
+
+```{r country-numeric, warning=FALSE, message=FALSE}
+
+# Pull exercises that include Japan (740) and Australia (900)
+example.gw <- get_exercises(country = c(740, 900))
+
+head(example.gw)
+
+```
+
+Or a character vector. Because the country filter is a fuzzy match, the string `"korea"` will return participation rows for both North and South Korea:
+
+```{r country-char, warning=FALSE, message=FALSE}
+
+example.korea <- get_exercises(country = "korea")
+
+unique(example.korea$country)
+
+```
+
+This is intentional — users who need to distinguish between similarly-named countries should either pass the exact G&W code or post-filter the returned data frame.
+
+## Filtering by year
+
+The `startyear` and `endyear` arguments subset the data to a specific temporal range. If a year falls outside the available range of the underlying MME data, the function issues a warning and clamps the value to the nearest available year rather than failing.
+
+```{r years, warning=FALSE, message=FALSE}
+
+example.years <- get_exercises(country = "korea",
+                               startyear = 2000,
+                               endyear = 2010)
+
+head(example.years)
+
+```
+
+## Filtering by exercise name
+
+The `exercise_name` argument matches against both the `Ex_Name` and `Series_Name` columns using a case-insensitive `grepl` fuzzy match. This lets users target either an individual exercise (e.g., `"Cobra Gold 23"`) or the entire exercise series (`"cobra gold"`).
+
+```{r name, warning=FALSE, message=FALSE}
+
+cobra_gold <- get_exercises(exercise_name = "cobra gold")
+
+head(cobra_gold)
+
+```
+
+Multiple patterns can be supplied as a vector and are combined with logical OR:
+
+```{r name-multi, warning=FALSE, message=FALSE}
+
+multi.ex <- get_exercises(exercise_name = c("cobra gold", "balikatan"))
+
+unique(multi.ex$Series_Name)
+
+```
+
+## Filtering by location
+
+The `location` argument applies the same fuzzy-matching logic to the free-text `Location` column. This is useful for pulling out exercises held in a particular country, sub-region, or named training area.
+
+```{r location, warning=FALSE, message=FALSE}
+
+thailand.ex <- get_exercises(location = "thailand")
+
+head(thailand.ex)
+
+```
+
+## Filtering by duration
+
+The MME data records start and end dates for each exercise. `get_exercises()` computes a `duration` column (in days) from these dates, and the `min_duration` and `max_duration` arguments filter on that value. Rows with unparseable dates (e.g., source values like `"1980-01-xx"`) yield `NA` durations and are excluded only when a duration filter is supplied.
+
+```{r duration, warning=FALSE, message=FALSE}
+
+# Pull exercises lasting at least a week
+long.ex <- get_exercises(min_duration = 7)
+
+# Pull short exercises (one day or less)
+short.ex <- get_exercises(max_duration = 1)
+
+```
+
+## Filtering by domain
+
+The `domain` argument subsets exercises by the warfighting environment. The MME data flags each exercise with one or more binary indicators for `Air`, `Land`, `Sea`, `Amphibious`, and `Cyber`. Pass any combination of these (case-insensitive) to `domain`; an exercise is returned if it is flagged for *any* of the supplied domains (logical OR).
+
+```{r domain, warning=FALSE, message=FALSE}
+
+# Pull all naval and amphibious exercises
+sea.ex <- get_exercises(domain = c("sea", "amphibious"))
+
+head(sea.ex)
+
+```
+
+Unknown domain names are dropped with a warning that lists the accepted values.
+
+## Filtering by mission focus
+
+The `focus` argument works analogously to `domain` but operates on the mission-focus indicators in the source data: `warfighting`, `humanitarian`, and `peacekeeping`. Multiple values combine with logical OR.
+
+```{r focus, warning=FALSE, message=FALSE}
+
+# Pull humanitarian and peacekeeping exercises
+hadr.ex <- get_exercises(focus = c("humanitarian", "peacekeeping"))
+
+head(hadr.ex)
+
+```
+
+## Filtering by number of participants
+
+The `mme_long` data ships with a precomputed `participant_count` column that records the total number of participating countries per exercise (the same value is repeated across every row sharing an `MMEID`). The `min_participants` and `max_participants` arguments filter on this column.
+
+```{r participants, warning=FALSE, message=FALSE}
+
+# Pull large multilateral exercises (10 or more participating countries)
+large.ex <- get_exercises(min_participants = 10)
+
+head(large.ex)
+
+```
+
+## Combining filters
+
+All of the arguments above can be combined freely. The function applies each filter in sequence, so the returned data frame contains only rows that satisfy every supplied condition.
+
+```{r combined, warning=FALSE, message=FALSE}
+
+# Large-scale humanitarian exercises in the Pacific between 2005 and 2015
+combined.ex <- get_exercises(focus = "humanitarian",
+                             location = "philippines|thailand|indonesia",
+                             min_participants = 5,
+                             startyear = 2005,
+                             endyear = 2015)
+
+head(combined.ex)
+
+```
+
+## A quick visualization
+
+Because the function returns a tidy data frame, it composes naturally with `dplyr` and `ggplot2`. Here we count the number of distinct exercises per year for the major Pacific-theater series and plot the trend.
+
+```{r trend, warning=FALSE, message=FALSE, fig.width=7, fig.height=4}
+
+pacific.series <- get_exercises(exercise_name = c("cobra gold",
+                                                  "balikatan",
+                                                  "talisman sabre",
+                                                  "rimpac"))
+
+pacific.trend <- pacific.series %>%
+  dplyr::distinct(MMEID, Series_Name, year) %>%
+  dplyr::count(Series_Name, year)
+
+ggplot2::ggplot(pacific.trend,
+                ggplot2::aes(x = year, y = n, color = Series_Name)) +
+  ggplot2::geom_line(linewidth = 1) +
+  ggplot2::geom_point() +
+  viridis::scale_color_viridis(discrete = TRUE, option = "turbo") +
+  ggplot2::labs(x = "Year",
+                y = "Exercises per year",
+                color = "Series") +
+  ggplot2::theme_minimal()
+
+```
+
+## References
+
+D'Orazio, Vito; Galambos, Kevin, 2021, "Multinational Military Exercises, 1980-2010", https://doi.org/10.7910/DVN/KHFODX, Harvard Dataverse, V1.
+
+Gleditsch, Kristian S., and Michael D. Ward. 1999. "Interstate System Membership: A Revised List of the Independent States since 1816." *International Interactions* 25(4): 393-413.
