@@ -222,5 +222,3 @@ ggplot2::ggplot(pacific.trend,
 ## References
 
 D'Orazio, Vito; Galambos, Kevin, 2021, "Multinational Military Exercises, 1980-2010", https://doi.org/10.7910/DVN/KHFODX, Harvard Dataverse, V1.
-
-Gleditsch, Kristian S., and Michael D. Ward. 1999. "Interstate System Membership: A Revised List of the Independent States since 1816." *International Interactions* 25(4): 393-413.

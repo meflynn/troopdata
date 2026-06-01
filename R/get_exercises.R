@@ -177,8 +177,12 @@ get_exercises <- function(country = NULL,
 
     tempdata <- tempdata %>%
       dplyr::mutate(
-        start_date_parsed = suppressWarnings(as.Date(StartDate, tryFormats = c("%Y-%m-%d", "%m/%d/%y", "%m/%d/%Y"))),
-        end_date_parsed   = suppressWarnings(as.Date(EndDate,   tryFormats = c("%Y-%m-%d", "%m/%d/%y", "%m/%d/%Y"))),
+        start_date_parsed = suppressWarnings(as.Date(StartDate,
+                                                     tryFormats = c("%Y-%m-%d", "%m/%d/%y", "%m/%d/%Y"),
+                                                     optional   = TRUE)),
+        end_date_parsed   = suppressWarnings(as.Date(EndDate,
+                                                     tryFormats = c("%Y-%m-%d", "%m/%d/%y", "%m/%d/%Y"),
+                                                     optional   = TRUE)),
         duration = as.numeric(end_date_parsed - start_date_parsed)
       ) %>%
       dplyr::select(-start_date_parsed, -end_date_parsed)

@@ -39,6 +39,7 @@ mme_long <- mme_wide %>%
   dplyr::rowwise() %>%
   dplyr::mutate(year = list(seq(year_start, year_end))) %>%
   tidyr::unnest(year) %>%
+  dplyr::mutate(year = as.numeric(year)) %>%
   dplyr::ungroup() %>%
   dplyr::select(-state_slot, -year_start, -year_end) %>%
   dplyr::relocate(MMEID, Ex_Name, Series_Name, country, year) %>%
