@@ -1,8 +1,10 @@
-# troopdata (development version)
 
 # troopdata 1.0.5
 
 - Adds updated troopdata from the spring of 2025 through December of 2025.
+- Adds data for individual US states. Users can now use the `state_data` argument to retrieve data from individual US states from 2008 forward.
+- Adds the `get_exercises()` function that allows users to retrieve data on military exercises compiled by Vito D'Orazio and Kevin Galambos.
+- Smaller bug fixes and improved coding to speed compiling underlying data. 
 
 # troopdata 1.0.4
 
