@@ -12,6 +12,7 @@ get_troopdata(
   quarters = FALSE,
   guard_reserve = FALSE,
   civilians = FALSE,
+  state_data = FALSE,
   reports = FALSE
 )
 }
@@ -29,6 +30,8 @@ get_troopdata(
 \item{guard_reserve}{Logical. Should the function return values for the National Guard and Reserve? Default is FALSE.}
 
 \item{civilians}{Logical. Should the function return values for civilian DoD personnel? Default is FALSE.}
+
+\item{state_data}{Logical. Should the function return disaggregated data on US States? Default is FALSE.}
 
 \item{reports}{Logical. Should the function return reports for the specified countries and years? Default is FALSE.}
 }

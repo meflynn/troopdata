@@ -15,6 +15,7 @@
 #' \item{\code{year}}{The year of the observation.}
 #' \item{\code{month}}{The month of the observation.}
 #' \item{\code{quarter}}{The quarter of the observation.}
+#' \item{\code{year_quarter}}{The year and quarter of the observation.}
 #' \item{\code{source}}{The DMDC report source of the observation.}
 #' \item{\code{troops_ad}}{The total number of active duty US military personnel deployed to the host country.}
 #' \item{\code{troops_all}}{The total number of US military personnel deployed to the host country including guard and reserve.}
@@ -179,3 +180,136 @@
 #'
 #'
 "builddata"
+
+
+
+
+#' U.S. domestic troop deployment data, by state
+#'
+#' @description \code{troopdata_rebuild_us_states} returns a data frame
+#'   containing information on U.S. military personnel stationed in each of
+#'   the 50 U.S. states (and U.S. territories where reported). Returned by
+#'   \code{get_troopdata()} when the \code{state_data} argument is set to
+#'   \code{TRUE}.
+#'
+#' @return Returns the full data frame containing state-year (and
+#'   state-year-quarter) observations of U.S. military personnel stationed
+#'   domestically from 1950 through the most recent reporting period.
+#'
+#' @format A data frame with state-year (and state-year-quarter) observations
+#'   including the following variables:
+#'
+#' \describe{
+#' \item{\code{fipscode}}{A numeric vector of U.S. Federal Information
+#'   Processing Standards (FIPS) state codes. Used as the numeric identifier
+#'   when subsetting via \code{get_troopdata(host = <numeric>, state_data = TRUE)}.}
+#' \item{\code{state}}{A character vector of U.S. state names. Matched with a
+#'   case-insensitive \code{grepl} fuzzy match when subsetting via
+#'   \code{get_troopdata(host = <character>, state_data = TRUE)}.}
+#' \item{\code{year}}{The year of the observation.}
+#' \item{\code{month}}{The month of the observation.}
+#' \item{\code{quarter}}{The quarter of the observation.}
+#' \item{\code{troops_ad}}{The total number of active duty US military personnel stationed in the state.}
+#' \item{\code{army_ad}}{Total number of active duty Army personnel stationed in the state.}
+#' \item{\code{navy_ad}}{Total number of active duty Navy personnel stationed in the state.}
+#' \item{\code{air_force_ad}}{Total number of active duty Air Force personnel stationed in the state.}
+#' \item{\code{marine_corps_ad}}{Total number of active duty Marine Corps personnel stationed in the state.}
+#' \item{\code{coast_guard_ad}}{Total number of active duty Coast Guard personnel stationed in the state.}
+#' \item{\code{space_force_ad}}{Total number of active duty Space Force personnel stationed in the state.}
+#' \item{\code{army_national_guard}}{Total number of Army National Guard personnel stationed in the state.}
+#' \item{\code{air_national_guard}}{Total number of Air National Guard personnel stationed in the state.}
+#' \item{\code{army_reserve}}{Total number of Army Reserve personnel stationed in the state.}
+#' \item{\code{navy_reserve}}{Total number of Navy Reserve personnel stationed in the state.}
+#' \item{\code{marine_corps_reserve}}{Total number of Marine Corps Reserve personnel stationed in the state.}
+#' \item{\code{air_force_reserve}}{Total number of Air Force Reserve personnel stationed in the state.}
+#' \item{\code{coast_guard_reserve}}{Total number of Coast Guard Reserve personnel stationed in the state.}
+#' \item{\code{total_selected_reserve}}{Total number of reserve US military personnel stationed in the state.}
+#' \item{\code{army_civilian}}{Total number of Army civilian personnel stationed in the state.}
+#' \item{\code{navy_civilian}}{Total number of Navy civilian personnel stationed in the state.}
+#' \item{\code{air_force_civilian}}{Total number of Air Force civilian personnel stationed in the state.}
+#' \item{\code{marine_corps_civilian}}{Total number of Marine Corps civilian personnel stationed in the state.}
+#' \item{\code{dod_civilian}}{Total number of Department of Defense civilian personnel stationed in the state.}
+#' \item{\code{total_civilian}}{Total number of civilian personnel stationed in the state.}
+#' }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name troopdata_rebuild_us_states
+#' @source \url{https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2005}
+#' @source \doi{10.1177/07388942211030885}
+#'
+"troopdata_rebuild_us_states"
+
+
+
+
+#' Multilateral Military Exercises (MME) data, long format
+#'
+#' @description \code{mme_long} returns a data frame containing
+#'   exercise-country-year observations of multilateral military exercises.
+#'   Built from the MME version 7 data (\url{https://doi.org/10.7910/DVN/KHFODX})
+#'   and reshaped so each row represents a single participating country in
+#'   a single year of a single exercise. This is the data object underlying
+#'   \code{get_exercises()}.
+#'
+#' @return Returns the full data frame of exercise-country-year observations
+#'   of multilateral military exercises from 1980 forward.
+#'
+#' @format A data frame with exercise-country-year observations including
+#'   the following variables:
+#'
+#' \describe{
+#' \item{\code{MMEID}}{Unique exercise identifier from the MME source data.}
+#' \item{\code{Ex_Name}}{The name of the individual exercise (e.g.,
+#'   "Cobra Gold 23").}
+#' \item{\code{Series_Name}}{The name of the broader exercise series the
+#'   exercise belongs to (e.g., "Cobra Gold").}
+#' \item{\code{gwcode}}{Numeric Gleditsch and Ward country code for the
+#'   participating country. Looked up from \code{country} via the
+#'   \code{countrycode} package; \code{NA} for non-country participants
+#'   such as "NATO" or regional groupings.}
+#' \item{\code{country}}{Character vector of participating country names as
+#'   recorded in the MME source data.}
+#' \item{\code{year}}{The year of the observation. Exercises spanning
+#'   multiple years are expanded so that each year between \code{s.year}
+#'   and \code{e.year} produces its own row.}
+#' \item{\code{Location}}{The geographic location where the exercise was
+#'   held (free-text from the source data).}
+#' \item{\code{lat}}{Latitude of the exercise location.}
+#' \item{\code{lon}}{Longitude of the exercise location.}
+#' \item{\code{StartDate}}{Original start-date string from the source data.}
+#' \item{\code{s.year}}{Numeric year the exercise began.}
+#' \item{\code{s.month}}{Numeric month the exercise began.}
+#' \item{\code{s.day}}{Numeric day the exercise began (may be \code{"xx"}
+#'   when unknown).}
+#' \item{\code{EndDate}}{Original end-date string from the source data.}
+#' \item{\code{e.year}}{Numeric year the exercise ended.}
+#' \item{\code{e.month}}{Numeric month the exercise ended.}
+#' \item{\code{e.day}}{Numeric day the exercise ended (may be \code{"xx"}
+#'   when unknown).}
+#' \item{\code{CPX}}{Binary indicator: command post exercise.}
+#' \item{\code{Air}}{Binary indicator: air domain.}
+#' \item{\code{Land}}{Binary indicator: land domain.}
+#' \item{\code{Sea}}{Binary indicator: sea domain.}
+#' \item{\code{Amphibious}}{Binary indicator: amphibious domain.}
+#' \item{\code{Cyber}}{Binary indicator: cyber domain.}
+#' \item{\code{Warfighting}}{Binary indicator: warfighting focus.}
+#' \item{\code{Peacekeeping}}{Binary indicator: peacekeeping focus.}
+#' \item{\code{Humanitarian}}{Binary indicator: humanitarian focus.}
+#' \item{\code{FocusDescription}}{Free-text description of the exercise's
+#'   focus from the source data.}
+#' \item{\code{AdditionalParticipantInfo}}{Free-text notes about
+#'   participants from the source data.}
+#' \item{\code{participant_count}}{Total number of participating countries
+#'   in the exercise. The same value is repeated across all rows that share
+#'   an MMEID. Used by the \code{min_participants} and \code{max_participants}
+#'   arguments of \code{get_exercises()}.}
+#' }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name mme_long
+#' @source D'Orazio, Vito; Galambos, Kevin, 2021, "Multinational Military
+#'   Exercises, 1980-2010", \doi{10.7910/DVN/KHFODX}, Harvard Dataverse, V1.
+#'
+"mme_long"

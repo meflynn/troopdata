@@ -162,6 +162,36 @@ head(example.quarters)
 
 ```
 
+## Data for US States
+
+The package now incorporates data on the number of US service personnel in each US state. The functionality of the command works just as it does when users are looking to pull data for countries, with a couple of small changes. 
+
+First, these data come from the DMDC reports beginning in 2008, so we don't have as much time to work with as we do with the country-level data. 
+
+Second, users need to make sure they set `state_data = TRUE` in the function call. The data for US states work with different identifiers, so this argument needs to be set for the function to differentiate between queries looking at country data and queries looking at data on US states.
+
+Finally, as mentioned above, the data for US states use different identifiers for the relevant geographic units. Users can search for data by the state's name using character strings, just like in the country-level data. Users can also look to match US states by their numeric FIPS codes. These are useful if we're interested in generating things like maps using the state-level data.
+
+```{r state-maps}
+library(usmap)
+library(ggplot2)
+
+states <- get_troopdata(startyear = 2025, state_data = TRUE)
+
+map.data <- usmap::us_map(regions = "states") %>% 
+  dplyr::mutate(fips = as.numeric(fips)) %>% 
+  left_join(states, by = c("fips" = "fipscode"))
+
+ggplot2::ggplot(data = map.data) +
+  geom_sf(aes(geometry = geom, fill = troops_ad)) +
+  theme_void() +
+  viridis::scale_fill_viridis(option = "turbo") +
+  labs(fill = "Military Personnel")
+
+```
+
+
+
 
 ## Reports
 

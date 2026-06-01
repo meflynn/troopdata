@@ -15,6 +15,7 @@ A data frame with country year observations including the following variables:
 \item{\code{year}}{The year of the observation.}
 \item{\code{month}}{The month of the observation.}
 \item{\code{quarter}}{The quarter of the observation.}
+\item{\code{year_quarter}}{The year and quarter of the observation.}
 \item{\code{source}}{The DMDC report source of the observation.}
 \item{\code{troops_ad}}{The total number of active duty US military personnel deployed to the host country.}
 \item{\code{troops_all}}{The total number of US military personnel deployed to the host country including guard and reserve.}

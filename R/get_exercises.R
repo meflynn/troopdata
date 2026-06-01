@@ -136,19 +136,22 @@ get_exercises <- function(country = NULL,
   # Determine whether the user is searching by Gleditsch and Ward numeric
   # country code or by country name. Country names use grepl-based fuzzy
   # matching (case-insensitive), mirroring the convention used in
-  # get_troopdata(). Note: the data column is also named `country`, so we
-  # disambiguate the column reference with `.data$country`.
+  # get_troopdata(). Note: the data column is also named `country`, so the
+  # function argument has to be copied to a differently-named local
+  # (`country.input`) before being passed into dplyr::filter() -- otherwise
+  # dplyr's data mask resolves `country` to the column, not the argument,
+  # and the gwcode branch silently filters down to zero rows.
   if (is.numeric(country)) {
 
-    country.type <- "gwcode"
+    country.type  <- "gwcode"
+    country.input <- country
 
     tempdata <- tempdata %>%
-      dplyr::filter(gwcode %in% country)
+      dplyr::filter(gwcode %in% country.input)
 
   } else if (is.character(country)) {
 
-    country.type <- "country"
-
+    country.type    <- "country"
     country.pattern <- paste(country, collapse = "|")
 
     tempdata <- tempdata %>%

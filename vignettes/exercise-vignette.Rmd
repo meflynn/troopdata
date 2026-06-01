@@ -1,0 +1,19 @@
+---
+title: "get_exercises"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gget_exercises}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+```
+
+This page provides an overview for the `get_exercises()` function, highlighting some of its potential uses. This is the latest addition to the `troopdata` package.
