@@ -1,4 +1,6 @@
 template:
+  bootstrap: 5
+  bootswatch: cerulean
   params:
     bootswatch: readable
 
