@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-    #> package is up-to-date devel version
-
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
 [![](https://img.shields.io/badge/devel%20version-1.0.4.9000-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
