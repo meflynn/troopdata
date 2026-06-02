@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 ```{r, echo = FALSE, results='asis'}
 cat(
 	badge_cran_release("troopdata", "blue"),
-	badge_github_version("meflynn/troopdata", "green"),
+	badge_devel("meflynn/troopdata", "green"),
 	badge_cran_download(pkg = "troopdata", type = "grand-total", "orange"),
 	badge_cran_download(pkg = "troopdata", type = "last-month", "red"),
 	badge_cran_download(pkg = "troopdata", type = "last-week", "yellow")
