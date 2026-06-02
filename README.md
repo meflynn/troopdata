@@ -5,8 +5,10 @@
 
 <!-- badges: start -->
 
+    #> package is up-to-date devel version
+
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
-[![](https://img.shields.io/badge/devel%20version-1.0.2-green.svg)](https://github.com/meflynn/troopdata)
+[![](https://img.shields.io/badge/devel%20version-1.0.4.9000-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow)](https://cran.r-project.org/package=troopdata)
@@ -53,7 +55,7 @@ devtools::install_github("meflynn/troopdata")
 
 ## Use
 
-This package currently has two functions:
+This package currently has four functions:
 
 `get_troopdata()`: Returns a data frame containing U.S. military
 deployment values. Depending on the arguments specified the function
@@ -74,6 +76,10 @@ spending. Users can specify select countries and years, or call the
 entire data frame. Currently only select countries are included in the
 data
 
+`get_exercises()`: Returns a long format data frame containing data on
+military exercises. These data were originally compiled by Vito D’Orazio
+and Kevin Galambos.
+
 ## Examples
 
 You can find more detailed vignettes on these functions below:
@@ -81,6 +87,7 @@ You can find more detailed vignettes on these functions below:
 1.  [`get_troopdata`](https://meflynn.github.io/troopdata/articles/troopdata-vignette.html)
 2.  [`get_basedata`](https://meflynn.github.io/troopdata/articles/basedata-vignette.html)
 3.  [`get_builddata`](https://meflynn.github.io/troopdata/articles/builddata-vignette.html)
+4.  [`get_exercises`](https://meflynn.github.io/troopdata/articles/exercise-vignette.html)
 
 ## A note on country codes
 
@@ -122,3 +129,9 @@ Construction data
 - Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2020.
   “Outside the wire: US military deployments and public opinion in host
   states.” American Political Science Review. 114(2): 326-341.
+
+Military exercise data:
+
+- D’Orazio, Vito; Galambos, Kevin, 2021, “Multinational Military
+  Exercises, 1980-2010”, <https://doi.org/10.7910/DVN/KHFODX>, Harvard
+  Dataverse, V1.
