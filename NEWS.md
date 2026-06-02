@@ -1,5 +1,5 @@
 
-# troopdata 1.0.5
+# troopdata 1.0.4.9000
 
 - Adds updated troopdata from the spring of 2025 through December of 2025.
 - Adds data for individual US states. Users can now use the `state_data` argument to retrieve data from individual US states from 2008 forward.

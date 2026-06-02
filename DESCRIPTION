@@ -1,6 +1,6 @@
 Package: troopdata
 Title: Tools for Analyzing Cross-National Military Deployment and Basing Data
-Version: 1.0.5
+Version: 1.0.4.9000
 Authors@R: 
     person(given = "Michael",
            family = "Flynn",
@@ -14,7 +14,7 @@ Language: en-US
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/meflynn/troopdata, https://meflynn.github.io/troopdata/
 BugReports: https://github.com/meflynn/troopdata/issues
 Depends:

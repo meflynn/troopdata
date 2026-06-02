@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">troopdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.4.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -165,7 +165,7 @@ North and South Korea:</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">example.korea</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "South Korea" "North Korea"</span></span></code></pre></div>
-<p>This is intentional — users who need to distinguish between
+<p>This is intentional—users who need to distinguish between
 similarly-named countries should either pass the exact G&amp;W code or
 post-filter the returned data frame.</p>
 </div>
@@ -175,7 +175,7 @@ post-filter the returned data frame.</p>
 <p>The <code>startyear</code> and <code>endyear</code> arguments subset
 the data to a specific temporal range. If a year falls outside the
 available range of the underlying MME data, the function issues a
-warning and clamps the value to the nearest available year rather than
+warning and sets the value to the nearest available year rather than
 failing.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -226,8 +226,8 @@ the entire exercise series (<code>"cobra gold"</code>).</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   Sea &lt;dbl&gt;, Amphibious &lt;dbl&gt;, Cyber &lt;dbl&gt;, Warfighting &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   Peacekeeping &lt;dbl&gt;, Humanitarian &lt;dbl&gt;, FocusDescription &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   AdditionalParticipantInfo &lt;chr&gt;, participant_count &lt;int&gt;, duration &lt;dbl&gt;</span></span></span></code></pre></div>
-<p>Multiple patterns can be supplied as a vector and are combined with
-logical OR:</p>
+<p>Users can also supply multiple exercise names and the function will
+return matches to the specified strings:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">multi.ex</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_exercises.html">get_exercises</a></span><span class="op">(</span>exercise_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cobra gold"</span>, <span class="st">"balikatan"</span><span class="op">)</span><span class="op">)</span></span>
@@ -286,10 +286,15 @@ filter is supplied.</p>
 <p>The <code>domain</code> argument subsets exercises by the warfighting
 environment. The MME data flags each exercise with one or more binary
 indicators for <code>Air</code>, <code>Land</code>, <code>Sea</code>,
-<code>Amphibious</code>, and <code>Cyber</code>. Pass any combination of
-these (case-insensitive) to <code>domain</code>; an exercise is returned
-if it is flagged for <em>any</em> of the supplied domains (logical
-OR).</p>
+<code>Amphibious</code>, and <code>Cyber</code>. Military exercises can
+include multiple domains—for example, a given exercise can have a Sea
+and Air component. Accordingly, the data contains multiple binary
+indicators for each domain type rather than a single factor-style
+variable. This means there is no individual column entitled “domain” in
+the underlying or returned data frames.</p>
+<p>Pass any combination of these domain types to the <code>domain</code>
+argument. An exercise is returned if it is flagged for <em>any</em> of
+the supplied domains.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Pull all naval and amphibious exercises</span></span>
@@ -319,7 +324,10 @@ accepted values.</p>
 <p>The <code>focus</code> argument works analogously to
 <code>domain</code> but operates on the mission-focus indicators in the
 source data: <code>warfighting</code>, <code>humanitarian</code>, and
-<code>peacekeeping</code>. Multiple values combine with logical OR.</p>
+<code>peacekeeping</code>. As with the <code>domain</code> argument,
+individual exercises can include multiple focus areas (e.g. Warfighting
+AND Humanitarian activities).</p>
+<p>Users can specify multiple focus types in this argument.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Pull humanitarian and peacekeeping exercises</span></span>
@@ -344,12 +352,13 @@ source data: <code>warfighting</code>, <code>humanitarian</code>, and
 <div class="section level2">
 <h2 id="filtering-by-number-of-participants">Filtering by number of participants<a class="anchor" aria-label="anchor" href="#filtering-by-number-of-participants"></a>
 </h2>
-<p>The <code>mme_long</code> data ships with a precomputed
+<p>The <code>mme_long</code> data frame contains a pre-computed
 <code>participant_count</code> column that records the total number of
 participating countries per exercise (the same value is repeated across
-every row sharing an <code>MMEID</code>). The
-<code>min_participants</code> and <code>max_participants</code>
-arguments filter on this column.</p>
+every row sharing an <code>MMEID</code>).</p>
+<p>The <code>min_participants</code> and <code>max_participants</code>
+arguments filter on this column. This allows users more flexibility in
+filtering exercises that meet different participation thresholds.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Pull large multilateral exercises (10 or more participating countries)</span></span>
@@ -421,15 +430,17 @@ series and plot the trend.</p>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">Series_Name</span>, <span class="va">year</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pacific.trend</span>,</span>
-<span>                <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">Series_Name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">viridis</span><span class="fu">::</span><span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html" class="external-link">scale_color_viridis</a></span><span class="op">(</span>discrete <span class="op">=</span> <span class="cn">TRUE</span>, option <span class="op">=</span> <span class="st">"turbo"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>                <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">Series_Name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>                    position <span class="op">=</span> <span class="st">"stack"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">3</span>,<span class="fl">1</span><span class="op">)</span>,</span>
+<span>                     limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">viridis</span><span class="fu">::</span><span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html" class="external-link">scale_fill_viridis</a></span><span class="op">(</span>discrete <span class="op">=</span> <span class="cn">TRUE</span>, option <span class="op">=</span> <span class="st">"turbo"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>,</span>
 <span>                y <span class="op">=</span> <span class="st">"Exercises per year"</span>,</span>
 <span>                color <span class="op">=</span> <span class="st">"Series"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="exercise-vignette_files/figure-html/trend-1.png" class="r-plt" alt="" width="672"></p>
+<p><img src="exercise-vignette_files/figure-html/trend-1.png" width="672"></p>
 </div>
 <div class="section level2">
 <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
@@ -449,7 +460,7 @@ V1.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>

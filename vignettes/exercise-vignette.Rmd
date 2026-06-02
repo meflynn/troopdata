@@ -70,11 +70,11 @@ unique(example.korea$country)
 
 ```
 
-This is intentional — users who need to distinguish between similarly-named countries should either pass the exact G&W code or post-filter the returned data frame.
+This is intentional---users who need to distinguish between similarly-named countries should either pass the exact G&W code or post-filter the returned data frame.
 
 ## Filtering by year
 
-The `startyear` and `endyear` arguments subset the data to a specific temporal range. If a year falls outside the available range of the underlying MME data, the function issues a warning and clamps the value to the nearest available year rather than failing.
+The `startyear` and `endyear` arguments subset the data to a specific temporal range. If a year falls outside the available range of the underlying MME data, the function issues a warning and sets the value to the nearest available year rather than failing.
 
 ```{r years, warning=FALSE, message=FALSE}
 
@@ -98,7 +98,7 @@ head(cobra_gold)
 
 ```
 
-Multiple patterns can be supplied as a vector and are combined with logical OR:
+Users can also supply multiple exercise names and the function will return matches to the specified strings:
 
 ```{r name-multi, warning=FALSE, message=FALSE}
 
@@ -136,7 +136,9 @@ short.ex <- get_exercises(max_duration = 1)
 
 ## Filtering by domain
 
-The `domain` argument subsets exercises by the warfighting environment. The MME data flags each exercise with one or more binary indicators for `Air`, `Land`, `Sea`, `Amphibious`, and `Cyber`. Pass any combination of these (case-insensitive) to `domain`; an exercise is returned if it is flagged for *any* of the supplied domains (logical OR).
+The `domain` argument subsets exercises by the warfighting environment. The MME data flags each exercise with one or more binary indicators for `Air`, `Land`, `Sea`, `Amphibious`, and `Cyber`. Military exercises can include multiple domains---for example, a given exercise can have a Sea and Air component. Accordingly, the data contains multiple binary indicators for each domain type rather than a single factor-style variable. This means there is no individual column entitled "domain" in the underlying or returned data frames. 
+
+Pass any combination of these domain types to the `domain` argument. An exercise is returned if it is flagged for *any* of the supplied domains.
 
 ```{r domain, warning=FALSE, message=FALSE}
 
@@ -149,9 +151,13 @@ head(sea.ex)
 
 Unknown domain names are dropped with a warning that lists the accepted values.
 
+
+
 ## Filtering by mission focus
 
-The `focus` argument works analogously to `domain` but operates on the mission-focus indicators in the source data: `warfighting`, `humanitarian`, and `peacekeeping`. Multiple values combine with logical OR.
+The `focus` argument works analogously to `domain` but operates on the mission-focus indicators in the source data: `warfighting`, `humanitarian`, and `peacekeeping`. As with the `domain` argument, individual exercises can include multiple focus areas (e.g. Warfighting AND Humanitarian activities). 
+
+Users can specify multiple focus types in this argument. 
 
 ```{r focus, warning=FALSE, message=FALSE}
 
@@ -162,9 +168,14 @@ head(hadr.ex)
 
 ```
 
+
+
+
 ## Filtering by number of participants
 
-The `mme_long` data ships with a precomputed `participant_count` column that records the total number of participating countries per exercise (the same value is repeated across every row sharing an `MMEID`). The `min_participants` and `max_participants` arguments filter on this column.
+The `mme_long` data frame contains a pre-computed `participant_count` column that records the total number of participating countries per exercise (the same value is repeated across every row sharing an `MMEID`). 
+
+The `min_participants` and `max_participants` arguments filter on this column. This allows users more flexibility in filtering exercises that meet different participation thresholds. 
 
 ```{r participants, warning=FALSE, message=FALSE}
 
@@ -208,10 +219,12 @@ pacific.trend <- pacific.series %>%
   dplyr::count(Series_Name, year)
 
 ggplot2::ggplot(pacific.trend,
-                ggplot2::aes(x = year, y = n, color = Series_Name)) +
-  ggplot2::geom_line(linewidth = 1) +
-  ggplot2::geom_point() +
-  viridis::scale_color_viridis(discrete = TRUE, option = "turbo") +
+                ggplot2::aes(x = year, y = n, fill = Series_Name)) +
+  ggplot2::geom_bar(stat = "identity",
+                    position = "stack") +
+  scale_y_continuous(breaks = seq(0,3,1),
+                     limits = c(0,3)) +
+  viridis::scale_fill_viridis(discrete = TRUE, option = "turbo") +
   ggplot2::labs(x = "Year",
                 y = "Exercises per year",
                 color = "Series") +
