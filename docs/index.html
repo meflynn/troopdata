@@ -69,6 +69,7 @@
 </h1>
 </div>
 <!-- badges: start -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#&gt; package is up-to-date devel version</span></span></code></pre></div>
 
 <p><img src="reference/figures/logo.png" alt="troopdata hex logo" align="right" width="200" style="padding: 0 15px; float: right;"></p>
 <p>The goal of the <a href="https://github.com/meflynn/troopdata" class="external-link">troopdata</a> package is to facilitate the distribution of military deployment and basing data for use in social science research and journalism. The troop deployment data were initially compiled by Tim Kane using information obtained from the U.S. Department of Defense’s Defense Manpower Data Center (DMDC). The original data ended in 2005 and we have updated it to run through 2024.</p>
@@ -80,7 +81,7 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install the <code>troopdata</code> package from CRAN or <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#install.packages("devtools")</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"troopdata"</span><span class="op">)</span></span>
@@ -92,10 +93,11 @@
 <div class="section level2">
 <h2 id="use">Use<a class="anchor" aria-label="anchor" href="#use"></a>
 </h2>
-<p>This package currently has two functions:</p>
+<p>This package currently has four functions:</p>
 <p><code><a href="reference/get_troopdata.html">get_troopdata()</a></code>: Returns a data frame containing U.S. military deployment values. Depending on the arguments specified the function returns total troop deployments, or total deployments plus service branch-specific deployment values, guard and reserve values, and DoD civilian values. Users can specify select countries and years, or call the entire data frame.</p>
 <p><code><a href="reference/get_basedata.html">get_basedata()</a></code>: Returns a data frame containing information on U.S. military bases around the globe from the Cold War forward. Depending on the arguments specified the function will return the entire data set or data for a particular country. Observations can be site-specific or can be aggregated to generate country counts.</p>
 <p><code><a href="reference/get_builddata.html">get_builddata()</a></code>: Returns a data frame containing geocoded location-year information on U.S. military overseas construction spending. Users can specify select countries and years, or call the entire data frame. Currently only select countries are included in the data</p>
+<p><code><a href="reference/get_exercises.html">get_exercises()</a></code>: Returns a long format data frame containing data on military exercises. These data were originally compiled by Vito D’Orazio and Kevin Galambos.</p>
 </div>
 <div class="section level2">
 <h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
@@ -105,6 +107,7 @@
 <li><a href="https://meflynn.github.io/troopdata/articles/troopdata-vignette.html"><code>get_troopdata</code></a></li>
 <li><a href="https://meflynn.github.io/troopdata/articles/basedata-vignette.html"><code>get_basedata</code></a></li>
 <li><a href="https://meflynn.github.io/troopdata/articles/builddata-vignette.html"><code>get_builddata</code></a></li>
+<li><a href="https://meflynn.github.io/troopdata/articles/exercise-vignette.html"><code>get_exercises</code></a></li>
 </ol>
 </div>
 <div class="section level2">
@@ -130,6 +133,10 @@
 <p>Construction data</p>
 <ul>
 <li>Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2020. “Outside the wire: US military deployments and public opinion in host states.” American Political Science Review. 114(2): 326-341.</li>
+</ul>
+<p>Military exercise data:</p>
+<ul>
+<li>D’Orazio, Vito; Galambos, Kevin, 2021, “Multinational Military Exercises, 1980-2010”, <a href="https://doi.org/10.7910/DVN/KHFODX" class="external-link uri">https://doi.org/10.7910/DVN/KHFODX</a>, Harvard Dataverse, V1.</li>
 </ul>
 </div>
 </div>
@@ -169,7 +176,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="https://www.r-pkg.org/badges/version/troopdata?color=blue"></a></li>
-<li><a href="https://github.com/meflynn/troopdata" class="external-link"><img src="https://img.shields.io/badge/devel%20version-1.0.2-green.svg"></a></li>
+<li><a href="https://github.com/meflynn/troopdata" class="external-link"><img src="https://img.shields.io/badge/devel%20version-1.0.4.9000-green.svg"></a></li>
 <li><a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange"></a></li>
 <li><a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red"></a></li>
 <li><a href="https://cran.r-project.org/package=troopdata" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow"></a></li>

@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 
 
 <!-- badges: start -->
-```{r, echo = FALSE, results='asis'}
+```{r, echo = FALSE, results='asis', message = FALSE}
 cat(
 	badge_cran_release("troopdata", "blue"),
 	badge_devel("meflynn/troopdata", "green"),
