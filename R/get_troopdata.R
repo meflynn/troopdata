@@ -13,7 +13,7 @@ globalVariables(c('ccode', 'iso3c', 'countryname', 'state', 'fipscode', 'region'
 #' @param guard_reserve Logical. Should the function return values for the National Guard and Reserve? Default is FALSE.
 #' @param civilians Logical. Should the function return values for civilian DoD personnel? Default is FALSE.
 #' @param quarters Logical. Should the function return quarterly data? Default is FALSE.
-#' @param reports Logical. Should the function return reports for the specified countries and years? Default is FALSE.
+#' @param reports Logical. Should the function return reports for the specified countries and years? Default is FALSE. The reports are returned as reported, without aggregation, so a country code may appear on more than one row in a period where the report breaks that country's territories out separately.
 #' @param state_data Logical. Should the function return disaggregated data on US States? Default is FALSE.
 #'
 #'
@@ -89,23 +89,83 @@ get_troopdata <- function(host = NULL,
   if(guard_reserve == FALSE) warning("total_ad value shows the total number of active duty personnel only and does not include any guard or reserve troops that may be present. For the total number of uniformed personnel please choose guard_reserve = TRUE. Note that guard and reserve data are not included in DMDC reports prior to 2008 so troops_all should be equal to troops_ad for earlier time periods.")
 
   # Next we want to know if we need to filter by host and year, or include all hosts.
+  # The reports data keeps the country names the reports themselves use, so one country code can
+  # carry several names within it (Japan and the Ryukyu Islands under 740, Guam and the Northern
+  # Marianas under 1008). Name matching is always resolved against the country-year data, which
+  # holds one canonical name per code, and the resulting codes are what filter the data in hand.
+  # That way host = "Japan" returns the Ryukyu rows too.
+  canonical <- troopdata::troopdata_rebuild_long
+
   if (is.numeric(host) || is.character(host)) {
 
-    # Try to determine host type match. What are they searching for?
-    invisible(host.type <- if(is.numeric(host[1]) && state_data == FALSE) {
-      "ccode"
-    } else if (is.character(host[1]) && nchar(host[1]) == 3 && state_data == FALSE) {
-      "iso3c"
-    } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) == 0 || sum(grepl(paste(host, collapse = "|"), "Africa", ignore.case = TRUE)) > 0) {
-      "region"
-    } else if (is.character(host[1]) && nchar(host[1]) != 3 && state_data == FALSE && sum(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE)) > 0) {
-      "countryname"
-    } else if (is.numeric(host[1]) && state_data == TRUE) {
-      "fipscode"
-    } else if (is.character(host[1]) && state_data == TRUE && sum(grepl(paste(host, collapse = "|"), tempdata$state, ignore.case = TRUE)) > 0) {
-      "state"
+    # Accept common alternative spellings so that a country can be found under either the name the
+    # package uses or the name the user is likely to type.
+    if (is.character(host)) {
+
+      host.aliases <- c("eswatini" = "Swaziland",
+                        "swaziland" = "Eswatini",
+                        "czechia" = "Czech Republic",
+                        "cote d'ivoire" = "Ivory Coast",
+                        "côte d'ivoire" = "Ivory Coast",
+                        "turkiye" = "Turkey",
+                        "türkiye" = "Turkey",
+                        "cape verde" = "Cabo Verde",
+                        "burma" = "Myanmar",
+                        "north macedonia" = "Macedonia",
+                        "timor-leste" = "East Timor")
+
+      host <- vapply(host, function(h) {
+        match.name <- host.aliases[tolower(h)]
+        if (!is.na(match.name) &&
+            !any(grepl(h, canonical$countryname, ignore.case = TRUE)) &&
+            any(grepl(match.name, canonical$countryname, ignore.case = TRUE))) {
+          unname(match.name)
+        } else {
+          h
+        }
+      }, character(1), USE.NAMES = FALSE)
+
     }
-    )
+
+    # Try to determine host type match. What are they searching for?
+    #
+    # Note on the previous version: `A && B && C || D` parses as `(A && B && C) || D`, so the
+    # "Africa" test below could send any host string that is a substring of "Africa" to region
+    # matching. A host that matched nothing at all also fell through to region, returning an empty
+    # data frame with no explanation, and could leave host.type NULL, which made the comparisons
+    # below fail with "argument is of length zero". Each branch is now tested explicitly and an
+    # unmatched host is an error rather than a silent empty result.
+    host.type <- if (state_data == TRUE && is.numeric(host[1])) {
+      "fipscode"
+    } else if (state_data == TRUE) {
+      "state"
+    } else if (is.numeric(host[1])) {
+      "ccode"
+    } else if (all(nchar(host) == 3) &&
+               any(toupper(host) %in% toupper(tempdata$iso3c))) {
+      "iso3c"
+    } else if (any(grepl(paste(host, collapse = "|"), canonical$countryname, ignore.case = TRUE)) ||
+               any(grepl(paste(host, collapse = "|"), tempdata$countryname, ignore.case = TRUE))) {
+      "countryname"
+    } else if (any(grepl(paste(host, collapse = "|"), tempdata$region, ignore.case = TRUE))) {
+      "region"
+    } else {
+      NA_character_
+    }
+
+    if (is.na(host.type)) {
+      stop(paste0("`host` value(s) '", paste(host, collapse = "', '"),
+                  "' did not match any country name, ISO3C code, country code, or region in the ",
+                  "data. Check spelling, or see unique(get_troopdata()$countryname) for the ",
+                  "names this version uses."),
+           call. = FALSE)
+    }
+
+    if (host.type == "state" &&
+        !any(grepl(paste(host, collapse = "|"), tempdata$state, ignore.case = TRUE))) {
+      stop(paste0("`host` value(s) '", paste(host, collapse = "', '"),
+                  "' did not match any state in the data."), call. = FALSE)
+    }
 
     # Filter by host type using if/else instead of case_when
     if (host.type == "ccode") {
@@ -118,8 +178,15 @@ get_troopdata <- function(host = NULL,
       tempdata <- tempdata %>%
         dplyr::filter(grepl(paste(".*", host, ".*", collapse = "|", sep = ""), region, ignore.case = TRUE))
     } else if (host.type == "countryname") {
+
+      host.ccodes <- canonical %>%
+        dplyr::filter(grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE)) %>%
+        dplyr::pull(ccode) %>%
+        unique()
+
       tempdata <- tempdata %>%
-        dplyr::filter(grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE))
+        dplyr::filter(ccode %in% host.ccodes |
+                        grepl(paste(host, collapse = "|"), countryname, ignore.case = TRUE))
     } else if (host.type == "fipscode") {
       tempdata <- tempdata %>%
         dplyr::filter(fipscode %in% host)
@@ -135,6 +202,10 @@ get_troopdata <- function(host = NULL,
   # If reports is not TRUE then we'll keep processing.
   if (reports == TRUE) {
 
+    # The reports are returned as reported: one row per line in the report, with the report's own
+    # location and country name. A country code can appear more than once in a period where the
+    # report breaks a country's territories out separately (Japan and the Ryukyu Islands under 740,
+    # Guam and the Northern Marianas under 1008). Nothing is aggregated here.
     tempdata <- tempdata %>%
       dplyr::filter(year %in% c(startyear:endyear))
 

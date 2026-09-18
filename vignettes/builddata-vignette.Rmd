@@ -25,10 +25,6 @@ library(troopdata)
 library(ggplot2)
 ```
 
-The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The `get_basedata()` function represents the core of this package, providing customized data on US overseas troop deployments, specifically.
-
-
-
 
 
 ## Basic Use

@@ -72,6 +72,15 @@ data.gaps <- read_csv(here("../../Projects/Troop Data/Data Files/troopdata_1950_
                 month =  "June",
                 source = "Kane 2006"
   ) %>%
+  # Kane codes Serbia as 345 and Vietnam as 817 for the whole series. The G&W system list and the
+  # DMDC reports switch to 340 (Serbia) after the 2006 split and 816 (unified Vietnam) after 1975.
+  # Without this recode the Kane rows form a parallel series under the superseded code.
+  dplyr::mutate(ccode = dplyr::case_when(
+    ccode == 345 & year > 2006 ~ 340,
+    ccode %in% c(815, 816, 817) & year <= 1975 ~ 817,
+    ccode %in% c(815, 816, 817) & year > 1975 ~ 816,
+    TRUE ~ ccode
+  )) %>%
   dplyr::rename(troops_ad = troops) %>%
   dplyr::filter(ccode != 2) %>%
   dplyr::select(countryname, ccode, iso3c, year, month, quarter, source, troops_ad)
@@ -148,11 +157,35 @@ country.year.list.supplement <- data.gaps %>%
                                                        origin = "gwn",
                                                        destination = "country.name"))
 
-# Now we joint the two data frames and filter out the distinct country year quarter observations
-country.year.list <- country.year.list %>%
+# Now we join the two data frames and filter out the distinct country year quarter observations.
+#
+# NOTE: country.year.list is still grouped by (ccode, countryname, year) from the group_by() +
+# expand() above, and distinct() silently adds the grouping variables to its key. That kept two
+# scaffold rows for every state whose G&W list spelling differs from the countrycode spelling
+# ("Rumania"/Romania, "Korea, Republic of"/South Korea, "Cote D'Ivoire"/Ivory Coast, ...). Each
+# report row then joined to both, and the summarise(sum) below added them, doubling ~23 countries
+# in every year. Ungroup and drop countryname here; countryname is rebuilt from ccode downstream.
+country.year.list.base <- country.year.list %>%
+  dplyr::ungroup() %>%
+  dplyr::select(ccode, year, month, quarter)
+
+# The supplement exists only to cover years the G&W system list does not (deployments to states
+# before independence). Restricting it to state-years the base list lacks stops it from
+# manufacturing a second series for states that are already covered under a different code.
+country.year.list.supplement <- country.year.list.supplement %>%
+  dplyr::ungroup() %>%
+  dplyr::select(ccode, year, month, quarter) %>%
+  dplyr::anti_join(dplyr::distinct(country.year.list.base, ccode, year),
+                   by = c("ccode", "year"))
+
+country.year.list <- country.year.list.base %>%
   bind_rows(country.year.list.supplement) %>%
   distinct(ccode, year, quarter, month) %>%
   arrange(ccode, year, quarter)
+
+# Guard: the scaffold must be unique on ccode-year-month-quarter or every joined report value is
+# counted once per duplicate row.
+stopifnot(!any(duplicated(country.year.list)))
 
 
 # Pull names from the data frames and use them to generate names for each data frame in the list.
@@ -435,7 +468,7 @@ custom.gwn <- c("Alaska" = 2,
                 "Bermuda" = 1007,
                 "Mariana Islands (Including Guam)" = 1008,
                 "Mariana Islands (Guam)" = 1008,
-                "NORTHERN MARIANA ISLANDS" = 1008,
+                "NORTHERN MARIANA ISLANDS" = 1011, # Its own territory, not Guam (1008)
                 "Guam" = 1008,
                 "GUAM" = 1008,
                 "Hong Kong" = 1009,
@@ -443,7 +476,7 @@ custom.gwn <- c("Alaska" = 2,
                 "Hong Kong (& China)" = 1009,
                 "Hong Kong" = 1009, # Note this conflicts with the entry above. Address this below by making values after 1997 go to China.
                 "Mariana Islands" = 1011,
-                "Marshall Islands (Kwajelein)" = 1011,
+                "Marshall Islands (Kwajelein)" = 983, # G&W Marshall Islands, not the Marianas
                 "Northern Mariana Islands" = 1011,
                 "Midway Island" = 1012,
                 "Midway" = 1012,
@@ -1242,54 +1275,15 @@ troopdata_rebuild_us_states <- dplyr::bind_rows(data.us.states.2008.September.20
 
 
 
-#### Build Reports Frame ####
+#### Country Name Standardization ####
 
-# Combine the US and international data into a single data frame
-troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
-                                       data.us.combined.all) %>%
-  dplyr::arrange(ccode, countryname, year, month, quarter) %>%
-  dplyr::select(ccode, countryname, year, month, quarter, tidyselect::everything(), -c(grouping, grouping_num)) %>%
-  dplyr::mutate(across(tidyselect::everything(), ~ case_when( # Replace infinite values with NA
-    is.infinite(.) ~ NA,
-    TRUE ~ .
-  ))) %>%
-  dplyr::mutate(source = case_when(
-    is.na(source) & ccode == 2 ~ "Not Reported", # Fill in missing source values for unreported US data.
-    TRUE ~ source
-  )) %>%
-  dplyr::mutate(region = countrycode(ccode, "gwn", "region"),
-                source = case_when(
-                  year %in% c(1951:1952) ~ "Stepwise Interpolation",
-                  TRUE ~ source
-                )) %>%
-  dplyr::select(ccode, countryname, region, year, month, quarter, tidyselect::everything(), -fips) %>%
-  ungroup() # Remove grouping
-
-
-
-
-
-
-
-
-#### Build Long Form Frame ####
-####
-troopdata_rebuild_long <- country.year.list %>%
-  full_join(troopdata_rebuild_reports, by = c("ccode", "year", "month", "quarter")) %>%
-  dplyr::filter(month == "June" & year %in% c(1950:1956) | # All reports are from June between 1950 and 1956
-                  month == "September" & year >= 1957 | # All reports are from September between 1957 and 2012
-                  month == "December" & year >= 2013 |
-                  month == "June" & year >= 2014 |
-                  month == "March" & year >= 2014) %>%
-  ungroup() %>%
-  janitor::clean_names() %>%
-  dplyr::select(ccode, countryname_x, year, month, quarter, source, location, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
-  dplyr::rename("countryname" = "countryname_x") %>%
-  #dplyr::select(-statenme) %>% Not needed with G&W update
-  dplyr::bind_rows(data.gaps) %>%
-  dplyr::mutate(iso3c = countrycode(ccode, "gwn", "iso3c")) %>%
-  dplyr::mutate(countryname = countrycode(ccode, "gwn", "country.name", custom_match = custom.gwn))  %>%
-  dplyr::mutate(countryname = case_when(
+# Single source of truth for country names. Applied to BOTH the reports frame and the long frame
+# so that a given ccode carries the same countryname in every object the package ships. Without
+# this the two frames disagree (e.g. 572 appeared as "Eswatini" in the reports and "Swaziland" in
+# the long data), and host = "<name>" in get_troopdata() then matches in one and not the other.
+standardize_countryname <- function(.data) {
+  .data %>%
+    dplyr::mutate(countryname = dplyr::case_when(
     countryname == "United States of America" ~ "United States",
     ccode == 52 ~ "Trinidad and Tobago",
     ccode == 58 ~ "Antigua",
@@ -1306,7 +1300,8 @@ troopdata_rebuild_long <- country.year.list %>%
     ccode == 437 ~ "Ivory Coast",
     ccode == 484 ~ "Congo",
     ccode == 490 ~ "Democratic Republic of the Congo",
-    ccode == 572 ~ "Swaziland",               # G&W 572 = Swaziland (was 571, which is Botswana)
+    ccode == 571 ~ "Botswana",
+    ccode == 572 ~ "Eswatini",               # G&W 572 = Swaziland (was 571, which is Botswana)
     ccode == 591 ~ "Seychelles",              # G&W microstate 591 = Seychelles (was custom 1036)
     ccode == 678 ~ "Yemen",                    # G&W code for Republic of Yemen
     ccode == 680 ~ "Yemen People's Republic",
@@ -1329,7 +1324,8 @@ troopdata_rebuild_long <- country.year.list %>%
     ccode == 1005 ~ "St. Helena",
     ccode == 1007 ~ "Bermuda",
     ccode == 1008 ~ "Guam",
-    ccode == 1011 ~ "Mariana Islands",
+    ccode == 1011 ~ "Northern Mariana Islands",
+    ccode == 983 ~ "Marshall Islands",
     ccode == 1012 ~ "Midway Islands",
     ccode == 1013 ~ "US Virgin Islands",
     ccode == 1014 ~ "Wake Island",
@@ -1361,18 +1357,129 @@ troopdata_rebuild_long <- country.year.list %>%
     ccode == 10100 ~ "Johnston Island",
     ccode == 10101 ~ "Eniwetok (J.T.F. 7)",
     TRUE ~ countryname
-  ),
-  ccode = case_when(
-    ccode == 1009 & year < 1997 ~ 1009, # Hong Kong before 1997
-    ccode == 1009 & year >= 1997 ~ 710, # Hong Kong ceded to China in 1997
+    ))
+}
+
+
+#### Build Reports Frame ####
+
+# Combine the US and international data into a single data frame
+troopdata_rebuild_reports <- bind_rows(data.clean.combined.international,
+                                       data.us.combined.all) %>%
+  dplyr::arrange(ccode, countryname, year, month, quarter) %>%
+  dplyr::select(ccode, countryname, year, month, quarter, tidyselect::everything(), -c(grouping, grouping_num)) %>%
+  dplyr::mutate(across(tidyselect::everything(), ~ case_when( # Replace infinite values with NA
+    is.infinite(.) ~ NA,
+    TRUE ~ .
+  ))) %>%
+  dplyr::mutate(source = case_when(
+    is.na(source) & ccode == 2 ~ "Not Reported", # Fill in missing source values for unreported US data.
+    TRUE ~ source
+  )) %>%
+  # Vietnam arrives under three different codes: custom.gwn sends "South Viet-Nam" and
+  # "Indo-China" to 817, while countrycode's gwn lookup sends plain "Viet Nam" / "VIETNAM" to 815.
+  # G&W 815 is a nineteenth century polity (Annam/Cochin China) and should hold no post-1950
+  # deployments at all; 817 is the Republic of Vietnam, which ends in 1975; 816 is unified Vietnam
+  # from 1976. Recode on year, because the location string cannot tell 1963 "Viet Nam" (RVN) from
+  # 2018 "VIETNAM" (unified).
+  dplyr::mutate(ccode = dplyr::case_when(
+    ccode %in% c(815, 816, 817) & year <= 1975 ~ 817,
+    ccode %in% c(815, 816, 817) & year > 1975 ~ 816,
     TRUE ~ ccode
   ),
-  iso3c = case_when(
-    ccode == 1009 & year < 1997 ~ "HKG", # Hong Kong before 1997
-    ccode == 1009 & year >= 1997 ~ "CHN", # Hong Kong ceded to China in 1997
+  # "Indo-China" fuzzy-matches China in the country.name -> iso3c lookup.
+  iso3c = dplyr::case_when(
+    ccode %in% c(816, 817) ~ "VNM",
+    grepl("Indo-China", Location, ignore.case = TRUE) ~ "VNM",
     TRUE ~ iso3c
-  )
-  ) %>% # Fill in missing country names
+  )) %>%
+  # NOTE: standardize_countryname() is deliberately NOT applied here. The reports frame keeps the
+  # names the reports themselves use, so a country code can carry several location names within it
+  # (Japan and the Ryukyu Islands under 740, Guam and the Northern Marianas under 1008). Those are
+  # aggregated to the country level by get_troopdata(), not flattened in the stored reports.
+  dplyr::mutate(region = countrycode(ccode, "gwn", "region"),
+                source = case_when(
+                  year %in% c(1951:1952) ~ "Stepwise Interpolation",
+                  TRUE ~ source
+                )) %>%
+  # The gwn -> region lookup returns nothing for the custom codes, so label the Pacific territories
+  # with the same region the country-year data gives them.
+  dplyr::mutate(region = dplyr::case_when(
+    is.na(region) & ccode %in% c(983, 1008, 1011) ~ "East Asia & Pacific",
+    TRUE ~ region
+  )) %>%
+  dplyr::select(ccode, countryname, region, year, month, quarter, tidyselect::everything(), -fips) %>%
+  ungroup() # Remove grouping
+
+
+
+
+
+
+
+
+#### Build Long Form Frame ####
+####
+troopdata_rebuild_long <- country.year.list %>%
+  full_join(troopdata_rebuild_reports, by = c("ccode", "year", "month", "quarter")) %>%
+  dplyr::filter(month == "June" & year %in% c(1950:1956) | # All reports are from June between 1950 and 1956
+                  month == "September" & year >= 1957 | # All reports are from September between 1957 and 2012
+                  month == "December" & year >= 2013 |
+                  month == "June" & year >= 2014 |
+                  month == "March" & year >= 2014) %>%
+  ungroup() %>%
+  janitor::clean_names() %>%
+  dplyr::select(ccode, countryname, year, month, quarter, source, location, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
+  #dplyr::select(-statenme) %>% Not needed with G&W update
+  # Kane rows are all stamped month = "June" / quarter = 2, and this bind_rows() runs AFTER the
+  # month filter above, so for the year ranges where June is the reporting month (1950-1956 and
+  # 2014 forward) a Kane row landed in the same ccode-year-month-quarter group as the DMDC report
+  # and the summarise(sum) below added the two together. Kane is a fallback source, not an
+  # additional population: only bring in rows that have no DMDC report for the same period.
+  dplyr::bind_rows(
+    data.gaps %>%
+      dplyr::anti_join(troopdata_rebuild_reports,
+                       by = c("ccode", "year", "month", "quarter"))
+  ) %>%
+  # Every code correction happens FIRST, before iso3c and countryname are derived from the code.
+  # Deriving them first and recoding afterwards leaves a row labelled by the code it used to carry:
+  # that is how ccode 817 ended up holding both "South Vietnam" and "Vietnam".
+  dplyr::mutate(ccode = dplyr::case_when(
+    ccode %in% c(815, 816, 817) & year <= 1975 ~ 817, # Republic of Vietnam through 1975
+    ccode %in% c(815, 816, 817) & year > 1975 ~ 816,  # Unified Vietnam after; 815 is not a
+                                                      # post-1950 polity and must never survive
+    ccode == 1009 & year >= 1997 ~ 710,               # Hong Kong ceded to China in 1997
+    TRUE ~ ccode
+  )) %>%
+  # countrycode has no gwn -> iso3c entry for the G&W microstates and several historical states,
+  # which left ~2,200 rows with iso3c = NA and made host = "ATG" (etc.) return nothing.
+  dplyr::mutate(iso3c = countrycode(ccode, "gwn", "iso3c")) %>%
+  dplyr::mutate(iso3c = dplyr::case_when(
+    !is.na(iso3c) ~ iso3c,
+    ccode == 58 ~ "ATG",
+    ccode == 60 ~ "KNA",
+    ccode == 265 ~ "DDR",   # German Democratic Republic (ISO 3166-3)
+    ccode == 315 ~ "CSK",   # Czechoslovakia (ISO 3166-3)
+    ccode == 347 ~ "XKX",   # Kosovo (user-assigned)
+    ccode == 403 ~ "STP",
+    ccode == 591 ~ "SYC",
+    ccode == 678 ~ "YEM",
+    ccode == 680 ~ "YMD",   # Yemen People's Republic (ISO 3166-3)
+    ccode == 816 ~ "VNM",   # Unified Vietnam
+    ccode == 817 ~ "VNM",   # Republic of Vietnam. No ISO code of its own, but sharing VNM keeps
+                            # host = "VNM" returning the whole Vietnam series.
+    ccode == 972 ~ "TON",
+    ccode == 983 ~ "MHL",   # Marshall Islands
+    ccode == 987 ~ "FSM",
+    ccode == 1008 ~ "GUM",  # Guam
+    ccode == 1009 ~ "HKG",  # Hong Kong. Post-1997 rows are already 710 (China) by this point.
+    ccode == 1011 ~ "MNP",  # Northern Mariana Islands
+    TRUE ~ iso3c
+  )) %>%
+  dplyr::mutate(countryname = countrycode(ccode, "gwn", "country.name", custom_match = custom.gwn))  %>%
+  standardize_countryname() %>%
+  # Guard: 817 is the Republic of Vietnam and cannot outlive it. The recode above should leave
+  # nothing for this to remove.
   dplyr::filter(!(ccode == 817 & year > 1975)) %>%
   dplyr::filter(!is.na(countryname)) %>%
   dplyr::mutate(across(tidyselect::everything(), ~ case_when( # Replace infinite values with NA
@@ -1396,6 +1503,11 @@ troopdata_rebuild_long <- country.year.list %>%
   rowwise() %>%
   dplyr::mutate(troops_ad = max(troops_ad, troops_ad_kane_check)) %>%
   dplyr::mutate(troops_ad = case_when( # Add values from reports to fill in missing data for Iraq and Afghanistan and other estimated values for US and other cases as needed.
+    # These are external estimates for periods the reports do not cover. Where the report does carry
+    # branch-level figures, troops_ad is already their sum (see the max() above) and that reported
+    # sum is kept in preference to the estimate. The estimates below apply only where there are no
+    # branch values to add up.
+    !is.na(troops_ad_kane_check) & troops_ad_kane_check > 0 ~ troops_ad,
     ccode == 200 & year == 2014 ~ 8495,
     ccode == 700 & year == 2020 ~ 8600, # Afghanistan update from just security
     ccode == 700 & year == 2019 ~ 13000, # Afghanistan update
@@ -1414,41 +1526,47 @@ troopdata_rebuild_long <- country.year.list %>%
   ) %>%
   dplyr::select(ccode, iso3c, countryname, year, month, quarter, source, troops_ad, army_ad, navy_ad, air_force_ad, marine_corps_ad, coast_guard_ad, space_force_ad, contains("national_guard"), contains("reserve"), contains("civilian")) %>%  # select only variables to be exported to package
   arrange(ccode, iso3c, year, month, quarter) %>%
-  dplyr::group_by(ccode) %>% # Impute missing army values for December 2022 through September 2023
+  dplyr::group_by(ccode) %>%
+  # The DMDC published no country-level figures for December 2022, March 2023 or June 2023 while the
+  # Army converted to IPPS-A. Those three quarters are filled by stepping linearly between the two
+  # reported quarters that bracket them, September 2022 and September 2023, both of which are left
+  # exactly as reported.
+  #
+  # The previous version wrote `year_quarter %in% c(2022.3:2023.3)`. R's colon operator steps by 1,
+  # so that vector is just c(2022.3, 2023.3): the three quarters in between were never filled, and
+  # September 2023 -- an anchor, and a real reported figure -- was overwritten with an interpolated
+  # value that differed from the published report for 99 of 168 countries.
   dplyr::mutate(year_quarter = as.numeric(glue::glue("{year}.{quarter}"))) %>%
-  dplyr::mutate(army_ad_sept_2022 = ifelse(year_quarter %in% c(2022.3:2023.3), army_ad[year_quarter==2022.3], NA),
-                army_ad_sept_2023 = ifelse(year_quarter %in% c(2022.3:2023.3), army_ad[year_quarter==2023.3], NA),
-                army_ad_incremental_difference = round((army_ad_sept_2023 - army_ad_sept_2022) / 5, 0) ) %>%
-  dplyr::mutate(army_ad = case_when(
-    year_quarter == 2022.4 ~ army_ad_sept_2022 + army_ad_incremental_difference,
-    year_quarter == 2023.1 ~ army_ad_sept_2022 + (2 * army_ad_incremental_difference),
-    year_quarter == 2023.2 ~ army_ad_sept_2022 + (3 * army_ad_incremental_difference),
-    year_quarter == 2023.3 ~ army_ad_sept_2022 + (4 * army_ad_incremental_difference),
-    TRUE ~ army_ad
+  dplyr::mutate(dplyr::across(
+    tidyselect::matches("_ad$|guard|reserve|civilian"),
+    ~ {
+      gap.start <- .x[year == 2022 & quarter == 3]
+      gap.end <- .x[year == 2023 & quarter == 3]
+      gap.start <- if (length(gap.start) == 1) as.numeric(gap.start) else NA_real_
+      gap.end <- if (length(gap.end) == 1) as.numeric(gap.end) else NA_real_
+      gap.step <- (gap.end - gap.start) / 4
+
+      dplyr::case_when(
+        year == 2022 & quarter == 4 ~ round(gap.start + gap.step),
+        year == 2023 & quarter == 1 ~ round(gap.start + (2 * gap.step)),
+        year == 2023 & quarter == 2 ~ round(gap.start + (3 * gap.step)),
+        TRUE ~ as.numeric(.x)
+      )
+    }
   )) %>%
-  dplyr::mutate(army_reserve_sept_2022 = ifelse(year_quarter %in% c(2022.3:2023.3), army_reserve[year_quarter==2022.3], NA),
-                army_reserve_sept_2023 = ifelse(year_quarter %in% c(2022.3:2023.3), army_reserve[year_quarter==2023.3], NA),
-                army_reserve_incremental_difference = round((army_reserve_sept_2023 - army_reserve_sept_2022) / 5, 0) ) %>%
-  dplyr::mutate(army_reserve = case_when(
-    year_quarter == 2022.4 ~ army_reserve_sept_2022 + army_reserve_incremental_difference,
-    year_quarter == 2023.1 ~ army_reserve_sept_2022 + (2 * army_reserve_incremental_difference),
-    year_quarter == 2023.2 ~ army_reserve_sept_2022 + (3 * army_reserve_incremental_difference),
-    year_quarter == 2023.3 ~ army_reserve_sept_2022 + (4 * army_reserve_incremental_difference),
-    TRUE ~ army_reserve
-  )) %>%
-  dplyr::mutate(army_national_guard_sept_2022 = ifelse(year_quarter %in% c(2022.3:2023.3), army_national_guard[year_quarter==2022.3], NA),
-                army_national_guard_sept_2023 = ifelse(year_quarter %in% c(2022.3:2023.3), army_national_guard[year_quarter==2023.3], NA),
-                army_national_guard_incremental_difference = round((army_national_guard_sept_2023 - army_national_guard_sept_2022) / 5, 0) ) %>%
-  dplyr::mutate(army_national_guard = case_when(
-    year_quarter == 2022.4 ~ army_national_guard_sept_2022 + army_national_guard_incremental_difference,
-    year_quarter == 2023.1 ~ army_national_guard_sept_2022 + (2 * army_national_guard_incremental_difference),
-    year_quarter == 2023.2 ~ army_national_guard_sept_2022 + (3 * army_national_guard_incremental_difference),
-    year_quarter == 2023.3 ~ army_national_guard_sept_2022 + (4 * army_national_guard_incremental_difference),
-    TRUE ~ army_national_guard
-  )) %>%
-  dplyr::select(-c(army_ad_sept_2022, army_ad_sept_2023, army_ad_incremental_difference,
-                   army_reserve_sept_2022, army_reserve_sept_2023, army_reserve_incremental_difference,
-                   army_national_guard_sept_2022, army_national_guard_sept_2023, army_national_guard_incremental_difference)) %>%
+  # Each column is interpolated and rounded on its own, so for small deployments the rounded branch
+  # values can sum to one more than the rounded total. Keep the larger of the two in the filled
+  # quarters so troops_ad is never below the sum of its own branches.
+  dplyr::ungroup() %>%
+  dplyr::mutate(
+    branch_sum_check = rowSums(dplyr::across(c(army_ad, navy_ad, air_force_ad,
+                                               marine_corps_ad, coast_guard_ad, space_force_ad)),
+                               na.rm = TRUE),
+    troops_ad = dplyr::if_else(
+      (year == 2022 & quarter == 4) | (year == 2023 & quarter %in% c(1, 2)),
+      pmax(troops_ad, branch_sum_check, na.rm = TRUE),
+      troops_ad)) %>%
+  dplyr::select(-branch_sum_check) %>%
   dplyr::group_by(ccode) %>% # Start to fill in 1951 and 1952 estimates using stepwise increases.
   dplyr::mutate(troops_ad_1950 = ifelse(year %in% c(1950:1953), troops_ad[year==1950], NA),
                 troops_ad_1953 = ifelse(year %in% c(1950:1953), troops_ad[year==1953], NA),

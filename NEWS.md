@@ -1,6 +1,50 @@
 
 # troopdata 1.0.4.9000
 
+- **Fixes inflated troop values in `troopdata_rebuild_long`.** Two separate duplication bugs in the
+  rebuild caused roughly a fifth of all country-year-quarter observations to be counted twice, and a
+  few three times. (1) The country-year scaffold was still grouped when `distinct()` was applied, so
+  `countryname` stayed in the distinct key and 23 states whose Gleditsch and Ward list spelling
+  differs from the `countrycode` spelling (Romania, Italy, South Korea, Turkey, Russia, Ivory Coast,
+  and others) kept two scaffold rows per period; each report value was then summed across both.
+  (2) Kane's values are stamped as June observations and were bound in after the reporting-month
+  filter, so for 1950-1956 and 2014 forward they were added to the DMDC report for the same period
+  rather than used as a fallback. Affected values include Germany, South Korea, Japan, Italy, and
+  South Vietnam.
+- Fixes country name and code errors flagged on GitHub: ccode 571 (Botswana) was labeled Swaziland,
+  and Swaziland/Eswatini appeared under two names. Country names are now assigned in one place and
+  applied to both the reports frame and the long frame, so a country code carries the same name in
+  every object the package ships.
+- Fixes Vietnam. `countrycode`'s Gleditsch and Ward lookup returns 817 (Republic of Vietnam) for
+  plain "Vietnam", so reports from 1976 forward were filed under the South Vietnam code and then
+  dropped, leaving modern Vietnam with no data. Vietnam is now 817 through 1975 and 816 after.
+- Fixes the stepwise imputation covering the December 2022 through June 2023 reporting gap. The
+  quarter list was written as `2022.3:2023.3`, and R's colon operator steps by 1, so it covered only
+  the two endpoints: the three unreported quarters in between were left empty, while the reported
+  September 2023 figures were overwritten with interpolated values that differed from the published
+  report for 99 of 168 countries. The gap quarters are now interpolated between the two reported
+  quarters that bracket them, and both of those quarters are left as reported.
+- External estimates for periods the reports do not cover (Afghanistan, Syria, Iraq, Kuwait, and the
+  United Kingdom in 2014) are now applied only where the report carries no branch-level figures to
+  add up. Where it does, the reported sum is kept, so `troops_ad` is no longer lower than the sum of
+  its own branch columns.
+- Separates Guam, the Northern Mariana Islands, and the Marshall Islands, which shared country codes
+  in earlier versions. The Northern Marianas move to 1011 and the Marshall Islands to 983, and all
+  three now carry their ISO3C codes and a region.
+- Fixes Serbia, which appeared as two overlapping series after 2006 because Kane's data codes it as
+  345 while the reports and the G&W list use 340.
+- Adds ISO3C codes for states that the `gwn` to `iso3c` lookup does not cover (Antigua and Barbuda,
+  St. Kitts and Nevis, Sao Tome and Principe, Seychelles, Tonga, Micronesia, Vietnam, and several
+  historical states), so searching by ISO3C code no longer silently returns nothing for them.
+- `get_troopdata()` resolves a `host` country name through its country code rather than matching
+  the name in whichever object is being returned, so `host = "Japan"` now returns the Ryukyu Islands
+  rows as well.
+- `get_troopdata()` now raises an error when `host` matches nothing instead of silently returning an
+  empty data frame, accepts common alternative spellings (Eswatini, Czechia, Cote d'Ivoire, Turkiye,
+  Cabo Verde, Burma, North Macedonia, Timor-Leste), and no longer misroutes hosts to region matching
+  because of an operator precedence error in the host type test.
+- Adds regression tests that compare every country-year-quarter value against the underlying DMDC
+  report and check code, name, and ISO3C consistency.
 - Adds updated troopdata from the spring of 2025 through December of 2025.
 - Adds data for individual US states. Users can now use the `state_data` argument to retrieve data from individual US states from 2008 forward.
 - Adds the `get_exercises()` function that allows users to retrieve data on military exercises compiled by Vito D'Orazio and Kevin Galambos.

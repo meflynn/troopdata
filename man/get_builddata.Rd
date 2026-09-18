@@ -2,40 +2,134 @@
 % Please edit documentation in R/get_builddata.R
 \name{get_builddata}
 \alias{get_builddata}
-\title{Function to retrieve customized U.S. construction spending data.}
+\title{Function to retrieve customized U.S. military construction spending data.}
 \usage{
-get_builddata(host = NA, startyear, endyear)
+get_builddata(
+  host = NA,
+  location = NA,
+  organization = NA,
+  transaction_type = NA,
+  fiscal_category = NA,
+  budget_activity = NA,
+  project = NA,
+  spend_type = "all",
+  min_amount = NA,
+  max_amount = NA,
+  startyear,
+  endyear
+)
 }
 \arguments{
-\item{host}{The Correlates of War (COW) numeric country code or ISO3C code for the host country or countries in the series}
+\item{host}{Character or numeric. If character, the three-letter ISO3C
+country code (\code{iso3c} field), or a vector of such codes (e.g.,
+\code{c("KWT", "JPN", "DEU")} for Kuwait, Japan, and Germany). Matching is
+case-insensitive. If numeric, the value is treated as a Gleditsch and Ward
+(G&W) country code, or vector of codes (\code{gwcode} field), matched
+exactly. Domestic (US) construction is coded as \code{"USA"} / \code{2}.
+Use \code{NA} (the default) to return all locations.}
 
-\item{startyear}{The first year for the series}
+\item{location}{Character. A string or regular expression to match against
+\code{location_name} and \code{location_full_name}. Matching is case-insensitive.
+Use \code{NA} (the default) to return all locations.}
 
-\item{endyear}{The last year for the series}
+\item{organization}{Character. One or more organization codes to filter by
+(e.g., \code{"A"} for Army, \code{"N"} for Navy, \code{"AF"} for Air Force,
+\code{"D"} for Defense-Wide). Use \code{NA} (the default) to include all
+organizations. Common codes include: \code{"A"} (Army), \code{"N"} (Navy),
+\code{"AF"} (Air Force), \code{"D"} (Defense-Wide), \code{"SOCOM"},
+\code{"DHA"} (Defense Health Agency), \code{"DODEA"}, \code{"NSA"}.}
+
+\item{transaction_type}{Character. One or more transaction types to include
+(e.g., \code{"BUDGET"}, \code{"REPROGRAM"}, \code{"CONGRESSIONAL RESCISSION"}).
+Use \code{NA} (the default) to include all transaction types.}
+
+\item{fiscal_category}{Character. One or more fiscal category titles to filter by
+(e.g., \code{"Operational Facilities"}, \code{"Family Housing Operations"}).
+Use \code{NA} (the default) to include all fiscal categories.}
+
+\item{budget_activity}{Character. One or more budget activity titles to filter by
+(e.g., \code{"MAJOR CONSTRUCTION"}, \code{"LEASING"}). Use \code{NA} (the
+default) to include all budget activities.}
+
+\item{project}{Character. A string or regular expression to match against
+\code{project_title}. Matching is case-insensitive. Use \code{NA} (the default)
+to return all projects.}
+
+\item{spend_type}{Character. The type of spending amount to use for filtering and
+to retain in the output. One of:
+\itemize{
+\item \code{"all"} (default): retain all amount columns
+(\code{appn_amount}, \code{auth_amount}, \code{toa_amount})
+\item \code{"appn"}: appropriations (\code{appn_amount})
+\item \code{"auth"}: authorizations (\code{auth_amount})
+\item \code{"toa"}: total obligational authority (\code{toa_amount})
+}
+When \code{spend_type} is not \code{"all"}, rows where the selected amount
+is \code{NA} are dropped, and \code{min_amount}/\code{max_amount} are
+applied to that column. When \code{spend_type = "all"}, amount filters
+are applied to \code{toa_amount}.}
+
+\item{min_amount}{Numeric. Minimum spending amount in thousands of current US
+dollars. Rows below this threshold are excluded. Use \code{NA} (the default)
+for no lower bound.}
+
+\item{max_amount}{Numeric. Maximum spending amount in thousands of current US
+dollars. Rows above this threshold are excluded. Use \code{NA} (the default)
+for no upper bound.}
+
+\item{startyear}{Numeric. The first fiscal year for the series.}
+
+\item{endyear}{Numeric. The last fiscal year for the series.}
 }
 \value{
-\code{get_builddata()} returns a data frame containing location-project-year observations of U.S. military construction and housing spending in thousands of current dollars.
+A data frame of location-project-year observations of U.S. military
+construction spending. Amount fields are in thousands of current US dollars.
 }
 \description{
-\code{get_builddata()} generates a customized data frame containing location-project-year observations of U.S. military construction and housing spending in thousands of current dollars.
+\code{get_builddata()} generates a customized data frame containing
+location-project-year observations of U.S. military construction and housing spending.
+Users can filter by host country/location, organization, transaction type, fiscal
+category, budget activity, project title, spending type, and amount range.
 }
 \examples{
 
 \dontrun{
-library(tidyverse)
 library(troopdata)
 
-example <- get_builddata(host = NA, startyear = 2008, endyear = 2019)
+# All observations from 2008 through 2019
+example <- get_builddata(startyear = 2008, endyear = 2019)
 
-head(example)
+# Kuwait and Japan, budget transactions only
+example2 <- get_builddata(
+  host = c("KWT", "JPN"),
+  transaction_type = "BUDGET",
+  startyear = 2010,
+  endyear = 2020
+)
 
+# Army and Navy major construction, TOA >= $10 million
+example3 <- get_builddata(
+  organization = c("A", "N"),
+  budget_activity = "MAJOR CONSTRUCTION",
+  spend_type = "toa",
+  min_amount = 10000,
+  startyear = 2015,
+  endyear = 2023
+)
+
+# Projects matching "hospital" in title
+example4 <- get_builddata(
+  project = "hospital",
+  spend_type = "appn",
+  startyear = 2010,
+  endyear = 2023
+)
 }
-
-
-
 }
 \references{
-Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2020. "Outside the wire: US military deployments and public opinion in host states." American Political Science Review. 114(2): 326-341.
+Michael A. Allen, Michael E. Flynn, and Carla Martinez Machain. 2020.
+"Outside the wire: US military deployments and public opinion in host states."
+\emph{American Political Science Review}. 114(2): 326-341.
 }
 \author{
 Michael E. Flynn
