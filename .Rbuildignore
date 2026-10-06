@@ -16,3 +16,9 @@ vignettes
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
 ^Claude outputs$
+^tests/testthat/_problems$
+^tests/testthat/testthat-problems\.rds$
+^man/figures/README-pressure-1\.png$
+^man/figures/README-unnamed-chunk-7-1\.png$
+^man/figures/README-unnamed-chunk-9-1\.png$
+^man/figures/README-unnamed-chunk-10-1\.png$

@@ -17,7 +17,7 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/meflynn/troopdata, https://meflynn.github.io/troopdata/
 BugReports: https://github.com/meflynn/troopdata/issues
 Depends:
-    R (>= 3.5.0)
+    R (>= 4.1.0)
 Imports:
     magrittr,
     dplyr,

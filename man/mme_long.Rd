@@ -11,7 +11,7 @@ the following variables:
 \describe{
 \item{\code{MMEID}}{Unique exercise identifier from the MME source data.}
 \item{\code{Ex_Name}}{The name of the individual exercise (e.g.,
-"Cobra Gold 23").}
+"Cobra Gold 93").}
 \item{\code{Series_Name}}{The name of the broader exercise series the
 exercise belongs to (e.g., "Cobra Gold").}
 \item{\code{gwcode}}{Numeric Gleditsch and Ward country code for the
@@ -70,7 +70,7 @@ of multilateral military exercises from 1980 forward.
 \description{
 \code{mme_long} returns a data frame containing
 exercise-country-year observations of multilateral military exercises.
-Built from the MME version 7 data (\url{https://doi.org/10.7910/DVN/KHFODX})
+Built from the MME version 7 data (\doi{10.7910/DVN/KHFODX})
 and reshaped so each row represents a single participating country in
 a single year of a single exercise. This is the data object underlying
 \code{get_exercises()}.

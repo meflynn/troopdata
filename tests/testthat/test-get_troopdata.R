@@ -625,3 +625,117 @@ test_that("an ISO3C host returns locations that share a code on rows of their ow
                          warnings_of(host = "JPN", startyear = 1958, endyear = 1958))))
 
 })
+
+test_that("state names are matched without regard to case, and a whole name returns that state alone", {
+
+  quiet <- function(...) {
+    suppressMessages(suppressWarnings(
+      get_troopdata(state_data = TRUE, startyear = 2010, endyear = 2010, ...)
+    ))
+  }
+
+  # The check on a state name ignored case and the filter after it did not: host = "kansas"
+  # passed the check and returned Arkansas, the one name that contains the string as typed, and
+  # host = "texas" returned no rows at all.
+  expect_identical(quiet(host = "kansas")$state, "Kansas")
+  expect_identical(quiet(host = "KANSAS")$state, "Kansas")
+  expect_identical(quiet(host = "kansas"), quiet(host = "Kansas"))
+  expect_identical(quiet(host = "texas")$state, "Texas")
+  expect_identical(quiet(host = "new york")$state, "New York")
+  expect_identical(quiet(host = " kansas ")$state, "Kansas")
+
+  # The data spell it "District Of Columbia".
+  expect_identical(quiet(host = "District of Columbia")$state, "District Of Columbia")
+
+  # A whole name is that state and no other: "Virginia" used to bring West Virginia with it.
+  expect_identical(quiet(host = "Virginia")$state, "Virginia")
+  expect_identical(quiet(host = "virginia")$state, "Virginia")
+  expect_identical(quiet(host = "west virginia")$state, "West Virginia")
+  expect_setequal(quiet(host = c("kansas", "arkansas"))$state, c("Kansas", "Arkansas"))
+
+  # Every state, asked for by its own name in lower case, comes back alone.
+  states <- sort(unique(troopdata::troopdata_rebuild_us_states$state))
+  expect_length(states, 51)
+  returned <- vapply(states, function(s) paste(quiet(host = tolower(s))$state, collapse = " + "),
+                     character(1), USE.NAMES = FALSE)
+  expect_equal(returned, states)
+
+  # Part of a name still returns every state that contains it, in any case.
+  expect_setequal(quiet(host = "Carolina")$state, c("North Carolina", "South Carolina"))
+  expect_setequal(quiet(host = "dakota")$state, c("North Dakota", "South Dakota"))
+
+  # FIPS codes are unchanged, and a host that matches no state is an error either way.
+  expect_identical(quiet(host = 20)$state, "Kansas")
+  expect_error(quiet(host = "Narnia"), "did not match any state")
+  expect_error(quiet(host = 999), "did not match any state FIPS code")
+
+})
+
+test_that("values of host that match nothing are named in a warning", {
+
+  quiet <- function(...) suppressMessages(suppressWarnings(get_troopdata(...)))
+
+  warnings_of <- function(...) {
+    seen <- character()
+    withCallingHandlers(suppressMessages(get_troopdata(...)),
+                        warning = function(w) {
+                          seen <<- c(seen, conditionMessage(w))
+                          invokeRestart("muffleWarning")
+                        })
+    seen
+  }
+
+  ignored <- "did not match any .* in the data and were ignored"
+
+  # How host is read is decided for the vector as a whole, and a value that then matched
+  # nothing was dropped without a word. The result is the same as before; the value is named.
+  mixed <- warnings_of(host = c("USA", "Japan"), startyear = 2000, endyear = 2000)
+  expect_true(any(grepl("'USA' did not match any country name", mixed)))
+  expect_true(any(grepl("must all be of one kind", mixed)))
+  expect_identical(quiet(host = c("USA", "Japan"), startyear = 2000, endyear = 2000)$countryname,
+                   "Japan")
+
+  expect_true(any(grepl("'GER' did not match any ISO3C code",
+                        warnings_of(host = c("JPN", "KOR", "GER"), startyear = 2000, endyear = 2000))))
+  expect_setequal(quiet(host = c("JPN", "KOR", "GER"), startyear = 2000, endyear = 2000)$iso3c,
+                  c("JPN", "KOR"))
+
+  expect_true(any(grepl("'South Koera' did not match any country name",
+                        warnings_of(host = c("Japan", "South Koera"), startyear = 2000, endyear = 2000))))
+
+  expect_true(any(grepl("'Narnia' did not match any region",
+                        warnings_of(host = c("Europe & Central Asia", "Narnia"),
+                                    startyear = 2000, endyear = 2000))))
+
+  # The state data, by name and by FIPS code.
+  expect_true(any(grepl("'Narnia' did not match any state name",
+                        warnings_of(host = c("texas", "Narnia"), state_data = TRUE,
+                                    startyear = 2010, endyear = 2010))))
+  expect_true(any(grepl("999 did not match any state FIPS code",
+                        warnings_of(host = c(48, 999), state_data = TRUE,
+                                    startyear = 2010, endyear = 2010))))
+
+  # Nothing is said when every value matches.
+  all.matched <- list(
+    list(host = "Japan"), list(host = c("Japan", "Italy")), list(host = c("JPN", "KOR")),
+    list(host = c(200, 220)), list(host = "Europe & Central Asia"), list(host = "Korea"),
+    list(host = "Germany"), list(), list(host = c("Texas", "kansas"), state_data = TRUE),
+    list(host = " kansas ", state_data = TRUE),
+    list(host = c(20, 48), state_data = TRUE)
+  )
+
+  for (arguments in all.matched) {
+    seen <- do.call(warnings_of, c(arguments, list(startyear = 2010, endyear = 2010)))
+    expect_false(any(grepl(ignored, seen)), info = paste(unlist(arguments), collapse = ", "))
+  }
+
+  # A numeric country code keeps its own message, and a region given beside country names
+  # keeps the note that explains it; neither gets a second warning.
+  codes <- warnings_of(host = c(200, 9999), startyear = 2000, endyear = 2000)
+  expect_equal(sum(grepl("did not match", codes)), 1)
+
+  region.and.country <- warnings_of(host = c("Japan", "Europe"), startyear = 2000, endyear = 2000)
+  expect_true(any(grepl("matched no country name and returned nothing", region.and.country)))
+  expect_false(any(grepl(ignored, region.and.country)))
+
+})

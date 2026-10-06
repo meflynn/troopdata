@@ -27,7 +27,7 @@ library(dplyr)
 library(maps)
 ```
 
-The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The `get_basedata()` function represents the core of this package, providing customized data on US overseas troop deployments, specifically.
+The troopdata package provides multiple functions to generate customizable datasets containing information on US military deployments and accompanying data. The `get_basedata()` function provides customized data on US overseas military bases, specifically.
 
 ## Basic Use
 
@@ -41,7 +41,7 @@ head(baseexample)
 
 ```
 
-As with the `get_troopdata()` function you can specify a numeric vector of COW country codes or a character vector of ISO3C codes to specify specific host countries. 
+As with the `get_troopdata()` function you can specify a numeric vector of country codes or a character vector of ISO3C codes to specify specific host countries. Note that the basing data use Correlates of War (COW) country codes, while the troop deployment and construction data use Gleditsch and Ward codes. The two mostly agree, but Germany, for example, is 255 here and 260 in the troop data.
 
 For example, using COW country codes:
  

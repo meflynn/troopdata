@@ -43,7 +43,7 @@ head(example)
 
 ```
 
-Each row identifies a single participating country in a single year of a single exercise. The `MMEID` column uniquely identifies each exercise, `Ex_Name` gives the name of the individual exercise, and `Series_Name` identifies the broader series the exercise belongs to (e.g., "Cobra Gold 23" is part of the "Cobra Gold" series).
+Each row identifies a single participating country in a single year of a single exercise. The `MMEID` column uniquely identifies each exercise, `Ex_Name` gives the name of the individual exercise, and `Series_Name` identifies the broader series the exercise belongs to (e.g., "Cobra Gold 93" is part of the "Cobra Gold" series).
 
 ## Filtering by country
 
@@ -88,7 +88,7 @@ head(example.years)
 
 ## Filtering by exercise name
 
-The `exercise_name` argument matches against both the `Ex_Name` and `Series_Name` columns using a case-insensitive `grepl` fuzzy match. This lets users target either an individual exercise (e.g., `"Cobra Gold 23"`) or the entire exercise series (`"cobra gold"`).
+The `exercise_name` argument matches against both the `Ex_Name` and `Series_Name` columns using a case-insensitive `grepl` fuzzy match. This lets users target either an individual exercise (e.g., `"Cobra Gold 93"`) or the entire exercise series (`"cobra gold"`).
 
 ```{r name, warning=FALSE, message=FALSE}
 
@@ -192,12 +192,12 @@ All of the arguments above can be combined freely. The function applies each fil
 
 ```{r combined, warning=FALSE, message=FALSE}
 
-# Large-scale humanitarian exercises in the Pacific between 2005 and 2015
+# Large-scale humanitarian exercises in the Pacific between 2005 and 2010, the last year in the data
 combined.ex <- get_exercises(focus = "humanitarian",
                              location = "philippines|thailand|indonesia",
                              min_participants = 5,
                              startyear = 2005,
-                             endyear = 2015)
+                             endyear = 2010)
 
 head(combined.ex)
 
@@ -211,7 +211,7 @@ Because the function returns a tidy data frame, it composes naturally with `dply
 
 pacific.series <- get_exercises(exercise_name = c("cobra gold",
                                                   "balikatan",
-                                                  "talisman sabre",
+                                                  "talisman sab", # the data spell it both "Sabre" and "Saber"
                                                   "rimpac"))
 
 pacific.trend <- pacific.series %>%
@@ -222,12 +222,12 @@ ggplot2::ggplot(pacific.trend,
                 ggplot2::aes(x = year, y = n, fill = Series_Name)) +
   ggplot2::geom_bar(stat = "identity",
                     position = "stack") +
-  scale_y_continuous(breaks = seq(0,3,1),
-                     limits = c(0,3)) +
+  scale_y_continuous(breaks = seq(0,4,1),
+                     limits = c(0,4)) +
   viridis::scale_fill_viridis(discrete = TRUE, option = "turbo") +
   ggplot2::labs(x = "Year",
                 y = "Exercises per year",
-                color = "Series") +
+                fill = "Series") +
   ggplot2::theme_minimal()
 
 ```

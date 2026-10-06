@@ -37,7 +37,7 @@ one code selects a place in both data sets: Puerto Rico (\code{6},
 Mariana Islands (\code{1011}, \code{"MNP"}), the U.S. Virgin Islands
 (\code{1013}, \code{"VIR"}), Wake Island (\code{1014}, \code{"UMI"}),
 American Samoa (\code{1041}, \code{"ASM"}) and Ascension Island
-(\code{1042}, \code{"SHN"}). Roughly 28 percent of rows report an amount but no usable location
+(\code{1042}, \code{"SHN"}). Roughly a quarter of rows report an amount but no usable location
 (\code{"Unspecified Worldwide Locations"} and similar) and have neither code.}
 
 \item{location}{Character. A string or regular expression to match against
@@ -58,8 +58,9 @@ each source sheet used.
 
 There is no \code{"Marine Corps"} value: the C-1 exhibits carry Marine Corps
 construction in the Navy accounts. Guard and reserve components appear in
-\code{appn_title} rather than here. Most FY2004-FY2007 rows carry no
-organization at all, so filtering on this field drops those rows.}
+\code{appn_title} rather than here. For FY2004-FY2007 the service of an
+Army, Navy or Air Force line is read from the "Treasury Agency" column of
+the report, which is where those workbooks print it.}
 
 \item{transaction_type}{Character. One or more transaction types to include:
 \code{"BUDGET"}, \code{"REPROGRAM"}, \code{"REDUCTION"},
@@ -91,7 +92,7 @@ genuinely present at both levels and return rows from each.
 
 See
 \code{sort(unique(c(troopdata::build_data_20260918$facility_group_title,
-  troopdata::build_data_20260918$facility_category_title)))} for the 192 values
+  troopdata::build_data_20260918$facility_category_title)))} for the 190 values
 present in the data. Not every row carries a facility title, so filtering on
 this argument drops the rest.}
 
@@ -136,9 +137,11 @@ for no upper bound.}
 years, the last of them as a budget request, and the data holds every
 fiscal year from the most recent report that covers it. That is an enacted
 or actual figure for every year except FY2016, whose only report among the
-source files is the one that requests it. \code{TRUE} (the default) returns
-everything, with FY2016 flagged by the \code{is_request} column.
-\code{FALSE} drops FY2016.}
+source files is the one that requests it. FY2010 also has 26 lines that
+come from an overseas contingency operations request sheet and are on no
+enacted sheet. \code{TRUE} (the default) returns everything, with those
+rows flagged by the \code{is_request} column. \code{FALSE} drops FY2016
+and the 26 FY2010 lines.}
 
 \item{startyear}{Numeric. The first fiscal year for the series.}
 

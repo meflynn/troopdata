@@ -1192,3 +1192,172 @@ test_that("the nine custom-coded territories reach the data", {
   expect_false(any(grepl("TRUCIAL", reports$Location[reports$ccode == 698])))   # Oman
 
 })
+
+test_that("the June 2023 guard, reserve and civilian figures are on the right locations", {
+
+  long <- troopdata::troopdata_rebuild_long
+  reports <- troopdata::troopdata_rebuild_reports
+
+  june <- long[long$year == 2023 & long$month == "June", ]
+  value <- function(name, column) june[[column]][june$countryname == name]
+
+  # DMDC's June 2023 workbook prints the civilian columns one row low from Montenegro to the
+  # end of the overseas list and five guard and reserve columns one row low from Morocco to
+  # Wake Island. Qatar's line held Puerto Rico's figures and Uruguay's the United Kingdom's.
+  # The country data read each figure from the line below the one it is printed on.
+  expect_equal(value("Puerto Rico", "total_civilian"), 2201)
+  expect_equal(value("Qatar", "total_civilian"), 27)
+  expect_equal(value("United Kingdom", "total_civilian"), 1383)
+  expect_equal(value("Uruguay", "total_civilian"), 0)
+  expect_equal(value("Spain", "total_civilian"), 432)
+  expect_equal(value("Sri Lanka", "total_civilian"), 0)
+  expect_equal(value("Montenegro", "total_civilian"), 1)
+  expect_equal(value("Morocco", "total_civilian"), 7)
+
+  expect_equal(value("Puerto Rico", "navy_reserve"), 273)
+  expect_equal(value("Puerto Rico", "air_national_guard"), 1167)
+  expect_equal(value("Qatar", "navy_reserve"), 0)
+  expect_equal(value("Qatar", "air_national_guard"), 0)
+  expect_equal(value("United Kingdom", "air_force_reserve"), 96)
+  expect_equal(value("Uruguay", "air_force_reserve"), 0)
+  expect_equal(value("US Virgin Islands", "air_national_guard"), 64)
+  expect_equal(value("Wake Island", "air_national_guard"), 0)
+
+  # Montenegro's guard and reserve figures were not displaced; only its civilians were.
+  expect_equal(value("Montenegro", "air_national_guard"), 1)
+
+  # The totals that are built from these columns follow.
+  reserve <- c("army_national_guard", "air_national_guard", "army_reserve", "navy_reserve",
+               "marine_corps_reserve", "air_force_reserve", "coast_guard_reserve")
+  civilian <- c("army_civilian", "navy_civilian", "marine_corps_civilian", "air_force_civilian",
+                "dod_civilian")
+  overseas <- june[june$ccode != 2, ]
+  expect_equal(overseas$total_selected_reserve, rowSums(overseas[, reserve]))
+  expect_equal(overseas$troops_all, overseas$troops_ad + rowSums(overseas[, reserve]))
+  expect_equal(overseas$total_civilian, rowSums(overseas[, civilian]))
+
+  # No location's June figure is now far from both the March and the September figure. Before
+  # the correction 69 were, in these eleven columns.
+  columns <- c(setdiff(reserve, c("army_national_guard", "army_reserve")), civilian, "total_civilian")
+  year.2023 <- long[long$year == 2023 & long$ccode != 2, ]
+  quarter <- function(q) {
+    rows <- year.2023[year.2023$quarter == q, ]
+    rows[match(overseas$ccode, rows$ccode), columns]
+  }
+  march <- as.matrix(quarter(1)); june.values <- as.matrix(quarter(2)); september <- as.matrix(quarter(3))
+  high <- pmax(march, september, na.rm = TRUE)
+  low <- pmin(march, september, na.rm = TRUE)
+  far <- !is.na(june.values) & !is.na(high) & (june.values > 2 * high + 10 | june.values < low / 2 - 10)
+  expect_equal(sum(far), 0)
+
+  # The annual figure is the largest of the quarters, so the misplaced figures had become the
+  # 2023 values: Qatar read 2,201 civilians and 1,806 for troops_all on 380 active duty.
+  qatar <- suppressMessages(suppressWarnings(
+    get_troopdata(host = "Qatar", startyear = 2023, endyear = 2023, guard_reserve = TRUE, civilians = TRUE)
+  ))
+  expect_equal(qatar$total_civilian, 29)
+  expect_equal(qatar$troops_all, qatar$troops_ad)
+
+  # The reports data keep the sheet as published.
+  printed <- reports[reports$year == 2023 & reports$month == "June", ]
+  expect_equal(printed$`Total Civilian`[printed$Location == "QATAR"], 2201)
+  expect_equal(printed$`Total Civilian`[printed$Location == "PUERTO RICO"], 7)
+
+})
+
+test_that("the two Congos are told apart, in the codes and in the names", {
+
+  long <- troopdata::troopdata_rebuild_long
+  reports <- troopdata::troopdata_rebuild_reports
+
+  # Gleditsch and Ward 484 is Congo (Brazzaville); 490 is the Democratic Republic of the Congo
+  # (Leopoldville, Kinshasa, Zaire). Each has one name, the same in both objects, and the name
+  # says which of the two it is.
+  expect_equal(unique(long$countryname[long$ccode == 484]), "Republic of the Congo")
+  expect_equal(unique(long$countryname[long$ccode == 490]), "Democratic Republic of the Congo")
+  expect_equal(unique(reports$countryname[reports$ccode == 484]), "Republic of the Congo")
+  expect_equal(unique(reports$countryname[reports$ccode == 490]), "Democratic Republic of the Congo")
+  expect_equal(unique(long$iso3c[long$ccode == 484]), "COG")
+  expect_equal(unique(long$iso3c[long$ccode == 490]), "COD")
+  expect_equal(unique(reports$iso3c[reports$ccode == 484]), "COG")
+  expect_equal(unique(reports$iso3c[reports$ccode == 490]), "COD")
+  expect_false("Congo" %in% long$countryname)
+
+  # Every report line that names one of them is under its code.
+  named.brazzaville <- grepl("brazzaville", reports$Location, ignore.case = TRUE)
+  named.kinshasa <- grepl("leopoldville|kinshasa|zaire", reports$Location, ignore.case = TRUE)
+  expect_gt(sum(named.brazzaville), 50)
+  expect_gt(sum(named.kinshasa), 90)
+  expect_true(all(reports$ccode[named.brazzaville] == 484))
+  expect_true(all(reports$ccode[named.kinshasa] == 490))
+
+  # A bare "Congo" is the former Belgian Congo in 1960 to 1962, when the reports have one line,
+  # and Brazzaville from 1978, when it is printed beside "Zaire". The first three were coded to
+  # Brazzaville, and the Kane rows for 490 put the same 4, 56 and 79 personnel in the data twice.
+  bare <- reports[reports$Location == "Congo", ]
+  expect_equal(bare$year[bare$ccode == 490], 1960:1962)
+  expect_equal(bare$iso3c[bare$ccode == 490], rep("COD", 3))
+  expect_true(all(bare$ccode[bare$year > 1962] == 484))
+  expect_gte(min(bare$year[bare$ccode == 484]), 1978)
+
+  annual <- function(code, years) {
+    vapply(years, function(y) max(long$troops_ad[long$ccode == code & long$year == y]), numeric(1))
+  }
+  expect_equal(annual(490, 1960:1963), c(4, 56, 79, 64))
+  expect_equal(annual(484, 1960:1963), c(0, 0, 0, 10))
+  expect_false(any(long$ccode == 490 & long$year %in% 1960:1962 & grepl("Kane", long$source)))
+  expect_equal(long$air_force_ad[long$ccode == 490 & long$year == 1962 & long$month == "September"], 60)
+
+})
+
+test_that("the Leeward Islands line of 1966 to 1974 is Antigua", {
+
+  long <- troopdata::troopdata_rebuild_long
+  reports <- troopdata::troopdata_rebuild_reports
+
+  # The line was coded to the British Virgin Islands. The 1975 report renames it "Leeward
+  # Islands (Antigua)" and the figures run on: 123 in 1974, 121 in 1975.
+  leeward <- reports[grepl("le+ward islands", reports$Location, ignore.case = TRUE), ]
+  expect_equal(sort(unique(leeward$year)), 1966:1976)
+  expect_true(all(leeward$ccode == 58))
+  expect_true(all(leeward$iso3c == "ATG"))
+
+  antigua <- vapply(1966:1975, function(y) max(long$troops_ad[long$ccode == 58 & long$year == y]),
+                    numeric(1))
+  expect_equal(antigua, c(215, 123, 126, 126, 121, 115, 139, 128, 123, 121))
+
+  # The British Virgin Islands keep the lines that name them.
+  expect_false(any(long$ccode == 1035 & long$year %in% 1966:1974))
+  expect_equal(sort(unique(long$year[long$ccode == 1035])), c(1988, 1989, 2016, 2017))
+  expect_equal(unique(long$countryname[long$ccode == 58]), "Antigua")
+
+})
+
+test_that("the Virgin Islands and Seychelles are in their own regions", {
+
+  long <- troopdata::troopdata_rebuild_long
+  region <- function(code) unique(long$region[long$ccode == code])
+
+  # A name pattern for Pacific islands took both groups of Virgin Islands, and Seychelles sat
+  # with Diego Garcia in South Asia.
+  expect_equal(region(1013), "Latin America & Caribbean")   # US Virgin Islands
+  expect_equal(region(1035), "Latin America & Caribbean")   # British Virgin Islands
+  expect_equal(region(591), "Sub-Saharan Africa")           # Seychelles
+
+  # Their neighbours, for comparison, and the two that were never affected.
+  expect_equal(region(6), "Latin America & Caribbean")      # Puerto Rico
+  expect_equal(region(1041), "East Asia & Pacific")         # American Samoa
+  expect_equal(region(1004), "South Asia")                  # Diego Garcia
+
+  # A region host returns them with their region.
+  caribbean <- suppressMessages(suppressWarnings(
+    get_troopdata(host = "Latin America & Caribbean", startyear = 2016, endyear = 2016)
+  ))
+  expect_true(all(c("US Virgin Islands", "British Virgin Islands") %in% caribbean$countryname))
+
+  africa <- suppressMessages(suppressWarnings(
+    get_troopdata(host = "Sub-Saharan Africa", startyear = 2016, endyear = 2016)
+  ))
+  expect_true("Seychelles" %in% africa$countryname)
+
+})

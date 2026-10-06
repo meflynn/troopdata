@@ -473,8 +473,11 @@ test_that("each fiscal year comes from one report, the latest that covers it", {
   expect_equal(nrow(bd[bd$fiscal_year == 2015 & bd$sheet_type == "oco", ]), 13)
   expect_equal(nrow(bd[bd$fiscal_year == 2011 & bd$sheet_type != "base", ]), 0)
 
-  # FY2016 is the one year whose latest report is the one that requests it.
-  expect_equal(unique(bd$fiscal_year[bd$is_request]), 2016)
+  # FY2016 is the one year whose latest report is the one that requests it. The only other
+  # request lines are the 26 of the FY2010 overseas contingency operations request sheet that
+  # are on no enacted sheet; see the test on request lines below.
+  expect_true(all(bd$is_request[bd$fiscal_year == 2016]))
+  expect_equal(sort(unique(bd$fiscal_year[bd$is_request])), c(2010, 2016))
 })
 
 test_that("coordinates are inside the country or state the row is filed under", {
@@ -507,10 +510,15 @@ test_that("coordinates are inside the country or state the row is filed under", 
   expect_true("Rota, Spain" %in% bd$location_full_name)
   expect_false(any(grepl(", (SP|JA|GY|UK|KR)$", bd$location_full_name)))
 
-  # A label is not a place and has no coordinates.
+  # A label is not a place and has no coordinates. The one case in which a row filed under a
+  # label has them is a line whose project title names a U.S. installation, which is placed
+  # there and has an address to show for it.
   label <- grepl("various|unspecified|classified|worldwide", bd$location_name, ignore.case = TRUE)
-  expect_true(all(is.na(bd$latitude[label & (!is.na(bd$iso3c) | is.na(bd$location_full_name))])))
+  expect_true(all(is.na(bd$latitude[label & is.na(bd$location_full_name)])))
   expect_true(all(is.na(bd$latitude[is.na(bd$location_full_name)])))
+  placed.by.title <- label & !is.na(bd$latitude)
+  expect_true(all(bd$iso3c[placed.by.title] == "USA"))
+  expect_true(all(grepl(", United States$", bd$location_full_name[placed.by.title])))
 })
 
 test_that("coordinates are at the installation, not at a centroid or a namesake", {
@@ -534,6 +542,21 @@ test_that("coordinates are at the installation, not at a centroid or a namesake"
   expect_near("Camp Speicher, Iraq", 34.68, 43.55)
   expect_near("Camp Lemonier, Djibouti", 11.54, 43.15)
   expect_near("Hector IAP, North Dakota, United States", 46.92, -96.82)
+
+  # Eight more, all inside the right state, which is why the check on the state did not catch
+  # them: Seymour Johnson AFB was 105 km from Goldsboro, the "Puget Sound" shipyard was in open
+  # water 34 km from Bremerton, and the Nevada Guard's training center at Stead was in Las Vegas.
+  expect_near("Seymour Johnson AFB, North Carolina, United States", 35.34, -77.96)
+  expect_near("Whidbey Island, Washington, United States", 48.35, -122.66)
+  expect_near("Puget Sound, Washington, United States", 47.56, -122.64)
+  expect_near("Jackson IAP, Mississippi, United States", 32.31, -90.08)
+  expect_near("Bradley IAP, Connecticut, United States", 41.94, -72.68)
+  expect_near("Muscatatuck, Indiana, United States", 39.05, -85.54)
+  expect_near("Camp Elmore Marine Corps Detachment, Virginia, United States", 36.93, -76.29)
+  expect_near("Harry Reid Training Center, Nevada, United States", 39.67, -119.88)
+  # The two spellings of each of these places now agree.
+  expect_near("AGS, Connecticut, United States", 41.94, -72.68)
+  expect_near("Whidbey Island Naval Air Station, Washington, United States", 48.35, -122.66)
 
   # Another place of the same name
   expect_near("Yorktown, Virginia, United States", 37.24, -76.55)
@@ -597,4 +620,92 @@ test_that("country codes follow the country the report names, not the code's ISO
   # A code is only missing where the report names no place at all.
   no.code <- unique(bd$state_country[is.na(bd$iso3c)])
   expect_true(all(no.code %in% c("ZU", "ZC", "ZV", "XC", "XV", "YN")))
+})
+
+test_that("the service is known for the fiscal years that print it under Treasury Agency", {
+  skip_if_builddata_ready()
+  bd <- troopdata::build_data_20260918
+
+  # The workbooks that supply FY2004 to FY2007 leave "Organization" empty on every Army, Navy
+  # and Air Force line and give the service in "Treasury Agency" (A, N, F). That column was
+  # not read, so organization was missing on 2,136 rows, $47.2 billion of appropriations, and
+  # organization = "Army" returned 3, 2, 0 and 3 rows for those four years.
+  expect_false(anyNA(bd$organization))
+
+  from.treasury <- bd[bd$organization_reported %in% c("A", "N", "F") &
+                        bd$fiscal_year %in% 2004:2007, ]
+  expect_equal(nrow(from.treasury), 2136)
+  expect_equal(sum(from.treasury$appn_amount, na.rm = TRUE), 47214576)
+  expect_equal(as.vector(table(from.treasury$organization)[c("Air Force", "Army", "Navy")]),
+               c(739, 900, 497))
+  expect_true(all(from.treasury$organization[from.treasury$organization_reported == "A"] == "Army"))
+  expect_true(all(from.treasury$organization[from.treasury$organization_reported == "N"] == "Navy"))
+  expect_true(all(from.treasury$organization[from.treasury$organization_reported == "F"] == "Air Force"))
+
+  # Each service has rows in every fiscal year, through the function as well.
+  for (service in c("Army", "Navy", "Air Force")) {
+    result <- suppressWarnings(get_builddata(organization = service, startyear = 2000, endyear = 2026))
+    expect_setequal(unique(result$fiscal_year), 2000:2026)
+    expect_gt(min(table(result$fiscal_year[result$fiscal_year %in% 2004:2007])), 90)
+  }
+})
+
+test_that("lines from a request sheet are flagged as requests", {
+  skip_if_builddata_ready()
+  bd <- troopdata::build_data_20260918
+
+  # "C1_2010_OCO_Req" in the FY2011 workbook is the FY2010 overseas contingency operations
+  # request. Its lines that are on no enacted sheet stay in the data, and they were not
+  # flagged: is_request looked at the fiscal year alone.
+  request.sheet <- bd[grepl("req", bd$source_sheet, ignore.case = TRUE), ]
+  expect_equal(nrow(request.sheet), 26)
+  expect_equal(unique(request.sheet$source_sheet), "C1_2010_OCO_Req")
+  expect_equal(unique(request.sheet$fiscal_year), 2010)
+  expect_true(all(request.sheet$is_request))
+  expect_equal(sum(request.sheet$appn_amount, na.rm = TRUE), 474690)
+
+  # Nothing else is flagged but FY2016.
+  expect_true(all(bd$fiscal_year[bd$is_request & !grepl("req", bd$source_sheet, ignore.case = TRUE)] == 2016))
+
+  # include_requests = FALSE leaves them out with FY2016.
+  enacted <- suppressWarnings(get_builddata(include_requests = FALSE, startyear = 2000, endyear = 2026))
+  expect_false(any(enacted$is_request))
+  expect_false(any(grepl("req", enacted$source_sheet, ignore.case = TRUE)))
+  expect_equal(nrow(enacted), nrow(bd) - sum(bd$fiscal_year == 2016) - 26)
+
+  afghanistan <- suppressWarnings(get_builddata(host = "AFG", startyear = 2010, endyear = 2010))
+  expect_equal(sum(afghanistan$is_request), 24)
+})
+
+test_that("a line whose title names a U.S. installation carries the U.S. country code", {
+  skip_if_builddata_ready()
+  bd <- troopdata::build_data_20260918
+
+  # The base realignment and closure lines of FY2007 to FY2016 are filed under "Unspecified
+  # Worldwide Locations" with titles such as "USA-224: Fort Hood, TX". They had the
+  # installation's address and coordinates and no country code, so host = "USA" left out 392
+  # rows and $11.3 billion while a map drew them inside the country.
+  expect_false(any(is.na(bd$iso3c) & !is.na(bd$location_full_name)))
+  expect_false(any(is.na(bd$iso3c) & !is.na(bd$latitude)))
+
+  placed <- bd[bd$iso3c %in% "USA" & bd$state_country %in% "ZU", ]
+  expect_equal(nrow(placed), 392)
+  expect_equal(sum(placed$appn_amount, na.rm = TRUE), 11260282)
+  expect_true(all(placed$gwcode == 2))
+  expect_true(all(placed$fiscal_year %in% 2007:2016))
+  expect_true(all(grepl(", United States$", placed$location_full_name)))
+  expect_false(anyNA(placed$latitude))
+  expect_true("Fort Hood, Texas, United States" %in% placed$location_full_name)
+
+  # The report's own columns are left as printed.
+  expect_equal(unique(placed$location_name), "Unspecified Worldwide Locations")
+
+  # Both kinds of host reach them.
+  by.iso <- suppressWarnings(get_builddata(host = "USA", startyear = 2007, endyear = 2016))
+  by.code <- suppressWarnings(get_builddata(host = 2, startyear = 2007, endyear = 2016))
+  expect_equal(sum(by.iso$state_country %in% "ZU"), 392)
+  expect_equal(nrow(by.iso), nrow(by.code))
+
+  # Every row with an ISO code still has a country code that the troop data use.
+  expect_false(any(!is.na(bd$iso3c) & is.na(bd$gwcode)))
 })

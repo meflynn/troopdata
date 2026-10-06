@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![](https://www.r-pkg.org/badges/version/troopdata?color=blue)](https://cran.r-project.org/package=troopdata)
-[![](https://img.shields.io/badge/devel%20version-1.0.4.9000-green.svg)](https://github.com/meflynn/troopdata)
+[![](https://img.shields.io/badge/devel%20version-1.1.0-green.svg)](https://github.com/meflynn/troopdata)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/troopdata?color=orange)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-month/troopdata?color=red)](https://cran.r-project.org/package=troopdata)
 [![](http://cranlogs.r-pkg.org/badges/last-week/troopdata?color=yellow)](https://cran.r-project.org/package=troopdata)
@@ -19,7 +19,7 @@ of military deployment and basing data for use in social science
 research and journalism. The troop deployment data were initially
 compiled by Tim Kane using information obtained from the U.S. Department
 of Defense’s Defense Manpower Data Center (DMDC). The original data
-ended in 2005 and we have updated it to run through 2024.
+ended in 2005 and we have updated it to run through March 2026.
 
 Similarly, the basing data were initially compiled by David Vine, and we
 have updated the original data using open source information from the
@@ -60,7 +60,9 @@ deployment values. Depending on the arguments specified the function
 returns total troop deployments, or total deployments plus service
 branch-specific deployment values, guard and reserve values, and DoD
 civilian values. Users can specify select countries and years, or call
-the entire data frame.
+the entire data frame. Annual values are the highest value reported in a
+given year. Quarterly values and data for individual US states are also
+available.
 
 `get_basedata()`: Returns a data frame containing information on U.S.
 military bases around the globe from the Cold War forward. Depending on
@@ -69,10 +71,10 @@ data for a particular country. Observations can be site-specific or can
 be aggregated to generate country counts.
 
 `get_builddata()`: Returns a data frame containing geocoded
-location-year information on U.S. military overseas construction
-spending. Users can specify select countries and years, or call the
-entire data frame. Currently only select countries are included in the
-data
+location-project-year information on U.S. military construction
+spending, in the United States and overseas. Users can specify select
+countries and years, or call the entire data frame. The data cover
+fiscal years 2000 through 2026.
 
 `get_exercises()`: Returns a long format data frame containing data on
 military exercises. These data were originally compiled by Vito D’Orazio
@@ -87,21 +89,29 @@ You can find more detailed vignettes on these functions below:
 3.  [`get_builddata`](https://meflynn.github.io/troopdata/articles/builddata-vignette.html)
 4.  [`get_exercises`](https://meflynn.github.io/troopdata/articles/exercise-vignette.html)
 
+The [Rebuild
+Notes](https://meflynn.github.io/troopdata/articles/01-rebuild-notes-vignette.html)
+explain how the troop deployment values are put together, including how
+annual values are chosen, what zeros and missing values mean, and which
+values are estimates.
+
 ## A note on country codes
 
 The original DMDC data contain information on U.S. troop deployments to
-a a wide range of locations, including several non-state territories and
-subnational units (e.g. Okinawa). One downside of using the COW country
-codes as the primary host ID variable is that there are often no country
-codes for smaller states and territories. In the case of the Vine basing
-data, some smaller territories have COW codes for the imperial power
-that controls a territory. For example, Puerto Rico and Guam both
-receive a COW country code of 2 as they are territorial possessions of
-the United States. Users may want to distinguish such cases where
-deployments are present in a territory versus the metropole. Using the
-ISO country codes provides some additional flexibility when calling the
-data. Worst case, you can pull the full data frame and look around at
-the specific observations and figure out what best suits your needs.
+a wide range of locations, including several non-state territories and
+subnational units (e.g. Okinawa). The troop deployment and construction
+data use Gleditsch and Ward country codes as the primary host ID
+variable. That list has no codes for most territories, so we assign our
+own. Puerto Rico is 6, Greenland is 1002 and Guam is 1008, for example,
+which lets users distinguish cases where deployments are present in a
+territory versus the metropole. Note that these are not Correlates of
+War (COW) codes. Germany, for example, is 260 rather than 255. The Vine
+basing data have not been rebuilt yet and still use COW codes, and there
+some smaller territories have the code of the power that controls them.
+Using the ISO country codes provides some additional flexibility when
+calling the data. Worst case, you can pull the full data frame and look
+around at the specific observations and figure out what best suits your
+needs.
 
 ## How to cite this package and data?
 

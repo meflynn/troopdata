@@ -5,20 +5,20 @@
 \alias{troopdata_rebuild_long}
 \title{U.S. overseas troop deployment data}
 \format{
-A data frame with country year observations including the following variables:
+A data frame with one row per location and report period (a year and a quarter), including the following variables:
 
 \describe{
-\item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
-\item{\code{iso3c}}{A character vector of ISO three character country codes.}
+\item{\code{ccode}}{A numeric vector of Gleditsch and Ward country codes. Territories and other locations that the Gleditsch and Ward list does not cover carry the package's own codes (Puerto Rico 6, Greenland 1002, Guam 1008 and others, all above 1000 except Puerto Rico). These are not Correlates of War codes: Germany is 260, not 255.}
+\item{\code{iso3c}}{A character vector of ISO three character country codes. A location with no code of its own carries its parent's (the Azores carry \code{"PRT"}), and a few locations have none.}
 \item{\code{countryname}}{A character vector of country names.}
-\item{\code{region}}{Correlates of War geographic region name.}
+\item{\code{region}}{Geographic region, using the names of the World Bank regions. Countries take the region the \code{countrycode} package gives them, territories and other locations with the package's own codes are assigned one by the package, and \code{"Afloat"} and \code{"Antarctica"} are regions of their own.}
 \item{\code{year}}{The year of the observation.}
-\item{\code{month}}{The month of the observation.}
-\item{\code{quarter}}{The quarter of the observation.}
+\item{\code{month}}{The month of the report: March, June, September or December.}
+\item{\code{quarter}}{The quarter of the observation, 1 through 4.}
 \item{\code{year_quarter}}{The year and quarter of the observation.}
-\item{\code{source}}{The DMDC report source of the observation.}
-\item{\code{troops_ad}}{The total number of active duty US military personnel deployed to the host country.}
-\item{\code{troops_all}}{The total number of US military personnel deployed to the host country including guard and reserve.}
+\item{\code{source}}{Where the row's figures come from: the month and year of the DMDC report, \code{"Kane 2006"} for a figure from Kane's data, \code{"Stepwise Imputation"} for 1951 and 1952, or a label beginning \code{"Estimate"} for a figure from public reporting. Missing where no report lists the location for that period, which is where the zeros described in Details come from; 17 rows with no source are not zero, the Iraq figure of 5,200 for June 2018, 2019 and 2020 among them. The rows of December 2022, March 2023 and June 2023 carry the label of their report although their Army figures are filled in.}
+\item{\code{troops_ad}}{The total number of active duty US military personnel deployed to the host country. In a row that comes from a report it equals the sum of the branch columns.}
+\item{\code{troops_all}}{The total number of US military personnel deployed to the host country including guard and reserve: \code{troops_ad} plus the seven National Guard and Reserve columns. Equal to \code{troops_ad} before 2008, when the reports give no guard or reserve figures.}
 \item{\code{army_ad}}{Total number of active duty Army personnel deployed to the host country.}
 \item{\code{navy_ad}}{Total number of active duty Navy personnel deployed to the host country.}
 \item{\code{air_force_ad}}{Total number of active duty Air Force personnel deployed to the host country.}
@@ -28,7 +28,7 @@ A data frame with country year observations including the following variables:
 \item{\code{troops_afloat}}{Navy and Marine Corps personnel afloat that a report attributes to the location, 1950 through 2007. Not included in \code{troops_ad}. See Details.}
 \item{\code{navy_afloat}}{Navy personnel afloat that a report attributes to the location. Not included in \code{navy_ad}.}
 \item{\code{marine_corps_afloat}}{Marine Corps personnel afloat that a report attributes to the location. Not included in \code{marine_corps_ad}.}
-\item{\code{total_selected_reserve}}{Total number of reserve US military personnel deployed to the host country.}
+\item{\code{total_selected_reserve}}{Total number of reserve US military personnel deployed to the host country. This and the other guard, reserve and civilian columns are reported from 2008 and are missing for earlier years.}
 \item{\code{army_reserve}}{Total number of reserve Army personnel deployed to the host country.}
 \item{\code{navy_reserve}}{Total number of reserve Navy personnel deployed to the host country.}
 \item{\code{air_force_reserve}}{Total number of reserve Air Force personnel deployed to the host country.}
@@ -53,12 +53,75 @@ A data frame with country year observations including the following variables:
 troopdata_rebuild_long
 }
 \value{
-Returns the full data frame containing observations of US military deployments to overseas locations (countries and territories) from 1950 through 2024.
+Returns the full data frame containing observations of US military deployments by location (countries and territories) from 1950 through the latest report in this version of the package, March 2026.
 }
 \description{
-\code{troopdata} returns a data frame containing information on US military deployments.
+\code{troopdata_rebuild_long} is the data frame behind \code{\link{get_troopdata}}: U.S. military personnel by location and report period, for every country, territory and other location in the reports, the United States included.
 }
 \details{
+\strong{Report periods.} Each row holds the figures of one period. The data have one report a
+year through 2012 (dated June for 1950 and 1953-1956, and September from 1957), two for 2013
+(September and December) and four a year from 2014 (March, June, September and December), and
+they stop at the latest report. \code{\link{get_troopdata}} returns these rows with
+\code{quarters = TRUE}. Its annual figures (\code{quarters = FALSE}) are the largest value of
+each column over the periods of a year, taken column by column, so they are not stored here
+and the columns of an annual row need not come from the same report.
+
+\strong{Zeros and missing values.} A country that a report does not list has 0 for that
+period and no \code{source}. A zero therefore means either that the report prints zero or that
+it does not list the country. Territories and the other locations that carry the package's own
+codes, and a few small states in the years before their independence, have a row only for the
+periods in which a report lists them, so the data are not a balanced panel for them.
+\code{NA} means that the reports give no figure of that kind:
+the guard, reserve and civilian columns and \code{coast_guard_ad} before 2008,
+\code{space_force_ad} before September 2023, the branch columns for 1951 and 1952, and the
+afloat columns as described below.
+
+\strong{Figures that are not taken from a report.} The \code{source} column marks them,
+apart from the two cases noted under \code{source} above.
+\itemize{
+\item 1951 and 1952 have no report. \code{troops_ad} for those years moves in equal steps
+from the June 1950 figure to the June 1953 figure, and the branch columns are missing.
+This is done for countries. Most territories and other locations with the package's own
+codes, the \code{"Afloat"} location among them, have no rows for those two years.
+\item The Army reported nothing for December 2022, March 2023 and June 2023.
+\code{army_ad}, \code{army_national_guard} and \code{army_reserve} for those quarters move
+in equal steps from the September 2022 figure to the September 2023 figure, and
+\code{troops_ad}, \code{total_selected_reserve} and \code{troops_all} are those figures
+plus what the other services reported. The other columns are as reported.
+\code{\link{troopdata_rebuild_reports}} and \code{\link{troopdata_rebuild_us_states}}
+keep those quarters as published, with the Army figures and the totals missing.
+\item The June 2023 report prints part of its overseas list one row low: the civilian
+columns from Montenegro to the end of the list, and the Navy Reserve, Marine Corps
+Reserve, Air National Guard, Air Force Reserve and Coast Guard Reserve columns from
+Morocco to Wake Island. Qatar's line holds Puerto Rico's 2,201 civilians and Uruguay's
+the United Kingdom's 1,383. The figures here are read from the line below the one they
+are printed on, which is where the March and September 2023 reports and the report's
+own totals put them. \code{\link{troopdata_rebuild_reports}} keeps the report as
+published.
+\item Where the reports do not give the personnel deployed to a war zone, a figure from
+Kane's data or from public reporting is used: Afghanistan for 2001-2005 and 2018-2020, Iraq
+for 2003-2007 and 2018-2021, Kuwait for 2003-2007 and Syria for 2018-2021. These are
+totals only, with zeros in the branch columns. From December 2017 the reports leave out
+personnel deployed to Afghanistan, Iraq and Syria, and no outside figure is used after
+those years, so the values for Afghanistan from 2021 and for Iraq and Syria from 2022 are
+the handful of personnel the reports print and understate the U.S. presence. The outside
+figures for Iraq in 2018-2021 and for Syria in 2021 are on the June row only, and the other
+quarters of those years hold what the report prints, which is zero or close to it.
+\item The reports for 1957 through 2013 are dated September (and December in 2013). A row
+dated June in those years is not a report. It holds a figure from Kane's data, or one of
+the estimates above, and is kept only for a location and year in which no report gives a
+figure or the report prints a zero in its place. Nearly all of these rows are zero.
+}
+
+\strong{Locations.} Personnel are counted at the location the report lists them under.
+Personnel that a report lists under no location (lines such as "Transients", "Undistributed",
+"Departmental Headquarters" and "Unknown") are not in the data. Where a report lists two
+places under one country code (Japan and the Ryukyu Islands through 1973, for example) the row
+is their sum. The United States is the fifty states and the
+District of Columbia. Puerto Rico, Guam and the other territories are locations of their own.
+
+\strong{Personnel ashore and afloat.}
 Before 2008 \code{troops_ad}, \code{navy_ad} and \code{marine_corps_ad} hold personnel ashore
 for every location, the United States included. The reports for 1950 through 2007 count Navy
 and Marine Corps personnel afloat separately, and attribute some of them to a location: to the
@@ -68,16 +131,17 @@ that figure for the United States and its territories together). Those are in
 \code{troops_afloat}, \code{navy_afloat} and \code{marine_corps_afloat}, beside the ashore
 figures and not inside them. A zero there means a report that lists personnel afloat by
 location has none for that one (1953-1976); a missing value means the report gives no figure
-for the location (everywhere but the United States in 1950 and 1977-2007, the years 1951 and
-1952, and everything from 2008). For 1954-1956 the figure also holds mobile units temporarily
+for the location (everywhere but the United States in 1950 and 1977-2007, apart from 171
+Marines afloat at Cuba in 1950; the years 1951 and 1952; and everything from 2008). For 1954-1956 the figure also holds mobile units temporarily
 based ashore, which those three reports do not separate.
 
 Everyone afloat is also carried once, worldwide, in a location named \code{"Afloat"}
 (\code{ccode} 10200, no ISO code, region \code{"Afloat"}), with values for 1950 and 1953
 through 2007. It is not a country, and it includes the personnel the three afloat columns
-attribute to locations: \code{troops_ad} added up over every row, that one included, is the
-worldwide total, and adding the afloat columns to it as well would count those personnel
-twice. \code{\link{get_troopdata}} handles this through its \code{afloat} argument, which
+attribute to locations: \code{troops_ad} added up over every row, that one included, counts
+everyone the data place somewhere once, and adding the afloat columns to it as well would
+count those personnel twice. (It is still below the worldwide total a report prints, which
+also includes the personnel it lists under no location.) \code{\link{get_troopdata}} handles this through its \code{afloat} argument, which
 leaves the attributed personnel out of the locations, adds them in, or returns them separately,
 and adjusts the \code{"Afloat"} location to match. From September 2008 the DMDC reports count a
 ship's crew at its home port, inside the state or country figure, and there is no afloat figure,

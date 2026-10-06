@@ -5,20 +5,24 @@
 \alias{troopdata_rebuild_us_states}
 \title{U.S. domestic troop deployment data, by state}
 \format{
-A data frame with state-year (and state-year-quarter) observations
-including the following variables:
+A data frame with one row per state and report period (one report
+a year through 2012, two in 2013 and four a year from 2014), including
+the following variables:
 
 \describe{
 \item{\code{fipscode}}{A numeric vector of U.S. Federal Information
 Processing Standards (FIPS) state codes. Used as the numeric identifier
 when subsetting via \code{get_troopdata(host = <numeric>, state_data = TRUE)}.}
-\item{\code{state}}{A character vector of U.S. state names. Matched with a
-case-insensitive \code{grepl} fuzzy match when subsetting via
-\code{get_troopdata(host = <character>, state_data = TRUE)}.}
+\item{\code{state}}{A character vector of U.S. state names. Matched without
+regard to case when subsetting via
+\code{get_troopdata(host = <character>, state_data = TRUE)}: a full name
+returns that state alone (\code{"kansas"} is Kansas, \code{"Virginia"} is
+not also West Virginia), and part of a name returns every state whose name
+contains it (\code{"Carolina"}).}
 \item{\code{year}}{The year of the observation.}
 \item{\code{month}}{The month of the observation.}
 \item{\code{quarter}}{The quarter of the observation.}
-\item{\code{troops_ad}}{The total number of active duty US military personnel stationed in the state.}
+\item{\code{troops_ad}}{The total number of active duty US military personnel stationed in the state, as the report prints it. For 95 state-quarters in June 2021, December 2021 and March 2022 the printed total is lower than the sum of the branch columns. The country data use the sum for the United States in those quarters, so the states add up to 23, 4,330 and 6,046 fewer personnel than the United States figure there. Missing in December 2022, March 2023 and June 2023, when the Army did not report.}
 \item{\code{army_ad}}{Total number of active duty Army personnel stationed in the state.}
 \item{\code{navy_ad}}{Total number of active duty Navy personnel stationed in the state.}
 \item{\code{air_force_ad}}{Total number of active duty Air Force personnel stationed in the state.}
@@ -51,9 +55,10 @@ case-insensitive \code{grepl} fuzzy match when subsetting via
 troopdata_rebuild_us_states
 }
 \value{
-Returns the full data frame containing state-year (and
-state-year-quarter) observations of U.S. military personnel stationed
-domestically from 1950 through the most recent reporting period.
+Returns the full data frame containing state-year-quarter
+observations of U.S. military personnel stationed domestically from
+September 2008, the first report that lists the states, through the most
+recent reporting period.
 }
 \description{
 \code{troopdata_rebuild_us_states} returns a data frame
@@ -71,5 +76,13 @@ personnel, nearly all Navy, inside the United States block but in no state: 77,1
 December 2017 under "Armed Forces Europe", "Armed Forces Pacific" and "Armed Forces the
 Americas". They cannot be traced to a state and are not in these figures, so the Navy and
 total figures of the home-port states are lower in those quarters and return in March 2018.
+
+The Army reported nothing for December 2022, March 2023 and June 2023. In those three quarters
+\code{army_ad}, \code{army_national_guard}, \code{army_reserve} and the totals that include
+them (\code{troops_ad}, \code{total_selected_reserve} and \code{troops_all}) are missing
+here, and the other columns are as reported. Unlike the country data, nothing is filled in.
+The annual figures that \code{\link{get_troopdata}} returns for a state are the largest value
+of each column over the quarters of the year that have one, so for 2022 and 2023 the totals
+and the Army figures come from the quarters the Army reported.
 }
 \keyword{datasets}

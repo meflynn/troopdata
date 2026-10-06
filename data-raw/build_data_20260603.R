@@ -301,7 +301,17 @@ files.combined.df <- files.combined.df |>
   # AF vs F, DEFW vs D), and these columns are merged without reconciling their
   # values, so organization = "A" matched only a quarter of Army rows. The
   # merged raw string is kept as organization_reported and harmonized below.
-  merge_cols("organization", c("organization", "org", "mil_dept_dw", "comp")) |>
+  #
+  # "Treasury Agency" is the last column tried. The FY2005, FY2006, FY2007 and
+  # FY2009 workbooks, which supply fiscal years 2004 to 2007, print the agency of
+  # a Defense-wide line in "Organization" and leave that column empty on every
+  # Army, Navy and Air Force line; the service is in "Treasury Agency" (A, N, F,
+  # with D for Defense-wide). Without it organization was missing on all 2,136
+  # service lines of those four years, $47.2 billion of appropriations, and
+  # organization = "Army" returned 3, 2, 0 and 3 rows for FY2004 to FY2007. Where
+  # a workbook prints both columns they agree on every service line (A beside
+  # ARMY, N beside NAVY, F beside AF).
+  merge_cols("organization", c("organization", "org", "mil_dept_dw", "comp", "treasury_agency")) |>
 
   # ---- total obligation authority ----
   merge_cols(
@@ -396,7 +406,11 @@ files.combined.df <- files.combined.df %>%
   dplyr::group_by(source_file) %>%
   dplyr::mutate(
     report_year = suppressWarnings(max(fiscal_year, na.rm = TRUE)),
-    is_request = fiscal_year == report_year
+    # A sheet that is itself a request is one too, whatever the year: "C1_2010_OCO_Req"
+    # in the FY2011 workbook is headed "FY 2010 OCO Request". Its lines that are also
+    # on the enacted sheets are dropped further down as restatements, and the 26 that
+    # are on no other sheet stay in the data, so they have to carry the flag.
+    is_request = fiscal_year == report_year | grepl("req", source_sheet, ignore.case = TRUE)
   ) %>%
   dplyr::ungroup()
 
@@ -1511,7 +1525,9 @@ files.combined.df <- files.combined.df %>%
 # Taking each fiscal year whole from its most recent report needs no matching.
 # FY2016 is the one year whose latest report is the one that requests it (the
 # FY2017 and FY2018 reports are not among the source files), so it is the only
-# year still flagged is_request.
+# whole year still flagged is_request. The other flagged rows are the 26 lines of
+# the FY2010 overseas contingency operations request sheet that are on no other
+# sheet.
 n.rows.all.reports <- nrow(files.combined.df)
 
 files.combined.df <- files.combined.df %>%
@@ -1990,9 +2006,20 @@ files.combined.df <- files.combined.df %>%
       !is.na(iso3c) & grepl(not.a.place, location_name, ignore.case = TRUE),
       NA_character_, location_full_name
     ),
-    geo_key = dplyr::if_else(is.na(location_full_name), NA_character_, geo_key)
+    geo_key = dplyr::if_else(is.na(location_full_name), NA_character_, geo_key),
+    # A row filed under no country whose title names a U.S. installation is in the
+    # United States. These are the base realignment and closure lines of FY2007 to
+    # FY2016, filed under "Unspecified Worldwide Locations" with titles such as
+    # "USA-224: Fort Hood, TX": 392 rows and $11.3 billion of appropriations. They
+    # were given the installation's address and coordinates but no country code, so
+    # host = "USA" left them out while a map drew them inside the country. The
+    # report's own columns (state_country "ZU", the location name) are left as
+    # printed; the state is in location_full_name.
+    placed_by_title = is.na(iso3c) & !is.na(title_state) & !is.na(location_full_name),
+    iso3c = dplyr::if_else(placed_by_title, "USA", iso3c),
+    gwcode = dplyr::if_else(placed_by_title, 2, as.numeric(gwcode))
   ) %>%
-  dplyr::select(-title_location, -title_state)
+  dplyr::select(-title_location, -title_state, -placed_by_title)
 
 # One set of bounds per address: the place is part of the address, so an address
 # that mapped to two would be a bug in the lines above.

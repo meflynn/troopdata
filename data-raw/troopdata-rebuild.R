@@ -422,6 +422,139 @@ data.clean.September.2008.June.2023 <- data.clean.September.2008.June.2023 %>%
   )
 
 
+#### June 2023: guard, reserve and civilian columns printed one row low ####
+#
+# In DMDC_Website_Location_Report_2306.xlsx two blocks of the OVERSEAS section sit one row below
+# the location they belong to.
+#
+#   The six civilian columns, from MONTENEGRO to the end of the section. MONTENEGRO's own cells
+#   hold zeros, every row from MOROCCO on holds the figures of the row above it, ZZ-UNKNOWN's
+#   figures are on the OVERSEAS TOTAL line and the overseas total is on the GRAND TOTAL line.
+#
+#   The five guard and reserve columns the report fills in for that quarter (Navy Reserve, Marine
+#   Corps Reserve, Air National Guard, Air Force Reserve, Coast Guard Reserve; the Army columns
+#   and the total are N/A), from MOROCCO to WAKE ISLAND.
+#
+# So QATAR prints Puerto Rico's 273 Navy Reserve, 1,167 Air National Guard and 2,201 civilians,
+# PUERTO RICO prints 7 civilians, URUGUAY prints the United Kingdom's 1,383 civilians and WAKE
+# ISLAND prints the Virgin Islands' 64 Air National Guard. The March and September 2023 reports
+# have every one of these figures on the row above, and the printed totals settle it: read one
+# row up, the civilian columns add to the figures on the GRAND TOTAL line (34,564 in all), which
+# is where the overseas total landed, and the reserve columns still add to the OVERSEAS TOTAL
+# line. Read as printed, the civilian columns add to 34,302 against a printed overseas total of
+# 262.
+#
+# The annual figure is the largest of a year's quarters, so the misplaced figures became the
+# 2023 values: Qatar read 2,201 civilians against 26 to 29 in the other three quarters, and its
+# troops_all read 1,806 on 380 active duty.
+#
+# The reports frame keeps the sheet as published. The country-year frame reads these two blocks
+# one row up: june.2023.realigned holds the corrected figures by location and is applied where
+# troopdata_rebuild_long is built (realign_june_2023()).
+#
+# The checks below are the facts the correction rests on. If DMDC replaces the workbook with a
+# corrected one they stop holding, the correction is skipped and a warning says so.
+june.2023.reserve.cols <- c("Navy Reserve", "Marine Corps Reserve", "Air National Guard",
+                            "Air Force Reserve", "Coast Guard Reserve")
+
+june.2023.civilian.cols <- c("Army Civilian", "Navy Civilian", "Marine Corps Civilian",
+                             "Air Force Civilian", "DOD Civilian", "Total Civilian")
+
+june.2023.realigned <- local({
+
+  shifted.cols <- c(june.2023.reserve.cols, june.2023.civilian.cols)
+
+  # The whole sheet in its printed order, total lines included: the same naming and header cut
+  # as data.clean.September.2008.June.2023, without the filter on Location.
+  sheet <- data.clean.2008.Present[["June 2023"]] %>%
+    setNames(names.2008.2023) %>%
+    dplyr::slice(-c(1:5)) %>%
+    dplyr::mutate(dplyr::across(tidyselect::all_of(shifted.cols),
+                                ~ suppressWarnings(as.numeric(stringr::str_replace_all(.x, ",", "")))))
+
+  line <- function(label) which(sheet[["Macro Location"]] == label)
+  place <- function(name, after) {
+    found <- which(sheet$Location == name)
+    found[found > after][1]
+  }
+
+  first <- line("OVERSEAS")          # the label sits on the first overseas row
+  overseas.total <- line("OVERSEAS TOTAL")
+  grand.total <- line("GRAND TOTAL")
+
+  if (length(first) != 1 || length(overseas.total) != 1 || length(grand.total) != 1) {
+    warning("June 2023: the OVERSEAS section was not found as expected; the sheet is used as published.",
+            call. = FALSE)
+    return(NULL)
+  }
+
+  montenegro <- place("MONTENEGRO", first)
+  morocco <- place("MOROCCO", first)
+  wake.island <- place("WAKE ISLAND", first)
+  last <- overseas.total - 1          # ZZ-UNKNOWN
+
+  added <- function(rows, cols) colSums(sheet[rows, cols], na.rm = TRUE)
+
+  as.printed <- added(first:last, june.2023.civilian.cols)
+  one.row.up <- added(c(first:(montenegro - 1), (montenegro + 1):overseas.total), june.2023.civilian.cols)
+
+  displaced <-
+    !anyNA(c(montenegro, morocco, wake.island)) && morocco == montenegro + 1 &&
+    # Read one row up, the civilian columns add to the GRAND TOTAL line; as printed they do not
+    # add to the OVERSEAS TOTAL line.
+    all(one.row.up == unlist(sheet[grand.total, june.2023.civilian.cols])) &&
+    !all(as.printed == unlist(sheet[overseas.total, june.2023.civilian.cols])) &&
+    # MONTENEGRO's civilian cells, which nothing was moved into, are empty.
+    all(unlist(sheet[montenegro, june.2023.civilian.cols]) == 0) &&
+    # The reserve block moved within the section, so its columns add to the OVERSEAS TOTAL line
+    # either way, and the row it vacated and the row after it ended on hold nothing.
+    all(added(first:last, june.2023.reserve.cols) ==
+          unlist(sheet[overseas.total, june.2023.reserve.cols])) &&
+    all(unlist(sheet[c(morocco, wake.island + 1), june.2023.reserve.cols]) == 0)
+
+  if (!isTRUE(displaced)) {
+    warning("June 2023: the guard/reserve and civilian columns are not displaced the way this ",
+            "script expects (has the workbook been replaced?). The sheet is used as published; ",
+            "review june.2023.realigned.", call. = FALSE)
+    return(NULL)
+  }
+
+  corrected <- sheet[montenegro:last, c("Location", shifted.cols)]
+
+  corrected[, june.2023.civilian.cols] <- sheet[(montenegro + 1):overseas.total, june.2023.civilian.cols]
+
+  reserve.rows <- morocco:wake.island
+  corrected[reserve.rows - montenegro + 1, june.2023.reserve.cols] <-
+    sheet[reserve.rows + 1, june.2023.reserve.cols]
+
+  stopifnot(!anyDuplicated(corrected$Location), !anyNA(corrected[, shifted.cols]))
+
+  message("June 2023: read ", nrow(corrected), " rows of civilian figures and ",
+          length(reserve.rows), " rows of guard and reserve figures one row up.")
+
+  corrected %>%
+    janitor::clean_names()
+
+})
+
+# Puts the realigned June 2023 figures on the rows of the country-year frame. `df` is the report
+# rows after clean_names(), which carry the printed location name in `location`.
+realign_june_2023 <- function(df, corrected = june.2023.realigned) {
+
+  if (is.null(corrected)) return(df)
+
+  rows <- which(df$year == 2023 & df$month == "June" & df$location %in% corrected$location)
+  from <- match(df$location[rows], corrected$location)
+
+  for (column in setdiff(names(corrected), "location")) {
+    df[[column]][rows] <- corrected[[column]][from]
+  }
+
+  df
+
+}
+
+
 # Territories that DMDC lists inside the UNITED STATES block.
 #
 # From March 2025 the sheets carry Guam, the Northern Marianas, Puerto Rico and the Virgin Islands
@@ -773,8 +906,12 @@ custom.gwn <- c("Alaska" = 2,
                 "Sarawak" = 1033,
                 "Western Sahara" = 1034,
                 "British Virgin Islands" = 1035,
-                "Leward Islands" = 1035,
-                "Leeward Islands" = 1035,
+                # The "Leeward Islands" line of the 1966-1974 reports is the naval facility on
+                # Antigua, not the British Virgin Islands: the 1975 report renames the same line
+                # "Leeward Islands (Antigua)" (123 personnel in 1974, 121 in 1975, all but one of
+                # them Navy in both years), and Antigua has no line of its own in those years.
+                "Leward Islands" = 58,
+                "Leeward Islands" = 58,
                 "Seychelles" = 591,      # G&W microstate: 591 (was 1036)
                 "Turks and Caicos Islands" = 1037,
                 "Turks Island" = 1037,
@@ -1163,11 +1300,26 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
   dplyr::mutate(ccode = as.numeric(ccode), # Codes are numeric already now that custom.gwn is; kept as a guard.
                 ccode = case_when(
     stringr::str_squish(Location) %in% not.a.location ~ NA_real_,
+    # The two Congos. G&W 484 is Congo (Brazzaville), the former French Congo; 490 is the
+    # Democratic Republic of the Congo (Leopoldville, later Kinshasa; Zaire from 1971 to 1997), the
+    # former Belgian Congo. From 1963 the reports name them apart, "Congo (Brazzaville)" beside
+    # "Congo (Leopoldville)", "Congo (Kinshasa)" or "Zaire", and a bare "Congo" in the reports of
+    # 1978 to 1996, printed beside "Zaire", is Brazzaville. The reports of 1960, 1961 and 1962
+    # have one line, "Congo", and that line is the former Belgian Congo: its 4, 56 and 79
+    # personnel (41 and 60 of them Air Force in 1961 and 1962, the airlift for the UN operation,
+    # with 5 or 6 Marines) run on into the 64 of "Congo (Leopoldville)" in 1963 (45 Air Force,
+    # 5 Marines), where Brazzaville has 10, and Kane's data place the same three figures in 490.
+    # The name lookup sends a bare "Congo" to 484, which put them in Brazzaville and, with the
+    # Kane rows kept for 490, in the data twice.
+    stringr::str_squish(Location) == "Congo" & year %in% 1960:1962 ~ 490,
     grepl(".*Ryukyu.*", Location) ~ 740,
     grepl(".*Hong Kong.*", Location, ignore.case = TRUE) ~ 1009,
     grepl(".*Indo-China.*|.*Viet-Nam.*|.*South Vietnam.*", Location, ignore.case = TRUE) ~ 817,
     TRUE ~ ccode
-  )) %>% # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that. Also assign Hong Kong its own country code because countrycode is lumping it in with China. Also make sure Indo-China is recoded as Vietnam for 817 south vietnam code.
+  ),
+  # The ISO3C code was read from the same bare name; see the note on the two Congos above.
+  iso3c = dplyr::if_else(stringr::str_squish(Location) == "Congo" & year %in% 1960:1962, "COD", iso3c)
+  ) %>% # Assign Ryukyu Islands to Japan. There's an error where it's cutting out second Japan entry for Ryukyu Islands. Seems to be because there's a footnote containing the word 'Japan' and it's dropping the Ryukyu Islands and keeping that. Also assign Hong Kong its own country code because countrycode is lumping it in with China. Also make sure Indo-China is recoded as Vietnam for 817 south vietnam code.
   # The 2003 and 2004 reports are read from PDFs as text, thousands separators included, and
   # as.numeric("74,796") is NA. Every location with a thousand or more personnel in those two
   # reports therefore lost its row at the filter on troops_ad further down -- Germany, Japan, South
@@ -1274,6 +1426,12 @@ data.clean.combined.international <- furrr::future_map(.x = list(data.clean.1950
                 countryname = str_to_title(countryname),
                 countryname = case_when(
                   grepl(".*Antar.*", countryname) ~ "Antarctica",
+                  # One name for each Congo in every frame, and names that say which is which.
+                  # The name lookup gives "Congo - Brazzaville" and "Congo - Kinshasa" here and the
+                  # country-year frame had "Congo" and "Democratic Republic of the Congo". The
+                  # line as the report prints it stays in Location.
+                  ccode == 484 ~ "Republic of the Congo",
+                  ccode == 490 ~ "Democratic Republic of the Congo",
                   TRUE ~ countryname
                 )
   ) %>%
@@ -2062,7 +2220,9 @@ standardize_countryname <- function(.data) {
     ccode == 402 ~ "Cabo Verde",              # G&W 402 = Cape Verde (was custom 1015 "Scabo Verde")
     ccode == 403 ~ "Sao Tome and Principe",
     ccode == 437 ~ "Ivory Coast",
-    ccode == 484 ~ "Congo",
+    # G&W 484 is Congo (Brazzaville) and 490 the Democratic Republic of the Congo (Zaire). A bare
+    # "Congo" for 484 does not say which of the two it is, so both carry their full names.
+    ccode == 484 ~ "Republic of the Congo",
     ccode == 490 ~ "Democratic Republic of the Congo",
     ccode == 571 ~ "Botswana",
     ccode == 572 ~ "Eswatini",               # G&W 572 = Swaziland (was 571, which is Botswana)
@@ -2300,6 +2460,9 @@ troopdata_rebuild_long <- country.year.list %>%
                 marine_corps_reserve, air_force_reserve, coast_guard_reserve,
                 total_selected_reserve, army_civilian, navy_civilian, marine_corps_civilian,
                 air_force_civilian, dod_civilian, total_civilian) %>%  # select only variables to be exported to package
+  # The June 2023 workbook prints its guard/reserve and civilian columns one row low for part of
+  # the OVERSEAS section; see june.2023.realigned. The reports frame keeps the sheet as published.
+  realign_june_2023() %>%
   #dplyr::select(-statenme) %>% Not needed with G&W update
   # Kane rows are all stamped month = "June" / quarter = 2. They used to be dropped only where a
   # DMDC report existed for that same month, so for 1957 to 2013, when the reports are dated
@@ -2522,14 +2685,21 @@ troopdata_rebuild_long <- country.year.list %>%
                   ccode %in% c(1021, 1023) ~ "Europe & Central Asia",       # Akrotiri, Svalbard
                   ccode == 1024 ~ "Sub-Saharan Africa",                     # Bassas da India
                   ccode %in% c(1025, 1026, 1027) ~ "Latin America & Caribbean", # Curacao, Martinique, Sint Maarten
-                  grepl(".*Ryukyu.*|.*Indo-China.*|.*Hong Kong.*|.*Wake.*|.*Virgin.*|.*Samoa.*|.*Midway.*|.*Marshall.*|.*Mariana.*|.*Johnston.*|.*Guam.*|.*Sarawak.*|.*Line Islands.*|.*Atoll.*|.*Palau.*|.*Tuvalu.*|.*Vanuatu.*|.*Tonga.*|.*Vietnam.*|.*Nauru.*|.*Fiji.*|.*Micronesia.*|.*Eniwetok.*|.*Kiribati.*|.*Leward.*", countryname) ~ "East Asia & Pacific",
+                  # The Virgin Islands are in the Caribbean and Seychelles is an African state.
+                  # The name patterns below had ".*Virgin.*" among the Pacific islands, which
+                  # took both groups of Virgin Islands before the Caribbean pattern was reached,
+                  # and ".*Seychelles.*" beside Diego Garcia in South Asia. They are placed by
+                  # code here and taken out of those two patterns.
+                  ccode %in% c(1013, 1035) ~ "Latin America & Caribbean",   # US and British Virgin Islands
+                  ccode == 591 ~ "Sub-Saharan Africa",                      # Seychelles
+                  grepl(".*Ryukyu.*|.*Indo-China.*|.*Hong Kong.*|.*Wake.*|.*Samoa.*|.*Midway.*|.*Marshall.*|.*Mariana.*|.*Johnston.*|.*Guam.*|.*Sarawak.*|.*Line Islands.*|.*Atoll.*|.*Palau.*|.*Tuvalu.*|.*Vanuatu.*|.*Tonga.*|.*Vietnam.*|.*Nauru.*|.*Fiji.*|.*Micronesia.*|.*Eniwetok.*|.*Kiribati.*|.*Leward.*", countryname) ~ "East Asia & Pacific",
                   grepl(".*Antar.*", countryname) ~ "Antarctica",
                   # St. Helena is a South Atlantic territory, not MENA, and Ascension -- the same
                   # British overseas territory -- is already mapped to Sub-Saharan Africa below.
                   grepl(".*Helena.*", countryname) ~ "Sub-Saharan Africa",
                   grepl(".*Sahara.*|.*Aden.*", countryname) ~ "Middle East & North Africa",
                   grepl(".*Caicos.*|.*Turks Island.*|.*Puerto Rico.*|.*Kitts.*|.*Antilles.*|.*Dominica.*|.*Leeward.*|.*Grenada.*|.*Easter.*|.*Bermuda.*|.*British West.*|.*British Virgin.*|.*Aruba.*|.*Lucia.*|.*Vincent.*|.*Antigua.*", countryname) ~ "Latin America & Caribbean",
-                  grepl(".*Kashmir.*|.*Diego.*|.*Seychelles.*", countryname) ~ "South Asia",
+                  grepl(".*Kashmir.*|.*Diego.*", countryname) ~ "South Asia",
                   ccode == 1004 ~ "South Asia",
                   grepl(".*Gibraltar.*|.*Azore.*|.*Monaco.*|.*Gilbral.*|.*Andorra.*|.*Liechtenstein.*|.*Ossetia.*|.*Marino.*|.*Abkhazia.*", countryname) ~ "Europe & Central Asia",
                   ccode == 1001 ~ "Europe & Central Asia", # Gibraltar missing country name

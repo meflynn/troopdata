@@ -42,6 +42,48 @@ head(buildexample)
 
 ```
 
+The `host` argument takes ISO3C codes or Gleditsch and Ward country codes, the same numeric codes the troop deployment data use. Territories carry the same ad hoc codes as in the troop data, so Guam is 1008 (or `"GUM"`) and Puerto Rico is 6 (or `"PRI"`) in both. The data also include construction inside the United States, which you can get with `host = "USA"` or `host = 2`. In fact most of the rows are projects in the United States. Leaving `host` at its default returns everything. Note that `startyear` and `endyear` have no defaults in this function, so you always need to supply both.
+
+There are several other ways to narrow things down. The `location` and `project` arguments search installation names and project titles, `organization` picks out a service or defense agency, and `facility_category` and `budget_activity` filter on the type of facility and the budget activity. For `host`, `organization`, `facility_category` and `budget_activity`, a value that does not match anything in the data returns an error that tells you where to look, rather than an empty data frame. The `location` and `project` searches simply return no rows when nothing matches.
+
+```{r build location}
+
+ramstein <- get_builddata(location = "Ramstein", startyear = 2010, endyear = 2020)
+
+ramstein[, c("fiscal_year", "location_name", "organization", "project_title", "appn_amount")]
+
+```
+
+## How values are handled
+
+A few things are worth knowing before you start adding up dollars.
+
+**Each row is one line of a report.** A row is a single project at a single location in a single fiscal year. It is not a country total. To get spending by country and year you need to add the rows up yourself:
+
+```{r build totals, message = FALSE}
+
+library(dplyr)
+
+buildexample %>%
+  group_by(iso3c, fiscal_year) %>%
+  summarise(projects = n(),
+            appropriations = sum(appn_amount, na.rm = TRUE)) %>%
+  head()
+
+```
+
+**Amounts are in thousands of current US dollars.** There are four amount columns: appropriations (`appn_amount`), authorizations (`auth_amount`), authorization of appropriations (`auth_appn_amount`) and total obligational authority (`toa_amount`). They are not adjusted for inflation. Negative values are real. They show up where money was rescinded or reprogrammed. Not every report gives every amount: the FY2006 report has appropriations only, and total obligational authority is also missing for FY2000. The `spend_type`, `min_amount` and `max_amount` arguments let you pick an amount column and filter on it.
+
+**Each fiscal year comes from one report.** Every C-1 report covers two or three fiscal years, so the same year appears in more than one report, often with revised figures. The data take each fiscal year from the most recent report that covers it, so a project-year is only counted once. For every year but one that is an enacted or actual figure. The exception is FY2016, where the only report we have is the one that requests it. FY2010 also has 26 lines that come from a request sheet for overseas contingency operations and do not appear on any enacted sheet. All of these rows are flagged with `is_request`, and `include_requests = FALSE` drops them.
+
+**Some rows have no location.** About a quarter of the rows report an amount under a label such as "Unspecified Worldwide Locations" rather than a place. These rows have no country code, so they are only returned when `host` is left at its default. One group is an exception: the base realignment and closure lines for FY2007 through FY2016 are filed under that label, but their project titles name a US installation (for example "USA-224: Fort Hood, TX"). Those rows carry the US country code and the installation's coordinates, so `host = "USA"` returns them.
+
+**Coordinates.** The `latitude` and `longitude` columns come from geocoding the location name. A point is only kept if it falls inside the country or state the row is filed under. Installations that the geocoder put in the wrong place were corrected by hand, and the `geo_source` column tells you whether a point came from a geocoding service (`"arcgis"`) or was entered by hand (`"manual"`). Rows with no location, and the few locations we could not find, have no coordinates and will drop out of a map.
+
+**Not every column is reported every year.** The layout of the C-1 reports changed over time. Columns such as `transaction_type`, `project_number` and `facility_category_title` only exist for some fiscal years, and filtering on one of them quietly limits you to those years. The help page for `build_data_20260918` lists the coverage of each column.
+
+## Applications
+
 
 As with the base data you can build cool maps using the construction data. You can also size the points according to the amount of spending associated with a particular location, adding some additional details to maps and other figures.
 

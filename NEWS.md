@@ -1,8 +1,5 @@
 # troopdata 1.1.0
 
-
-# troopdata 1.0.4.9000
-
 - Claude Opus 5.5 was used to aid in detecting errors in the data and code, and in updating the
   code, for this version.
 
@@ -26,7 +23,7 @@
   vocabulary split across two columns, and the reports move labels between them--the coarse labels
   arrive under "Facility Group Title" in some years, "Fiscal Category Title" in others, and in the
   facility category column itself from FY2022--so separating them in the data is a reconstruction.
-  A value is now matched against the pool of all 192 labels and a row is kept if either column holds
+  A value is now matched against the pool of all 190 labels and a row is kept if either column holds
   it, which means callers no longer have to know which header a given report year used. Three labels
   are genuinely present at both levels and return rows from each.
 - Adds `include_requests` to `get_builddata()` for dropping budget-request rows, and adds
@@ -55,9 +52,9 @@
   rather than used as a fallback. Affected values include Germany, South Korea, Japan, Italy, and
   South Vietnam.
 - Fixes country name and code errors flagged on GitHub: ccode 571 (Botswana) was labeled Swaziland,
-  and Swaziland/Eswatini appeared under two names. Country names are now assigned in one place and
-  applied to both the reports frame and the long frame, so a country code carries the same name in
-  every object the package ships.
+  and Swaziland/Eswatini appeared under two names. Country names are now assigned in one place for
+  the country-year data, so a country code carries one name there. The reports data keep more of
+  the names the reports themselves use.
 - Fixes Vietnam. `countrycode`'s Gleditsch and Ward lookup returns 817 (Republic of Vietnam) for
   plain "Vietnam", so reports from 1976 forward were filed under the South Vietnam code and then
   dropped, leaving modern Vietnam with no data. Vietnam is now 817 through 1975 and 816 after.
@@ -218,7 +215,7 @@
   which takes the data from 20,344 rows to 14,070. Matching restatements project by project, as
   before, also merged distinct projects that share a location and a title; those 211 rows are
   restored, and a new `source_row` column gives each row's position in its source sheet. FY2016 is
-  the only year still flagged `is_request`. Several fields that only an earlier report printed are
+  the only whole year still flagged `is_request`. Several fields that only an earlier report printed are
   no longer available for some years; the data documentation lists the coverage of each.
 - **Fixes the coordinates in the construction data.** The address sent to the geocoder ended in the
   report's own two-letter code ("Rota, SP", "Misawa AB, JA"), which a geocoder reads as something
@@ -240,8 +237,12 @@
   more found on a second pass and the eight addresses that had no coordinates at all are now
   handled from `data-raw/geocode_overrides.csv`, which gives each point, what it is a point of
   (the base, its airfield, or the nearest town where the base itself could not be found) and the
-  page it was read from. 112 addresses (527 rows) are placed by hand and marked
-  `geo_source = "manual"`. Five have no coordinates, because the place could not be located (FOB
+  page it was read from. A later review found eight more addresses in the United States that were
+  inside the right state, so the check on the state passed them, but 23 to 573 km from the
+  installation: Seymour Johnson AFB, NAS Whidbey Island, Puget Sound Naval Shipyard, the Air
+  National Guard bases at Jackson and Bradley airports, Muscatatuck, Camp Elmore and the Nevada
+  Guard's Harry Reid Training Center (90 rows). 120 addresses (617 rows) are placed by hand and
+  marked `geo_source = "manual"`. Five have no coordinates, because the place could not be located (FOB
   Joyce and FOB Wolverine in Afghanistan, Convoy Support Center Scania in Iraq) or because the
   report's location and state contradict each other.
 - Restores four construction projects that a filter for total lines had removed because their
@@ -289,9 +290,62 @@
   rather than in a state. They cannot be traced to a state or a country, so they are in none of
   the figures, and the United States total and Navy figures are lower in those quarters. The data
   are left as reported.
+- **Fixes the guard, reserve and civilian figures for June 2023.** DMDC's workbook for that
+  quarter prints the civilian columns one row low from Montenegro to the end of the overseas
+  list, and the Navy Reserve, Marine Corps Reserve, Air National Guard, Air Force Reserve and
+  Coast Guard Reserve columns one row low from Morocco to Wake Island. Each of those lines holds
+  the figures of the location above it: Qatar shows Puerto Rico's 2,201 civilians, 273 Navy
+  Reserve and 1,167 Air National Guard, and Uruguay shows the United Kingdom's 1,383 civilians.
+  The annual figure is the largest of the quarters, so these had become the 2023 values, and
+  Qatar read 2,201 civilians and 1,806 for `troops_all` on 380 active duty. The country data now
+  take each figure from the line below the one it is printed on, which is where the March and
+  September 2023 reports have it and where the report's own totals put it. 58 location rows
+  change. The reports data keep the sheet as published.
+- **Tells the two Congos apart.** The reports of 1960, 1961 and 1962 have a single line, "Congo",
+  with 4, 56 and 79 personnel. It was coded to Congo-Brazzaville (484), and because Kane's data
+  place the same figures in the Democratic Republic of the Congo (490), they were in the data
+  twice. The line is the former Belgian Congo, as the split into "Congo (Leopoldville)" and
+  "Congo (Brazzaville)" in the 1963 report shows, and it is now under 490 only. Country code 484
+  is named "Republic of the Congo" rather than "Congo", and both countries carry one name in
+  every object: "Republic of the Congo" and "Democratic Republic of the Congo".
+- Fixes the "Leeward Islands" line of the 1966-1974 reports (115 to 215 personnel, nearly all
+  Navy), which was coded to the British Virgin Islands. It is the naval facility on Antigua, as
+  the "Leeward Islands (Antigua)" of the 1975 report shows, and is now under Antigua (58).
+- Fixes three regions. The US Virgin Islands and the British Virgin Islands were in "East Asia &
+  Pacific" and Seychelles was in "South Asia". They are now in "Latin America & Caribbean" and
+  "Sub-Saharan Africa", and a region `host` returns them there.
+- `get_troopdata(state_data = TRUE)` now matches state names without regard to case.
+  `host = "kansas"` returned Arkansas and `host = "texas"` returned nothing. A full state name
+  now returns that state alone, so `"Virginia"` no longer brings West Virginia with it, and part
+  of a name still returns every state that contains it. A FIPS code that matches no state is an
+  error, as an unmatched state name already was.
+- `get_troopdata()` now warns when some of the values in `host` match nothing, and names them.
+  `host = c("USA", "Japan")` is read as country names and returns Japan alone, as before, but it
+  now says that "USA" did not match.
+- **Fills in `organization` for FY2004-FY2007 in the construction data.** The workbooks for those
+  years print the service of an Army, Navy or Air Force line under "Treasury Agency" rather than
+  "Organization", and that column was not read. 2,136 rows ($47.2 billion of appropriations) had
+  no organization, and `organization = "Army"` returned 3, 2, 0 and 3 rows for the four years.
+  Every row now has one.
+- Flags the 26 FY2010 construction lines ($474.7 million) that come from the overseas
+  contingency operations request sheet and are on no enacted sheet as `is_request`.
+  `include_requests = FALSE` drops them along with FY2016.
+- Gives the United States country code to 392 construction rows ($11.3 billion) that are filed
+  under "Unspecified Worldwide Locations" but name a U.S. installation in their title: the base
+  realignment and closure lines of FY2007-FY2016, such as "USA-224: Fort Hood, TX". They already
+  had the installation's coordinates, and `host = "USA"` now returns them. About a quarter of the
+  rows, rather than 28 percent, are left with no country.
+- Requires R 4.1.0 or later, since the tests use the native pipe.
+- Documents how values are handled. The help pages for `get_troopdata()` and the troop data, the
+  vignettes and the README now say that annual values are the highest value reported in the year,
+  taken for each column separately, what zeros and missing values mean, and which values are
+  imputed or estimated: 1951 and 1952, the Army figures for December 2022 through June 2023, and
+  the war-zone figures for Afghanistan, Iraq, Kuwait and Syria. They also describe the numeric
+  country codes as Gleditsch and Ward codes with the package's own codes for territories, rather
+  than Correlates of War codes, and give the coverage of the data as 1950 through March 2026.
 - Adds regression tests that compare every country-year-quarter value against the underlying DMDC
   report and check code, name, and ISO3C consistency.
-- Adds updated troopdata from the spring of 2025 through December of 2025.
+- Adds updated troopdata from the spring of 2025 through March of 2026.
 - Adds data for individual US states. Users can now use the `state_data` argument to retrieve data from individual US states from 2008 forward.
 - Adds the `get_exercises()` function that allows users to retrieve data on military exercises compiled by Vito D'Orazio and Kevin Galambos.
 - Smaller bug fixes and improved coding to speed compiling underlying data. 
@@ -421,8 +475,6 @@ These numbers continue to be estimates in a few cases, so we will continue to up
 
 * Modified version number down to better adhere to R package best practices.
 * Improved documentation for package and functions.
-
-# troopdata 1.1.0
 
 # troopdata 1.0.0
 

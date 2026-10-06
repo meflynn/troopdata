@@ -177,11 +177,24 @@ region_host_notes <- function(host, host.type, countrynames, region.labels) {
 
 #' Function to retrieve customized U.S. troop deployment data
 #'
-#' @description \code{get_troopdata()} generates a customized data frame containing country-year observations of U.S. military deployments overseas.
+#' @description \code{get_troopdata()} generates a customized data frame of U.S. military
+#'   personnel by location and year, for every country, territory and other location in which the
+#'   Department of Defense reports personnel, the United States included. It can also return the
+#'   figures by report period (\code{quarters}), the figures for the fifty states and the District
+#'   of Columbia (\code{state_data}), and the rows of the underlying reports (\code{reports}).
 #'
-#' @return \code{get_troopdata()} returns a data frame containing country-year observations for U.S. troop deployments.
+#' @return A data frame with one row per location and year, or one row per location and report
+#'   period when \code{quarters = TRUE}. Each row carries the location's identifiers
+#'   (\code{ccode}, \code{iso3c}, \code{countryname} and \code{region}, or \code{state} and
+#'   \code{fipscode} for the state data), the \code{year} (with \code{month} and \code{quarter}
+#'   when \code{quarters = TRUE}), \code{troops_ad}, the number of active duty personnel, and the
+#'   columns asked for with \code{branch}, \code{guard_reserve}, \code{civilians} and
+#'   \code{afloat}. With \code{reports = TRUE} the columns are those of
+#'   \code{\link{troopdata_rebuild_reports}}, with its three afloat columns only when
+#'   \code{afloat = "separate"}. The section "How values are handled" says what the figures are
+#'   and how they are put together.
 #'
-#' @param host The Correlates of War (COW) numeric country code, ISO3C code, or country name, for the host country or countries in the series. A region name can be given instead; see below. The default, \code{NULL}, returns every location, and so does \code{NA}. A missing value inside a vector of hosts is dropped with a warning.
+#' @param host A Gleditsch and Ward numeric country code, an ISO3C code, or a country name, for the host country or countries in the series. Territories and other locations that the Gleditsch and Ward list does not cover carry the package's own codes: Puerto Rico is 6, Greenland 1002 and Guam 1008, and \code{unique(troopdata_rebuild_long[, c("ccode", "countryname")])} lists them all. These are not Correlates of War codes: Germany is 260 here, not 255. The values given must all be of one kind; a value that matches nothing is left out, and a warning names it. A region name can be given instead; see below. With \code{state_data = TRUE}, give a state name or a numeric FIPS code. State names are matched without regard to case: a full name returns that state alone (\code{"kansas"} is Kansas, and \code{"Virginia"} is not also West Virginia), and part of a name returns every state whose name contains it. The default, \code{NULL}, returns every location, and so does \code{NA}. A missing value inside a vector of hosts is dropped with a warning.
 #'
 #'   A region is asked for by name. \code{host} is matched, as a substring and ignoring case,
 #'   against the \code{region} column (\code{unique(get_troopdata()$region)} lists the names), and
@@ -208,7 +221,8 @@ region_host_notes <- function(host, host.type, countrynames, region.labels) {
 #'   have no ISO3C code and are left out of any ISO3C filter: at present the British West Indies
 #'   (1950-1965), the Spratly Islands and Kashmir. Passing \code{host} as a
 #'   country name or a Gleditsch and Ward country code reaches them, and a warning names them and
-#'   gives the current count whenever an ISO3C filter is used. Most territories and historical
+#'   gives the current count whenever an ISO3C filter covers years in which they have rows. Most
+#'   territories and historical
 #'   states do have a code: Greenland is \code{"GRL"}, Bermuda \code{"BMU"}, Diego Garcia
 #'   \code{"IOT"} and Yugoslavia \code{"YUG"}. A unit with no code of its own carries its
 #'   parent's: the Azores carry Portugal's, \code{"PRT"}. Locations that share a code are returned
@@ -220,14 +234,14 @@ region_host_notes <- function(host, host.type, countrynames, region.labels) {
 #'   returned with everything else when \code{host} is left empty; \code{host = "Afloat"} or
 #'   \code{host = 10200} returns it alone. It is not a country, so leave it out when adding up
 #'   countries. See \code{afloat} for what it holds.
-#' @param startyear The first year for the series. The default is set to 1950.
-#' @param endyear The last year for the series. The default is the maximum year in the currently published data.
-#' @param branch Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.
-#' @param guard_reserve Logical. Should the function return values for the National Guard and Reserve? Default is FALSE.
-#' @param civilians Logical. Should the function return values for civilian DoD personnel? Default is FALSE.
-#' @param quarters Logical. Should the function return quarterly data? Default is FALSE.
-#' @param reports Logical. Should the function return reports for the specified countries and years? Default is FALSE. The reports are returned as reported, without aggregation, so a country code may appear on more than one row in a period where the report breaks that country's territories out separately.
-#' @param state_data Logical. Should the function return disaggregated data on US States? Default is FALSE.
+#' @param startyear The first year for the series. The default is set to 1950. The state data begin in 2008.
+#' @param endyear The last year for the series. The default is the maximum year in the currently published data. The latest year holds only the reports published so far, so its annual figures can rest on fewer reports than those of a full year.
+#' @param branch Logical. Should the function return the total only, or the total and the active duty figures for the individual branches (\code{army_ad}, \code{navy_ad}, \code{air_force_ad}, \code{marine_corps_ad}, \code{coast_guard_ad} and \code{space_force_ad})? Default is FALSE.
+#' @param guard_reserve Logical. Should the function return values for the National Guard and Reserve, and \code{troops_all}, the total of active duty, guard and reserve personnel? The reports give guard and reserve figures from 2008; they are missing (\code{NA}) for earlier years, where \code{troops_all} equals \code{troops_ad}. Default is FALSE.
+#' @param civilians Logical. Should the function return values for civilian DoD personnel? The reports give them from 2008, and they are missing (\code{NA}) for earlier years. Default is FALSE.
+#' @param quarters Logical. Should the function return the figures of each report rather than one row per year? If \code{FALSE}, the default, each row is a location and year, and every column holds the largest value reported for that location in that year. If \code{TRUE}, each row is a location and report period, with \code{month} and \code{quarter} columns, and its figures are those of that one report. See "How values are handled".
+#' @param reports Logical. Should the function return reports for the specified countries and years? Default is FALSE. The reports are returned as reported, without aggregation, so a country code may appear on more than one row in a period where the report breaks that country's territories out separately. Requires \code{quarters = TRUE}.
+#' @param state_data Logical. Should the function return the data for the fifty U.S. states and the District of Columbia rather than for countries? These data begin in 2008, and \code{host} is then a state name or a numeric FIPS code. Default is FALSE.
 #' @param afloat How to treat Navy and Marine Corps personnel afloat in the reports for 1950
 #'   through 2007. One of \code{"exclude"} (the default), \code{"include"} or
 #'   \code{"separate"}.
@@ -256,14 +270,108 @@ region_host_notes <- function(host, host.type, countrynames, region.labels) {
 #'   Added up over every row, the three give the same total; they differ in where the personnel
 #'   afloat are put. In the three afloat columns a zero means a report that lists personnel afloat
 #'   by location has none for that one (1953-1976). A missing value means the report gives no
-#'   figure for the location: 1950 and 1977-2007 for everywhere but the United States, 1951 and
-#'   1952, and every year from 2008. For 1954-1956 the figure also holds mobile units temporarily
+#'   figure for the location: 1950 and 1977-2007 for everywhere but the United States (and Cuba
+#'   in 1950, where the report puts 171 Marines afloat), 1951 and 1952, and every year from 2008. For 1954-1956 the figure also holds mobile units temporarily
 #'   based ashore, which those three reports do not separate.
 #'
 #'   From September 2008 the DMDC reports count a ship's crew at its home port, inside the state
 #'   or country figure, and there is no afloat figure at all, so the argument changes nothing from
 #'   2008 on and has no effect on \code{state_data = TRUE}. Navy figures on either side of 2008
 #'   are closest to comparable with \code{afloat = "include"}.
+#'
+#' @section How values are handled:
+#' The figures come from the personnel reports of the Department of Defense, published today by
+#' the Defense Manpower Data Center (DMDC). The rules below say how the reports become the values
+#' this function returns. The "Rebuild Notes" article on the package website gives more
+#' background.
+#'
+#' \strong{Annual values are the highest value reported in the year.} With
+#' \code{quarters = FALSE} every column holds the largest value reported for that location in
+#' that year. It is not an average, and it is not the figure of one fixed month. The data have
+#' one report a year through 2012 (dated June for 1950 and 1953-1956, and September from 1957),
+#' two for 2013 (September and December) and four a year from 2014 (March, June, September and
+#' December), so the rule matters mainly from 2013 on. The latest year holds only the reports
+#' published so far.
+#'
+#' The maximum is taken for each column separately, so \code{troops_ad} can come from one report
+#' and \code{army_ad} or \code{navy_ad} from another. The branch columns of an annual row
+#' therefore need not add up to its \code{troops_ad}, and \code{troops_all} need not equal
+#' \code{troops_ad} plus the guard and reserve columns. For Japan in 2019 the four reports give
+#' 56,134, 55,327, 55,245 and 57,094 active duty personnel. The annual \code{troops_ad} is 57,094,
+#' the December figure, while the annual \code{army_ad}, 2,671, is the June figure and the annual
+#' \code{navy_ad}, 20,846, is the March figure. Use \code{quarters = TRUE} for figures that all
+#' come from one report.
+#'
+#' \strong{Totals.} \code{troops_ad} is active duty personnel. In the country data a row that
+#' comes from a report has a \code{troops_ad} equal to the sum of its branch columns. The state
+#' data keep the total each report prints, which is lower than the sum of the branch columns for
+#' some states in June 2021, December 2021 and March 2022, so the states do not add up to the
+#' United States figure in those three quarters. \code{troops_all}, returned with
+#' \code{guard_reserve = TRUE}, is \code{troops_ad} plus the seven National Guard and Reserve
+#' columns. The United States figure is the fifty states and the District of Columbia. Puerto
+#' Rico, Guam and the other territories are locations of their own and are not part of it.
+#'
+#' \strong{Zeros.} A country that a report does not list has 0 for that period. A zero therefore
+#' means either that the report prints zero or that it does not list the country. Territories and
+#' the other locations that carry the package's own codes are treated differently, as are a few
+#' small states in the years before their independence: they have a row only for the periods in
+#' which a report lists them, so an unlisted territory is absent from the result rather than zero.
+#'
+#' \strong{Missing values.} \code{NA} means that the reports give no figure of that kind: the
+#' guard, reserve and civilian columns and \code{coast_guard_ad} before 2008,
+#' \code{space_force_ad} before September 2023, the branch columns for 1951 and 1952, and the
+#' afloat columns as described under \code{afloat}. In annual output a value is missing only if
+#' it is missing in every report of that year. Otherwise it is the largest of the values reported.
+#'
+#' \strong{Figures that are not taken from a report.}
+#' \itemize{
+#'   \item 1951 and 1952 have no report. \code{troops_ad} for those years moves in equal steps
+#'     from the June 1950 figure to the June 1953 figure, and the branch columns are missing.
+#'     This is done for countries. Most territories and other locations with the package's
+#'     own codes, the \code{"Afloat"} location among them, have no rows for those two years.
+#'   \item The Army reported nothing for December 2022, March 2023 and June 2023. In the country
+#'     data \code{army_ad}, \code{army_national_guard} and \code{army_reserve} for those quarters
+#'     move in equal steps from the September 2022 figure to the September 2023 figure, and the
+#'     totals are those figures plus what the other services reported. The state data and the
+#'     reports (\code{reports = TRUE}) are left as published, with the Army figures and the totals
+#'     missing for those three quarters. The one exception is the United States row of the
+#'     reports, which is not a line of a report. For those quarters it carries a fixed Army
+#'     figure of 404,114 and zeros, not missing values, in the Army guard and reserve columns.
+#'   \item The June 2023 report prints its civilian columns, and five of its guard and reserve
+#'     columns, one row low for part of the overseas list, so that Qatar's line holds Puerto
+#'     Rico's figures and Uruguay's the United Kingdom's. The country data take each figure
+#'     from the line below the one it is printed on. \code{reports = TRUE} shows the report as
+#'     published.
+#'   \item Where the reports do not give the personnel deployed to a war zone, a figure from
+#'     Kane's data or from public reporting is used: Afghanistan for 2001-2005 and 2018-2020, Iraq
+#'     for 2003-2007 and 2018-2021, Kuwait for 2003-2007 and Syria for 2018-2021. These are
+#'     totals only, with zeros in the branch columns. From December 2017 the reports leave out
+#'     personnel deployed to Afghanistan, Iraq and Syria, and no outside figure is used after
+#'     those years, so the values for Afghanistan from 2021 and for Iraq and Syria from 2022 are
+#'     the handful of personnel the reports print and understate the U.S. presence. With
+#'     \code{quarters = TRUE}, the outside figures for Iraq in 2018-2021 and for Syria in 2021
+#'     are on the June row only, and the other quarters of those years hold what the report
+#'     prints, which is zero or close to it.
+#'   \item The reports for 1957 through 2013 are dated September (and December in 2013). A row
+#'     dated June in those years is not a report. It holds a figure from Kane's data, or one of
+#'     the figures above, and is kept only for a location and year in which no report gives a
+#'     figure or the report prints a zero in its place. Nearly all of these rows are zero.
+#' }
+#' The \code{source} column of \code{\link{troopdata_rebuild_long}} says where a figure comes
+#' from, with two exceptions: the rows of the three Army quarters carry the label of their
+#' report, and the Iraq figure of 5,200 for June 2018, 2019 and 2020 has no label.
+#'
+#' \strong{Where personnel are counted.} Personnel are counted at the location the report lists
+#' them under. Personnel that a report lists under no location (lines such as "Transients",
+#' "Undistributed", "Departmental Headquarters" and "Unknown") are not in the data, so the rows
+#' do not add up to the worldwide total the report prints. Where a report lists two places under
+#' one country code (Japan and the Ryukyu Islands through 1973, for example) the country figure
+#' is their sum, and \code{reports = TRUE} shows each row. For 1950 through 2007 the figures are personnel ashore, and personnel afloat
+#' are handled by the \code{afloat} argument. From September 2008 the reports count a ship's crew
+#' at its home port, inside the country or state figure. From December 2015 to December 2017 the
+#' reports list between 77,000 and 105,000 personnel, nearly all Navy, in the United States
+#' block but in no state. They cannot be traced to a state or a country and are in none of the
+#' figures, so the United States total and its Navy figure are lower in those quarters.
 #'
 #'
 #' @importFrom rlang warn
@@ -441,10 +549,64 @@ get_troopdata <- function(host = NULL,
            call. = FALSE)
     }
 
+    # Spaces around a state name are not part of it, here or in the filter further down.
+    if (host.type == "state") host <- trimws(host)
+
     if (host.type == "state" &&
         !any(grepl(paste(host, collapse = "|"), tempdata$state, ignore.case = TRUE))) {
       stop(paste0("`host` value(s) '", paste(host, collapse = "', '"),
                   "' did not match any state in the data."), call. = FALSE)
+    }
+
+    if (host.type == "fipscode" && !any(host %in% tempdata$fipscode)) {
+      stop(paste0("`host` code(s) ", paste(host, collapse = ", "),
+                  " did not match any state FIPS code in the data."), call. = FALSE)
+    }
+
+    # Values of `host` that match nothing.
+    #
+    # How `host` is read is decided from the vector as a whole, and a value that then matches
+    # nothing used to be dropped without a word: c("USA", "Japan") was read as country names and
+    # returned Japan alone, and c("JPN", "KOR", "GER") returned two countries. The result is left
+    # as it was, since the caller can correct the input, but the unmatched values are now named.
+    # Numeric country codes have their own messages in the branch below. A string that is part of
+    # a region's name and was given beside country names is reported by region_host_notes().
+    if (host.type != "ccode") {
+
+      found_in <- function(h, x) any(grepl(h, x, ignore.case = TRUE))
+
+      host.found <- switch(
+        host.type,
+        "iso3c" = vapply(host, function(h) found_in(h, tempdata$iso3c), logical(1)),
+        "countryname" = vapply(host, function(h) {
+          found_in(h, canonical$countryname) || found_in(h, tempdata$countryname) ||
+            found_in(h, c(canonical$region, tempdata$region))
+        }, logical(1)),
+        "region" = vapply(host, function(h) found_in(h, tempdata$region), logical(1)),
+        "state" = vapply(host, function(h) found_in(h, tempdata$state), logical(1)),
+        "fipscode" = host %in% tempdata$fipscode
+      )
+
+      unmatched.hosts <- unique(host[!host.found])
+
+      if (length(unmatched.hosts) > 0) {
+
+        host.kind <- c("iso3c" = "ISO3C code", "countryname" = "country name",
+                       "region" = "region", "state" = "state name",
+                       "fipscode" = "state FIPS code")[[host.type]]
+
+        rlang::warn(paste0(
+          "`host` value(s) ",
+          if (is.character(unmatched.hosts)) {
+            paste0("'", unmatched.hosts, "'", collapse = ", ")
+          } else {
+            paste(unmatched.hosts, collapse = ", ")
+          },
+          " did not match any ", host.kind, " in the data and were ignored. The values in ",
+          "`host` were read as ", host.kind, "s, and they must all be of one kind."))
+
+      }
+
     }
 
     # Set warning for host region call. Only for a string that is part of a region's name and
@@ -598,8 +760,27 @@ get_troopdata <- function(host = NULL,
       tempdata <- tempdata %>%
         dplyr::filter(fipscode %in% host)
     } else if (host.type == "state") {
-      tempdata <- tempdata %>%
-        dplyr::filter(grepl(paste(host, collapse = "|"), state))
+
+      # State names are matched without regard to case. The check above already ignored case, but
+      # this filter did not, so host = "texas" passed the check and then returned nothing, and
+      # host = "kansas" returned Arkansas, the one state whose name contains that string as
+      # typed. A value that is the whole name of a state now returns that state alone, so
+      # "kansas" is Kansas and "Virginia" is not also West Virginia. A value that is only part
+      # of a name still returns every state that contains it ("Carolina", "Dakota").
+      state.key <- tolower(tempdata$state)
+      host.key <- tolower(host)
+
+      whole.name <- host.key %in% state.key
+
+      keep.state <- state.key %in% host.key[whole.name]
+
+      if (any(!whole.name)) {
+        keep.state <- keep.state |
+          grepl(paste(host[!whole.name], collapse = "|"), tempdata$state, ignore.case = TRUE)
+      }
+
+      tempdata <- tempdata[keep.state, ]
+
     }
 
   }
