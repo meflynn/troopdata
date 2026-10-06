@@ -25,6 +25,9 @@ A data frame with country year observations including the following variables:
 \item{\code{space_force_ad}}{Total number of active duty Space Force personnel deployed to the host country.}
 \item{\code{marine_corps_ad}}{Total number of Marine Corps personnel deployed to the host country.}
 \item{\code{coast_guard_ad}}{Total number of Coast Guard personnel deployed to the host country.}
+\item{\code{troops_afloat}}{Navy and Marine Corps personnel afloat that a report attributes to the location, 1950 through 2007. Not included in \code{troops_ad}. See Details.}
+\item{\code{navy_afloat}}{Navy personnel afloat that a report attributes to the location. Not included in \code{navy_ad}.}
+\item{\code{marine_corps_afloat}}{Marine Corps personnel afloat that a report attributes to the location. Not included in \code{marine_corps_ad}.}
 \item{\code{total_selected_reserve}}{Total number of reserve US military personnel deployed to the host country.}
 \item{\code{army_reserve}}{Total number of reserve Army personnel deployed to the host country.}
 \item{\code{navy_reserve}}{Total number of reserve Navy personnel deployed to the host country.}
@@ -54,5 +57,43 @@ Returns the full data frame containing observations of US military deployments t
 }
 \description{
 \code{troopdata} returns a data frame containing information on US military deployments.
+}
+\details{
+Before 2008 \code{troops_ad}, \code{navy_ad} and \code{marine_corps_ad} hold personnel ashore
+for every location, the United States included. The reports for 1950 through 2007 count Navy
+and Marine Corps personnel afloat separately, and attribute some of them to a location: to the
+country of the nearest port or the country whose line they are printed on (1953-1976), and,
+for the fleet in home waters, to the United States (1950, 1953-2007; from 1968 the reports give
+that figure for the United States and its territories together). Those are in
+\code{troops_afloat}, \code{navy_afloat} and \code{marine_corps_afloat}, beside the ashore
+figures and not inside them. A zero there means a report that lists personnel afloat by
+location has none for that one (1953-1976); a missing value means the report gives no figure
+for the location (everywhere but the United States in 1950 and 1977-2007, the years 1951 and
+1952, and everything from 2008). For 1954-1956 the figure also holds mobile units temporarily
+based ashore, which those three reports do not separate.
+
+Everyone afloat is also carried once, worldwide, in a location named \code{"Afloat"}
+(\code{ccode} 10200, no ISO code, region \code{"Afloat"}), with values for 1950 and 1953
+through 2007. It is not a country, and it includes the personnel the three afloat columns
+attribute to locations: \code{troops_ad} added up over every row, that one included, is the
+worldwide total, and adding the afloat columns to it as well would count those personnel
+twice. \code{\link{get_troopdata}} handles this through its \code{afloat} argument, which
+leaves the attributed personnel out of the locations, adds them in, or returns them separately,
+and adjusts the \code{"Afloat"} location to match. From September 2008 the DMDC reports count a
+ship's crew at its home port, inside the state or country figure, and there is no afloat figure,
+so the ashore Navy figures for countries and states that are home ports step up between 2007
+and 2008.
+
+The reports did not keep to that from December 2015 to December 2017. They list 77,120
+personnel under "Unknown" in the United States block in December 2015, and between 88,500 and
+104,703 in each report from March 2016 to December 2017 under "Armed Forces Europe", "Armed
+Forces Pacific" and "Armed Forces the Americas", nearly all of them Navy. Those personnel
+cannot be traced to a state or a country and are in none of the figures here, the
+\code{"Afloat"} location included. The United States total and its Navy figure are therefore
+lower in those quarters and return in March 2018: the annual Navy figure for the United
+States is 278,123 in 2015, 188,184 in 2016, 198,679 in 2017 and 289,853 in 2018. Japan's Navy
+figure for December 2015 (41,546, against 22,030 in September 2015 and 12,234 in March 2016)
+is as that report prints it, and is why the annual figure for Japan in 2015, 71,567, stands
+well above the years around it.
 }
 \keyword{datasets}

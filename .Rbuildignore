@@ -15,3 +15,4 @@ vignettes/
 vignettes
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
+^Claude outputs$

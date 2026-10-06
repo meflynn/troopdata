@@ -7,6 +7,33 @@ globalVariables(c('MMEID', 'Ex_Name', 'Series_Name', 'Location', 'lat', 'lon',
                   'country', 'gwcode', 'year', 'duration', 'participant_count',
                   'start_date_parsed', 'end_date_parsed', '.data'))
 
+# Parse the MME date strings one element at a time.
+#
+# The source writes dates two ways: "5/16/80" when the day is known and
+# "1993-05-xx" when it is not. as.Date() with `tryFormats` does not try each
+# format on each value: it settles on one format from the first non-missing
+# element and applies that to the whole vector. So whenever the first row of a
+# filtered result held an "xx" date, no format matched it, every date came back
+# NA, and min_duration / max_duration returned nothing at all -- which rows
+# survived depended on which exercise happened to sort first. Each string is
+# matched against its own pattern here instead. Not exported.
+mme_parse_date <- function(x) {
+
+  x <- trimws(as.character(x))
+  out <- as.Date(rep(NA_character_, length(x)))
+
+  short.year <- grepl("^[0-9]{1,2}/[0-9]{1,2}/[0-9]{2}$", x)
+  long.year  <- grepl("^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$", x)
+  iso        <- grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", x)
+
+  out[short.year] <- as.Date(x[short.year], format = "%m/%d/%y")
+  out[long.year]  <- as.Date(x[long.year],  format = "%m/%d/%Y")
+  out[iso]        <- as.Date(x[iso],        format = "%Y-%m-%d")
+
+  out
+}
+
+
 #' Function to retrieve customized multilateral military exercise data
 #'
 #' @description \code{get_exercises()} generates a customized data frame
@@ -177,12 +204,8 @@ get_exercises <- function(country = NULL,
 
     tempdata <- tempdata %>%
       dplyr::mutate(
-        start_date_parsed = suppressWarnings(as.Date(StartDate,
-                                                     tryFormats = c("%Y-%m-%d", "%m/%d/%y", "%m/%d/%Y"),
-                                                     optional   = TRUE)),
-        end_date_parsed   = suppressWarnings(as.Date(EndDate,
-                                                     tryFormats = c("%Y-%m-%d", "%m/%d/%y", "%m/%d/%Y"),
-                                                     optional   = TRUE)),
+        start_date_parsed = mme_parse_date(StartDate),
+        end_date_parsed   = mme_parse_date(EndDate),
         duration = as.numeric(end_date_parsed - start_date_parsed)
       ) %>%
       dplyr::select(-start_date_parsed, -end_date_parsed)

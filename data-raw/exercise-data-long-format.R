@@ -47,10 +47,9 @@ mme_long <- mme_wide %>%
 
 # Add Gleditsch and Ward numeric country codes (gwcode) using the
 # countrycode package. Most country names match cleanly via the built-in
-# 'country.name' regex; we supply custom matches for historical states,
-# dependent territories, and a few idiosyncratic spellings present in the
-# MME source data. Non-country entries (e.g., "NATO", "Baltic States",
-# "Fuerzas Unidas", "-9") and dependent territories without G&W codes are
+# 'country.name' regex; the names it cannot code, or codes wrongly, are
+# corrected in the step that follows. Non-country entries (e.g., "NATO",
+# "Baltic States", "-9") and dependent territories without G&W codes are
 # left as NA.
 mme_long <- mme_long %>%
   dplyr::mutate(
@@ -62,6 +61,33 @@ mme_long <- mme_long %>%
       )
     )
   ) %>%
+  # The lookup alone leaves three kinds of error, all corrected here. It has no gwn entry for
+  # Yemen or for the G&W microstates, so 122 rows for twelve member states carried no code. It
+  # sends "Vietnam" to 815, which in the G&W list is a nineteenth century polity, not the modern
+  # state (816). And it codes Serbia as 340 in every year, though the G&W list has no Serbia
+  # before 2006; the state in those years is Yugoslavia (345), as in the troop data.
+  # Keyed on an ASCII, lower-case copy of the name so accents and capitalization cannot miss.
+  dplyr::mutate(
+    country_key = tolower(stringi::stri_trans_general(country, "Latin-ASCII")),
+    gwcode = dplyr::case_when(
+      country_key == "vietnam" ~ 816,
+      country_key == "yemen" ~ 678,
+      country_key == "dominica" ~ 54,
+      country_key == "grenada" ~ 55,
+      country_key == "st. lucia" ~ 56,
+      country_key == "st. vincent & grenadines" ~ 57,
+      country_key == "antigua & barbuda" ~ 58,
+      country_key %in% c("st. kitts & nevis", "st. christopher") ~ 60,
+      country_key == "sao tome & principe" ~ 403,
+      country_key == "seychelles" ~ 591,
+      country_key == "vanuatu" ~ 935,
+      country_key == "tonga" ~ 972,
+      country_key == "palau" ~ 986,
+      gwcode == 340 & year < 2006 ~ 345,
+      TRUE ~ as.numeric(gwcode)
+    )
+  ) %>%
+  dplyr::select(-country_key) %>%
   dplyr::relocate(MMEID, Ex_Name, Series_Name, gwcode, country, year) %>%
   dplyr::group_by(MMEID) %>%
   dplyr::mutate(participant_count = n()) %>%

@@ -37,6 +37,9 @@ A data frame with country year quarter observations including the following vari
 \item{\code{space_force_ad}}{Total number of active duty Space Force personnel deployed to the host country.}
 \item{\code{air_force_ad}}{Total number of active duty Air Force personnel deployed to the host country.}
 \item{\code{coast_guard_ad}}{Total number of Coast Guard personnel deployed to the host country.}
+\item{\code{troops_afloat}}{Navy and Marine Corps personnel afloat that a report attributes to the location, 1950 through 2007. Not included in \code{troops_ad}. See Details.}
+\item{\code{navy_afloat}}{Navy personnel afloat that a report attributes to the location. Not included in \code{navy_ad}.}
+\item{\code{marine_corps_afloat}}{Marine Corps personnel afloat that a report attributes to the location. Not included in \code{marine_corps_ad}.}
 \item{\code{Macro Location}}{The geographic location listed in the DMDC reports.}
 \item{\code{Army Active Duty}}{Total number of active duty Army personnel deployed to the host country.}
 \item{\code{Navy Active Duty}}{Total number of active duty Navy personnel deployed to the host country.}
@@ -75,5 +78,44 @@ Returns a data frame containing DMDC reports of US military deployments to overs
 }
 \description{
 \code{troopdata_rebuild_reports} returns a data frame containing DMDC reports on US military deployments.
+}
+\details{
+Before 2008 \code{troops_ad}, \code{navy_ad} and \code{marine_corps_ad} hold personnel ashore
+for every location, the United States included. The reports for 1950 through 2007 count Navy
+and Marine Corps personnel afloat separately, and attribute some of them to a location: to the
+country of the nearest port or the country whose line they are printed on (1953-1976), and,
+for the fleet in home waters, to the United States (1950, 1953-2007; from 1968 the reports give
+that figure for the United States and its territories together). Those are in
+\code{troops_afloat}, \code{navy_afloat} and \code{marine_corps_afloat}, beside the ashore
+figures and not inside them. A zero there means a report that lists personnel afloat by
+location has none for that one (1953-1976); a missing value means the report gives no figure
+for the location (everywhere but the United States in 1950 and 1977-2007, the years 1951 and
+1952, and everything from 2008). For 1954-1956 the figure also holds mobile units temporarily
+based ashore, which those three reports do not separate.
+
+Everyone afloat is also carried once, worldwide, in a location named \code{"Afloat"}
+(\code{ccode} 10200, no ISO code, region \code{"Afloat"}), with values for 1950 and 1953
+through 2007. It is not a country, and it includes the personnel the three afloat columns
+attribute to locations: \code{troops_ad} added up over every row, that one included, is the
+worldwide total, and adding the afloat columns to it as well would count those personnel
+twice. \code{\link{get_troopdata}} handles this through its \code{afloat} argument, which
+leaves the attributed personnel out of the locations, adds them in, or returns them separately,
+and adjusts the \code{"Afloat"} location to match. From September 2008 the DMDC reports count a
+ship's crew at its home port, inside the state or country figure, and there is no afloat figure,
+so the ashore Navy figures for countries and states that are home ports step up between 2007
+and 2008.
+
+The reports did not keep to that from December 2015 to December 2017. They list 77,120
+personnel under "Unknown" in the United States block in December 2015, and between 88,500 and
+104,703 in each report from March 2016 to December 2017 under "Armed Forces Europe", "Armed
+Forces Pacific" and "Armed Forces the Americas", nearly all of them Navy. Those personnel
+cannot be traced to a state or a country and are in none of the rows here, so the United
+States figures are lower in those quarters and return in March 2018.
+
+The derived columns, whose names are in lower case, follow that rule. The columns that carry a
+report's own figures, such as \code{Total}, \code{Total Afloat}, \code{Navy Afloat} and
+\code{Navy Other}, are left as the report prints them; \code{navy_afloat} is built from
+\code{Navy Afloat} or \code{Navy Other}, whichever the report of that year uses. For December 2022, March 2023 and June 2023 the Army reported nothing: the
+Army columns and \code{troops_ad} are missing on those rows and the other services are as reported.
 }
 \keyword{datasets}

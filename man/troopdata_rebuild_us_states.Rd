@@ -33,6 +33,7 @@ case-insensitive \code{grepl} fuzzy match when subsetting via
 \item{\code{air_force_reserve}}{Total number of Air Force Reserve personnel stationed in the state.}
 \item{\code{coast_guard_reserve}}{Total number of Coast Guard Reserve personnel stationed in the state.}
 \item{\code{total_selected_reserve}}{Total number of reserve US military personnel stationed in the state.}
+\item{\code{troops_all}}{The total number of US military personnel stationed in the state including guard and reserve: \code{troops_ad} plus the seven guard and reserve components, the same definition as in the country data. Missing in December 2022, March 2023 and June 2023, when the Army did not report and \code{troops_ad} is missing here.}
 \item{\code{army_civilian}}{Total number of Army civilian personnel stationed in the state.}
 \item{\code{navy_civilian}}{Total number of Navy civilian personnel stationed in the state.}
 \item{\code{air_force_civilian}}{Total number of Air Force civilian personnel stationed in the state.}
@@ -57,8 +58,18 @@ domestically from 1950 through the most recent reporting period.
 \description{
 \code{troopdata_rebuild_us_states} returns a data frame
 containing information on U.S. military personnel stationed in each of
-the 50 U.S. states (and U.S. territories where reported). Returned by
+the 50 U.S. states and the District of Columbia. Territories such as
+Puerto Rico and Guam are overseas locations and are in the country data,
+not here. Returned by
 \code{get_troopdata()} when the \code{state_data} argument is set to
 \code{TRUE}.
+}
+\details{
+From December 2015 to December 2017 the DMDC reports list a large number of
+personnel, nearly all Navy, inside the United States block but in no state: 77,120 under
+"Unknown" in December 2015, and between 88,500 and 104,703 in each report from March 2016 to
+December 2017 under "Armed Forces Europe", "Armed Forces Pacific" and "Armed Forces the
+Americas". They cannot be traced to a state and are not in these figures, so the Navy and
+total figures of the home-port states are lower in those quarters and return in March 2018.
 }
 \keyword{datasets}

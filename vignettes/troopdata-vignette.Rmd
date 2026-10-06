@@ -96,7 +96,7 @@ head(example.frag)
 ```
 
 
-Finally, we can also search by region. Instead of inserting a country name or code into the host argument you can simply include character strings that represent regions. In these cases the function returns the aggregate sum of all deployments within that region for the specified time period
+Finally, we can also search by region. Instead of inserting a country name or code into the host argument you can simply include character strings that represent regions. In these cases the function returns every country in the matching region or regions for the specified time period, one row per country and year, with the region in its own column. Region names are matched as fragments, so `"Asia"` returns the countries of East Asia & Pacific, South Asia, and Europe & Central Asia.
 
 ```{r}
 

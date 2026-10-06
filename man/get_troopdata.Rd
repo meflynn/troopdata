@@ -8,16 +8,55 @@ get_troopdata(
   host = NULL,
   branch = FALSE,
   startyear = 1950,
-  endyear = 2025,
+  endyear = 2026,
   quarters = FALSE,
   guard_reserve = FALSE,
   civilians = FALSE,
   state_data = FALSE,
-  reports = FALSE
+  reports = FALSE,
+  afloat = c("exclude", "include", "separate")
 )
 }
 \arguments{
-\item{host}{The Correlates of War (COW) numeric country code, ISO3C code, or country name, for the host country or countries in the series. If region == TRUE the user can specify a COW region name and the function will try to match it to the region column in the data. The default is NA.}
+\item{host}{The Correlates of War (COW) numeric country code, ISO3C code, or country name, for the host country or countries in the series. A region name can be given instead; see below. The default, \code{NULL}, returns every location, and so does \code{NA}. A missing value inside a vector of hosts is dropped with a warning.
+
+A region is asked for by name. \code{host} is matched, as a substring and ignoring case,
+against the \code{region} column (\code{unique(get_troopdata()$region)} lists the names), and
+every location in a matching region is returned, one row per location and period, exactly as
+a query with no \code{host} returns them. Nothing is added up; the \code{region} column says
+which region each row belongs to. A string that matches several regions returns the locations
+of each: \code{"Asia"} matches \code{"East Asia & Pacific"}, \code{"South Asia"} and
+\code{"Europe & Central Asia"}. A string that matches a country name is read as a country, so
+\code{"Africa"} returns South Africa and the Central African Republic and \code{"America"}
+returns American Samoa; give enough of the region's name to tell them apart
+(\code{"Sub-Saharan Africa"}, \code{"North America"}). In both of these cases a warning
+says what the string matched. A full region name, or a string that matches one region
+only, raises none.
+
+A country name is matched as a substring, so a query reaches every historical form of a
+divided country: \code{"Korea"} returns North and South, \code{"Vietnam"} returns North, South
+and the unified state, \code{"Czech"} returns Czechoslovakia and the Czech Republic.
+\code{"Germany"} returns both the Federal Republic (260) and the German Democratic Republic
+(265); \code{"West Germany"} and \code{"East Germany"} reach them individually. Where a name
+spans several country codes the rows are returned separately, one per code and period, and a
+warning says which codes matched -- aggregate across \code{ccode} for a single national series.
+
+Note that matching on ISO3C codes cannot reach every location in the data. A few locations
+have no ISO3C code and are left out of any ISO3C filter: at present the British West Indies
+(1950-1965), the Spratly Islands and Kashmir. Passing \code{host} as a
+country name or a Gleditsch and Ward country code reaches them, and a warning names them and
+gives the current count whenever an ISO3C filter is used. Most territories and historical
+states do have a code: Greenland is \code{"GRL"}, Bermuda \code{"BMU"}, Diego Garcia
+\code{"IOT"} and Yugoslavia \code{"YUG"}. A unit with no code of its own carries its
+parent's: the Azores carry Portugal's, \code{"PRT"}. Locations that share a code are returned
+on rows of their own, so \code{host = "PRT"} returns Portugal and the Azores separately, each
+with its own country code. Add them up to get a total for the ISO3C code.
+
+Personnel afloat have a location of their own, named \code{"Afloat"} (country code 10200,
+no ISO3C code, region \code{"Afloat"}), with values for 1950 and 1953 through 2007. It is
+returned with everything else when \code{host} is left empty; \code{host = "Afloat"} or
+\code{host = 10200} returns it alone. It is not a country, so leave it out when adding up
+countries. See \code{afloat} for what it holds.}
 
 \item{branch}{Logical. Should the function return a single vector containing total troop values or multiple vectors containing total values and values for individual branches? Default is FALSE.}
 
@@ -33,7 +72,44 @@ get_troopdata(
 
 \item{state_data}{Logical. Should the function return disaggregated data on US States? Default is FALSE.}
 
-\item{reports}{Logical. Should the function return reports for the specified countries and years? Default is FALSE.}
+\item{reports}{Logical. Should the function return reports for the specified countries and years? Default is FALSE. The reports are returned as reported, without aggregation, so a country code may appear on more than one row in a period where the report breaks that country's territories out separately.}
+
+\item{afloat}{How to treat Navy and Marine Corps personnel afloat in the reports for 1950
+through 2007. One of \code{"exclude"} (the default), \code{"include"} or
+\code{"separate"}.
+
+Those reports count personnel ashore and personnel afloat separately, and attribute some of
+the personnel afloat to a location: to the country of the nearest port or the country whose
+line they are printed on (1953-1976), and, for the fleet in home waters, to the United States
+(1950, 1953-2007; from 1968 the reports give that figure for the United States and its
+territories together). The rest are given for a region or for the world only.
+
+\itemize{
+\item \code{"exclude"}: every location holds personnel ashore. \code{troops_ad},
+\code{navy_ad} and \code{marine_corps_ad} leave out anyone afloat, and the
+\code{"Afloat"} location holds everyone afloat worldwide.
+\item \code{"include"}: personnel afloat who are attributed to a location are added to
+that location's \code{troops_ad}, \code{navy_ad} and \code{marine_corps_ad}. The
+\code{"Afloat"} location holds only those attributed to no location.
+\item \code{"separate"}: the figures ashore are as for \code{"exclude"}, and the
+personnel afloat attributed to each location are returned beside them in
+\code{troops_afloat}, \code{navy_afloat} and \code{marine_corps_afloat}.
+\code{navy_ad} and \code{marine_corps_ad} are returned as well, whatever \code{branch}
+is set to, so the two can be compared. The \code{"Afloat"} location holds only those
+attributed to no location.
+}
+
+Added up over every row, the three give the same total; they differ in where the personnel
+afloat are put. In the three afloat columns a zero means a report that lists personnel afloat
+by location has none for that one (1953-1976). A missing value means the report gives no
+figure for the location: 1950 and 1977-2007 for everywhere but the United States, 1951 and
+1952, and every year from 2008. For 1954-1956 the figure also holds mobile units temporarily
+based ashore, which those three reports do not separate.
+
+From September 2008 the DMDC reports count a ship's crew at its home port, inside the state
+or country figure, and there is no afloat figure at all, so the argument changes nothing from
+2008 on and has no effect on \code{state_data = TRUE}. Navy figures on either side of 2008
+are closest to comparable with \code{afloat = "include"}.}
 }
 \value{
 \code{get_troopdata()} returns a data frame containing country-year observations for U.S. troop deployments.

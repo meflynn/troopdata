@@ -3,9 +3,9 @@
 \docType{data}
 \name{builddata}
 \alias{builddata}
-\title{U.S. Military overseas construction spending data}
+\title{U.S. Military overseas construction spending data (superseded)}
 \format{
-A data frame with country-base observations including the following variables:
+A data frame with location-year observations including the following variables:
 \describe{
 \item{\code{countryname}}{A character vector of country names.}
 \item{\code{ccode}}{A numeric vector of Correlates of War country codes.}
@@ -21,9 +21,13 @@ A data frame with country-base observations including the following variables:
 builddata
 }
 \value{
-Returns the full data frame containing location-project-year observations of U.S. military construction spending data from 2008-2019.
+Returns a data frame containing location-year observations of U.S. military construction
+spending data from 2008-2019.
 }
 \description{
-\code{builddata} returns a data frame containing geocoded location-project-year overseas military construction spending data.
+\code{builddata} is the original geocoded construction spending data, compiled from
+operations and maintenance records rather than the Comptroller Annual Report C-1 exhibits. It is
+retained for reproducibility of earlier analyses. \code{get_builddata()} reads
+\code{build_data_20260918} instead.
 }
 \keyword{datasets}

@@ -136,3 +136,35 @@ test_that("each exercise has one row per participating country", {
                info = paste("Exercises where row count != participant_count:",
                             paste(mismatched$MMEID, collapse = ", ")))
 })
+
+test_that("the duration filter does not depend on which row comes first", {
+  # The source writes a date as "5/16/80" when the day is known and "1993-05-xx" when it is not.
+  # as.Date() with tryFormats settles on one format from the first non-missing value, so whenever
+  # the first row of a filtered result held an "xx" date every duration came back NA and the filter
+  # returned nothing. Lithuania's first row is one of those, as is the first row of 2006.
+  lithuania <- get_exercises(country = "Lithuania", min_duration = 1)
+  expect_gt(nrow(lithuania), 0)
+
+  in.2006 <- get_exercises(startyear = 2006, endyear = 2006, min_duration = 1)
+  expect_gt(nrow(in.2006), 0)
+
+  # And the same exercise gets the same duration however the data was filtered first.
+  everything <- get_exercises(min_duration = 1)
+  expect_true(all(lithuania$MMEID %in% everything$MMEID))
+})
+
+test_that("gwcode follows the Gleditsch and Ward list", {
+  mme <- troopdata::mme_long
+
+  # countrycode sends "Vietnam" to 815, a nineteenth century polity in the G&W list; the modern
+  # state is 816. It has no gwn entry at all for Yemen or the G&W microstates.
+  expect_false(815 %in% mme$gwcode)
+  expect_equal(unique(mme$gwcode[mme$country == "Vietnam"]), 816)
+  expect_equal(unique(mme$gwcode[mme$country == "Yemen"]), 678)
+  expect_equal(unique(mme$gwcode[mme$country == "Grenada"]), 55)
+  expect_false(anyNA(mme$gwcode[mme$country %in% c("Dominica", "Tonga", "Vanuatu",
+                                                    "Palau", "Seychelles")]))
+
+  # The G&W list has no Serbia before 2006.
+  expect_false(any(mme$gwcode == 340 & mme$year < 2006, na.rm = TRUE))
+})
