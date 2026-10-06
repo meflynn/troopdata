@@ -14,6 +14,7 @@ First things first—let’s load the
 few helpers we’ll use for plotting and wrangling.
 
 ``` r
+
 library(troopdata)
 library(dplyr)
 library(tidyverse)
@@ -38,6 +39,7 @@ entire temporal coverage of the underlying MME data.
 
 ``` r
 
+
 example <- get_exercises()
 
 head(example)
@@ -61,7 +63,7 @@ Each row identifies a single participating country in a single year of a
 single exercise. The `MMEID` column uniquely identifies each exercise,
 `Ex_Name` gives the name of the individual exercise, and `Series_Name`
 identifies the broader series the exercise belongs to (e.g., “Cobra Gold
-23” is part of the “Cobra Gold” series).
+93” is part of the “Cobra Gold” series).
 
 ## Filtering by country
 
@@ -74,6 +76,7 @@ fuzzy match, so partial names are accepted.
 For example, using a numeric vector of G&W codes:
 
 ``` r
+
 
 # Pull exercises that include Japan (740) and Australia (900)
 example.gw <- get_exercises(country = c(740, 900))
@@ -101,13 +104,14 @@ Korea:
 
 ``` r
 
+
 example.korea <- get_exercises(country = "korea")
 
 unique(example.korea$country)
 #> [1] "South Korea" "North Korea"
 ```
 
-This is intentional — users who need to distinguish between
+This is intentional—users who need to distinguish between
 similarly-named countries should either pass the exact G&W code or
 post-filter the returned data frame.
 
@@ -115,10 +119,11 @@ post-filter the returned data frame.
 
 The `startyear` and `endyear` arguments subset the data to a specific
 temporal range. If a year falls outside the available range of the
-underlying MME data, the function issues a warning and clamps the value
-to the nearest available year rather than failing.
+underlying MME data, the function issues a warning and sets the value to
+the nearest available year rather than failing.
 
 ``` r
+
 
 example.years <- get_exercises(country = "korea",
                                startyear = 2000,
@@ -146,9 +151,10 @@ head(example.years)
 The `exercise_name` argument matches against both the `Ex_Name` and
 `Series_Name` columns using a case-insensitive `grepl` fuzzy match. This
 lets users target either an individual exercise (e.g.,
-`"Cobra Gold 23"`) or the entire exercise series (`"cobra gold"`).
+`"Cobra Gold 93"`) or the entire exercise series (`"cobra gold"`).
 
 ``` r
+
 
 cobra_gold <- get_exercises(exercise_name = "cobra gold")
 
@@ -169,10 +175,11 @@ head(cobra_gold)
 #> #   AdditionalParticipantInfo <chr>, participant_count <int>, duration <dbl>
 ```
 
-Multiple patterns can be supplied as a vector and are combined with
-logical OR:
+Users can also supply multiple exercise names and the function will
+return matches to the specified strings:
 
 ``` r
+
 
 multi.ex <- get_exercises(exercise_name = c("cobra gold", "balikatan"))
 
@@ -187,6 +194,7 @@ free-text `Location` column. This is useful for pulling out exercises
 held in a particular country, sub-region, or named training area.
 
 ``` r
+
 
 thailand.ex <- get_exercises(location = "thailand")
 
@@ -218,6 +226,7 @@ with unparseable dates (e.g., source values like `"1980-01-xx"`) yield
 
 ``` r
 
+
 # Pull exercises lasting at least a week
 long.ex <- get_exercises(min_duration = 7)
 
@@ -229,11 +238,18 @@ short.ex <- get_exercises(max_duration = 1)
 
 The `domain` argument subsets exercises by the warfighting environment.
 The MME data flags each exercise with one or more binary indicators for
-`Air`, `Land`, `Sea`, `Amphibious`, and `Cyber`. Pass any combination of
-these (case-insensitive) to `domain`; an exercise is returned if it is
-flagged for *any* of the supplied domains (logical OR).
+`Air`, `Land`, `Sea`, `Amphibious`, and `Cyber`. Military exercises can
+include multiple domains—for example, a given exercise can have a Sea
+and Air component. Accordingly, the data contains multiple binary
+indicators for each domain type rather than a single factor-style
+variable. This means there is no individual column entitled “domain” in
+the underlying or returned data frames.
+
+Pass any combination of these domain types to the `domain` argument. An
+exercise is returned if it is flagged for *any* of the supplied domains.
 
 ``` r
+
 
 # Pull all naval and amphibious exercises
 sea.ex <- get_exercises(domain = c("sea", "amphibious"))
@@ -262,10 +278,14 @@ values.
 
 The `focus` argument works analogously to `domain` but operates on the
 mission-focus indicators in the source data: `warfighting`,
-`humanitarian`, and `peacekeeping`. Multiple values combine with logical
-OR.
+`humanitarian`, and `peacekeeping`. As with the `domain` argument,
+individual exercises can include multiple focus areas (e.g. Warfighting
+AND Humanitarian activities).
+
+Users can specify multiple focus types in this argument.
 
 ``` r
+
 
 # Pull humanitarian and peacekeeping exercises
 hadr.ex <- get_exercises(focus = c("humanitarian", "peacekeeping"))
@@ -289,13 +309,17 @@ head(hadr.ex)
 
 ## Filtering by number of participants
 
-The `mme_long` data ships with a precomputed `participant_count` column
-that records the total number of participating countries per exercise
-(the same value is repeated across every row sharing an `MMEID`). The
-`min_participants` and `max_participants` arguments filter on this
-column.
+The `mme_long` data frame contains a pre-computed `participant_count`
+column that records the total number of participating countries per
+exercise (the same value is repeated across every row sharing an
+`MMEID`).
+
+The `min_participants` and `max_participants` arguments filter on this
+column. This allows users more flexibility in filtering exercises that
+meet different participation thresholds.
 
 ``` r
+
 
 # Pull large multilateral exercises (10 or more participating countries)
 large.ex <- get_exercises(min_participants = 10)
@@ -325,12 +349,13 @@ that satisfy every supplied condition.
 
 ``` r
 
-# Large-scale humanitarian exercises in the Pacific between 2005 and 2015
+
+# Large-scale humanitarian exercises in the Pacific between 2005 and 2010, the last year in the data
 combined.ex <- get_exercises(focus = "humanitarian",
                              location = "philippines|thailand|indonesia",
                              min_participants = 5,
                              startyear = 2005,
-                             endyear = 2015)
+                             endyear = 2010)
 
 head(combined.ex)
 #> # A tibble: 6 × 30
@@ -358,9 +383,10 @@ trend.
 
 ``` r
 
+
 pacific.series <- get_exercises(exercise_name = c("cobra gold",
                                                   "balikatan",
-                                                  "talisman sabre",
+                                                  "talisman sab", # the data spell it both "Sabre" and "Saber"
                                                   "rimpac"))
 
 pacific.trend <- pacific.series %>%
@@ -368,13 +394,15 @@ pacific.trend <- pacific.series %>%
   dplyr::count(Series_Name, year)
 
 ggplot2::ggplot(pacific.trend,
-                ggplot2::aes(x = year, y = n, color = Series_Name)) +
-  ggplot2::geom_line(linewidth = 1) +
-  ggplot2::geom_point() +
-  viridis::scale_color_viridis(discrete = TRUE, option = "turbo") +
+                ggplot2::aes(x = year, y = n, fill = Series_Name)) +
+  ggplot2::geom_bar(stat = "identity",
+                    position = "stack") +
+  scale_y_continuous(breaks = seq(0,4,1),
+                     limits = c(0,4)) +
+  viridis::scale_fill_viridis(discrete = TRUE, option = "turbo") +
   ggplot2::labs(x = "Year",
                 y = "Exercises per year",
-                color = "Series") +
+                fill = "Series") +
   ggplot2::theme_minimal()
 ```
 

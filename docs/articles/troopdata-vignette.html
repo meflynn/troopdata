@@ -12,8 +12,8 @@
 <link rel="icon" sizes="any" href="../favicon.ico">
 <link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="get_troopdata">
 </head>
@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">troopdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.4.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,10 +82,10 @@ package</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Attaching core tidyverse packages</span> ──────────────────────── tidyverse 2.0.0 ──</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.1.5</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.5.2</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">lubridate</span> 1.9.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble   </span> 3.3.0</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr    </span> 1.1.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr    </span> 1.3.1</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.2.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.2.0</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.6.0</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">lubridate</span> 1.9.5     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble   </span> 3.3.1</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr    </span> 1.2.2     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr    </span> 1.3.2</span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></span>
@@ -103,30 +103,41 @@ on US overseas troop deployments, specifically.</p>
 <p>The first function of this package is the
 <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> function. At its most basic this function
 returns a data frame of country-year troop deployment values for the
-selected time period, using the <code>startdate</code> and
-<code>enddate</code> parameters.</p>
+selected time period, using the <code>startyear</code> and
+<code>endyear</code> parameters. Here are the values for the United
+States from 1990 to 2020.</p>
 <pre><code><span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
 <span><span class="co">#&gt;   iso3c  year ccode countryname   region        troops_ad</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> USA    <span style="text-decoration: underline;">1</span>990     2 United States North America   1<span style="text-decoration: underline;">138</span>627</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> USA    <span style="text-decoration: underline;">1</span>991     2 United States North America   1<span style="text-decoration: underline;">216</span>348</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> USA    <span style="text-decoration: underline;">1</span>992     2 United States North America   1<span style="text-decoration: underline;">171</span>208</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> USA    <span style="text-decoration: underline;">1</span>993     2 United States North America   1<span style="text-decoration: underline;">127</span>242</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> USA    <span style="text-decoration: underline;">1</span>994     2 United States North America   1<span style="text-decoration: underline;">073</span>309</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> USA    <span style="text-decoration: underline;">1</span>995     2 United States North America   1<span style="text-decoration: underline;">041</span>320</span></span></code></pre>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> USA    <span style="text-decoration: underline;">1</span>990     2 United States North America   1<span style="text-decoration: underline;">202</span>031</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> USA    <span style="text-decoration: underline;">1</span>991     2 United States North America   1<span style="text-decoration: underline;">283</span>014</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> USA    <span style="text-decoration: underline;">1</span>992     2 United States North America   1<span style="text-decoration: underline;">238</span>280</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> USA    <span style="text-decoration: underline;">1</span>993     2 United States North America   1<span style="text-decoration: underline;">192</span>215</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> USA    <span style="text-decoration: underline;">1</span>994     2 United States North America   1<span style="text-decoration: underline;">134</span>519</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> USA    <span style="text-decoration: underline;">1</span>995     2 United States North America   1<span style="text-decoration: underline;">096</span>501</span></span></code></pre>
 <p>For users who want more refined data, the there are a number of
 arguments that allow the user to further tailor the output to their
 needs.</p>
 <p>The <code>host</code> argument allows users to specify the set of
-host countries for which they would like data returned. This can be a
-vector of numerical values equal to a Correlates of War (COW) Project
+host countries for which they would like data returned. If you leave it
+out you get every location in the data, the United States included. This
+can be a vector of numerical values equal to a Gleditsch and Ward
 country code, a vector of character values equal to an ISO3C country
 code, or a vector of character values corresponding to full country
 names. Note that when supplying a vector of values they must be
 consistent and correspond to a single type of identifier at a time
-(i.e. they must all be numeric COW codes, ISO3C character codes, country
-names, or region names).</p>
-<p>For example, you can use a numeric vector of COW country codes like
+(i.e. they must all be numeric country codes, ISO3C character codes,
+country names, or region names). If one of the values does not match
+anything, the function returns the rest and gives a warning that names
+the value it could not match.</p>
+<p>A note on the numeric codes: the data use the Gleditsch and Ward
+list, not the Correlates of War list. The two agree for most countries,
+but not all of them. Germany, for example, is 260 here and not 255.
+Territories and other locations that the Gleditsch and Ward list does
+not cover have codes of our own, such as 6 for Puerto Rico, 1002 for
+Greenland and 1008 for Guam. A numeric code that is not in the data
+returns an error rather than an empty data frame.</p>
+<p>For example, you can use a numeric vector of country codes like
 this:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -163,6 +174,17 @@ this:</p>
 <span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE. Note that</span></span>
 <span><span class="co">#&gt; guard and reserve data are not included in DMDC reports prior to 2008 so</span></span>
 <span><span class="co">#&gt; troops_all should be equal to troops_ad for earlier time periods.</span></span>
+<span><span class="co">#&gt; Warning: Filtering `host` on ISO3C codes cannot reach every location in the</span></span>
+<span><span class="co">#&gt; data. 3 observations across 1 countries and territories carry no ISO3C code, so</span></span>
+<span><span class="co">#&gt; they are excluded from any ISO3C filter no matter which codes you ask for --</span></span>
+<span><span class="co">#&gt; together 168 reported personnel between 1970 and 2020. The largest in this</span></span>
+<span><span class="co">#&gt; window: Spratly Islands (168). To include them, pass `host` as a country name</span></span>
+<span><span class="co">#&gt; or a Gleditsch and Ward country code, or leave `host` unset and subset</span></span>
+<span><span class="co">#&gt; afterwards.</span></span>
+<span><span class="co">#&gt; Warning: One or more of the requested ISO3C codes covers more than one country</span></span>
+<span><span class="co">#&gt; code, because a sub-national unit with no ISO3C of its own carries its</span></span>
+<span><span class="co">#&gt; parent's: GBR = Akrotiri, United Kingdom. These are returned as separate rows,</span></span>
+<span><span class="co">#&gt; so aggregate across `ccode` rather than assuming one row per ISO3C and period.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.char</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
@@ -172,8 +194,16 @@ this:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> CAN    <span style="text-decoration: underline;">1</span>971    20 Canada      North America      <span style="text-decoration: underline;">1</span>835</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> CAN    <span style="text-decoration: underline;">1</span>972    20 Canada      North America      <span style="text-decoration: underline;">1</span>742</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> CAN    <span style="text-decoration: underline;">1</span>973    20 Canada      North America      <span style="text-decoration: underline;">1</span>362</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> CAN    <span style="text-decoration: underline;">1</span>974    20 Canada      North America      <span style="text-decoration: underline;">1</span>690</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> CAN    <span style="text-decoration: underline;">1</span>975    20 Canada      North America      <span style="text-decoration: underline;">2</span>607</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> CAN    <span style="text-decoration: underline;">1</span>974    20 Canada      North America      <span style="text-decoration: underline;">1</span>580</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> CAN    <span style="text-decoration: underline;">1</span>975    20 Canada      North America      <span style="text-decoration: underline;">1</span>301</span></span></code></pre></div>
+<p>A few locations have no ISO3C code of their own and carry their
+parent’s, so one code can return more than one location.
+<code>"GBR"</code> returns the United Kingdom and Akrotiri,
+<code>"PRT"</code> returns Portugal and the Azores, and
+<code>"UMI"</code> returns Wake, Midway and Johnston Islands. Each
+location comes back on its own row with its own country code, and a
+warning tells you when this happens. Add the rows up if you want a
+single figure for the ISO3C code.</p>
 <p>Similarly, we can search for full country names:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hostlist.names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Canada"</span>, <span class="st">"United Kingdom"</span><span class="op">)</span></span>
@@ -185,6 +215,9 @@ this:</p>
 <span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE. Note that</span></span>
 <span><span class="co">#&gt; guard and reserve data are not included in DMDC reports prior to 2008 so</span></span>
 <span><span class="co">#&gt; troops_all should be equal to troops_ad for earlier time periods.</span></span>
+<span><span class="co">#&gt; Warning: `host` matched more than one country code: Canada (20), United Kingdom</span></span>
+<span><span class="co">#&gt; (200). These are returned as separate rows, so aggregate across `ccode` if you</span></span>
+<span><span class="co">#&gt; want one series for the country as a whole.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.names</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
@@ -194,8 +227,8 @@ this:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Canada       <span style="text-decoration: underline;">1</span>971    20 CAN   North America      <span style="text-decoration: underline;">1</span>835</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Canada       <span style="text-decoration: underline;">1</span>972    20 CAN   North America      <span style="text-decoration: underline;">1</span>742</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Canada       <span style="text-decoration: underline;">1</span>973    20 CAN   North America      <span style="text-decoration: underline;">1</span>362</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North America      <span style="text-decoration: underline;">1</span>690</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North America      <span style="text-decoration: underline;">2</span>607</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North America      <span style="text-decoration: underline;">1</span>580</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North America      <span style="text-decoration: underline;">1</span>301</span></span></code></pre></div>
 <p>When searching for country names, the function will do its best to
 identify the correct country based on the character string that’s
 included. This can include cases where fragments of country names are
@@ -214,20 +247,38 @@ included and the function will try to return the correct country.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
 <span><span class="co">#&gt;   countryname  year ccode iso3c region              troops_ad</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> South Korea  <span style="text-decoration: underline;">1</span>970   732 KOR   East Asia &amp; Pacific    <span style="text-decoration: underline;">104</span>566</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> South Korea  <span style="text-decoration: underline;">1</span>971   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">81</span>480</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> South Korea  <span style="text-decoration: underline;">1</span>972   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">83</span>200</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> South Korea  <span style="text-decoration: underline;">1</span>973   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">83</span>728</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> South Korea  <span style="text-decoration: underline;">1</span>974   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">81</span>756</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> South Korea  <span style="text-decoration: underline;">1</span>975   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">82</span>372</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> South Korea  <span style="text-decoration: underline;">1</span>970   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">52</span>197</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> South Korea  <span style="text-decoration: underline;">1</span>971   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">40</span>740</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> South Korea  <span style="text-decoration: underline;">1</span>972   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">41</span>600</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> South Korea  <span style="text-decoration: underline;">1</span>973   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">41</span>864</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> South Korea  <span style="text-decoration: underline;">1</span>974   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">40</span>387</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> South Korea  <span style="text-decoration: underline;">1</span>975   732 KOR   East Asia &amp; Pacific     <span style="text-decoration: underline;">40</span>204</span></span></code></pre></div>
 <p>Finally, we can also search by region. Instead of inserting a country
 name or code into the host argument you can simply include character
-strings that represent regions. In these cases the function returns the
-aggregate sum of all deployments within that region for the specified
-time period</p>
+strings that represent regions. In these cases the function returns
+every country in the matching region or regions for the specified time
+period, one row per country and year, with the region in its own column.
+Nothing is added up across the countries of a region.</p>
+<p>The regions are East Asia &amp; Pacific, Europe &amp; Central Asia,
+Latin America &amp; Caribbean, Middle East &amp; North Africa, North
+America, South Asia and Sub-Saharan Africa. (Antarctica and the “Afloat”
+location are in regions of their own.) Region names are matched as
+fragments, which calls for a little care:</p>
+<ul>
+<li>A fragment that matches one region works fine. <code>"Europe"</code>
+returns Europe &amp; Central Asia.</li>
+<li>A fragment that matches several regions returns all of them, with a
+warning. <code>"Asia"</code> returns the countries of East Asia &amp;
+Pacific, South Asia, and Europe &amp; Central Asia.</li>
+<li>A fragment that is also part of a country name is read as a country,
+again with a warning. <code>"Africa"</code> returns South Africa and the
+Central African Republic, so ask for <code>"Sub-Saharan Africa"</code>
+instead.</li>
+<li>Regions and country names cannot be mixed in one call.</li>
+</ul>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">region.list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Europe"</span>, <span class="st">"Asia"</span><span class="op">)</span></span>
+<span><span class="va">region.list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"East Asia &amp; Pacific"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">example.region</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">region.list</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in get_troopdata(host = region.list, startyear = 1970, endyear = 2020):</span></span>
@@ -238,15 +289,15 @@ time period</p>
 <span><span class="co">#&gt; troops_all should be equal to troops_ad for earlier time periods.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.region</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
-<span><span class="co">#&gt;   region               year troops_ad</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>970    <span style="text-decoration: underline;">821</span>756</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>971    <span style="text-decoration: underline;">446</span>050</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>972    <span style="text-decoration: underline;">138</span>484</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>973     <span style="text-decoration: underline;">83</span>728</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>974     <span style="text-decoration: underline;">81</span>756</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> East Asia &amp; Pacific  <span style="text-decoration: underline;">1</span>975     <span style="text-decoration: underline;">82</span>372</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
+<span><span class="co">#&gt;   countryname  year ccode iso3c region                troops_ad</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Abkhazia     <span style="text-decoration: underline;">2</span>008   396 GEO   Europe &amp; Central Asia         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Abkhazia     <span style="text-decoration: underline;">2</span>009   396 GEO   Europe &amp; Central Asia         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Abkhazia     <span style="text-decoration: underline;">2</span>010   396 GEO   Europe &amp; Central Asia         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Abkhazia     <span style="text-decoration: underline;">2</span>011   396 GEO   Europe &amp; Central Asia         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Abkhazia     <span style="text-decoration: underline;">2</span>012   396 GEO   Europe &amp; Central Asia         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Abkhazia     <span style="text-decoration: underline;">2</span>013   396 GEO   Europe &amp; Central Asia         0</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="disaggregated-data">Disaggregated Data<a class="anchor" aria-label="anchor" href="#disaggregated-data"></a>
@@ -257,8 +308,8 @@ reports often include disaggregated figures, with separate counts for
 each branch of the military. The <code>branch</code> argument allows
 users to specify whether they would like to receive the aggregate sum of
 all branches or the disaggregated figures for each branch. This argument
-can take on three values: <code>TRUE</code>, <code>FALSE</code>, or a
-vector of branch names.</p>
+can take on two values: <code>TRUE</code> or <code>FALSE</code>, with
+the default being <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Let's get the disaggregated data for the US deployments to Canada and the UK</span></span>
@@ -267,23 +318,17 @@ vector of branch names.</p>
 <span><span class="va">example.branch</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: Branch data only includes active duty by default. This preserves</span></span>
 <span><span class="co">#&gt; continuity across time periods as guard and reserve data are not reported prior</span></span>
-<span><span class="co">#&gt; to 2008 Also note that disaggregated data are not available for 2003 and 2004</span></span>
-<span><span class="co">#&gt; as the DMDC did not issue reports for those years. Also note that Iraq does not</span></span>
-<span><span class="co">#&gt; have branch data for 2003-2007 and troops_ad value is estimated using</span></span>
-<span><span class="co">#&gt; alternative sources.</span></span>
+<span><span class="co">#&gt; to 2008. Also note that Iraq does not have branch data for 2003-2007 and</span></span>
+<span><span class="co">#&gt; troops_ad value is estimated using alternative sources.</span></span>
 <span><span class="co">#&gt; Warning in get_troopdata(host = hostlist, branch = TRUE, startyear = 1970, :</span></span>
 <span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
 <span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
 <span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE. Note that</span></span>
 <span><span class="co">#&gt; guard and reserve data are not included in DMDC reports prior to 2008 so</span></span>
 <span><span class="co">#&gt; troops_all should be equal to troops_ad for earlier time periods.</span></span>
-<span><span class="co">#&gt; Warning: There were 204 warnings in `dplyr::summarise()`.</span></span>
-<span><span class="co">#&gt; The first warning was:</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In argument: `dplyr::across(...)`.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In group 1: `countryname = "Canada"` `year = 1970`.</span></span>
-<span><span class="co">#&gt; Caused by warning in `max()`:</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> no non-missing arguments to max; returning -Inf</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Run `dplyr::last_dplyr_warnings()` to see the 203 remaining warnings.</span></span>
+<span><span class="co">#&gt; Warning: `host` matched more than one country code: Canada (20), United Kingdom</span></span>
+<span><span class="co">#&gt; (200). These are returned as separate rows, so aggregate across `ccode` if you</span></span>
+<span><span class="co">#&gt; want one series for the country as a whole.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.branch</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 12</span></span></span>
@@ -293,22 +338,25 @@ vector of branch names.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Canada       <span style="text-decoration: underline;">1</span>971    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>835      12     433         <span style="text-decoration: underline;">1</span>381</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Canada       <span style="text-decoration: underline;">1</span>972    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>742      14     410         <span style="text-decoration: underline;">1</span>315</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Canada       <span style="text-decoration: underline;">1</span>973    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>362      12     390          951</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>690      11     703          969</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North Am…      <span style="text-decoration: underline;">2</span>607      11    <span style="text-decoration: underline;">1</span>839          757</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 3 more variables: marine_corps_ad &lt;dbl&gt;, coast_guard_ad &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   space_force_ad &lt;lgl&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>580      11     593          969</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>301      11     533          757</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 3 more variables: marine_corps_ad &lt;dbl&gt;, coast_guard_ad &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   space_force_ad &lt;dbl&gt;</span></span></span></code></pre></div>
 <p>In each case the <code>_ad</code> suffix on the variable name
 indicates “Active Duty” numbers for the given branch.</p>
 <p>Note that the total does not necessarily equal the sum of the
 individual branches. The function returns the maximum annual value for
 each branch. In cases where there are quarterly values reported, the sum
 total may come from one quarter and the individual branch values may
-come from another quarter.</p>
+come from another quarter. The section on time periods below shows an
+example.</p>
 <p>We can also include disaggregated data national guard and reserve
-personnel, as well as DoD civilians. These numbers are generally only
-reported for more recent years, and are not available for all countries
-and time periods. Later updates will include more observations for
-earlier time periods where they are available.</p>
+personnel, as well as DoD civilians. The reports give these numbers from
+2008 forward, so they show up as <code>NA</code> for earlier years.
+Setting <code>guard_reserve = TRUE</code> also returns
+<code>troops_all</code>, which is the active duty total plus the guard
+and reserve columns. Before 2008 it is the same as
+<code>troops_ad</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Canada"</span>, <span class="st">"United Kingdom"</span><span class="op">)</span></span>
@@ -316,19 +364,13 @@ earlier time periods where they are available.</p>
 <span><span class="va">example.branch</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">1970</span>, endyear <span class="op">=</span> <span class="fl">2020</span>, guard_reserve <span class="op">=</span> <span class="cn">TRUE</span>, civilians <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: Branch data only includes active duty by default. This preserves</span></span>
 <span><span class="co">#&gt; continuity across time periods as guard and reserve data are not reported prior</span></span>
-<span><span class="co">#&gt; to 2008 Also note that disaggregated data are not available for 2003 and 2004</span></span>
-<span><span class="co">#&gt; as the DMDC did not issue reports for those years. Also note that Iraq does not</span></span>
-<span><span class="co">#&gt; have branch data for 2003-2007 and troops_ad value is estimated using</span></span>
-<span><span class="co">#&gt; alternative sources.</span></span>
+<span><span class="co">#&gt; to 2008. Also note that Iraq does not have branch data for 2003-2007 and</span></span>
+<span><span class="co">#&gt; troops_ad value is estimated using alternative sources.</span></span>
 <span><span class="co">#&gt; Warning: Guard and Reserve data only available for 2008 forward. Values will</span></span>
 <span><span class="co">#&gt; display as NA for earlier time periods.</span></span>
-<span><span class="co">#&gt; Warning: There were 918 warnings in `dplyr::summarise()`.</span></span>
-<span><span class="co">#&gt; The first warning was:</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In argument: `dplyr::across(...)`.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In group 1: `countryname = "Canada"` `year = 1970`.</span></span>
-<span><span class="co">#&gt; Caused by warning in `max()`:</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> no non-missing arguments to max; returning -Inf</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Run `dplyr::last_dplyr_warnings()` to see the 917 remaining warnings.</span></span>
+<span><span class="co">#&gt; Warning: `host` matched more than one country code: Canada (20), United Kingdom</span></span>
+<span><span class="co">#&gt; (200). These are returned as separate rows, so aggregate across `ccode` if you</span></span>
+<span><span class="co">#&gt; want one series for the country as a whole.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.branch</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 27</span></span></span>
@@ -338,12 +380,12 @@ earlier time periods where they are available.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Canada       <span style="text-decoration: underline;">1</span>971    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>835      12     433         <span style="text-decoration: underline;">1</span>381</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Canada       <span style="text-decoration: underline;">1</span>972    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>742      14     410         <span style="text-decoration: underline;">1</span>315</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Canada       <span style="text-decoration: underline;">1</span>973    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>362      12     390          951</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>690      11     703          969</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North Am…      <span style="text-decoration: underline;">2</span>607      11    <span style="text-decoration: underline;">1</span>839          757</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 18 more variables: marine_corps_ad &lt;dbl&gt;, coast_guard_ad &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   space_force_ad &lt;lgl&gt;, army_national_guard &lt;lgl&gt;, air_national_guard &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   army_reserve &lt;lgl&gt;, navy_reserve &lt;lgl&gt;, marine_corps_reserve &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   air_force_reserve &lt;lgl&gt;, coast_guard_reserve &lt;lgl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">1</span>974    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>580      11     593          969</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">1</span>975    20 CAN   North Am…      <span style="text-decoration: underline;">1</span>301      11     533          757</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 18 more variables: marine_corps_ad &lt;dbl&gt;, coast_guard_ad &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   space_force_ad &lt;dbl&gt;, army_national_guard &lt;dbl&gt;, air_national_guard &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   army_reserve &lt;dbl&gt;, navy_reserve &lt;dbl&gt;, marine_corps_reserve &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   air_force_reserve &lt;dbl&gt;, coast_guard_reserve &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   total_selected_reserve &lt;dbl&gt;, troops_all &lt;dbl&gt;, army_civilian &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   navy_civilian &lt;dbl&gt;, marine_corps_civilian &lt;dbl&gt;, air_force_civilian &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   dod_civilian &lt;dbl&gt;, total_civilian &lt;dbl&gt;</span></span></span></code></pre></div>
@@ -361,14 +403,17 @@ allows users to specify whether they would like to receive the quarterly
 data or the annual data. This argument can take on two values:
 <code>TRUE</code> or <code>FALSE</code> with the default being
 <code>FALSE</code>.</p>
+<p>The data have one report per year through 2012, two for 2013
+(September and December), and four per year from 2014 forward (March,
+June, September and December). The most recent year only has the reports
+that have been published so far.</p>
 <p>If the user opts to return quarterly data, the function will return
-the month and quarter columns in addition to the year. Note that not
-every quarter corresponds to a quarterly report for every country. In
-some cases the quarterly value may be a 0 rather than <code>NA</code>.
-Additionally, the Army has not reported branch data for several recent
-quarters between 2022 and 2023 due to internal personnel management
-changes. Accordingly the aggregate totals for these quarters may be
-lower than expected or not available.</p>
+the month and quarter columns in addition to the year, and each row
+holds the figures from that one report. A country that a report does not
+list gets a 0 for that period rather than <code>NA</code>, so a zero can
+mean either that the report shows zero or that the country is not in it.
+Territories such as Guam or Bermuda are different: they only have a row
+for the periods in which a report lists them.</p>
 <p>Here we use full country names. See! Neat!</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -378,44 +423,172 @@ lower than expected or not available.</p>
 <span><span class="va">example.quarters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">2015</span>, endyear <span class="op">=</span> <span class="fl">2022</span>, quarters <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: Branch data only includes active duty by default. This preserves</span></span>
 <span><span class="co">#&gt; continuity across time periods as guard and reserve data are not reported prior</span></span>
-<span><span class="co">#&gt; to 2008 Also note that disaggregated data are not available for 2003 and 2004</span></span>
-<span><span class="co">#&gt; as the DMDC did not issue reports for those years. Also note that Iraq does not</span></span>
-<span><span class="co">#&gt; have branch data for 2003-2007 and troops_ad value is estimated using</span></span>
-<span><span class="co">#&gt; alternative sources.</span></span>
+<span><span class="co">#&gt; to 2008. Also note that Iraq does not have branch data for 2003-2007 and</span></span>
+<span><span class="co">#&gt; troops_ad value is estimated using alternative sources.</span></span>
 <span><span class="co">#&gt; Warning: Some service branches do not report data for all quarters. See the</span></span>
 <span><span class="co">#&gt; following note from December, 2022, June 2023, and March 2023 DMDC reports:</span></span>
 <span><span class="co">#&gt; 'The Army is converting its Integrated Personnel and Pay System (IPPS-A) and so</span></span>
 <span><span class="co">#&gt; the Army did not provide military personnel data for end-of-June 2023.' We use</span></span>
-<span><span class="co">#&gt; a stepwise imputation process to fill in the gaps between September 2022 and</span></span>
-<span><span class="co">#&gt; September 2023, taking the difference between the values for these two periods</span></span>
-<span><span class="co">#&gt; and incrementally adjusting totals for the missing periods between.</span></span>
+<span><span class="co">#&gt; a stepwise imputation process to fill in the Army values between September 2022</span></span>
+<span><span class="co">#&gt; and September 2023, taking the difference between the values for these two</span></span>
+<span><span class="co">#&gt; periods and incrementally adjusting the Army figures for the missing periods</span></span>
+<span><span class="co">#&gt; between. The other services reported for those quarters and their values are</span></span>
+<span><span class="co">#&gt; shown as reported; totals are the sum of the two.</span></span>
 <span><span class="co">#&gt; Warning in get_troopdata(host = hostlist, branch = TRUE, startyear = 2015, :</span></span>
 <span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
 <span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
 <span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE. Note that</span></span>
 <span><span class="co">#&gt; guard and reserve data are not included in DMDC reports prior to 2008 so</span></span>
 <span><span class="co">#&gt; troops_all should be equal to troops_ad for earlier time periods.</span></span>
-<span><span class="co">#&gt; Warning: There were 130 warnings in `dplyr::summarise()`.</span></span>
-<span><span class="co">#&gt; The first warning was:</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In argument: `dplyr::across(...)`.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> In group 29: `countryname = "Canada"`, `year = 2022`, `month = "December"`,</span></span>
-<span><span class="co">#&gt;   `quarter = 4`.</span></span>
-<span><span class="co">#&gt; Caused by warning in `max()`:</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> no non-missing arguments to max; returning -Inf</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Run `dplyr::last_dplyr_warnings()` to see the 129 remaining warnings.</span></span>
+<span><span class="co">#&gt; Warning: `host` matched more than one country code: Canada (20), United Kingdom</span></span>
+<span><span class="co">#&gt; (200). These are returned as separate rows, so aggregate across `ccode` if you</span></span>
+<span><span class="co">#&gt; want one series for the country as a whole.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">example.quarters</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
 <span><span class="co">#&gt;   countryname  year month   quarter ccode iso3c region troops_ad army_ad navy_ad</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Canada       <span style="text-decoration: underline;">2</span>015 Decemb…       4    20 CAN   North…        91       3       0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Canada       <span style="text-decoration: underline;">2</span>015 June          2    20 CAN   North…       295       8       0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Canada       <span style="text-decoration: underline;">2</span>015 March         1    20 CAN   North…       144       8       0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Canada       <span style="text-decoration: underline;">2</span>015 Septem…       3    20 CAN   North…       146       8       0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">2</span>016 Decemb…       4    20 CAN   North…       141       6       0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">2</span>016 June          2    20 CAN   North…       281       6       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Canada       <span style="text-decoration: underline;">2</span>015 Decemb…       4    20 CAN   North…        91       3       1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Canada       <span style="text-decoration: underline;">2</span>015 June          2    20 CAN   North…       153       8      43</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Canada       <span style="text-decoration: underline;">2</span>015 March         1    20 CAN   North…       144       8      38</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Canada       <span style="text-decoration: underline;">2</span>015 Septem…       3    20 CAN   North…       146       8      42</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Canada       <span style="text-decoration: underline;">2</span>016 Decemb…       4    20 CAN   North…       141       6      38</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Canada       <span style="text-decoration: underline;">2</span>016 June          2    20 CAN   North…       146       6      41</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 4 more variables: air_force_ad &lt;dbl&gt;, marine_corps_ad &lt;dbl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   coast_guard_ad &lt;lgl&gt;, space_force_ad &lt;lgl&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;">#   coast_guard_ad &lt;dbl&gt;, space_force_ad &lt;dbl&gt;</span></span></span></code></pre></div>
+<div class="section level3">
+<h3 id="how-the-annual-values-are-chosen">How the annual values are chosen<a class="anchor" aria-label="anchor" href="#how-the-annual-values-are-chosen"></a>
+</h3>
+<p>When a year has more than one report, the annual data return the
+<strong>highest value reported in that year</strong>. This is not an
+average, and it is not the value from one particular month. It is also
+done separately for each column, so the total can come from one report
+and a branch figure from another.</p>
+<p>Japan in 2019 is a good example. Here are the four quarterly
+reports:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">japan.quarters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="st">"Japan"</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">2019</span>, endyear <span class="op">=</span> <span class="fl">2019</span>, quarters <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Put the rows in calendar order and keep the columns we want to compare</span></span>
+<span><span class="va">japan.quarters</span> <span class="op">&lt;-</span> <span class="va">japan.quarters</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">japan.quarters</span><span class="op">$</span><span class="va">quarter</span><span class="op">)</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="va">japan.quarters</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"countryname"</span>, <span class="st">"year"</span>, <span class="st">"month"</span>, <span class="st">"troops_ad"</span>, <span class="st">"army_ad"</span>, <span class="st">"navy_ad"</span>, <span class="st">"air_force_ad"</span>, <span class="st">"marine_corps_ad"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 8</span></span></span>
+<span><span class="co">#&gt;   countryname  year month troops_ad army_ad navy_ad air_force_ad marine_corps_ad</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Japan        <span style="text-decoration: underline;">2</span>019 March     <span style="text-decoration: underline;">56</span>134    <span style="text-decoration: underline;">2</span>657   <span style="text-decoration: underline;">20</span>846        <span style="text-decoration: underline;">12</span>140           <span style="text-decoration: underline;">20</span>475</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Japan        <span style="text-decoration: underline;">2</span>019 June      <span style="text-decoration: underline;">55</span>327    <span style="text-decoration: underline;">2</span>671   <span style="text-decoration: underline;">20</span>845        <span style="text-decoration: underline;">12</span>447           <span style="text-decoration: underline;">19</span>348</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Japan        <span style="text-decoration: underline;">2</span>019 Sept…     <span style="text-decoration: underline;">55</span>245    <span style="text-decoration: underline;">2</span>626   <span style="text-decoration: underline;">20</span>392        <span style="text-decoration: underline;">12</span>602           <span style="text-decoration: underline;">19</span>607</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Japan        <span style="text-decoration: underline;">2</span>019 Dece…     <span style="text-decoration: underline;">57</span>094    <span style="text-decoration: underline;">2</span>516   <span style="text-decoration: underline;">20</span>733        <span style="text-decoration: underline;">12</span>757           <span style="text-decoration: underline;">21</span>070</span></span></code></pre></div>
+<p>And here is the annual row for the same year:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">japan.annual</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="st">"Japan"</span>, branch <span class="op">=</span> <span class="cn">TRUE</span>, startyear <span class="op">=</span> <span class="fl">2019</span>, endyear <span class="op">=</span> <span class="fl">2019</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">japan.annual</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"countryname"</span>, <span class="st">"year"</span>, <span class="st">"troops_ad"</span>, <span class="st">"army_ad"</span>, <span class="st">"navy_ad"</span>, <span class="st">"air_force_ad"</span>, <span class="st">"marine_corps_ad"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 7</span></span></span>
+<span><span class="co">#&gt;   countryname  year troops_ad army_ad navy_ad air_force_ad marine_corps_ad</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Japan        <span style="text-decoration: underline;">2</span>019     <span style="text-decoration: underline;">57</span>094    <span style="text-decoration: underline;">2</span>671   <span style="text-decoration: underline;">20</span>846        <span style="text-decoration: underline;">12</span>757           <span style="text-decoration: underline;">21</span>070</span></span></code></pre></div>
+<p>The annual <code>troops_ad</code> value is the December figure, the
+largest of the four. But the annual <code>army_ad</code> value is the
+June figure and the annual <code>navy_ad</code> value is the March
+figure, because those were the largest for each of those branches. This
+is why the branch columns in the annual data do not have to add up to
+<code>troops_ad</code>. If you need figures that all come from the same
+report, use <code>quarters = TRUE</code>.</p>
+<p>Before 2013 there is only one report per year, so the annual value is
+the value from that report, or the outside figure described below where
+the report has none.</p>
+</div>
+<div class="section level3">
+<h3 id="gaps-in-the-reports">Gaps in the reports<a class="anchor" aria-label="anchor" href="#gaps-in-the-reports"></a>
+</h3>
+<p>A few values do not come straight from a report. The big ones
+are:</p>
+<ul>
+<li>
+<strong>1951 and 1952.</strong> There are no reports for these
+years. For countries the totals move in equal steps between the 1950 and
+1953 figures, and there are no branch figures. Most territories have no
+rows for these two years.</li>
+<li>
+<strong>December 2022, March 2023 and June 2023.</strong> The Army
+did not report any personnel figures for these quarters while it
+switched to a new personnel system. In the country data the Army figures
+for these quarters move in equal steps between the September 2022 and
+September 2023 reports, and the totals are those figures plus what the
+other services reported. The data for US states and the reports
+themselves are left as published, so the Army figures and the totals are
+<code>NA</code> there.</li>
+<li>
+<strong>June 2023.</strong> The June 2023 report has its civilian
+columns and some of its guard and reserve columns printed one row too
+low for part of the overseas list, so that Qatar’s row shows Puerto
+Rico’s numbers. The country data put these figures back on the right
+rows. The reports themselves (<code>reports = TRUE</code>) are left as
+published.</li>
+<li>
+<strong>Afghanistan, Iraq, Kuwait and Syria.</strong> The reports do
+not give the number of personnel deployed to these countries for much of
+the 2000s, and from December 2017 they leave out deployed personnel in
+Afghanistan, Iraq and Syria again. Where we could, we use figures from
+Kane’s data or from public reporting instead (Afghanistan 2001-2005 and
+2018-2020, Iraq 2003-2007 and 2018-2021, Kuwait 2003-2007, and Syria
+2018-2021). These are totals only, so the branch columns are zero. After
+those years the values are whatever the reports show, which is only a
+handful of people and well below the actual US presence. For Iraq in
+2018-2021 and Syria in 2021 the outside figure only appears in the June
+row of the quarterly data, so use the annual data for those.</li>
+</ul>
+<p>The <a href="https://meflynn.github.io/troopdata/articles/01-rebuild-notes-vignette.html">Rebuild
+Notes</a> article and the help page for <code><a href="../reference/get_troopdata.html">get_troopdata()</a></code> go
+through all of this in more detail.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="personnel-afloat">Personnel Afloat<a class="anchor" aria-label="anchor" href="#personnel-afloat"></a>
+</h2>
+<p>The reports for 1950 through 2007 count personnel ashore and
+personnel afloat separately, and for some years they assign the afloat
+personnel to a country, usually the country of the nearest port. By
+default the country figures only include personnel ashore. The
+<code>afloat</code> argument lets you change that:</p>
+<ul>
+<li>
+<code>afloat = "exclude"</code> is the default. Country figures are
+personnel ashore only.</li>
+<li>
+<code>afloat = "include"</code> adds the afloat personnel assigned
+to a country to that country’s totals.</li>
+<li>
+<code>afloat = "separate"</code> keeps the ashore figures as they
+are and returns the afloat personnel next to them in the
+<code>troops_afloat</code>, <code>navy_afloat</code> and
+<code>marine_corps_afloat</code> columns.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">greece</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="st">"Greece"</span>, startyear <span class="op">=</span> <span class="fl">1958</span>, endyear <span class="op">=</span> <span class="fl">1962</span>, afloat <span class="op">=</span> <span class="st">"separate"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">greece</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"countryname"</span>, <span class="st">"year"</span>, <span class="st">"troops_ad"</span>, <span class="st">"troops_afloat"</span>, <span class="st">"navy_ad"</span>, <span class="st">"navy_afloat"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 6</span></span></span>
+<span><span class="co">#&gt;   countryname  year troops_ad troops_afloat navy_ad navy_afloat</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Greece       <span style="text-decoration: underline;">1</span>958      <span style="text-decoration: underline;">1</span>575          <span style="text-decoration: underline;">7</span>018      41        <span style="text-decoration: underline;">6</span>910</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Greece       <span style="text-decoration: underline;">1</span>959      <span style="text-decoration: underline;">1</span>592          <span style="text-decoration: underline;">6</span>721      39        <span style="text-decoration: underline;">6</span>389</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Greece       <span style="text-decoration: underline;">1</span>960      <span style="text-decoration: underline;">1</span>976         <span style="text-decoration: underline;">13</span>090     308       <span style="text-decoration: underline;">13</span>090</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Greece       <span style="text-decoration: underline;">1</span>961      <span style="text-decoration: underline;">1</span>937          <span style="text-decoration: underline;">5</span>383      33        <span style="text-decoration: underline;">5</span>383</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Greece       <span style="text-decoration: underline;">1</span>962      <span style="text-decoration: underline;">2</span>576          <span style="text-decoration: underline;">6</span>186     339        <span style="text-decoration: underline;">6</span>186</span></span></code></pre></div>
+<p>There were about 2,000 personnel ashore in Greece in 1960, and more
+than 13,000 afloat who were counted there because that is where the
+fleet was on the day of the count.</p>
+<p>Everyone afloat is also carried in a separate location named “Afloat”
+(country code 10200). It is not a country, so remember to leave it out
+if you are adding up countries. From September 2008 the reports count a
+ship’s crew at its home port, as part of the country or state figure, so
+the argument makes no difference for 2008 and later.</p>
 </div>
 <div class="section level2">
 <h2 id="data-for-us-states">Data for US States<a class="anchor" aria-label="anchor" href="#data-for-us-states"></a>
@@ -426,7 +599,8 @@ as it does when users are looking to pull data for countries, with a
 couple of small changes.</p>
 <p>First, these data come from the DMDC reports beginning in 2008, so we
 don’t have as much time to work with as we do with the country-level
-data.</p>
+data. They cover the fifty states and the District of Columbia. Puerto
+Rico, Guam and the other territories are in the country-level data.</p>
 <p>Second, users need to make sure they set
 <code>state_data = TRUE</code> in the function call. The data for US
 states work with different identifiers, so this argument needs to be set
@@ -435,20 +609,35 @@ data and queries looking at data on US states.</p>
 <p>Finally, as mentioned above, the data for US states use different
 identifiers for the relevant geographic units. Users can search for data
 by the state’s name using character strings, just like in the
-country-level data. Users can also look to match US states by their
-numeric FIPS codes. These are useful if we’re interested in generating
-things like maps using the state-level data.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+country-level data. Capitalization does not matter. A full state name
+returns just that state, so <code>"kansas"</code> gives you Kansas and
+<code>"Virginia"</code> does not also give you West Virginia, while part
+of a name such as <code>"Carolina"</code> returns every state that
+contains it. Users can also look to match US states by their numeric
+FIPS codes. These are useful if we’re interested in generating things
+like maps using the state-level data.</p>
+<p>The <code>branch</code>, <code>guard_reserve</code>,
+<code>civilians</code> and <code>quarters</code> arguments work the same
+way they do for countries, and annual values are again the highest value
+reported in the year. Two things to keep in mind. The Army did not
+report for December 2022, March 2023 and June 2023, and the state data
+leave the Army figures and the totals as <code>NA</code> for those
+quarters rather than filling them in, so the annual Army figures and
+totals for 2022 and 2023 come from the other quarters. And from December
+2015 to December 2017 the reports list a large number of Navy personnel
+in no state at all, so the Navy figures for home-port states like
+Virginia and California are lower in those quarters.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usmap.dev" class="external-link">usmap</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">states</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>startyear <span class="op">=</span> <span class="fl">2025</span>, state_data <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in get_troopdata(startyear = 2025, state_data = TRUE): total_ad value</span></span>
-<span><span class="co">#&gt; shows the total number of active duty personnel only and does not include any</span></span>
-<span><span class="co">#&gt; guard or reserve troops that may be present. For the total number of uniformed</span></span>
-<span><span class="co">#&gt; personnel please choose guard_reserve = TRUE. Note that guard and reserve data</span></span>
-<span><span class="co">#&gt; are not included in DMDC reports prior to 2008 so troops_all should be equal to</span></span>
-<span><span class="co">#&gt; troops_ad for earlier time periods.</span></span>
+<span><span class="va">states</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_troopdata.html">get_troopdata</a></span><span class="op">(</span>startyear <span class="op">=</span> <span class="fl">2025</span>, endyear <span class="op">=</span> <span class="fl">2025</span>, state_data <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in get_troopdata(startyear = 2025, endyear = 2025, state_data = TRUE):</span></span>
+<span><span class="co">#&gt; total_ad value shows the total number of active duty personnel only and does</span></span>
+<span><span class="co">#&gt; not include any guard or reserve troops that may be present. For the total</span></span>
+<span><span class="co">#&gt; number of uniformed personnel please choose guard_reserve = TRUE. Note that</span></span>
+<span><span class="co">#&gt; guard and reserve data are not included in DMDC reports prior to 2008 so</span></span>
+<span><span class="co">#&gt; troops_all should be equal to troops_ad for earlier time periods.</span></span>
 <span></span>
 <span><span class="va">map.data</span> <span class="op">&lt;-</span> <span class="fu">usmap</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/usmap/man/us_map.html" class="external-link">us_map</a></span><span class="op">(</span>regions <span class="op">=</span> <span class="st">"states"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>fips <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">fips</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
@@ -459,7 +648,7 @@ things like maps using the state-level data.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">viridis</span><span class="fu">::</span><span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html" class="external-link">scale_fill_viridis</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"turbo"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Military Personnel"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="troopdata-vignette_files/figure-html/state-maps-1.png" width="700"></p>
+<p><img src="troopdata-vignette_files/figure-html/state-maps-1.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level2">
 <h2 id="reports">Reports<a class="anchor" aria-label="anchor" href="#reports"></a>
@@ -472,11 +661,17 @@ that the data is drawn from. This argument can take on two values:
 <code>FALSE</code>.</p>
 <p>Users can specify the <code>host</code>, <code>startyear</code>, and
 <code>endyear</code> arguments as they would for the main function. The
-function will return data frame single data frame containing all of the
-original columns found in the DMDC reports upon which the data are
-based. The formatting and column names will be roughly consistent with
-the original reports, but the data will be filtered to only include the
-specified host countries and time period.</p>
+function will return a single data frame containing all of the original
+columns found in the DMDC reports upon which the data are based. The
+formatting and column names will be roughly consistent with the original
+reports, but the data will be filtered to only include the specified
+host countries and time period.</p>
+<p>The reports are returned row by row, as they were published, with
+nothing added up. This means a country code can show up on more than one
+row in the same period when a report lists parts of a country
+separately. Japan and the Ryukyu Islands (Okinawa), for example, are
+separate lines in the reports through 1973 and both come back when you
+ask for Japan. The country-level data add those rows together.</p>
 <p>The <code>source</code> column in the data frame provides the month
 and the year that the data was drawn from. This allows the user to more
 easily track down the original DMDC report that the data was drawn from.
@@ -497,7 +692,7 @@ then the user must also set the <code>quarters</code> argument to
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

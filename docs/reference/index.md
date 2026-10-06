@@ -4,12 +4,15 @@
 
 - [`basedata`](https://meflynn.github.io/troopdata/reference/basedata.md)
   : Vine's U.S. basing data
+- [`build_data_20260918`](https://meflynn.github.io/troopdata/reference/build_data_20260918.md)
+  : U.S. Military construction spending data
 - [`builddata`](https://meflynn.github.io/troopdata/reference/builddata.md)
-  : U.S. Military overseas construction spending data
+  : U.S. Military overseas construction spending data (superseded)
 - [`get_basedata()`](https://meflynn.github.io/troopdata/reference/get_basedata.md)
   : Function to retrieve customized U.S. basing data
 - [`get_builddata()`](https://meflynn.github.io/troopdata/reference/get_builddata.md)
-  : Function to retrieve customized U.S. construction spending data.
+  : Function to retrieve customized U.S. military construction spending
+  data.
 - [`get_exercises()`](https://meflynn.github.io/troopdata/reference/get_exercises.md)
   : Function to retrieve customized multilateral military exercise data
 - [`get_troopdata()`](https://meflynn.github.io/troopdata/reference/get_troopdata.md)

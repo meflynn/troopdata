@@ -49,6 +49,7 @@ Michael E. Flynn
 ## Examples
 
 ``` r
+
 if (FALSE) { # \dontrun{
 library(tidyverse)
 library(troopdata)

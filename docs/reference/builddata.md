@@ -1,7 +1,11 @@
-# U.S. Military overseas construction spending data
+# U.S. Military overseas construction spending data (superseded)
 
-`builddata` returns a data frame containing geocoded
-location-project-year overseas military construction spending data.
+`builddata` is the original geocoded construction spending data,
+compiled from operations and maintenance records rather than the
+Comptroller Annual Report C-1 exhibits. It is retained for
+reproducibility of earlier analyses.
+[`get_builddata()`](https://meflynn.github.io/troopdata/reference/get_builddata.md)
+reads `build_data_20260918` instead.
 
 ## Usage
 
@@ -11,7 +15,7 @@ builddata
 
 ## Format
 
-A data frame with country-base observations including the following
+A data frame with location-year observations including the following
 variables:
 
 - `countryname`:
@@ -50,5 +54,5 @@ variables:
 
 ## Value
 
-Returns the full data frame containing location-project-year
-observations of U.S. military construction spending data from 2008-2019.
+Returns a data frame containing location-year observations of U.S.
+military construction spending data from 2008-2019.

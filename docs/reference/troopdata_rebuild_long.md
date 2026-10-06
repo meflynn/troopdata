@@ -1,7 +1,10 @@
 # U.S. overseas troop deployment data
 
-`troopdata` returns a data frame containing information on US military
-deployments.
+`troopdata_rebuild_long` is the data frame behind
+[`get_troopdata`](https://meflynn.github.io/troopdata/reference/get_troopdata.md):
+U.S. military personnel by location and report period, for every
+country, territory and other location in the reports, the United States
+included.
 
 ## Usage
 
@@ -11,16 +14,22 @@ troopdata_rebuild_long
 
 ## Format
 
-A data frame with country year observations including the following
-variables:
+A data frame with one row per location and report period (a year and a
+quarter), including the following variables:
 
 - `ccode`:
 
-  A numeric vector of Correlates of War country codes.
+  A numeric vector of Gleditsch and Ward country codes. Territories and
+  other locations that the Gleditsch and Ward list does not cover carry
+  the package's own codes (Puerto Rico 6, Greenland 1002, Guam 1008 and
+  others, all above 1000 except Puerto Rico). These are not Correlates
+  of War codes: Germany is 260, not 255.
 
 - `iso3c`:
 
-  A character vector of ISO three character country codes.
+  A character vector of ISO three character country codes. A location
+  with no code of its own carries its parent's (the Azores carry
+  `"PRT"`), and a few locations have none.
 
 - `countryname`:
 
@@ -28,7 +37,11 @@ variables:
 
 - `region`:
 
-  Correlates of War geographic region name.
+  Geographic region, using the names of the World Bank regions.
+  Countries take the region the `countrycode` package gives them,
+  territories and other locations with the package's own codes are
+  assigned one by the package, and `"Afloat"` and `"Antarctica"` are
+  regions of their own.
 
 - `year`:
 
@@ -36,11 +49,11 @@ variables:
 
 - `month`:
 
-  The month of the observation.
+  The month of the report: March, June, September or December.
 
 - `quarter`:
 
-  The quarter of the observation.
+  The quarter of the observation, 1 through 4.
 
 - `year_quarter`:
 
@@ -48,17 +61,28 @@ variables:
 
 - `source`:
 
-  The DMDC report source of the observation.
+  Where the row's figures come from: the month and year of the DMDC
+  report, `"Kane 2006"` for a figure from Kane's data,
+  `"Stepwise Imputation"` for 1951 and 1952, or a label beginning
+  `"Estimate"` for a figure from public reporting. Missing where no
+  report lists the location for that period, which is where the zeros
+  described in Details come from; 17 rows with no source are not zero,
+  the Iraq figure of 5,200 for June 2018, 2019 and 2020 among them. The
+  rows of December 2022, March 2023 and June 2023 carry the label of
+  their report although their Army figures are filled in.
 
 - `troops_ad`:
 
   The total number of active duty US military personnel deployed to the
-  host country.
+  host country. In a row that comes from a report it equals the sum of
+  the branch columns.
 
 - `troops_all`:
 
   The total number of US military personnel deployed to the host country
-  including guard and reserve.
+  including guard and reserve: `troops_ad` plus the seven National Guard
+  and Reserve columns. Equal to `troops_ad` before 2008, when the
+  reports give no guard or reserve figures.
 
 - `army_ad`:
 
@@ -88,10 +112,26 @@ variables:
 
   Total number of Coast Guard personnel deployed to the host country.
 
+- `troops_afloat`:
+
+  Navy and Marine Corps personnel afloat that a report attributes to the
+  location, 1950 through 2007. Not included in `troops_ad`. See Details.
+
+- `navy_afloat`:
+
+  Navy personnel afloat that a report attributes to the location. Not
+  included in `navy_ad`.
+
+- `marine_corps_afloat`:
+
+  Marine Corps personnel afloat that a report attributes to the
+  location. Not included in `marine_corps_ad`.
+
 - `total_selected_reserve`:
 
   Total number of reserve US military personnel deployed to the host
-  country.
+  country. This and the other guard, reserve and civilian columns are
+  reported from 2008 and are missing for earlier years.
 
 - `army_reserve`:
 
@@ -162,5 +202,139 @@ variables:
 ## Value
 
 Returns the full data frame containing observations of US military
-deployments to overseas locations (countries and territories) from 1950
-through 2024.
+deployments by location (countries and territories) from 1950 through
+the latest report in this version of the package, March 2026.
+
+## Details
+
+**Report periods.** Each row holds the figures of one period. The data
+have one report a year through 2012 (dated June for 1950 and 1953-1956,
+and September from 1957), two for 2013 (September and December) and four
+a year from 2014 (March, June, September and December), and they stop at
+the latest report.
+[`get_troopdata`](https://meflynn.github.io/troopdata/reference/get_troopdata.md)
+returns these rows with `quarters = TRUE`. Its annual figures
+(`quarters = FALSE`) are the largest value of each column over the
+periods of a year, taken column by column, so they are not stored here
+and the columns of an annual row need not come from the same report.
+
+**Zeros and missing values.** A country that a report does not list has
+0 for that period and no `source`. A zero therefore means either that
+the report prints zero or that it does not list the country. Territories
+and the other locations that carry the package's own codes, and a few
+small states in the years before their independence, have a row only for
+the periods in which a report lists them, so the data are not a balanced
+panel for them. `NA` means that the reports give no figure of that kind:
+the guard, reserve and civilian columns and `coast_guard_ad` before
+2008, `space_force_ad` before September 2023, the branch columns for
+1951 and 1952, and the afloat columns as described below.
+
+**Figures that are not taken from a report.** The `source` column marks
+them, apart from the two cases noted under `source` above.
+
+- 1951 and 1952 have no report. `troops_ad` for those years moves in
+  equal steps from the June 1950 figure to the June 1953 figure, and the
+  branch columns are missing. This is done for countries. Most
+  territories and other locations with the package's own codes, the
+  `"Afloat"` location among them, have no rows for those two years.
+
+- The Army reported nothing for December 2022, March 2023 and June 2023.
+  `army_ad`, `army_national_guard` and `army_reserve` for those quarters
+  move in equal steps from the September 2022 figure to the September
+  2023 figure, and `troops_ad`, `total_selected_reserve` and
+  `troops_all` are those figures plus what the other services reported.
+  The other columns are as reported.
+  [`troopdata_rebuild_reports`](https://meflynn.github.io/troopdata/reference/troopdata_rebuild_reports.md)
+  and
+  [`troopdata_rebuild_us_states`](https://meflynn.github.io/troopdata/reference/troopdata_rebuild_us_states.md)
+  keep those quarters as published, with the Army figures and the totals
+  missing.
+
+- The June 2023 report prints part of its overseas list one row low: the
+  civilian columns from Montenegro to the end of the list, and the Navy
+  Reserve, Marine Corps Reserve, Air National Guard, Air Force Reserve
+  and Coast Guard Reserve columns from Morocco to Wake Island. Qatar's
+  line holds Puerto Rico's 2,201 civilians and Uruguay's the United
+  Kingdom's 1,383. The figures here are read from the line below the one
+  they are printed on, which is where the March and September 2023
+  reports and the report's own totals put them.
+  [`troopdata_rebuild_reports`](https://meflynn.github.io/troopdata/reference/troopdata_rebuild_reports.md)
+  keeps the report as published.
+
+- Where the reports do not give the personnel deployed to a war zone, a
+  figure from Kane's data or from public reporting is used: Afghanistan
+  for 2001-2005 and 2018-2020, Iraq for 2003-2007 and 2018-2021, Kuwait
+  for 2003-2007 and Syria for 2018-2021. These are totals only, with
+  zeros in the branch columns. From December 2017 the reports leave out
+  personnel deployed to Afghanistan, Iraq and Syria, and no outside
+  figure is used after those years, so the values for Afghanistan from
+  2021 and for Iraq and Syria from 2022 are the handful of personnel the
+  reports print and understate the U.S. presence. The outside figures
+  for Iraq in 2018-2021 and for Syria in 2021 are on the June row only,
+  and the other quarters of those years hold what the report prints,
+  which is zero or close to it.
+
+- The reports for 1957 through 2013 are dated September (and December in
+  2013). A row dated June in those years is not a report. It holds a
+  figure from Kane's data, or one of the estimates above, and is kept
+  only for a location and year in which no report gives a figure or the
+  report prints a zero in its place. Nearly all of these rows are zero.
+
+**Locations.** Personnel are counted at the location the report lists
+them under. Personnel that a report lists under no location (lines such
+as "Transients", "Undistributed", "Departmental Headquarters" and
+"Unknown") are not in the data. Where a report lists two places under
+one country code (Japan and the Ryukyu Islands through 1973, for
+example) the row is their sum. The United States is the fifty states and
+the District of Columbia. Puerto Rico, Guam and the other territories
+are locations of their own.
+
+**Personnel ashore and afloat.** Before 2008 `troops_ad`, `navy_ad` and
+`marine_corps_ad` hold personnel ashore for every location, the United
+States included. The reports for 1950 through 2007 count Navy and Marine
+Corps personnel afloat separately, and attribute some of them to a
+location: to the country of the nearest port or the country whose line
+they are printed on (1953-1976), and, for the fleet in home waters, to
+the United States (1950, 1953-2007; from 1968 the reports give that
+figure for the United States and its territories together). Those are in
+`troops_afloat`, `navy_afloat` and `marine_corps_afloat`, beside the
+ashore figures and not inside them. A zero there means a report that
+lists personnel afloat by location has none for that one (1953-1976); a
+missing value means the report gives no figure for the location
+(everywhere but the United States in 1950 and 1977-2007, apart from 171
+Marines afloat at Cuba in 1950; the years 1951 and 1952; and everything
+from 2008). For 1954-1956 the figure also holds mobile units temporarily
+based ashore, which those three reports do not separate.
+
+Everyone afloat is also carried once, worldwide, in a location named
+`"Afloat"` (`ccode` 10200, no ISO code, region `"Afloat"`), with values
+for 1950 and 1953 through 2007. It is not a country, and it includes the
+personnel the three afloat columns attribute to locations: `troops_ad`
+added up over every row, that one included, counts everyone the data
+place somewhere once, and adding the afloat columns to it as well would
+count those personnel twice. (It is still below the worldwide total a
+report prints, which also includes the personnel it lists under no
+location.)
+[`get_troopdata`](https://meflynn.github.io/troopdata/reference/get_troopdata.md)
+handles this through its `afloat` argument, which leaves the attributed
+personnel out of the locations, adds them in, or returns them
+separately, and adjusts the `"Afloat"` location to match. From September
+2008 the DMDC reports count a ship's crew at its home port, inside the
+state or country figure, and there is no afloat figure, so the ashore
+Navy figures for countries and states that are home ports step up
+between 2007 and 2008.
+
+The reports did not keep to that from December 2015 to December 2017.
+They list 77,120 personnel under "Unknown" in the United States block in
+December 2015, and between 88,500 and 104,703 in each report from March
+2016 to December 2017 under "Armed Forces Europe", "Armed Forces
+Pacific" and "Armed Forces the Americas", nearly all of them Navy. Those
+personnel cannot be traced to a state or a country and are in none of
+the figures here, the `"Afloat"` location included. The United States
+total and its Navy figure are therefore lower in those quarters and
+return in March 2018: the annual Navy figure for the United States is
+278,123 in 2015, 188,184 in 2016, 198,679 in 2017 and 289,853 in 2018.
+Japan's Navy figure for December 2015 (41,546, against 22,030 in
+September 2015 and 12,234 in March 2016) is as that report prints it,
+and is why the annual figure for Japan in 2015, 71,567, stands well
+above the years around it.

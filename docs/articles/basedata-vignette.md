@@ -8,11 +8,10 @@ First things first—let’s load the
 [troopdata](https://github.com/meflynn/troopdata) package
 
 ``` r
+
 library(troopdata)
 library(ggplot2)
-#> Warning: package 'ggplot2' was built under R version 4.4.3
 library(dplyr)
-#> Warning: package 'dplyr' was built under R version 4.4.3
 #> 
 #> Attaching package: 'dplyr'
 #> The following objects are masked from 'package:stats':
@@ -21,14 +20,15 @@ library(dplyr)
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
+library(maps)
 ```
 
 The troopdata package provides multiple functions to generate
 customizable datasets containing information on US military deployments
 and accompanying data. The
 [`get_basedata()`](https://meflynn.github.io/troopdata/reference/get_basedata.md)
-function represents the core of this package, providing customized data
-on US overseas troop deployments, specifically.
+function provides customized data on US overseas military bases,
+specifically.
 
 ## Basic Use
 
@@ -43,6 +43,7 @@ whether or not the facility is a full military base, a smaller lilypad,
 and if it is a currently funded site.
 
 ``` r
+
 
 baseexample <- get_basedata(host = NA, country_count = FALSE)
 
@@ -60,12 +61,17 @@ head(baseexample)
 
 As with the
 [`get_troopdata()`](https://meflynn.github.io/troopdata/reference/get_troopdata.md)
-function you can specify a numeric vector of COW country codes or a
-character vector of ISO3C codes to specify specific host countries.
+function you can specify a numeric vector of country codes or a
+character vector of ISO3C codes to specify specific host countries. Note
+that the basing data use Correlates of War (COW) country codes, while
+the troop deployment and construction data use Gleditsch and Ward codes.
+The two mostly agree, but Germany, for example, is 255 here and 260 in
+the troop data.
 
 For example, using COW country codes:
 
 ``` r
+
 
 hostlist <- c(20, 200, 255, 645)
 
@@ -87,6 +93,7 @@ And another using ISO3C codes:
 
 ``` r
 
+
 hostlist.char <- c("CAN", "GBR", "PRI")
 
 baseexample <- get_basedata(host = hostlist.char, country_count = FALSE)
@@ -105,6 +112,7 @@ users who may be more familiar with country codes and do not want to
 spend time trying to identify long-form country names.
 
 ``` r
+
 
 hostlist <- c(20, 200, 255, 645)
 
@@ -130,6 +138,7 @@ over the last few years and there are lots of cool studies you should
 check out. With these data you can do cool things like this!
 
 ``` r
+
 
 library(ggplot2)
 

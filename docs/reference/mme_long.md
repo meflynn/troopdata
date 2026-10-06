@@ -2,9 +2,10 @@
 
 `mme_long` returns a data frame containing exercise-country-year
 observations of multilateral military exercises. Built from the MME
-version 7 data (<https://doi.org/10.7910/DVN/KHFODX>) and reshaped so
-each row represents a single participating country in a single year of a
-single exercise. This is the data object underlying
+version 7 data
+([doi:10.7910/DVN/KHFODX](https://doi.org/10.7910/DVN/KHFODX) ) and
+reshaped so each row represents a single participating country in a
+single year of a single exercise. This is the data object underlying
 [`get_exercises()`](https://meflynn.github.io/troopdata/reference/get_exercises.md).
 
 ## Usage
@@ -24,7 +25,7 @@ following variables:
 
 - `Ex_Name`:
 
-  The name of the individual exercise (e.g., "Cobra Gold 23").
+  The name of the individual exercise (e.g., "Cobra Gold 93").
 
 - `Series_Name`:
 

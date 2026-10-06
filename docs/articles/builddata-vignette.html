@@ -12,8 +12,8 @@
 <link rel="icon" sizes="any" href="../favicon.ico">
 <link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="get_builddata">
 </head>
@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">troopdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.4.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,53 +73,178 @@
 
     
     
-<p>This page provides an overview for the <code><a href="../reference/get_basedata.html">get_basedata()</a></code>
+<p>This page provides an overview for the <code><a href="../reference/get_builddata.html">get_builddata()</a></code>
 function, highlighting some of its potential uses.</p>
 <p>First things first—let’s load the <a href="https://github.com/meflynn/troopdata" class="external-link">troopdata</a>
 package</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/meflynn/troopdata" class="external-link">troopdata</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
-<p>The troopdata package provides multiple functions to generate
-customizable datasets containing information on US military deployments
-and accompanying data. The <code><a href="../reference/get_basedata.html">get_basedata()</a></code> function
-represents the core of this package, providing customized data on US
-overseas troop deployments, specifically.</p>
 <div class="section level2">
 <h2 id="basic-use">Basic Use<a class="anchor" aria-label="anchor" href="#basic-use"></a>
 </h2>
-<p>Users can call on the <code><a href="../reference/get_builddata.html">get_builddata()</a></code> returns a data
-frame containing geocoded location-project-year military construction
-data. The basic arguments function the same as compared to the previous
-functions. The primary difference is that the data are currently
-available only for all countries and years where the Department of
-Defense publicly discloses spending figures from 2008 through 2019. Note
-there are also many observations included that contain amounts, but do
-not disclose location names or other information.</p>
+<p>The <code><a href="../reference/get_builddata.html">get_builddata()</a></code> function returns a data frame
+containing geocoded location-project-year military construction data.
+The basic arguments function the same as compared to the previous
+functions. The primary difference is that the data cover fiscal years
+2000 through 2026, as published in the Department of Defense Comptroller
+Annual Report C-1 exhibits. Note there are also many observations
+included that contain amounts, but do not disclose location names or
+other information.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">255</span>, <span class="fl">211</span><span class="op">)</span></span>
+<span><span class="va">hostlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">260</span>, <span class="fl">211</span><span class="op">)</span> <span class="co"># United Kingdom, Germany, Belgium (Gleditsch and Ward codes)</span></span>
 <span></span>
 <span><span class="va">buildexample</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_builddata.html">get_builddata</a></span><span class="op">(</span>host <span class="op">=</span> <span class="va">hostlist</span>, startyear <span class="op">=</span> <span class="fl">2008</span>, endyear <span class="op">=</span> <span class="fl">2019</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: Be advised that the data include unspecified locations, as well as 0</span></span>
-<span><span class="co">#&gt; or negative spending values.</span></span>
 <span><span class="co">#&gt; Warning: Spending values are in thousands of current US dollars.</span></span>
+<span><span class="co">#&gt; Warning: Data may include unspecified locations and zero or negative spending</span></span>
+<span><span class="co">#&gt; values.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">buildexample</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 8</span></span></span>
-<span><span class="co">#&gt;   countryname    ccode iso3c  year location        lat    lon spend_construction</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> United Kingdom   200 GBR    <span style="text-decoration: underline;">2</span>008 Royal Air Fo…  52.4  0.518               <span style="text-decoration: underline;">1</span>800</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> United Kingdom   200 GBR    <span style="text-decoration: underline;">2</span>008 Royal Air Fo…  52.4  0.518              <span style="text-decoration: underline;">15</span>500</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> United Kingdom   200 GBR    <span style="text-decoration: underline;">2</span>008 Menwith Hill…  54.8 -<span style="color: #BB0000;">2.70</span>               <span style="text-decoration: underline;">10</span>000</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> United Kingdom   200 GBR    <span style="text-decoration: underline;">2</span>008 Menwith Hill…  54.8 -<span style="color: #BB0000;">2.70</span>               <span style="text-decoration: underline;">31</span>000</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> United Kingdom   200 GBR    <span style="text-decoration: underline;">2</span>009 Royal Air Fo…  52.4  0.518              <span style="text-decoration: underline;">71</span>828</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> United Kingdom   200 GBR    <span style="text-decoration: underline;">2</span>009 Royal Air Fo…  52.4  0.518               <span style="text-decoration: underline;">7</span>400</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 42</span></span></span>
+<span><span class="co">#&gt;   gwcode iso3c state_country state_country_name state_country_sort fiscal_year</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>    211 BEL   BE            <span style="color: #BB0000;">NA</span>                 <span style="color: #BB0000;">NA</span>                        <span style="text-decoration: underline;">2</span>008</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>    211 BEL   BE            Belgium            <span style="color: #BB0000;">NA</span>                        <span style="text-decoration: underline;">2</span>010</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>    211 BEL   BE            Belgium            <span style="color: #BB0000;">NA</span>                        <span style="text-decoration: underline;">2</span>010</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>    211 BEL   BE            Belgium            <span style="color: #BB0000;">NA</span>                        <span style="text-decoration: underline;">2</span>010</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>    211 BEL   BE            Belgium            <span style="color: #BB0000;">NA</span>                        <span style="text-decoration: underline;">2</span>011</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>    211 BEL   BE            Belgium            <span style="color: #BB0000;">NA</span>                        <span style="text-decoration: underline;">2</span>011</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 36 more variables: location_name &lt;chr&gt;, location_name_reported &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   location_full_name &lt;chr&gt;, location_code &lt;chr&gt;, latitude &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   longitude &lt;dbl&gt;, geo_source &lt;chr&gt;, organization &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   organization_reported &lt;chr&gt;, project_number &lt;chr&gt;, project_title &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   project_title_reported &lt;chr&gt;, appn_title &lt;chr&gt;, budget_activity &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   budget_activity_title &lt;chr&gt;, budget_activity_title_reported &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   facility_group_title &lt;chr&gt;, facility_category_code &lt;chr&gt;, …</span></span></span></code></pre></div>
+<p>The <code>host</code> argument takes ISO3C codes or Gleditsch and
+Ward country codes, the same numeric codes the troop deployment data
+use. Territories carry the same ad hoc codes as in the troop data, so
+Guam is 1008 (or <code>"GUM"</code>) and Puerto Rico is 6 (or
+<code>"PRI"</code>) in both. The data also include construction inside
+the United States, which you can get with <code>host = "USA"</code> or
+<code>host = 2</code>. In fact most of the rows are projects in the
+United States. Leaving <code>host</code> at its default returns
+everything. Note that <code>startyear</code> and <code>endyear</code>
+have no defaults in this function, so you always need to supply
+both.</p>
+<p>There are several other ways to narrow things down. The
+<code>location</code> and <code>project</code> arguments search
+installation names and project titles, <code>organization</code> picks
+out a service or defense agency, and <code>facility_category</code> and
+<code>budget_activity</code> filter on the type of facility and the
+budget activity. For <code>host</code>, <code>organization</code>,
+<code>facility_category</code> and <code>budget_activity</code>, a value
+that does not match anything in the data returns an error that tells you
+where to look, rather than an empty data frame. The
+<code>location</code> and <code>project</code> searches simply return no
+rows when nothing matches.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">ramstein</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_builddata.html">get_builddata</a></span><span class="op">(</span>location <span class="op">=</span> <span class="st">"Ramstein"</span>, startyear <span class="op">=</span> <span class="fl">2010</span>, endyear <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Spending values are in thousands of current US dollars.</span></span>
+<span><span class="co">#&gt; Warning: Data may include unspecified locations and zero or negative spending</span></span>
+<span><span class="co">#&gt; values.</span></span>
+<span></span>
+<span><span class="va">ramstein</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fiscal_year"</span>, <span class="st">"location_name"</span>, <span class="st">"organization"</span>, <span class="st">"project_title"</span>, <span class="st">"appn_amount"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 9 × 5</span></span></span>
+<span><span class="co">#&gt;   fiscal_year location_name organization               project_title appn_amount</span></span>
+<span><span class="co">#&gt;         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>        <span style="text-decoration: underline;">2</span>010 Ramstein AB   Air Force                  Contingency …       <span style="text-decoration: underline;">23</span>200</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>        <span style="text-decoration: underline;">2</span>010 Ramstein AB   Air Force                  Construct AG…       <span style="text-decoration: underline;">11</span>500</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>        <span style="text-decoration: underline;">2</span>011 Ramstein AB   Air Force                  UAS SATCOM R…       <span style="text-decoration: underline;">10</span>476</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>        <span style="text-decoration: underline;">2</span>011 Ramstein AB   Air Force                  Construct C-…        <span style="text-decoration: underline;">7</span>954</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>        <span style="text-decoration: underline;">2</span>011 Ramstein AB   Air Force                  Deicing Flui…        <span style="text-decoration: underline;">2</span>671</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>        <span style="text-decoration: underline;">2</span>012 Ramstein AB   Air Force                  Dormitory (1…       <span style="text-decoration: underline;">34</span>697</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span>        <span style="text-decoration: underline;">2</span>014 Ramstein AB   Department of Defense Edu… Ramstein Hig…       <span style="text-decoration: underline;">98</span>762</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span>        <span style="text-decoration: underline;">2</span>017 Ramstein AB   Air Force                  37 As Squadr…       <span style="text-decoration: underline;">13</span>437</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">9</span>        <span style="text-decoration: underline;">2</span>019 Ramstein AB   Air Force                  EDI - KMC DA…      <span style="text-decoration: underline;">119</span>000</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="how-values-are-handled">How values are handled<a class="anchor" aria-label="anchor" href="#how-values-are-handled"></a>
+</h2>
+<p>A few things are worth knowing before you start adding up
+dollars.</p>
+<p><strong>Each row is one line of a report.</strong> A row is a single
+project at a single location in a single fiscal year. It is not a
+country total. To get spending by country and year you need to add the
+rows up yourself:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">buildexample</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">iso3c</span>, <span class="va">fiscal_year</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>projects <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>            appropriations <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">appn_amount</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   iso3c [1]</span></span></span>
+<span><span class="co">#&gt;   iso3c fiscal_year projects appropriations</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> BEL          <span style="text-decoration: underline;">2</span>008        1           <span style="text-decoration: underline;">5</span>992</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> BEL          <span style="text-decoration: underline;">2</span>010        3          <span style="text-decoration: underline;">99</span>524</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> BEL          <span style="text-decoration: underline;">2</span>011        2          <span style="text-decoration: underline;">98</span>975</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> BEL          <span style="text-decoration: underline;">2</span>012        1          <span style="text-decoration: underline;">24</span>118</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> BEL          <span style="text-decoration: underline;">2</span>013        1          <span style="text-decoration: underline;">24</span>854</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> BEL          <span style="text-decoration: underline;">2</span>014        2          <span style="text-decoration: underline;">67</span>613</span></span></code></pre></div>
+<p><strong>Amounts are in thousands of current US dollars.</strong>
+There are four amount columns: appropriations
+(<code>appn_amount</code>), authorizations (<code>auth_amount</code>),
+authorization of appropriations (<code>auth_appn_amount</code>) and
+total obligational authority (<code>toa_amount</code>). They are not
+adjusted for inflation. Negative values are real. They show up where
+money was rescinded or reprogrammed. Not every report gives every
+amount: the FY2006 report has appropriations only, and total
+obligational authority is also missing for FY2000. The
+<code>spend_type</code>, <code>min_amount</code> and
+<code>max_amount</code> arguments let you pick an amount column and
+filter on it.</p>
+<p><strong>Each fiscal year comes from one report.</strong> Every C-1
+report covers two or three fiscal years, so the same year appears in
+more than one report, often with revised figures. The data take each
+fiscal year from the most recent report that covers it, so a
+project-year is only counted once. For every year but one that is an
+enacted or actual figure. The exception is FY2016, where the only report
+we have is the one that requests it. FY2010 also has 26 lines that come
+from a request sheet for overseas contingency operations and do not
+appear on any enacted sheet. All of these rows are flagged with
+<code>is_request</code>, and <code>include_requests = FALSE</code> drops
+them.</p>
+<p><strong>Some rows have no location.</strong> About a quarter of the
+rows report an amount under a label such as “Unspecified Worldwide
+Locations” rather than a place. These rows have no country code, so they
+are only returned when <code>host</code> is left at its default. One
+group is an exception: the base realignment and closure lines for FY2007
+through FY2016 are filed under that label, but their project titles name
+a US installation (for example “USA-224: Fort Hood, TX”). Those rows
+carry the US country code and the installation’s coordinates, so
+<code>host = "USA"</code> returns them.</p>
+<p><strong>Coordinates.</strong> The <code>latitude</code> and
+<code>longitude</code> columns come from geocoding the location name. A
+point is only kept if it falls inside the country or state the row is
+filed under. Installations that the geocoder put in the wrong place were
+corrected by hand, and the <code>geo_source</code> column tells you
+whether a point came from a geocoding service (<code>"arcgis"</code>) or
+was entered by hand (<code>"manual"</code>). Rows with no location, and
+the few locations we could not find, have no coordinates and will drop
+out of a map.</p>
+<p><strong>Not every column is reported every year.</strong> The layout
+of the C-1 reports changed over time. Columns such as
+<code>transaction_type</code>, <code>project_number</code> and
+<code>facility_category_title</code> only exist for some fiscal years,
+and filtering on one of them quietly limits you to those years. The help
+page for <code>build_data_20260918</code> lists the coverage of each
+column.</p>
+</div>
+<div class="section level2">
+<h2 id="applications">Applications<a class="anchor" aria-label="anchor" href="#applications"></a>
+</h2>
 <p>As with the base data you can build cool maps using the construction
 data. You can also size the points according to the amount of spending
 associated with a particular location, adding some additional details to
 maps and other figures.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
@@ -129,7 +254,7 @@ maps and other figures.</p>
 <span></span>
 <span><span class="va">buildmap</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html" class="external-link">geom_polygon</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">map</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span><span class="op">)</span>, fill <span class="op">=</span> <span class="st">"gray80"</span>, color <span class="op">=</span> <span class="st">"white"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">basepoints</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">lon</span>, y <span class="op">=</span> <span class="va">lat</span>, size <span class="op">=</span> <span class="va">spend_construction</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"purple"</span>, alpha <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">basepoints</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">longitude</span>, y <span class="op">=</span> <span class="va">latitude</span>, size <span class="op">=</span> <span class="va">toa_amount</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"purple"</span>, alpha <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html" class="external-link">coord_equal</a></span><span class="op">(</span>ratio <span class="op">=</span> <span class="fl">1.3</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span>, size <span class="op">=</span> <span class="fl">15</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -138,9 +263,10 @@ maps and other figures.</p>
 <span></span>
 <span></span>
 <span><span class="va">buildmap</span></span></code></pre></div>
-<p><img src="builddata-vignette_files/figure-html/buildmap-1.png" width="2916.66666666667"></p>
+<p><img src="builddata-vignette_files/figure-html/buildmap-1.png" class="r-plt" alt="" width="2916.66666666667"></p>
 </div>
-  </main>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
@@ -150,7 +276,7 @@ maps and other figures.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>
